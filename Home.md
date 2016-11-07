@@ -1,1 +1,1 @@
-Welcome to the openremote wiki!
+Welcome to the OpenRemote v3 wiki!
