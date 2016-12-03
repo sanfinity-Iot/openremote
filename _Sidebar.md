@@ -1,3 +1,5 @@
+# [[Home]]
+
 ## Developer Guide
 
 * [[Preparing the environment|Developer Guide: Preparing the environment]]
