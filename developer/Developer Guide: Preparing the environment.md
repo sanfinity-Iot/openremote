@@ -2,6 +2,8 @@ A Docker host is required to work on the main [OpenRemote repository](https://gi
 
 An installation of Java 8 ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)) is also required.
 
+ All Docker and Gradle commands **must be executed in the project root directory**.
+
 ## Configuring a Docker host
 
 You should be able to execute `docker`, `docker-compose`, and ideally `docker-machine` client commands in a shell and communicate with your Docker host.
@@ -9,8 +11,6 @@ You should be able to execute `docker`, `docker-compose`, and ideally `docker-ma
 If you don't have a Docker host, we recommend installing [Docker Toolbox](https://www.docker.com/products/overview#/docker_toolbox). Our default configuration is prepared for that environment.
 
 If you already have a Docker host, make sure the environment variables `DOCKER_HOST`, `DOCKER_CERT_PATH` are set. All build operations will use these settings to create images, start & stop containers, and so on.
-
- All Docker and Gradle commands should be executed in the project root directory.
 
 For Docker volume mapping to work correctly on Windows and OS X ensure that your working directory is located somewhere under your home directory.
 
@@ -73,6 +73,8 @@ Build and push images to our [Docker Hub Account](https://hub.docker.com/u/openr
 
 - Run `./gradlew eclipse`
 - In Eclipse go to `File` > `Import` and import the project as `Existing Projects into Workspace`
+
+The working directory in your IDE must always be set to the **project root directory**. We recommend you set this as the default directory in your IDE for all *Run Configurations*.
 
 ## Working with deployment profiles
 
