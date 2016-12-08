@@ -53,15 +53,6 @@ Check your Docker host machines with `docker-machine ls`.
 To prepare your shell environment (variables), run `eval $(docker-machine env openremote)`. Now  execute `docker [version|images|ps|...]` to interact with your Docker host. You can login directly on your Docker host machine with `vagrant ssh`.
 -->
 
-<!--
-## Building and publishing images
-
-Build Docker images with `./gradlew clean buildImage`. Remove old images before if you don't want to use the Docker build cache. This will build images read to run with the [Demo profile](https://raw.githubusercontent.com/openremote/openremote/master/profile/demo.yml).
-
-Build and push images to our [Docker Hub Account](https://hub.docker.com/u/openremote/): `./gradlew clean pushImage -PdockerHubUsername=username -PdockerHubPassword=secret`
-
--->
-
 ## Importing the project in an IDE
 
 #### IntelliJ IDEA
@@ -87,5 +78,7 @@ The syntax for starting deployment profiles is:
 ```
 docker-compose -p <your_project_name> -f profile/<profile1>.yml -f profile/<profileN>.yml up
 ```
+
+Here `your_project_name` is a convenient handle that groups all Docker images and containers in a deployment by prefixing their names with your project name. You can pick any name you like.
 
 The default configuration of all services is for Docker host IP `192.168.99.100`. If this is not your Docker host IP, you must set various environment variables and configure your stack, see the individual profiles for more information.
