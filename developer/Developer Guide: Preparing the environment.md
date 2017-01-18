@@ -14,7 +14,7 @@ If you already have a Docker host, make sure the environment variables `DOCKER_H
 
 For Docker volume mapping to work correctly on Windows and OS X ensure that your working directory is located somewhere under your home directory.
 
-You might notice that the Docker host virtual machine's time will drift when you are using VirtualBox. You will see authentication on OpenRemote failing and "token is not active" verification errors if the time skew is too large. Until this is [fixed](https://github.com/boot2docker/boot2docker/issues/69), periodically run `docker-machine ssh default 'sudo ntpclient -s -h pool.ntp.org'` to update the virtual machine's clock.*
+You might notice that the Docker host virtual machine's time will drift when you are using VirtualBox. You will see authentication on OpenRemote failing and "token is not active" verification errors if the time skew is too large. Until this is [fixed](https://github.com/boot2docker/boot2docker/issues/69), periodically run `docker-machine ssh default 'sudo ntpclient -s -h pool.ntp.org'` to update the virtual machine's clock.
 
 Working with Docker might leave exited containers, untagged images, and dangling volumes. The following bash function can be used to clean up:
 
