@@ -23,7 +23,7 @@ Configure your IDE as described in [[Developer Guide: Preparing the environment]
 - Working directory: *Must be set to project root directory!*
 - Main class: `org.openremote.manager.server.Main`
 
-You can now open [http://localhost:8080/](http://localhost:8080/) in your browser. The default login is username `admin` with password `CHANGE_ME_ADMIN_PASSWORD`.
+You can now open [http://localhost:8080/](http://localhost:8080/) in your browser. The default login is username `admin` with password `secret`.
 
 *NOTE: Please be aware that currently by default the web server binds to all interfaces (i.e. `0.0.0.0`). This can be a security problem if your development machine's network is not private and secure.*
 
