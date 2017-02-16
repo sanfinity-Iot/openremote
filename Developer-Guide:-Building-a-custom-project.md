@@ -4,7 +4,19 @@ Your service provider code and project-specific configuration can be managed ind
 
 ## Preparing the project repositories
 
-Create a new Git repository for your project. Then add the main [OpenRemote repository](https://github.com/openremote/openremote.git) as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
+Create a new Git repository for your project. Then add the main [OpenRemote repository](https://github.com/openremote/openremote.git) as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules), there are two ways of adding a submodule one which tracks a branch and one which tracks a commit, for development it is advisable to track a branch and for releases it is best to track a commit see [here](http://www.vogella.com/tutorials/GitSubmodules/article.html#submodules_trackbranch) for information about the two methods; basically by tracking a branch you can issue a single command in the parent repo to fetch new commits and update the working tree to the latest commit otherwise it requires two commands:
+
+### Submodule tracking a branch
+
+```
+mkdir myproject/
+cd myproject/
+git init
+git submodule add -b master https://github.com/openremote/openremote.git openremote/
+git submodule status
+```
+
+### Submodule tracking a commit
 
 ```
 mkdir myproject/
@@ -14,7 +26,33 @@ git submodule add https://github.com/openremote/openremote.git openremote/
 git submodule status
 ```
 
-The generated `.gitmodules` file contains a list of all submodules in your project. You commit the submodule link to your project repository, and everyone who checks out your repository must initialize and fetch the submodules when they clone your project for the first time:
+Adding a submodule will generate a special git submodule object (folder) and also add an entry in `.gitmodules`. The generated `.gitmodules` file contains a list of all submodules in your project. You commit the submodule link to your project repository and this tells git which commit to checkout in that submodule.
+
+## Updating the submodule
+
+If your submodule is tracking a branch then you can update the submodule to use the latest commit on that branch in a single command:
+
+```
+git submodule update --remote
+```
+
+If your submodule is tracking a commit then you can update the submodule to use the latest commit by:
+
+```
+cd openremote
+git checkout master
+git pull
+```
+
+**NOTE: Whenever a submodule is updated to use a different commit (no matter whether it tracks a branch or a specific commit) you have to then commit this change in the main repo**
+
+```
+git add openremote
+git commit -m "updated openremote submodule"
+```
+
+## Cloning the repository
+Everyone who checks out your repository must initialize and fetch the submodules when they clone your project for the first time:
 
 ```
 git submodule init
