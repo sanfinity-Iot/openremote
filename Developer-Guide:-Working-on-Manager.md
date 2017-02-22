@@ -4,8 +4,8 @@ Run required containers with:
 
 ```
 docker-compose -p openremote \
- -f profile/dependencies/keycloak_dev.yml \
- -f profile/dependencies/postgresql_dev.yml \
+ -f profile/keycloak_dev.yml \
+ -f profile/postgresql_dev.yml \
  up
 ```
 
@@ -34,14 +34,6 @@ You can now open [http://localhost:8080/](http://localhost:8080/) in your browse
 Execute `./gradlew -p manager test` or run the individual test classes in your IDE directly.
 
 Some of these tests are end-to-end tests that require running background container services. You might want to start with clean containers before running tests and you might have to restart containers after (failed) tests with `docker-compose [up|down]`.
-
-<!-- TODO
-## Building and publishing images
-
-Build Docker images with `./gradlew clean buildImage`. Remove old images before if you don't want to use the Docker build cache.
-
-Build and push images to our [Docker Hub Account](https://hub.docker.com/u/openremote/): `./gradlew clean pushImage -PdockerHubUsername=username -PdockerHubPassword=secret`
---->
 
 ## Updating Manager map data
 
