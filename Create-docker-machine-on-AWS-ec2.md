@@ -1,6 +1,7 @@
 ## Create docker-machine on aws ec2
 
 ### Install docker machine in aws ec2 instance
+You will need to install AWS CLI in order to do this.
 
     docker-machine create --driver amazonec2 --amazonec2-access-key AKIA**** --amazonec2-secret-key **** aws
     eval $(docker-machine env aws)
