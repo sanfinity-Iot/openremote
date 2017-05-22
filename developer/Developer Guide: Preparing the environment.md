@@ -8,13 +8,7 @@ An installation of Java 8 ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE 
 
 You should be able to execute `docker`, `docker-compose`, and ideally `docker-machine` client commands in a shell and communicate with your Docker host.
 
-If you don't have a Docker host, we recommend installing [Docker Toolbox](https://www.docker.com/products/overview#/docker_toolbox). Our default configuration is prepared for that environment.
-
-If you already have a Docker host, make sure the environment variables `DOCKER_HOST`, `DOCKER_CERT_PATH` are set. All build operations will use these settings to create images, start & stop containers, and so on.
-
-For Docker volume mapping to work correctly on Windows and OS X ensure that your working directory is located somewhere under your home directory.
-
-You might notice that the Docker host virtual machine's time will drift when you are using VirtualBox. You will see authentication on OpenRemote failing and "token is not active" verification errors if the time skew is too large. Until this is [fixed](https://github.com/boot2docker/boot2docker/issues/69), periodically run `docker-machine ssh default 'sudo ntpclient -s -h pool.ntp.org'` to update the virtual machine's clock.
+If you don't have a Docker host, we recommend installing [Docker Community Edition](https://www.docker.com/). Our default configuration is prepared for that environment.
 
 Working with Docker might leave exited containers, untagged images, and dangling volumes. The following bash function can be used to clean up:
 
@@ -81,4 +75,4 @@ docker-compose -p <your_project_name> -f profile/<profile1>.yml -f profile/<prof
 
 Here `your_project_name` is a convenient handle that groups all Docker images and containers in a deployment by prefixing their names with your project name. You can pick any name you like.
 
-The default configuration of all services is for Docker host IP `192.168.99.100`. If this is not your Docker host IP, you must set various environment variables and configure your stack, see the individual profiles for more information.
+The default configuration of all services is for Docker host address `localhost`. If this is not your Docker host, you must set various environment variables and configure your stack, see the individual profiles for more information.

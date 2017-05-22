@@ -27,8 +27,6 @@ You can now open [http://localhost:8080/](http://localhost:8080/) in your browse
 
 *NOTE: Please be aware that currently by default the web server binds to all interfaces (i.e. `0.0.0.0`). This can be a security problem if your development machine's network is not private and secure.*
 
-*NOTE: During development it can be useful to disable all security checks on the HTTP remote API, for example, to test without authentication and authorization in a simple HTTP client such as `curl`. Start the Manager with the `DISABLE_API_SECURITY=true` environment variable setting to disable security.*
-
 ## Executing Manager tests
 
 Execute `./gradlew -p manager test` or run the individual test classes in your IDE directly.
@@ -37,7 +35,7 @@ Some of these tests are end-to-end tests that require running background contain
 
 ## Updating Manager map data
 
-We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://github.com/osm2vectortiles/osm2vectortiles.
+We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
 
 You can extract smaller tilesets with the following procedure:
 
