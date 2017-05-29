@@ -2,13 +2,13 @@ Welcome to the OpenRemote wiki.
 
 ## Quickstart
 
-Checkout the main (main OpenRemote project)(https://github.com/openremote/openremote) and run a demo setup with Docker Compose (install [Docker Community Edition](https://www.docker.com/)):
+Checkout the [main OpenRemote project](https://github.com/openremote/openremote) and run a demo setup with [Docker Community Edition](https://www.docker.com/):
 
 ```
 docker-compose -p openremote -f profile/demo.yml up
 ```
 
-See the [README](https://github.com/openremote/openremote/blob/master/README.md) for more information.
+Access the manager UI and API on https://localhost/ with username admin and password secret (accept the 'insecure' self-signed SSL certificate). Configuration options of the images are documented in the compose profile `demo.yml`.
 
 ## Developer Guide
 
