@@ -54,6 +54,8 @@ To prepare your shell environment (variables), run `eval $(docker-machine env op
 - Create a `New Project From Existing Sources` and import as a Gradle project
 - Note that IntelliJ might time out if a background Gradle process (for example, running the GWT compiler server) blocks the Gradle import. Stop and start the background process to unblock.
 
+The log messages of the running application can be colour-highlighted with the [GrepConsole plugin](https://plugins.jetbrains.com/plugin/7125-grep-console) and our [configuration](https://gist.github.com/christianbauer/9cd3ef6a871c2a3472bd70a216f3eb14).
+
 #### Eclipse
 
 - Run `./gradlew eclipse`
