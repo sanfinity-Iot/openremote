@@ -33,6 +33,10 @@ Execute `./gradlew -p manager test` or run the individual test classes in your I
 
 Some of these tests are end-to-end tests that require running background container services. You might want to start with clean containers before running tests and you might have to restart containers after (failed) tests with `docker-compose [up|down]`.
 
+To improve creation and execution of ad-hoc tests in the IDE you should set the default working directory for JUnit Run Configurations:
+
+[[resources/Intellij - Run configuration default settings.png]]
+
 ## Updating Manager map data
 
 We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
