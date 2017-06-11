@@ -1,4 +1,4 @@
-An asset can be anything that is connected to your system in some way. An asset is always attached to a tenant, so data is not shared between tenants. OpenRemote stores your current asset status in its database.
+An asset can be anything that is connected to your system in some way. An asset is always attached to a tenant, so data is not shared between tenants. OpenRemote stores your current asset status in its database, and manages it in rules and flows. This collectively is called the context of your OpenRemote system.
 
 An asset might be an actual external service or an installed device at some location, or you can use the asset hierarchy to model an organizational structure. An example would be a Customer asset that is the parent of some Device assets which are currently in use for that customer.
 
@@ -6,7 +6,7 @@ OpenRemote understands certain built-in asset types and provides extra functiona
 
 ## Asset security
 
-The superuser who has full access across all tenants (realms). An OpenRemote installation has only one superuser, and it's always named `admin` and it's always in the `master` realm. It cannot be renamed or deleted, just like the master realm. Any number of new realms and therefore tenants may be created.
+The superuser has full access across all tenants (realms). An OpenRemote installation has only one superuser, and it's always named `admin` and it's always in the `master` realm. It cannot be renamed or deleted, just like the master realm. Any number of new realms and therefore tenants may be created.
 
 Each realm can have regular users. Those would usually have administrative functions within a realm, they manage the realm. Depending on assigned roles, a regular user may read/write any asset data in the realm or manage other users in the realm.
 
