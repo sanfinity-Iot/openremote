@@ -10,6 +10,10 @@ docker-compose -p openremote -f profile/demo.yml up
 
 Access the manager UI and API on https://localhost/ with username admin and password secret (accept the 'insecure' self-signed SSL certificate). Configuration options of the images are documented in the compose profile `demo.yml`.
 
+## Architecture overview
+
+[[resources/Architecture.png]]
+
 ## Developer Guide
 
 * [[Preparing the environment|Developer Guide: Preparing the environment]]
