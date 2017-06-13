@@ -679,7 +679,7 @@ Applications}</string>
 			<integer>597</integer>
 			<key>Points</key>
 			<array>
-				<string>{671.61027292195126, 419.07556915283203}</string>
+				<string>{671.61027292195126, 416}</string>
 				<string>{671.61025841331934, 465.66913604736328}</string>
 			</array>
 			<key>Style</key>
@@ -806,7 +806,7 @@ Applications}</string>
 			<key>Points</key>
 			<array>
 				<string>{669.24998651876308, 299.25617199538101}</string>
-				<string>{671.61027537070879, 371.07556915283203}</string>
+				<string>{671.61027537070879, 367}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -830,7 +830,7 @@ Applications}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{609.98527292195126, 371.07556915283203}, {123.25, 48}}</string>
+			<string>{{609.98527292195126, 367}, {123.25, 49}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1458,7 +1458,7 @@ Gateway}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{595.73168683827419, 125.25123228930215}, {81, 24}}</string>
+			<string>{{598.21973456583976, 125.25123228930215}, {81, 24}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -1530,7 +1530,7 @@ Gateway}</string>
 			<integer>585</integer>
 			<key>Points</key>
 			<array>
-				<string>{633.94116388692714, 98.919891357421875}</string>
+				<string>{638.76965509786464, 98.919891357421875}</string>
 				<string>{638.66666570639256, 178.00000762939453}</string>
 			</array>
 			<key>Style</key>
@@ -1555,7 +1555,7 @@ Gateway}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{563.99998651876308, 55.428504943847656}, {139.88235473632812, 43.491386413574219}}</string>
+			<string>{{568.82847772970058, 36.919895172119141}, {139.88235473632812, 61.999996185302734}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1971,7 +1971,7 @@ Manager}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-06-13 14:29:24 +0000</string>
+	<string>2017-06-13 14:30:34 +0000</string>
 	<key>Modifier</key>
 	<string>Christian Bauer</string>
 	<key>NotesVisible</key>
