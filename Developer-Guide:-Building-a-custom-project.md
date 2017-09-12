@@ -81,7 +81,7 @@ Initialize Gradle wrapper:
 
 ```
 cd myproject/
-gradle wrapper --gradle-version 2.13
+gradle wrapper --gradle-version 3.3
 ```
 
 Then write a `settings.gradle` file:
@@ -104,47 +104,11 @@ These settings will load sub-projects (those with a `build.gradle` file) recursi
 Continue with a `build.gradle` file in your project directory:
 
 ```
-apply plugin: "java"
-apply plugin: "groovy"
-
-version = projectVersion
-sourceCompatibility = "1.8"
-
-repositories {
-    mavenCentral()
-    jcenter()
-    maven {
-        url "http://m2repo.openremote.com/content/groups/public/"
+allprojects {
+    // Apply common project nbse but exclude submodule, it has its own build.gradle
+    if (!path.startsWith(":openremote")) {
+        apply from: "${project(":openremote").projectDir}/project.gradle"
     }
-}
-
-dependencies {
-
-    // If we have a git submodule use a project dependency, otherwise use artifact
-    compile(findProject(":openremote") != null
-            ? project(":openremote:agent")
-            : "org.openremote:openremote-agent:3.0-SNAPSHOT")
-
-    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
-
-    compile "org.slf4j:slf4j-api:$slf4jVersion"
-    compile "org.slf4j:slf4j-jdk14:$slf4jVersion"
-    compile "org.slf4j:jcl-over-slf4j:$slf4jVersion"
-    compile "org.slf4j:log4j-over-slf4j:$slf4jVersion"
-
-    testCompile "junit:junit:$junitVersion"
-    testCompile "org.spockframework:spock-core:$spockVersion"
-
-    // If we have a git submodule use a project dependency, otherwise use artifact
-    testCompile(findProject(":openremote") != null
-            ? project(":openremote:manager:test")
-            : "org.openremote:openremote-manager-test:3.0-SNAPSHOT")
-}
-
-test {
-    workingDir = (findProject(":openremote") != null
-            ? project(":openremote").projectDir
-            : rootProject.projectDir)
 }
 ```
 
@@ -159,7 +123,7 @@ projectVersion = 1.0-SNAPSHOT
 
 slf4jVersion = 1.7.10
 groovyVersion = 2.4.1
-spockVersion = 1.0-groovy-2.4
+spockVersion = 1.1-groovy-2.4
 junitVersion = 4.12
 ```
 
