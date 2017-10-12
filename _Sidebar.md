@@ -6,7 +6,7 @@
 * [[Working on Manager|Developer Guide: Working on Manager]]
 * [[Working on Consoles|Developer Guide: Working on Consoles]]
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
-* [[Setup Docker engine|Developer Guide: Setup Docker engine]]
+* [[Installing a Docker engine|Developer Guide: Installing a Docker engine]]
 * [[Connecting to a Docker engine|Developer Guide: Connecting to a Docker engine]] 
 * [[Writing Console applications|Developer Guide: Writing Console applications]]
 * [[The Asset model and API|Developer Guide: The Asset model and API]]
