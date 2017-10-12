@@ -8,7 +8,7 @@
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
 * [[Installing a Docker engine|Developer Guide: Installing a Docker engine]]
 * [[Connecting to a Docker engine|Developer Guide: Connecting to a Docker engine]] 
-* [[Deploying a custom project|Developer Guide: Deploying a custom project]]
+* [[Deploying to a docker engine|Developer Guide: Deploying to a docker engine]]
 * [[Writing Console applications|Developer Guide: Writing Console applications]]
 * [[The Asset model and API|Developer Guide: The Asset model and API]]
 * [[Connecting Protocol adapters with Agents|Developer Guide: Connecting Protocol adapters with Agents]]
