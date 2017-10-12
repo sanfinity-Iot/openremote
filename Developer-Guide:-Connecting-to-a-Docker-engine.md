@@ -8,7 +8,7 @@ docker-machine env -u
 # Remote engine
 To connect to a remote engine via SSH (generic Docker machine driver) you need to ensure the Docker engine's SSH keys are available locally in:
 
-~/.docker/machine/machines/<DOCKER MACHINE NAME>/
+`~/.docker/machine/machines/<DOCKER MACHINE NAME>/`
 
 If you installed the remote docker engine on your local machine then the certificates should already be in place; otherwise you will need to obtain the certificates which is outside the scope of this document.
 
