@@ -12,7 +12,7 @@ To connect to a remote engine via SSH (generic Docker machine driver) you need t
 
 If you installed the remote docker engine on your local machine then the certificates should already be in place; otherwise you will need to obtain the certificates and ensure the paths in config.json match your system (getting the certificates is outside the scope of this document if in doubt contact whomever installed docker engine on the remote machine).
 
-Assuming the Docker engine SSH keys are available locally as described above then ensure that `docker-machine ls` shows the remote engine you want to connect to and its status is `Ready`.
+Assuming the Docker engine SSH keys are available locally as described above then ensure that `docker-machine ls` shows the remote engine you want to connect to and its state is `Running`.
 
 To connect to the engine:
 
