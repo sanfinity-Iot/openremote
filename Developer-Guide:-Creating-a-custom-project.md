@@ -155,3 +155,6 @@ class MyProjectTest extends Specification implements ManagerContainerTrait {
     }
 }
 ```
+
+## Docker deployment profiles
+Please refer to the [Developer Guide](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Deploying-to-a-docker-engine) for information about Docker profiles. Custom profiles and standard profile overrides for the custom project should be stored in the `profile` folder.
