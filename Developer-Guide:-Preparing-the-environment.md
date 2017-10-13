@@ -14,7 +14,7 @@ docker ps
 docker-compose version
 docker-machine ls
 ```
-A Docker engine is required to host the services used. Please refer to Docker sections of the Developer Guide for help in installing and using Docker.
+A Docker engine is required to host the services used. Please refer to the Docker sections of the Developer Guide for help in installing and using Docker.
 
 All Docker and Gradle commands **must be executed in the project root directory**.
 
