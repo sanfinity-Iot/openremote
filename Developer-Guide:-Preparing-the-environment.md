@@ -1,51 +1,22 @@
-A Docker host is required to work on the main [OpenRemote repository](https://github.com/openremote/openremote/). We are using [Docker Compose](https://docs.docker.com/compose/) for most deployment tasks.
+## Dependencies
+Ensure you have installed and configured the following tools:
 
-An installation of Java 8 ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)) is also required.
+* Java 8 JDK ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
+* [GIT](https://git-scm.com/downloads)
+* [Docker](https://docs.docker.com/engine/installation/)
 
- All Docker and Gradle commands **must be executed in the project root directory**.
-
-## Configuring a Docker host
-
-You should be able to execute `docker`, `docker-compose`, and ideally `docker-machine` client commands in a shell and communicate with your Docker host.
-
-If you don't have a Docker host, we recommend installing [Docker Community Edition](https://www.docker.com/). Our default configuration is prepared for that environment.
-
-Working with Docker might leave exited containers, untagged images, and dangling volumes. The following bash function can be used to clean up:
+Ensure the following commands execute successfully:
 
 ```
-function dcleanup(){
-    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
-    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
-    docker volume rm $(docker volume ls -qf dangling=true 2>/dev/null) 2>/dev/null
-}
+java -version
+git --version
+docker ps
+docker-compose version
+docker-machine ls
 ```
+A Docker engine is required to host the services used. Please refer to Docker sections of the Developer Guide for help in installing and using Docker.
 
-<!--
-## Setting up a custom Docker host
-
-If you do not have Docker host, you can install a virtual machine as follows:
-
-- Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-- Install [Vagrant](http://www.vagrantup.com/downloads.html)
-- Install [Docker Toolbox](https://www.docker.com/products/overview#/docker_toolbox)
-- Check out the [OpenRemote project](https://github.com/openremote/openremote) and change to `$PROJECT_DIRECTORY/platform/`
-- Execute `vagrant up` to start a virtual machine
-
-Configure the virtual machine as a Docker host machine with:
-```
-docker-machine create \
-  -d generic \
-  --generic-ssh-user=$(vagrant ssh-config | grep ' User ' | cut -d ' ' -f 4) \
-  --generic-ssh-key=$(vagrant ssh-config | grep IdentityFile | cut -d ' ' -f 4) \
-  --generic-ip-address=$(vagrant ssh-config | grep HostName | cut -d ' ' -f 4) \
-  --generic-ssh-port=$(vagrant ssh-config | grep Port | cut -d ' ' -f 4) \
-  openremote
-```
-
-Check your Docker host machines with `docker-machine ls`.
-
-To prepare your shell environment (variables), run `eval $(docker-machine env openremote)`. Now  execute `docker [version|images|ps|...]` to interact with your Docker host. You can login directly on your Docker host machine with `vagrant ssh`.
--->
+All Docker and Gradle commands **must be executed in the project root directory**.
 
 ## Importing the project in an IDE
 
@@ -62,6 +33,3 @@ The log messages of the running application can be colour-highlighted with the [
 - In Eclipse go to `File` > `Import` and import the project as `Existing Projects into Workspace`
 
 The working directory in your IDE must always be set to the **project root directory**. We recommend you set this as the default directory in your IDE for all *Run Configurations*.
-
-## Working with deployment profiles
-
