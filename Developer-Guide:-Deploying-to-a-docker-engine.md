@@ -52,3 +52,14 @@ When deploying profiles you can provide a project name to prefix the container n
 ```
 docker-compose -p <your_project_name> -f <profile> -f <profile_override> up -d <service1> <service2> ...
 ```
+
+## Useful notes
+Working with Docker might leave exited containers, untagged images, and dangling volumes. The following bash function can be used to clean up:
+
+```
+function dcleanup(){
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+    docker volume rm $(docker volume ls -qf dangling=true 2>/dev/null) 2>/dev/null
+}
+```
