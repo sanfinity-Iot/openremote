@@ -65,16 +65,3 @@ The working directory in your IDE must always be set to the **project root direc
 
 ## Working with deployment profiles
 
-Before you can work on OpenRemote code, you must start dependencies by selecting one or more Docker Compose configuration profiles.
-
-For example, the DMBS and the identity service are required to work on most of the projects. These containers are started and run in the background, the processes and tests you then execute in your IDE utilize the containers.
-
-The syntax for starting deployment profiles is:
-
-```
-docker-compose -p <your_project_name> -f profile/<profile1>.yml -f profile/<profileN>.yml up
-```
-
-Here `your_project_name` is a convenient handle that groups all Docker images and containers in a deployment by prefixing their names with your project name. You can pick any name you like.
-
-The default configuration of all services is for Docker host address `localhost`. If this is not your Docker host, you must set various environment variables and configure your stack, see the individual profiles for more information.
