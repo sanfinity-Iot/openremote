@@ -8,7 +8,7 @@
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
 * [[Installing a Docker engine|Developer Guide: Installing a Docker engine]]
 * [[Connecting to a Docker engine|Developer Guide: Connecting to a Docker engine]] 
-* [[Deploying to a Docker engine|Developer Guide: Deploying to a Eocker engine]]
+* [[Deploying to a Docker engine|Developer Guide: Deploying to a Docker engine]]
 * [[Pushing to Docker Hub|Developer Guide: Pushing to Docker Hub]]
 * [[Writing Console applications|Developer Guide: Writing Console applications]]
 * [[The Asset model and API|Developer Guide: The Asset model and API]]
