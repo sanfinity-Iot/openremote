@@ -99,13 +99,13 @@ fileTree(dir: rootDir, include: "**/build.gradle")
 }
 ```
 
-These settings will load sub-projects (those with a `build.gradle` file) recursively, so the everything under the `openremote/` submodule will become part of your project. Your project is the root project of the Gradle build.
+These settings will load sub-projects (those with a `build.gradle` file) recursively, so everything under the `openremote/` submodule will become part of your project. Your project is the root project of the Gradle build.
 
 Continue with a `build.gradle` file in your project directory:
 
 ```
 allprojects {
-    // Apply common project nbse but exclude submodule, it has its own build.gradle
+    // Apply common project build script but exclude submodule, it has its own build.gradle
     if (!path.startsWith(":openremote")) {
         apply from: "${project(":openremote").projectDir}/project.gradle"
     }
