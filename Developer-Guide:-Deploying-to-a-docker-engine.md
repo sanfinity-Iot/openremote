@@ -40,6 +40,15 @@ docker-compose -f manager.yml -f manager.demo.yml up -d postgresql keycloak
 
 **NOTE: Services linked to the requested services will also be started**
 
+## Building/Pulling services
+Services will be built automatically when they do not exist in the docker engine image cache or when the Dockerfile for the service changes. **Docker does not track changes to the files used in a service so when code changes are made you will need to manually force a build of the service**.
+
+It is possible to force docker to pull images from the openremote Docker Hub repository by using the following command:
+```
+docker-compose -f <PROFILE> pull <SERVICE> <SERVICE>... e.g. docker-compose -f profile/manager.yml pull (pull all services)
+```
+
+
 ## Deploying profiles
 Deploying profiles requires identifying:
 
