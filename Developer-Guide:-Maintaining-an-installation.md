@@ -30,18 +30,26 @@ GCT: Total garbage collection time.
 
 Increase the log detail by adjusting the levels; first copy [logging.properties](https://raw.githubusercontent.com/openremote/openremote/master/deployment/manager/logging.properties) onto your Docker host (e.g. to `/data/manager/`) and then edit the file. 
 
-To get more details or set JVM options, edit your `docker-compose.yml` and change or add an `entrypoint` section:
+Edit your `docker-compose.yml`:
 
 ```
   manager:
-    entrypoint:
-      - "java"
-      - "-Xmx1024m"
-      - "-XX:+PrintGCDetails"
-      - "-cp"
-      - "/opt/app/lib/*"
-      - "org.openremote.manager.server.Main"
+    environment:
+
+      # Optional: Override built-in logging.properties with a file of your choice.
+      # LOGGING_CONFIG_FILE: /my/manager/logging.properties
+
+    # Override entrypoint for custom JVM options
+    # entrypoint:
+    #  - "java"
+    #  - "-Xmx1024m"
+    #  - "-XX:+PrintGCDetails"
+    #  - "-cp"
+    #  - "/opt/app/lib/*"
+    #  - "org.openremote.manager.server.Main"
 ```
+
+See [demo.yml](https://github.com/openremote/openremote/blob/master/profile/demo.yml) for all options.
 
 After changing any configuration, restart the service with:
 
