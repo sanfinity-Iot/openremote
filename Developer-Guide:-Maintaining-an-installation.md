@@ -26,6 +26,41 @@ FGCT: Full garbage collection time.
 GCT: Total garbage collection time.
 ```
 
+Force garbage collection with: 
+
+```
+docker exec -it <Manager Container ID/Name> /usr/bin/jcmd 1 GC.run
+```
+
+Get current memory configuration:
+
+```
+docker exec -it <Manager Container ID/Name> /usr/bin/jstat -gccapacity 1
+```
+
+Output contains:
+
+```
+NGCMN: Minimum new generation capacity (kB).
+NGCMX: Maximum new generation capacity (kB).
+NGC: Current new generation capacity (kB).
+S0C: Current survivor space 0 capacity (kB).
+S1C: Current survivor space 1 capacity (kB).
+EC: Current eden space capacity (kB).
+OGCMN: Minimum old generation capacity (kB).
+OGCMX: Maximum old generation capacity (kB).
+OGC: Current old generation capacity (kB).
+OC: Current old space capacity (kB).
+MCMN: Minimum metaspace capacity (kB).
+MCMX: Maximum metaspace capacity (kB).
+MC: Metaspace capacity (kB).
+CCSMN: Compressed class space minimum capacity (kB).
+CCSMX: Compressed class space maximum capacity (kB).
+CCSC: Compressed class space capacity (kB).
+YGC: Number of young generation GC events.
+FGC: Number of full GC events.
+```
+
 ## Restarting a Manager with new settings
 
 Increase the log detail by adjusting the levels; first copy [logging.properties](https://raw.githubusercontent.com/openremote/openremote/master/deployment/manager/logging.properties) onto your Docker host (e.g. to `/data/manager/`) and then edit the file. 
