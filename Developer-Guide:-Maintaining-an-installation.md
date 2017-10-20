@@ -1,6 +1,6 @@
 ## Monitoring
 
-Tail log output of all containers with `docker-compose -p <Project Name -f <Your docker-compose.yml> logs -f`.
+Tail log output of all containers with `docker-compose -p <Project Name> -f <Your docker-compose.yml> logs -f`.
 
 Use `docker stats` to show CPU, memory, network read/writes, and total disk read/writes for running containers.
 
@@ -40,4 +40,14 @@ To get more details or set JVM options, edit your `docker-compose.yml` and chang
       - "-cp"
       - "/opt/app/lib/*"
       - "org.openremote.manager.server.Main"
+```
+
+Then restart the service with:
+
+```
+SERVICE=manager && PROJECT=<Your project name> && PROFILE=<Your docker-compose.yml> && \
+  docker-compose -p $PROJECT -f $PROFILE stop $SERVICE && \
+  docker-compose -p $PROJECT -f $PROFILE rm -f $SERVICE && \
+  docker-compose -p $PROJECT -f $PROFILE create $SERVICE && \
+  docker-compose -p $PROJECT -f $PROFILE start $SERVICE 
 ```
