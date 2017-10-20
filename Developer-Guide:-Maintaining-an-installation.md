@@ -98,3 +98,16 @@ SERVICE=manager && PROJECT=<Your project name> && PROFILE=<Your docker-compose.y
 
 Make sure the `SETUP_*` variables are configured as needed, you may wipe your database if this is wrong!
 
+## Working on the JVM with a JMX command-line
+
+Run [jmxterm](http://wiki.cyclopsgroup.org/jmxterm/manual.html):
+
+```
+docker exec -it <Manager Container ID/Name> java -cp /opt/app/lib/* org.cyclopsgroup.jmxterm.boot.CliMain
+
+Welcome to JMX terminal. Type "help" for available commands.
+$>open 1
+#Connection to 1 is opened
+$>beans
+...
+```
