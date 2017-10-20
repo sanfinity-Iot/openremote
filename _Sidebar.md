@@ -10,6 +10,7 @@
 * [[Connecting to a Docker engine|Developer Guide: Connecting to a Docker engine]] 
 * [[Deploying to a Docker engine|Developer Guide: Deploying to a Docker engine]]
 * [[Pushing to Docker Hub|Developer Guide: Pushing to Docker Hub]]
+* [[Maintaining an installation|Developer Guide: Maintaining an installation]]
 * [[Writing Console applications|Developer Guide: Writing Console applications]]
 * [[The Asset model and API|Developer Guide: The Asset model and API]]
 * [[Connecting Protocol adapters with Agents|Developer Guide: Connecting Protocol adapters with Agents]]
