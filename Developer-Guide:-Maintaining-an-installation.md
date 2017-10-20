@@ -28,3 +28,16 @@ FGCT: Full garbage collection time.
 GCT: Total garbage collection time.
 ```
 
+## Restarting a Manager with new settings
+
+To get more details or set JVM options, edit your `docker-compose.yml` and change or add an `entrypoint` section:
+
+```
+    entrypoint:
+      - "java"
+      - "-Xmx1024m"
+      - "-XX:+PrintGCDetails"
+      - "-cp"
+      - "/opt/app/lib/*"
+      - "org.openremote.manager.server.Main"
+```
