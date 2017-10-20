@@ -28,6 +28,8 @@ GCT: Total garbage collection time.
 
 ## Restarting a Manager with new settings
 
+Increase the log detail by adjusting the levels; first copy [logging.properties](https://raw.githubusercontent.com/openremote/openremote/master/deployment/manager/logging.properties) onto your Docker host (e.g. to `/data/manager/`) and then edit the file. 
+
 To get more details or set JVM options, edit your `docker-compose.yml` and change or add an `entrypoint` section:
 
 ```
@@ -41,7 +43,7 @@ To get more details or set JVM options, edit your `docker-compose.yml` and chang
       - "org.openremote.manager.server.Main"
 ```
 
-Then restart the service with:
+After changing any configuration, restart the service with:
 
 ```
 SERVICE=manager && PROJECT=<Your project name> && PROFILE=<Your docker-compose.yml> && \
@@ -50,3 +52,6 @@ SERVICE=manager && PROJECT=<Your project name> && PROFILE=<Your docker-compose.y
   docker-compose -p $PROJECT -f $PROFILE create $SERVICE && \
   docker-compose -p $PROJECT -f $PROFILE start $SERVICE 
 ```
+
+Make sure the `SETUP_*` variables are configured as needed, you may wipe your database if this is wrong!
+
