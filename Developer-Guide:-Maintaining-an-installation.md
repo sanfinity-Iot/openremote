@@ -33,6 +33,7 @@ GCT: Total garbage collection time.
 To get more details or set JVM options, edit your `docker-compose.yml` and change or add an `entrypoint` section:
 
 ```
+  manager:
     entrypoint:
       - "java"
       - "-Xmx1024m"
