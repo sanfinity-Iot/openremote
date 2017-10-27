@@ -11,7 +11,11 @@ For a local engine (developer workstation setup) simply installing Docker Commun
 ## Remote Engine
 For a remote engine (hosted deployment), you need SSH public key access to a Linux host (preferably CentOS), and then Docker Machine can do the rest. Follow the instructions [here](https://docs.docker.com/machine/drivers/generic/).
 
-Fix the generated Docker client credentials configuration files by moving `~/.docker/machine/certs/*` into `~/.docker/machine/machines/<DOCKER MACHINE NAME>/` and fixing the paths in `~/.docker/machine/machines/<DOCKER MACHINE NAME>/config.json`. For Windows you will have to use escaped backslashes e.g. `C:\\Users\Me\\.docker\\machine\\`.
+When a remote engine is first installed the client credentials should be zipped and made available in a private and secure location. The client credentials can be found at `~/.docker/machine/machines/<DOCKER MACHINE NAME>/`.
+
+If the remote host already has a running docker engine then you can manually copy the client credentials to your local machine by unzipping the credentials into `~/.docker/machine/machines/<DOCKER MACHINE NAME>/` and then you will need to fix the paths in `~/.docker/machine/machines/<DOCKER MACHINE NAME>/config.json`.
+
+***For Windows you will have to use escaped backslashes e.g. `C:\\Users\Me\\.docker\\machine\\`.***
 
 Once the remote engine is installed ensure that `docker-machine ls` shows the new engine and that the State is `Running`.
 
