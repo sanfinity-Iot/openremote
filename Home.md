@@ -8,6 +8,8 @@ Welcome to the OpenRemote wiki.
 
 * [Agent](https://github.com/openremote/openremote/tree/master/agent) - The agent connects sensors and actuators to your IoT network and creates the interface to 3rd party APIs and service protocols. OpenRemote has many built-in protocols and it's easy to create new adapters. Co-locate your agents with backend services or install agents on gateways, close to devices.
 
+* [Designer](https://github.com/openremote/openremote/tree/master/designer) - In OpenRemote 2.x you can create control panels and end-user applications with a visual designer tool. In OpenRemote 3.x, we provide web components for any HTML design tool, you don't need much more than a simple text editor to build custom automation panels, see [Example Home](https://github.com/openremote/Documentation/wiki/Example-Home).
+
 ## Quickstart
 
 Checkout the [main OpenRemote project](https://github.com/openremote/openremote) and run a demo setup with [Docker Community Edition](https://www.docker.com/):
