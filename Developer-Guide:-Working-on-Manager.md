@@ -2,7 +2,7 @@ Working on the manager means working on the Manager backend and/or the Manager C
 
 ## Starting required services
 
-The Manager backend requires the postgres and keycloak services to be running on localhost refer to the Deploy profile in the [Docker profiles guide](../Developer-Guide:-Deploying-to-a-Docker-engine#docker-deployment-profiles).
+The Manager backend requires the postgres and keycloak services to be running on localhost refer to the Deploy profile in the [Docker profiles guide](./Developer-Guide:-Deploying-to-a-Docker-engine#docker-deployment-profiles).
 
 Run required services with:
 
