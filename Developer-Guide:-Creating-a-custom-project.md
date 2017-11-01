@@ -9,7 +9,7 @@ Custom projects should have a dependency on the main OpenRemote repository (usin
 * console - Should replace the console folder of the main OpenRemote repository
 * deployment - Should replace the deployment folder of the main OpenRemote repository
 * openremote - Submodule of main OpenRemote repository
-* profile - Docker profiles for deploying services; refer to the [Developer Guide](./Developer-Guide%3A-Deploying-to-a-Docker-engine#docker-deployment-profiles) for information about Docker profiles and conventions.
+* profile - Should replace the profile folder of the main OpenRemote repository and the services should link to the main repository services; refer to the [Developer Guide](./Developer-Guide%3A-Deploying-to-a-Docker-engine#docker-deployment-profiles) for information about Docker profiles and conventions.
 * setup - Should contain custom setup tasks (loaded at runtime using ServiceLoader) and tests for the custom project
 
 
