@@ -2,6 +2,17 @@ The setup described here is useful if you want to create a custom project that e
 
 Your service provider code and project-specific configuration can be managed independently. You can track and merge changes on the upstream main OpenRemote project, targeting specific tags for your integration or always keeping up with the main development branch.
 
+## Project Structure
+
+Custom projects should have a dependency on the main OpenRemote repository (using a submodule as described below) and the following folder(s) should be used:
+
+* console - Should replace the console folder of the main OpenRemote repository
+* deployment - Should replace the deployment folder of the main OpenRemote repository
+* openremote - Submodule of main OpenRemote repository
+* profile - Docker profiles for deploying services; refer to the [Developer Guide](./Developer-Guide%3A-Deploying-to-a-Docker-engine#docker-deployment-profiles) for information about Docker profiles and conventions.
+* setup - Should contain custom setup tasks (loaded at runtime using ServiceLoader) and tests for the custom project
+
+
 ## Working with the git repositories
 
 First you must create a new Git repository for your project, then add the main [OpenRemote repository](https://github.com/openremote/openremote.git) as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Your project is the root project, and the main OpenRemote repository and its projects become sub-projects of your project, on which you can depend in your build and code.
@@ -155,6 +166,3 @@ class MyProjectTest extends Specification implements ManagerContainerTrait {
     }
 }
 ```
-
-## Docker deployment profiles
-Please refer to the [Developer Guide](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Deploying-to-a-docker-engine) for information about Docker profiles. Custom profiles and standard profile overrides for the custom project should be stored in the `profile` folder.
