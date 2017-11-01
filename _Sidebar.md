@@ -5,6 +5,7 @@
 * [[Preparing the environment|Developer Guide: Preparing the environment]]
 * [[Working on Manager|Developer Guide: Working on Manager]]
 * [[Working on Consoles|Developer Guide: Working on Consoles]]
+* [[Working on Mobile Apps|Developer Guide: Working on Mobile Apps]]
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
 * [[Installing a Docker engine|Developer Guide: Installing a Docker engine]]
 * [[Connecting to a Docker engine|Developer Guide: Connecting to a Docker engine]] 
