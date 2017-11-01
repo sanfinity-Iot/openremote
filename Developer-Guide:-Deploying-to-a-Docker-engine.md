@@ -15,7 +15,7 @@ The following services are used by the main OpenRemote code base:
 * postgresql - PostgreSQL DB
 * keycloak - Keycloak identity provider service
 
-## <a name="profiles"></a>Docker deployment profiles
+## Docker deployment profiles
 
 Docker deployment profiles (Docker Compose files) are used to configure and start required services; the standard profiles are located in the `profile` folder of the main OpenRemote repository. Custom projects should use the same profile naming convention where possible and just link to the main repository profiles; but custom projects can define new profiles as required (they should also be stored in `profile` folder of the custom project repository).
 
