@@ -1,12 +1,14 @@
+Working on the manager means working on the Manager backend and/or the Manager Client.
+
 ## Starting required services
 
-Run required containers with:
+The Manager backend requires the postgres and keycloak services to be running on localhost refer to the Deploy profile in the [Docker profiles guide](../Developer-Guide:-Deploying-to-a-Docker-engine#docker-deployment-profiles).
+
+Run required services with:
 
 ```
-docker-compose -p openremote \
- -f profile/keycloak_dev.yml \
- -f profile/postgresql_dev.yml \
- up
+docker-compose -f profile/dev.yml down
+docker-compose -f profile/dev.yml up --build
 ```
 
 You also have to start the GWT compiler and keep it running in the background. This service listens for compilation requests and transforms Java into JavaScript code:
