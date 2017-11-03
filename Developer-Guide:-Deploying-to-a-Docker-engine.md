@@ -80,12 +80,17 @@ docker-compose -p <your_project_name> -f <profile> -f <profile_override> up -d <
 
 ## Useful notes
 
-Working with Docker might leave exited containers, untagged images, and dangling volumes. The following bash function can be used to clean up:
+Working with Docker might leave exited containers, untagged images. The following bash function can be used to clean up:
 
 ```
 function dcleanup(){
     docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
     docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
-    docker volume rm $(docker volume ls -qf dangling=true 2>/dev/null) 2>/dev/null
 }
+```
+
+To remove data volumes no longer referenced by a container (deleting your persistent data!), use:
+
+```
+docker volume prune
 ```
