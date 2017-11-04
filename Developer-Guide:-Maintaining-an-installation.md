@@ -4,9 +4,10 @@ Tail log output of all containers with `docker-compose -p openremote -f profile/
 
 Use `docker stats` to show CPU, memory, network read/writes, and total disk read/writes for running containers.
 
-Use [jstat](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstat.html) to monitor a running system/JVM. The following command will connect to a Manager and print garbage collection statistics (polling 1000 times, waiting for 2.5 seconds):
 
 ## Diagnosing JVM memory problems
+
+Use [jstat](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstat.html) to monitor a running system/JVM. 
 
 Get current memory configuration:
 
@@ -14,6 +15,7 @@ Get current memory configuration:
 docker exec -it openremote_manager_1 /usr/bin/jstat -gccapacity 1
 ```
 
+The following command will connect to a Manager and print garbage collection statistics (polling 1000 times, waiting for 2.5 seconds):
 
 ```
 docker exec -it openremote_manager_1 /usr/bin/jstat -gcutil 1 2500 1000
@@ -40,7 +42,6 @@ Force garbage collection with:
 ```
 docker exec -it openremote_manager_1 /usr/bin/jcmd 1 GC.run
 ```
-
 
 Output contains:
 
