@@ -39,19 +39,6 @@ To improve creation and execution of ad-hoc tests in the IDE you should set the 
 
 [[resources/Intellij - Run configuration default settings.png]]
 
-## Updating Manager map data
-
-We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
-
-You can extract smaller tilesets with the following procedure:
-
-1. Install tilelive converter: 
-    `npm install -g mapnik mbtiles tilelive tilelive-bridge`
-1. Select and copy boundary box coordinates of desired region: 
-    http://tools.geofabrik.de/calc/#tab=1 
-1. Extract the region with: 
-    `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
-
 <!--
 ## Configuring security
 
