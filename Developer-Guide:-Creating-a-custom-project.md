@@ -6,12 +6,10 @@ Your service provider code and project-specific configuration can be managed ind
 
 Custom projects should have a dependency on the main OpenRemote repository (using a submodule as described below) and the following folder(s) should be used:
 
-* console - Should replace the console folder of the main OpenRemote repository
-* deployment - Should replace the deployment folder of the main OpenRemote repository
-* openremote - Submodule of main OpenRemote repository
-* profile - Should replace the profile folder of the main OpenRemote repository and the services should link to the main repository services; refer to the [Developer Guide](./Developer-Guide%3A-Deploying-to-a-Docker-engine#docker-deployment-profiles) for information about Docker profiles and conventions.
-* setup - Should contain custom setup tasks (loaded at runtime using ServiceLoader) and tests for the custom project
-
+* `openremote` - Submodule of main OpenRemote repository
+* `console` - Project consoles (Android, iOS) extending the folders of the main OpenRemote repository
+* `deployment` - Project configuration, consoles app resources, map data, and the extensions directory for custom JAR files. Copy the deployment folder of the main OpenRemote repository and customize.
+* `myextension1` - Project code extending OpenRemote, includes Java/Groovy source and should produce a JAR for the deployment extensions directory. Extensions will be loaded automatically on startup, you an have as many extension directories as required (e.g. custom Agent, Setup code in separate modules).
 
 ## Working with the git repositories
 
@@ -166,3 +164,16 @@ class MyProjectTest extends Specification implements ManagerContainerTrait {
     }
 }
 ```
+
+## Updating Manager map data
+
+We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
+
+You can extract smaller tilesets with the following procedure:
+
+1. Install tilelive converter: 
+    `npm install -g mapnik mbtiles tilelive tilelive-bridge`
+1. Select and copy boundary box coordinates of desired region: 
+    http://tools.geofabrik.de/calc/#tab=1 
+1. Extract the region with: 
+    `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
