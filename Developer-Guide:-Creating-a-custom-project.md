@@ -249,3 +249,18 @@ You can extract smaller tilesets with the following procedure:
 ## Building and running your project
 
 TODO
+
+### Restarting a Manager with new settings
+
+After changing any configuration in the `deployment/manager` directory, for example when you change logging settings, you should
+restart the service with:
+
+```
+SERVICE=manager && PROJECT=openremote && PROFILE=profile/demo.yml && \
+  docker-compose -p $PROJECT -f $PROFILE stop $SERVICE && \
+  docker-compose -p $PROJECT -f $PROFILE rm -f $SERVICE && \
+  docker-compose -p $PROJECT -f $PROFILE create $SERVICE && \
+  docker-compose -p $PROJECT -f $PROFILE start $SERVICE
+```
+
+Make sure the `SETUP_WIPE_CLEAN_INSTALL` environment variable is not set!
