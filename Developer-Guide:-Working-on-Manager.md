@@ -14,7 +14,7 @@ docker-compose -f profile/dev.yml up --build
 You also have to start the GWT compiler and keep it running in the background. This service listens for compilation requests and transforms Java into JavaScript code:
 
 ```
-./gradlew -p manager/client gwtSuperDev
+./gradlew -p manager:client:gwtSuperDev
 ```
 
 ## Running and debugging the Manager
