@@ -1,6 +1,6 @@
 ## Monitoring
 
-Tail log output of all containers with `docker-compose -p <Project Name> -f <Your docker-compose.yml> logs -f`.
+Tail log output of all containers with `docker-compose -p openremote -f profile/demo.yml logs -f`.
 
 Use `docker stats` to show CPU, memory, network read/writes, and total disk read/writes for running containers.
 
