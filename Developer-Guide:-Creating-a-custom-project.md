@@ -7,11 +7,11 @@ Your service provider code and project-specific configuration can be managed ind
 Custom projects should have a dependency on the main OpenRemote repository (using a submodule as described below) and the following folder(s) should be used:
 
 * `openremote` - Submodule of main OpenRemote repository
-* `console` - Project consoles (Android, iOS) extending the folders of the main OpenRemote repository
-* `deployment` - Project configuration, consoles app resources, map data, and the extensions directory for custom JAR files. Copy the deployment folder of the main OpenRemote repository and customize.
-* `myextension1` - Project code extending OpenRemote, includes Java/Groovy source and should produce a JAR for the deployment extensions directory. Extensions will be loaded automatically on startup, you can have as many extension directories as required (e.g. custom Protocol, Setup code in separate modules).
+* `deployment` - Project configuration, console apps JS/HTML resources, map data, and the extensions directory for your projects JAR files. Copy the deployment folder of the main OpenRemote repository and customize.
+* `myextension1` - Project code extending OpenRemote, includes Java/Groovy source and should produce a tested JAR for the `deployment/extensions/` directory. Extensions will be loaded automatically on startup, you can create as many JARs as required (e.g. your Protocol, Setup code in separate modules).
+* `console` - Project consoles (Android, iOS) extending the folders of the main OpenRemote repository (TODO: We should support extensions for console shells and not need this in custom projects)
 
-## Working with the git repositories
+## Working with the Git repositories
 
 First you must create a new Git repository for your project, then add the main [OpenRemote repository](https://github.com/openremote/openremote.git) as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Your project is the root project, and the main OpenRemote repository and its projects become sub-projects of your project, on which you can depend in your build and code.
 
@@ -44,6 +44,18 @@ git submodule status
 ```
 
 Adding a submodule will generate a special g=Git submodule object (folder) and also add an entry in `.gitmodules`. The generated `.gitmodules` file contains a list of all submodules in your project. You commit the submodule link to your project repository and this tells Git which commit to checkout in that submodule.
+
+Also prevent committing build/runtime files that may be generated inside your project directory, add a `.gitignore`:
+
+```
+bower_components/
+deployment/proxy/
+deployment/postgresql/
+deployment/manager/extensions/
+# If you have a large map, don't commit it but store it only locally
+# deployment/manager/mapdata.mbtiles
+```
+
 
 ### Updating the submodule
 
@@ -79,13 +91,18 @@ git submodule init
 git submodule update
 ```
 
-In IntelliJ IDEA open `Settings` > `Version Control` and add the new submodule directory as a Git repository. IntelliJ will now pull and push automatically on the corresponding remote repository when any changes are made on submodules.
-
 ## Setting up the Gradle build
 
 Adding the OpenRemote code repository as a submodule is the first step for integration. You should also include it in the Gradle build of your project, so you can depend directly on OpenRemote.
 
-Initialize Gradle wrapper:
+You'll need the following files in your project directory:
+
+* `settings.gradle` - This defines which projects and sub-projects you have.
+* `gradle.properties` - Key-value configuration items that can be used in build scripts, such as version numbers.
+* `build.gradle` - The build settings common to all projects.
+* `myextension1/build.gradle` - Your extension's build settings.
+
+To install the Gradle wrapper in the project (these files should be committed to your repo):
 
 ```
 cd myproject/
@@ -109,7 +126,7 @@ fileTree(dir: rootDir, include: "**/build.gradle")
 
 These settings will load sub-projects (those with a `build.gradle` file) recursively, so everything under the `openremote/` submodule will become part of your project. Your project is the root project of the Gradle build.
 
-Continue with a `build.gradle` file in your project directory:
+Continue with a `build.gradle` file in your root project directory, applying build settings common to all projects:
 
 ```
 allprojects {
@@ -120,9 +137,7 @@ allprojects {
 }
 ```
 
-The project build tools we provide have extra functionality: When you don't have a checked out submodule of the main OpenRemote repository, it will look up Java dependencies in the OpenRemote repository. That way you can only depend on the published and versioned OpenRemote SPI and API artifacts. However, when you work with a checked out submodule of the main OpenRemote project, your custom project will use an internal project dependency on the SPI and API code, so you are up on the latest and can change your project and OpenRemote code at the same time.
-
-Add OpenRemote dependencies and tasks to your `myextension1/`, create `myextension1/build.gradle' with:
+Add OpenRemote dependencies and tasks to your `myextension1/build.gradle' with:
 
 ```
 apply plugin: "java"
@@ -176,12 +191,12 @@ task installDist {
 
 ## Testing
 
-If you work on a myextension1 module and want to write and test your custom Protocol and Setup code
+The tests for `myextension1` should be created in the source directory `myextension1/src/test/groovy`.
 
-Your tests can run inside the same environment as OpenRemote tests. Use [Spock](spockframework.org/spock/docs/) and write [Groovy](http://www.groovy-lang.org/) code in `myproject/src/test/groovy/org/myorg/test/MyProjectTest.groovy`:
+Your tests can run inside the same environment as OpenRemote tests. Use [Spock](spockframework.org/spock/docs/) and write [Groovy](http://www.groovy-lang.org/) code in `myextension1/src/test/groovy/myextension1/test/MyProjectTest.groovy`:
 
 ```
-package org.myorg.test
+package myextension1;
 
 import ...
 
@@ -207,7 +222,17 @@ class MyProjectTest extends Specification implements ManagerContainerTrait {
 }
 ```
 
-## Updating Manager map data
+## Customizing deployment
+
+Copy the `deployment` directory of the `openremote` submodule into your project's root and make any necessary changes for your custom deployment:
+
+1. Create JavaScript/HTML applications in `deployment/manager/consoles`.
+1. Customize logging of the Manager in `logging.properties`, add your own log categories.
+1. Change how the map is styled in the Manager, default coordinates, zoom levels, etc.
+1. Use your own map data, see below
+1. Put any extension JAR files into `deployment/manager/extensions`.
+
+### Updating Manager map data
 
 We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
 
@@ -219,3 +244,8 @@ You can extract smaller tilesets with the following procedure:
     http://tools.geofabrik.de/calc/#tab=1 
 1. Extract the region with: 
     `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
+
+
+## Building and running your project
+
+TODO
