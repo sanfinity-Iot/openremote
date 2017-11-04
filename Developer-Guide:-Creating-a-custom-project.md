@@ -9,7 +9,7 @@ Custom projects should have a dependency on the main OpenRemote repository (usin
 * `openremote` - Submodule of main OpenRemote repository
 * `console` - Project consoles (Android, iOS) extending the folders of the main OpenRemote repository
 * `deployment` - Project configuration, consoles app resources, map data, and the extensions directory for custom JAR files. Copy the deployment folder of the main OpenRemote repository and customize.
-* `myextension1` - Project code extending OpenRemote, includes Java/Groovy source and should produce a JAR for the deployment extensions directory. Extensions will be loaded automatically on startup, you an have as many extension directories as required (e.g. custom Agent, Setup code in separate modules).
+* `myextension1` - Project code extending OpenRemote, includes Java/Groovy source and should produce a JAR for the deployment extensions directory. Extensions will be loaded automatically on startup, you can have as many extension directories as required (e.g. custom Protocol, Setup code in separate modules).
 
 ## Working with the git repositories
 
@@ -81,8 +81,7 @@ git submodule update
 
 In IntelliJ IDEA open `Settings` > `Version Control` and add the new submodule directory as a Git repository. IntelliJ will now pull and push automatically on the corresponding remote repository when any changes are made on submodules.
 
-
-## Writing a Gradle build script
+## Setting up the Gradle build
 
 Adding the OpenRemote code repository as a submodule is the first step for integration. You should also include it in the Gradle build of your project, so you can depend directly on OpenRemote.
 
@@ -90,7 +89,7 @@ Initialize Gradle wrapper:
 
 ```
 cd myproject/
-gradle wrapper --gradle-version 3.3
+gradle wrapper --gradle-version 4.2.1
 ```
 
 Then write a `settings.gradle` file:
@@ -121,20 +120,63 @@ allprojects {
 }
 ```
 
-In this example, when you'll work with Gradle in your project directory, you'll depend on the published and versioned OpenRemote agent SPI and testing API artifacts. However, when you have a checked out submodule of the main OpenRemote project, your custom project will use an internal project dependency on the SPI and API code.
+The project build tools we provide have extra functionality: When you don't have a checked out submodule of the main OpenRemote repository, it will look up Java dependencies in the OpenRemote repository. That way you can only depend on the published and versioned OpenRemote SPI and API artifacts. However, when you work with a checked out submodule of the main OpenRemote project, your custom project will use an internal project dependency on the SPI and API code, so you are up on the latest and can change your project and OpenRemote code at the same time.
 
-You can depend on any API or SPI of OpenRemote and at the same time browse and refactor the OpenRemote code.
+Add OpenRemote dependencies and tasks to your `myextension1/`, create `myextension1/build.gradle' with:
 
-Finally, externalize version strings and other build settings and add them to `gradle.properties`:
+```
+apply plugin: "java"
+apply plugin: "groovy"
+
+dependencies {
+    // Agent and protocol SPI
+    compile project(":agent")
+
+    // Setup SPI
+    compile project(":openremote:manager:server")
+
+    // Your own dependencies
+    compile "org.slf4j:slf4j-api:$slf4jVersion"
+
+    // Testing API
+    testCompile project(":openremote:test")
+}
+
+test {
+    // Tests should always execute in the openremote main repo root directory
+    workingDir = project(":openremote").projectDir
+}
+
+# Automatically copy this extension into the deployment/extensions/ directory
+task installDist(type: Copy) {
+    from jar.outputs
+    into "${project(':deployment').projectDir}/manager/extensions"
+}
+clean {
+    delete = "${project(':deployment').projectDir}/manager/extensions/${jar.archiveName}"
+}
+```
+
+Finally, externalise version strings for your code and own dependencies, and add any other build settings to `gradle.properties`:
 
 ```
 projectVersion = 1.0-SNAPSHOT
 
-slf4jVersion = 1.7.10
-groovyVersion = 2.4.1
-spockVersion = 1.1-groovy-2.4
-junitVersion = 4.12
+slf4jVersion = 1.7.25
+groovyVersion = 2.4.12
 ```
+
+If you have any directory with a `bower.json` file, include it in the build by placing a `build.gradle` next to it with this content:
+
+```
+task installDist {
+    dependsOn bowerPrune, bowerUpdate
+}
+```
+
+## Testing
+
+If you work on a myextension1 module and want to write and test your custom Protocol and Setup code
 
 Your tests can run inside the same environment as OpenRemote tests. Use [Spock](spockframework.org/spock/docs/) and write [Groovy](http://www.groovy-lang.org/) code in `myproject/src/test/groovy/org/myorg/test/MyProjectTest.groovy`:
 
