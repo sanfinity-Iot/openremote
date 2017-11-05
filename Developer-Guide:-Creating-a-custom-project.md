@@ -2,16 +2,46 @@ The setup described here is useful if you want to create a custom project that e
 
 Your service provider code and project-specific configuration can be managed independently. You can track and merge changes on the upstream main OpenRemote project, targeting specific tags for your integration or always keeping up with the main development branch.
 
+[[Preparing the environment|Developer Guide: Preparing the environment]] is required before starting a custom project.
+
 ## Project Structure
 
 Custom projects should have a dependency on the main OpenRemote repository (using a submodule as described below) and the following folder(s) should be used in a `myproject` folder:
 
-* `openremote` - Submodule of main OpenRemote repository
-* `deployment` - Project configuration, console apps JS/HTML resources, map data, and the extensions directory for your projects JAR files. Copy the deployment folder of the main OpenRemote repository and customise. The original OpenRemote folder is included in the OpenRemote images and can be overridden at deployment-time with your folder.
-* `myextension1` - Project code extending OpenRemote, includes Java/Groovy source and should produce a tested JAR for the `deployment/extensions/` directory. Extensions will be loaded automatically on startup, you can create as many JARs as required (e.g. your Protocol, Setup code in separate modules).
-* `console` - Project consoles (Android, iOS) extending the folders of the main OpenRemote repository (TODO: We should support extensions for console shells and not need this in custom projects)
+* `openremote` - Submodule of main OpenRemote repository, Git instructions below.
+
+* `deployment` - Project data, console apps JS/HTML resources, map data, and the extensions directory for your projects JAR files. Copy the deployment folder of the main OpenRemote repository and customise. The original OpenRemote folder is included in the OpenRemote images and can be overridden at deployment-time with your folder.
+
+* `profile` - Project configuration, Docker Compose files for different environments (e.g. staging, production) that extend the OpenRemote main profiles
+
+* `myextension1` - Project code extending OpenRemote, includes Java/Groovy source and should produce a tested JAR for the `deployment/extensions/` directory. Extensions will be loaded automatically on startup, you can create as many JARs as required. Your Protocol, Setup, and other implementation can be in separate Gradle sub-projects.
+
+* `console` - Project native consoles (Android, iOS) extending the folders of the main OpenRemote repository (TODO: We should support extensions for console native shells and not need this in custom projects)
+
 
 ## Working with the Git repositories
+
+### Cloning an existing project repository
+
+Everyone who checks out your project repository must initialize and fetch the submodules when they clone your project for the first time:
+
+Clone the repository
+```
+git clone git@github.com:openremote/kmar.git
+```
+or
+```
+git clone https://github.com/openremote/kmar.git
+```
+
+Then fetch the submodule(s):
+
+```
+git submodule init
+git submodule update
+```
+
+### Creating a new project
 
 First you must create a new Git repository for your project, then add the main [OpenRemote repository](https://github.com/openremote/openremote.git) as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Your project is the root project, and the main OpenRemote repository and its projects become sub-projects of your project, on which you can depend in your build and code.
 
@@ -56,16 +86,21 @@ deployment/manager/extensions/
 # deployment/manager/*/*.mbtiles
 ```
 
+### Committing changes and staying up-to-date
 
-### Updating the submodule
+Your projects' repository is the root and the OpenRemote submodule is another repository you have to handle. They are connected with the `openremote` special directory in your project, and this link has to be updated manually when it should reference a different version of the main OpenRemote repository.
 
 Whenever you want to update your project with a new version of OpenRemote, you must update the submodule of the main OpenRemote repository you have checked out.
+
+When you want to work on your project and files inside the submodule at the same time, you must make two commits: one on submodule's repository and one in your project's repository.
 
 If your submodule is tracking a branch then you can update the submodule to use the latest commit on that branch. Execute in your project directory:
 
 ```
-git submodule update --remote
+git submodule update --remote --rebase
 ```
+
+You now can make changes to the files in the `openremote` submodule directory and commit them on any branch in the main OpenRemote repository.
 
 If your submodule is tracking a commit then you can update the submodule to use the latest commit by:
 
@@ -75,21 +110,16 @@ git checkout master
 git pull
 ```
 
-**Whenever a submodule is updated to use a different commit (no matter whether it tracks a branch or a specific commit) you have to then commit this change in your project repository:**
+Committing changes to the `openremote` submodule and main repository means that the submodule reference has to be changed as well, so it will point to the desired commit/branch on the main repository.
+
+**Whenever a submodule is updated to use a different commit (no matter whether it tracks a branch or a specific commit) you have to record this change in your project repository:**
 
 ```
 git add openremote
 git commit -m "Updated OpenRemote main repository submodule link"
 ```
 
-### Cloning the project repository
-
-Everyone who checks out your project repository must initialize and fetch the submodules when they clone your project for the first time:
-
-```
-git submodule init
-git submodule update
-```
+This is the second commit we've mentioned earlier in this section.
 
 ## Setting up the Gradle build
 
@@ -222,7 +252,7 @@ class MyProjectTest extends Specification implements ManagerContainerTrait {
 }
 ```
 
-## Customizing deployment
+## Creating custom apps and extensions
 
 Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `/myproject/deployment`) and make changes:
 
@@ -251,10 +281,21 @@ If you work only on the console frontend apps and want to deploy the full stack 
 
 `DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p myproject -f openremote/profile/dev.yml up --build`
 
-TODO
+This will use the `deployment` folder of your project. You should specify a custom project name, it's the prefix of running containers and data volumes. Each project should have its own space at runtime, but all containers should use the regular OpenRemote images. Customisation is best done in `deployment` extensions.
 
+### Working on Manager backend services or UI
 
+See our guide for [[Working on Manager|Developer Guide: Working on Manager]], this helps you create Run/Debug Configurations in an IDE.
 
+### Going into production
+
+The `dev.yml` profile you have used is one of several bundled with the main OpenRemote project. You should read the whole [deploy.yml](https://github.com/openremote/openremote/blob/master/profile/demo.yml), it is the basis of all other profiles.
+
+First create a `myproject/profile` directory and copy `openremote/profile/demo.yml`. Rename it to match the desired configuration, typical use cases are separate settings for staging and production environments.
+
+Follow the steps in the `demo.yml` example. At a minimum, you want to disable `SETUP_WIPE_CLEAN_INSTALL`!
+
+Have a look at our [[Maintaining an installation|Developer Guide: Maintaining an installation]] guide for finding typical runtime problems and monitoring options.
 
 ### Restarting a Manager with new settings
 
@@ -269,3 +310,56 @@ SERVICE=manager && PROJECT=openremote && PROFILE=profile/demo.yml && \
 ```
 
 Make sure the `SETUP_WIPE_CLEAN_INSTALL` environment variable is not set!
+
+### Configuring security
+
+A regular OpenRemote deployment exposes services only through HTTPS and WSS, the `proxy` service of OpenRemote manages keys via [Let's Encrypt](https://letsencrypt.org/).
+
+Do not forget to set `KEYCLOAK_PASSWORD` when going into production and exposing OpenRemote services beyond your development network.
+
+TODO Build/setup should generate a password and print it on console, bit of a problem with wipe clean install option
+
+<!--
+## Configuring security
+
+In an OpenRemote system, servers use certificates to authenticate themselves to clients. Simple default TLS certificates (and the private key only known to the server(s)) have been created with:
+
+```
+#!/bin/bash
+
+rm /tmp/or-*.jks /tmp/or-*.cer
+
+keytool -genkeypair -alias "openremote" \
+    -noprompt -keyalg RSA -validity 9999 -keysize 2048 \
+    -dname "CN=openremote" \
+    -keypass CHANGE_ME_SSL_KEY_STORE_PASSWORD \
+    -keystore /tmp/or-keystore.jks \
+    -storepass CHANGE_ME_SSL_KEY_STORE_PASSWORD
+
+keytool -exportcert \
+    -alias "openremote" \
+    -keystore /tmp/or-keystore.jks \
+    -storepass CHANGE_ME_SSL_KEY_STORE_PASSWORD \
+    -file /tmp/or-certificate.cer
+
+keytool -importcert -noprompt \
+    -alias "openremote" \
+    -file /tmp/or-certificate.cer \
+    -keystore /tmp/or-truststore.jks \
+    -storepass CHANGE_ME_SSL_KEY_STORE_PASSWORD
+
+keytool -list -v \
+    -keystore /tmp/or-keystore.jks \
+    -storepass CHANGE_ME_SSL_KEY_STORE_PASSWORD
+
+cp /tmp/or-keystore.jks controller/conf/keystore.jks
+cp /tmp/or-truststore.jks controller/conf/truststore.jks
+
+cp /tmp/or-keystore.jks beehive/ccs/conf/keystore.jks
+
+```
+
+At a minimum, you should re-create the stores and private key with your own passwords when deploying OpenRemote.
+
+TODO: Unify default CAs in trust stores in all server systems, which (root) CAs should stay and what is the setup we recommend for OpenRemote users, etc.
+-->
