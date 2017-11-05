@@ -7,7 +7,7 @@ Your service provider code and project-specific configuration can be managed ind
 Custom projects should have a dependency on the main OpenRemote repository (using a submodule as described below) and the following folder(s) should be used:
 
 * `openremote` - Submodule of main OpenRemote repository
-* `deployment` - Project configuration, console apps JS/HTML resources, map data, and the extensions directory for your projects JAR files. Copy the deployment folder of the main OpenRemote repository and customize.
+* `deployment` - Project configuration, console apps JS/HTML resources, map data, and the extensions directory for your projects JAR files. Copy the deployment folder of the main OpenRemote repository and customise. The original OpenRemote folder is included in the OpenRemote images and can be overridden at deployment-time with your folder.
 * `myextension1` - Project code extending OpenRemote, includes Java/Groovy source and should produce a tested JAR for the `deployment/extensions/` directory. Extensions will be loaded automatically on startup, you can create as many JARs as required (e.g. your Protocol, Setup code in separate modules).
 * `console` - Project consoles (Android, iOS) extending the folders of the main OpenRemote repository (TODO: We should support extensions for console shells and not need this in custom projects)
 
