@@ -6,7 +6,7 @@ Your project code and configuration files can use the main OpenRemote project di
 
 ## Project Structure
 
-Custom projects should have a dependency on the main OpenRemote repository (using a submodule as described below) and the following folder(s) should be used in a `myproject` folder:
+Custom projects should have a dependency on the main OpenRemote repository using a Git submodule as described below, and the following folder(s) should exist in your `myproject` folder:
 
 * `openremote` - Submodule of main OpenRemote repository, Git instructions below.
 
