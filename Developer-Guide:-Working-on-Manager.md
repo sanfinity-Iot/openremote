@@ -1,14 +1,5 @@
 This guide helps you set up an environment with an IDE when you are done [[Preparing the environment|Developer Guide: Preparing the environment]], so you can work comfortably on the Manager backend services and/or the Manager UI.
 
-## Starting required service dependencies
-
-If you work with an IDE or want to run `./gradlew clean build`, this should be running on your system:
-
-`docker-compose -p openremote -f profile/dev-testing.yml up --build`
-
-If you are [[Creating a custom project|Developer Guide: Creating a custom project]], use this:
-
-`docker-compose -p myproject -f openremote/profile/dev-testing.yml up --build`
 
 If you are working on Manager UI, start the GWT compiler and keep it running in the background:
 

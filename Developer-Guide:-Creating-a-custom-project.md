@@ -88,7 +88,7 @@ Your projects' repository is the root and the OpenRemote submodule is another re
 
 Whenever you want to update your project with a new version of OpenRemote, you must update the submodule of the main OpenRemote repository you have checked out.
 
-When you want to work on your project and files inside the submodule at the same time, you must make two commits: one on submodule's repository and one in your project's repository.
+When you want to work on your project and files inside the submodule at the same time, you must make two commits: one on the submodule's repository and one in your project's repository.
 
 If your submodule is tracking a branch then you can update the submodule to use the latest commit on that branch. Execute in your project directory:
 
@@ -215,6 +215,53 @@ task installDist {
 }
 ```
 
+## Creating custom apps and extensions
+
+Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `/myproject/deployment`) and make changes:
+
+1. Create JavaScript/HTML applications in `deployment/manager/consoles`
+1. Change the Manager UI map data, default coordinates, zoom levels, etc. in `deployment/manager/map`
+1. Extend the Manager UI and customize the theme in `deployment/manager/ui`
+1. Put any extension JAR files into `deployment/manager/extensions`
+1. Customize logging of the Manager in `logging.properties`
+
+### Updating Manager map data
+
+We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
+
+You can extract smaller tilesets with the following procedure:
+
+1. Install tilelive converter: 
+    `npm install -g mapnik mbtiles tilelive tilelive-bridge`
+1. Select and copy boundary box coordinates of desired region: 
+    http://tools.geofabrik.de/calc/#tab=1 
+1. Extract the region with: 
+    `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
+
+## Building and running your project
+
+If you work only on the console frontend apps and want to deploy the full stack in development mode, run in `myproject` folder:
+
+`DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p myproject -f openremote/profile/dev.yml up --build`
+
+This will use the `deployment` folder of your project. You should specify a custom project name, it's the prefix of running containers and data volumes. Each project should have its own space at runtime, but all containers should use the regular OpenRemote images. Customisation is best done in `deployment` extensions.
+
+### Building without tests
+
+To build execute the following from your project's directory:
+
+```
+./gradlew clean installDist
+```
+
+If you have not changed any files in the `openremote` directory, you can simply restart your project's stack to pick up the new extension JARs in the `deployment` directory.
+
+ If you have changed any files in the `openremote` directory, force a rebuild of the Docker images with the `--build` option, as in the previous section.
+
+### Working on Manager backend services or UI
+
+See our guide for [[Working on Manager|Developer Guide: Working on Manager]], this helps you create Run/Debug Configurations in an IDE.
+
 ## Testing
 
 The tests for `myextension1` should be created in the source directory `myextension1/src/test/groovy`.
@@ -248,44 +295,25 @@ class MyProjectTest extends Specification implements ManagerContainerTrait {
 }
 ```
 
-## Creating custom apps and extensions
+### Running tests
 
-Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `/myproject/deployment`) and make changes:
+First start required background services for integration tests, execute the following from your project's directory:
 
-1. Create JavaScript/HTML applications in `deployment/manager/consoles`
-1. Change the Manager UI map data, default coordinates, zoom levels, etc. in `deployment/manager/map`
-1. Extend the Manager UI and customize the theme in `deployment/manager/ui`
-1. Put any extension JAR files into `deployment/manager/extensions`
-1. Customize logging of the Manager in `logging.properties`
+`docker-compose -p myproject -f openremote/profile/dev-testing.yml up --build -d`
 
-### Updating Manager map data
+Then execute the tests:
 
-We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
+```
+./gradlew clean build installDist
+```
 
-You can extract smaller tilesets with the following procedure:
+When you no longer need the background services, stop them:
 
-1. Install tilelive converter: 
-    `npm install -g mapnik mbtiles tilelive tilelive-bridge`
-1. Select and copy boundary box coordinates of desired region: 
-    http://tools.geofabrik.de/calc/#tab=1 
-1. Extract the region with: 
-    `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
+`docker-compose -p myproject -f openremote/profile/dev-testing.yml up --build -d`
 
-## Building and running your project
+## Going into production
 
-If you work only on the console frontend apps and want to deploy the full stack in development mode, run in `myproject` folder:
-
-`DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p myproject -f openremote/profile/dev.yml up --build`
-
-This will use the `deployment` folder of your project. You should specify a custom project name, it's the prefix of running containers and data volumes. Each project should have its own space at runtime, but all containers should use the regular OpenRemote images. Customisation is best done in `deployment` extensions.
-
-### Working on Manager backend services or UI
-
-See our guide for [[Working on Manager|Developer Guide: Working on Manager]], this helps you create Run/Debug Configurations in an IDE.
-
-### Going into production
-
-The `dev.yml` profile you have used is one of several bundled with the main OpenRemote project. You should read the whole [deploy.yml](https://github.com/openremote/openremote/blob/master/profile/demo.yml), it is the basis of all other profiles.
+The `dev.yml` and `dev-testing.yml` profiles you have used are bundled with the main OpenRemote project. You should read the whole [deploy.yml](https://github.com/openremote/openremote/blob/master/profile/deploy.yml), it is the basis of all other profiles. A good starting point for your own production setup is [demo.yml](https://github.com/openremote/openremote/blob/master/profile/demo.yml).
 
 First create a `myproject/profile` directory and copy `openremote/profile/demo.yml`. Rename it to match the desired configuration, typical use cases are separate settings for staging and production environments.
 
