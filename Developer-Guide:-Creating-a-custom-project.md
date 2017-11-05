@@ -4,7 +4,7 @@ Your service provider code and project-specific configuration can be managed ind
 
 ## Project Structure
 
-Custom projects should have a dependency on the main OpenRemote repository (using a submodule as described below) and the following folder(s) should be used:
+Custom projects should have a dependency on the main OpenRemote repository (using a submodule as described below) and the following folder(s) should be used in a `myproject` folder:
 
 * `openremote` - Submodule of main OpenRemote repository
 * `deployment` - Project configuration, console apps JS/HTML resources, map data, and the extensions directory for your projects JAR files. Copy the deployment folder of the main OpenRemote repository and customise. The original OpenRemote folder is included in the OpenRemote images and can be overridden at deployment-time with your folder.
@@ -24,8 +24,8 @@ For development it is advisable to track a (master) branch and for releasing you
 By tracking a branch you can issue a single command in your project repository to fetch new commits from the OpenRemote main repository, and push any changes you make in the submodule to the main OpenRemote repository. This setup will track the `master` branch of the main OpenRemote repository:
 
 ```
-mkdir myextension1/
-cd myextension1/
+mkdir myproject/
+cd myproject/
 git init
 git submodule add -b master https://github.com/openremote/openremote.git openremote/
 git submodule status
@@ -36,8 +36,8 @@ git submodule status
 This setup tracks the last commit of the OpenRemote main repository, effectively attaching your project to that version of OpenRemote:
 
 ```
-mkdir myextension1/
-cd myextension1/
+mkdir myproject/
+cd myproject/
 git init
 git submodule add https://github.com/openremote/openremote.git openremote/
 git submodule status
@@ -95,7 +95,7 @@ git submodule update
 
 Adding the OpenRemote code repository as a submodule is the first step for integration. You should also include it in the Gradle build of your project, so you can depend directly on OpenRemote.
 
-You'll need the following files in your project directory:
+You'll need the following files in your `myproject` directory:
 
 * `settings.gradle` - This defines which projects and sub-projects you have.
 * `gradle.properties` - Key-value configuration items that can be used in build scripts, such as version numbers.
@@ -105,7 +105,7 @@ You'll need the following files in your project directory:
 To install the Gradle wrapper in the project (these files should be committed to your repo):
 
 ```
-cd myextension1/
+cd myproject/
 gradle wrapper --gradle-version 4.2.1
 ```
 
@@ -224,7 +224,7 @@ class MyProjectTest extends Specification implements ManagerContainerTrait {
 
 ## Customizing deployment
 
-Copy the `deployment` directory of the `openremote` submodule into your project's root and make any necessary changes for your custom deployment:
+Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `/myproject/deployment`) and make changes:
 
 1. Create JavaScript/HTML applications in `deployment/manager/consoles`
 1. Change the Manager UI map data, default coordinates, zoom levels, etc. in `deployment/manager/map`
@@ -245,12 +245,11 @@ You can extract smaller tilesets with the following procedure:
 1. Extract the region with: 
     `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
 
-
 ## Building and running your project
 
-If you work only on the console frontend apps and want to deploy the full stack in development mode, use:
+If you work only on the console frontend apps and want to deploy the full stack in development mode, run in `myproject` folder:
 
-`DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p kmar -f openremote/profile/dev.yml up --build`
+`DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p myproject -f openremote/profile/dev.yml up --build`
 
 TODO
 
