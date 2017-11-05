@@ -53,7 +53,7 @@ deployment/proxy/
 deployment/postgresql/
 deployment/manager/extensions/
 # If you have a large map, don't commit it but store it only locally
-# deployment/manager/mapdata.mbtiles
+# deployment/manager/*/*.mbtiles
 ```
 
 
@@ -226,11 +226,11 @@ class MyProjectTest extends Specification implements ManagerContainerTrait {
 
 Copy the `deployment` directory of the `openremote` submodule into your project's root and make any necessary changes for your custom deployment:
 
-1. Create JavaScript/HTML applications in `deployment/manager/consoles`.
-1. Customize logging of the Manager in `logging.properties`, add your own log categories.
-1. Change how the map is styled in the Manager, default coordinates, zoom levels, etc.
-1. Use your own map data, see below
-1. Put any extension JAR files into `deployment/manager/extensions`.
+1. Create JavaScript/HTML applications in `deployment/manager/consoles`
+1. Change the Manager UI map data, default coordinates, zoom levels, etc. in `deployment/manager/map`
+1. Extend the Manager UI and customize the theme in `deployment/manager/ui`
+1. Put any extension JAR files into `deployment/manager/extensions`
+1. Customize logging of the Manager in `logging.properties`
 
 ### Updating Manager map data
 
