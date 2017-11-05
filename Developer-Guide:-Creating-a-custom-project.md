@@ -248,12 +248,18 @@ You can extract smaller tilesets with the following procedure:
 
 ## Building and running your project
 
+If you work only on the console frontend apps and want to deploy the full stack in development mode, use:
+
+`DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p kmar -f openremote/profile/dev.yml up --build`
+
 TODO
+
+
+
 
 ### Restarting a Manager with new settings
 
-After changing any configuration in the `deployment/manager` directory, for example when you change logging settings, you should
-restart the service with:
+After changing any configuration in the `deployment/manager` directory, for example when you change logging settings, you should restart the service with:
 
 ```
 SERVICE=manager && PROJECT=openremote && PROFILE=profile/demo.yml && \
