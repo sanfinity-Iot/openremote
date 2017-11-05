@@ -23,20 +23,16 @@ Custom projects should have a dependency on the main OpenRemote repository (usin
 
 ### Cloning an existing project repository
 
-Everyone who checks out your project repository must initialize and fetch the submodules when they clone your project for the first time:
+Everyone who checks out your project repository must initialize and fetch the submodules when they clone your project for the first time. Clone the repository:
 
-Clone the repository
 ```
-git clone git@github.com:openremote/kmar.git
-```
-or
-```
-git clone https://github.com/openremote/kmar.git
+git clone git@github.com:myorg/myproject.git
 ```
 
 Then fetch the submodule(s):
 
 ```
+cd myproject/
 git submodule init
 git submodule update
 ```
