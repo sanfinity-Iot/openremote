@@ -24,8 +24,8 @@ For development it is advisable to track a (master) branch and for releasing you
 By tracking a branch you can issue a single command in your project repository to fetch new commits from the OpenRemote main repository, and push any changes you make in the submodule to the main OpenRemote repository. This setup will track the `master` branch of the main OpenRemote repository:
 
 ```
-mkdir myproject/
-cd myproject/
+mkdir myextension1/
+cd myextension1/
 git init
 git submodule add -b master https://github.com/openremote/openremote.git openremote/
 git submodule status
@@ -36,8 +36,8 @@ git submodule status
 This setup tracks the last commit of the OpenRemote main repository, effectively attaching your project to that version of OpenRemote:
 
 ```
-mkdir myproject/
-cd myproject/
+mkdir myextension1/
+cd myextension1/
 git init
 git submodule add https://github.com/openremote/openremote.git openremote/
 git submodule status
@@ -105,14 +105,14 @@ You'll need the following files in your project directory:
 To install the Gradle wrapper in the project (these files should be committed to your repo):
 
 ```
-cd myproject/
+cd myextension1/
 gradle wrapper --gradle-version 4.2.1
 ```
 
 Then write a `settings.gradle` file:
 
 ```
-rootProject.name = "myproject"
+rootProject.name = "myextension1"
 
 // Include sub-projects dynamically, every directory with a build.gradle (and no .buildignore)
 def rootDir = new File(".").canonicalPath
