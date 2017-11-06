@@ -48,7 +48,7 @@ Make sure required testing services are running as described in [[Creating a cus
 
 Set up a *Run Configuration*:
 
-- Module/Classpath: `manager:server`
+- Module/Classpath: `manager:server` or `myproject:myextension1` for custom projects
 - Working directory: *Must be set to OpenRemote main project directory!*
 - Main class: `org.openremote.manager.server.Main`
 - Any environment variables that customise deployment (usually custom projects have some)
