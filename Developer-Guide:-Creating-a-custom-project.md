@@ -239,7 +239,13 @@ You can extract smaller tilesets with the following procedure:
 
 ## Building and running your project
 
-If you work only on the console frontend apps and want to deploy the full stack in development mode, run in `myproject` folder:
+If you work only on the console frontend apps and want to deploy the full stack in development mode, first execute the Gradle build:
+
+```
+./gradlew clean installDist
+```
+
+Then run in `myproject` folder the Docker image build and start the stack:
 
 `DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p myproject -f openremote/profile/dev.yml up --build`
 
