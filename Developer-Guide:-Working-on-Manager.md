@@ -50,4 +50,4 @@ You can now open [http://localhost:8080/](http://localhost:8080/) in your browse
 
 ## Executing Manager tests
 
-Any JUnit test can be directly executed.
+Any JUnit test can be directly executed. Make sure required testing services are running as described in [[Creating a custom project|Developer Guide: Creating a custom project]].
