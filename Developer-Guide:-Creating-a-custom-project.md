@@ -69,7 +69,9 @@ git submodule add https://github.com/openremote/openremote.git openremote/
 git submodule status
 ```
 
-Adding a submodule will generate a special g=Git submodule object (folder) and also add an entry in `.gitmodules`. The generated `.gitmodules` file contains a list of all submodules in your project. You commit the submodule link to your project repository and this tells Git which commit to checkout in that submodule.
+Adding a submodule will generate a special 'openremote' submodule link object (folder) and also add an entry in `.gitmodules`. The generated `.gitmodules` file contains a list of all submodules in your project. You commit the submodule link to your project repository and this tells Git which commit to checkout in that submodule.
+
+### Creating a .gitignore
 
 Also prevent committing build/runtime files that may be generated inside your project directory, add a `.gitignore`:
 
