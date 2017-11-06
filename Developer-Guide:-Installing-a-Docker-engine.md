@@ -6,19 +6,44 @@ docker-machine version
 ```
 
 ## Local Engine
-For a local engine (developer workstation setup) simply installing Docker Community Edition is enough.
+
+For a local engine (developer workstation setup) simply installing Docker Community Edition is enough. Ensure that `docker version` on the command line works.
 
 ## Remote Engine
-For a remote engine (hosted deployment), you need SSH public key access to a Linux host (preferably CentOS), and then Docker Machine can do the rest. Follow the instructions [here](https://docs.docker.com/machine/drivers/generic/).
+
+For a remote engine (hosted deployment), you need SSH public key access to a Linux host (preferably CentOS), and then Docker Machine can do the rest:
+
+```
+docker-machine create --driver generic \
+    --generic-ip-address=<HOST> \
+    --generic-ssh-port=<SSH PORT> \
+    <DOCKER MACHINE NAME>
+```
+
+Follow the instructions [here](https://docs.docker.com/machine/drivers/generic/).
+
+After you let Docker Machine install the Docker daemon on the remote host, you must fixf the generated Docker client credentials configuration files.
+
+Move `~/.docker/machine/certs/*` into `~/.docker/machine/machines/<DOCKER MACHINE NAME>/` and fix the paths in `~/.docker/machine/machines/<DOCKER MACHINE NAME>/config.json`.
 
 When a remote engine is first installed the client credentials should be zipped and made available in a private and secure location. The client credentials can be found at `~/.docker/machine/machines/<DOCKER MACHINE NAME>/`.
 
-If the remote host already has a running docker engine then you can manually copy the client credentials to your local machine by unzipping the credentials into `~/.docker/machine/machines/<DOCKER MACHINE NAME>/` and then you will need to fix the paths in `~/.docker/machine/machines/<DOCKER MACHINE NAME>/config.json`.
+If the remote host already has a running docker engine then you can manually copy the client credentials from the secure location to your local machine by unzipping the credentials into `~/.docker/machine/machines/<DOCKER MACHINE NAME>/` and then you will need to fix the paths in `~/.docker/machine/machines/<DOCKER MACHINE NAME>/config.json`.
 
 ***For Windows you will have to use escaped backslashes e.g. `C:\\Users\Me\\.docker\\machine\\`.***
 
-Once the remote engine is installed ensure that `docker-machine ls` shows the new engine and that the State is `Running`.
+## Using a machine
 
+Once the remote engine is installed ensure that `docker-machine ls` shows the new engine and that the State is `Running`:
+
+
+```
+docker-machine ls
+eval $(docker-machine env or-host123)
+docker ps
+```
+
+This will show running containers on Docker Machine `or-host123`.
 
 <!--
 ## VirtualBox Engine

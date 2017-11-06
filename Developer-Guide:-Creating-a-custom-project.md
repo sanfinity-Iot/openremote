@@ -138,15 +138,14 @@ gradle wrapper --gradle-version 4.2.1
 Then write a `settings.gradle` file:
 
 ```
-rootProject.name = "myextension1"
+rootProject.name = "myproject"
 
 // Include sub-projects dynamically, every directory with a build.gradle (and no .buildignore)
-def rootDir = new File(".").canonicalPath
 fileTree(dir: rootDir, include: "**/build.gradle")
         .filter { it.parent != rootDir }
         .filter { !file("${it.parent}/.buildignore").exists() }
         .each {
-    include it.parent.replace(rootDir, "").replace("\\", ":").replace("/", ":")
+    include it.parent.replace(rootDir.canonicalPath, "").replace("\\", ":").replace("/", ":")
 }
 ```
 
