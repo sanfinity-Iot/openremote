@@ -2,7 +2,11 @@ This guide helps you set up an environment with an IDE when you are done [[Prepa
 
 ## Run required services
 
-Make sure testing services are running as described in [[Creating a custom project|Developer Guide: Creating a custom project]].
+Make sure testing services are running as described in [[Creating a custom project|Developer Guide: Creating a custom project]]"
+
+```
+docker-compose -p openremote -f profile/dev-testing.yml up --build -d
+```
 
 If you are working on Manager UI, start the GWT compiler and keep it running in the background:
 
