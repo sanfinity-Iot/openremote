@@ -239,7 +239,7 @@ You can extract smaller tilesets with the following procedure:
 
 ## Building and running your project
 
-If you work only on the console frontend apps and want to deploy the full stack in development mode, first execute the Gradle build:
+If you work only on the console frontend apps and files in the `deployment` folder, and want to deploy the full stack in development mode, first execute the Gradle build:
 
 ```
 ./gradlew clean installDist
@@ -302,6 +302,12 @@ class MyProjectTest extends Specification implements ManagerContainerTrait {
 
 ### Running tests
 
+Some of our (and hopefully your) tests are end-to-end tests that require running background container services.
+
+You might want to start with clean containers before running tests and you might have to restart containers after (failed) tests with `docker-compose [up|down]`.
+
+You probably want to manage the data volumes with `docker volume`, although the default setup is to wipe and clean install everything over an existing database.
+
 First start required background services for integration tests, execute the following from your project's directory:
 
 `docker-compose -p myproject -f openremote/profile/dev-testing.yml up --build -d`
@@ -314,7 +320,9 @@ Then execute the tests:
 
 When you no longer need the background services, stop them:
 
-`docker-compose -p myproject -f openremote/profile/dev-testing.yml up --build -d`
+`docker-compose -p myproject -f openremote/profile/dev-testing.yml down`
+
+When you are [[Working on Manager|Developer Guide: Working on Manager]], you should also run the `dev-testing.yml` in the background as you execute JUnit tests ad-hoc from within your IDE.
 
 ## Going into production
 

@@ -50,6 +50,4 @@ You can now open [http://localhost:8080/](http://localhost:8080/) in your browse
 
 ## Executing Manager tests
 
-Execute `./gradlew test` or run the individual test classes in your IDE directly, or do a full build with `./gradle clean build`. This should be done before committing.
-
-Some of these tests are end-to-end tests that require running background container services. You might want to start with clean containers before running tests and you might have to restart containers after (failed) tests with `docker-compose [up|down]`. You probably want to manage the data volumes with `docker volume`, although the default setup is to wipe and clean install everything over an existing database.
+Any JUnit test can be directly executed.
