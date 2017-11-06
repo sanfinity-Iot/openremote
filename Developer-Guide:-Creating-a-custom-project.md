@@ -325,7 +325,7 @@ When you no longer need the background services, stop them:
 
 `docker-compose -p myproject -f openremote/profile/dev-testing.yml down`
 
-When you are [[Working on Manager|Developer Guide: Working on Manager]], you should also run the `dev-testing.yml` in the background as you execute JUnit tests ad-hoc from within your IDE.
+When you are [[Working on Manager|Developer Guide: Working on Manager]], you should also run the `dev-testing.yml` in the background as you execute JUnit tests ad-hoc from within your IDE. The services are also required to start the Manager in your IDE.
 
 ## Going into production
 

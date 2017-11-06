@@ -1,5 +1,8 @@
 This guide helps you set up an environment with an IDE when you are done [[Preparing the environment|Developer Guide: Preparing the environment]], so you can work comfortably on the Manager backend services and/or the Manager UI.
 
+## Run required services
+
+Make sure testing services are running as described in [[Creating a custom project|Developer Guide: Creating a custom project]].
 
 If you are working on Manager UI, start the GWT compiler and keep it running in the background:
 
@@ -36,6 +39,8 @@ We recommend you set this as the default directory in your IDE for all *Run Conf
 TODO: If we could get rid of this wart, that would be nice...
 
 ## Running and debugging the Manager
+
+Make sure required testing services are running as described in [[Creating a custom project|Developer Guide: Creating a custom project]].
 
 Set up a *Run Configuration*:
 
