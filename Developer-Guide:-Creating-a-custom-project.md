@@ -239,29 +239,30 @@ You can extract smaller tilesets with the following procedure:
 
 ## Building and running your project
 
-If you work only on the console frontend apps and files in the `deployment` folder, and want to deploy the full stack in development mode, first execute the Gradle build:
+If you work only on the console frontend apps and files in the `deployment` folder, and want to deploy the full stack in development mode, first execute the Gradle build without tests:
 
 ```
 ./gradlew clean installDist
 ```
 
-Then run in `myproject` folder the Docker image build and start the stack:
+This will build your extensions and the main OpenRemote services and prepare all files for Docker image build in the right places.
 
-`DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p myproject -f openremote/profile/dev.yml up --build`
-
-This will use the `deployment` folder of your project. You should specify a custom project name, it's the prefix of running containers and data volumes. Each project should have its own space at runtime, but all containers should use the regular OpenRemote images. Customisation is best done in `deployment` extensions.
-
-### Building without tests
-
-To build execute the following from your project's directory:
+Then build Docker images and start the stack:
 
 ```
-./gradlew clean installDist
+DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p myproject -f openremote/profile/dev.yml up --build
 ```
 
-If you have not changed any files in the `openremote` directory, you can simply restart your project's stack to pick up the new extension JARs in the `deployment` directory.
+This will use the `deployment` folder of your project. You should specify a custom project name, it's the prefix of running containers and data volumes.
 
- If you have changed any files in the `openremote` directory, force a rebuild of the Docker images with the `--build` option, as in the previous section.
+Each project should have its own space at runtime, but all containers should use the regular OpenRemote images. Customisation is best done in `deployment` extensions, the Docker images are not project-specific.
+
+When you are working on your extension Java/Groovy code, you don't want to wait for a full stack build and deploy. So if you have not changed any files in the `openremote` directory, you can simply restart your project's stack to pick up the new extension JARs in the `deployment` directory after building only your extension(s):
+
+```
+./gradlew myextension1:installDist
+... docker-compose down|up ...
+```
 
 ### Working on Manager backend services or UI
 
