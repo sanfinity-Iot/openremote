@@ -15,6 +15,29 @@ Get current memory configuration:
 docker exec -it openremote_manager_1 /usr/bin/jstat -gccapacity 1
 ```
 
+Output contains:
+
+```
+NGCMN: Minimum new generation capacity (kB).
+NGCMX: Maximum new generation capacity (kB).
+NGC: Current new generation capacity (kB).
+S0C: Current survivor space 0 capacity (kB).
+S1C: Current survivor space 1 capacity (kB).
+EC: Current eden space capacity (kB).
+OGCMN: Minimum old generation capacity (kB).
+OGCMX: Maximum old generation capacity (kB).
+OGC: Current old generation capacity (kB).
+OC: Current old space capacity (kB).
+MCMN: Minimum metaspace capacity (kB).
+MCMX: Maximum metaspace capacity (kB).
+MC: Metaspace capacity (kB).
+CCSMN: Compressed class space minimum capacity (kB).
+CCSMX: Compressed class space maximum capacity (kB).
+CCSC: Compressed class space capacity (kB).
+YGC: Number of young generation GC events.
+FGC: Number of full GC events.
+```
+
 The following command will connect to a Manager and print garbage collection statistics (polling 1000 times, waiting for 2.5 seconds):
 
 ```
@@ -41,29 +64,6 @@ Force garbage collection with:
 
 ```
 docker exec -it openremote_manager_1 /usr/bin/jcmd 1 GC.run
-```
-
-Output contains:
-
-```
-NGCMN: Minimum new generation capacity (kB).
-NGCMX: Maximum new generation capacity (kB).
-NGC: Current new generation capacity (kB).
-S0C: Current survivor space 0 capacity (kB).
-S1C: Current survivor space 1 capacity (kB).
-EC: Current eden space capacity (kB).
-OGCMN: Minimum old generation capacity (kB).
-OGCMX: Maximum old generation capacity (kB).
-OGC: Current old generation capacity (kB).
-OC: Current old space capacity (kB).
-MCMN: Minimum metaspace capacity (kB).
-MCMX: Maximum metaspace capacity (kB).
-MC: Metaspace capacity (kB).
-CCSMN: Compressed class space minimum capacity (kB).
-CCSMX: Compressed class space maximum capacity (kB).
-CCSC: Compressed class space capacity (kB).
-YGC: Number of young generation GC events.
-FGC: Number of full GC events.
 ```
 
 ## Working on the JVM with a JMX command-line
