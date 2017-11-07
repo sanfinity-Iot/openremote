@@ -12,13 +12,13 @@ Access the database:
 docker exec -it openremote_postgresql_1 psql -U openremote
 ```
 
-Get statistics for all tables and indices:
+Get statistics for all tables and indices (note that these are collected statistics, not live data):
 
 ```
 SELECT
     t.tablename,
     indexname,
-    c.reltuples AS num_rows,
+    c.reltuples AS approximate_row_count,
     pg_size_pretty(pg_relation_size(quote_ident(t.tablename)::text)) AS table_size,
     pg_size_pretty(pg_relation_size(quote_ident(indexrelname)::text)) AS index_size,
     CASE WHEN indisunique THEN 'Y'
