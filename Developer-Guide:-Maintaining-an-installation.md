@@ -12,29 +12,52 @@ Access the database:
 docker exec -it openremote_postgresql_1 psql -U openremote
 ```
 
-Get a row count of all tables:
-
-```
-select table_schema,
-       table_name,
-       (xpath('/row/cnt/text()', xml_count))[1]::text::int as row_count
-from (
-  select table_name, table_schema,
-         query_to_xml(format('select count(*) as cnt from %I.%I', table_schema, table_name), false, true, '') as xml_count
-  from information_schema.tables
-  where table_schema = 'public' --<< change here for the schema you want
-) t;
-```
-
-Get the byte size of all tables:
+Get statistics for all tables and indices:
 
 ```
 SELECT
-   relname as "Table",
-   pg_size_pretty(pg_total_relation_size(relid)) As "Size",
-   pg_size_pretty(pg_total_relation_size(relid) - pg_relation_size(relid)) as "External Size"
-   FROM pg_catalog.pg_statio_user_tables ORDER BY pg_total_relation_size(relid) DESC;
+    t.tablename,
+    indexname,
+    c.reltuples AS num_rows,
+    pg_size_pretty(pg_relation_size(quote_ident(t.tablename)::text)) AS table_size,
+    pg_size_pretty(pg_relation_size(quote_ident(indexrelname)::text)) AS index_size,
+    CASE WHEN indisunique THEN 'Y'
+       ELSE 'N'
+    END AS UNIQUE,
+    idx_scan AS number_of_scans,
+    idx_tup_read AS tuples_read,
+    idx_tup_fetch AS tuples_fetched
+FROM pg_tables t
+LEFT OUTER JOIN pg_class c ON t.tablename=c.relname
+LEFT OUTER JOIN
+    ( SELECT c.relname AS ctablename, ipg.relname AS indexname, x.indnatts AS number_of_columns, idx_scan, idx_tup_read, idx_tup_fetch, indexrelname, indisunique FROM pg_index x
+           JOIN pg_class c ON c.oid = x.indrelid
+           JOIN pg_class ipg ON ipg.oid = x.indexrelid
+           JOIN pg_stat_all_indexes psai ON x.indexrelid = psai.indexrelid )
+    AS foo
+    ON t.tablename = foo.ctablename
+WHERE t.schemaname='public'
+ORDER BY 1,2;
 ```
+
+Find transactions/queries waiting for more than 30 seconds:
+
+```
+SELECT pid, client_addr, now() - query_start AS duration, query, state
+    FROM pg_stat_activity
+    WHERE now() - query_start > interval '30 seconds';
+```
+
+Kill them with:
+
+```
+select pg_cancel_backend(pid);
+```
+
+More useful queries and maintenance operations can be found here:
+
+* https://wiki.postgresql.org/wiki/Index_Maintenance
+* https://github.com/ioguix/pgsql-bloat-estimation
 
 You can log all queries taking longer than 2 seconds:
 
