@@ -4,6 +4,13 @@ Tail log output of all containers with `docker-compose -p openremote -f profile/
 
 Use `docker stats` to show CPU, memory, network read/writes, and total disk read/writes for running containers.
 
+## Accessing the database
+
+Run:
+
+```
+docker exec -it openremote_postgresql_1 psql -U openremote
+```
 
 ## Diagnosing JVM memory problems
 
