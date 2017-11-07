@@ -4,13 +4,49 @@ Tail log output of all containers with `docker-compose -p openremote -f profile/
 
 Use `docker stats` to show CPU, memory, network read/writes, and total disk read/writes for running containers.
 
-## Accessing the database
+## Diagnosing database problems
 
-Run:
+Access the database:
 
 ```
 docker exec -it openremote_postgresql_1 psql -U openremote
 ```
+
+Get a row count of all tables:
+
+```
+select table_schema,
+       table_name,
+       (xpath('/row/cnt/text()', xml_count))[1]::text::int as row_count
+from (
+  select table_name, table_schema,
+         query_to_xml(format('select count(*) as cnt from %I.%I', table_schema, table_name), false, true, '') as xml_count
+  from information_schema.tables
+  where table_schema = 'public' --<< change here for the schema you want
+) t;
+```
+
+Get the byte size of all tables:
+
+```
+SELECT
+   relname as "Table",
+   pg_size_pretty(pg_total_relation_size(relid)) As "Size",
+   pg_size_pretty(pg_total_relation_size(relid) - pg_relation_size(relid)) as "External Size"
+   FROM pg_catalog.pg_statio_user_tables ORDER BY pg_total_relation_size(relid) DESC;
+```
+
+You can log all queries taking longer than 2 seconds:
+
+```
+alter system set log_min_duration_statement=2000;
+select pg_reload_conf();
+show log_min_duration_statement;
+```
+
+To disable, set the duration to `-1`.
+
+Use `explain analyze <SQL query>` to obtain the query plan and display it in https://explain.depesz.com/.
 
 ## Diagnosing JVM memory problems
 
