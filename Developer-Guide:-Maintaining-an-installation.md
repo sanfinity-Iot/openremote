@@ -73,7 +73,13 @@ Use `explain analyze <SQL query>` to obtain the query plan and display it in htt
 
 ## Diagnosing JVM memory problems
 
-Use [jstat](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstat.html) to monitor a running system/JVM. 
+If the JVM was started with `-XX:NativeMemoryTracking=summary`, use this to get an overview:
+
+```
+docker exec -it openremote_manager_1 /usr/bin/jcmd 1 VM.native_memory summary
+```
+
+Otherwise, use [jstat](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstat.html) to monitor a running system/JVM. 
 
 Get current memory configuration:
 
