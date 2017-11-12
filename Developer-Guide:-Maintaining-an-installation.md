@@ -36,7 +36,7 @@ LEFT OUTER JOIN
            JOIN pg_stat_all_indexes psai ON x.indexrelid = psai.indexrelid )
     AS foo
     ON t.tablename = foo.ctablename
-WHERE t.schemaname='public'
+WHERE t.schemaname='openremote'
 ORDER BY 1,2;
 ```
 
