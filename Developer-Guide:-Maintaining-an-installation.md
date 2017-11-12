@@ -73,7 +73,7 @@ Use `explain analyze <SQL query>` to obtain the query plan and display it in htt
 
 ## Diagnosing JVM memory problems
 
-If the JVM was started with `-XX:NativeMemoryTracking=summary`, use this to get an overview:
+If the JVM was started with `-XX:NativeMemoryTracking=summary`, use this to get an overview (see [here](http://trustmeiamadeveloper.com/2016/03/18/where-is-my-memory-java/) for more details):
 
 ```
 docker exec -it openremote_manager_1 /usr/bin/jcmd 1 VM.native_memory summary
