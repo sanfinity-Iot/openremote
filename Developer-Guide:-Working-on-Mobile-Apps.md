@@ -8,4 +8,14 @@ TODO: There is actually nothing to build right now, you have to create a custom 
 
 ## iOS Console
 
-TODO: Document build
+### Developing for iOS is only possible on macOS.
+
+Download and install [Xcode](https://itunes.apple.com/nl/app/xcode/id497799835), go to `console/iOS` and open the `AppTemplate.xcodeproj`.
+
+When using Firebase, download the GoogleService-Info.plist and replace the existing one.
+
+Set the right values in ProjectConstants, for e.g. the correct server url.
+When ready, close Xcode and run the `appGenerator.py` from a terminal and follow the instructions. For more information about the python script, read the `README.md` in the `console/iOS` folder.
+
+Finally go to your project folder and run `pod install` from a terminal to download the needed libraries.
+You'll see `console.xcworkspace`. Open this file from now on to work on your iOS app.
