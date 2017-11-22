@@ -7,7 +7,7 @@
 * [[Working on Consoles|Developer Guide: Working on Consoles]]
 * [[Working on Mobile Apps|Developer Guide: Working on Mobile Apps]]
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
-* [[Installing a Docker engine|Developer Guide: Installing a Docker engine]]
+* [[Installing Docker|Developer Guide: Installing Docker]]
 * [[Connecting to a Docker engine|Developer Guide: Connecting to a Docker engine]] 
 * [[Deploying to a Docker engine|Developer Guide: Deploying to a Docker engine]]
 * [[Pushing to Docker Hub|Developer Guide: Pushing to Docker Hub]]
