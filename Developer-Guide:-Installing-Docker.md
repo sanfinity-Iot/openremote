@@ -40,7 +40,9 @@ docker-machine env -u
 
 ## Remote Engine
 
-For a remote engine (hosted deployment), you need SSH public key access to a Linux host (preferably CentOS), and then Docker Machine can do the rest:
+### Installing a remote engine
+
+To install a remote engine (hosted deployment), you need SSH public key access to a Linux host (preferably CentOS), and then Docker Machine can do the rest:
 
 ```
 docker-machine create --driver generic \
@@ -57,11 +59,13 @@ Move `~/.docker/machine/certs/*` into `~/.docker/machine/machines/<DOCKER MACHIN
 
 When a remote engine is first installed the client credentials should be zipped and made available in a private and secure location. The client credentials can be found at `~/.docker/machine/machines/<DOCKER MACHINE NAME>/`.
 
-If the remote host already has a running Docker engine then you can manually copy the client credentials from the secure location to your local machine by unzipping the credentials into `~/.docker/machine/machines/<DOCKER MACHINE NAME>/` and then you will need to fix the paths in `~/.docker/machine/machines/<DOCKER MACHINE NAME>/config.json`.
+### Using a remote engine
+
+You do not need SSH access on the remote host to simply use an already installed Docker engine.
+
+Manually copy the client credentials of the remote engine from the secure location to your local machine by unzipping the credentials into `~/.docker/machine/machines/<DOCKER MACHINE NAME>/` and then you will need to fix the paths in `~/.docker/machine/machines/<DOCKER MACHINE NAME>/config.json`.
 
 ***For Windows you will have to use escaped backslashes e.g. `C:\\Users\Me\\.docker\\machine\\`.***
-
-## Using a machine
 
 Once the remote engine is installed ensure that `docker-machine ls` shows the new engine and that the State is `Running`:
 
@@ -72,7 +76,6 @@ docker ps
 ```
 
 This will show running containers on Docker Machine `or-host123`.
-
 
 <!--
 ## VirtualBox Engine
