@@ -41,7 +41,7 @@ Start a new shell or source your profile to enable auto-completion.
 
 ### Cleaning up images, containers, and volumes
 
-Working with Docker might leave exited containers and untagged images. If you build a new image with the same tag as an existing image, the old image will not be deleted but simply untagged. If you stop a container, it will not be automatically removed. The following bash function can be used to clean up untagged images and stopped containers:
+Working with Docker might leave exited containers and untagged images. If you build a new image with the same tag as an existing image, the old image will not be deleted but simply untagged. If you stop a container, it will not be automatically removed. The following bash function can be used to clean up untagged images and stopped containers, add it to your `$HOME/.profile`:
 
 ```
 function dcleanup(){
