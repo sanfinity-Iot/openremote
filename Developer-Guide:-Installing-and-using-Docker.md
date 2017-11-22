@@ -1,3 +1,5 @@
+All OpenRemote projects are delivered as Docker images, you'll need a Docker host to run containers and service stacks.
+
 ## Local Engine
 
 For a local engine (developer workstation setup) simply installing [Docker Community Edition](https://www.docker.com/) is enough. Ensure the following commands work:
