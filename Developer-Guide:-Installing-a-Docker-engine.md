@@ -9,6 +9,30 @@ docker-machine version
 
 For a local engine (developer workstation setup) simply installing Docker Community Edition is enough. Ensure that `docker version` on the command line works.
 
+You might want to install bash auto-completion for Docker commands. On OS X, install:
+
+```
+brew install bash-completion
+```
+
+Then add this to your `$HOME/.profile`:
+
+```
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+```
+
+And link the completion-scripts from your local Docker install:
+
+```
+find /Applications/Docker.app \
+-type f -name "*.bash-completion" \
+-exec ln -s "{}" "$(brew --prefix)/etc/bash_completion.d/" \;
+```
+
+Start a new shell or source your profile to enable auto-completion.
+
 ## Remote Engine
 
 For a remote engine (hosted deployment), you need SSH public key access to a Linux host (preferably CentOS), and then Docker Machine can do the rest:
