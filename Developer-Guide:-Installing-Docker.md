@@ -77,6 +77,47 @@ docker ps
 
 This will show running containers on Docker Machine `or-host123`.
 
+## Using Docker Compose
+
+We use Docker Compose to configure a stack of containers as services.
+
+Service images will be built automatically when they do not exist in the Docker engine image cache or when the `Dockerfile` for the service changes. **Docker Compose does not track changes to the files used in a service so when code changes are made you will need to manually force a build of the service**.
+
+Here are a few useful Docker Compose commands:
+
+* `docker-compose -f <PROFILE> pull <SERVICE> <SERVICE>...` - Force pull requested services from Docker Hub, if no services specified then all services will be pulled (e.g. docker-compose -f profile/manager.yml pull to pull all services)
+
+* 'docker-compose -f <PROFILE> build <SERVICE> <SERVICE>...` - Build/Rebuild requested services, if no services specified then all services will be built
+
+* `docker-compose -f <PROFILE> up <SERVICE> <SERVICE>...` - Creates and starts requested services, if no services specified then all services will be created and started (also auto attaches to console output from each service use `-d` to not attach to the console output)
+
+* `docker-compose -f <PROFILE> up --build <SERVICE> <SERVICE>...` - Creates and starts requested services but also forces building the services first (useful if the source code has changed as docker-compose will not be aware of this change and you would otherwise end up deploying 'stale' services)
+
+* `docker-compose -f <PROFILE> down <SERVICE> <SERVICE>...` - Stops and removes requested services, if no services specified then all services will be stopped and removed. Sometimes the shutdown doesn't work properly and you have to run `down` again to completely remove all containers and networks.
+
+When deploying profiles you can provide a project name to prefix the container names (by default Docker Compose will use the configuration profile's folder name); the project name can be specified with the -p argument using the CLI:
+
+```
+docker-compose -p <your_project_name> -f <profile> -f <profile_override> up -d <service1> <service2> ...
+```
+
+## Useful notes
+
+Working with Docker might leave exited containers, untagged images. The following bash function can be used to clean up:
+
+```
+function dcleanup(){
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+```
+
+To remove data volumes no longer referenced by a container (deleting ALL persistent data!), use:
+
+```
+docker volume prune
+```
+
 <!--
 ## VirtualBox Engine
 you can install a virtual machine as follows:
