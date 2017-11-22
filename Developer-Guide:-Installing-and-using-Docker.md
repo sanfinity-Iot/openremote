@@ -1,9 +1,20 @@
-Install [Docker Community Edition](https://www.docker.com/). Ensure the following commands work:
+## Local Engine
+
+For a local engine (developer workstation setup) simply installing Docker Community Edition is enough. Install [Docker Community Edition](https://www.docker.com/). Ensure the following commands work:
 
 ```
 docker version
 docker-machine version
 ```
+
+### Disconnecting from a remote engine
+
+Once Docker Community edition is installed then you will be connected to your local Docker engine; if you have used docker-machine to connect to a remote engine then you can `disconnect` from that remote engine using the command:
+
+```
+docker-machine env -u
+```
+### Enabling bash auto-completion
 
 You might want to install bash auto-completion for Docker commands. On OS X, install:
 
@@ -28,21 +39,11 @@ find /Applications/Docker.app \
 ```
 Start a new shell or source your profile to enable auto-completion.
 
-## Local Engine
-
-For a local engine (developer workstation setup) simply installing Docker Community Edition is enough. Ensure that `docker version` on the command line works.
-
-Once Docker Community edition is installed then you will be connected to your local Docker engine; if you have used docker-machine to connect to a remote engine then you can `disconnect` from that remote engine using the command:
-
-```
-docker-machine env -u
-```
-
 ## Remote Engine
 
 ### Installing a remote engine
 
-To install a remote engine (hosted deployment), you need SSH public key access to a Linux host (preferably CentOS), and then Docker Machine can do the rest:
+To install a remote engine (hosted deployment), you need SSH public key access to a Linux host, and then Docker Machine can do the rest and install all required packages on the host and configure secure access:
 
 ```
 docker-machine create --driver generic \
@@ -53,7 +54,7 @@ docker-machine create --driver generic \
 
 Follow the instructions [here](https://docs.docker.com/machine/drivers/generic/).
 
-After you let Docker Machine install the Docker daemon on the remote host, you must fix the generated Docker client credentials configuration files.
+After you let Docker Machine install the Docker daemon on the remote host, you must fix the generated Docker client credentials configuration files on your local machine.
 
 Move `~/.docker/machine/certs/*` into `~/.docker/machine/machines/<DOCKER MACHINE NAME>/` and fix the paths in `~/.docker/machine/machines/<DOCKER MACHINE NAME>/config.json`.
 
