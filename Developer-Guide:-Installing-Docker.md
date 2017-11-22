@@ -32,6 +32,12 @@ Start a new shell or source your profile to enable auto-completion.
 
 For a local engine (developer workstation setup) simply installing Docker Community Edition is enough. Ensure that `docker version` on the command line works.
 
+Once Docker Community edition is installed then you will be connected to your local Docker engine; if you have used docker-machine to connect to a remote engine then you can `disconnect` from that remote engine using the command:
+
+```
+docker-machine env -u
+```
+
 ## Remote Engine
 
 For a remote engine (hosted deployment), you need SSH public key access to a Linux host (preferably CentOS), and then Docker Machine can do the rest:
@@ -66,6 +72,7 @@ docker ps
 ```
 
 This will show running containers on Docker Machine `or-host123`.
+
 
 <!--
 ## VirtualBox Engine
