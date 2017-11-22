@@ -9,13 +9,6 @@ docker version
 docker-machine version
 ```
 
-### Disconnecting from a remote engine
-
-Once Docker Community edition is installed then you will be connected to your local Docker engine; if you have used docker-machine to connect to a remote engine then you can `disconnect` from that remote engine using the command:
-
-```
-docker-machine env -u
-```
 ### Enabling bash auto-completion
 
 You might want to install bash auto-completion for Docker commands. On OS X, install:
@@ -56,6 +49,14 @@ To remove data volumes no longer referenced by a container (deleting ALL persist
 
 ```
 docker volume prune
+```
+
+### Disconnecting from a remote engine
+
+Once Docker Community edition is installed then you will be connected to your local Docker engine; if you have used docker-machine to connect to a remote engine then you can `disconnect` from that remote engine using the command:
+
+```
+docker-machine env -u
 ```
 
 ## Remote Engine
