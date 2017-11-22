@@ -39,6 +39,23 @@ find /Applications/Docker.app \
 ```
 Start a new shell or source your profile to enable auto-completion.
 
+### Cleaning up images, containers, and volumes
+
+Working with Docker might leave exited containers and untagged images. If you build a new image with the same tag as an existing image, the old image will not be deleted but simply untagged. If you stop a container, it will not be automatically removed. The following bash function can be used to clean up untagged images and stopped containers:
+
+```
+function dcleanup(){
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+```
+
+To remove data volumes no longer referenced by a container (deleting ALL persistent data!), use:
+
+```
+docker volume prune
+```
+
 ## Remote Engine
 
 ### Installing a remote engine
@@ -100,23 +117,6 @@ When deploying profiles you can provide a project name to prefix the container n
 
 ```
 docker-compose -p <your_project_name> -f <profile> -f <profile_override> up -d <service1> <service2> ...
-```
-
-## Useful notes
-
-Working with Docker might leave exited containers, untagged images. The following bash function can be used to clean up:
-
-```
-function dcleanup(){
-    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
-    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
-}
-```
-
-To remove data volumes no longer referenced by a container (deleting ALL persistent data!), use:
-
-```
-docker volume prune
 ```
 
 <!--
