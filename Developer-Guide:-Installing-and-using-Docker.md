@@ -80,7 +80,7 @@ This will show running containers on Docker Machine `or-host123`.
 
 ## Using Docker Compose
 
-We use Docker Compose to configure a stack of containers as services.
+Our services are configured as a stack of containers with Docker Compose.
 
 Service images will be built automatically when they do not exist in the Docker engine image cache or when the `Dockerfile` for the service changes. **Docker Compose does not track changes to the files used in a service so when code changes are made you will need to manually force a build of the service**.
 
