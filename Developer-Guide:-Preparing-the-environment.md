@@ -1,7 +1,5 @@
 To build OpenRemote projects, you have to first prepare the environment on your developer workstation or build machine.
 
-## Dependencies
-
 Ensure you have installed and configured the following tools:
 
 * Java 8 JDK ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
@@ -21,4 +19,3 @@ docker-machine ls
 node -v
 bower -v
 ```
-A Docker engine is required to host the services used. Please refer to the Docker sections of the Developer Guide for help in installing and using Docker.
