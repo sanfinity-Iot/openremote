@@ -327,7 +327,7 @@ When you no longer need the background services, stop them:
 
 When you are [[Working on Manager|Developer Guide: Working on Manager]], you should also run the `dev-testing.yml` in the background as you execute JUnit tests ad-hoc from within your IDE. The services are also required to start the Manager in your IDE.
 
-## Going into production
+## Creating a production deployment
 
 The `dev.yml` and `dev-testing.yml` profiles you have used are bundled with the main OpenRemote project. You should read the whole [deploy.yml](https://github.com/openremote/openremote/blob/master/profile/deploy.yml), it is the basis of all other profiles. A good starting point for your own production setup is [demo.yml](https://github.com/openremote/openremote/blob/master/profile/demo.yml).
 
