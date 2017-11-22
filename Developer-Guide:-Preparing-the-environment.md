@@ -1,3 +1,5 @@
+To build OpenRemote projects, you have to first prepare the environment on your developer workstation or build machine.
+
 ## Dependencies
 
 Ensure you have installed and configured the following tools:
