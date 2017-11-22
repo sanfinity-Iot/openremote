@@ -1,7 +1,7 @@
 Install [Docker Community Edition](https://www.docker.com/). Ensure the following commands work:
 
 ```
-docker run hello-world
+docker version
 docker-machine version
 ```
 
