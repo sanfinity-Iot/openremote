@@ -1,6 +1,6 @@
 ## Local Engine
 
-For a local engine (developer workstation setup) simply installing Docker Community Edition is enough. Install [Docker Community Edition](https://www.docker.com/). Ensure the following commands work:
+For a local engine (developer workstation setup) simply installing [Docker Community Edition](https://www.docker.com/) is enough. Ensure the following commands work:
 
 ```
 docker version
