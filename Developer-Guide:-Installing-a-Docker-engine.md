@@ -5,10 +5,6 @@ docker run hello-world
 docker-machine version
 ```
 
-## Local Engine
-
-For a local engine (developer workstation setup) simply installing Docker Community Edition is enough. Ensure that `docker version` on the command line works.
-
 You might want to install bash auto-completion for Docker commands. On OS X, install:
 
 ```
@@ -30,8 +26,11 @@ find /Applications/Docker.app \
 -type f -name "*.bash-completion" \
 -exec ln -s "{}" "$(brew --prefix)/etc/bash_completion.d/" \;
 ```
-
 Start a new shell or source your profile to enable auto-completion.
+
+## Local Engine
+
+For a local engine (developer workstation setup) simply installing Docker Community Edition is enough. Ensure that `docker version` on the command line works.
 
 ## Remote Engine
 
