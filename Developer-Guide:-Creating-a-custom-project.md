@@ -355,7 +355,7 @@ Make sure the `SETUP_WIPE_CLEAN_INSTALL` environment variable is not set!
 
 A regular OpenRemote deployment exposes services only through HTTPS and WSS, the `proxy` service of OpenRemote manages keys via [Let's Encrypt](https://letsencrypt.org/).
 
-Do not forget to set `KEYCLOAK_PASSWORD` when going into production and exposing OpenRemote services beyond your development network.
+Do not forget to set `SETUP_ADMIN_PASSWORD` when going into production and exposing OpenRemote services beyond your development network.
 
 TODO Build/setup should generate a password and print it on console, bit of a problem with wipe clean install option
 
