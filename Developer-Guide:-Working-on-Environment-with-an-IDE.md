@@ -26,8 +26,8 @@ This service listens for compilation requests and transforms Java into JavaScrip
 The log messages of the running application can be colour-highlighted with the [GrepConsole plugin](https://plugins.jetbrains.com/plugin/7125-grep-console) and our [configuration](https://gist.github.com/christianbauer/9cd3ef6a871c2a3472bd70a216f3eb14).
 
 ##### Recommended Plugins
-- Grep Console
-- Markdown Navigator
+- [Grep Console](https://plugins.jetbrains.com/plugin/7125-grep-console)
+- [Markdown Navigator](https://plugins.jetbrains.com/plugin/7896-markdown-navigator)
 
 #### Eclipse
 
