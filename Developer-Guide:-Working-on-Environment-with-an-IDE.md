@@ -25,6 +25,10 @@ This service listens for compilation requests and transforms Java into JavaScrip
 
 The log messages of the running application can be colour-highlighted with the [GrepConsole plugin](https://plugins.jetbrains.com/plugin/7125-grep-console) and our [configuration](https://gist.github.com/christianbauer/9cd3ef6a871c2a3472bd70a216f3eb14).
 
+##### Recommended Plugins
+- Grep Console
+- Markdown Navigator
+
 #### Eclipse
 
 - Run `./gradlew eclipse`
@@ -56,6 +60,12 @@ Set up a *Run Configuration*:
 You can now open [http://localhost:8080/](http://localhost:8080/) in your browser. The default login is username `admin` with password `secret`.
 
 *NOTE: Please be aware that currently by default the web server binds to all interfaces (i.e. `0.0.0.0`). This can be a security problem if your development machine's network is not private and secure.*
+
+## VisualVM
+To inspect the threads, analyzing CPU and memory allocation you should running a VisualVM.
+
+- Download and install VisualVM from the [visualvm](https://visualvm.github.io/) website.
+- Install the [VisualVM Launcher](https://plugins.jetbrains.com/plugin/7115-visualvm-launcher) for IntelliJ IDEA
 
 ## Executing Manager tests
 
