@@ -37,7 +37,6 @@ The log messages of the running application can be colour-highlighted with the [
 ###### Linux
 ```
 cp ~/<PATH_TO_PROJECT>/openremote/tools/intellij/Theme-<Default|Darkcula>-GrepConsole.xml ~/.IntelliJIdea<VERSION>/config/options/GrepConsole.xml
-
 ```
 
 
