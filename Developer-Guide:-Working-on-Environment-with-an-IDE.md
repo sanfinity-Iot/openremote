@@ -29,7 +29,7 @@ The log messages of the running application can be colour-highlighted with the [
 - [Grep Console](https://plugins.jetbrains.com/plugin/7125-grep-console)
 - [Markdown Navigator](https://plugins.jetbrains.com/plugin/7896-markdown-navigator)
 
-##### Grep Console Style
+##### Grep Console Styling
 - Locate XML style config for Grep Console in openremote/tools/intellij
 - Choice the default or dark styling config
 - Copy the xml to your IntelliJ IDEA Config folder 
