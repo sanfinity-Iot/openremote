@@ -29,6 +29,18 @@ The log messages of the running application can be colour-highlighted with the [
 - [Grep Console](https://plugins.jetbrains.com/plugin/7125-grep-console)
 - [Markdown Navigator](https://plugins.jetbrains.com/plugin/7896-markdown-navigator)
 
+##### Grep Console Style
+- Locate XML style config for Grep Console in openremote/tools/intellij
+- Choice the default or dark styling config
+- Copy the xml to your IntelliJ IDEA Config folder 
+
+###### Linux
+```
+cp ~/<PATH_TO_PROJECT>/openremote/tools/intellij/Theme-<Default|Darkcula>-GrepConsole.xml ~/.IntelliJIdea<VERSION>/config/options/GrepConsole.xml
+
+```
+
+
 #### Eclipse
 
 - Run `./gradlew eclipse`
