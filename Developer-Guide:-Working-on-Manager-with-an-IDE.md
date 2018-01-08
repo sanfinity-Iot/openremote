@@ -65,7 +65,7 @@ Set up a *Run Configuration*:
 
 - Module/Classpath: `manager:server` or `myproject:myextension1` for custom projects
 - Working directory: *Must be set to OpenRemote main project directory!*
-- Main class: `org.openremote.manager.server.Main`
+- Main class: `org.openremote.manager.Main`
 - Any environment variables that customise deployment (usually custom projects have some)
 
 You can now open [http://localhost:8080/](http://localhost:8080/) in your browser. The default login is username `admin` with password `secret`.
