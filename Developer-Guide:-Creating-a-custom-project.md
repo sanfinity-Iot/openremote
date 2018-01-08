@@ -268,7 +268,7 @@ When you are working on your extension Java/Groovy code, you don't want to wait 
 
 ### Working on Manager backend services or UI
 
-See our guide for [[Working on Manager|Developer Guide: Working on Manager]], this helps you create Run/Debug Configurations in an IDE.
+Read the [[Developer Guide: Working on Manager with an IDE]], this helps you create Run/Debug Configurations in an IDE.
 
 ## Testing
 
@@ -325,7 +325,7 @@ When you no longer need the background services, stop them:
 
 `docker-compose -p myproject -f openremote/profile/dev-testing.yml down`
 
-When you are [[Working on Manager|Developer Guide: Working on Manager]], you should also run the `dev-testing.yml` in the background as you execute JUnit tests ad-hoc from within your IDE. The services are also required to start the Manager in your IDE.
+When you are [[Developer Guide: Working on Manager with an IDE]], you should also run the `dev-testing.yml` in the background as you execute JUnit tests ad-hoc from within your IDE. The services are also required to start the Manager in your IDE.
 
 ## Creating a production deployment
 
