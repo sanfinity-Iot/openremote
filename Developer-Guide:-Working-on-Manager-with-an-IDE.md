@@ -70,7 +70,7 @@ Set up a *Run Configuration*:
 
 You can now open [http://localhost:8080/](http://localhost:8080/) in your browser. The default login is username `admin` with password `secret`.
 
-*NOTE: Please be aware that currently by default the web server binds to all interfaces (i.e. `0.0.0.0`). This can be a security problem if your development machine's network is not private and secure.*
+*NOTE: The web server binds to only localhost interface (i.e. `127.0.0.1`). You can override this with `WEBSERVER_LISTEN_HOST=0.0.0.0` to bind to all interfaces and make it accessible on your LAN.*
 
 ## VisualVM
 To inspect the threads, analyzing CPU and memory allocation you should running a VisualVM.
