@@ -1,6 +1,6 @@
 The setup described here is useful if you want to create a custom project that extends OpenRemote, and keep extensions and other deployment-specific details separate in a possibly private Git repository.
 
-Your project code and configuration files can use the main OpenRemote project directly, but you can mange them independently. You can track and merge changes on the upstream main OpenRemote project, targeting specific tags for your integration. Or you can keep up with the main development branch and pull the latest code.
+Your project code and configuration files can use the main OpenRemote project directly, but you can manage them independently. You can track and merge changes on the upstream main OpenRemote project, targeting specific tags for your integration. Or you can keep up with the main development branch and pull the latest code.
 
 [[Preparing the environment|Developer Guide: Preparing the environment]] is required before starting a custom project.
 
