@@ -16,4 +16,4 @@
 
 ## Architecture
 
-* [[Asset location handling|Wiki: Asset Location]]
+* [[Asset location tracking|Architecture: Asset location tracking]]
