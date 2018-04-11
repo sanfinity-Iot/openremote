@@ -28,7 +28,7 @@ Asset location refers to a well known attribute called location which is defined
 
 * A plain old asset - Any asset that doesn't actively monitor its location but instead the location is manually updated by a user.
 
-# Location tracking scenarios
+## Location tracking scenarios
 Reasons/use cases for location tracking:
 
 1. Showing an asset on a map
@@ -38,9 +38,8 @@ Reasons/use cases for location tracking:
 Scenario 3 is not in the scope of this document and will be ignored; scenario 1 can be achieved by simply plotting the asset on a map and subscribing to location attribute event changes for that asset and updating the map accordingly. Scenario 2 is essentially location triggered rules and is discussed below.
 
 ## Location triggered rules
-There are many scenarios when it is desirable to perform some action when an assets location meets some criteria, e.g: - 
-* when an asset enters a specified region then send a notification to user/users
-* when a user's mobile phone leaves a specified region then show a notification on the mobile phone reminding them to do something
+The common use case is to specify a geographical region and to then perform some action when this region is entered, exited or both, this is known as geofencing and depending on the asset type this can either be implemented on the physical asset or within the manager; implementing within the manager requires constant location updates from the physical asset which has drawbacks as described above. Where supported geofence APIs on the physical asset should be preferred.
 
+It is possible to define location triggers in rule LHS and the platform takes care of whether or not the evaluation should be To allow seamless use of location in rul
 Location data can be either fine or coarse (as described above) and for the reasons outlined in the GPS tracker considerations; where supported then geofence APIs should be used which means the location trigger should occur on the physical asset itself. To be able to use the standard rules infrastructure to enable this then the following architecture is used:
 
