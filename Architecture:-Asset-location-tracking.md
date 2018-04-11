@@ -40,6 +40,31 @@ Scenario 3 is not in the scope of this document and will be ignored; scenario 1 
 ## Location triggered rules
 The common use case is to specify a geographical region and to then perform some action when this region is entered, exited or both, this is known as geofencing and depending on the asset type this can either be implemented on the physical asset or within the manager; implementing within the manager requires constant location updates from the physical asset which has drawbacks as described above. Where supported geofence APIs on the physical asset should be preferred.
 
-It is possible to define location triggers in rule LHS and the platform takes care of whether or not the evaluation should be To allow seamless use of location in rul
-Location data can be either fine or coarse (as described above) and for the reasons outlined in the GPS tracker considerations; where supported then geofence APIs should be used which means the location trigger should occur on the physical asset itself. To be able to use the standard rules infrastructure to enable this then the following architecture is used:
+It is possible to define location triggers in rule LHS and the platform takes care of whether or not the evaluation should occur in the manager or on the physical asset using geofence APIs. The below information describes how this is achieved:
 
+### Client instance registration
+When a client instance is loaded it contacts the `client/register` endpoint providing details about itself (ID, owning user, platform, FCM/Web push registration token, geofence API support,  etc.) if the ID is specified then the backend will retrieve the existing client instance asset for that id; if not found then a new asset is created, this asset is then updated/populated with the client instance details and the following data is returned to the client instance:
+
+* Asset ID
+* Existing geofence definitions (when the client instance supports geofence APIs - discussed later)
+
+This process should occur every time the client instance is loaded.
+
+### Creating a location triggered rule
+When a ruleset is created that has a rule with a location based condition; as soon as that ruleset version is deployed for the first time all client instance assets that support geofence APIs and are in the scope of the ruleset are notified (using push notification) to refresh their geofence definitions, the client instance then:
+
+* Calls `client/geofences` endpoint providing its asset ID, the backend then returns all geofence definitions applicable to this asset
+* The asset then updates its geofence definitions accordingly
+
+When a geofence is triggered on an asset then the asset should update its own location by posting to `client/location` (this allows anonymous client instances to update their location), the location value sent should be as follows:
+
+* Geofence Enter - Send geofence centre point as location (centre point should have been provided in the geofence definition retrieved from the backend)
+* Geofence Exit - Send null (this will clear the devices location and indicate that)
+
+Should push notification try to include geofence definitions (push notification size is limited)?
+
+
+## TODOs
+* Need to figure out how to identify rules with location based conditions during rule deployment
+* Define data that client instance provides to the backend
+* Define a geofence definition (geofence APIs only seem to support radial fences), should include centre point to be sent when triggered
