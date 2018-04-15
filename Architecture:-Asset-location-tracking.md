@@ -44,7 +44,7 @@ Depending on the asset type/capabilities and the specific project requirements a
 1. When rules with location predicates are created and/or updated then any existing affected assets that support geofence APIs are notified and expected to update their geofence definitions
 
 ### Geofence push and retrieval
-How geofences are 'pushed' to assets is determined by the applicable `AssetLocationAdapter` (if any); there is also a JAX-RS endpoint `asset\geofences` that allows assets to pull their geofence definitions when desired (assets that have been offline could call this endpoint to ensure their geofences are up to date, etc.). Wherever possible geofence definitions should have timestamp data so that assets don't update unless they have stale data.
+How geofences are 'pushed' to assets is determined by the applicable `AssetLocationAdapter` (if any); there is also a JAX-RS endpoint `asset/geofences` that allows assets to pull their geofence definitions when desired (assets that have been offline could call this endpoint to ensure their geofences are up to date, etc.). Wherever possible geofence definitions should have timestamp data so that assets don't update unless they have stale data.
 
 ### Unsupported assets/rules
 If there are rules with location predicates but they cannot be implemented using geofence APIs on the asset and/or the asset doesn't support geofence APIs then the location attribute is expected to be updated using some other mechanism (asset pushes location, protocol polling, manual, etc.)
