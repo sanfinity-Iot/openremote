@@ -34,7 +34,6 @@ Depending on the asset type/capabilities and the specific project requirements a
 
 1. Asset must support geofence APIs and backend must be able to supply them in required format (specific geofence API adapters - Android/iOS geofence processing can be done in code on those devices but some things like a GPS tracker might not be able to run custom code - have to send SMS for example in specific format)
 2. Asset must support a mechanism for pushing geofences to it (geofence definition update - could be a direct mechanism or could be indirect e.g. push notification telling asset to update geofences)
-3. The location predicate must be supported by the geofence API on the asset (Android and iOS only support radial geofences)
 
 ### Assets added/modified
 1. Asset is provisioned in the manager (either manually or automatically via a protocol)
