@@ -3,16 +3,16 @@
 Refers to a backend (manager) consumer (same meaning as OAuth2 client). The scope of a client is determined on a per project basis but generally there are the following types:
 
   * Manager client web app
-  * Realm web app
-  * Realm console/mobile app
+  * Realm web app(s)
+  * Realm console/mobile app(s)
 
 Clients have a 1-1 mapping with clients in keycloak.
 
 ### Client instance
 Refers to an instance of a client; not necessarily an app installation - think of a user loading a web app in their browser, this is a client instance, just like an installation of a console app on an Android/iOS device.
 
-### Asset location
-Asset location refers to a well known attribute called location which is defined on an asset; any asset can have a location, how the location is updated is specific to the asset type and whether the location attribute is linked to a protocol. Some example scenarios: -
+### Asset and asset location
+Asset in the scope of this document refers specifically to assets that have a geographical location and asset location refers to a well known attribute called location which is defined on the asset; how the location is updated is specific to the asset type and whether the location attribute is linked to a protocol. Some example scenarios: -
 
 * GPS Tracker - A GPS tracker with internet connection (dedicated device, smart phone/watch, etc); the device pushes its location to the server, an asset is used to represent the tracker and its location is updated when an update is received from the physical device. Provides fine grained location data and following concerns must be considered:
 
@@ -43,7 +43,7 @@ The common use case is to specify a geographical region and to then perform some
 It is possible to define location triggers in rule LHS and the platform takes care of whether or not the evaluation should occur in the manager or on the physical asset using geofence APIs. The below information describes how this is achieved:
 
 ### Client instance registration
-When a client instance is loaded it contacts the `client/register` endpoint providing details about itself (ID, owning user, platform, FCM/Web push registration token, geofence API support,  etc.) if the ID is specified then the backend will retrieve the existing client instance asset for that id; if not found then a new asset is created, this asset is then updated/populated with the client instance details and the following data is returned to the client instance:
+When a client instance loads it contacts the `client/register` endpoint providing details about itself (ID, owning user, platform, FCM/Web push registration token, geofence API support, etc.) if the ID is specified then the backend will retrieve the existing client instance asset for that id; if not found then a new asset is created, this asset is then updated/populated with the client instance details and the following data is returned to the client instance:
 
 * Asset ID
 * Existing geofence definitions (when the client instance supports geofence APIs - discussed later)
@@ -56,15 +56,16 @@ When a ruleset is created that has a rule with a location based condition; as so
 * Calls `client/geofences` endpoint providing its asset ID, the backend then returns all geofence definitions applicable to this asset
 * The asset then updates its geofence definitions accordingly
 
-When a geofence is triggered on an asset then the asset should update its own location by posting to `client/location` (this allows anonymous client instances to update their location), the location value sent should be as follows:
+When a geofence is triggered on an asset then the asset should update its own location by posting to the public endpoint `client/location` (this allows anonymous client instances to update their location), the location value sent should be as follows:
 
 * Geofence Enter - Send geofence centre point as location (centre point should have been provided in the geofence definition retrieved from the backend)
-* Geofence Exit - Send null (this will clear the devices location and indicate that)
-
-Should push notification try to include geofence definitions (push notification size is limited)?
+* Geofence Exit - Send null (this will clear the devices location and indicate that the asset has left the geofence)
 
 
-## TODOs
+## Discussion/TODOs
+* Should push notification try to include geofence definitions (push notification size is limited)?
 * Need to figure out how to identify rules with location based conditions during rule deployment
 * Define data that client instance provides to the backend
 * Define a geofence definition (geofence APIs only seem to support radial fences), should include centre point to be sent when triggered
+* Only console instances that are anonymous should allow public updates of their location (is the asset ID enough of a security mechanism to prevent spoofing)
+* Assets that support geofence APIs must also support a mechanism for remotely updating/refreshing the geofences (Andrdoid/iOS=push notification subscription to 'geofence' topic?, GPS trackers=SMS)
