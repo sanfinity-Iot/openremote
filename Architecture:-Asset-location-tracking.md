@@ -16,19 +16,6 @@ Asset in the scope of this document refers specifically to assets that have a ge
 
 * **A plain old asset** - Any asset that doesn't actively monitor its location but instead the location is manually updated by a user or via a protocol.
 
-### Client
-Refers to a backend (manager) consumer (same meaning as OAuth2 client). The scope of a client is determined on a per project basis but generally there are the following types:
-
-  * Manager client web app
-  * Realm web app(s)
-  * Realm console/mobile app(s)
-
-Clients have a 1-1 mapping with clients in keycloak.
-
-### Client instance
-Refers to an instance of a client; not necessarily an app installation - think of a user loading a web app in their browser, this is a client instance, just like an installation of a console app on an Android/iOS device.
-
-**A smart phone can be either a geographical asset or a client or both.**
 
 ## Location tracking scenarios
 Reasons/use cases for location tracking:
