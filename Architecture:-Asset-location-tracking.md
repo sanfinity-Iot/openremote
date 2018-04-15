@@ -49,7 +49,7 @@ It is possible to define location triggers in rule LHS and how this is implement
 2. Asset must support a mechanism for pushing geofences to it (geofence definition update - could be a direct mechanism or could be indirect e.g. push notification telling asset to update geofences)
 3. The location predicate must be supported by the geofence API on the asset (Android and iOS only support radial geofences)
 
-### Assets added
+### Assets added/modified
 1. Asset is provisioned in the manager (either manually or automatically via a protocol)
 2. Asset type and attributes indicate geofence API support (which API and version)
 3. Any pre-existing rules that apply to this asset that have location predicates in LHS are then 'pushed' to the asset
@@ -63,12 +63,8 @@ How geofences are 'pushed' to assets is determined by the applicable `AssetLocat
 ### Unsupported assets/rules
 If there are rules with location predicates but they cannot be implemented using geofence APIs on the asset and/or the asset doesn't support geofence APIs then the location attribute is expected to be updated using some other mechanism (asset pushes location, protocol polling, manual, etc.)
 
-
-
-* Calls `client/geofences` endpoint providing its asset ID, the backend then returns all geofence definitions applicable to this asset
-* The asset then updates its geofence definitions accordingly
-
-When a geofence is triggered on an asset then the asset should update its own location by posting to the public endpoint `client/location` (this allows anonymous client instances to update their location), the location value sent should be as follows:
+## Geofence trigger behaviour
+When a geofence is triggered on an asset then the asset should update its own location by posting to the public endpoint `asset/location`, the location value sent should be as follows:
 
 * Geofence Enter - Send geofence centre point as location (centre point should have been provided in the geofence definition retrieved from the backend)
 * Geofence Exit - Send null (this will clear the devices location and indicate that the asset has left the geofence)
