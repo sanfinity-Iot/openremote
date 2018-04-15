@@ -55,6 +55,7 @@ When a geofence is triggered on an asset then the asset should update its own lo
 * Geofence Enter - Send geofence centre point as location (centre point should have been provided in the geofence definition retrieved from the backend)
 * Geofence Exit - Send null (this will clear the devices location and indicate that the asset has left the geofence)
 
+**By using geofence triggers in this way the handling of all location tracked assets can be processed in the same way i.e. the manager rules can compare location asset state changes irrespective of how the asset provides the location data.**
 
 ## Discussion/TODOs
 * Need to figure out how to identify rules with location based conditions during rule deployment
