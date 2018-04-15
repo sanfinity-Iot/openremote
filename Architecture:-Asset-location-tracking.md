@@ -27,12 +27,12 @@ Reasons/use cases for location tracking:
 Scenario 3 is not in the scope of this document and will be ignored; scenario 1 can be achieved by simply plotting the asset on a map and subscribing to location attribute event changes for that asset and updating the map accordingly. Scenario 2 is essentially location triggered rules and is discussed below.
 
 ## Location triggered rules
-The common use case is to specify a geographical region and to then perform some action when this region is entered, exited or both, this is known as geofencing and depending on the asset type this can either be implemented on the physical asset or within the manager; implementing within the manager requires constant location updates from the physical asset which has drawbacks as described above. Where supported; geofence APIs on the physical asset should be preferred.
+The common use case is to specify a geographical region and to then perform some action when this region is entered, exited or both, this is known as geofencing. It is possible to define location predicates (geofences) in rule LHS and how this is implemented on the affected assets is abstracted away by the OpenRemote manager (i.e. the manager determines whether or not geofence APIs can be used or not - see below). 
 
-It is possible to define location triggers in rule LHS and how this is implemented on the affected assets is abstracted away by the OpenRemote manager (i.e. the manager determines whether or not geofence APIs can be used or not - see below). 
+### Geofence API vs location updates 
+Depending on the asset type/capabilities and the specific project requirements an asset can either continually send location `attribute events` to the manager or the manager could instruct the asset to update its geofence definitions and then the asset notifies the manager when geofences are triggered. Whenever possible geofence APIs on the physical asset should be preferred for efficiency reasons; rules used to determine geofence usage:
 
-### Geofence API usage logic
-1. Asset must support geofence APIs and backend must be able to supply them in required format (specific geofence API adapters - Android/iOS handling can be done in code on those devices but some things like a GPS tracker might not be able to run custom code - have to send SMS for example in specific format)
+1. Asset must support geofence APIs and backend must be able to supply them in required format (specific geofence API adapters - Android/iOS geofence processing can be done in code on those devices but some things like a GPS tracker might not be able to run custom code - have to send SMS for example in specific format)
 2. Asset must support a mechanism for pushing geofences to it (geofence definition update - could be a direct mechanism or could be indirect e.g. push notification telling asset to update geofences)
 3. The location predicate must be supported by the geofence API on the asset (Android and iOS only support radial geofences)
 
@@ -45,12 +45,12 @@ It is possible to define location triggers in rule LHS and how this is implement
 1. When rules with location predicates are created and/or updated then any existing affected assets that support geofence APIs are notified and expected to update their geofence definitions
 
 ### Geofence push and retrieval
-How geofences are 'pushed' to assets is determined by the applicable `AssetLocationAdapter` (if any); there is also a JAX-RS endpoint `asset\geofences` that allows assets to pull their geofence definitions when desired (assets that have been offline could call this endpoint to ensure their geofences are up to date, etc.)
+How geofences are 'pushed' to assets is determined by the applicable `AssetLocationAdapter` (if any); there is also a JAX-RS endpoint `asset\geofences` that allows assets to pull their geofence definitions when desired (assets that have been offline could call this endpoint to ensure their geofences are up to date, etc.). Wherever possible geofence definitions should have timestamp data so that assets don't update unless they have stale data.
 
 ### Unsupported assets/rules
 If there are rules with location predicates but they cannot be implemented using geofence APIs on the asset and/or the asset doesn't support geofence APIs then the location attribute is expected to be updated using some other mechanism (asset pushes location, protocol polling, manual, etc.)
 
-## Geofence trigger behaviour
+### Geofence trigger behaviour
 When a geofence is triggered on an asset then the asset should update its own location by posting to the public endpoint `asset/location`, the location value sent should be as follows:
 
 * Geofence Enter - Send geofence centre point as location (centre point should have been provided in the geofence definition retrieved from the backend)
@@ -58,10 +58,7 @@ When a geofence is triggered on an asset then the asset should update its own lo
 
 
 ## Discussion/TODOs
-* How many geofence definitions can fit in a 4KB FCM message)
-* Should push notification try to include geofence definitions (push notification size is limited)?
 * Need to figure out how to identify rules with location based conditions during rule deployment
-* Define data that client instance provides to the backend
-* Define a geofence definition (geofence APIs only seem to support radial fences), should include centre point to be sent when triggered
-* Only console instances that are anonymous should allow public updates of their location (is the asset ID enough of a security mechanism to prevent spoofing)
-* Assets that support geofence APIs must also support a mechanism for remotely updating/refreshing the geofences (Andrdoid/iOS=push notification subscription to 'geofence' topic?, GPS trackers=SMS)
+* Should `asset/location` endpoint be public (is the asset ID enough of a security mechanism to prevent spoofing)
+* Assets that support geofence APIs must also support a mechanism for remotely requesting that the geofences be updated (Andrdoid/iOS=push notification subscription to 'geofence' topic?, GPS trackers=SMS)
+* Should FCM push notification try to include geofence definitions (how many geofence definitions can fit in a 4KB FCM message) or should push notification just be used to tell these assets to go and get latest definitions?
