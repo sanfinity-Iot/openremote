@@ -8,7 +8,7 @@ Asset in the scope of this document refers specifically to assets that have a ge
   2. Privacy issues
   3. Storage of data (current and historical)
 
-* **Smart device with geofencing capabilities (e.g. Android/iOS)** - A smart device such as a mobile phone (e.g. Android or iOS) that has a geofence API for coarse location tracking; geofences are defined on the device and a callback is triggered when the geofence is:
+* **Smart device with geofence APIs (e.g. Android/iOS)** - A smart device such as a mobile phone (e.g. Android or iOS) that has a geofence API for coarse location tracking; geofences are defined on the device and a callback is triggered when the geofence is:
 
   1. Entered
   2. Exited
@@ -42,27 +42,28 @@ Scenario 3 is not in the scope of this document and will be ignored; scenario 1 
 ## Location triggered rules
 The common use case is to specify a geographical region and to then perform some action when this region is entered, exited or both, this is known as geofencing and depending on the asset type this can either be implemented on the physical asset or within the manager; implementing within the manager requires constant location updates from the physical asset which has drawbacks as described above. Where supported; geofence APIs on the physical asset should be preferred.
 
-It is possible to define location triggers in rule LHS and how this is implemented on the affected assets is abstracted away by the OpenRemote manager (i.e. the manager determines whether or not geofence APIs can be used or not). The below information describes how this is achieved:
+It is possible to define location triggers in rule LHS and how this is implemented on the affected assets is abstracted away by the OpenRemote manager (i.e. the manager determines whether or not geofence APIs can be used or not - see below). 
 
+### Geofence API usage logic
+1. Asset must support geofence APIs and backend must be able to supply them in required format (specific geofence API adapters - Android/iOS handling can be done in code on those devices but some things like a GPS tracker might not be able to run custom code - have to send SMS for example in specific format)
+2. Asset must support a mechanism for pushing geofences to it (geofence definition update - could be a direct mechanism or could be indirect e.g. push notification telling asset to update geofences)
+3. The location predicate must be supported by the geofence API on the asset (Android and iOS only support radial geofences)
+
+### Assets added
 1. Asset is provisioned in the manager (either manually or automatically via a protocol)
 2. Asset type and attributes indicate geofence API support (which API and version)
-3. Any pre-existing rules that apply to this asset that have location predicates in LHS are then 'pushed' to the asset based on whether:
-   1. The asset supports geofence APIs
-   2. The asset can be notified that geofence definitions need fetching/refreshing
-   3. The location predicate is supported by the geofence API on the asset (Android and iOS only support radial geofences)
-4. If there are rules with location predicates but they cannot be implemented using geofence APIs on the asset (as described in 3) then the manager does nothing and the location attribute is expected to be updated using some other mechanism (asset pushes location, protocol polling, manual, etc.)
+3. Any pre-existing rules that apply to this asset that have location predicates in LHS are then 'pushed' to the asset
+
+### Rules with location predicate added/modified
+1. When rules with location predicates are created and/or updated then any existing affected assets that support geofence APIs are notified and expected to update their geofence definitions
+
+### Geofence push and retrieval
+How geofences are 'pushed' to assets is determined by the applicable `AssetLocationAdapter` (if any); there is also a JAX-RS endpoint `asset\geofences` that allows assets to pull their geofence definitions when desired (assets that have been offline could call this endpoint to ensure their geofences are up to date, etc.)
+
+### Unsupported assets/rules
+If there are rules with location predicates but they cannot be implemented using geofence APIs on the asset and/or the asset doesn't support geofence APIs then the location attribute is expected to be updated using some other mechanism (asset pushes location, protocol polling, manual, etc.)
 
 
-### Client instance registration
-When a client instance loads it contacts the `client/register` endpoint providing details about itself (ID, owning user, platform, FCM/Web push registration token, geofence API support, etc.) if the ID is specified then the backend will retrieve the existing client instance asset for that id; if not found then a new asset is created, this asset is then updated/populated with the client instance details and the following data is returned to the client instance:
-
-* Asset ID
-* Existing geofence definitions (when the client instance supports geofence APIs - discussed later)
-
-This process should occur every time the client instance is loaded.
-
-### Creating a location triggered rule
-When a ruleset is created that has a rule with a location based condition; as soon as that ruleset version is deployed for the first time all client instance assets that support geofence APIs and are in the scope of the ruleset are notified (using push notification) to refresh their geofence definitions, the client instance then:
 
 * Calls `client/geofences` endpoint providing its asset ID, the backend then returns all geofence definitions applicable to this asset
 * The asset then updates its geofence definitions accordingly
