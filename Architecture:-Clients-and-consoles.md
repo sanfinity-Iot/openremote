@@ -16,11 +16,28 @@ Console build and deployment will depend on the specific tools and platform used
 # Runtime behaviour
 1. Console is `launched` (e.g. typing URL in browser or opening the app)
 2. Console then displays a splash screen indicating that the client is loading
-3. Console 
-4. The client in a hidden iframe, the URL should include query parameters to instruct the client what behaviour they wish to override (see the Console/client API below) once the client is loaded then the iframe is shown in place of the splash screen
-3. 
+3. Client is loaded in a hidden iframe, the URL should include query parameters to instruct the client what functionality they wish to override/provide to the client (see the Console/client API below) 
+4. Console registers to receive postMessages from the client iframe
+5. When client loads it registers to receive postMessages from the console
+6. Client posts message to console asking it to initialise each `provider` one at a time (see provider initialisation below)
+7. Assuming all providers initialise correctly then the client posts a message to the console 
 
 # Client/console API
-Console loads client with the following query parameters to override desired functionality and to inform the client about itself (ones in bold are required):
+
+## Client URL
+Console loads client with the following query parameters in the URL to override desired functionality and to inform the client about itself (ones in bold are required):
 
 * **console [string]** - Name of the console
+* **consoleVersion [string]** - Version of the console
+* **platform [string]** - Name of the platform
+* **paltformVersion [string]** - Version of the platform
+* provides [string] - The name of some functionality that this console provides either on top of or in place of standard client functionality; this parameter can be used multiple times (one for each piece of functionality) currently supported  functionality that the console understands are:
+   * push - Push notification functionality (Web push, Android and iOS push notifications)
+   * geofence - Geofence APIs (Android and iOS)
+   * errorhandling - Ability for console to decide how to handle errors (displaying splash screen or other custom UI)
+
+## Provider Initialisation
+1. For each provider specified by the console (via query parameters) the client posts a message asking the console to initialise the provider:
+```
+
+```
