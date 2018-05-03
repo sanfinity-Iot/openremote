@@ -17,3 +17,4 @@
 ## Architecture
 
 * [[Asset location tracking|Architecture: Asset location tracking]]
+* [[Console registration|Architecture: Console registration]]
