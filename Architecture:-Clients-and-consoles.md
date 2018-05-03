@@ -20,12 +20,22 @@ Console build and deployment will depend on the specific tools and platform used
 5. When client loads it registers to receive postMessages from the console
 6. Client posts message to console asking it to initialise each `provider` one at a time (see provider initialisation below)
 7. Assuming all providers initialise correctly then the client posts a `ready` message to the console indicating that it is ready and the console should now show the client iframe instead of the splash screen
-8. The client should now call the `console/register` endpoint on the OR manager with the following payload:
+8. The client should now call the `console/register` endpoint on the OR manager with the following data in a JSON payload:
+* name: string [Name of the console (default: platform.name from [Platform.js](https://github.com/bestiejs/platform.js/) e.g. Chrome, Safari, etc.)]
+* version: string [Version of the console (default: platform.version from [Platform.js](https://github.com/bestiejs/platform.js/))] 
+* platform: string [Name of platform/OS default: platform.os from [Platform.js](https://github.com/bestiejs/platform.js/))]
+* providers: array of providers and any associated data (see list of standard providers below)
+Example:
 ```
 {
-   name: string [Name of the console (default: platform.name from [Platform.js](https://github.com/bestiejs/platform.js/) e.g. Chrome, Safari, etc.)]
-   version: string [Version of the console (default: platform.version from [Platform.js](https://github.com/bestiejs/platform.js/))] 
-   platform: string [Name of platform
+   name: "ExampleConsole",
+   version: "1.0.0",
+   platform: "Android 7.1.2",
+   providers: [
+      {
+         provider: push_notification:
+      }
+   ]
 }
 ```
 
@@ -36,7 +46,6 @@ Console loads client with the following query parameters in the URL to override 
 * **name[string]** - Name of the console
 * **version [string]** - Version of the console
 * **platform [string]** - Name of the platform
-* **platformVersion [string]** - Version of the platform
 * provides [string] - The name of some functionality that this console provides either on top of or in place of standard client functionality; this parameter can be used multiple times; one for each provider (see below for currently supported/standard providers)
 
 ## Provider Initialisation
