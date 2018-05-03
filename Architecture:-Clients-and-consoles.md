@@ -37,7 +37,29 @@ Console loads client with the following query parameters in the URL to override 
    * errorhandling - Ability for console to decide how to handle errors (displaying splash screen or other custom UI)
 
 ## Provider Initialisation
-1. For each provider specified by the console (via query parameters) the client posts a message asking the console to initialise the provider:
-```
+The list of providers is constructed from the standard providers the client understands and the providers that the console has specified via the query parameters (a console provider overrides a client provider of the same name).
 
+1. For each provider the client posts a message asking the console to initialise the provider:
 ```
+{
+   action: "PROVIDER_INIT",
+   provider: "PROVIDER_VALUE",
+}
+```
+2. The console then does any required initialisation and posts a message back to the client:
+```
+{
+   action: "PROVIDER_INIT",
+   provider: "PROVIDER_VALUE",
+   success: true|false|null [true=init success; false=init failure; null=ignoring and client should fallback to default behaviour/provider]
+}
+```
+3. If a provider initialisation call returns false then an error is generated and passed to the registered error handler:
+```
+{
+   error: "PROVIDER_INIT",
+   detail: "PROVIDER_VALUE"
+}
+```
+4. Once all providers are initialised then the client is free to decide when to `start` each provider (starting should involve asking the user for any required permission(s) for the functionality to work and any other specific requirements), the client is best placed to decide when and how to ask for permissions and should use good UX principles to avoid users denying such permission requests (see [https://developers.google.com/web/fundamentals/push-notifications/permission-ux](https://developers.google.com/web/fundamentals/push-notifications/permission-ux)) **[NOTE: Any providers requested by the console that the client doesn't understand will be started immediately]**
+5.
