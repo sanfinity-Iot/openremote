@@ -31,10 +31,7 @@ Console loads client with the following query parameters in the URL to override 
 * **consoleVersion [string]** - Version of the console
 * **platform [string]** - Name of the platform
 * **paltformVersion [string]** - Version of the platform
-* provides [string] - The name of some functionality that this console provides either on top of or in place of standard client functionality; this parameter can be used multiple times (one for each piece of functionality) currently supported  functionality that the console understands are:
-   * push - Push notification functionality (Web push, Android and iOS push notifications)
-   * geofence - Geofence APIs (Android and iOS)
-   * errorhandling - Ability for console to decide how to handle errors (displaying splash screen or other custom UI)
+* provides [string] - The name of some functionality that this console provides either on top of or in place of standard client functionality; this parameter can be used multiple times; one for each provider (see below for currently supported/standard providers)
 
 ## Provider Initialisation
 The list of providers is constructed from the standard providers the client understands and the providers that the console has specified via the query parameters (a console provider overrides a client provider of the same name).
@@ -52,6 +49,7 @@ The list of providers is constructed from the standard providers the client unde
    action: "PROVIDER_INIT",
    provider: "PROVIDER_VALUE",
    success: true|false|null [true=init success; false=init failure; null=ignoring and client should fallback to default behaviour/provider]
+   version: int [integer indicating the version of this provider - so the client knows how to interact with it]
 }
 ```
 3. If a provider initialisation call returns false then an error is generated and passed to the registered error handler:
@@ -61,5 +59,29 @@ The list of providers is constructed from the standard providers the client unde
    detail: "PROVIDER_VALUE"
 }
 ```
-4. Once all providers are initialised then the client is free to decide when to `start` each provider (starting should involve asking the user for any required permission(s) for the functionality to work and any other specific requirements), the client is best placed to decide when and how to ask for permissions and should use good UX principles to avoid users denying such permission requests (see [https://developers.google.com/web/fundamentals/push-notifications/permission-ux](https://developers.google.com/web/fundamentals/push-notifications/permission-ux)) **[NOTE: Any providers requested by the console that the client doesn't understand will be started immediately]**
-5.
+4. Once all providers are initialised then the client is free to decide when to `start` each provider (starting should involve asking the user for any required permission(s) for the functionality to work and any other specific requirements), the client is best placed to decide when and how to ask for permissions and should use good UX principles to avoid users denying such permission requests (see [https://developers.google.com/web/fundamentals/push-notifications/permission-ux](https://developers.google.com/web/fundamentals/push-notifications/permission-ux)) **[NOTE: Any providers requested by the console that the client doesn't understand will be started immediately]**. The start message structure is:
+```
+{
+   action: "PROVIDER_START",
+   provider: "PROVIDER_VALUE",
+   data: JSON (optional JSON structure to pass any relevant data the provider may need for starting)
+}
+```
+5. The console then does any required start logic and posts a message back to the client:
+```
+{
+   action: "PROVIDER_START",
+   provider: "PROVIDER_VALUE",
+   success: true|false [true=start success; false=start failure]
+   data: JSON (optional JSON structure to pass any relevant data back to the client)
+}
+```
+6. 
+
+## Standard Providers
+   * push_silent - Silent push notification functionality (Android and iOS `data only` push notifications, web push API doesn't support this)
+   * push_notification - Push notification that shows a notification to the user (web push API, Android or iOS)
+   * local_notification - Show a notification immediately (without using Push API)
+   * modal - Show a modal dialog to the user immediately
+   * geofence - Geofence APIs (Android and iOS)
+   * errorhandling - Ability for console to decide how to handle errors (displaying splash screen or other custom UI)
