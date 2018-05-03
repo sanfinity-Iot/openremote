@@ -12,7 +12,6 @@ Clients and consoles should be able to exchange information via HTML5 postMessag
 Clients should be built and deployed within the OR manager web server using the standard tooling e.g. `gradle clean installDist` (refer to documentation).
 Console build and deployment will depend on the specific tools and platform used but where possible the standard tooling and deployment process should be used (TODO)
 
-
 # Runtime behaviour
 1. Console is `launched` (e.g. typing URL in browser or opening the app)
 2. Console then displays a splash screen indicating that the client is loading
@@ -20,17 +19,24 @@ Console build and deployment will depend on the specific tools and platform used
 4. Console registers to receive postMessages from the client iframe
 5. When client loads it registers to receive postMessages from the console
 6. Client posts message to console asking it to initialise each `provider` one at a time (see provider initialisation below)
-7. Assuming all providers initialise correctly then the client posts a message to the console 
+7. Assuming all providers initialise correctly then the client posts a `ready` message to the console indicating that it is ready and the console should now show the client iframe instead of the splash screen
+8. The client should now call the `console/register` endpoint on the OR manager with the following payload:
+```
+{
+   name: string [Name of the console (default: platform.name from [Platform.js](https://github.com/bestiejs/platform.js/) e.g. Chrome, Safari, etc.)]
+   version: string [Version of the console (default: platform.version from [Platform.js](https://github.com/bestiejs/platform.js/))] 
+   platform: string [Name of platform
+}
+```
 
 # Client/console API
-
 ## Client URL
 Console loads client with the following query parameters in the URL to override desired functionality and to inform the client about itself (ones in bold are required):
 
-* **console [string]** - Name of the console
-* **consoleVersion [string]** - Version of the console
+* **name[string]** - Name of the console
+* **version [string]** - Version of the console
 * **platform [string]** - Name of the platform
-* **paltformVersion [string]** - Version of the platform
+* **platformVersion [string]** - Version of the platform
 * provides [string] - The name of some functionality that this console provides either on top of or in place of standard client functionality; this parameter can be used multiple times; one for each provider (see below for currently supported/standard providers)
 
 ## Provider Initialisation
@@ -76,12 +82,22 @@ The list of providers is constructed from the standard providers the client unde
    data: JSON (optional JSON structure to pass any relevant data back to the client)
 }
 ```
-6. 
+
 
 ## Standard Providers
-   * push_silent - Silent push notification functionality (Android and iOS `data only` push notifications, web push API doesn't support this)
-   * push_notification - Push notification that shows a notification to the user (web push API, Android or iOS)
-   * local_notification - Show a notification immediately (without using Push API)
-   * modal - Show a modal dialog to the user immediately
-   * geofence - Geofence APIs (Android and iOS)
-   * errorhandling - Ability for console to decide how to handle errors (displaying splash screen or other custom UI)
+* push_silent - Silent push notification functionality (Android and iOS `data only` push notifications, web push API doesn't support this)
+* push_notification - Push notification that shows a notification to the user (web push API, Android or iOS)
+* local_notification - Show a notification immediately (without using Push API)
+* modal - Show a modal dialog to the user immediately
+* geofence - Geofence APIs (Android and iOS)
+* errorhandling - Ability for console to decide how to handle errors (displaying splash screen or other custom UI)
+* location - Get current location (if this is not overridden by consoles then an undesirable permission message will likely be shown)
+
+** NOTE: Additional providers should be used on custom projects as required**
+
+## Other Messages
+### From console
+
+### From client
+* ready - Indicates that client is ready to be shown `{action: "READY"}`
+* exit - Indicates that the client wants to exit so the console should be closed `{action: "EXIT"}`
