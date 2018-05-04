@@ -13,7 +13,7 @@ Clients should be built and deployed within the OR manager web server using the 
 Console build and deployment will depend on the specific tools and platform used but where possible the standard tooling and deployment process should be used (TODO)
 
 # Runtime behaviour
-1. Console is `launched` (e.g. typing URL in browser or opening the app)
+1. Console is 'launched' (e.g. typing URL in browser or opening the app)
 2. Console then displays a splash screen indicating that the client is loading
 3. Client is loaded in a hidden iframe, the URL should include query parameters to instruct the client what functionality they wish to override/provide to the client (see the Console/client API below) 
 4. Console registers to receive postMessages from the client iframe
@@ -25,31 +25,32 @@ Console build and deployment will depend on the specific tools and platform used
 * name: string [Name of the console (default: platform.name from [Platform.js](https://github.com/bestiejs/platform.js/) e.g. Chrome, Safari, etc.)]
 * version: string [Version of the console (default: platform.version from [Platform.js](https://github.com/bestiejs/platform.js/))] 
 * platform: string [Name of platform/OS default: platform.os from [Platform.js](https://github.com/bestiejs/platform.js/))]
-* providers: array of providers and any associated data (see list of standard providers below)
+* providers: array of providers and any associated data already collected (see list of standard providers below)
 Example:
 ```
 {
    name: "ExampleConsole",
    version: "1.0.0",
    platform: "Android 7.1.2",
-   providers: [
-      {
-         provider: "push",
-         type: "fcm",
+   providers: {
+      push: {
+         requiresPermission: true,
+         hasPermissions: true,
+         disabled: false,
          data: {
             token: "323daf3434098fabcbc",
-            topics: ["update", "maintenance"],
-            silent: true,
+            topics: ["update", "maintenance"]
          }
       },
-      {
-         provider: "geofence",
-         type: "or"
+      geofence: {
+         requiresPermission: true,
+         hasPermissions: true,
+         disabled: false
       }
-   ]
+   }
 }
 ```
-If registration is successful then the server will then respond with the registration id which should be stored for future registrations:
+If registration is successful then the server will then respond with the registration id which should be stored for future registration requests:
 ```
 HTTP 200 OK
 {
@@ -60,7 +61,7 @@ or for bad requests:
 ```
 HTTP 400
 ```
-9. The client now has the freedom to call start on any provider and to send provider data to the server as required, for example the client might have an introduction page to explain why it wants to use push notifications and if the user agrees then the standard push permissions dialog can be shown by starting the push provider, the push provider then registers with the push server and returns the push data (e.g. FCM token, Web Push Endpoint URL, etc.) to the client. The client can then update the provider data on the server by calling the `console/update` endpoint
+9. The client now has the freedom to call start on any provider and to send provider data to the server as required, for example the client might have an introduction page to explain why it wants to use push notifications and if the user agrees then the standard push permissions dialog can be shown by starting the push provider, the push provider then registers with the push server and returns the push data (e.g. FCM token, Web Push Endpoint URL, etc.) to the client. The client can then update the provider data on the server by calling the `console/register` endpoint.
 
 # Client/console API
 ## Client URL
@@ -124,15 +125,16 @@ The client can disable a provider by sending the following message to the consol
 ```
 
 ### Provider independence
-Some providers `run` independently of the client in the background (e.g. push, geofence), providers can also communicate with each other where supported (e.g. push provider telling the geofence provider to refresh the geofences).
+Some providers 'run' independently of the client in the background (e.g. push, geofence), providers can also communicate with each other where supported (e.g. push provider telling the geofence provider to refresh the geofences).
 
-As well as the standard messages above; the client can interact with individual providers using the provider's specific methods as described below.
+As well as the standard messages above; the client can interact with individual providers using the provider's specific messages as described below.
 
 
 # Standard Providers
 ## Push Provider (provider: "push")
-Push notification that allows data/notifications to be remotely pushed to the console. There are two types of standard push provider:
-### FCM Push (type: "fcm" [Android & iOS])
+Push notification that allows data/notifications to be remotely pushed to the console. There are two types of standard push provider depending on the platform:
+
+### FCM Push (Android & iOS)
 * Supports silent (data only) push notifications
 * Supports topics
 
@@ -143,7 +145,7 @@ The data structure returned from enabled message is:
 }
 ```
 
-### Web Push (type: "web" [Browsers])
+### Web Push (Web Browsers)
 * Not topic support (yet)
 * No silent (data only) push notifications
 
@@ -159,15 +161,40 @@ The data structure returned from enabled message is:
 ```
 
 ## Geofence Provider (provider: "geofence")
-Use platform geofence APIs (Android and iOS)
+Use platform geofence APIs (Android and iOS); the provider expects a public endpoint on the OR manager at `console/{consoleId}/geofences` which it can call to get the geofences for this console. The geofence definitions returned by this endpoint and the behaviour of this provider should match the definitions in the asset location tracking wiki.
+
+This provider returns no data from the enabled message request.
+
+### Refresh message (Client -> Console)
+```
+{
+   action: "GEOFENCE_REFRESH"
+}
+```
 
 ## Location Provider (provider: "location")
 Get current location using platform API (if this is not overridden by consoles then an undesirable permission message will likely be shown when falling back to the client's navigator API)
 
+### Get message (Client -> Console)
+```
+{
+   action: "LOCATION_GET"
+}
+```
+
+### Location message (Console -> Client)
+```
+{
+   action: "LOCATION_RETURN",
+   lat: latitude,
+   lng: longitude
+}
+```
+
 ## Notification Provider (provider: "notification")
 Show a notification immediately using the platforms standard mechanism (without using Push API)
 
-### Notification show
+### Show message (Client -> Console)
 The client can show a notification by sending the following message to the console:
 ```
 {
@@ -180,7 +207,7 @@ The client can show a notification by sending the following message to the conso
    }
 ```
 
-### Notification click
+### Clicked message (Console -> Client)
 The client can listen for notification click events by listening for the following messages:
 ```
 {
