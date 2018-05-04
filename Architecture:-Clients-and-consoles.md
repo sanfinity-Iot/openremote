@@ -264,6 +264,7 @@ The client can listen for notification click events by listening for the followi
    text: "This is a push notification",
    data: JSON (data payload supplied with the notification),
 }
+```
 
 ## Modal Provider (provider: "modal")
 Show a modal dialog to the user immediately using the native platform mechanism.
