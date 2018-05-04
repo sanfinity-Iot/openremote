@@ -33,7 +33,19 @@ Example:
    platform: "Android 7.1.2",
    providers: [
       {
-         provider: push_notification:
+         provider: "push",
+         data: {
+            type: "fcm",
+            token: "323daf3434098fabcbc",
+            topics: ["update", "maintenance"],
+            silent: true,
+         }
+      },
+      {
+         provider: "geofence",
+         data: {
+            type: "or"
+         }
       }
    ]
 }
@@ -94,15 +106,14 @@ The list of providers is constructed from the standard providers the client unde
 
 
 ## Standard Providers
-* push_silent - Silent push notification functionality (Android and iOS `data only` push notifications, web push API doesn't support this)
-* push_notification - Push notification that shows a notification to the user (web push API, Android or iOS)
-* local_notification - Show a notification immediately (without using Push API)
+* push - Push notification that shows a notification to the user (web push API, Android or iOS)
+* notification - Show a notification immediately (without using Push API)
 * modal - Show a modal dialog to the user immediately
 * geofence - Geofence APIs (Android and iOS)
 * errorhandling - Ability for console to decide how to handle errors (displaying splash screen or other custom UI)
-* location - Get current location (if this is not overridden by consoles then an undesirable permission message will likely be shown)
+* location - Get current location (if this is not overridden by consoles then an undesirable permission message will likely be shown when falling back to the client's navigator API)
 
-** NOTE: Additional providers should be used on custom projects as required**
+**NOTE: Additional providers should be used on custom projects as required**
 
 ## Other Messages
 ### From console
