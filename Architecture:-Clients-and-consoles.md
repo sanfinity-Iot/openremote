@@ -74,64 +74,128 @@ Console loads client with the following query parameters in the URL to override 
 ## Provider interaction
 The providers to initialise is determined by the client and is dependent on the requirements of each client (e.g. client requires push notifications, current location, etc.).
 
-1. For each provider the client posts a message asking the console to initialise the provider:
+### Initialise
+For each enabled provider the client posts a message asking the console to initialise the provider:
 ```
 {
    action: "PROVIDER_INIT",
    provider: "PROVIDER_NAME"
 }
 ```
-2. The console then does any required initialisation and posts a message back to the client:
+The console then does any required initialisation and posts a message back to the client:
 ```
 {
    action: "PROVIDER_INIT",
    provider: "PROVIDER_NAME",
-   type: string indicating the type of this provider [so the client knows how to interact with it and/or the server knows how to handle its data]
+   type: string indicating the type of this provider [so the server knows how to handle its data]
    requiresPermission: true|false [tells the client whether user permission is required for this provider]
-   hasPermission: true|false|null [tells the client whether permission has already been granted true=permission granted; false=permission denied; null=no permission required (treated like true)]
+   hasPermission: true|false|null [tells the client whether permission has already been granted true=permission granted; false=permission denied; null=permission not yet requested]
    success: true|false [true=init success; false=init failure]
 }
 ```
-3. If a provider initialisation call returns success=false then an error is generated and passed to the registered error handler:
+If a provider initialisation call returns success=false then it is up to the client how to proceed, provider can be marked as disabled or the app could halt (depending on how critical the provider is etc.)
+
+### Enable
+Once all enabled providers are initialised then the client is free to decide when to enable each provider; where a provider returned `requiresPermission=true && hasPermission=null` (the client is best placed to decide when and how to ask for permissions and should use good UX principles to avoid users denying such permission requests (see [permission-ux](https://developers.google.com/web/fundamentals/push-notifications/permission-ux)). Providers that don't require permissions or already have permissions could be enabled immediately. The enable message structure is:
 ```
 {
-   error: "PROVIDER_INIT",
-   detail: "PROVIDER_NAME"
+   action: "PROVIDER_ENABLE",
+   provider: "PROVIDER_NAME"
+   data: JSON [any data that the client wishes to pass to this provider that may be required for enabling it]
 }
 ```
-4. Once all providers are initialised then the client is free to decide when to ask the user for permission to use any provider that returned `requiresPermission=true && hasPermission=null` (the client is best placed to decide when and how to ask for permissions and should use good UX principles to avoid users denying such permission requests (see [permission-ux](https://developers.google.com/web/fundamentals/push-notifications/permission-ux)). The request permission message structure is:
+The console then asks the user for the necessary permission(s) (if not done already) and enables the functionality of this provider then posts a message back to the client:
 ```
 {
-   action: "PROVIDER_PERMIT",
+   action: "PROVIDER_ENABLE",
+   provider: "PROVIDER_NAME",
+   hasPermission: true|false [true=user granted permission; false=user denied permission]
+   success: true|false [true=enabled success; false=enabled failure]
+   data: JSON [any data that the provider wishes to return to the client for use by the client and/or for sending to the server]
+}
+
+### Disable
+The client can disable a provider by sending the following message to the console:
+```
+{
+   action: "PROVIDER_DISABLE",
    provider: "PROVIDER_NAME"
 }
 ```
-5. The console then asks the user for the necessary permission(s) and posts a message back to the client:
+
+### Provider independence
+Some providers `run` independently of the client in the background (e.g. push, geofence), providers can also communicate with each other where supported (e.g. push provider telling the geofence provider to refresh the geofences).
+
+As well as the standard messages above; the client can interact with individual providers using the provider's specific methods as described below.
+
+
+# Standard Providers
+## Push Provider (provider: "push")
+Push notification that allows data/notifications to be remotely pushed to the console. There are two types of standard push provider:
+### FCM Push (type: "fcm" [Android & iOS])
+* Supports silent (data only) push notifications
+* Supports topics
+
+The data structure returned from enabled message is:
 ```
 {
-   action: "PROVIDER_PERMIT",
-   provider: "PROVIDER_NAME",
-   hasPermission: true|false [true=user granted permission; false=user denied permission]
+   token: "23123213ad2313b0897efd",
 }
 ```
-6. The client can use a provider as and when it requires by using the messages each provider defines (see below)
-
-
-## Standard Providers
-### Push Provider
-Push notification that allows data/notifications to be remotely pushed to the console. There are two types of standard push provider:
-### FCM (type: "fcm" [Android & iOS])
 
 ### Web Push (type: "web" [Browsers])
+* Not topic support (yet)
+* No silent (data only) push notifications
 
+The data structure returned from enabled message is:
+```
+{
+  "endpoint": "https://some.pushservice.com/something-unique",
+  "keys": {
+    "p256dh": "BIPUL12DLfytvTajnryr2PRdAgXS3HGKiLqndGcJGabyhHheJYlNGCeXl1dn18gSJ1WAkAPIxr4gK0_dQds4yiI=",
+    "auth":"FPssNDTKnInHVndSTdbKFw=="
+  }
+}
+```
 
-* notification - Show a notification immediately (without using Push API)
-* modal - Show a modal dialog to the user immediately
-* geofence - Geofence APIs (Android and iOS)
-* errorhandling - Ability for console to decide how to handle errors (displaying splash screen or other custom UI)
-* location - Get current location (if this is not overridden by consoles then an undesirable permission message will likely be shown when falling back to the client's navigator API)
+## Geofence Provider (provider: "geofence")
+Use platform geofence APIs (Android and iOS)
 
-**NOTE: Additional providers should be used on custom projects as required**
+## Location Provider (provider: "location")
+Get current location using platform API (if this is not overridden by consoles then an undesirable permission message will likely be shown when falling back to the client's navigator API)
+
+## Notification Provider (provider: "notification")
+Show a notification immediately using the platforms standard mechanism (without using Push API)
+
+### Notification show
+The client can show a notification by sending the following message to the console:
+```
+{
+   action: "NOTIFICATION_SHOW",
+   data: {
+      id: 1,
+      title: "Hello",
+      text: "This is a notification message!",
+      data: JSON (any data to pass to notification click handler)
+   }
+```
+
+### Notification click
+The client can listen for notification click events by listening for the following messages:
+```
+{
+   action: "NOTIFICATION_CLICKED",
+   notification: JSON (notification that was clicked)
+}
+```
+
+## Modal Provider (provider: "modal")
+Show a modal dialog to the user immediately using the native platform mechanism.
+TODO
+
+## ErrorHandler Provider (provider: "errorhandling")
+Ability for console to decide how to handle errors (displaying splash screen or other custom UI)
+TODO
 
 ## Other Messages
 ### From console
