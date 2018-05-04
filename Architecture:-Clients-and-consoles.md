@@ -35,8 +35,8 @@ Example:
    providers: [
       {
          provider: "push",
+         type: "fcm",
          data: {
-            type: "fcm",
             token: "323daf3434098fabcbc",
             topics: ["update", "maintenance"],
             silent: true,
@@ -44,9 +44,7 @@ Example:
       },
       {
          provider: "geofence",
-         data: {
-            type: "or"
-         }
+         type: "or"
       }
    ]
 }
@@ -58,11 +56,11 @@ HTTP 200 OK
    id: "213adbc3236767890feef"
 }
 ```
-or
+or for bad requests:
 ```
 HTTP 400
 ```
-9. The client now has the freedom to call start on any provider and to send provider data to the server as required, for example the client might have an introduction page to explain why it wants to use push notifications and if the user agrees then the standard push permissions dialog can be shown by starting the push provider, the push provider then registers with the push server and returns the push data (e.g. FCM token, Web Push Endpoint URL, etc.) to the client. The client can then update the provider on the server by calling the `console/update` endpoint
+9. The client now has the freedom to call start on any provider and to send provider data to the server as required, for example the client might have an introduction page to explain why it wants to use push notifications and if the user agrees then the standard push permissions dialog can be shown by starting the push provider, the push provider then registers with the push server and returns the push data (e.g. FCM token, Web Push Endpoint URL, etc.) to the client. The client can then update the provider data on the server by calling the `console/update` endpoint
 
 # Client/console API
 ## Client URL
@@ -71,55 +69,62 @@ Console loads client with the following query parameters in the URL to override 
 * **name[string]** - Name of the console
 * **version [string]** - Version of the console
 * **platform [string]** - Name of the platform
-* provides [string] - The name of some functionality that this console provides either on top of or in place of standard client functionality; this parameter can be used multiple times; one for each provider (see below for currently supported/standard providers)
+* provider [string] - The name of a provider that this console supports; this parameter can be used multiple times; one for each provider (see below for currently supported/standard providers)
 
-## Provider Initialisation
-The list of providers is constructed from the standard providers the client understands and the providers that the console has specified via the query parameters (a console provider overrides a client provider of the same name).
+## Provider interaction
+The providers to initialise is determined by the client and is dependent on the requirements of each client (e.g. client requires push notifications, current location, etc.).
 
 1. For each provider the client posts a message asking the console to initialise the provider:
 ```
 {
    action: "PROVIDER_INIT",
-   provider: "PROVIDER_VALUE",
+   provider: "PROVIDER_NAME"
 }
 ```
 2. The console then does any required initialisation and posts a message back to the client:
 ```
 {
    action: "PROVIDER_INIT",
-   provider: "PROVIDER_VALUE",
-   success: true|false|null [true=init success; false=init failure; null=ignoring and client should fallback to default behaviour/provider]
-   version: int [integer indicating the version of this provider - so the client knows how to interact with it]
+   provider: "PROVIDER_NAME",
+   type: string indicating the type of this provider [so the client knows how to interact with it and/or the server knows how to handle its data]
+   requiresPermission: true|false [tells the client whether user permission is required for this provider]
+   hasPermission: true|false|null [tells the client whether permission has already been granted true=permission granted; false=permission denied; null=no permission required (treated like true)]
+   success: true|false [true=init success; false=init failure]
 }
 ```
-3. If a provider initialisation call returns false then an error is generated and passed to the registered error handler:
+3. If a provider initialisation call returns success=false then an error is generated and passed to the registered error handler:
 ```
 {
    error: "PROVIDER_INIT",
-   detail: "PROVIDER_VALUE"
+   detail: "PROVIDER_NAME"
 }
 ```
-4. Once all providers are initialised then the client is free to decide when to `start` each provider (starting should involve asking the user for any required permission(s) for the functionality to work and any other specific requirements), the client is best placed to decide when and how to ask for permissions and should use good UX principles to avoid users denying such permission requests (see [https://developers.google.com/web/fundamentals/push-notifications/permission-ux](https://developers.google.com/web/fundamentals/push-notifications/permission-ux)) **[NOTE: Any providers requested by the console that the client doesn't understand will be started immediately]**. The start message structure is:
+4. Once all providers are initialised then the client is free to decide when to ask the user for permission to use any provider that returned `requiresPermission=true && hasPermission=null` (the client is best placed to decide when and how to ask for permissions and should use good UX principles to avoid users denying such permission requests (see [permission-ux](https://developers.google.com/web/fundamentals/push-notifications/permission-ux)). The request permission message structure is:
 ```
 {
-   action: "PROVIDER_START",
-   provider: "PROVIDER_VALUE",
-   data: JSON (optional JSON structure to pass any relevant data the provider may need for starting)
+   action: "PROVIDER_PERMIT",
+   provider: "PROVIDER_NAME"
 }
 ```
-5. The console then does any required start logic and posts a message back to the client:
+5. The console then asks the user for the necessary permission(s) and posts a message back to the client:
 ```
 {
-   action: "PROVIDER_START",
-   provider: "PROVIDER_VALUE",
-   success: true|false [true=start success; false=start failure]
-   data: JSON (optional JSON structure to pass any relevant data back to the client)
+   action: "PROVIDER_PERMIT",
+   provider: "PROVIDER_NAME",
+   hasPermission: true|false [true=user granted permission; false=user denied permission]
 }
 ```
+6. The client can use a provider as and when it requires by using the messages each provider defines (see below)
 
 
 ## Standard Providers
-* push - Push notification that shows a notification to the user (web push API, Android or iOS)
+### Push Provider
+Push notification that allows data/notifications to be remotely pushed to the console. There are two types of standard push provider:
+### FCM (type: "fcm" [Android & iOS])
+
+### Web Push (type: "web" [Browsers])
+
+
 * notification - Show a notification immediately (without using Push API)
 * modal - Show a modal dialog to the user immediately
 * geofence - Geofence APIs (Android and iOS)
