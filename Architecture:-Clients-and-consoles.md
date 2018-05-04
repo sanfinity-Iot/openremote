@@ -21,6 +21,7 @@ Console build and deployment will depend on the specific tools and platform used
 6. Client posts message to console asking it to initialise each `provider` one at a time (see provider initialisation below)
 7. Assuming all providers initialise correctly then the client posts a `ready` message to the console indicating that it is ready and the console should now show the client iframe instead of the splash screen
 8. The client should now call the `console/register` endpoint on the OR manager with the following data in a JSON payload:
+* id: string [ID of this console registration (if previously registered otherwise null)
 * name: string [Name of the console (default: platform.name from [Platform.js](https://github.com/bestiejs/platform.js/) e.g. Chrome, Safari, etc.)]
 * version: string [Version of the console (default: platform.version from [Platform.js](https://github.com/bestiejs/platform.js/))] 
 * platform: string [Name of platform/OS default: platform.os from [Platform.js](https://github.com/bestiejs/platform.js/))]
@@ -50,6 +51,18 @@ Example:
    ]
 }
 ```
+If registration is successful then the server will then respond with the registration id which should be stored for future registrations:
+```
+HTTP 200 OK
+{
+   id: "213adbc3236767890feef"
+}
+```
+or
+```
+HTTP 400
+```
+9. The client now has the freedom to call start on any provider and to send provider data to the server as required, for example the client might have an introduction page to explain why it wants to use push notifications and if the user agrees then the standard push permissions dialog can be shown by starting the push provider, the push provider then registers with the push server and returns the push data (e.g. FCM token, Web Push Endpoint URL, etc.) to the client. The client can then update the provider on the server by calling the `console/update` endpoint
 
 # Client/console API
 ## Client URL
