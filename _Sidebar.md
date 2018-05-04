@@ -17,4 +17,4 @@
 ## Architecture
 
 * [[Asset location tracking|Architecture: Asset location tracking]]
-* [[Console registration|Architecture: Clients and consoles]]
+* [[Clients and consoles|Architecture: Clients and consoles]]
