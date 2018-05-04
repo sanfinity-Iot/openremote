@@ -114,7 +114,7 @@ The console then asks the user for the necessary permission(s) (if not done alre
    success: true|false [true=enabled success; false=enabled failure]
    data: JSON [any data that the provider wishes to return to the client for use by the client and/or for sending to the server]
 }
-
+```
 ### Disable
 The client can disable a provider by sending the following message to the console:
 ```
