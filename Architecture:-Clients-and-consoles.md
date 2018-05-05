@@ -189,7 +189,7 @@ Called for both types when a push notification is received:
 ```
 
 ## Geofence Provider (provider: "geofence")
-Use platform geofence APIs (Android and iOS); the provider expects a public endpoint on the OR manager at `console/{consoleId}/geofences` which it can call to get the geofences for this console. The geofence definitions returned by this endpoint and the behaviour of this provider should match the definitions in the asset location tracking wiki.
+Use platform geofence APIs (Android and iOS); the provider expects a public endpoint on the OR manager at `rules/geofences/{consoleId}` which it can call to get the geofences for this console. The geofence definitions returned by this endpoint and the behaviour of this provider should match the definitions in the asset location tracking wiki.
 
 ### Enabled message request data (Client -> Console)
 No data
@@ -198,6 +198,7 @@ No data
 No data
 
 ### Refresh message (Client -> Console)
+Tell the provider to fetch the latest geofence definitions and to update its local geofences.
 ```
 {
    action: "GEOFENCE_REFRESH"
