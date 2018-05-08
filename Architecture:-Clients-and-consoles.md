@@ -45,7 +45,7 @@ Example:
          }
       },
       geofence: {
-         version: "orConsole",
+         version: "ORConsole",
          requiresPermission: true,
          hasPermissions: true,
          disabled: false
