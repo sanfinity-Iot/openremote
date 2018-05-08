@@ -44,7 +44,7 @@ Depending on the asset type/capabilities and the specific project requirements a
 1. When rules with location predicates are created and/or updated then any existing affected assets that support geofence APIs are notified and expected to update their geofence definitions
 
 ### Geofence push and retrieval
-How geofences are 'pushed' to assets is handled by GeofenceAdapters that are loaded at runtime using the ServiceLoader mechanism; there is also a JAX-RS endpoint `rules/geofences/{adapterName}` that allows assets to pull their geofence definitions when desired (assets that have been offline could call this endpoint to ensure their geofences are up to date, etc.). The structure of the geofence definitions returned by the endpoint is determined by the requested GeofenceAdapter (see below).
+How geofences are 'pushed' to assets is handled by GeofenceAdapters that are loaded at runtime using the ServiceLoader mechanism; there is also a JAX-RS endpoint `rules/geofences/{assetId}` that allows assets to pull their geofence definitions when desired (assets that have been offline could call this endpoint to ensure their geofences are up to date, etc.). The structure of the geofence definitions returned by the endpoint is determined by the requested GeofenceAdapter (see below).
 
 ### Unsupported assets/rules
 If there are rules with location predicates but they cannot be implemented using geofence APIs on the asset and/or the asset doesn't support geofence APIs then the location attribute is expected to be updated using some other mechanism (asset pushes location, protocol polling, manual, etc.)
@@ -57,12 +57,13 @@ When a geofence is triggered on an asset then the asset should update its own lo
 
 **By using geofence triggers in this way the handling of all location tracked assets can be processed in the same way i.e. the manager rules can compare location asset state changes irrespective of how the asset provides the location data.**
 
-## Geofence Adapters
-### ORv1 (Android and iOS consoles)
+## Geofence Asset Adapters
+Refer to the source code for details of the [GeofenceAssetAdapter](https://github.com/openremote/openremote/blob/location/manager/src/main/java/org/openremote/manager/rules/geofence/GeofenceAssetAdapter.java) and how it is used. Currently there is one implementation:
 
+### OpenRemote Console (Android and iOS consoles)
+An asset will use this adapter if it matches the following criteria:
+* Asset type = `urn:openremote:asset:console`
+* Has an attribute called `providerGeofence` with a meta item named `urn:openremote:asset:meta:provider:version` whose value is `"openremoteConsole"`
 
 ## Discussion/TODOs
-* Define geofence definition model
 * Should `asset/location` endpoint be public (is the asset ID enough of a security mechanism to prevent spoofing)
-* Assets that support geofence APIs must also support a mechanism for remotely requesting that the geofences be updated (Andrdoid/iOS=push notification subscription to 'geofence' topic?, GPS trackers=SMS)
-* Should FCM push notification try to include geofence definitions (how many geofence definitions can fit in a 4KB FCM message) or should push notification just be used to tell these assets to go and get latest definitions?
