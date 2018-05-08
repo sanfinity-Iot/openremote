@@ -63,7 +63,7 @@ Refer to the source code for details of the [GeofenceAssetAdapter](https://githu
 ### OpenRemote Console (Android and iOS consoles)
 An asset will use this adapter if it matches the following criteria:
 * Asset type: `urn:openremote:asset:console`
-* Has an attribute called `providerGeofence` with a meta item named `urn:openremote:asset:meta:provider:version` whose value is `"openremoteConsole"`
+* Has an attribute called `providerGeofence` with a meta item named `urn:openremote:asset:meta:provider:version` whose value is `"ORConsole"`
 
 **This adapter only supports radial geofences (Android and iOS only support this type)**
 
