@@ -35,7 +35,7 @@ Example:
    platform: "Android 7.1.2",
    providers: {
       push: {
-         version: "orConsole",
+         version: "ORConsole",
          requiresPermission: true,
          hasPermissions: true,
          disabled: false,
