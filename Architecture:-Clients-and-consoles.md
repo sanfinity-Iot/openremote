@@ -146,7 +146,9 @@ Allows data/notifications to be remotely pushed to the console. There are two ty
 ### Enabled message request data (Client -> Console)
 Array of topics to subscribe to:
 ```
-["update", "custom"]
+{
+   topics: ["update", "custom"]
+}
 ```
 
 ### Enabled message response data (Console -> Client)
@@ -192,7 +194,11 @@ Called for both types when a push notification is received:
 Use platform geofence APIs (Android and iOS); the provider expects a public endpoint on the OR manager at `rules/geofences/{consoleId}` which it can call to get the geofences for this console. The geofence definitions returned by this endpoint and the behaviour of this provider should match the definitions in the asset location tracking wiki.
 
 ### Enabled message request data (Client -> Console)
-No data
+```
+{
+   consoleId: "23123213ad2313b0897efd",
+}
+```
 
 ### Enabled message response data (Console -> Client)
 No data
