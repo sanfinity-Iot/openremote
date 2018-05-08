@@ -196,6 +196,7 @@ Use platform geofence APIs (Android and iOS); the provider expects a public endp
 ### Enabled message request data (Client -> Console)
 ```
 {
+   baseUrl: "https://openremote.io/",
    consoleId: "23123213ad2313b0897efd",
 }
 ```
