@@ -35,6 +35,7 @@ Example:
    platform: "Android 7.1.2",
    providers: {
       push: {
+         version: "orConsole",
          requiresPermission: true,
          hasPermissions: true,
          disabled: false,
@@ -44,6 +45,7 @@ Example:
          }
       },
       geofence: {
+         version: "orConsole",
          requiresPermission: true,
          hasPermissions: true,
          disabled: false
@@ -94,6 +96,7 @@ The console then does any required initialisation and posts a message back to th
 {
    action: "PROVIDER_INIT",
    provider: "PROVIDER_NAME",
+   version: "PROVIDER_VERSION",
    requiresPermission: true|false [tells the client whether user permission is required for this provider]
    hasPermission: true|false|null [tells the client whether permission has already been granted true=permission granted; false=permission denied; null=permission not yet requested]
    success: true|false [true=init success; false=init failure]
