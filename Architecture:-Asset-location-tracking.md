@@ -62,8 +62,24 @@ Refer to the source code for details of the [GeofenceAssetAdapter](https://githu
 
 ### OpenRemote Console (Android and iOS consoles)
 An asset will use this adapter if it matches the following criteria:
-* Asset type = `urn:openremote:asset:console`
+* Asset type: `urn:openremote:asset:console`
 * Has an attribute called `providerGeofence` with a meta item named `urn:openremote:asset:meta:provider:version` whose value is `"openremoteConsole"`
 
+**This adapter only supports radial geofences (Android and iOS only support this type)**
+
+The geofence definitions returned by this adapter (returned by calling the `rules/geofences/{assetId}`) endpoint are as follows:
+
+```
+[
+   {
+      id: "23123abd343fed23425d", [unique ID made up from assetId and hashcode of lat, lng and radius]
+      lat: 52.0, [latitude of centre point]
+      lng: 0.0, [longitude of centre point]
+      radius: 100 [size of radial zone in m]
+      postUrl: "{realm}/asset/location/{assetId}"
+   }
+]
+```
+
 ## Discussion/TODOs
-* Should `asset/location` endpoint be public (is the asset ID enough of a security mechanism to prevent spoofing)
+* Should `asset/location` endpoint be public (is the asset ID enough of a 'security' mechanism to prevent spoofing)
