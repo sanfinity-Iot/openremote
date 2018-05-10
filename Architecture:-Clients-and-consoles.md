@@ -37,7 +37,7 @@ Example:
       push: {
          version: "ORConsole",
          requiresPermission: true,
-         hasPermissions: true,
+         hasPermission: true,
          disabled: false,
          data: {
             token: "323daf3434098fabcbc",
@@ -47,7 +47,7 @@ Example:
       geofence: {
          version: "ORConsole",
          requiresPermission: true,
-         hasPermissions: true,
+         hasPermission: true,
          disabled: false
       }
    }
