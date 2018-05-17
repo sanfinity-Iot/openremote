@@ -67,10 +67,10 @@ If registration is successful then the server will return the saved console asse
 ## Client URL
 Console loads client with the following query parameters in the URL to override desired functionality and to inform the client about itself (ones in bold are required):
 
-* **name[string]** - Name of the console
-* **version [string]** - Version of the console
-* **platform [string]** - Name of the platform
-* provider [string] - The name of a provider that this console supports; this parameter can be used multiple times; one for each provider (see below for currently supported/standard providers)
+* **consoleName[string]** - Name of the console
+* **consoleVersion [string]** - Version of the console
+* **consolePlatform [string]** - Name of the platform
+* consoleProviders [string] - Space delimited list of providers that this console supports (see below for currently supported/standard providers)
 
 ## Provider interaction
 The providers to initialise is determined by the client and is dependent on the requirements of each client (e.g. client requires push notifications, current location, etc.).
