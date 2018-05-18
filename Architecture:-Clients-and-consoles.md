@@ -21,21 +21,19 @@ Console build and deployment will depend on the specific tools and platform used
 6. Client posts message to console asking it to initialise each `provider` one at a time (see provider initialisation below)
 7. Assuming all providers initialise correctly then the client posts a `ready` message to the console indicating that it is ready and the console should now show the client iframe instead of the splash screen
 8. The client can choose to enable any providers at this stage (see Provider interaction below)
-9. The client should now post a console asset to the `console/register` endpoint on the OR manager:
+9. The client should now post a console registration to the `console/register` endpoint on the OR manager:
 * id: string [Console asset ID (if previously registered otherwise null)]
-* name: string [Name of this console asset (default: platform.name from [Platform.js](https://github.com/bestiejs/platform.js/))
-* consoleName: string [Name of the console (default: platform.name from [Platform.js](https://github.com/bestiejs/platform.js/) e.g. Chrome, Safari, etc.)]
-* consoleVersion: string [Version of the console (default: platform.version from [Platform.js](https://github.com/bestiejs/platform.js/))] 
-* consolePlatform: string [Name of platform/OS default: platform.os from [Platform.js](https://github.com/bestiejs/platform.js/))]
-* consoleProviders: array of providers and any associated data already collected (see list of standard providers below)
+* name: string [Name of the console (default: platform.name from [Platform.js](https://github.com/bestiejs/platform.js/) e.g. Chrome, Safari, etc.)]
+* version: string [Version of the console (default: platform.version from [Platform.js](https://github.com/bestiejs/platform.js/))] 
+* platform: string [Name of platform/OS default: platform.os from [Platform.js](https://github.com/bestiejs/platform.js/))]
+* providers: array of providers and any associated data already collected (see list of standard providers below)
 Example:
 ```
 {
-   name: "My Android Phone",
-   consoleName: "ExampleConsole",
-   consoleVersion: "1.0.0",
-   consolePlatform: "Android 7.1.2",
-   consoleProviders: {
+   name: "ExampleConsole",
+   version: "1.0.0",
+   platform: "Android 7.1.2",
+   providers: {
       push: {
          version: "ORConsole",
          requiresPermission: true,
@@ -55,9 +53,9 @@ Example:
    }
 }
 ```
-If registration is successful then the server will return the saved console asset; which should be stored for future registration requests.
+If registration is successful then the server will return the saved console registration (including the id); which should be stored for future registration requests.
 
-**N.B. the console asset is stored on the server inside the appropriate realm under an asset called 'Consoles' and if the client is authenticated then the console asset is linked with the authenticated user**
+**N.B. the console registration is converted into an asset which is stored on the server inside the appropriate realm under an asset called 'Consoles' and if the client is authenticated then the console asset is linked with the authenticated user**
 
 10. The client can enable any remaining providers as it requires, for example the client might want to wait until a user requests functionality provided by a provider before enabling it. When a providers status changes the client should update the server by calling the `console/register` endpoint again.
 
