@@ -121,7 +121,13 @@ The client can disable a provider by sending the following message to the consol
    provider: "PROVIDER_NAME"
 }
 ```
-
+The console then does any required disabling of the provider and posts a message back to the client:
+```
+{
+   action: "PROVIDER_DISABLE",
+   provider: "PROVIDER_NAME"
+}
+```
 ### Provider independence
 Some providers 'run' independently of the client in the background (e.g. push, geofence), providers can also communicate with each other where supported (e.g. push provider telling the geofence provider to refresh the geofences) how they do this is of no concern to the client.
 
@@ -174,6 +180,7 @@ The data structure returned from the enabled message request is:
 Called for both types when a push notification is received:
 ```
 {
+   provider: "PROVIDER_NAME",
    action: "PUSH_RECEIVED",
    title: "Hello",
    text: "This is a push notification",
