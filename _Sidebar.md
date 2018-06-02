@@ -14,6 +14,10 @@
 * [[Connecting Protocol adapters with Agents|Developer Guide: Connecting Protocol adapters with Agents]]
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 
+## User Guide
+
+* [[Connecting to a HTTP API|User Guide: Connecting to a HTTP API]]
+
 ## Architecture
 
 * [[Asset location tracking|Architecture: Asset location tracking]]
