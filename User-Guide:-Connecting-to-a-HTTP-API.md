@@ -8,7 +8,7 @@ The following example uses a weather API provided by [OpenWeatherMap](https://op
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * Asset name: `HTTP API Agent`
-   * Parent asset: `CustomerA -> Smart Home`
+   * Parent asset: `CustomerA -> Smart Home`and select 'OK'
    * Asset Type: `Agent`
 4. Click `Create asset` at bottom of screen and then click `Edit asset` in the top right
 5. Add a new attribute:
