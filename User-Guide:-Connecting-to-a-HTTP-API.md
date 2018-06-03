@@ -11,7 +11,7 @@ The following example uses a weather API provided by [OpenWeatherMap](https://op
    * Parent asset: `CustomerA -> Smart Home` and select 'OK'
    * Asset Type: `Agent`
 4. Click `Create asset` at bottom of screen and then click `Edit asset` in the top right
-5. Add a new attribute:
+5. Click `Edit asset` and add a new attribute:
    * Name: `weatherApi`
    * Type: `Http Client`
 6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows:
