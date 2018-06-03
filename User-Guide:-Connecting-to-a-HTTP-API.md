@@ -41,3 +41,10 @@ You now have a basic HTTP API protocol ready to be linked to by asset attributes
 
 5. Add the following additional configuration item:
    * Protocol response filters: `[{"type": "json", "path":["main","temp"]}]`
+
+## Additional Exercises
+
+Try and create additional attributes that link to the OpenWeatherMap API, some ideas:
+* Get temperature in Farenheit
+* Get humidity
+* Get pressure
