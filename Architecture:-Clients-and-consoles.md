@@ -154,6 +154,7 @@ Array of topics to subscribe to:
 ```
 {
    token: "23123213ad2313b0897efd",
+   consoleId: "hhjfksdhf786382yrusd6f782"
 }
 ```
 
