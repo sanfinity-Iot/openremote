@@ -143,9 +143,10 @@ Allows data/notifications to be remotely pushed to the console. There are two ty
 * Supports topics
 
 ### Enabled message request data (Client -> Console)
-Array of topics to subscribe to:
+Console ID and array of topics to subscribe to:
 ```
 {
+   consoleId: "hhjfksdhf786382yrusd6f782"
    topics: ["update", "custom"]
 }
 ```
@@ -154,7 +155,6 @@ Array of topics to subscribe to:
 ```
 {
    token: "23123213ad2313b0897efd",
-   consoleId: "hhjfksdhf786382yrusd6f782"
 }
 ```
 
@@ -163,8 +163,12 @@ Array of topics to subscribe to:
 * No silent (data only) push notifications
 
 ### Enabled message request data (Client -> Console)
-No data
-
+Console ID:
+```
+{
+   consoleId: "hhjfksdhf786382yrusd6f782"
+}
+```
 ### Enabled message response data (Console -> Client)
 The data structure returned from the enabled message request is:
 ```
