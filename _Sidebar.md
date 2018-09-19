@@ -17,7 +17,7 @@
 ## User Guide
 
 * [[Connecting to a HTTP API|User Guide: Connecting to a HTTP API]]
-* [[Connecting to a HTTP API|User Guide: Connecting-to-a-Controller-2.5]]
+* [[Connecting to a Controller 2.5|User-Guide:-Connecting-to-a-Controller-2.5]]
 
 ## Architecture
 
