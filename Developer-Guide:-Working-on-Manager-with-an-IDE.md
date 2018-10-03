@@ -4,8 +4,22 @@ This guide helps you set up an environment with an IDE when you are done [[Prepa
 
 Make sure testing services are running as described in [[Creating a custom project|Developer Guide: Creating a custom project]]:
 
+### Without SSL and proxy
 ```
 docker-compose -p openremote -f profile/dev-testing.yml up --build -d
+```
+
+### With SSL and proxy
+```
+docker-compose -p openremote -f profile/dev-proxy.yml up --build -d
+```
+
+**NOTE: You will need to add the following environment variables within your IDE for the manager to work behind the proxy with SSL:**
+
+```
+WEBSERVER_LISTEN_HOST=0.0.0.0
+IDENTITY_NETWORK_WEBSERVER_PORT=443
+IDENTITY_NETWORK_SECURE=true
 ```
 
 If you are working on Manager UI, start the GWT compiler and keep it running in the background:
@@ -68,7 +82,7 @@ Set up a *Run Configuration*:
 - Main class: `org.openremote.manager.Main`
 - Any environment variables that customise deployment (usually custom projects have some)
 
-You can now open [http://localhost:8080/](http://localhost:8080/) in your browser. The default login is username `admin` with password `secret`.
+You can now open [http://localhost:8080/](http://localhost:8080/) or [https://localhost/](https://localhost/) (depending on docker compose profile chosen) in your browser. The default login is username `admin` with password `secret`.
 
 *NOTE: The web server binds to only localhost interface (i.e. `127.0.0.1`). You can override this with `WEBSERVER_LISTEN_HOST=0.0.0.0` to bind to all interfaces and make it accessible on your LAN.*
 
