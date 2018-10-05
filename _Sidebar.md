@@ -17,7 +17,9 @@
 ## User Guide
 
 * [[Connecting to a HTTP API|User Guide: Connecting to a HTTP API]]
-* [[Connecting to Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
+* [[Connecting to KNX|User-Guide:-Connecting-to-KNX]]
+* [[Connecting to Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
+* [[Connecting to Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
 
 ## Architecture
 
