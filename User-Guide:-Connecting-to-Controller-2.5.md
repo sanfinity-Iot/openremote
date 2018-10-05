@@ -1,6 +1,6 @@
 Controller Protocol give us a simple way to link a OpenRemote Controller 2.5 to a OpenRemote Manager 3.0.
 
-For the purpose of trying out OpenRemote Manager 3.0 we will first explain how you can connect to the online [Home Example](https://github.com/openremote/Documentation/wiki/Example-Home). Secondly, you can link to your existing Controller 2.5. 
+For the purpose of trying out OpenRemote Manager 3.0 we will explain how you can connect to the online [Home Example](https://github.com/openremote/Documentation/wiki/Example-Home). Alternatively, you can link to your existing Controller 2.5. 
 
 TODO:
 - describe correct basic auth on controller for Home Example
