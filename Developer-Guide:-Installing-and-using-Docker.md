@@ -147,3 +147,14 @@ Check your Docker host machines with `docker-machine ls`.
 
 To prepare your shell environment (variables), run `eval $(docker-machine env openremote)`. Now  execute `docker [version|images|ps|...]` to interact with your Docker host. You can login directly on your Docker host machine with `vagrant ssh`.
 -->
+
+## Exporting and importing images
+The docker images created by boulding the docker-compose files can be exported and send to another machine to import them.
+
+### Export
+Run the following command to build the images with the proper tags:
+```
+DATE_TAG=2018-10-09 docker-compose -p your_project -f profile/production.yml build
+```
+When the enviroment variable `DATE_TAG` is omitted, then the tag `latest` is used for the image.
+
