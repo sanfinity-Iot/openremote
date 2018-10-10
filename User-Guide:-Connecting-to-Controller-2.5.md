@@ -1,8 +1,7 @@
 Controller Protocol is intended to link an OpenRemote Controller 2.5 to a OpenRemote Manager 3.0. 
 
 TODO:
-- describe correct basic auth on controller for Home Example
-- what example sensors and commands to use for the Home Example
+- what example sensors and commands (what's the 2.5 command name for a T_setpoint?)
 
 NEXT PHASE:
 - create a CustomerA standard panel which is connected to existing attributes
@@ -63,12 +62,33 @@ Send a setpoint command 'tempSetpoint' on device name 'homeDevice'
 1. Select the Customer A -> Smart Home asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
-   * Name: `xxx`
-   * Type: `xxx`
+   * Name: `setTemp`
+   * Type: `Temperature in Celsius`
 4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
    * Agent protocol link: Controller Agent -> controllerConfig
    * Controller Device name: HomeDevice
-   * Controller Command name: xxx
+   * Controller Command name: tempCommand
+
+In your Smart Home asset, you have an attribute where you can click on 'Write' button to execute the command on the linked Controller 2.5.
+
+### More information
+If there is a value into attribute value when you click on 'Write', the attribute value will be add as parameter into the command request to Controller 2.5.
+
+## Execute a Controller 2.5 (text) command
+### Starting from an example : 
+Send a play command 'playTV' over IR on device name 'homeDevice'
+* Controller 2.5: a single command that sends the IR code, it takes no parameter. There is no sensor associated with it.
+
+### Configuration:
+1. Select the Customer A -> Smart Home asset in the asset list
+2. Click `Edit asset` in top right
+3. Add a new attribute:
+   * Name: `playSignal`
+   * Type: `Text`
+4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
+   * Agent protocol link: Controller Agent -> controllerConfig
+   * Controller Device name: HomeDevice
+   * Controller Command name: playTV
 
 In your Smart Home asset, you have an attribute where you can click on 'Write' button to execute the command on the linked Controller 2.5.
 
