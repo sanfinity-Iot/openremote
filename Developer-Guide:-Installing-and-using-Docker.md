@@ -154,7 +154,7 @@ The docker images created by boulding the docker-compose files can be exported a
 ### Export
 Run the following command to build the images with the proper tags:
 ```
-DATE_TAG=2018-10-09 docker-compose -p your_project -f profile/production.yml build
+SETUP_WIPE_CLEAN_INSTALL=<true or false> SETUP_ADMIN_PASSWORD=<someSecret> DATE_TAG=<some_date> docker-compose -p your_project -f profile/production.yml build
 ```
 When the enviroment variable `DATE_TAG` is omitted, then the tag `latest` is used for the image.
 
