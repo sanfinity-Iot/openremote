@@ -1,6 +1,4 @@
-Controller Protocol give us a simple way to link a OpenRemote Controller 2.5 to a OpenRemote Manager 3.0.
-
-For the purpose of trying out OpenRemote Manager 3.0 we will explain how you can connect to the online [Home Example](https://github.com/openremote/Documentation/wiki/Example-Home). Alternatively, you can link to your existing Controller 2.5. 
+Controller Protocol is intended to link an OpenRemote Controller 2.5 to a OpenRemote Manager 3.0. 
 
 TODO:
 - describe correct basic auth on controller for Home Example
@@ -11,7 +9,7 @@ NEXT PHASE:
 - explain how to link these attributes to the Home Example commands/sensors
 
 # Declaring Controller Agent
-In the following example, you link to the Home Example Demo Controller 2.5 on `http://demo.openremote.com:8688/controller`. However, you can follow the same procedure to link to your own controller by using the correct controller address `http://my.controller:8688/controller` instead.
+In the following example, you link your own controller by using the its controller address `http://my.controller:8688/controller`.
 
 1. Login to the manager UI (`https://localhost/master` as `admin/secret`)
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
@@ -24,12 +22,12 @@ In the following example, you link to the Home Example Demo Controller 2.5 on `h
    * Name: `controllerConfig`
    * Type: `Controller Client`
 6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows **(do not forget to click on 'Add item' for every item)** : 
-   * Controller Base URI: `http://demo.openremote.com:8688/controller`
+   * Controller Base URI: `http://my.controller:8688/controller`
    * HTTP basic auth username: if a basic auth is defined on the Controller 2.5
    * HTTP basic auth password: if a basic auth is defined on the Controller 2.5
 7. Click `Save asset` at bottom of the screen
 
-You now have a Controller protocol to communicate with Home Example Demo Controller 2.5 as long as you have an internet connection and an attribute will be linked.
+You now have a Controller protocol to communicate with your own Controller 2.5 as long as you have an internet connection and an attribute will be linked.
 
 The attribute status is DISCONNECTED until a Controller 2.5 is really available on the provided base URL.
 
