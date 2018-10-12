@@ -164,3 +164,50 @@ Set the volume of an amplifier defined on two different device name on a Control
 In your Smart Home asset, you have an attribute where the value is updated by polling request and where you can click on 'Write' button to send the command to set the volume with the value of the attribute in parameter.
 
 'Controller Device name for command' is a way to overwrite in the same attribute the device name for command only.
+
+# Home Example Demo
+_This section is on progress and revision_
+
+As you may know, we have a Home Example representing a typical Residential Application : https://github.com/openremote/Documentation/wiki/Example-Home.
+
+You may find other useful information on : https://github.com/openremote/Documentation/wiki/Example-Home
+
+A demo controller is available online on : http://demo.openremote.com:8688/controller
+
+We'll use the demo Controller in a concret example here.
+
+## Configure Controller Agent
+1. Login to the manager UI (`https://localhost/master` as `admin/secret`)
+2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
+3. Set the following:
+   * Asset name: `Controller Agent`
+   * Parent asset: `CustomerA -> Smart Home` and select 'OK'
+   * Asset Type: `Agent`
+4. Click `Create asset` at bottom of screen and then click `Edit asset` in the top right
+5. Click `Edit asset` and add a new attribute:
+   * Name: `controllerConfig`
+   * Type: `Controller Client`
+6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows **(do not forget to click on 'Add item' for every item)** : 
+   * Controller Base URI: `http://demo.openremote.com:8688/controller`
+7. Click `Save asset` at bottom of the screen
+
+You now have a Controller protocol to communicate with your own Controller 2.5 as long as you have an internet connection and an attribute will be linked.
+
+The attribute status is CONNECTED as the Demo Controller is already available (if you have a internet connection).
+
+We can now add a linked attribute in Manager to the new Agent such that we can get sensors status and execute commands.
+
+## Temperature attribute
+On the Demo Controller, we have a sensor for the temperature. We'll catch this information in our manager.
+
+1. Select the Customer A -> Smart Home asset in the asset list
+2. Click `Edit asset` in top right
+3. Add a new attribute:
+   * Name: `roomTemp`
+   * Type: `Temperature in Celcius`
+4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
+   * Agent protocol link: Controller Agent -> controllerConfig
+   * Controller Device name: Heating
+   * Controller Sensor name: VROOMTEMPERATURE
+
+You should now have an attribute with a temperature value setted to the last version received from the polling on the Controller.
