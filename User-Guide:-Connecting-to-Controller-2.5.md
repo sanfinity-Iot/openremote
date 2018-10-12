@@ -1,10 +1,10 @@
 Controller Protocol is intended to link an OpenRemote Controller 2.5 to a OpenRemote Manager 3.0. 
 
 TODO:
-- what example sensors and commands (what's the 2.5 command name for a T_setpoint?)
+- what example sensors and commands to use for Home Example demo: https://github.com/openremote/Documentation/wiki/Example-Home
 
 NEXT PHASE:
-- create a CustomerA standard panel which is connected to existing attributes
+- create a CustomerA standard panel which is connected to existing attributes (Vincent)
 - explain how to link these attributes to the Home Example commands/sensors
 
 # Declaring Controller Agent
