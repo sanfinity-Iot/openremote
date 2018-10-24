@@ -204,7 +204,7 @@ On the Demo Controller, we have a sensor for the temperature. We'll catch this i
 2. Click `Edit asset` in top right
 3. Add a new attribute:
    * Name: `comfortTemp`
-   * Type: `Temperature in Celcius`
+   * Type: `Text`
 4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
    * Agent protocol link: Controller Agent -> controllerConfig
    * Controller Device name: Heating
