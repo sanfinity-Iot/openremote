@@ -203,11 +203,27 @@ On the Demo Controller, we have a sensor for the temperature. We'll catch this i
 1. Select the Customer A -> Smart Home asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
-   * Name: `roomTemp`
+   * Name: `comfortTemp`
    * Type: `Temperature in Celcius`
 4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
    * Agent protocol link: Controller Agent -> controllerConfig
    * Controller Device name: Heating
-   * Controller Sensor name: VROOMTEMPERATURE
+   * Controller Sensor name: VR1.COMFORT
 
 You should now have an attribute with a temperature value setted to the last version received from the polling on the Controller.
+
+## Increase Comfort temperature
+The comfort temperature can be increase or decrease. Let add the necessary attribute to increase the temperature :
+ 
+1. Select the Customer A -> Smart Home asset in the asset list
+2. Click `Edit asset` in top right
+3. Add a new attribute:
+   * Name: `incComfortTemp`
+   * Type: `Text`
+4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
+   * Agent protocol link: Controller Agent -> controllerConfig
+   * Controller Device name: Heating
+   * Controller Command name: VR1.COMFORT.inc
+
+Click on 'Save asset' and now you'll have a new attribute available.
+If you click on the 'Write' button, it'll send the configured command to the controller. And if we refresh the Asset, we should have a new value for the 'comfortTemp' attribute.
