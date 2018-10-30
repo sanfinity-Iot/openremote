@@ -1,8 +1,5 @@
 Controller Protocol is intended to link an OpenRemote Controller 2.5 to a OpenRemote Manager 3.0. 
 
-TODO:
-- what example sensors and commands to use for Home Example demo: https://github.com/openremote/Documentation/wiki/Example-Home
-
 NEXT PHASE:
 - create a CustomerA standard panel which is connected to existing attributes (Vincent)
 - explain how to link these attributes to the Home Example commands/sensors
@@ -166,7 +163,6 @@ In your Smart Home asset, you have an attribute where the value is updated by po
 'Controller Device name for command' is a way to overwrite in the same attribute the device name for command only.
 
 # Home Example Demo
-_This section is on progress and revision_
 
 As you may know, we have a Home Example representing a typical Residential Application : https://github.com/openremote/Documentation/wiki/Example-Home.
 
@@ -224,6 +220,22 @@ The comfort temperature can be increase or decrease. Let add the necessary attri
    * Agent protocol link: Controller Agent -> controllerConfig
    * Controller Device name: Heating
    * Controller Command name: VR1.COMFORT.inc
+
+Click on 'Save asset' and now you'll have a new attribute available.
+If you click on the 'Write' button, it'll send the configured command to the controller. And if we refresh the Asset, we should have a new value for the 'comfortTemp' attribute.
+
+## Decrease Comfort temperature
+The comfort temperature can be increase or decrease. Let add the necessary attribute to decrease the temperature :
+ 
+1. Select the Customer A -> Smart Home asset in the asset list
+2. Click `Edit asset` in top right
+3. Add a new attribute:
+   * Name: `incComfortTemp`
+   * Type: `Text`
+4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
+   * Agent protocol link: Controller Agent -> controllerConfig
+   * Controller Device name: Heating
+   * Controller Command name: VR1.COMFORT.dec
 
 Click on 'Save asset' and now you'll have a new attribute available.
 If you click on the 'Write' button, it'll send the configured command to the controller. And if we refresh the Asset, we should have a new value for the 'comfortTemp' attribute.
