@@ -205,6 +205,7 @@ On the Demo Controller, we have a sensor for the temperature. We'll catch this i
    * Agent protocol link: Controller Agent -> controllerConfig
    * Controller Device name: Heating
    * Controller Sensor name: VR1.COMFORT
+   * Read Only: checked
 
 You should now have an attribute with a temperature value setted to the last version received from the polling on the Controller.
 
