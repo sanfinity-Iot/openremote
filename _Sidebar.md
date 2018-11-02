@@ -14,7 +14,7 @@
 * [[Connecting Protocol adapters with Agents|Developer Guide: Connecting Protocol adapters with Agents]]
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 
-## User Guide
+## Connecting Products and Services
 
 * [[Connecting to Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
 * [[Connecting to a HTTP API|User Guide: Connecting to a HTTP API]]
