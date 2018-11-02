@@ -239,6 +239,5 @@ If you click on the 'Write' button, it'll send the configured command to the con
 
 # See also
 
-- Web components
-- Adjusting Console pages
-- Linking attributes to the Customer A User Interface
+- [[Use Web components|User-Guide:-Use Web components]]
+- [[CustomerA Control Panel|User-Guide:-CustomerA Control Panel Example]]
