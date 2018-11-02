@@ -66,7 +66,7 @@ Send a setpoint command 'tempSetpoint' on device name 'homeDevice'
 In your Smart Home asset, you have an attribute where you can click on 'Write' button to execute the command on the linked Controller 2.5.
 
 ### More information
-If there is a value into attribute value when you click on 'Write', the attribute value will be add as parameter into the command request to Controller 2.5.
+If there is a value into attribute value when you click on 'Write', the attribute value will be added as parameter into the command request to Controller 2.5.
 
 ## Execute a Controller 2.5 (text) command
 ### Starting from an example : 
@@ -87,7 +87,7 @@ Send a play command 'playTV' over IR on device name 'homeDevice'
 In your Smart Home asset, you have an attribute where you can click on 'Write' button to execute the command on the linked Controller 2.5.
 
 ### More information
-If there is a value into attribute value when you click on 'Write', the attribute value will be add as parameter into the command request to Controller 2.5.
+If there is a value into attribute value when you click on 'Write', the attribute value will be added as parameter into the command request to Controller 2.5.
 
 ## Execute a Controller 2.5 multivalue command
 ### Starting from an example : 
@@ -135,7 +135,7 @@ And the polling system will keep the attribute value updated with the latest sta
 It is the only case where you have to follow a template for commands map item. You must use true/false as attribute name for the two commands map.
 
 ## Controller connection
-If the connection is lost with a Controller defined in a Agent, the connection will be checked every 5 seconds until the connection is up and running again. All the linked attributes to the disconnected agent will be put on hold until the connection is back to normal.
+If the connection is lost with a Controller defined in an Agent, the connection will be checked every 5 seconds until the connection is up and running again. All the linked attributes to the disconnected agent will be put on hold until the connection is back to normal.
 
 ## Specify another device name for command execution
 ### Starting from an example : 
@@ -161,13 +161,13 @@ In your Smart Home asset, you have an attribute where the value is updated by po
 
 # Home Example Demo
 
-As you may know, we have a Home Example representing a typical Residential Application : https://github.com/openremote/Documentation/wiki/Example-Home.
+As you may know, we have a Home Example representing a typical Residential Application: https://github.com/openremote/Documentation/wiki/Example-Home.
 
 You may find other useful information on : https://github.com/openremote/Documentation/wiki/Example-Home
 
 A demo controller is available online on : http://demo.openremote.com:8688/controller
 
-We'll use the demo Controller in a concret example here.
+We'll use the demo Controller in a concrete example here.
 
 ## Configure Controller Agent
 1. Login to the manager UI (`https://localhost/master` as `admin/secret`)
@@ -186,7 +186,7 @@ We'll use the demo Controller in a concret example here.
 
 You now have a Controller protocol to communicate with your own Controller 2.5 as long as you have an internet connection and an attribute will be linked.
 
-The attribute status is CONNECTED as the Demo Controller is already available (if you have a internet connection).
+The attribute status is CONNECTED as the Demo Controller is already available (if you have an internet connection).
 
 We can now add a linked attribute in Manager to the new Agent such that we can get sensors status and execute commands.
 
@@ -204,10 +204,10 @@ On the Demo Controller, we have a sensor for the temperature. We'll catch this i
    * Controller Sensor name: VR1.COMFORT
    * Read Only: checked
 
-You should now have an attribute with a temperature value setted to the last version received from the polling on the Controller.
+You should now have an attribute with a temperature value set to the last version received from the polling on the Controller.
 
 ## Increase Comfort temperature
-The comfort temperature can be increase or decrease. Let add the necessary attribute to increase the temperature :
+The comfort temperature can be increase or decrease. Let's add the necessary attribute to increase the temperature :
  
 1. Select the Customer A -> Smart Home asset in the asset list
 2. Click `Edit asset` in top right
@@ -223,7 +223,7 @@ Click on 'Save asset' and now you'll have a new attribute available.
 If you click on the 'Write' button, it'll send the configured command to the controller. And if we refresh the Asset, we should have a new value for the 'comfortTemp' attribute.
 
 ## Decrease Comfort temperature
-The comfort temperature can be increase or decrease. Let add the necessary attribute to decrease the temperature :
+The comfort temperature can be increased or decreased. Let's add the necessary attribute to decrease the temperature:
  
 1. Select the Customer A -> Smart Home asset in the asset list
 2. Click `Edit asset` in top right
