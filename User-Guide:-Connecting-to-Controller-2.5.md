@@ -1,8 +1,4 @@
-Controller Protocol is intended to link an OpenRemote Controller 2.5 to a OpenRemote Manager 3.0. 
-
-NEXT PHASE:
-- create a CustomerA standard panel which is connected to existing attributes (Vincent)
-- explain how to link these attributes to the Home Example commands/sensors
+Controller Protocol is intended to link an OpenRemote Controller 2.5 to an OpenRemote Manager 3.0. 
 
 # Declaring Controller Agent
 In the following example, you link your own controller by using the its controller address `http://my.controller:8688/controller`.
@@ -240,3 +236,9 @@ The comfort temperature can be increase or decrease. Let add the necessary attri
 
 Click on 'Save asset' and now you'll have a new attribute available.
 If you click on the 'Write' button, it'll send the configured command to the controller. And if we refresh the Asset, we should have a new value for the 'comfortTemp' attribute.
+
+# See also
+
+- Web components
+- Adjusting Console pages
+- Linking attributes to the Customer A User Interface
