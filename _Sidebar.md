@@ -16,11 +16,11 @@
 
 ## Protocol Agents
 
-* [[Connecting to Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
-* [[Connecting to a HTTP API|User Guide: Connecting to a HTTP API]]
-* [[Connecting to KNX|User-Guide:-Connecting-to-KNX]]
-* [[Connecting to Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
-* [[Connecting to Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
+* [[Connect Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
+* [[Connect a HTTP API|User Guide: Connecting to a HTTP API]]
+* [[Connect KNX|User-Guide:-Connecting-to-KNX]]
+* [[Connect Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
+* [[Connect Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
 
 ## Assets & Attributes
 
