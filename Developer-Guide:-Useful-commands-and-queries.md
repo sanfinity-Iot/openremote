@@ -1,10 +1,23 @@
 # Commands
+Replace `<PROJECT_NAME>` with value used when creating the container with `docker-compose up` (`docker ps` will show the actual names).
 ## Restart manager docker container
-Replace `<PROJECT_NAME>` with value used when creating the container with `docker-compose up` (`docker ps` will show the actual names):
 
 `docker restart <PROJECT_NAME>_manager_1`
 
+## Start interactive `psql` shell in postgresql container
+`docker exec -it <PROJECT_NAME>_postgresql_1 psql -U openremote`
+
+## Copy exported data point file to local machine (exported using query below)
+`docker cp <PROJECT_NAME>_postgresql_1:/deployment/datapoints.csv ./`
+
 # Queries
+
+## Data points
+### Export all asset data points
+`copy asset_datapoint to '/deployment/datapoints.csv' delimiter ',' CSV;`
+
+### Delete all asset datapoints older than N days
+`delete from asset_datapoint where timestamp < extract('epoch' from (current_timestamp - interval '5 days'))::bigint*1000;`
 
 ## Consoles
 
