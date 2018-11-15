@@ -13,7 +13,7 @@
 * [[The Asset model and API|Developer Guide: The Asset model and API]]
 * [[Connecting Protocol adapters with Agents|Developer Guide: Connecting Protocol adapters with Agents]]
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
-* [[Useful DB Queries|Developer Guide: Useful DB Queries]]
+* [[Useful commands and queries|Developer Guide: Useful commands and queries]]
 
 ## Protocol Agents
 
