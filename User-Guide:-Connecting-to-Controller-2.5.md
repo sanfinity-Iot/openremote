@@ -1,7 +1,7 @@
 Controller Protocol is intended to connect an OpenRemote Controller 2.5 to an OpenRemote Manager 3.0. 
 We'll explain how you can connect your own controller, or the existing Home Example Demo Controller.
 
-# Declaring Controller Agent
+# Connect an OpenRemote Controller
 In the following example, you link your own controller by using the its controller address `http://my.controller:8688/controller`.
 
 1. Login to the manager UI (`https://localhost/master` as `admin/secret`)
