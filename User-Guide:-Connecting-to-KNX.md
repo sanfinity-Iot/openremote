@@ -16,7 +16,7 @@ In the following example, you link your existing KNX Gateway by using the its IP
    * Type: `KNX`
 6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows: 
    * KNX gateway host: `http://192.163.1.2`
-   * You can configure the gateway by adding a new configuration item, by selecting it from the list: KNX gateway host, KNX gateway port, KNX local bus address, KNX local host, KNX use NAT **(do not forget to click on 'Add item' for custom items)** (also see 'Configuring your KNX Gateway').
+   * You can configure the gateway by adding a new configuration item, by selecting it from the list: 'KNX gateway host', 'KNX gateway port', 'KNX local bus address', 'KNX local host', or 'KNX use NAT' **(do not forget to click on 'Add item' for custom items)**.
 7. Click `Save asset` at bottom of the screen
 
 You now have a KNX protocol Agent to communicate with your own KNX Gateway as long as you have an internet connection and an attribute will be linked.
