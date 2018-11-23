@@ -34,7 +34,7 @@ By adding a configuration item you can configure your KNX Gateway. The following
 
 # Import Devices via ETS file
 
-You can now add linked attributes in the Manager to the new Agent by importing an ETS file, such that we can get sensors status and execute commands.
+You can now connect KNX devices, via the new Agent, by importing an ETS file, such that we can get sensors status and execute commands.
 
 1. Go back to the 'Gateway' attribute, click 'Edit Asset', and expand the 'Gateway' attribute.
 2. Select the Parent of imported assets first, eg. 'Smart Home' and press 'OK'
