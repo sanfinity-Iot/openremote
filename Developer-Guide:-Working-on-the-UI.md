@@ -9,6 +9,14 @@ Working on the web applications and/or components will generally require a manag
 * Run a Manager instance in an IDE (refer to [Working on the Manager](./Developer-Guide%3A-Working-on-the-Manager)
 * Deploy the Manager using a Docker container (refer to [Console Development profile](./Developer-Guide%3A-Deploying-to-a-Docker-engine#console-development-dev-console.yml))
 
+## Manager web application
+If you are working on GWT based Manager web application you will need to start the GWT compiler and keep it running in the background; this service listens for compilation requests and transforms Java into JavaScript code:
+```
+./gradlew -p gwtSuperDev
+```
+
+
+
 ## Starting required services
 
 Requires a manager service to be running on localhost that is volume mapped to the console HTML code refer to the 
