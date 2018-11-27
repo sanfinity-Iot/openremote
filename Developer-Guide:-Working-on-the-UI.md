@@ -1,8 +1,17 @@
-Working on the consoles means working on the frontend console applications or the keycloak theme.
+Working on the UI means working on any of:
+
+* Web applications
+* Web components
+* Keycloak theme(s)
+
+Working on the web applications and/or components will generally require a manager to interact with you can either:
+
+* Run a Manager instance in an IDE (refer to [Working on the Manager](./Developer-Guide%3A-Working-on-the-Manager)
+* Deploy the Manager using a Docker container (refer to [Console Development profile](./Developer-Guide%3A-Deploying-to-a-Docker-engine#console-development-dev-console.yml))
 
 ## Starting required services
 
-Requires a manager service to be running on localhost that is volume mapped to the console HTML code refer to the [Console Development profile](./Developer-Guide%3A-Deploying-to-a-Docker-engine#console-development-dev-consoleyml).
+Requires a manager service to be running on localhost that is volume mapped to the console HTML code refer to the 
 
 Run required services with:
 
