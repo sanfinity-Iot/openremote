@@ -1,4 +1,4 @@
-The OpenRemote Mobile Apps render the consoles (user interface of an OpenRemote application) using a web view and provide bridging of native device functionality to provide a native app experience. 
+The OpenRemote mobile consoles load the web applications using a web view and provide bridging of native device functionality to provide a native app experience. 
 
 ## Android Console
 
