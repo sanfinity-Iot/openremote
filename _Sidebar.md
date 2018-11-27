@@ -6,7 +6,7 @@
 * [[Installing and using Docker|Developer Guide: Installing and using Docker]]
 * [[Working on the Manager|Developer Guide: Working on the Manager]]
 * [[Working on the UI|Developer Guide: Working on the UI]]
-* [[Working on the mobile consoles|Developer Guide: Working on Mobile Apps]]
+* [[Working on the mobile consoles|Developer Guide: Working on the mobile consoles]]
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
 * [[Maintaining an installation|Developer Guide: Maintaining an installation]]
 * [[Writing Console applications|Developer Guide: Writing Console applications]]
