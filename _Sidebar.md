@@ -2,8 +2,8 @@
 
 ## Developer Guide
 
-* [[Installing and using Docker|Developer Guide: Installing and using Docker]]
 * [[Preparing the environment|Developer Guide: Preparing the environment]]
+* [[Installing and using Docker|Developer Guide: Installing and using Docker]]
 * [[Working on Manager with an IDE|Developer Guide: Working on Manager with an IDE]]
 * [[Working on Consoles|Developer Guide: Working on Consoles]]
 * [[Working on Mobile Apps|Developer Guide: Working on Mobile Apps]]
