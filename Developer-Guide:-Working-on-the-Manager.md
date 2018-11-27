@@ -22,14 +22,6 @@ IDENTITY_NETWORK_WEBSERVER_PORT=443
 IDENTITY_NETWORK_SECURE=true
 ```
 
-If you are working on Manager UI, start the GWT compiler and keep it running in the background:
-
-```
-./gradlew -p gwtSuperDev
-```
-
-This service listens for compilation requests and transforms Java into JavaScript code.
-
 ## Importing a project in an IDE
 
 #### IntelliJ IDEA
