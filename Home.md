@@ -2,7 +2,7 @@ Welcome to the OpenRemote wiki!
 
 [[resources/Architecture.png]]
 
-The core part of the OpenRemote system is the Manager which is an IoT Context Broker with a rule engine which is written in java and is a headless application. IoT devices are connected to the Manager via Agents and the sensors and actuators of these devices are linked to assets and attributes within the context broker.
+The core part of the OpenRemote system is the Manager which is a headless java application that forms an IoT Context Broker with a rules engine. IoT devices are connected to the Manager via Agents and the sensors and actuators of these devices are linked to assets and attributes within the context broker.
 
 The Manager provides communication mechanisms for monitoring and administrating the system:
 
