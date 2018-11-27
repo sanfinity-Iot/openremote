@@ -24,7 +24,7 @@
 
 ## Assets & Attributes
 
-* [[Asset Model|User-Guide:-The model for assets and attributes]]
+* [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Create an Asset|User-Guide:-Create an Asset]]
 * [[Access rights|User-Guide:-Public, Private, or Restricted access]]
 * [[Security OAuth|User-Guide:-Using OAuth]]
@@ -46,7 +46,6 @@
 
 ## Architecture
 
-* [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Clients and consoles|Architecture: Clients and consoles]]
 * [[Asset location tracking|Architecture: Asset location tracking]]
 * [[Manager URL Endpoints|Architecture: Manager endpoints]]
