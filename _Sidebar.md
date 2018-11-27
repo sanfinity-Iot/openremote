@@ -10,7 +10,6 @@
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
 * [[Maintaining an installation|Developer Guide: Maintaining an installation]]
 * [[Writing Console applications|Developer Guide: Writing Console applications]]
-* [[The Asset model and API|Developer Guide: The Asset model and API]]
 * [[Connecting Protocol adapters with Agents|Developer Guide: Connecting Protocol adapters with Agents]]
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
@@ -47,5 +46,7 @@
 
 ## Architecture
 
-* [[Asset location tracking|Architecture: Asset location tracking]]
+* [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Clients and consoles|Architecture: Clients and consoles]]
+* [[Asset location tracking|Architecture: Asset location tracking]]
+* [[Manager URL Endpoints|Architecture: Manager endpoints]]
