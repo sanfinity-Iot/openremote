@@ -1,10 +1,21 @@
-Welcome to the OpenRemote wiki.
+Welcome to the OpenRemote wiki!
+
+The core part of the OpenRemote system is the Manager which is an IoT Context Broker which is built in java
+[[resources/Architecture.png]]
+
+The core part of the system is the for the components Builders and administrators of IoT networks require custom monitoring and control panels, small mobile applications that help installing and maintaining their systems. End-users want their own automation control panels with custom designs, tailored to the task at hand, in stationary or mobile environments and according to personal taste
 
 ## OpenRemote Projects
 
-* [Console](https://github.com/openremote/openremote/tree/master/console) - Builders and administrators of IoT networks require custom monitoring and control panels, small applications that help installing and maintaining their systems. End-users want their own automation control panels with custom designs, tailored to the task at hand, in stationary or mobile environments and according to personal taste. With OpenRemote's web components you can create a custom application in JavaScript/HTML5 easily. The Console is a shell that will take care of deploying and running your applications on Android, iOS, and in web browsers. It also integrates mobile features like notifications and geo-fencing.
+### Backend
+* [Manager](https://github.com/openremote/openremote/tree/master/manager) - Provides IoT backend services and a web-based operations frontend and management application. Multi-tenancy is supported and multiple IoT networks can be managed together or isolated. An asset storage and processing service allows you to capture a dynamic schema of all things in your IoT network. This includes agents, their devices and services, and any other domain-specific assets (Buildings, Rooms, Flights, Boats, Customers) you want to organise. Any changes to assets are processed by a rules system, so you can design custom data flow, business rules and notification conditions. The Manager can also host web applications.
 
-* [Manager](https://github.com/openremote/openremote/tree/master/manager) - Provides IoT backend services and a web-based operations frontend and management application. Multi-tenancy is supported and multiple IoT networks can be managed together or isolated. An asset storage and processing service allows you to capture a dynamic schema of all things in your IoT network. This includes agents, their devices and services, and any other domain-specific assets (Buildings, Rooms, Flights, Boats, Customers) you want to organise. Any changes to assets are processed by a rules system, so you can design custom data flow, business rules and notification conditions. The Manager also hosts your Console applications.
+### Frontend
+* [Web Components](https://github.com/openremote/openremote/tree/master/ui/component) - Contains web components and JS modules that are the building blocks for web applications that can connect to an OpenRemote manager and be loaded within a console. [Demos](https://github.com/openremote/openremote/tree/master/ui/demo) provide a development harnesses for the various components and also demonstrate the functionality and usage of each component.
+
+* [Web Applications](https://github.com/openremote/openremote/tree/master/ui/app) - Contains OpenRemote web applications (e.g. the Manager admin UI), these can be used as templates for building custom web applications.
+
+* [Console](https://github.com/openremote/openremote/tree/master/console) - Native mobile applications (iOS and Android) that act as a shell for web applications built with the OpenRemote web components; a web browser is also considered to be a console and the OpenRemote console component automatically integrates native console features like push notifications and geo-fencing.
 
 * [Agent](https://github.com/openremote/openremote/tree/master/agent) - The Agent connects sensors and actuators to your IoT network and creates the interface to 3rd party APIs and service protocols. OpenRemote has many built-in protocols and it's easy to create new adapters. Co-locate your agents with the Manager or install agents on gateways, close to devices. You can link a 2.x controller to a Manager, see [Connecting to Controller 2.5](https://github.com/openremote/openremote/wiki/User-Guide%3A-Connecting-to-Controller-2.5)
 
@@ -19,7 +30,3 @@ docker-compose -p openremote -f profile/demo.yml up
 ```
 
 Access the manager UI and API on https://localhost/ with username admin and password secret (accept the 'insecure' self-signed SSL certificate). Configuration options of the images are documented in the compose profile `demo.yml`.
-
-## Architecture overview
-
-[[resources/Architecture.png]]
