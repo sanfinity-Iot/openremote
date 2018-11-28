@@ -7,11 +7,11 @@
 * [[Working on the Manager|Developer Guide: Working on the Manager]]
 * [[Working on the UI|Developer Guide: Working on the UI]]
 * [[Working on the mobile consoles|Developer Guide: Working on the mobile consoles]]
-* [[Deploying the Manager|Developer Guide: Deploying the Manager]]
+* [[Docker compose profiles|Developer Guide: Docker compose profiles]]
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
 * [[Maintaining an installation|Developer Guide: Maintaining an installation]]
 * [[Writing Console applications|Developer Guide: Writing Console applications]]
-* [[Connecting Protocol adapters with Agents|Developer Guide: Connecting Protocol adapters with Agents]]
+* [[Connecting Protocol adaptors with Agents|Developer Guide: Connecting Protocol adapters with Agents]]
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
 
