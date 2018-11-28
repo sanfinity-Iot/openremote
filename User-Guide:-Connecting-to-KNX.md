@@ -16,12 +16,12 @@ In the following example, you link your existing KNX Gateway by using the its IP
    * Type: `KNX`
 6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows: 
    * KNX gateway host: `http://192.163.1.2`
-   * You can configure the gateway by adding a new configuration item, by selecting it from the list: 'KNX gateway host', 'KNX gateway port', 'KNX local bus address', 'KNX local host', or 'KNX use NAT' **(do not forget to click on 'Add item' for custom items)**.
+   * You can configure the gateway by adding a new configuration item, by selecting it from the list: `KNX gateway host`, `KNX gateway port`, `KNX local bus address`, `KNX local host`, or `KNX use NAT` **(do not forget to click on 'Add item' for custom items)**.
 7. Click `Save asset` at bottom of the screen
 
-You now have a KNX protocol Agent to communicate with your own KNX Gateway as long as you have an internet connection and an attribute will be linked.
+You now have a KNX protocol Agent to communicate with your own KNX Gateway.
 
-The attribute status is DISCONNECTED until a KNX Gateway is really available on the provided base URL, with the correct configuration.
+The protocol connection status is `DISCONNECTED` until a KNX Gateway is really available on the provided base URL, with the correct configuration.
 
 ## Configuring your KNX Gateway ##
 
@@ -34,7 +34,15 @@ By adding a configuration item you can configure your KNX Gateway. The following
 
 # Import Devices via ETS file
 
-You can now connect KNX devices, via the new Agent, by importing an ETS file, such that we can get sensors status and execute commands.
+You can now connect KNX devices, via the new Agent, by importing an ETS project file, this will automatically create assets and attributes ased on the group addresses defined in the ETS project file, each group address will create a new asset with a single attribute also with the same name (no spaces in attribute name), the attribute type is determined by the following naming convention:
+
+* Group Address ends with #A - Actuator (executable attribute)
+* Group Address ends with #S - Sensor (read only)
+* Group Address ends with #SA or #AS - Actuator and sensor
+
+** Only group addresses using this convention will be imported**
+
+To perform an import:
 
 1. Go back to the 'Gateway' attribute, click 'Edit Asset', and expand the 'Gateway' attribute.
 2. Select the Parent of imported assets first, eg. 'Smart Home' and press 'OK'
