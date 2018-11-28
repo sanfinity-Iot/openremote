@@ -7,7 +7,7 @@ Working on the UI means working on any of:
 Working on the web applications and/or components will generally require a manager to interact with you can either:
 
 * Run a Manager instance in an IDE (refer to [Working on the Manager](./Developer-Guide%3A-Working-on-the-Manager))
-* Deploy the Manager using a Docker container (refer to [UI Development profile](/Developer-Guide%3A-Docker-compose-profiles#ui-development-devyml))
+* Deploy the Manager using a Docker container (refer to [UI Development profile](./Developer-Guide%3A-Docker-compose-profiles#ui-development-devyml))
 
 ## Manager web application
 If you are working on GWT based Manager web application you will need to start the GWT compiler and keep it running in the background; this service listens for compilation requests and transforms Java into JavaScript code:
