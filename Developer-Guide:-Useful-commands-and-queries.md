@@ -30,4 +30,15 @@ Replace `<PROJECT_NAME>` with value used when creating the container with `docke
 
 ### Count notifications with specific title sent to consoles (Android/iOS) in past N days
 
-`select count(*) FROM notification n JOIN asset a ON a.id = n.target_id WHERE n.message ->> 'title' = 'Notification Title' and n.sent_on > (current_timestamp - interval '7 days') and a.attributes #>> '{consolePlatform, value}' LIKE 'Android%' and n.acknowledged_on is not null;`
+`select count(*) FROM notification n JOIN asset a ON a.id = n.target_id WHERE n.message ->> 'title' = 'NOTIFICATION TITLE' and n.sent_on > (current_timestamp - interval '7 days') and a.attributes #>> '{consolePlatform, value}' LIKE 'Android%' and n.acknowledged_on is not null;`
+
+### Count notifications with specific title sent to consoles (Android/iOS) and acknowledged by:
+
+#### Closing/Dismissing
+`select count(*) FROM notification n JOIN asset a ON a.id = n.target_id WHERE n.message ->> 'title' = 'Kijk mee naar de proefbestrating op de Demer' and n.acknowledged_on is not null and n.acknowledgement = 'CLOSED';`
+
+#### Clicking the notification
+`select count(*) FROM notification n JOIN asset a ON a.id = n.target_id WHERE n.message ->> 'title' = 'NOTIFICATION TITLE' and n.acknowledged_on is not null and n.acknowledgement is null;`
+
+#### Clicking a specific action button
+`select count(*) FROM notification n JOIN asset a ON a.id = n.target_id WHERE n.message ->> 'title' = 'Kijk mee naar de proefbestrating op de Demer' and n.acknowledged_on is not null and n.acknowledgement LIKE '%BUTTON TITLE%';`
