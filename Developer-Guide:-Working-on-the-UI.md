@@ -44,7 +44,7 @@ compatible with web components (see [here]([https://custom-elements-everywhere.c
 Generally a 1-1 mapping between components and demos; they provide a simple harness for the components that can be used during development and optionally can be deployed to offer component demos. 
 
 ### Keycloak Themes
-Each theme is located in its own directory within the `keycloak/themes` directory. When running any of the `dev` docker compose profiles this folder is volume mapped into the keycloak service and changes are reflected in real time allowing for easy development of these themes.
+Each theme is located in its own directory within the `keycloak/themes` directory. When running any of the `dev` docker compose profiles; each theme can be volume mapped into the keycloak service and changes are reflected in real time allowing for easy development of these themes (see [Docker compose profiles](./Developer-Guide:-Docker-compose-profiles) for more details).
 
 ## Legacy Manager GWT web application (`/client`)
 If you are working on the legacy GWT based Manager web application you will need to start the GWT compiler and keep it running in the background; this service listens for compilation requests and transforms Java into JavaScript code:
