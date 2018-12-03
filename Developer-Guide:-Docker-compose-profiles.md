@@ -40,8 +40,8 @@ Docker images must have been pulled from Docker Hub or the full stack must be bu
 * PostgreSQL DB: jdbc:postgresql://localhost:5432/openremote
 
 ### Volume Maps
-* ../keycloak/theme - Maps custom keycloak theme into the Keycloak service; changes to the local theme are instantly available to the keycloak service
-* ../deployment - Maps deployment folder into the Manager service; the mapped local path can be overridden using the `DEPLOYMENT_DIRECTORY` environment variable (.e.g. = `DEPLOYMENT_DIRECTORY=../../deployment docker-compose -f openremote/profile/dev.yml`)
+* `../ui/keycloak/themes/openremote` - Maps custom openremote keycloak theme into the Keycloak service; changes to the local theme are instantly available to the keycloak service; any new themes will need to be volume mapped individually
+* `../deployment` - Maps deployment folder into the Manager service; the mapped local path can be overridden using the `DEPLOYMENT_DIRECTORY` environment variable (.e.g. = `DEPLOYMENT_DIRECTORY=../../deployment docker-compose -f openremote/profile/dev.yml`)
 
 ## Full Stack Development / Running Tests (dev-testing.yml)
 This is for running tests or doing development work on the Manager (in an IDE) as well as the UI (i.e. Front end apps and/or components and/or Keycloak themes); starts the Keycloak and PostgreSQL services, see the [Working on the Manager] (./Developer-Guide%3A-Working-on-the-Manager) guide for running the Manager in an IDE.
@@ -51,7 +51,7 @@ This is for running tests or doing development work on the Manager (in an IDE) a
 * PostgreSQL DB: jdbc:postgresql://localhost:5432/openremote
 
 ### Volume Maps
-* ../keycloak/theme - Maps custom keycloak theme into the Keycloak service; changes to the local theme are instantly available to the keycloak service
+* `../ui/keycloak/themes/openremote` - Maps custom keycloak theme into the Keycloak service; changes to the local theme are instantly available to the keycloak service
 
 ## Full Stack Development with HTTPS Proxy (dev-proxy.yml)
 This is the same as the Full Stack Development profile but also adds the proxy service to allow development/testing of the Manager running behind the reverse proxy with HTTPS (so development environment matches final deployment configuration).
@@ -63,4 +63,4 @@ This is the same as the Full Stack Development profile but also adds the proxy s
 * PostgreSQL DB: jdbc:postgresql://localhost:5432/openremote
 
 ### Volume Maps
-* ../keycloak/theme - Maps custom keycloak theme into the Keycloak service; changes to the local theme are instantly available to the keycloak service
+* `../ui/keycloak/themes/openremote` - Maps custom keycloak theme into the Keycloak service; changes to the local theme are instantly available to the keycloak service
