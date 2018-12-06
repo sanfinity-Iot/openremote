@@ -36,4 +36,4 @@ Any attributes of public assets are not public by default, they are private. To 
 
 ## Asset API
 
-You can read more following the docs on the main entry point: [AssetResource.java](https://github.com/openremote/openremote/blob/master/manager/shared/src/main/java/org/openremote/manager/shared/asset/AssetResource.java)
+You can read more following the docs on the main entry point: [AssetResource.java](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/AssetResource.java)
