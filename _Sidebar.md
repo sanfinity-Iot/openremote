@@ -7,6 +7,7 @@
 * [[Working on the Manager|Developer Guide: Working on the Manager]]
 * [[Working on the UI|Developer Guide: Working on the UI]]
 * [[Working on the mobile consoles|Developer Guide: Working on the mobile consoles]]
+* [[Working on maps|Developer Guide: Working on maps]]
 * [[Docker compose profiles|Developer Guide: Docker compose profiles]]
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
 * [[Maintaining an installation|Developer Guide: Maintaining an installation]]
