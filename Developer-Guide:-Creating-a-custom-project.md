@@ -76,7 +76,8 @@ Adding a submodule will generate a special 'openremote' submodule link object (f
 Also prevent committing build/runtime files that may be generated inside your project directory, add a `.gitignore`:
 
 ```
-bower_components/
+node_modules/
+yarn-error.log
 deployment/proxy/
 deployment/postgresql/
 deployment/manager/extensions/
@@ -221,7 +222,7 @@ task installDist {
 Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `/myproject/deployment`) and make changes:
 
 1. Create JavaScript/HTML applications in `deployment/manager/consoles`
-1. Change the Manager UI map data, default coordinates, zoom levels, etc. in `deployment/manager/map`
+1. Change the Manager UI map data, default coordinates, zoom levels, etc. in `deployment/map`
 1. Extend the Manager UI and customize the theme in `deployment/manager/ui`
 1. Put any extension JAR files into `deployment/manager/extensions`
 1. Customize logging of the Manager in `logging.properties`
