@@ -16,6 +16,15 @@ If you are working on raster maps (Mapbox JS) then you will need to have the `ma
 
 The container can be started by using the `dev-map.yml` profile (see [here](/Developer-Guide:-Docker-compose-profiles)) or you can add a `map` service to an existing custom project profile (copy the `dev-map.yml` as a template).
 
+The manager acts as a reverse proxy for the `map` service and in order to configure the manager to serve raster tiles you need to set the following environment variables:
+
+```
+MAP_TILESERVER_HOST=localhost
+MAP_TILESERVER_PORT=8082
+MAP_TILESERVER_REQUEST_TIMEOUT=10000
+```
+
+**NOTE: By default `MAP_TILESERVER_HOST` is `null` which means the reverse proxy is disabled**
 
 ### Updating Map data
 We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
