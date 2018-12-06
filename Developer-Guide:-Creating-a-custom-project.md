@@ -222,23 +222,10 @@ task installDist {
 Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `/myproject/deployment`) and make changes:
 
 1. Create JavaScript/HTML applications in `deployment/manager/consoles`
-1. Change the Manager UI map data, default coordinates, zoom levels, etc. in `deployment/map`
+1. Change the Manager UI map data (see [working on maps](./Developer-Guide%3A-Working-on-maps))
 1. Extend the Manager UI and customize the theme in `deployment/manager/ui`
 1. Put any extension JAR files into `deployment/manager/extensions`
 1. Customize logging of the Manager in `logging.properties`
-
-### Updating Manager map data
-
-We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
-
-You can extract smaller tilesets with the following procedure:
-
-1. Install tilelive converter: 
-    `npm install -g mapnik mbtiles tilelive tilelive-bridge`
-1. Select and copy boundary box coordinates of desired region: 
-    http://tools.geofabrik.de/calc/#tab=1 
-1. Extract the region with: 
-    `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
 
 ## Building and running your project
 
@@ -269,7 +256,7 @@ When you are working on your extension Java/Groovy code, you don't want to wait 
 
 ### Working on Manager backend services or UI
 
-Read the [[Developer Guide: Working on Manager with an IDE]], this helps you create Run/Debug Configurations in an IDE.
+Read the [[Developer Guide: Working on the manager]], this helps you create Run/Debug Configurations in an IDE.
 
 ## Testing
 
