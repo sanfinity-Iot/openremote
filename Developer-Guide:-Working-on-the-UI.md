@@ -36,6 +36,9 @@ The above script names should be used in `package.json` files and then appropria
 ### Components
 Components can be developed and tested in isolation (with dependencies on other components and/or public npm modules as required). Some components have no visuals and provide standard OpenRemote functionality e.g. `@openremote/core`, whilst others provide visuals that allow interaction with the Manager backend.
 
+#### Maps
+If you are working on a map component then please refer to the [working on maps](./Developer-Guide:).
+
 ### Apps
 Apps bring together components and/or public modules and can be written using any framework/library etc that is
 compatible with web components (see [here]([https://custom-elements-everywhere.com/)).
