@@ -256,7 +256,7 @@ When you are working on your extension Java/Groovy code, you don't want to wait 
 
 ### Working on Manager backend services or UI
 
-Read the [[Developer Guide: Working on the manager]], this helps you create Run/Debug Configurations in an IDE.
+Read the [Developer Guide: Working on the manager](./Developer-Guide%3A-Working-on-the-Manager), this helps you create Run/Debug Configurations in an IDE.
 
 ## Testing
 
