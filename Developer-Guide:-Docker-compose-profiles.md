@@ -69,3 +69,10 @@ To use this proxy correctly you will need to set the correct environment variabl
 
 ## Map (dev-map.yml)
 This is used for starting the map service and is required when working on raster map components/apps.
+
+### Exposed Services
+* Tileserver-gl: http://localhost:8082
+
+### Volume Maps
+* `../deployment/manager/shared` - Maps shared resources (sprites and fonts) into the service **NOTE that tileserver-gl expects fonts to not be gzipped**
+* `../deployment/map` - Maps the map settings and DB into the service
