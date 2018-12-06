@@ -56,6 +56,13 @@ This is for running tests or doing development work on the Manager (in an IDE) a
 ## Full Stack Development with HTTPS Proxy (dev-proxy.yml)
 This is the same as the Full Stack Development profile but also adds the proxy service to allow development/testing of the Manager running behind the reverse proxy with HTTPS (so development environment matches final deployment configuration).
 
+To use this proxy correctly you will need the following environment variables set in the manager:
+
+```
+MAP_TILESERVER_HOST=localhost
+IDENTITY_NETWORK_WEBSERVER_PORT=443
+IDENTITY_NETWORK_SECURE=true
+```
 
 ### Exposed Services
 * Manager: https://localhost
