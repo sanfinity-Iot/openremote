@@ -21,8 +21,13 @@
 * [[Connect Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
 * [[Connect a HTTP API|User Guide: Connecting to a HTTP API]]
 * [[Connect KNX|User-Guide:-Connecting-to-KNX]]
+* [[Create Macro|User-Guide:Creating a Macro]]
+* [[Create Surveys|User-Guide:Creating and Reporting Surveys]]
+* [[Connect TCP|User-Guide:-Connecting-with-TCP]]
+* [[Create Timer|User-Guide:Create a Timer Schedule]]
 * [[Connect Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
 * [[Connect Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
+* [[Connect UPnP|User-Guide:-Connecting-to-UPnP]]
 
 ## Assets & Attributes
 
