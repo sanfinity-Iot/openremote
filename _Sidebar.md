@@ -28,6 +28,7 @@
 
 * [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Create an Asset|User-Guide:-Create an Asset]]
+* [[Linking attributes]]
 * [[Access rights|User-Guide:-Public, Private, or Restricted access]]
 * [[Security OAuth|User-Guide:-Using OAuth]]
 
