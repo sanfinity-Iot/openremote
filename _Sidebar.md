@@ -40,7 +40,7 @@
 
 * [[Access rights|User-Guide:-Public, Private, or Restricted access]]
 * [[Security OAuth|User-Guide:-Using OAuth]]
-* [[Connecting to Active Directory|Connecting-Keycloak-to-AD-with-LDAP-configuration]]
+* [[Linking to Active Directory|Connecting-Keycloak-to-AD-with-LDAP-configuration]]
 
 ## Application Consoles
 
