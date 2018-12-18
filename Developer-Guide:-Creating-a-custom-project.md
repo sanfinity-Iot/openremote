@@ -175,15 +175,48 @@ slf4jVersion = 1.7.25
 groovyVersion = 2.4.12
 ```
 
-## Creating custom apps and extensions
+## Setting up the deployment directory
 
-Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `/myproject/deployment`) and make changes:
+Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `/myproject/deployment`) and:
 
-1. Create JavaScript/HTML applications in `deployment/manager/consoles`
-1. Change the Manager UI map data (see [working on maps](./Developer-Guide%3A-Working-on-maps))
-1. Extend the Manager UI and customize the theme in `deployment/manager/ui`
-1. Put any extension JAR files into `deployment/manager/extensions`
-1. Customize logging of the Manager in `logging.properties`
+1. Customize logging of the Manager in `manager/logging.properties`
+1. Change the map settings and  data in `map` (see [working on maps](./Developer-Guide%3A-Working-on-maps))
+1. Put any extension JAR files that aren't built by a gradle project in this repository into `manager/extensions`
+1. Put any shared static HTML/JS code into `manager/shared`
+1. Edit the `build.gradle` to copy any apps, shared static HTML/JS and/or keycloak themes from the `openremote` submodule deployment into this deployment:
+
+```
+task copyKeycloakThemes(type: Copy) {
+    dependsOn resolveTask(":ui:keycloak:installDist")
+    from "${resolveProject(':deployment').projectDir}/keycloak"
+    into "keycloak"
+}
+
+task copyManagerApp(type: Copy) {
+    dependsOn resolveTask(":client:installDist")
+    from "${resolveProject(':deployment').projectDir}/manager/app/manager"
+    into "manager/app/manager"
+}
+
+task copyManagerShared(type: Copy) {
+    from "${resolveProject(':deployment').projectDir}/manager/shared"
+    into "manager/shared"
+}
+
+task installDist(type: Copy) {
+    dependsOn copyKeycloakThemes, copyManagerApp, copyManagerShared
+}
+```
+
+## Creating custom app, extensions and themes
+All frontend related code should be within a `ui` directory, copy the same directory layout as found in the `openremote` submodule and copy the following files:
+
+```
+.gitignore
+build.gradle
+```
+
+Custom apps, components and keycloak themes can then be created as required for the project (see [working on the UI](./Developer-Guide%3A-Working-on-the-UI))
 
 ## Building and running your project
 
