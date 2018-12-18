@@ -22,7 +22,7 @@ Typescript is used to provide static typing with the OpenRemote model available 
 
 Yarn workspaces are used to symlink the OpenRemote packages into a root `node_modules` directory (refer to the Yarn [documentation](https://yarnpkg.com/) for more details). Yarn acts as an alternative to `npm` so please use it.
 
-Gradle is used used as the standard build tool throughout the stack, there are gradle tasks available which delegate to node as follows:
+Gradle is used as the standard build tool throughout the stack, there are gradle tasks available which delegate to node as follows:
 
 * `npmInstall/yarnInstall` -> `yarn install`
 * `npmClean` -> `npm run-script clean`
@@ -30,6 +30,7 @@ Gradle is used used as the standard build tool throughout the stack, there are g
 * `npmTest` -> `npm run-script test`
 * `npmServe` -> `npm run-script serve`
 * `npmServeProduction` -> `npm run-script serveProduction`
+* `tscWatch` -> `npx tsc -b --watch`
 
 The above script names should be used in `package.json` files and then appropriate `build.gradle` files should be added, see existing components, apps, demos for examples.
 
@@ -49,7 +50,44 @@ Generally a 1-1 mapping between components and demos; they provide a simple harn
 ### Keycloak Themes
 Each theme is located in its own directory within the `keycloak/themes` directory. When running any of the `dev` docker compose profiles; each theme can be volume mapped into the keycloak service and changes are reflected in real time allowing for easy development of these themes (see [Docker compose profiles](./Developer-Guide:-Docker-compose-profiles) for more details).
 
-## Legacy Manager GWT web application (`/client`)
+## Working on apps and components
+Before you can work on any apps or components you will need to issue the following commands in order to perform a `yarn install` and to build the `model` and `rest` components:
+
+```
+./gradlew -p ui yarnInstall
+./gradlew -p ui/component/model build
+./gradlew -p ui/component/rest build
+```
+
+or alternatively build the whole `ui` project (will take a little longer but is just a single command):
+
+```
+./gradlew -p ui build
+```
+
+**NOTE: The `yarnInstall` task must be run whenever new components are added in order to make them available for import in other components/demos/apps and the model and rest `build` tasks must be run whenever the openremote model changes. Whenever you do a pull from the remote repository it is worth running the above commands to ensure things are up to date**
+
+If you are making frequent changes to the openremote model (which includes the REST API) then you can use the continuous mode of gradle in combination with the `watch` task to rebuild the `model` and `rest` components automatically whenever the model files change:
+
+```
+./gradlew -t -p ui modelWatch
+```
+
+### Compiling typescript
+Typescript is used throughout the `ui` code base and this requires transpiling to javascript; there are several ways to trigger compilation but project references in combination with `tsc -b --watch` is preferred as it handles incremental builds across multiple typescript projects (each component, app, demo is a separate typescript project). The gradle `tscWatch` task can be used to start a typescript incremental build:
+
+```
+./gradlew -p <COMPONENT|DEMO|APP> tscWatch          e.g. ./gradlew -p ui/demo/demo-or-map tscWatch
+```
+
+### Running demos and apps
+Demos and apps use `webpack` for module bundling and each can be served using `webpack-dev-server` which provides source maps and hot module replacement functionality, the following gradle command can be used (which just delegates to `npm` as described above):
+
+```
+./gradlew -p <COMPONENT|DEMO|APP> npmServe          e.g. ./gradlew -p ui/demo/demo-or-map npmServe
+```
+
+## Working on the legacy Manager GWT web application (`/client`)
 If you are working on the legacy GWT based Manager web application you will need to start the GWT compiler and keep it running in the background; this service listens for compilation requests and transforms Java into JavaScript code:
 ```
 ./gradlew -p gwtSuperDev
