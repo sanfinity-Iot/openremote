@@ -36,7 +36,7 @@
 * [[Link attributes]]
 * [[Use Health Status Provider]]
 
-## ID Management & Security
+## Identity & Security
 
 * [[Access rights|User-Guide:-Public, Private, or Restricted access]]
 * [[Security OAuth|User-Guide:-Using OAuth]]
