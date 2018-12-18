@@ -21,7 +21,43 @@ Custom projects should have a dependency on the main OpenRemote repository using
 
 ## Working with the Git repositories
 
-### Cloning an existing project repository
+### Creating a new project
+
+If you are working on an existing custom project then you can skip this section.
+
+First you must create a new Git repository for your project, then add the main [OpenRemote repository](https://github.com/openremote/openremote.git) as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Your project is the root project, and the main OpenRemote repository and its projects become sub-projects of your project, on which you can depend in your build and code.
+
+To add a submodule of the OpenRemote main repository use the following commands (this will track the `master` branch of the main OpenRemote repository, change as required):
+
+```
+mkdir myproject/
+cd myproject/
+git init
+git submodule add -b master https://github.com/openremote/openremote.git openremote/
+git submodule status
+```
+
+This will generate a special 'openremote' submodule link object (folder) and also add an entry in `.gitmodules`. The generated `.gitmodules` file contains a list of all submodules in your project. You commit the submodule link to your project repository and this tells Git which commit to checkout in that submodule.
+
+### Creating a .gitignore
+
+Also prevent committing build/runtime files that may be generated inside your project directory, add a `.gitignore`:
+
+```
+node_modules/
+yarn-error.log
+deployment/proxy/
+deployment/postgresql/
+deployment/manager/extensions/
+deployment/manager/openremote.log*
+deployment/manager/app/
+deployment/manager/shared/
+deployment/keycloak/
+# If you have a large map, don't commit it but store it only locally
+# deployment/map/*.mbtiles
+```
+
+### Pulling the latest changes
 
 Everyone who checks out your project repository must initialize and fetch the submodules when they clone your project for the first time. Clone the repository:
 
@@ -34,91 +70,21 @@ Then fetch the submodule(s):
 ```
 cd myproject/
 git submodule init
+```
+
+From then on when you pull changes for the project you must also update any submodule(s) to the correct commit that the project is using:
+
+```
 git submodule update
 ```
 
-### Creating a new project
-
-First you must create a new Git repository for your project, then add the main [OpenRemote repository](https://github.com/openremote/openremote.git) as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Your project is the root project, and the main OpenRemote repository and its projects become sub-projects of your project, on which you can depend in your build and code.
-
-There are two ways of adding a Git submodule: one which tracks a branch of the main OpenRemote repository, and one which tracks a particular commit.
-
-For development it is advisable to track a (master) branch and for releasing your project, it is best to track a commit. See [this article for more information](http://www.vogella.com/tutorials/GitSubmodules/article.html#submodules_trackbranch) about the two methods.
-
-### Tracking a branch of the OpenRemote main repository
-
-By tracking a branch you can issue a single command in your project repository to fetch new commits from the OpenRemote main repository, and push any changes you make in the submodule to the main OpenRemote repository. This setup will track the `master` branch of the main OpenRemote repository:
-
-```
-mkdir myproject/
-cd myproject/
-git init
-git submodule add -b master https://github.com/openremote/openremote.git openremote/
-git submodule status
-```
-
-### Tracking a commit of the OpenRemote main repository
-
-This setup tracks the last commit of the OpenRemote main repository, effectively attaching your project to that version of OpenRemote:
-
-```
-mkdir myproject/
-cd myproject/
-git init
-git submodule add https://github.com/openremote/openremote.git openremote/
-git submodule status
-```
-
-Adding a submodule will generate a special 'openremote' submodule link object (folder) and also add an entry in `.gitmodules`. The generated `.gitmodules` file contains a list of all submodules in your project. You commit the submodule link to your project repository and this tells Git which commit to checkout in that submodule.
-
-### Creating a .gitignore
-
-Also prevent committing build/runtime files that may be generated inside your project directory, add a `.gitignore`:
-
-```
-node_modules/
-yarn-error.log
-deployment/proxy/
-deployment/postgresql/
-deployment/manager/extensions/
-# If you have a large map, don't commit it but store it only locally
-# deployment/manager/*/*.mbtiles
-```
-
-### Committing changes and staying up-to-date
-
-Your projects' repository is the root and the OpenRemote submodule is another repository you have to handle. They are connected with the `openremote` special directory in your project, and this link has to be updated manually when it should reference a different version of the main OpenRemote repository.
-
-Whenever you want to update your project with a new version of OpenRemote, you must update the submodule of the main OpenRemote repository you have checked out.
-
-When you want to work on your project and files inside the submodule at the same time, you must make two commits: one on the submodule's repository and one in your project's repository.
-
-If your submodule is tracking a branch then you can update the submodule to use the latest commit on that branch. Execute in your project directory:
+You can update the submodule to the latest commit of the tracked branch by using the following:
 
 ```
 git submodule update --remote --rebase
 ```
 
-You now can make changes to the files in the `openremote` submodule directory and commit them on any branch in the main OpenRemote repository.
-
-If your submodule is tracking a commit then you can update the submodule to use the latest commit by:
-
-```
-cd openremote
-git checkout master
-git pull
-```
-
-Committing changes to the `openremote` submodule and main repository means that the submodule reference has to be changed as well, so it will point to the desired commit/branch on the main repository.
-
-**Whenever a submodule is updated to use a different commit (no matter whether it tracks a branch or a specific commit) you have to record this change in your project repository:**
-
-```
-git add openremote
-git commit -m "Updated OpenRemote main repository submodule link"
-```
-
-This is the second commit we've mentioned earlier in this section.
+When you want to work on your project and files inside the submodule at the same time, you must make two commits: one on the submodule's repository and one in your project's repository, the commit on the project repository also includes the updated reference to the new submodule commit.
 
 ## Setting up the Gradle build
 
@@ -135,7 +101,7 @@ To install the Gradle wrapper in the project (these files should be committed to
 
 ```
 cd myproject/
-gradle wrapper --gradle-version 4.2.1
+gradle wrapper
 ```
 
 Then write a `settings.gradle` file:
@@ -144,7 +110,7 @@ Then write a `settings.gradle` file:
 rootProject.name = "myproject"
 
 // Include sub-projects dynamically, every directory with a build.gradle (and no .buildignore)
-fileTree(dir: rootDir, include: "**/build.gradle")
+fileTree(dir: rootDir, include: "**/build.gradle", excludes: ["**/node_modules/**"])
         .filter { it.parent != rootDir }
         .filter { !file("${it.parent}/.buildignore").exists() }
         .each {
@@ -207,14 +173,6 @@ projectVersion = 1.0-SNAPSHOT
 
 slf4jVersion = 1.7.25
 groovyVersion = 2.4.12
-```
-
-If you have any directory with a `bower.json` file, include it in the build by placing a `build.gradle` next to it with this content:
-
-```
-task installDist {
-    dependsOn bowerPrune, bowerUpdate
-}
 ```
 
 ## Creating custom apps and extensions
