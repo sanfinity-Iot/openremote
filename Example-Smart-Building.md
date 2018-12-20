@@ -10,7 +10,7 @@ _Figure 1. Panels for Lighting, Start, and Security as available within Home Exa
 
 We have described the application here, and will give you the means to tailor it your own application. We are addressing 2 types of users: the [Home User](#application-for-home-user), and the [Service Provider](#application-for-service-provider). 
 
-Before using this project you can already view a demo at [demo.openremote.io](demo.openremote.io).
+Before using this project you can already view a demo at [demo.openremote.io](https://demo.openremote.io).
 
 # Application for Home User
 
