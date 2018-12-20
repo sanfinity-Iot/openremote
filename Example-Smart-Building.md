@@ -1,20 +1,16 @@
-This page describes a typical Residential Application, which can be a starting point for multi-tenant apartment buildings. It integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', and 'Climate'. It includes a 'Smart' function which predicts your presence schedules and automatically switches between different scenes for each function. The basic set-up is made with [Velbus](Velbus), but can of course be exchanged by other brands or protocols, eg. [Z-wave](Z-wave) or [KNX](KNX). It includes:
-- PIR sensor;
-- Window Sensor;
-- Temperature Sensor;
-- Outdoor weather service for the Outdoor Temperature;
-- Light switch with dimmer;
-- Thermostat;
-- Radiator Valve;
-- Ventilation switch
+This page describes a typical Residential Building Application, which can be a starting point for multi-tenant apartment buildings. It integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', 'Energy', and 'Climate'. 
+
+It includes a couple of services, not just convenient for the individual resident, but also for the service provider: scenes, scheduling, problem reporting, and notification services.
+
+The basic set-up is part of the main branch and explained in the 'Get Started'
 
 ![Figure 1. Panels for Lighting, Smart Start, and Security as available within Home Example.](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Example%20Home%20-%20Panels%201.jpg)
 
 _Figure 1. Panels for Lighting, Start, and Security as available within Home Example._
 
-We have described the application here, and will give you the means to tailor it your own application. We are addressing 3 types of users: first of all the [Home User](#application-for-home-user), secondly the [Installer](#application-for-installer), and third the [Service Provider](#application-for-service-provider). For the installer we added a few functions. The first is a PID control function. This function allows you to create a feedback loop and can be used for eg. heating or ventilation function. The second function allows you to change sensor values (eg. Presence, or Window). This function is helpful to validate whether the rules-logic behind 'Smart' has been implemented for your application. By changing sensor values you can verify whether the application behaves as you expect it to behave without having to wait. For the Service Provider, we offer management tools which allow for remote management of large numbers of Home Installations.
+We have described the application here, and will give you the means to tailor it your own application. We are addressing 2 types of users: the [Home User](#application-for-home-user), and the [Service Provider](#application-for-service-provider). 
 
-This project can be downloaded as [Designer 2.5 ZIP](https://github.com/openremote/Documentation/blob/master/referenceprojects/openremote.zip) file and the corresponding [Adobe Illustrator file](https://github.com/openremote/Documentation/blob/master/referenceprojects/Example-Home.ai), so you can use it as a starting point for your own application. Before using this project you can already view a demo in your [iOS](iOS-Console-Configuration) or [Android](Android-Console-Configuration) panels by selecting the controller: _demo.openremote.com:8688/controller_.
+Before using this project you can already view a demo at [demo.openremote.io](demo.openremote.io).
 
 # Application for Home User
 
@@ -63,36 +59,6 @@ In settings you can see the predicted presence schedule for 4 time periods. In t
 The 'Vacation Settings' allows you to manually override the automated prediction. It will switch on the alarm, switch climate to 'Night', and will switch 'Lighting' automatically according to your time schedule.
 
 To extend your application you could consider adding a service using a phone number to send a Text Message in case both Vacation as well as the Alarm is switched on.
-
-# Application for Installer 
-
-As an installer you want to have tools so you can test the system you have build for your customer (the Home user). We offer you three tools to help you. First, an approach to test the system by 'faking' sensor changes. Secondly a PID control solution. And finally a set of rules, which you can change and adopt to your needs. We explain all three.
-
-## Test your system
-
-As there are quite some rules in your system and you might be changing or adding some, it's critical to test whether you system behaves as it should be. Therefore, we added a Configuration Panel in which you can change the value of the Sensors: presence, window, indoor-, and outdoor temperature. By changing these sensor values you can test whether the system behaves as it should without having to wait. These panels are available for iPhone5 (Config-iPhone5) and Samsung Galaxy S6 (Config-SamsungS6), selecting the Tab 'Sensors'.
-
-![Figure 3. Configuration Panels for faking sensor values (for testing), and setting the parameters for the PID control function.](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Example%20Home%20-%20Configuration.jpg)
-
-_Figure 3. Configuration Panels for faking sensor values (for testing), and setting the parameters for the PID control function._
-
-## PID Controller
-
-There is a PID controller added to the controller. If you select the same Configuration Panel, same as for the sensors, and select the Tab 'PID Config', you will see the configuration parameters for a PID feedback loop:
-- Proportional Gain Kp
-- Integral Gain Ki
-- Derivative Gain Kd
-- Setpoint
-
-For output you see:
-- Steady State Error SE
-- Output
-
-The rule set is included in the demo and the downloadable Home example. For installers, who are looking for ways to prevent temperature overshoots, or want to manage CO2 levels with a more responsive system, we have added this function. Note, you still have to hook it up to the correct sensors and commands yourself.
-
-## Rules for Predicted Presence
-
-The rules for predicted presence are currently creating two time periods per day of the week. The rules are written in Drools (see more about [Rules](Rules)). The rules offer a method to predict these times on actual presence in the previous week.
 
 # Application for Service Provider
 
