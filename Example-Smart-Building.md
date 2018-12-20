@@ -1,6 +1,6 @@
 This page describes a typical Residential Building Application, which can be a starting point for multi-tenant apartment buildings. It integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', 'Energy', and 'Climate'. 
 
-It includes a couple of services, not just convenient for the individual resident, but also for the service provider: scenes, scheduling, problem reporting, and notification services.
+It includes a couple of services, not just convenient for the individual resident, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
 
 The basic set-up is part of the main branch and explained in the 'Get Started'
 
