@@ -245,6 +245,14 @@ task installDist(type: Copy) {
     dependsOn copyKeycloakThemes, copyManagerApp, copyManagerShared
 }
 ```
+1. Create deployment Dockerfile with the following content:
+```
+# Default deployment when deployment-data volume is empty
+FROM debian:stretch
+ADD manager /deployment/manager
+ADD keycloak /deployment/keycloak
+ADD map /deployment/map
+```
 
 ## Creating custom app, extensions and themes
 All frontend related code should be within a `ui` directory, copy the same directory layout as found in the `openremote` submodule and copy the following files:
