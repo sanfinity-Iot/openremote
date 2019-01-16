@@ -245,13 +245,18 @@ task installDist(type: Copy) {
     dependsOn copyKeycloakThemes, copyManagerApp, copyManagerShared
 }
 ```
-1. Create deployment Dockerfile with the following content:
+6. Create deployment `Dockerfile` with the following content:
 ```
 # Default deployment when deployment-data volume is empty
 FROM debian:stretch
 ADD manager /deployment/manager
 ADD keycloak /deployment/keycloak
 ADD map /deployment/map
+```
+7. Create deployment `.dockerignore` file with the following content:
+# Uncomment below if map is too large and should be deployed with direct file copying
+#map/mapdata.mbtiles
+manager/openremote.log*
 ```
 
 ## Creating custom app, extensions and themes
