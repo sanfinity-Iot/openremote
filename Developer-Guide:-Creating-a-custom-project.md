@@ -186,6 +186,16 @@ Copy the `deployment` directory of the `openremote` submodule into your project'
 1. Edit the `build.gradle` to copy any apps, shared static HTML/JS and/or keycloak themes from the `openremote` submodule deployment into this deployment:
 
 ```
+apply plugin: 'idea'
+idea {
+    module {
+        excludeDirs += file("manager/app")
+        excludeDirs += file("keycloak")
+        excludeDirs += file("manager/extensions")
+        excludeDirs += file("manager/shared")
+    }
+}
+
 task copyKeycloakThemes(type: Copy) {
     dependsOn resolveTask(":ui:keycloak:installDist")
     from "${resolveProject(':deployment').projectDir}/keycloak"
@@ -201,6 +211,15 @@ task copyManagerApp(type: Copy) {
 task copyManagerShared(type: Copy) {
     from "${resolveProject(':deployment').projectDir}/manager/shared"
     into "manager/shared"
+}
+
+task clean() {
+    doLast {
+        delete "manager/app/manager"
+        delete "manager/shared"
+        delete "manager/extensions"
+        delete "keycloak"
+    }
 }
 
 task installDist(type: Copy) {
