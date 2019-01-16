@@ -254,6 +254,7 @@ ADD keycloak /deployment/keycloak
 ADD map /deployment/map
 ```
 7. Create deployment `.dockerignore` file with the following content:
+```
 # Uncomment below if map is too large and should be deployed with direct file copying
 #map/mapdata.mbtiles
 manager/openremote.log*
