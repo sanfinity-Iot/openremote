@@ -44,6 +44,25 @@ This will generate a special 'openremote' submodule link object (folder) and als
 Also prevent committing build/runtime files that may be generated inside your project directory, add a `.gitignore`:
 
 ```
+.DS_*
+.gradle
+.vagrant
+.classpath
+.project
+.settings
+
+build/
+bin/
+out/
+
+*.iml
+*.ipr
+*.iws
+.idea/
+.local/
+*~
+*.sh
+
 node_modules/
 yarn-error.log
 deployment/proxy/
