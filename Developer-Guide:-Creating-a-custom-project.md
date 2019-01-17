@@ -266,6 +266,8 @@ All frontend related code should be within a `ui` directory, copy the same direc
 ```
 .gitignore
 build.gradle
+package.json
+tslint.json
 ```
 
 Custom apps, components and keycloak themes can then be created as required for the project (see [working on the UI](./Developer-Guide%3A-Working-on-the-UI))
