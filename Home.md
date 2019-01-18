@@ -32,13 +32,3 @@ Security is paramount when it comes to IoT and out of the box the Manager integr
 * [Agent](https://github.com/openremote/openremote/tree/master/agent) - The Agent connects sensors and actuators to your IoT network and creates the interface to 3rd party APIs and service protocols. OpenRemote has many built-in protocols and it's easy to create new adaptors. Co-locate your agents with the Manager or install agents on gateways, close to devices. You can link a 2.x controller to a Manager, see [Connecting to Controller 2.5](https://github.com/openremote/openremote/wiki/User-Guide%3A-Connecting-to-Controller-2.5)
 
 * *Designer* - In OpenRemote 2.x you can create control panels and end-user applications with a visual designer tool. In OpenRemote 3.x, we provide web components for any HTML design tool, you don't need much more than a simple text editor to build custom automation panels. See [Example Home 2.x](https://github.com/openremote/Documentation/wiki/Example-Home) and the port to web components in [Smart Home example in v3](https://github.com/openremote/openremote/tree/master/deployment/manager/consoles/customerA).
-
-## Quickstart
-
-Checkout the [main OpenRemote project](https://github.com/openremote/openremote) and run a demo setup with [Docker Community Edition](https://www.docker.com/):
-
-```
-docker-compose -p openremote -f profile/demo.yml up
-```
-
-Access the manager UI and API on https://localhost/ with username admin and password secret (accept the 'insecure' self-signed SSL certificate). Configuration options of the images are documented in the compose profile `demo.yml`.
