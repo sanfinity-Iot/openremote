@@ -9,15 +9,16 @@ The basic set-up is part of the demo environment and the main branch. You can ta
 
 We have described the demo here, with its several vertical solutions. 
 
-# Lighting
+# Citizen engagement
 
-## Integration of your lighting solution
+## Integration of citizens
 
+* City app and geo-based services
 * Describe required attributes
 
 ## A new application
 
-* Lighting based on weather or traffic conditions
+* Communication and engagement
 
 # Crowd management
 
@@ -46,6 +47,26 @@ We have described the demo here, with its several vertical solutions.
 ## A new application
 
 * Optimise traffic flows
+
+# Lighting
+
+## Integration of your lighting solution
+
+* Describe required attributes
+
+## A new application
+
+* Lighting based on weather or traffic conditions
+
+# Environment
+
+## Integration of your air quality sensors
+
+* Describe required attributes
+
+## A new application
+
+* traffic management
 
 # How to get started
 
