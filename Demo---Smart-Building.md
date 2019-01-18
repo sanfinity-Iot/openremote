@@ -1,8 +1,8 @@
-This page describes a typical Residential Building Application, which can be a starting point for multi-tenant apartment buildings. It integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', 'Energy', and 'Climate'. 
+This page describes a typical Smart Building Application, which can be a starting point for apartment buildings or lage offices. The example integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', 'Energy', and 'Climate'. The user application is designed once and gives you access to the correct apartment based based on your user credentials. 
 
-It includes a couple of services, not just convenient for the individual resident, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
+The application includes a couple of services, not just convenient for the individual resident, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
 
-The basic set-up is part of the main branch and explained in the 'Get Started'
+The basic set-up is part of the demo environment and the main branch.
 
 ![Figure 1. Panels for Lighting, Smart Start, and Security as available within Home Example.](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Example%20Home%20-%20Panels%201.jpg)
 
