@@ -89,5 +89,5 @@ The example as shown here is available online at:
 If you want to get this running yourself we recommend to follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/).
 
 # See Also
-- [Demo Smart City](Demo Smart City)
+- [Demo Smart City](Demo-Smart-City)
 - [Get Started](https://openremote.io/get-started-manager/)
