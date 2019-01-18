@@ -2,78 +2,92 @@ This page describes a typical Smart Building Application, which can be a startin
 
 The application includes a couple of services, not just convenient for the individual resident, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
 
-The basic set-up is part of the demo environment and the main branch.
+The basic set-up is part of the demo environment and the main branch. You can take it as a starting point for developing your own application.
 
-![Figure 1. The user application for a single apartment.](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Example%20Home%20-%20Panels%201.jpg)
+temporarily see [Demo UI](https://xd.adobe.com/view/e48ac2cb-4060-45f2-5c33-6fa30abe6818-92bb/screen/8f384d1b-8d9b-4733-8789-3438a1ed8f29/Scenes)
 
 _Figure 1. The user application for a single apartment, as part of the demo environment._
 
-We have described the application here, and will give you the means to tailor it your own application. We are addressing 2 types of users: the [Home User](#application-for-home-user), and the [Service Provider](#application-for-service-provider). 
+We have described the application here. We are addressing 2 types of users: the [Apartment User](#application-for-apartment-user), and the [Service Provider](#application-for-service-provider). 
 
-Before using this project you can already view a demo at [demo.openremote.io](https://demo.openremote.io).
+While reading you can view a demo at [demo.openremote.io](https://demo.openremote.io), using the credentials 'demo / demo'.
 
-# Application for Home User
+# Application for Apartment User
 
-If you are a Home user you first of all like to have a user friendly application, solving your control needs for several applications. Let's describe the applications for you first.
+If you are an apartment user you first of all like to have a user friendly application, solving your control needs for several applications. Let's describe the applications for you first.
 
-## Smart, predicting your schedule
+## Scenes
 
-The Application panels are shown in Figure 1 and Figure 2. The settings panel (Figure 2) indicates the predicted schedules for four different times of the day. With these predictions the four functions can be automated. The schedules are estimated based on the presence being noticed by a PIR, averaged over the last couple of weeks (see [Rules for Predicted Presence](#rules-for-predicted-presence) for details). 
+You have 4 scenes 'Morning', 'Day', 'Evening', and 'Night' available for which you can configure the default heating, ventilation and alarm values on the 'settings' page. When you select 'Automatic scenes scheduling', scenes will automatically changes based on the time schedule you have programmed.
 
-In this Home example application we have only implemented the times for 'Morning' (first column) and 'Night' last column. We welcome users, interested to extend this application to four time zones.
+## Lighting and Devices
 
-## Lighting and Smart
+The Lighting Panel (Figure 1) allows you to switch (or dim) your different lights or switches.
 
-The Lighting Panel (Figure 1) is used to select four different scenes. With the Designer you can define these four scenes, either using [Macros](Macros) or [Rules](Rules). When you switch on the 'Smart function' the scenes will automatically switch based on your predicted schedule. At 'Morning' time it will switch on the 'Morning' scene. This will remain active until 'Night' time, when it will switch to 'Night'.
+The washing machine and dishwasher are examples of devices you can also control by using three options: "Now on", "On at" (delayed start). and "Ready By". The latter option is intended for optimisation purposes in case of changing tariffs or changing availability of local (green) energy. It requires a system rules which know the running time of your device, and monitors the best time to start your device, taking care it is finished in time.
 
-The 'Smart' function can be extended to four times of the day, once the presence detection is extended to four time periods per day.
+## Climate
 
-## Start and Smart (Electricity)
+The Climate Panel is used for both heating, ventilation and the air quality in the rooms of your apartment (Figure 2). 
 
-The Start Panel is intended for switching your electricity. In the example we display two power outlets which can be switched on and off. Once you turn on 'Smart', you will notice the 'Morning' time. When you now switch on an outlet it will delay the actual switching time to the indicated time. So for example, this allows you to take care you always have fresh coffee when waking up.
+The ventilation can be switched to 3 different levels as well as 'auto'. The 'auto' setting uses a rule which increases the ventilation in case of high humidity or CO2 levels.
 
-This function can be extended for users who have solar panels or flexible electricity tariffs. The time as indicated will be replaced by the time you want your device to switch on at the latest. Based on additional rules (eg. monitoring Solar production or tariffs) your system will decide when to swith on your device.
-
-## Security and Smart
-
-The Security Panel is intended to use your presence sensors for alerting you about unwanted guests. When switching on the Alarm you will see the 'Eye' indicating presence in orange, when either PIR notices movement or the Window is open. When you turn on 'Smart', the Alarm is automatically turned on during the 'Night'.
-
-To extend the application, in stead of the 'Eye' turning orange, you can switch on a light or siren, or arrange a notification service. Once the schedule is extended to four scenes, of course the Alarm can also be automatically switched on for 'Away'. 
-
-## Climate and Smart
-
-The Climate Panel is used for both heating as well as ventilation (Figure 2). You can read the actual temperature and increase the Setpoint temperature. In addition you can toggle between two settings 'Day' and 'Night'. The setpoints for these two can be changed in the Designer. When 'Smart' is switched on, the system will automatically switch between these two settings, based on your Presence schedule.
-
-For Auto-ventilation you can switch the ventilation to 'off' or 'on'. For now, 'on' will use the 'Morning' to switch ventilation to 'low'. At 'Night' it will switch to 'off'. 
-
-To extend the application, you can add a Humidity sensor or CO2 sensor, and even integrate the PID control loop. When 'Auto-ventilation' is turned on you could regulate the ventilation level to 'high' when Humidity is high or CO2 is getting too high. Also, once there are four time periods defined as part of the presence detection, the ventilation can be switched off when 'Away'.
-
-![Figure 2. Panels for Climate, Main menu, and Settings.](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Example%20Home%20-%20Panels%202.jpg)
+temporarily see [Demo UI](https://xd.adobe.com/view/e48ac2cb-4060-45f2-5c33-6fa30abe6818-92bb/screen/32ab82f9-8bf0-49ba-b9d0-4e17eae23469/Klimaat)
 
 _Figure 2. Panels for Climate, Main menu, and Settings._
 
+## Climate
+
+The Climate Panel is used for both heating, ventilation and the air quality in the rooms of your apartment (Figure 2). 
+
+The ventilation can be switched to 3 different levels as well as 'auto'. The 'auto' setting uses a rule which increases the ventilation in case of high humidity or CO2 levels.
+
+temporarily see [Demo UI](https://xd.adobe.com/view/e48ac2cb-4060-45f2-5c33-6fa30abe6818-92bb/screen/32ab82f9-8bf0-49ba-b9d0-4e17eae23469/Klimaat)
+
+_Figure 2. Panels for Climate, Main menu, and Settings._
+
+## Energy
+
+The Energy Panel gives you an overview of the energy used in your building. You can change the time scale and go back in history.
+
+## Security
+
+The Security Panel gives you an overview of any presence detected in your apartment, and in which room. The moment you turn on your alarm, you will receive a push notification in case of any presence detected.  
+
 ## Settings
 
-In settings you can see the predicted presence schedule for 4 time periods. In the Home Example only 'Morning' and 'Night' are based on actual predictions, using [Rules](##Rules).
+In 'settings' (option in the menu) you can define the time schedule for 4 scenes, define a holiday period, and set your preferences per scene for climate, ventilation, and alarm. 
 
-The 'Vacation Settings' allows you to manually override the automated prediction. It will switch on the alarm, switch climate to 'Night', and will switch 'Lighting' automatically according to your time schedule.
+## Received notifications
 
-To extend your application you could consider adding a service using a phone number to send a Text Message in case both Vacation as well as the Alarm is switched on.
+This page (option in the menu) gives you an overview of all received notifications, either triggered by you security alarm, or shared with you by the service provider.
+
+## Notify the service provider
+
+This page (option in the menu) allows you to send notifications to your service provider. In the demo you will be sending an e-mail to OpenRemote. 
 
 # Application for Service Provider
 
-In case you have to manage a large series of Homes or Users, your next challenge is safeguarding that all these systems keep on working. We are working on our Manager 3.0, which will allow you to have remote monitoring, account management and messaging services. Follow the status of the development at [OpenRemote.IO](https://openremote.io/) and as part of the documentation. If you are a large Service Provider, we are happy to show you a demo in person. Just [Contact Us](https://openremote.io/contact/).
+In case you have to manage a large series of apartments or offices, your challenge is safeguarding that all these systems keep on working. In addition the fact that all apartments, offices, and users are connected offers you an opportunity to organise several building related services effectively and efficiently.
+
+We'll describe 4 examples of what's possible
+
+## Health status monitoring
+
+## Receiving feedback from users
+
+## Communicating to users
+
+## Building optimisation
 
 # How to get started
 
-The example as shown here is build with Velbus Hardware. However it can be changed to any other hardware, brands, or protocols. To get started with this example from scratch, we recommend the following steps: 
- 
-1. Set up OpenRemote and familiarize yourself with the basic functions: [Get Started](http://www.openremote.com/get-started/). Add real devices, using the tutorial book [How To Smart Home](http://howtosmarthome.com/)
-2. Try the Home Example by going to the demo environment with your [iOS or Android Console](http://www.openremote.com/download-the-apps/), using demo.openremote.com:8688/controller
-3. Download the ZIP file and [Import](Export-&-Import) it in your OpenRemote Designer
-4. In the Building Modeler, adjust the devices, commands and sensors, eg using [Velbus](Velbus), [Z-wave](Z-wave), [KNX](http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+KNX) or any of the other supported products & protocols 
-5. In the UI Designer, adjust your UI Designs. Use the [Adobe Illustrator file](https://github.com/openremote/Documentation/blob/master/referenceprojects/Example-Home.ai), to adjust images in whatever way you want.
+The example as shown here is available online at:
+- [Demo - Apartment User](https://demo.openremote.io/smartbuilding) with credentials 'user1', 'user1'.
+- [Demo - Service Provider](https://demo.openremote.io) with credentials 'demo', 'demo'.
+
+If you want to get this running yourself we recommend to follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/).
 
 # See Also
-
-- 
+- [Demo Smart City](Demo Smart City)
+- [Get Started](https://openremote.io/get-started-manager/)
