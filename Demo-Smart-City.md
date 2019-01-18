@@ -68,6 +68,14 @@ We have described the demo here, with its several vertical solutions.
 
 * traffic management
 
+# Health status and maintenance
+
+# Publishing live data
+
+## Make your City smart
+
+## Enabling third party applications 
+
 # How to get started
 
 The example as shown here is available online at:
