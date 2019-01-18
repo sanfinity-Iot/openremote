@@ -19,3 +19,5 @@ docker-machine ls
 node -v
 yarn -v
 ```
+
+Ensure that you have the `JAVA_HOME` environment variable set to the path of JDK.
