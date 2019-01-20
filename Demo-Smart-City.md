@@ -67,9 +67,9 @@ We have described the demo here, with its several vertical solutions.
 
 # Publishing live data
 
-# Make your City smart
+## Make your City smart
 
-# Enabling third party applications 
+## Enabling third party applications 
 
 # How to get started
 
