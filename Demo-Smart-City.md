@@ -45,7 +45,7 @@ We have described the demo here, with its several vertical solutions.
 
 ## A new application
 
-* Lighting based on weather or traffic conditions
+* Lighting based on pollution, sound, or crowd conditions
 
 # Environment
 
