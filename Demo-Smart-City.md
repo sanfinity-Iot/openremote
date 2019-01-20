@@ -9,17 +9,6 @@ The basic set-up is part of the demo environment and the main branch. You can ta
 
 We have described the demo here, with its several vertical solutions. 
 
-# Citizen engagement
-
-## Integration of citizens
-
-* City app and geo-based services
-* Describe required attributes
-
-## A new application
-
-* Communication and engagement
-
 # Crowd management
 
 ## Integration of sound
