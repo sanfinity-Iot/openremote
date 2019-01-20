@@ -11,23 +11,49 @@ We have described the demo here, with its several vertical solutions.
 
 # Crowd management
 
+## Integration of camera
+
+* Describe required attributes
+* Rules: Alerts total crowd, and crowd growth
+
 ## Integration of sound
 
 * Describe required attributes
-
-## Integration of people counting
-
-* Describe required attributes
+* Rules: Alert sound level, sound type
 
 ## A new application
 
-* Alerts based on crowd, crowd changes, or sounds
+* Alerts based on a combination crowd, crowd changes, or sounds
+* Notifications or light
+
+# Environment
+
+## Integration of your air quality sensors
+
+* Describe required attributes
+* Rules: Alerts on Ozon
+
+## A new application
+
+* Alerts on combining crowd, environment and notifications
+
+# Lighting
+
+## Integration of your lighting solution
+
+* Describe required attributes
+* Rules:
+
+## A new application
+
+* Lighting based on pollution, sound, or crowd conditions
 
 # Traffic management
 
 ## Integration of traffic
 
 * Describe required attributes
+* Rules:
 
 ## Integration of traffic lights
 
@@ -37,33 +63,13 @@ We have described the demo here, with its several vertical solutions.
 
 * Optimise traffic flows
 
-# Lighting
-
-## Integration of your lighting solution
-
-* Describe required attributes
-
-## A new application
-
-* Lighting based on pollution, sound, or crowd conditions
-
-# Environment
-
-## Integration of your air quality sensors
-
-* Describe required attributes
-
-## A new application
-
-* traffic management
-
 # Health status and maintenance
 
 # Publishing live data
 
-## Make your City smart
+# Make your City smart
 
-## Enabling third party applications 
+# Enabling third party applications 
 
 # How to get started
 
