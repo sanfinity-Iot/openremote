@@ -164,7 +164,7 @@ docker push openremote/proxy:latest
 docker push openremote/postgresql:latest
 docker push openremote/keycloak:latest
 docker push openremote/manager:latest
-docker push openremote/map:latest
+docker push openremote/tileserver-gl:latest
 ```
 
 ## Exporting and importing images
