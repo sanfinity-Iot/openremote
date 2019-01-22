@@ -43,6 +43,7 @@ Docker images must have been pulled from Docker Hub or the full stack must be bu
 ### Volume Maps
 * `../ui/keycloak/themes/openremote` - Maps custom openremote keycloak theme into the Keycloak service; changes to the local theme are instantly available to the keycloak service; any new themes will need to be volume mapped individually
 * `../deployment` - Maps deployment folder into the Manager service; the mapped local path can be overridden using the `DEPLOYMENT_DIRECTORY` environment variable (.e.g. = `DEPLOYMENT_DIRECTORY=../../deployment docker-compose -f openremote/profile/dev.yml`)
+* `../client` - Maps the manager GWT client into the Manager service
 
 ## Full Stack Development / Running Tests (dev-testing.yml)
 This is for running tests or doing development work on the Manager (in an IDE) as well as the UI (i.e. Front end apps and/or components and/or Keycloak themes); starts the Keycloak and PostgreSQL services, see the [Working on the Manager] (./Developer-Guide%3A-Working-on-the-Manager) guide for running the Manager in an IDE.
