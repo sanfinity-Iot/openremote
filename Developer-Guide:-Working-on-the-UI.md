@@ -4,11 +4,19 @@ Working on the UI means working on any of:
 * Web components
 * Keycloak theme(s)
 
-## Prerequisites
+## Quickstart
 You will need the standard tool chain (see [Setting up the environment](./Developer-Guide%3A-Preparing-the-environment)) to be able to build and run the components and apps. Working on the web applications and/or components will also generally require a manager to interact with, you can either:
 
 * Run a Manager instance in an IDE (refer to [Working on the Manager](./Developer-Guide%3A-Working-on-the-Manager))
 * Deploy the Manager using a Docker container (refer to [UI Development profile](./Developer-Guide%3A-Docker-compose-profiles#ui-development-devyml))
+
+As an example if working on the `rest` component then run the following `gradle` tasks at the same time:
+
+- `./gradlew -t -p ui modelWatch` - Watches the model for changes and auto generates the `model` typescript definition and `restclient`.
+- `./gradlew -p ui/demo/demo-rest tscWatch` - Watches typescript files (including referenced typescript projects) for changes and auto transpiles to javascript
+- `./gradlew -p ui/demo/demo-rest npmServe` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000`
+
+ Create a new component and demo or app 
 
 ## UI Components & Apps (`/ui`)
 All UI components and apps are located in the `ui` directory; here you can find the standard OpenRemote web UI components and apps using a monorepo architecture. The code is divided into categories by directory:
