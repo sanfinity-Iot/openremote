@@ -16,7 +16,7 @@ As an example if working on the `rest` component then run the following `gradle`
 - `./gradlew -p ui/demo/demo-rest tscWatch` - Watches typescript files (including referenced typescript projects) for changes and auto transpiles to javascript
 - `./gradlew -p ui/demo/demo-rest npmServe` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000`
 
- Create a new component and demo or app 
+If you want to create a new `component` or `app` then simply copy an existing one as a template (when creating a `component` then you need to create a corresponding `demo` which acts as a development harness that can be served by webpack dev server).
 
 ## UI Components & Apps (`/ui`)
 All UI components and apps are located in the `ui` directory; here you can find the standard OpenRemote web UI components and apps using a monorepo architecture. The code is divided into categories by directory:
