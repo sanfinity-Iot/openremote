@@ -99,7 +99,8 @@ Once all providers are initialised then the client is free to decide when to ena
 ```
 {
    action: "PROVIDER_ENABLE",
-   provider: "PROVIDER_NAME"
+   provider: "PROVIDER_NAME",
+   consoleId: "hhjfksdhf786382yrusd6f782",
    data: JSON [any data that the client wishes to pass to this provider that may be required for enabling it]
 }
 ```
@@ -143,10 +144,9 @@ Allows data/notifications to be remotely pushed to the console. There are two ty
 * Supports topics
 
 ### Enabled message request data (Client -> Console)
-Console ID and array of topics to subscribe to:
+Array of topics to subscribe to (optional):
 ```
 {
-   consoleId: "hhjfksdhf786382yrusd6f782"
    topics: ["update", "custom"]
 }
 ```
@@ -165,10 +165,9 @@ Console ID and array of topics to subscribe to:
 ### Enabled message request data (Client -> Console)
 Console ID:
 ```
-{
-   consoleId: "hhjfksdhf786382yrusd6f782"
-}
+NONE
 ```
+
 ### Enabled message response data (Console -> Client)
 The data structure returned from the enabled message request is:
 ```
@@ -200,13 +199,13 @@ Use platform geofence APIs (Android and iOS); the provider expects a public endp
 
 ### Enabled message request data (Client -> Console)
 ```
-{
-   consoleId: "23123213ad2313b0897efd"
-}
+NONE
 ```
 
 ### Enabled message response data (Console -> Client)
-No data
+```
+NONE
+```
 
 ### Refresh message (Client -> Console)
 Tell the provider to fetch the latest geofence definitions and to update its local geofences.
@@ -220,10 +219,14 @@ Tell the provider to fetch the latest geofence definitions and to update its loc
 Get current location using platform API (if this is not overridden by consoles then an undesirable permission message will likely be shown when falling back to the client's navigator API)
 
 ### Enabled message request data (Client -> Console)
-No data
+```
+NONE
+```
 
 ### Enabled message response data (Console -> Client)
-No data
+```
+NONE
+```
 
 ### Get message (Client -> Console)
 ```
