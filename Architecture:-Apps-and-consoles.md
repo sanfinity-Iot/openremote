@@ -38,6 +38,7 @@ Once the console is ready it is automatically registered with the manager backen
          version: "ORConsole",
          requiresPermission: true,
          hasPermission: true,
+         enabled: true,
          disabled: false,
          data: {
             token: "323daf3434098fabcbc",
@@ -48,6 +49,7 @@ Once the console is ready it is automatically registered with the manager backen
          version: "ORConsole",
          requiresPermission: true,
          hasPermission: true,
+         enabled: true
          disabled: false
       }
    }
@@ -83,8 +85,9 @@ The console then does any required initialisation and sends a message back to th
    action: "PROVIDER_INIT",
    provider: "PROVIDER_NAME",
    version: "PROVIDER_VERSION",
-   requiresPermission: true|false [tells the client whether user permission is required for this provider]
-   hasPermission: true|false|null [tells the client whether permission has already been granted true=permission granted; false=permission denied; null=permission not yet requested]
+   enabled: true|false [tells the app whether the provider is already enabled and therefore doesn't require enabling]
+   requiresPermission: true|false [tells the app whether user permission is required for this provider]
+   hasPermission: true|false|null [tells the app whether permission has already been granted true=permission granted; false=permission denied; null=permission not yet requested]
    success: true|false [true=init success; false=init failure]
 }
 ```
