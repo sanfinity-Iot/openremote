@@ -61,6 +61,6 @@
 
 ## Architecture
 
-* [[Clients and consoles|Architecture: Clients and consoles]]
+* [[Apps and consoles|Architecture: Apps and consoles]]
 * [[Asset location tracking|Architecture: Asset location tracking]]
 * [[Manager URL Endpoints|Architecture: Manager endpoints]]
