@@ -215,7 +215,8 @@ Tell the provider to fetch the latest geofence definitions and to update its loc
 
 
 ## Storage Provider (provider: `storage`)
-Allows for storing data locally on the console.
+Allows for storing data locally on the console, well known keys are:
+- `REFRESH_TOKEN` - Used to store offline refresh token for `keycloak` authentication (should only be stored in secure environment - not in the browser).
 
 ### Enabled message request data (App-> Console)
 ```
