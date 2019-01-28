@@ -214,7 +214,7 @@ Tell the provider to fetch the latest geofence definitions and to update its loc
 ```
 
 
-## Storage Provider (provider: "storage")
+## Storage Provider (provider: `storage`)
 Allows for storing data locally on the console.
 
 ### Enabled message request data (App-> Console)
@@ -256,8 +256,8 @@ Returns the requested data from the provider.
 }
 ```
 
-## TODO Location Provider (provider: "location")
-Get current location using platform API (if this is not overridden by consoles then an undesirable permission message will likely be shown when falling back to the web browser/web view navigator API)
+## TODO Location Provider (provider: `location`)
+Get current location using platform API (if this is not overridden by consoles then an undesirable permission message will likely be shown when falling back to the web browser/web view navigator API).
 
 ### Enabled message request data (App -> Console)
 ```
