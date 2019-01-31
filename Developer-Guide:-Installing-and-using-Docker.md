@@ -155,6 +155,20 @@ SETUP_WIPE_CLEAN_INSTALL=<true or false> SETUP_ADMIN_PASSWORD=<someSecret> DATE_
 ```
 When the environment variable `DATE_TAG` is omitted, then the tag `latest` is used for the image.
 
+## Labelling images
+To make it easy to track which version of the code was used to build the images then the `GIT_COMMIT` label should be supplied when executing the docker compose build command e.g.:
+```
+docker-compose -p your_project -f profile/production.yml build --build-arg GIT_COMMIT=<commitSHA1>
+```
+This information can then be viewed using the `docker inspect` command:
+```
+docker inspect <IMAGE_NAME>
+```
+Or to just output the GIT_COMMIT value:
+```
+docker inspect -f '{{index .ContainerConfig.Labels "git-commit"}}' <IMAGE_NAME>
+```
+
 ## Publishing images
 Push images to [Docker Hub](https://hub.docker.com/u/openremote):
 
