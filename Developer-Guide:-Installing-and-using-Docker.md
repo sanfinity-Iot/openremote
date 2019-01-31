@@ -168,6 +168,11 @@ Or to just output the GIT_COMMIT value:
 ```
 docker inspect -f '{{index .ContainerConfig.Labels "git-commit"}}' <IMAGE_NAME>
 ```
+For this to work the following lines must be included in the `Dockerfile` of each image:
+```
+ARG GIT_COMMIT=unknown
+LABEL git-commit=$GIT_COMMIT
+```
 
 ## Publishing images
 Push images to [Docker Hub](https://hub.docker.com/u/openremote):
