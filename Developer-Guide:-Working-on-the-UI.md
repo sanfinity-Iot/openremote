@@ -14,7 +14,7 @@ As an example if working on the `rest` component then run the following `gradle`
 
 - `./gradlew -t -p ui modelWatch` - Watches the model for changes and auto generates the `model` typescript definition and `restclient`.
 - `./gradlew -p ui/demo/demo-rest tscWatch` - Watches typescript files (including referenced typescript projects) for changes and auto transpiles to javascript
-- `./gradlew -p ui/demo/demo-rest npmServe` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000`
+- `./gradlew -p ui/demo/demo-rest npmServe` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000/demo-rest/`
 
 If you want to create a new `component` or `app` then simply copy an existing one as a template (when creating a `component` then you need to create a corresponding `demo` which acts as a development harness that can be served by webpack dev server).
 
