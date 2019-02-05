@@ -6,7 +6,7 @@ npm i -S @openremote/or-header
 ```
 
 ## Usage
-`
+```
 <or-header logo="${logoImage}">
     <div slot="desktop-left">
         <a href="/map">Map</a>
@@ -22,4 +22,4 @@ npm i -S @openremote/or-header
     <div slot="mobile-bottom">
     </div>
 </or-header>
-`
+```
