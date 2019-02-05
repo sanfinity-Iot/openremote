@@ -59,7 +59,7 @@
 * [[Use Groovy Editor|User-Guide:-Create Rules with Groovy Editor]]
 * [[Use Javascript Editor|User-Guide:-Create Rules with Javascript Editor]]
 * [[Rules Model for Front-ends|User-Guide:-Rules Model for Front-ends]]
-* [[Protocol Connector|User-Guide:-Connect protocols]]
+* [[Link protocols|User-Guide:-Linking protocols]]
 
 ## Architecture
 
