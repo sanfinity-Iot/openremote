@@ -48,3 +48,8 @@ Try and create additional attributes that link to the OpenWeatherMap API, some i
 * Get temperature in Farenheit
 * Get humidity
 * Get pressure
+
+# See also
+
+- [[Use Web components|User-Guide:-Use Web components]]
+- [[Realm A Control Panel|User-Guide:-Realm A Control Panel Example]]
