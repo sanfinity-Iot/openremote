@@ -35,6 +35,7 @@
 * [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Create an Asset|User-Guide:-Create an Asset]]
 * [[Link attributes]]
+* [[Use Asset APIs|User-Guide:-Use Asset API]]
 * [[Use Health Status Provider]]
 
 ## Identity & Security
@@ -46,7 +47,6 @@
 ## Application Consoles
 
 * [[Use Web components|User-Guide:-Use Web components]]
-* [[Use Asset APIs|User-Guide:-Use Asset API]]
 * [[CustomerA Control Panel|User-Guide:-CustomerA Control Panel Example]]
 * [[Create iOS Console|User-Guide:-Create the iOS Console]]
 * [[Create Android Console|User-Guide:-Create the Android Console]]
