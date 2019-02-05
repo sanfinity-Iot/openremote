@@ -1,6 +1,4 @@
-T.B.D.
-
-Describe how you can use the API to make a connection to an existing asset/attribute
+We have a generic Asset and Attribute model which you can access via our API's. 
 
 # See also
 
