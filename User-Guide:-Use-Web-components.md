@@ -1,31 +1,31 @@
-#Basic Webcomponents
+# Basic Webcomponents
 
-##OR Console##
+## OR Console
 
-##Button##
+## Button
 
-##Switch##
+## Switch
 
-##Slider##
+## Slider
 
-##Sensor##
+## Sensor
 
-##List select#
+## List select
 
-##Form##
+## Form
 
-#Advanced Web components#
+# Advanced Web components
 
 We are building a series of more advanced webcomponents which still have a general purpose.
 
-##Header##
-###Install###
+## Header
+### Install
 
 ```bash
 npm i -S @openremote/or-header
 ```
 
-###Usage###
+### Usage
 ```
 import '@openremote/or-header';
 
@@ -46,7 +46,7 @@ import '@openremote/or-header';
 </or-header>
 ```
 
-##Map##
+## Map
 
-##Scheduler##
+## Scheduler
 
