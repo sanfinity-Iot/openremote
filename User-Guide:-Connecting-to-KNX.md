@@ -54,3 +54,4 @@ You can now read sensor data as well as send commands to you your KNX devices.
 # See also
 
 - [[Use Web components|User-Guide:-Use Web components]]
+- [[Realm A Control Panel|User-Guide:-Realm A Control Panel Example]]
