@@ -46,6 +46,7 @@
 ## Application Consoles
 
 * [[Use Web components|User-Guide:-Use Web components]]
+* [[Use Console APIs|User-Guide:-Use Console API]]
 * [[CustomerA Control Panel|User-Guide:-CustomerA Control Panel Example]]
 * [[Create iOS Console|User-Guide:-Create the iOS Console]]
 * [[Create Android Console|User-Guide:-Create the Android Console]]
