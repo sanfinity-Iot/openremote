@@ -240,5 +240,6 @@ If you click on the 'Write' button, it'll send the configured command to the con
 
 # See also
 
-- [[Use Web components|User-Guide:-Use Web components]]
-- [[Realm A Control Panel|User-Guide:-Realm A Control Panel Example]]
+- [[Use Web components|User-Guide:-Use Web components]]# See Also
+- [[Demo Smart Building|Demo-Smart-Building]]
+- [Get Started](https://openremote.io/get-started-manager/)
