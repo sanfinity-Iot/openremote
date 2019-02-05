@@ -54,3 +54,6 @@ import '@openremote/or-header';
 
 ## Scheduler
 
+# See Also
+- [Demo Smart Building](Demo-Smart-Building)
+- [Get Started](https://openremote.io/get-started-manager/)
