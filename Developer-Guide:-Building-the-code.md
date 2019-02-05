@@ -5,3 +5,6 @@ Building the code is just a matter of executing the following gradle tasks:
 ```
 ./gradlew clean build installDist
 ```
+
+# See Also
+- [Get Started](https://openremote.io/get-started-manager/)
