@@ -1,6 +1,6 @@
 We have a series of web components available to swiftly create your own front end applications. We'll introduce all the components.
 
-In the demo environment we have a Realm called 'Smart Building'. There is a front-end example which illustrates how the Basic web components work.
+In the demo environment we have a Realm called '[[Smart Building|Demo-Smart-Building]]'. There is a front-end example which illustrates how the Basic web components work.
 
 # Basic Webcomponents
 
