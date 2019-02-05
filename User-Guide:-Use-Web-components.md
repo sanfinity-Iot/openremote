@@ -7,6 +7,8 @@ npm i -S @openremote/or-header
 
 ## Usage
 ```
+import 'or-components/or-header';
+
 <or-header logo="${logoImage}">
     <div slot="desktop-left">
         <a href="/map">Map</a>
