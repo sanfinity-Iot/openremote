@@ -25,3 +25,4 @@ Ensure that you have the `JAVA_HOME` environment variable set to the path of JDK
 # See also
 
 - [[Installing and using Docker|Developer-Guide:-Installing and using Docker]]
+- [Get Started](https://openremote.io/get-started-manager/)
