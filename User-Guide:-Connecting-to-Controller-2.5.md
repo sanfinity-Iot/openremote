@@ -240,6 +240,6 @@ If you click on the 'Write' button, it'll send the configured command to the con
 
 # See also
 
-- [[Use Web components|User-Guide:-Use Web components]
+- [[Use Web components|User-Guide:-Use Web components]]
 - [[Demo Smart Building|Demo-Smart-Building]]
 - [Get Started](https://openremote.io/get-started-manager/)
