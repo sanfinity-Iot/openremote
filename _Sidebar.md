@@ -47,7 +47,7 @@
 ## Application Consoles
 
 * [[Use Web components|User-Guide:-Use Web components]]
-* [[CustomerA Control Panel|User-Guide:-CustomerA Control Panel Example]]
+* [[Demo Smart Building|Demo-Smart-Building]]
 * [[Create iOS Console|User-Guide:-Create the iOS Console]]
 * [[Create Android Console|User-Guide:-Create the Android Console]]
 * [[Use Web Console|User-Guide:-Use the Web Console]]
