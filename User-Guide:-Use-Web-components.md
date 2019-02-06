@@ -2,7 +2,7 @@ We have a series of web components available to swiftly create your own front en
 
 In the demo environment we have a Realm called '[[Smart Building|Demo-Smart-Building]]'. There is a front-end example which illustrates how the Basic web components work.
 
-# Basic Webcomponents
+# Basic Web components
 
 ## OR Console
 
@@ -18,7 +18,7 @@ In the demo environment we have a Realm called '[[Smart Building|Demo-Smart-Buil
 
 ## Form
 
-# Advanced Web components
+# Management Web components
 
 We are building a series of more advanced webcomponents which still have a general purpose.
 
