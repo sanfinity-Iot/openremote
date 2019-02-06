@@ -1,16 +1,14 @@
-This page describes a typical Smart Building Application, which can be a starting point for apartment buildings or lage offices. The example integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', 'Energy', and 'Climate'. The user application is designed once, and gives you access to the correct apartment based based on your user credentials. 
+This page describes a typical Smart Building Application, which can be a starting point for apartment buildings or lage offices. The example integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', 'Energy', and 'Climate' and includes an apartment user application and a Service provider application. The apartment user application is designed once, and gives you access to the correct apartment based based on your user credentials. 
 
-The application includes a couple of services, not just convenient for the individual resident, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
+The application includes a couple of services, not just convenient for the individual apartment user, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
 
-The basic set-up is part of the demo environment and the main branch. You can take it as a starting point for developing your own application.
+The basic set-up is part of the demo environment as well as the main branch. You can take it as a starting point for developing your own application. You can view the apartment user application in our [online demo](demo.openremote.io) using the credentials for apartment 1 (testuser1 / testuser1).
 
 temporarily see [Demo UI](https://xd.adobe.com/view/e48ac2cb-4060-45f2-5c33-6fa30abe6818-92bb/screen/8f384d1b-8d9b-4733-8789-3438a1ed8f29/Scenes)
 
-_Figure 1. The user application for a single apartment, as part of the demo environment._
+_Figure 1. The user application for a single apartment, as part of the demo environment and main branch._
 
-We have described the application here. We are addressing 2 types of users: the [Apartment User](#application-for-apartment-user), and the [Service Provider](#application-for-service-provider). 
-
-While reading you can view a demo at [demo.openremote.io](https://demo.openremote.io), using the credentials 'demo / demo'.
+We have described the application here. We are addressing both types of users: the [Apartment User](#application-for-apartment-user), and the [Service Provider](#application-for-service-provider). 
 
 # Application for Apartment User
 
@@ -82,11 +80,7 @@ We'll describe 4 examples of what's possible
 
 # How to get started
 
-The example as shown here is available online at:
-- [Demo - Apartment User](https://demo.openremote.io/smartbuilding) with credentials 'user1', 'user1'.
-- [Demo - Service Provider](https://demo.openremote.io) with credentials 'demo', 'demo'.
-
-If you want to get this running yourself we recommend to follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/).
+The example as shown here is available as part of the main branch. Follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/).
 
 # See Also
 - [Demo Smart City](Demo-Smart-City)
