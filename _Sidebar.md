@@ -37,7 +37,7 @@
 * [[Create an Asset|User-Guide:-Create an Asset]]
 * [[Link attributes]]
 * [[Use Asset APIs|User-Guide:-Use Asset API]]
-* [[Attribute Linking|User-Guide:-Linking attributes]]
+* [[Linking Attributes|User-Guide:-Linking attributes]]
 * [[Use Health Status Provider]]
 
 ## Identity & Security
@@ -61,7 +61,7 @@
 * [[Use Groovy Editor|User-Guide:-Create Rules with Groovy Editor]]
 * [[Use Javascript Editor|User-Guide:-Create Rules with Javascript Editor]]
 * [[Rules Model for Front-ends|User-Guide:-Rules Model for Front-ends]]
-* [[Attribute Linking|User-Guide:-Linking attributes]]
+* [[Linking Attributes|User-Guide:-Linking attributes]]
 
 ## Architecture
 
