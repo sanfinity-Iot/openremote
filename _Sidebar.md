@@ -35,7 +35,6 @@
 
 * [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Create an Asset|User-Guide:-Create an Asset]]
-* [[Link attributes]]
 * [[Use Asset APIs|User-Guide:-Use Asset API]]
 * [[Linking Attributes|User-Guide:-Linking attributes]]
 * [[Use Health Status Provider]]
