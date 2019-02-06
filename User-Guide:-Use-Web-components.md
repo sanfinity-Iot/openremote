@@ -18,9 +18,9 @@ In the demo environment we have a Realm called '[[Smart Building|Demo-Smart-Buil
 
 ## Form
 
-# Management Web components
+# Advanced Web components
 
-We are building a series of more advanced webcomponents which still have a general purpose.
+We are building a series of more advanced webcomponents which still have a general purpose. They can be used for end user apps or for management dashboards
 
 ## Header
 ### Install
@@ -51,6 +51,8 @@ import '@openremote/or-header';
 ```
 
 ## Map
+
+## Asset Tree List
 
 ## Scheduler
 
