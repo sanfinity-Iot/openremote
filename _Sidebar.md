@@ -29,6 +29,7 @@
 * [[Connect Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
 * [[Connect Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
 * [[Connect UPnP|User-Guide:-Connecting-to-UPnP]]
+* [[Connect Z-wave|User-Guide:-Connecting-to-Z-wave]]
 
 ## Assets & Attributes
 
