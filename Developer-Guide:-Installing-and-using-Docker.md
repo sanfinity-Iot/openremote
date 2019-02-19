@@ -149,16 +149,30 @@ To prepare your shell environment (variables), run `eval $(docker-machine env op
 -->
 
 ## Building images
+
 Run the following command to build the images with the proper tags:
 ```
-SETUP_WIPE_CLEAN_INSTALL=<true or false> SETUP_ADMIN_PASSWORD=<someSecret> DATE_TAG=<some_date> docker-compose -p your_project -f profile/production.yml build
+DATE_TAG=<some_date> docker-compose -f profile/deploy.yml build
+
+or
+
+DATE_TAG=<some_date> docker-compose -p my_custom_project \
+ -f profile/production.yml \
+ build
 ```
-When the environment variable `DATE_TAG` is omitted, then the tag `latest` is used for the image.
+When the environment variable `DATE_TAG` is omitted, then the tag `latest` is used for the image. You should consider exporting the variable before executing multiple commands in a shell.
 
 ## Labelling images
-To make it easy to track which version of the code was used to build the images then the `GIT_COMMIT` label should be supplied when executing the docker compose build command e.g.:
+
+To make it easy to track which version of the code was used to build the images,  the `GIT_COMMIT` label should be supplied when executing the docker compose build command e.g.:
 ```
-docker-compose -p your_project -f profile/production.yml build --build-arg GIT_COMMIT=<commitSHA1>
+docker-compose -f profile/deploy.yml build --build-arg GIT_COMMIT=<commitSHA1>
+
+or
+
+docker-compose -p my_custom_project \
+ -f profile/production.yml \
+ build --build-arg GIT_COMMIT=<commitSHA1>
 ```
 This information can then be viewed using the `docker inspect` command:
 ```
@@ -179,11 +193,21 @@ Push images to [Docker Hub](https://hub.docker.com/u/openremote):
 
 ```
 docker login
+
 docker push openremote/proxy:latest
 docker push openremote/postgresql:latest
 docker push openremote/keycloak:latest
 docker push openremote/manager:latest
 docker push openremote/tileserver-gl:latest
+
+or
+
+docker push openremote/proxy:$DATE_TAG
+docker push openremote/postgresql:$DATE_TAG
+docker push openremote/keycloak:$DATE_TAG
+docker push openremote/manager:$DATE_TAG
+docker push openremote/tileserver-gl:$DATE_TAG
+
 ```
 
 ## Exporting and importing images
