@@ -1,5 +1,7 @@
 This guide helps you set up an environment with an IDE when you are done [[Preparing the environment|Developer Guide: Preparing the environment]], so you can work comfortably on the Manager backend services.
 
+This is not necessary if you prefer [[Working on the UI|Developer Guide: Working on the UI]] only, any file manager and text editor will suffice.
+
 ## Run required services
 
 Make sure testing services are running as described in [[Creating a custom project|Developer Guide: Creating a custom project]]:
@@ -24,29 +26,29 @@ IDENTITY_NETWORK_SECURE=true
 
 ## Importing a project in an IDE
 
-#### IntelliJ IDEA
+### IntelliJ IDEA
+
+You can download the [IntelliJ Community Edition](https://www.jetbrains.com/idea/download/) for free.
 
 - Create a `New Project From Existing Sources` and import as a Gradle project
 - Note that IntelliJ might time out if a background Gradle process (for example, running the GWT compiler server) blocks the Gradle import. Stop and start the background process to unblock.
-
-The log messages of the running application can be colour-highlighted with the [GrepConsole plugin](https://plugins.jetbrains.com/plugin/7125-grep-console) and our [configuration](https://gist.github.com/christianbauer/9cd3ef6a871c2a3472bd70a216f3eb14).
 
 ##### Recommended Plugins
 - [Grep Console](https://plugins.jetbrains.com/plugin/7125-grep-console)
 - [Markdown Navigator](https://plugins.jetbrains.com/plugin/7896-markdown-navigator)
 
 ##### Grep Console Styling
+The log messages of the running application can be colour-highlighted with the [GrepConsole plugin](https://plugins.jetbrains.com/plugin/7125-grep-console) and our [configuration](https://github.com/openremote/openremote/tree/master/tools/intellij).
+
 - Locate XML style config for Grep Console in openremote/tools/intellij
 - Choice the default or dark styling config
 - Copy the xml to your IntelliJ IDEA Config folder 
-
-###### Linux
 ```
-cp ~/<PATH_TO_PROJECT>/openremote/tools/intellij/Theme-<Default|Darkcula>-GrepConsole.xml ~/.IntelliJIdea<VERSION>/config/options/GrepConsole.xml
+cp ~/<PATH_TO_PROJECT>/openremote/tools/intellij/Theme-<Default|Darkcula>-GrepConsole.xml \
+~/.IntelliJIdea<VERSION>/config/options/GrepConsole.xml
 ```
 
-
-#### Eclipse
+### Eclipse
 
 - Run `./gradlew eclipse`
 - In Eclipse go to `File` > `Import` and import the project as `Existing Projects into Workspace`
@@ -65,11 +67,13 @@ TODO: If we could get rid of this wart, that would be nice...
 
 ## Running and debugging the Manager
 
-Make sure required testing services are running as described in [[Creating a custom project|Developer Guide: Creating a custom project]].
+The main entry point of the backend services is a Java class for the OpenRemote Manager, this process provides the frontend API and is the core of OpenRemote.
+
+Make sure required testing services are running as described above.
 
 Set up a *Run Configuration*:
 
-- Module/Classpath: `manager:server` or `myproject:myextension1` for custom projects
+- Module/Classpath: `manager` or `myproject:myextension1` for custom projects
 - Working directory: *Must be set to OpenRemote main project directory!*
 - Main class: `org.openremote.manager.Main`
 - Any environment variables that customise deployment (usually custom projects have some)
@@ -84,6 +88,6 @@ To inspect the threads, analyzing CPU and memory allocation you should running a
 - Download and install VisualVM from the [visualvm](https://visualvm.github.io/) website.
 - Install the [VisualVM Launcher](https://plugins.jetbrains.com/plugin/7115-visualvm-launcher) for IntelliJ IDEA
 
-## Executing Manager tests
+## Executing tests
 
-Any JUnit test can be directly executed. Make sure required testing services are running as described in [[Creating a custom project|Developer Guide: Creating a custom project]].
+Any JUnit test can be directly executed, you can create a Run Configuration for the `test` module and run all tests in the IDE. Ensure that the `profile/dev-testing.yml` background service stack is running, as described above.

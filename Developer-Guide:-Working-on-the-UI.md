@@ -1,24 +1,26 @@
 Working on the UI means working on any of:
 
-* Web applications
-* Web components
-* Keycloak theme(s)
+* Web applications that provide functionality to endusers
+* Web components and their demos, shared between applications
+* Keycloak theme(s) used in authentication screens
+* Working on the (legacy GWT) Manager client
 
 ## Quickstart
-You will need the standard tool chain (see [Setting up the environment](./Developer-Guide%3A-Preparing-the-environment)) to be able to build and run the components and apps. Working on the web applications and/or components will also generally require a manager to interact with, you can either:
+You will need the standard tool chain (see [[Preparing the environment|Developer Guide: Preparing the environment]]) to be able to build and run the components and apps. Working on the web applications and/or components will also generally require backend services to interact with, you can either:
 
-* Run a Manager instance in an IDE (refer to [Working on the Manager](./Developer-Guide%3A-Working-on-the-Manager))
+* Run a Manager instance in an IDE (refer to [[Setting up an IDE|Developer Guide: Setting up an IDE]])
 * Deploy the Manager using a Docker container (refer to [UI Development profile](./Developer-Guide%3A-Docker-compose-profiles#ui-development-devyml))
 
 As an example if working on the `rest` component then run the following `gradle` tasks at the same time:
 
-- `./gradlew -t -p ui modelWatch` - Watches the model for changes and auto generates the `model` typescript definition and `restclient`.
+- `./gradlew -t -p ui modelWatch` - Watches the model for changes and auto generates the `model` typescript definition and `restclient`
 - `./gradlew -p ui/demo/demo-rest tscWatch` - Watches typescript files (including referenced typescript projects) for changes and auto transpiles to javascript
 - `./gradlew -p ui/demo/demo-rest npmServe` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000/demo-rest/`
 
 If you want to create a new `component` or `app` then simply copy an existing one as a template (when creating a `component` then you need to create a corresponding `demo` which acts as a development harness that can be served by webpack dev server).
 
 ## UI Components & Apps (`/ui`)
+
 All UI components and apps are located in the `ui` directory; here you can find the standard OpenRemote web UI components and apps using a monorepo architecture. The code is divided into categories by directory:
 
 * `component` - Base OpenRemote JS modules and web components (built using Polymer) these are written as ES6 modules
@@ -73,9 +75,9 @@ or alternatively build the whole `ui` project (will take a little longer but is 
 ./gradlew -p ui build
 ```
 
-**NOTE: The `yarnInstall` task must be run whenever new components are added in order to make them available for import in other components/demos/apps and the model and rest `build` tasks must be run whenever the openremote model changes. Whenever you do a pull from the remote repository it is worth running the above commands to ensure things are up to date**
+**NOTE: The `yarnInstall` task must be run whenever new components are added in order to make them available for import in other components/demos/apps and the model and rest `build` tasks must be run whenever the OpenRemote model changes. Whenever you do a pull from the remote repository, [[build the code|Developer Guide: Building the code]]**
 
-If you are making frequent changes to the openremote model (which includes the REST API) then you can use the continuous mode of gradle in combination with the `watch` task to rebuild the `model` and `rest` components automatically whenever the model files change:
+If you are making frequent changes to the OpenRemote model (which includes the REST API) then you can use the continuous mode of gradle in combination with the `watch` task to rebuild the `model` and `rest` components automatically whenever the model files change:
 
 ```
 ./gradlew -t -p ui modelWatch
@@ -85,18 +87,20 @@ If you are making frequent changes to the openremote model (which includes the R
 Typescript is used throughout the `ui` code base and this requires transpiling to javascript; there are several ways to trigger compilation but project references in combination with `tsc -b --watch` is preferred as it handles incremental builds across multiple typescript projects (each component, app, demo is a separate typescript project). The gradle `tscWatch` task can be used to start a typescript incremental build:
 
 ```
-./gradlew -p <COMPONENT|DEMO|APP> tscWatch          e.g. ./gradlew -p ui/demo/demo-or-map tscWatch
+./gradlew -p <COMPONENT|DEMO|APP> tscWatch
+e.g. ./gradlew -p ui/demo/demo-or-map tscWatch
 ```
 
 ### Running demos and apps
 Demos and apps use `webpack` for module bundling and each can be served using `webpack-dev-server` which provides source maps and hot module replacement functionality, the following gradle command can be used (which just delegates to `npm` as described above):
 
 ```
-./gradlew -p <COMPONENT|DEMO|APP> npmServe          e.g. ./gradlew -p ui/demo/demo-or-map npmServe
+./gradlew -p <COMPONENT|DEMO|APP> npmServe
+e.g. ./gradlew -p ui/demo/demo-or-map npmServe
 ```
 
 ## Working on the legacy Manager GWT web application (`/client`)
 If you are working on the legacy GWT based Manager web application you will need to start the GWT compiler and keep it running in the background; this service listens for compilation requests and transforms Java into JavaScript code:
 ```
-./gradlew -p gwtSuperDev
+./gradlew gwtSuperDev
 ```

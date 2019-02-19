@@ -5,7 +5,7 @@
 * [[Preparing the environment|Developer Guide: Preparing the environment]]
 * [[Installing and using Docker|Developer Guide: Installing and using Docker]]
 * [[Building the code|Developer Guide: Building the code]]
-* [[Working on the Manager|Developer Guide: Working on the Manager]]
+* [[Setting up an IDE|Developer Guide: Setting up an IDE]]
 * [[Working on the UI|Developer Guide: Working on the UI]]
 * [[Working on the mobile consoles|Developer Guide: Working on the mobile consoles]]
 * [[Working on maps|Developer Guide: Working on maps]]

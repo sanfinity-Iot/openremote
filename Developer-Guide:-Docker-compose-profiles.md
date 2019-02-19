@@ -46,7 +46,7 @@ Docker images must have been pulled from Docker Hub or the full stack must be bu
 * `../client` - Maps the manager GWT client into the Manager service
 
 ## Full Stack Development / Running Tests (dev-testing.yml)
-This is for running tests or doing development work on the Manager (in an IDE) as well as the UI (i.e. Front end apps and/or components and/or Keycloak themes); starts the Keycloak and PostgreSQL services, see the [Working on the Manager] (./Developer-Guide%3A-Working-on-the-Manager) guide for running the Manager in an IDE.
+This is for running tests or doing development work on the Manager (in an IDE) as well as the UI (i.e. Front end apps and/or components and/or Keycloak themes); starts the Keycloak and PostgreSQL services, see the [[Setting up an IDE|Developer Guide: Setting up an IDE]] guide for running the Manager in an IDE.
 
 ### Exposed Services
 * Keycloak: http://localhost:8081/auth
@@ -58,7 +58,7 @@ This is for running tests or doing development work on the Manager (in an IDE) a
 ## Full Stack Development with HTTPS Proxy (dev-proxy.yml)
 This is the same as the Full Stack Development profile but also adds the proxy service to allow development/testing of the Manager running behind the reverse proxy with HTTPS (so development environment matches final deployment configuration).
 
-To use this proxy correctly you will need to set the correct environment variables for the manager running behind SSL proxy as described in [working on the manager](./Developer-Guide%3A-Working-on-the-Manager).
+To use this proxy correctly you will need to set the correct environment variables for the manager running behind SSL proxy as described in [[Setting up an IDE|Developer Guide: Setting up an IDE]].
 
 ### Exposed Services
 * Manager: https://localhost
