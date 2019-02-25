@@ -76,6 +76,8 @@ import '@openremote/or-header';
 </or-header>
 ```
 
+## Bottom app bar
+
 # See Also
 - Using Mixin
 - Keycloak templates (working on the UI)
