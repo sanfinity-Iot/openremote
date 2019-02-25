@@ -1,28 +1,52 @@
-We have a series of web components available to swiftly create your own front end applications. We'll introduce all the components.
+We have a series of UI components available to swiftly create your own front end applications. We use material design.... We'll introduce all the components.
 
 In the demo environment we have a Realm called '[[Smart Building|Demo-Smart-Building]]'. There is a front-end example which illustrates how the Basic web components work.
 
-# Basic Web components
-
-## OR Console
+# Basic UI components
 
 ## Button
 
+## Radio Button
+
 ## Switch
+
+## Checkbox
 
 ## Slider
 
-## Sensor
+## Text sensor
 
-## List select
+## Text input
 
-## Form
+- different types
+- validation
 
-# Advanced Web components
+## Text area
 
-We are building a series of more advanced webcomponents which still have a general purpose. They can be used for end user apps or for management dashboards
+## Dropdown
+
+## Color picker
+
+## Date / time picker
+
+## Toast
+
+# Composite UI components
+
+We are building a series of composite UI components which still have a general purpose. They can be used for end user apps or for management dashboards.
+
+## Weekschedule
+
+## Thermostat
+
+## Asset tree
+
+## Map
 
 ## Header
+
+Will be available in Material Design in the future. This is a more project specific example which we don't want to withhold.
+
 ### Install
 
 ```bash
@@ -50,12 +74,8 @@ import '@openremote/or-header';
 </or-header>
 ```
 
-## Map
-
-## Asset Tree List
-
-## Scheduler
-
 # See Also
+- Using Mixin
+- Keycloak templates (working on the UI)
 - [Demo Smart Building](Demo-Smart-Building)
 - [Get Started](https://openremote.io/get-started-manager/)
