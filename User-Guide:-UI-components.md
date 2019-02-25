@@ -37,6 +37,8 @@ We are building a series of composite UI components which still have a general p
 
 ## Weekschedule
 
+## Scene selector
+
 ## Thermostat
 
 ## Asset tree
