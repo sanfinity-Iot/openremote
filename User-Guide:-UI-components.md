@@ -41,6 +41,8 @@ We are building a series of composite UI components which still have a general p
 
 ## Thermostat
 
+See [here](../../tree/master/ui/component/or-thermostat).
+
 ## Asset tree
 
 ## Map
