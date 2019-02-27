@@ -47,7 +47,7 @@
 
 ## Application Consoles
 
-* [[Use UIb components|User-Guide:-Use UI components]]
+* [[Use UI components|User-Guide:-Use UI components]]
 * [[Demo Smart Building|Demo-Smart-Building]]
 * [[Create iOS Console|User-Guide:-Create the iOS Console]]
 * [[Create Android Console|User-Guide:-Create the Android Console]]
