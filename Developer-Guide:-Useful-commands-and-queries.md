@@ -14,7 +14,19 @@ Replace `<PROJECT_NAME>` with value used when creating the container with `docke
 
 ## Data points
 ### Export all asset data points
-`copy asset_datapoint to '/deployment/datapoints.csv' delimiter ',' CSV;`
+```
+copy asset_datapoint to '/deployment/datapoints.csv' delimiter ',' CSV;
+```
+
+or with asset names instead of IDs and a header row in the export:
+```
+copy (select ad.timestamp, a.name, ad.attribute_name, ad.value from asset_datapoint ad, asset a where ad.entity_id = a.id) to '/deployment/datapoints.csv' delimiter ',' CSV HEADER;
+```
+
+### Export a subset of asset data points
+```
+copy (select ad.timestamp, a.name, ad.attribute_name, ad.value from asset_datapoint ad, asset a where ad.entity_id = a.id and ad.entity_id IN ('ID1','ID2')) to '/deployment/datapoints.csv' delimiter ',' CSV HEADER;
+```
 
 ### Delete all asset datapoints older than N days
 `delete from asset_datapoint where timestamp < extract('epoch' from (current_timestamp - interval '5 days'))::bigint*1000;`
