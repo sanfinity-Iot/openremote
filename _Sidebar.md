@@ -1,5 +1,7 @@
 # [[Home]]
 
+* [[Quick Start|https://github.com/openremote/openremote/blob/master/README.md]]
+
 ## Developer Guide
 
 * [[Preparing the environment|Developer Guide: Preparing the environment]]
