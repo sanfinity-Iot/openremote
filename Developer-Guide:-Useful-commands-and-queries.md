@@ -38,7 +38,7 @@ Select distinct rows and insert into `ASSET_DATAPOINT` table:
 INSERT INTO ASSET_DATAPOINT
 SELECT DISTINCT ON (timestamp, entity_id, attribute_name) *
 FROM DATATEMP
-ORDER BY (timestamp)
+ORDER BY timestamp DESC
 ```
 
 Drop temp table:
