@@ -19,6 +19,31 @@ Replace `<PROJECT_NAME>` with value used when creating the container with `docke
 ### Delete all asset datapoints older than N days
 `delete from asset_datapoint where timestamp < extract('epoch' from (current_timestamp - interval '5 days'))::bigint*1000;`
 
+### Importing asset data points
+To import data points stored in multiple exports then first create a temp table without any key constraints:
+```
+create table ASSET_DATATEMP (
+  TIMESTAMP      int8         not null,
+  ENTITY_ID      varchar(36)  not null,
+  ATTRIBUTE_NAME varchar(255) not null,
+  VALUE          jsonb        not null
+)
+```
+
+Import the CSV files into this temp table:
+`COPY DATATEMP FROM '/deployment/datapoints.csv' DELIMITER ',' CSV;`
+
+Select distinct rows and insert into `ASSET_DATAPOINT` table:
+```
+INSERT INTO ASSET_DATAPOINT
+SELECT DISTINCT ON (timestamp, entity_id, attribute_name) *
+FROM DATATEMP
+ORDER BY (timestamp)
+```
+
+Drop temp table:
+`DROP TABLE DATATEMP CASCADE;`
+
 ## Consoles
 
 ### Remove consoles that haven't registered for more than N days
