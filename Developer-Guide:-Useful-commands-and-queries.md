@@ -23,9 +23,9 @@ or with asset names instead of IDs and a header row in the export:
 copy (select ad.timestamp, a.name, ad.attribute_name, ad.value from asset_datapoint ad, asset a where ad.entity_id = a.id) to '/deployment/datapoints.csv' delimiter ',' CSV HEADER;
 ```
 
-### Export a subset of asset data points
+### Export a subset of asset data points (asset and direct child assets)
 ```
-copy (select ad.timestamp, a.name, ad.attribute_name, ad.value from asset_datapoint ad, asset a where ad.entity_id = a.id and ad.entity_id IN ('ID1','ID2')) to '/deployment/datapoints.csv' delimiter ',' CSV HEADER;
+copy (select ad.timestamp, a.name, ad.attribute_name, value from asset_datapoint ad, asset a where ad.entity_id = a.id and (ad.entity_id = 'ID1' or a.parent_id = 'ID1')) to '/deployment/datapoints.csv' delimiter ',' CSV HEADER;
 ```
 
 ### Delete all asset datapoints older than N days
