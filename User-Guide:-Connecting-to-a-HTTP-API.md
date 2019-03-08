@@ -8,9 +8,9 @@ The following example uses a weather API provided by [OpenWeatherMap](https://op
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * Asset name: `HTTP API Agent`
-   * Parent asset: `CustomerA -> Smart Home` and select 'OK'
+   * Parent asset: `Tenant A -> Smart Building` and select 'OK'
    * Asset Type: `Agent`
-4. Click `Create asset` at bottom of screen and then click `Edit asset` in the top right
+4. Click `Create asset` at bottom of screen
 5. Click `Edit asset` and add a new attribute:
    * Name: `weatherApi`
    * Type: `Http Client`
