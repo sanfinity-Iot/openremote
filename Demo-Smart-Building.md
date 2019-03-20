@@ -83,5 +83,6 @@ We'll describe 4 examples of what's possible
 The example as shown here is available as part of the main branch. Follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/).
 
 # See Also
+- [[Use UI components|User-Guide: UI components]]
 - [Demo Smart City](Demo-Smart-City)
 - [Get Started](https://openremote.io/get-started-manager/)
