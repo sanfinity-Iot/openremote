@@ -73,10 +73,7 @@ We have described the demo here, with its several vertical solutions.
 
 # How to get started
 
-The example as shown here is available online at:
-- [Demo - Service Provider](https://demo.openremote.io) with credentials 'demo', 'demo'.
-
-If you want to get this running yourself we recommend to follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/).
+If you want to get this demo running, follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/).
 
 # See Also
 - [Demo Smart Building](Demo-Smart-Building)
