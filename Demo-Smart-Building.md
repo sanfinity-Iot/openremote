@@ -4,10 +4,6 @@ The application includes a couple of services, not just convenient for the indiv
 
 The basic set-up is part of the demo environment as well as the main branch. You can take it as a starting point for developing your own application. You can view the apartment user application in our [online demo](https://demo.openremote.io) using the credentials for apartment 1 (building / building).
 
-temporarily see [Demo UI](https://xd.adobe.com/view/e48ac2cb-4060-45f2-5c33-6fa30abe6818-92bb/screen/8f384d1b-8d9b-4733-8789-3438a1ed8f29/Scenes)
-
-_Figure 1. The user application for a single apartment, as part of the demo environment and main branch._
-
 We have described the application here. We are addressing both types of users: the [Apartment User](#application-for-apartment-user), and the [Service Provider](#application-for-service-provider). 
 
 # Application for Apartment User
