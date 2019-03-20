@@ -53,6 +53,6 @@ You can now read sensor data as well as send commands to you your KNX devices.
 
 # See also
 
-- [[Use Web components|User-Guide:-Use Web components]]
+- [[Use UI components|User-Guide:-UI components]]
 - [[Demo Smart Building|Demo-Smart-Building]]
 - [Get Started](https://openremote.io/get-started-manager/)
