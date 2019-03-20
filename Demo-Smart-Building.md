@@ -72,7 +72,7 @@ We'll describe 4 examples of what will be possible
 
 ## Building optimisation
 
-## Create workflow rules
+## Creating workflow rules
 
 # How to get started
 
