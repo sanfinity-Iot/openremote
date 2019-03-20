@@ -1,4 +1,4 @@
-This page describes a typical Smart Building Application, which can be a starting point for apartment buildings or lage offices. The example integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', 'Energy', and 'Climate' and includes an apartment user application and a Service provider application. The apartment user application is designed once, and gives you access to the correct apartment based based on your user credentials. 
+This page describes a typical Smart Building Application, which can be a starting point for apartment buildings or large offices. The example integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', 'Energy', and 'Climate' and includes an apartment user application and a Service provider application. The apartment user application is designed once, and gives you access to the correct apartment based on your user credentials. 
 
 The application includes a couple of services, not just convenient for the individual apartment user, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
 
