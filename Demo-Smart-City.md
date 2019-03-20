@@ -1,4 +1,4 @@
-This page describes a typical Smart City Application, which can be a starting point for cities to benefit from a digital era, in which both citizens and infrastructure are digitally connected. 
+This page describes a typical Smart City Application, which is part of the demo environment and can be a starting point for cities to benefit from a digital era, in which both citizens and infrastructure are digitally connected. 
 
 The demo illustrates how the integration of several vertical solutions in a central platform, benefits a City as well as it Citizens:
 * creating new applications requiring the (combination of) vertical solutions, using rules based algorithms as well creating dedicated front-end applications
@@ -7,7 +7,7 @@ The demo illustrates how the integration of several vertical solutions in a cent
 
 The basic set-up is part of the demo environment and the main branch. You can take it as a starting point for developing your own application.
 
-For inspiration, you find a short but not complete list of the options. 
+For now, you find a short but not complete list of the options.
 
 # Crowd management
 
