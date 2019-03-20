@@ -1,4 +1,4 @@
-We plan to have a series of UI components available to swiftly create your own front end applications. We use a combination of Polymer LIT, Material Design and our own OpenRemote elements. The UI components are published on NPM.
+We plan to have a series of UI components available to swiftly create your own front end applications. We use a combination of Polymer LIT, Material Design and our own OpenRemote elements. The UI components are [published on NPM](https://www.npmjs.com/~openremote).
 
 _You can follow our progress at this page, and you are welcome to contribute in the mean time!_
 
