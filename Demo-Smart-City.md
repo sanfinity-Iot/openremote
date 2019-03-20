@@ -7,7 +7,7 @@ The demo illustrates how the integration of several vertical solutions in a cent
 
 The basic set-up is part of the demo environment and the main branch. You can take it as a starting point for developing your own application.
 
-We have described the demo here, with its several vertical solutions. 
+For inspiration, you find a short but not complete list of the options. 
 
 # Crowd management
 
@@ -69,7 +69,12 @@ We have described the demo here, with its several vertical solutions.
 
 ## Make your City smart
 
+* Integrate UI components in your existing City website
+* Use rules for actions or notifications
+
 ## Enabling third party applications 
+
+* Make assets public- or restricted and expose the APIs
 
 # How to get started
 
