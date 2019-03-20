@@ -1,8 +1,18 @@
-We have a series of UI components available to swiftly create your own front end applications. We use material design.... We'll introduce all the components.
+We plan to have a series of UI components available to swiftly create your own front end applications. We use a combination of Polymer LIT, Material Design and our own OpenRemote elements. The UI components are published on NPM.
 
-In the demo environment we have a Realm called '[[Smart Building|Demo-Smart-Building]]'. There is a front-end example which illustrates how the Basic web components work.
+_You can follow our progress at this page, and you are welcome to contribute in the mean time!_
+
+In the demo environment we have a Realm called '[[Smart Building|Demo-Smart-Building]]'. There is a front-end example which illustrates how the Basic UI components will work.
 
 # Basic UI components
+
+We have a series of basic UI components, which you can use to create any user interface. We'll explain how you can change the 'Text sensor' and how you can link it to an attribute in the manager. The other Basic UI components work similar.
+
+## Text sensor
+
+_T.B.D. _
+
+We will describe, as an example, how you can add this component to the Application for the Appartment user in the Demo Smart Building and connect it to the outdoor temperature, you have added as an attribute (see [Connect a HTTP API](User Guide: Connecting to a HTTP API). 
 
 ## Button
 
@@ -13,8 +23,6 @@ In the demo environment we have a Realm called '[[Smart Building|Demo-Smart-Buil
 ## Checkbox
 
 ## Slider
-
-## Text sensor
 
 ## Text input
 
@@ -43,13 +51,15 @@ We are building a series of composite UI components which still have a general p
 
 See [here](../tree/master/ui/component/or-thermostat).
 
+## Map
+
 ## Asset tree
 
-## Map
+## Rules
 
 ## Header
 
-Will be available in Material Design in the future. This is a more project specific example which we don't want to withhold.
+Will be available in Material Design in the future. This is a more project specific example which we don't want to withhold. It's published on NPM.
 
 ### Install
 
@@ -81,7 +91,6 @@ import '@openremote/or-header';
 ## Bottom app bar
 
 # See Also
-- Using Mixin
 - Keycloak templates (working on the UI)
 - [Demo Smart Building](Demo-Smart-Building)
 - [Get Started](https://openremote.io/get-started-manager/)
