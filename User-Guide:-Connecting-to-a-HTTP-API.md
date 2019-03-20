@@ -26,7 +26,7 @@ You now have a basic HTTP API protocol ready to be linked to by asset attributes
 
 **NOTE: The protocol configuration status will show as `UNKNOWN` until an attribute is linked and a request is made; or the HTTP Ping attribute configuration items are configured**.
 
-1. Select the Customer A -> Smart Home asset in the asset list
+1. Select the Tenant A -> Smart Building asset in the asset list
 2. Click `Edit asset` in the top right
 3. Add a new attribute:
    * Name: `outsideTemp`
