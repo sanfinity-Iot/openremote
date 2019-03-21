@@ -76,7 +76,15 @@ We'll describe 4 examples of what will be possible
 
 # Application for Technical Manager
 
-This example is available as part of the main branch. Follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/). If you have set up the manager 
+This example is available as part of the main branch which you will need to set up first. Follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/). 
+
+When all Docker containers are ready, you can access the OpenRemote Manager and API with a webbrowser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
+
+OpenRemote Manager: https://localhost
+Username: admin
+Password: secret
+
+In the Asset structure on the left you will see Tenant B - Smart City. It includes a Service Agent (Simulator) and three Area's (A, B, C).
 
 # See Also
 - [[Use UI components|User-Guide: UI components]]
