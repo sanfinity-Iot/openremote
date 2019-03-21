@@ -11,8 +11,6 @@ We have described the application here only for the [Technical Manager](#applica
 
 # Application for Technical Manager
 
-# Application for Technical Manager
-
 The application for the Technical Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for Technical Manager via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
 
 Application for Technical Manager: https://localhost (Username: admin, Password: secret)
@@ -87,10 +85,6 @@ We'll describe the set-up of all the devices (Assets) and the sensor and control
 ## Enabling third party applications 
 
 * Make assets public- or restricted and expose the APIs
-
-# How to get started
-
-If you want to get this demo running, follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/).
 
 # See Also
 - [Demo Smart Building](Demo-Smart-Building)
