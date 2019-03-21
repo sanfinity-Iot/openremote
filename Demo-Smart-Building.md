@@ -2,9 +2,9 @@ This page describes a typical Smart Building Application, which can be a startin
 
 The application includes a couple of services, not just convenient for the individual apartment user, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
 
-The basic set-up is part of the demo environment as well as the main branch. You can take it as a starting point for developing your own application. You can view the apartment user application in our [online demo](https://demo.openremote.io) using the credentials for apartment 1 (building / building).
+The basic set-up is part of the demo environment as well as the main branch (See [Get Started](https://openremote.io/get-started-manager/)). You can take it as a starting point for developing your own application. You can view the apartment user application in our [online demo](https://demo.openremote.io) using the credentials for apartment 1 (building / building).
 
-We have described the application here. We are addressing both types of users: the [Apartment User](#application-for-apartment-user), and the [Service Provider](#application-for-service-provider). 
+We have described the application here. We are addressing both types of users: the [Apartment User](#application-for-apartment-user), and the [Service Provider](#application-for-service-provider). Thirdly, we have described the structure of the [Smart Building in the Manager](#Smart-Building-in-the-Manager)
 
 # Application for Apartment User
 
@@ -74,9 +74,9 @@ We'll describe 4 examples of what will be possible
 
 ## Creating workflow rules
 
-# How to get started
+# Smart Building in the Manager
 
-The example as shown here is available as part of the main branch. Follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/).
+This example is available as part of the main branch. Follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/). If you have set up the manager 
 
 # See Also
 - [[Use UI components|User-Guide: UI components]]
