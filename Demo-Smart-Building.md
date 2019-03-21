@@ -2,9 +2,9 @@ This page describes a typical Smart Building Application, which can be a startin
 
 The application includes a couple of services, not just convenient for the individual apartment user, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
 
-The basic set-up is part of the demo environment as well as the main branch (See [Get Started](https://openremote.io/get-started-manager/)). You can take it as a starting point for developing your own application. You can view the apartment user application in our [online demo](https://demo.openremote.io) using the credentials for apartment 1 (building / building).
+The basic set-up is part of the [online demo](https://demo.openremote.io) as well as the main branch (See [Get Started](https://openremote.io/get-started-manager/)). You can take it as a starting point for developing your own application. You can view the apartment user application in our [online demo](https://demo.openremote.io) using the credentials for apartment 1 (building / building).
 
-We have described the application here. We are addressing both types of users: the [Apartment User](#application-for-apartment-user), and the [Service Provider](#application-for-service-provider). Thirdly, we have described the structure of the [Smart Building in the Manager](#Smart-Building-in-the-Manager)
+We have described the application here. We are addressing two types of users: the [Apartment User](#application-for-apartment-user), and the [Service Provider](#application-for-service-provider). Third, we have described the structure of the [Smart Building in the Manager](#Smart-Building-in-the-Manager)
 
 # Application for Apartment User
 
