@@ -11,15 +11,15 @@ We have described the application here only for the [Technical Manager](#applica
 
 # Application for Technical Manager
 
-This example is available as part of the main branch which you will need to set up first. Follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/). 
+# Application for Technical Manager
 
-When all Docker containers are ready, you can access the OpenRemote Manager and API with a webbrowser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
+The application for the Technical Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for Technical Manager via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
 
-OpenRemote Manager: https://localhost
-Username: admin
-Password: secret
+Application for Technical Manager: https://localhost (Username: admin, Password: secret)
 
-In the Asset structure on the left you will see Tenant B - Smart City. It includes a Service Agent (Simulator) and three Area's (A, B, C).
+If you open the Application for the Technical Manager, have a look at Tenant B - Smart City. It includes a Service Agent (Simulator) and three Area's (1, 2, 3). If you use the 'Assets' view and select one of the Area's, you will notice that you see several devices (Camera, Microphone, Environment, Light). The Service Agent (Simulator) can be used to change the simulated sensor values for Area 1, an additionally trigger some Alerts. 
+
+We'll describe the set-up of all the devices (Assets) and the sensor and control parameters (attributes). We have organised them along a couple of application domains and have given a few examples of how a new application can be build by combining several attributes. In addition rules examples are given which can be used to automate your controls or generate alerts. 
 
 # Crowd management
 
