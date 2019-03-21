@@ -38,7 +38,7 @@ We'll describe the set-up of all the devices (Assets) and the sensor and control
 
 # Environment
 
-## Integration of your air quality sensors
+## Integration of air quality sensors
 
 * Describe required attributes
 * Rules: Alerts on Ozon
@@ -49,7 +49,7 @@ We'll describe the set-up of all the devices (Assets) and the sensor and control
 
 # Lighting
 
-## Integration of your lighting solution
+## Integration of a lighting solution
 
 * Describe required attributes
 * Rules:
