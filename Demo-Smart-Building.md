@@ -80,15 +80,11 @@ This example is available as part of the main branch which you will need to set 
 
 You can access the OpenRemote Manager and App with a webbrowser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
 
-**OpenRemote Manager: https://localhost**
-Username: admin
-Password: secret
+**OpenRemote Manager: https://localhost** (Username: admin, Password: secret)
 
-**Demo Smart Building App: https://localhost/smart-building-v1/**
-Username: building
-Password: building
+**Demo Smart Building App: https://localhost/smart-building-v1/** (Username: building, Password: building)
 
-The Demo Smart Building app is similar to the [App for Apartment User](# Application for Apartment User). If you open the OpenRemote Manager, you will see Tenant A - Smart Building - Apartment 1. It includes a Service Agent (Simulator), five rooms, and a Scene Agent. If you use the 'Assets' view and select one of the rooms, you will notice that you see exactly the same attributes as visible in the App.
+The Demo Smart Building app is similar to the [App for Apartment User](#-Application-for-Apartment-User). If you open the OpenRemote Manager, you will see Tenant A - Smart Building - Apartment 1. It includes a Service Agent (Simulator), five rooms, and a Scene Agent. If you use the 'Assets' view and select one of the rooms, you will notice that you see exactly the same attributes as visible in the App.
 
 # See Also
 - [[Use UI components|User-Guide: UI components]]
