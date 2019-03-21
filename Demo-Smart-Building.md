@@ -76,15 +76,13 @@ We'll describe 4 examples of what will be possible
 
 # Application for Technical Manager
 
-This example is available as part of the main branch which you will need to set up first. Follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/). 
+The application for the Technical Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for Technical Manager and the Apartment User via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
 
-You can access the OpenRemote Manager and App with a webbrowser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
+Application for Technical Manager: https://localhost (Username: admin, Password: secret)
 
-**OpenRemote Manager: https://localhost** (Username: admin, Password: secret)
+Application for Apartment User: https://localhost/smart-building-v1/ (Username: building, Password: building)
 
-**Demo Smart Building App: https://localhost/smart-building-v1/** (Username: building, Password: building)
-
-The Demo Smart Building app is similar to the app for the [Apartment User](#application-for-apartment-user). If you open the OpenRemote Manager, you will see Tenant A - Smart Building - Apartment 1. It includes a Service Agent (Simulator), five rooms, and a Scene Agent. If you use the 'Assets' view and select one of the rooms, you will notice that you see exactly the same attributes as visible in the App.
+The [Application for the Apartment User](#application-for-apartment-user) is the same as described earlier. If you open the Application for the Technical Manager, you will see Tenant A - Smart Building - Apartment 1. It includes a Service Agent (Simulator), five rooms, and a Scene Agent. If you use the 'Assets' view and select one of the rooms, you will notice that you see exactly the same attributes as visible in the App. The Service Agent (Simulator) can be used to change the simulated sensor values for Apartment 1. 
 
 # See Also
 - [[Use UI components|User-Guide: UI components]]
