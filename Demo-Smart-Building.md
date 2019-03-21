@@ -4,7 +4,7 @@ The application includes a couple of services, not just convenient for the indiv
 
 The basic set-up is part of the [online demo](https://demo.openremote.io) as well as the main branch (See [Get Started](https://openremote.io/get-started-manager/)). You can take it as a starting point for developing your own application. You can view the apartment user application in our [online demo](https://demo.openremote.io) using the credentials for apartment 1 (building / building).
 
-We have described the application here. We are addressing two types of users: the [Apartment User](#application-for-apartment-user), and the [Service Provider](#application-for-service-provider). Third, we have described the structure of the [Smart Building in the Manager](#Smart-Building-in-the-Manager)
+We have described the application here. We are addressing three types of users: the [Apartment User](#application-for-apartment-user), the [Service Manager](#application-for-service-provider), and the [Technical Manager](#Technical-Manager)
 
 # Application for Apartment User
 
