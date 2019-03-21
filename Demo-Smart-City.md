@@ -5,9 +5,21 @@ The demo illustrates how the integration of several vertical solutions in a cent
 * active monitoring of all sensors, and actors via healthchecks, for maintenance purposes
 * exposing the data as assets and attributes, in a standardised manner via APIs, including the right acces rights, either 'restricted' to certain users and roles, or 'public'.
 
-The basic set-up is part of the demo environment and the main branch. You can take it as a starting point for developing your own application.
+The basic set-up is part of the main branch (See [Get Started](https://openremote.io/get-started-manager/)). You can take it as a starting point for developing your own application. 
 
-For now, you find a short but not complete list of the options.
+We have described the application here only for the [Technical Manager](#application-for-technical-manager). You can create applications for the City User, and the City Service Manager, similar as described in [Demo Smart Building](Demo-Smart-Building).
+
+# Application for Technical Manager
+
+This example is available as part of the main branch which you will need to set up first. Follow the [Get Started](https://openremote.io/get-started-manager/) or go to the [Developers page](https://openremote.io/developers/). 
+
+When all Docker containers are ready, you can access the OpenRemote Manager and API with a webbrowser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
+
+OpenRemote Manager: https://localhost
+Username: admin
+Password: secret
+
+In the Asset structure on the left you will see Tenant B - Smart City. It includes a Service Agent (Simulator) and three Area's (A, B, C).
 
 # Crowd management
 
