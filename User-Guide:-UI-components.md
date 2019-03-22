@@ -2,7 +2,7 @@ We plan to have a series of UI components available to swiftly create your own f
 
 _You can follow our progress at this page, and you are welcome to contribute in the mean time!_
 
-In the demo environment we have a Realm called '[[Smart Building|Demo-Smart-Building]]'. There is a front-end example which illustrates how the Basic UI components will work.
+In the main branch and online demo, we have a Realm called '[[Tenant A - Smart Building|Demo-Smart-Building]]'. There is a front-end example which illustrates how the Basic UI components will work.
 
 # Basic UI components
 
