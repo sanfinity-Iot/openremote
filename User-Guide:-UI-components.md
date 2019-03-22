@@ -12,7 +12,7 @@ We have a series of basic UI components, which you can use to create any user in
 
 _T.B.D. _
 
-We will describe, as an example, how you can add this component to the Application for the Appartment user in the Demo Smart Building and connect it to the outdoor temperature, you have added as an attribute (see [Connect a HTTP API](User Guide: Connecting to a HTTP API). 
+We will describe, as an example, how you can add this component to the Application for the Appartment user in the Demo Smart Building and connect it to the outdoor temperature, you have added as an attribute (see [Connect a HTTP API](User Guide:-Connecting-to-a-HTTP-API). 
 
 ## Button
 
