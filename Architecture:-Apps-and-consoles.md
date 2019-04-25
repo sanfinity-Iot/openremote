@@ -86,6 +86,7 @@ The console then does any required initialisation and sends a message back to th
    provider: "PROVIDER_NAME",
    version: "PROVIDER_VERSION",
    enabled: true|false [tells the app whether the provider is already enabled and therefore doesn't require enabling]
+   disabled: true|false [tells the app whether the provider was previously disabled and therefore shouldn't be enabled]
    requiresPermission: true|false [tells the app whether user permission is required for this provider]
    hasPermission: true|false|null [tells the app whether permission has already been granted true=permission granted; false=permission denied; null=permission not yet requested]
    success: true|false [true=init success; false=init failure]
