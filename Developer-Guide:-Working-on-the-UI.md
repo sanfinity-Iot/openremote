@@ -21,10 +21,10 @@ If you want to create a new `component` or `app` then simply copy an existing on
 
 ## UI Components & Apps (`/ui`)
 All UI components and apps are located in the `ui` directory; here you can find the standard OpenRemote web UI components and apps using a monorepo architecture. The code is divided into categories by directory:
-* [`component`](../../tree/master/ui/component) - Base OpenRemote JS modules and web components (built using Polymer) these are written as ES6 modules
-* [`app`](../../tree/master/ui/app) - Built-in OpenRemote web applications (applications can be built with whatever frameworks/libraries are desired)
-* [`demo`](../../tree/master/ui/demo) - Demos of each web component (provides a development harness for developers working on the components)
-* [`keycloak/themes`](../../tree/master/ui/keycloak/themes) - Keycloak themes which provide custom styled login and account management screens (see Keycloak [documentation](https://www.keycloak.org))
+* [`component`](../tree/master/ui/component) - Base OpenRemote JS modules and web components (built using Polymer) these are written as ES6 modules
+* [`app`](../tree/master/ui/app) - Built-in OpenRemote web applications (applications can be built with whatever frameworks/libraries are desired)
+* [`demo`](../tree/master/ui/demo) - Demos of each web component (provides a development harness for developers working on the components)
+* [`keycloak/themes`](../tree/master/ui/keycloak/themes) - Keycloak themes which provide custom styled login and account management screens (see Keycloak [documentation](https://www.keycloak.org))
 
 Typescript is used to provide static typing with the OpenRemote model available in the `@openremote/model` component package; the components are published to `npm` under the `@openremote` scope; see the README in each component for information about each specific component.
 
