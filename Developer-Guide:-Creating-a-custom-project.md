@@ -260,14 +260,37 @@ ADD map /deployment/map
 manager/openremote.log*
 ```
 
-## Creating custom app, extensions and themes
+## Creating custom  UI apps, components and Keycloak themes
 All frontend related code should be within a `ui` directory, copy the same directory layout as found in the `openremote` submodule and copy the following files:
 
 ```
-.gitignore
-build.gradle
-package.json
-tslint.json
+ui/.gitignore
+ui/build.gradle
+```
+
+Then create a `package.json` in the repo root with the following content:
+
+```json
+{
+  "private": true,
+  "workspaces": [
+    "openremote/ui/app/*",
+    "openremote/ui/component/*",
+    "openremote/ui/demo/*",
+    "openremote/client/src/main/webapp",
+    "ui/app/*",
+    "ui/component/*",
+    "ui/demo/*"
+  ]
+}
+```
+
+Then create `tslint.json` in the `ui` dir with the following content:
+
+```json
+{
+  "extends": "../openremote/ui/tslint.json"
+}
 ```
 
 Custom apps, components and keycloak themes can then be created as required for the project (see [working on the UI](./Developer-Guide%3A-Working-on-the-UI))
