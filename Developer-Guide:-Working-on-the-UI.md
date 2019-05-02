@@ -52,7 +52,7 @@ If you are working on a map component then please refer to the [working on maps]
 
 ### Apps
 Apps bring together components and/or public NPM modules and can be written using any framework/library etc that is
-compatible with web components (see [here]([https://custom-elements-everywhere.com/)).
+compatible with web components (see [here](https://custom-elements-everywhere.com/)).
 
 ### Demos
 These are apps for development purposes Generally a 1-1 mapping between components and demos; they provide a simple harness for the components that can be used during development and optionally can be deployed to offer component demos. 
