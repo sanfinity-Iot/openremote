@@ -2,10 +2,10 @@ To build OpenRemote projects, you have to first prepare the environment on your 
 
 Ensure you have installed and configured the following tools:
 
-* Java 8 JDK ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
+* Java 8 JDK ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html), on MacOS use [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk))
 * [GIT](https://git-scm.com/downloads)
 * [Docker](https://www.docker.com/get-started) (or [Docker Toolbox](https://docs.docker.com/toolbox/overview/) if requirements are not met)
-* [NodeJS](https://nodejs.org/en/download/current/) (>= 10.13.0)
+* [NodeJS](https://nodejs.org/en/download/current/) (>= 10.13.0, on MacOS you can use [Homebrew](https://brew.sh/) and `brew install node@10`)
 * [yarn](https://yarnpkg.com/lang/en/) `npm install --global yarn` (>=1.12.1)
 
 Ensure the following commands execute successfully:
