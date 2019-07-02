@@ -1,6 +1,6 @@
-We plan to have a series of UI components available to swiftly create your own front end applications. We use a combination of Polymer LIT, Material Design and our own OpenRemote elements. The UI components are [published on NPM](https://www.npmjs.com/~openremote).
+We have a series of UI components available to swiftly create your own front end applications. We use a combination of Polymer LIT, Material Design and our own OpenRemote elements. The UI components are [published on NPM](https://www.npmjs.com/~openremote).
 
-_You can follow our progress at this page, and you are welcome to contribute in the mean time!_
+_See the [Developer Guide for the current status](./Developer-Guide:-Working-on-the-UI)_
 
 In the main branch and online demo, we have a [[Demo Smart Building|Demo-Smart-Building]]. There is a front-end example which illustrates how the Basic UI components will work.
 
