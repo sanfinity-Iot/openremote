@@ -5,7 +5,7 @@ When writing to linked attributes it can be desirable to use insert the written 
 
 
 ## Response value filtering
-When a generic protocol returns a payload it can be desirable to filter that payload to extract a specific piece of information that should actually be written to the linked attribute; that is the purpose of the `Value filters` configuration item for protocol linked attributes, it takes an array of [Value filters]() as serialised `JSON Objects` e.g.:
+When a generic protocol returns a payload it can be desirable to filter that payload to extract a specific piece of information that should actually be written to the linked attribute; that is the purpose of the `Value filters` configuration item for protocol linked attributes, it takes an array of [Value filters](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueFilter.java) as serialised `JSON Objects` e.g.:
 
 ```
 [
