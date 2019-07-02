@@ -33,6 +33,7 @@
 * [[Connect Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
 * [[Connect UPnP|User-Guide:-Connecting-to-UPnP]]
 * [[Connect Z-wave|User-Guide:-Connecting-to-Z-wave]]
+* [[Generic protocols|User Guide: Generic protocols]]
 
 ## Assets & Attributes
 
