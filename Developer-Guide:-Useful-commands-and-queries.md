@@ -1,4 +1,4 @@
-# Commands
+# Docker
 Replace `<PROJECT_NAME>` with value used when creating the container with `docker-compose up` (`docker ps` will show the actual names).
 ## Restart manager docker container
 
@@ -9,6 +9,19 @@ Replace `<PROJECT_NAME>` with value used when creating the container with `docke
 
 ## Copy exported data point file to local machine (exported using query below)
 `docker cp <PROJECT_NAME>_postgresql_1:/deployment/datapoints.csv ./`
+
+## Restart exited containers (without using `docker-compose up`)
+If the containers are exited then they can be restarted using the `docker` command, the startup order is important:
+
+* docker start `<PROJECT_NAME>_postgresql_1`
+* docker start `<PROJECT_NAME>_keycloak_1`
+* docker start `<PROJECT_NAME>_map_1` (only if there is a map container)
+* docker start `<PROJECT_NAME>_manager_1`
+* docker start `<PROJECT_NAME>_proxy_1`
+
+**NOTE:On Docker v18.02 there is a bug which means you might see the message `Error response from daemon: container "<CONTAINER_ID>": already exists` to resolve this simply enter the following command (you can ignore any error messages) and try starting again**
+
+`docker-containerd-ctr --address /run/docker/containerd/docker-containerd.sock --namespace moby c rm $(docker ps -aq --no-trunc)`
 
 # Queries
 
