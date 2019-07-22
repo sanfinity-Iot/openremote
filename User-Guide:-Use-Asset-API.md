@@ -1,3 +1,5 @@
+### NOTE: For now it isn't possible to access this API without using the Keycloak javascript 
+
 We have a generic Asset and Attribute model which you can access via our API's. 
 
 # Get Asset/Attribute/MetaItem information
