@@ -63,8 +63,6 @@ We recommend you set this as the default directory in your IDE for all *Run Conf
 
 [[resources/Intellij - Run configuration default settings.png]]
 
-TODO: If we could get rid of this wart, that would be nice...
-
 ## Running and debugging the Manager
 
 The main entry point of the backend services is a Java class for the OpenRemote Manager, this process provides the frontend API and is the core of OpenRemote.
