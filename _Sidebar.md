@@ -27,6 +27,7 @@
 * [[Create Macro|User-Guide:Creating a Macro]]
 * [[Create Surveys|User-Guide:Creating and Reporting Surveys]]
 * [[Connect a UDP Server|User Guide: Connecting to a UDP Server]]
+* [[Connect a Websocket Server|User Guide: Connecting to a Websocket Server]]
 * [[Connect TCP Server|User-Guide:-Connecting-with-TCP]]
 * [[Create Timer|User-Guide:Create a Timer Schedule]]
 * [[Connect Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
