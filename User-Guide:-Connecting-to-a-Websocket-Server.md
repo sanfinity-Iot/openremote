@@ -72,11 +72,11 @@ You now have a basic Websocket client protocol ready to be linked to by asset at
    * `Subscriptions`: `[
   {
      "type": "websocket",
-     "body": "SUBSCRIBE:{\"eventType\": \"AttributeEvent\", \"filter\": {\"filterType\": \"asset-id\", \"assetIds\": [\"3rsAZ4SwFKUEBgtjVtlGb1\"]}}"
+     "body": "EVENT:{\"eventType\": \"read-asset-attributes\", \"assetId\": \"3rsAZ4SwFKUEBgtjVtlGb1\", \"attributeNames\": [\"co2Level\"]}"
   }
 ]`
 
-**NOTE: At this point you have enough to be able to send data to the UDP server (just write to the attribute to data you wish to send)**
+**NOTE: At this point you have enough to be able to send data to the UDP server (just write to the attribute the data you wish to send)**
 
 ## Executable attributes
 It is possible to create executable attributes (i.e. add the `Executable` configuration item) for the UDP protocol provided the `Write value` configuration item is specified for the linked attribute, this should contain the value to send to the server when the attribute is executed.
