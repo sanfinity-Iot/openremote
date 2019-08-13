@@ -2,40 +2,79 @@ The examples below describe interactively linking asset attributes to Websocket 
 
 # Basic Websocket Server connection
 
-The following example connects to the OpenRemote 3.0 Manager running on `https://localhost/`:
+The following example connects to the OpenRemote 3.0 Manager running on `https://localhost`.
 
 1. Login to the manager UI (`https://localhost/master` `admin/secret`)
-2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
-3. Set the following:
-   * `Asset name`: `UDP Agent`
-   * `Parent asset`: `Tenant A -> Smart Building` and select 'OK'
-   * `Asset Type`: `Agent`
-4. Click `Create asset` at bottom of screen
-5. Click `Edit asset` and add a new attribute:
-   * `Name`: `udpClient`
-   * `Type`: `UDP Client`
-6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows:
-   * `UDP server hostname/IP`: `127.0.0.1`
-   * `UDP server port`: `60123`
+2. Select the Assets tab
+3. Select the following asset from the Asset tree `Tenant A -> Smart Building -> Apartment 1 -> Service Agent (Simulator)`
+3. Click `Edit asset` in the top right corner
+3. Enter `websocket` in the New attribute input and select type as `Websocket Client` then click `Add attribute`
+3. Expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows:
+   * `Endpoint URI`: `http://localhost:8080/websocket/events?Auth-Realm=master`
+   * `OAuth Grant`: `{
+    "grant_type": "password",
+    "tokenEndpointUri": "http://localhost:8080/auth/realms/master/protocol/openid-connect/token",
+    "client_id": "openremote",
+    "username": "admin",
+    "password": "secret"
+}`
+   *  `Subscriptions`: `[
+  {
+     "type": "websocket",
+     "body": "SUBSCRIBE:{\"eventType\": \"attribute\", \"filter\": {\"filterType\": \"asset-id\", \"assetIds\": [\"3rsAZ4SwFKUEBgtjVtlGb1\"]}}"
+  }
+]`
 
 **Make sure you click `Add item` when creating new attribute configuration items**.
 
 7. Click `Save asset` at the bottom of the screen
 
-You now have a basic UDP client protocol ready to be linked to by asset attributes; the defaults assume that the UDP server sends/receives ASCII text, this can be changed to binary mode by adding one of the following configuration items:
+You now have a basic Websocket client protocol ready to be linked to by asset attributes; the protocol configuration status should show as `CONNECTED`.
 
-* `Convert to/from HEX string` - Represents `bytes` as a HEX string e.g. `00FA3349`
-* `Convert to/from binary string` - Represents `bytes` as a binary string e.g. `01011100101`
 
-**NOTE: The protocol configuration status will show as `CONNECTED` even if the server is not actually reachable this is due to the fact `UDP` has no notion of a connection.**
-
-1. Select the Tenant A -> Smart Building asset in the asset list
+1. Select the following asset from the Asset tree `Tenant A -> Smart Building -> Apartment 1 -> Living Room`
 2. Click `Edit asset` in the top right
 3. Add a new attribute:
-   * Name: `udpSend`
-   * Type: `Text`
+   * Name: `websocketCo2Level`
+   * Type: `Number`
 4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
-   * `Agent protocol link`: `UDP Agent -> udpClient`
+   * `Agent protocol link`: `Service Agent (Simulator) -> websocket`
+   * `Read only`: `true`
+   * `Message match filters`: `[
+    {
+        "type": "substring",
+        "beginIndex": 6
+    },
+    {
+        "type": "jsonPath",
+        "path": "$..attributeState.attributeRef"
+    }
+]`
+   * `Message match predicate`: `{
+    "predicateType": "string",
+    "match": "CONTAINS",
+    "value": "co2Level"
+}`
+   * `Value filters`: `[
+{
+        "type": "substring",
+        "beginIndex": 6
+    },
+    {
+        "type": "jsonPath",
+        "path": "$..events[?(@.attributeState.attributeRef.attributeName == \"co2Level\")].attributeState.value"
+    },
+    {
+        "type": "jsonPath",
+        "path": "$.min()"
+    }
+]`
+   * `Subscriptions`: `[
+  {
+     "type": "websocket",
+     "body": "SUBSCRIBE:{\"eventType\": \"AttributeEvent\", \"filter\": {\"filterType\": \"asset-id\", \"assetIds\": [\"3rsAZ4SwFKUEBgtjVtlGb1\"]}}"
+  }
+]`
 
 **NOTE: At this point you have enough to be able to send data to the UDP server (just write to the attribute to data you wish to send)**
 
