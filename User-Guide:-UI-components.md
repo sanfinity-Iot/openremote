@@ -2,8 +2,6 @@ We have a series of UI components available to swiftly create your own front end
 
 _See the [Developer Guide for the current status](./Developer-Guide:-Working-on-the-UI)_
 
-In the main branch and online demo, we have a [[Demo Smart Building|Demo-Smart-Building]]. There is a front-end example which illustrates how the Basic UI components can work.
-
 We have a series of basic UI components, and more advanced project specific components. The current available components can be found in [openremote / ui / components](https://github.com/openremote/openremote/tree/master/ui/component):
 - or-bottom-navigation
 - or-header
