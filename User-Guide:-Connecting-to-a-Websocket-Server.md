@@ -2,7 +2,7 @@ The examples below describe interactively linking asset attributes to Websocket 
 
 # Basic Websocket Server connection
 
-The following example connects to the OpenRemote 3.0 Manager running on `https://localhost`.
+The following example connects to the OpenRemote 3.0 Manager running on `https://localhost` and subscribes to `Attribute Events` for the `Apartment 1` `Living Room` asset.
 
 1. Login to the manager UI (`https://localhost/master` `admin/secret`)
 2. Select the Assets tab
@@ -31,6 +31,7 @@ The following example connects to the OpenRemote 3.0 Manager running on `https:/
 
 You now have a basic Websocket client protocol ready to be linked to by asset attributes; the protocol configuration status should show as `CONNECTED`.
 
+We'll now add a linked attribute to show the CO2 Level of the Living room:
 
 1. Select the following asset from the Asset tree `Tenant A -> Smart Building -> Apartment 1 -> Living Room`
 2. Click `Edit asset` in the top right
@@ -75,40 +76,60 @@ You now have a basic Websocket client protocol ready to be linked to by asset at
      "body": "EVENT:{\"eventType\": \"read-asset-attributes\", \"assetId\": \"3rsAZ4SwFKUEBgtjVtlGb1\", \"attributeNames\": [\"co2Level\"]}"
   }
 ]`
+5. Click `Save asset`
 
-**NOTE: At this point you have enough to be able to send data to the UDP server (just write to the attribute the data you wish to send)**
+The `websocketCo2Level` should show the same value as the `CO2 level` attribute, now go to the `Service Agent (Simulator)` and expand the `apartmentSimulator` then in the `Living Room:co2Level` field enter an integer e.g. `500` then click `Write simulator state`, now go back to the `Living Room` asset and both the `CO2 level` and `websocketCo2Level` attributes should show the new value e.g. `500`.
+
+## Writable attributes
 
 ## Executable attributes
-It is possible to create executable attributes (i.e. add the `Executable` configuration item) for the UDP protocol provided the `Write value` configuration item is specified for the linked attribute, this should contain the value to send to the server when the attribute is executed.
+It is possible to create executable attributes (i.e. add the `Executable` configuration item) for this protocol provided the `Write value` configuration item is specified for the linked attribute, this should contain the value to send to the server when the attribute is executed.
 
-## Reading responses
-It is possible to display responses from the UDP server by using the `Polling interval (ms)` configuration item in combination with the `Write value` configuration item and then based on the interval specified the protocol will send the write value to the server and wait for a response and this response will be passed through to the linked attribute.
-
-**NOTE: Due to the connection-less nature of UDP and the variety of behaviours different servers exhibit it is possible to configure whether or not the server responds to a given payload (this can be configured on the protocol configuration and/or per attribute using the `UDP server always responds` configuration item). This must be correctly configured when using a mix of polling/non-polling linked attributes to ensure the response is correctly matched to the send payload - for polling linked attribute it is assumed that the server responds (not much point polling it otherwise)**
-
-## Dynamic values
+## Dynamic value
 It is possible to use the dynamic value placeholder `{$value}` within the `Write value` configuration item and then any value written to the linked attribute will be inserted into the `Write value` replacing each occurrence of the placeholder.
 
-## Response value filtering
-This protocol supports response value filtering for more information see [here](https://github.com/openremote/openremote/wiki/User-Guide:-Generic-protocols#response-value-filtering).
+Here's an example for creating an attribute to write to the `Living Room` `Ceiling lights (range)` attribute using the dynamic value functionality:
+
+1. Select the following asset from the Asset tree `Tenant A -> Smart Building -> Apartment 1 -> Living Room`
+2. Click `Edit asset` in the top right
+3. Add a new attribute:
+   * Name: `websocketWrite`
+   * Type: `Number`
+4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
+   * `Agent protocol link`: `Service Agent (Simulator) -> websocket`
+   * `Write value`: `"EVENT:{\"eventType\": \"attribute\", \"attributeState\": {\"attributeRef\": {\"entityId\": \"3rsAZ4SwFKUEBgtjVtlGb1\", \"attributeName\": \"lightsCeiling\"}, \"value\": {$value}}}"`
+5. Click `Save asset`
+
+Now you can write a value (`0-100`) to the new `websocketWrite` attribute and it will be written to the `Ceiling lights (range)` attribute.
+
+Let's create an executable attribute to set the ceiling lights to 30%:
+
+1. Click `Edit asset` in the top right
+2. Add a new attribute:
+   * Name: `websocketExec`
+   * Type: `String`
+3. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
+   * `Agent protocol link`: `Service Agent (Simulator) -> websocket`
+   * `Write value`: `"EVENT:{\"eventType\": \"attribute\", \"attributeState\": {\"attributeRef\": {\"entityId\": \"3rsAZ4SwFKUEBgtjVtlGb1\", \"attributeName\": \"lightsCeiling\"}, \"value\": 30}}"`
+   * `Executable`: `true`
+4. Click `Save asset`
+
+You can now click `Start` on the `websocketExec` attribute and the `Ceiling lights (range)` attribute should change to `30`.
 
 ## Protocol configuration items
-* `UDP server hostname/IP`**required** - Hostname/IP of the UDP server
-* `UDP server port`**required** - Port of the UDP server
-* `UDP client bind port` - Port that the client should bind to (if not specified then a random ephemeral port will be used)
-* `Charset` - The charset to use when converting ASCII to `byte[]` before sending
-* `Convert to/from binary string` - Indicates that the server expects/sends raw `bytes` and these will be represented as binary strings e.g. `01001010110`
-* `Convert to/from HEX string` - Indicates that the server expects/sends raw `bytes` and these will be represented as HEX strings e.g. `0FABCD20`
-* `Response timeout (ms)` - How long should the client wait for a response from the server before possibly re-sending the payload
-* `Send retries` - How many times to retry sending if a response is not received within the `Response timeout (ms)` used by linked attributes that expect a response
-* `UDP server always responds` - Indicates that the server always responds to any payload
+* `Endpoint URI` - Websocket endpoint (should be a full valid URI)
+* `OAuth grant` - Will attempt to get an access token before establishing the connection; the access token is added to the connection request headers using the standard `Authorization` header.
+* `Connect headers` - `Map<String, String>` headers to be added to the connection request
+* `Username` - Username for basic authentication; the hashed username/password is added to the connection request headers using the standard `Authorization` header
+* `Password` - Password for basic authentication; the hashed username/password is added to the connection request headers using the standard `Authorization` header
+* `Subscriptions` - Array of `Websocket Subscriptions` that are executed once the websocket is connected (there is a built in delay between connection established and these being sent to ensure the server is ready to receive messages).
 
 ## Linked attribute configuration items
+* `Message match filters` - Array of `Value filters` to apply to incoming messages the filtered string that results is used to apply the `Message match predicate`
+* `Message match predicate` - `String Predicate` to apply to the filtered incoming message (if no filters are specified then it is applied to the entire incoming message)
+* `Subscriptions` - Array of `Websocket Subscriptions` that are executed once the attribute is linked.
 * `Write value` - Indicates the payload to be written to the server (can contain dynamic placeholders)
-* `Value filters` - Filters to apply to response payload before updating the linked attribute
-* `Response timeout (ms)` - Overrides value set on the protocol
-* `Send retries` - Overrides value set on the protocol
-* `UDP server always responds` - Overrides value set on the protocol
+* `Value filters` - Array of `Value filters` to apply to matched incoming messages to extract the actual value that should be written to the attribute for more information see [here](https://github.com/openremote/openremote/wiki/User-Guide:-Generic-protocols#response-value-filtering).
 
 # See also
 - [[Use UI components|User-Guide: UI components]]
