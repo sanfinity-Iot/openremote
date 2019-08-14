@@ -10,10 +10,10 @@ The following example connects to the OpenRemote 3.0 Manager running on `https:/
 3. Click `Edit asset` in the top right corner
 3. Enter `websocket` in the New attribute input and select type as `Websocket Client` then click `Add attribute`
 3. Expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows:
-   * `Endpoint URI`: `http://localhost:8080/websocket/events?Auth-Realm=master`
+   * `Endpoint URI`: `wss://localhost/websocket/events?Auth-Realm=master`
    * `OAuth Grant`: `{
     "grant_type": "password",
-    "tokenEndpointUri": "http://localhost:8080/auth/realms/master/protocol/openid-connect/token",
+    "tokenEndpointUri": "https://localhost/auth/realms/master/protocol/openid-connect/token",
     "client_id": "openremote",
     "username": "admin",
     "password": "secret"
