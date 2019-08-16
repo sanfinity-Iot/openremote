@@ -2,12 +2,43 @@ All OpenRemote projects are delivered as Docker images, you'll need a Docker hos
 
 ## Local Engine
 
-For a local engine (developer workstation setup) simply installing [Docker Community Edition](https://www.docker.com/) is enough. Ensure the following commands work:
+For a local engine (developer workstation setup) simply installing [Docker Community Edition](https://www.docker.com/) is enough. If you cannot install Docker Community Edition (i.e. you're on Windows Home Edition which doesn't support Hyper-V) then you will need to install the [Docker Toolbox Edition](https://docs.docker.com/toolbox/toolbox_install_windows/) which uses VirtualBox.
+
+Ensure the following commands work:
 
 ```
-docker version
-docker-machine version
+docker -v
+docker-machine -v
+docker-compose -v
 ```
+
+If running Docker Toolbox Edition please ensure the following command lists the output of your `HOME` directory (host volume mapping seems unreliable in versions <= 19.03.01 which use VirtualBox 5.x):
+```
+docker run --rm -v ~:/data alpine ls -al /data
+```
+
+***If you see your `HOME` directory files listed then please skip the following steps otherwise please follow and try the above command again***
+
+1. Open Docker Quickstart Terminal
+2. Type `docker-machine rm default`
+3. Download and install VirtualBox >= 6.x
+4. Close and reopen the Docker Quickstart Terminal
+5. Try the above `docker run` command again
+
+
+Assuming all the above is working and correct then if you are using Docker Toolbox Edition (Virtual Box); please follow the following steps to add required port mappings:
+ 
+ 1. Open VirtualBox and select the `docker` VM (called `default` unless specified otherwise) then go to Settings -> Network -> Adapter 1 -> Advanced -> Port Forwarding
+ 2. Add the following rules:
+ 
+ | Name | Protocol | Host IP | Host Port | Guest IP | Guest Port |
+ | --- | --- | --- | --- | --- | --- |
+ |postgresql|TCP||5432||5432|
+ | keycloak | TCP |  | 8081 |  | 8081 |
+ | map | TCP |  | 8082 |  | 8082 |
+ | proxy http | TCP |  | 80 |  | 80 |
+ | proxy https | TCP |  | 443 |  | 443 |
+
 
 ### Enabling bash auto-completion
 
