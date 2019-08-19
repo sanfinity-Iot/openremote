@@ -1,4 +1,4 @@
-Working on the UI means working on any of:
+Working on the UI means working on any of: 
 
 * Web applications that provide functionality to endusers
 * Web components and their demos, shared between applications
