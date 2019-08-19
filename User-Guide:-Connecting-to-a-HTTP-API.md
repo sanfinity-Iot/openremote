@@ -1,4 +1,4 @@
-The examples below describe interactively linking asset attributes to HTTP APIs using the [HttpClientProtocol](https://github.com/openremote/openremote/blob/master/agent/src/main/java/org/openremote/agent/protocol/http/HttpClientProtocol.java). The following examples are assuming that you are using the basic environment which can be deployed in docker using the demo.yml profile (refer to the main page of the [wiki](https://github.com/openremote/openremote/wiki)).
+The examples below describe interactively linking asset attributes to HTTP APIs using the [HttpClientProtocol](https://github.com/openremote/openremote/blob/master/agent/src/main/java/org/openremote/agent/protocol/http/HttpClientProtocol.java). The following examples are assuming that you are using the basic environment which can be deployed in docker using the demo.yml profile (refer to the main page of the [wiki](https://github.com/openremote/openremote/wiki)). 
 
 # Basic HTTP API
 
