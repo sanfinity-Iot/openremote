@@ -65,3 +65,7 @@ If you are working on the legacy GWT based Manager web application you will need
 ```
 ./gradlew gwtSuperDev
 ```
+
+# See also
+
+- [Get Started](https://openremote.io/get-started-manager/)
