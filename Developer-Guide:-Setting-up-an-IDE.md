@@ -44,7 +44,7 @@ The log messages of the running application can be colour-highlighted with the [
 - Choice the default or dark styling config
 - Copy the xml to your IntelliJ IDEA Config folder 
 ```
-cp ~/<PATH_TO_PROJECT>/openremote/tools/intellij/Theme-<Default|Darkcula>-GrepConsole.xml \
+cp ~/<PATH_TO_PROJECT>/openremote/tools/intellij/Theme-<Default|Darcula>-GrepConsole.xml \
 ~/.IntelliJIdea<VERSION>/config/options/GrepConsole.xml
 ```
 
