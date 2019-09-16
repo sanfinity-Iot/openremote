@@ -40,7 +40,13 @@ You now have a basic HTTP API protocol ready to be linked to by asset attributes
 **NOTE: At this point you have enough to pull back the entire response of the weather API request but this is a JSON payload so we need to extract the temperature value from this using a filter**
 
 5. Add the following additional configuration item:
-   * Value filters: `[{"type": "json", "path":["main","temp"]}]`
+   * Value filters: `[
+    {
+        "path": "$.main.temp",
+        "type": "jsonPath",
+        "returnFirst": true
+    }
+]`
 
 ## Additional Exercises
 
