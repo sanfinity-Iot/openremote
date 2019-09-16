@@ -35,12 +35,12 @@ You now have a basic HTTP API protocol ready to be linked to by asset attributes
    * Agent protocol link: `HTTP API Agent -> weatherApi`
    * HTTP path: `weather`
    * HTTP query parameters: `{"q": "Eindhoven,nl", "units": "metric"}`
-   * HTTP polling interval (s): `60`
+   * Polling interval (ms): `60000`
 
 **NOTE: At this point you have enough to pull back the entire response of the weather API request but this is a JSON payload so we need to extract the temperature value from this using a filter**
 
 5. Add the following additional configuration item:
-   * Protocol response filters: `[{"type": "json", "path":["main","temp"]}]`
+   * Value filters: `[{"type": "json", "path":["main","temp"]}]`
 
 ## Additional Exercises
 
