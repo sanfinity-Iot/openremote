@@ -12,7 +12,7 @@ docker-machine -v
 docker-compose -v
 ```
 
-If running Docker Toolbox Edition make sure your code is in the 'HOME' directory, and please ensure the following command lists the output of your `HOME` directory (host volume mapping seems unreliable in versions <= 19.03.01 which use VirtualBox 5.x):
+**If running Docker Toolbox Edition make sure the code you are working on is in your 'HOME' directory**, and please ensure the following command lists the output of your `HOME` directory (host volume mapping seems unreliable in versions <= 19.03.01 which use VirtualBox 5.x):
 ```
 docker run --rm -v ~:/data alpine ls -al /data
 ```
