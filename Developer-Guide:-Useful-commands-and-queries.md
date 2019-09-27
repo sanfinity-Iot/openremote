@@ -24,7 +24,12 @@ If the containers are exited then they can be restarted using the `docker` comma
 `docker-containerd-ctr --address /run/docker/containerd/docker-containerd.sock --namespace moby c rm $(docker ps -aq --no-trunc)`
 
 ## Running demo deployment
-`SETUP_ADMIN_PASSWORD=****** SETUP_WIPE_CLEAN_INSTALL=true DOMAINNAME=demo.openremote.io LE_EMAIL=support@openremote.io IDENTITY_NETWORK_HOST=demo.openremote.io docker-compose -p demo up --build -d`
+
+`eval $(docker-machine env or-host1)`
+`SETUP_ADMIN_PASSWORD=******** SETUP_WIPE_CLEAN_INSTALL=true DOMAINNAME=demo.openremote.io LE_EMAIL=support@openremote.io IDENTITY_NETWORK_HOST=demo.openremote.io docker-compose -p demo up --build -d`
+
+To find out the password
+`docker exec demo_manager_1 env|awk -F= '/ADMIN_PASSWORD/ {print $2}'`
 
 # Queries
 
