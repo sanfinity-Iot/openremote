@@ -23,6 +23,9 @@ If the containers are exited then they can be restarted using the `docker` comma
 
 `docker-containerd-ctr --address /run/docker/containerd/docker-containerd.sock --namespace moby c rm $(docker ps -aq --no-trunc)`
 
+## Running demo deployment
+`SETUP_ADMIN_PASSWORD=****** SETUP_WIPE_CLEAN_INSTALL=true DOMAINNAME=demo.openremote.io LE_EMAIL=support@openremote.io IDENTITY_NETWORK_HOST=demo.openremote.io docker-compose -p demo up --build -d`
+
 # Queries
 
 ## Data points
@@ -92,6 +95,3 @@ Drop temp table:
 
 #### Clicking a specific action button
 `select count(*) FROM notification n JOIN asset a ON a.id = n.target_id WHERE n.message ->> 'title' = 'Kijk mee naar de proefbestrating op de Demer' and n.acknowledged_on is not null and n.acknowledgement LIKE '%BUTTON TITLE%';`
-
-## Running demo deployment
-`SETUP_ADMIN_PASSWORD=****** SETUP_WIPE_CLEAN_INSTALL=true DOMAINNAME=demo.openremote.io LE_EMAIL=support@openremote.io IDENTITY_NETWORK_HOST=demo.openremote.io docker-compose -p demo up --build -d`
