@@ -230,6 +230,7 @@ docker push openremote/postgresql:latest
 docker push openremote/keycloak:latest
 docker push openremote/manager:latest
 docker push openremote/tileserver-gl:latest
+docker push openremote/deployment:latest
 
 or
 
@@ -238,6 +239,7 @@ docker push openremote/postgresql:$DATE_TAG
 docker push openremote/keycloak:$DATE_TAG
 docker push openremote/manager:$DATE_TAG
 docker push openremote/tileserver-gl:$DATE_TAG
+docker push openremote/deployment:$DATE_TAG
 
 ```
 
