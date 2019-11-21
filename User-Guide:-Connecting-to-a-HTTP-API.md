@@ -8,7 +8,7 @@ The following example uses a weather API provided by [OpenWeatherMap](https://op
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * Asset name: `HTTP API Agent`
-   * Parent asset: `Building -> Smart Building` and select 'OK'
+   * Parent asset: `Smart Building -> Smart Building` and select 'OK'
    * Asset Type: `Agent`
 4. Click `Create asset` at bottom of screen
 5. Click `Edit asset` and add a new attribute:
@@ -26,7 +26,7 @@ You now have a basic HTTP API protocol ready to be linked to by asset attributes
 
 **NOTE: The protocol configuration status will show as `UNKNOWN` until an attribute is linked and a request is made; or the HTTP Ping attribute configuration items are configured**.
 
-1. Select the Building -> Smart Building asset in the asset list
+1. Select the Smart Building -> Smart Building asset in the asset list
 2. Click `Edit asset` in the top right
 3. Add a new attribute:
    * Name: `outsideTemp`
