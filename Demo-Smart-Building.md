@@ -16,7 +16,7 @@ If you open the Application for the Technical Manager, you will see three Realms
 
 ## Apartments, rooms and attributes
 
-As you navigate through the 'Assets' view you will notice that each apartment and room contains several attributes. There are lights, climate sensors, motion and presence sensors, and a thermostat control. For those attributes you can control (eg. a light), you can type in values and save it by pressing the 'Write' button. For adding sensor values you can use the simulator.
+As you navigate through the 'Assets' view you will notice that each apartment and room contains several attributes. There are lights, climate sensors, motion and presence sensors, and a thermostat control. For those attributes you can control (eg. a light), you can type in values and save it by pressing the 'Write' button. For adding sensor values you can use the simulator. If you added the weatherAPI, following the [example for connecting your data](User-Guide%3A-Connecting-to-a-HTTP-API) you also see an attribute 'outsideTemp' with the current outdoor temperature, if you select the Smart Building Asset.
 
 ## Service Agent (simulator)
 
@@ -41,6 +41,8 @@ If you open the application on desktop you will get three main views: Map, Asset
 ## Map and Assets
 
 Both the Map and Asset view give you access to the respective Assets and related attributes. You can see and control them, but also have the option to look at the historical data via graphs or event lists.
+
+If you have added the weatherAPI, following the [example for connecting your data](User-Guide%3A-Connecting-to-a-HTTP-API) you also see an attribute 'outsideTemp' with the current outdoor temperature, if you select the Smart Building Asset.
 
 ## Rules
 
