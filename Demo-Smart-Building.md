@@ -2,7 +2,7 @@ This page describes a typical Smart Building Application, which can be a startin
 
 There are two applications which are part of the manager, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-manager/)): the Application for Technical manager (for configuration of the project) and the Smart Building demo, which giving full control over the application. We'll describe both.
 
-For convenience you can have a look at the online version of the [Demo Smart Building](https://demo.openremote.io/main/?realm=building) using the credentials (building / building).
+For convenience you can have a look at the online version of the [online Demo Smart Building](https://demo.openremote.io/main/?realm=building) using the credentials (building / building).
 
 # Application for Technical Manager
 
