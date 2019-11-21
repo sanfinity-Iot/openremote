@@ -52,5 +52,5 @@ The Rules view is not fully functional yet in the demo, we apologise for that. H
 
 # See Also
 - [Demo Smart City](Demo-Smart-City)
+- [Next 'Get Started' step: Working on the UI](Developer-Guide%3A-Working-on-the-UI)
 - [Get Started](https://openremote.io/get-started-manager/)
-- [Working on the UI](Developer-Guide%3A-Working-on-the-UI)
