@@ -52,6 +52,8 @@
 
 ## Application Consoles
 
+* [[Demo Smart Building|Demo-Smart-Building]]
+* [[Demo Smart City|Demo-Smart-City]]
 * [[Use UI components|User-Guide:-UI components]]
 * [[Create iOS Console|User-Guide:-Create the iOS Console]]
 * [[Create Android Console|User-Guide:-Create the Android Console]]
