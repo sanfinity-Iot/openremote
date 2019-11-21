@@ -1,8 +1,18 @@
 This page describes a typical Smart Building Application, which can be a starting point for apartment buildings or large offices. The example integrates several functions, 'Lighting', 'Heating', 'Presence', and 'Climate' for three apartments.
 
-There are two applications which are part of the manager, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-manager/)): the manager UI (for technical configuration of the project) and the Smart Building demo, which giving full control over the application. We'll describe both.
+There are two applications which are part of the manager, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-manager/)): the Application for Technical manager (for configuration of the project) and the Smart Building demo, which giving full control over the application. We'll describe both.
 
 For convenience you can have a look at the online version of the Smart Building demo at [Smart Building Demo](https://demo.openremote.io/main/?realm=building) using the credentials (building / building).
+
+# Application for Technical Manager
+
+The application for the Technical Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for Technical Manager and the Smart Building Demo via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
+
+Application for Technical Manager: https://localhost (Username: admin, Password: secret)
+
+Application for Demo Smart Building: https://localhost/building/ (Username: building, Password: building)
+
+If you open the Application for the Technical Manager, you will see three Realms on the left: Master, Smart Building, and Smart City. The Demo Smart Building refers to the Realm: Smart Building. It includes three apartments with rooms and different attributes. If you use the 'Assets' view in the Technical Manager, you will notice that you see exactly the same attributes as visible in the Demo Smart Building. The Service Agent (Simulator) in Apartment 1 can be used to change the simulated sensor values for Apartment 1. 
 
 # Application for Apartment User
 
@@ -71,16 +81,6 @@ We'll describe 4 examples of what will be possible
 ## Building optimisation
 
 ## Creating workflow rules
-
-# Application for Technical Manager
-
-The application for the Technical Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for Technical Manager and the Apartment User via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
-
-Application for Technical Manager: https://localhost (Username: admin, Password: secret)
-
-Application for Apartment User: https://localhost/smart-building-v1/ (Username: building, Password: building)
-
-The [Application for the Apartment User](#application-for-apartment-user) is the same as described earlier. If you open the Application for the Technical Manager, you will see Tenant A - Smart Building - Apartment 1. It includes a Service Agent (Simulator), five rooms, and a Scene Agent. If you use the 'Assets' view and select one of the rooms, you will notice that you see exactly the same attributes as visible in the App. The Service Agent (Simulator) can be used to change the simulated sensor values for Apartment 1. 
 
 # See Also
 - [[Use UI components|User-Guide: UI components]]
