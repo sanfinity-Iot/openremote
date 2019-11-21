@@ -41,6 +41,6 @@ If you open the application on desktop you will get three main views: Map, Asset
 ## Rules
 
 # See Also
-- [Working on the UI](Developer-Guide%3A-Working-on-the-UI)
 - [Demo Smart City](Demo-Smart-City)
 - [Get Started](https://openremote.io/get-started-manager/)
+- [Working on the UI](Developer-Guide%3A-Working-on-the-UI)
