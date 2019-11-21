@@ -57,5 +57,5 @@ Try and create additional attributes that link to the OpenWeatherMap API, some i
 
 # See also
 
-- [Next 'Get Started' step: Working on th UI](https://github.com/openremote/openremote/wiki/Developer-Guide:-Working-on-the-UI)
+- Next 'Get Started' step: [Demo Smart Building](Demo-Smart-Building) or [Demo Smart City](Demo-Smart-City)
 - [Get Started](https://openremote.io/get-started-manager/)
