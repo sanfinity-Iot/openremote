@@ -2,7 +2,7 @@ This page describes a typical Smart Building Application, which can be a startin
 
 There are two applications which are part of the manager, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-manager/)): the Application for Technical manager (for configuration of the project) and the Smart Building demo, which giving full control over the application. We'll describe both.
 
-For convenience you can have a look at the online version of the Smart Building demo at [Smart Building Demo](https://demo.openremote.io/main/?realm=building) using the credentials (building / building).
+For convenience you can have a look at the online version of the [Demo Smart Building](https://demo.openremote.io/main/?realm=building) using the credentials (building / building).
 
 # Application for Technical Manager
 
@@ -14,59 +14,21 @@ Application for Demo Smart Building: https://localhost/main/?realm=building/ (Us
 
 If you open the Application for the Technical Manager, you will see three Realms on the left: Master, Smart Building, and Smart City. The Demo Smart Building refers to the Realm: Smart Building. It includes three apartments with rooms and different attributes. If you use the 'Assets' view in the Technical Manager, you will notice that you see exactly the same attributes as visible in the Demo Smart Building. The Service Agent (Simulator) in Apartment 1 can be used to change the simulated sensor values for Apartment 1. 
 
-# Application for Apartment User
+## Apartments, rooms and attributes
 
-If you are an apartment user you first of all like to have a user friendly application, solving your control needs for several applications. Let's describe the applications for you first.
+As you navigate through the 'Assets' view you will notice that each apartment and room contains several attributes. There are lights, climate sensors, motion and presence sensors, and a thermostat control. For those attributes you can control (eg. a light), you can type in values and save it by pressing the 'Write' button. For adding sensor values you can use the simulator.
 
-## Scenes
+## Service Agent (simulator)
 
-You have 4 scenes 'Morning', 'Day', 'Evening', and 'Night' available for which you can configure the default heating, ventilation and alarm values on the 'settings' page. When you select 'Automatically switch scenes', scenes will automatically changes based on the time schedule you have programmed.
+The service agent in apartment 1, can be used to simulate some values to the sensors (as you haven't connected real sensors yet). To do that select the attribute 'apartmentSimulator' and open it up via the arrow on the right. Type in values and don't forget to press the 'Write simulator state' button.
 
-## Lighting and Devices
+## Scene Agent
 
-The Lighting Panel allows you to switch (or dim) your different lights or switches.
+The Scene Agent allows you to define scenes: a series of pre-sets for attributes, once a user selects a scene. We will not use the scene agent in this demo. However, if you select the edit view (upper right), and open up one of the attributes, you can see how they work.
 
-Switch A, B, and C represent devices you can also control by using the timer options: "Now on", "On at" (delayed start). and "Ready At". The latter option is intended for optimisation purposes in case of changing tariffs or changing availability of local (green) energy. It requires a system rules which know the running time of your device, and monitors the best time to start your device, taking care it is finished in time.
+# Demo Smart Building
 
-## Climate
-
-The Climate Panel is used for both heating, ventilation and the air quality in the rooms of your apartment.
-
-The ventilation can be switched to 3 different levels as well as 'auto'. The 'auto' setting uses a rule which changes the ventilation based on humidity and CO2 levels.
-
-## Climate
-
-The Climate Panel is used for both heating, ventilation and the air quality in the rooms of your apartment (Figure 2). 
-
-The ventilation can be switched to 3 different levels as well as 'auto'. The 'auto' setting uses a rule which increases the ventilation in case of high humidity or CO2 levels.
-
-## Energy
-
-The Energy Panel will give you an overview of the energy used in your building. You can change the time scale and go back in history.
-
-## Security
-
-The Security Panel gives you an overview of any presence detected in your apartment, and in which room. The moment you turn on your alarm, you will receive a push notification in case of any presence detected. Presence is based on a combination of movement detection and CO2 changes.    
-
-## Settings
-
-In 'settings' (option in the menu) you can define the time schedule for 4 scenes, define a holiday period, and set your preferences per scene for climate, ventilation, and alarm. 
-
-## Received notifications
-
-_To be added_
-
-## Notify the service provider
-
-_To be added_
-
-## Change your language
-
-_To be added_
-
-# Application for Service Provider
-
-In case you have to manage a large series of apartments or offices, your challenge is safeguarding that all these systems keep on working. In addition the fact that all apartments, offices, and users are connected offers you an opportunity to organise several building related services effectively and efficiently.
+To view an example application we have added the Demo Smart Building which gives control over all apartments. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI).
 
 _We are working on the demo environment adding this Application_
 
