@@ -1,10 +1,8 @@
-This page describes a typical Smart Building Application, which can be a starting point for apartment buildings or large offices. The example integrates several functions, 'Lighting', 'Start (Delayed Start)', 'Safety', 'Energy', and 'Climate' and includes an apartment user application and a Service provider application. The apartment user application is designed once, and gives you access to the correct apartment based on your user credentials. 
+This page describes a typical Smart Building Application, which can be a starting point for apartment buildings or large offices. The example integrates several functions, 'Lighting', 'Heating', 'Presence', and 'Climate' for three apartments.
 
-The application includes a couple of services, not just convenient for the individual apartment user, but also for the service provider: scenes, scheduling, problem reporting, notification services, and health status.
+There are two applications which are part of the manager, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-manager/)): the manager UI (for technical configuration of the project) and the Smart Building demo, which giving full control over the application. We'll describe both.
 
-The basic set-up is part of the [online demo](https://demo.openremote.io/smart-building-v1/) as well as the main branch (See [Get Started](https://openremote.io/get-started-manager/)). You can take it as a starting point for developing your own application. You can view the apartment user application in our [online demo](https://demo.openremote.io/smart-building-v1/) using the credentials for apartment 1 (building / building).
-
-We have described the application here. We are addressing three types of users: the [Apartment User](#application-for-apartment-user), the [Service Manager](#application-for-service-provider), and the [Technical Manager](#application-for-technical-manager)
+For convenience you can have a look at the online version of the Smart Building demo at [Smart Building Demo](https://demo.openremote.io/building) using the credentials (building / building).
 
 # Application for Apartment User
 
