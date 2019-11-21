@@ -28,21 +28,17 @@ The Scene Agent allows you to define scenes: a series of pre-sets for attributes
 
 # Demo Smart Building
 
-To view an example application we have added the Demo Smart Building which gives control over all apartments. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI).
+To view an example application we have added the Demo Smart Building https://localhost/main/?realm=building/ (Username: building, Password: building), which gives control over all apartments. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI).
 
-_We are working on the demo environment adding this Application_
+If you just want to see how it looks before actually installing OpenRemote, see the [online Demo Smart Building](https://demo.openremote.io/main/?realm=building) using the credentials (building / building).
 
-We'll describe 4 examples of what will be possible
+If you open the application on desktop you will get three main views: Map, Assets, and Rules. On mobile you will only see Map, and Assets.
 
-## Health status monitoring
+## Map
 
-## Receiving feedback from users
+## Assets
 
-## Communicating to users
-
-## Building optimisation
-
-## Creating workflow rules
+## Rules
 
 # See Also
 - [[Use UI components|User-Guide: UI components]]
