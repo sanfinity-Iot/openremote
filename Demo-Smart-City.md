@@ -5,9 +5,9 @@ The demo illustrates how the integration of several vertical solutions in a cent
 * active monitoring of all sensors, and actors via healthchecks, for maintenance purposes
 * exposing the data as assets and attributes, in a standardised manner via APIs, including the right acces rights, either 'restricted' to certain users and roles, or 'public'.
 
-The basic set-up is part of the main branch (See [Get Started](https://openremote.io/get-started-manager/)). You can take it as a starting point for developing your own application. 
+There are two applications which are part of the manager, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-manager/)): the Application for Technical manager (for configuration of the project) and the Smart City demo, which giving full control over the application. We'll describe both with a simple example.
 
-We have described the application here only for the [Technical Manager](#application-for-technical-manager). You can create applications for the City User, and the City Service Manager, similar as described in [Demo Smart Building](Demo-Smart-Building).
+For convenience you can have a look at the online version of the [online Demo Smart City](https://demo.openremote.io/main/?realm=smartcity) using the credentials (smartCity / smartCity).
 
 # Application for Technical Manager
 
