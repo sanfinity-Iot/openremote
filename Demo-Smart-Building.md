@@ -10,7 +10,7 @@ The application for the Technical Manager requires you to set up the demo enviro
 
 Application for Technical Manager: https://localhost (Username: admin, Password: secret)
 
-Application for Demo Smart Building: https://localhost/building/ (Username: building, Password: building)
+Application for Demo Smart Building: https://localhost/main/?realm=building/ (Username: building, Password: building)
 
 If you open the Application for the Technical Manager, you will see three Realms on the left: Master, Smart Building, and Smart City. The Demo Smart Building refers to the Realm: Smart Building. It includes three apartments with rooms and different attributes. If you use the 'Assets' view in the Technical Manager, you will notice that you see exactly the same attributes as visible in the Demo Smart Building. The Service Agent (Simulator) in Apartment 1 can be used to change the simulated sensor values for Apartment 1. 
 
