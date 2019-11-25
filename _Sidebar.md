@@ -63,10 +63,10 @@
 ## Rules Engine
 
 * [[Create Rules|User-Guide:-Create Rules]]
-* [[Use Groovy Editor|User-Guide:-Create Rules with Groovy Editor]]
-* [[Use Javascript Editor|User-Guide:-Create Rules with Javascript Editor]]
-* [[Rules Model for Front-ends|User-Guide:-Rules Model for Front-ends]]
-* [[Linking Attributes|User-Guide:-Linking attributes]]
+* [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
+* [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
+* [[Use JSON Rules|User-Guide:-Use JSON Rules]]
+* [[Use Flow Rules|User-Guide:-Use Flow Rules]]
 
 ## Architecture
 
