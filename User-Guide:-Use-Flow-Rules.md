@@ -4,7 +4,9 @@
 
 # The Flow rules model
 
-Describe the structure of the Flow rules
+Describe the structure of the Flow rules.
+
+Refer to separate Wiki 'Use Flows' for describing the front-end application.
 
 # See Also
 
