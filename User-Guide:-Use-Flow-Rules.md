@@ -8,7 +8,7 @@ Describe the structure of the Flow rules
 
 # See Also
 
-- [Use Flows]
+- Use Flows
 - [[Create Rules|User-Guide:-Create Rules]]
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
 - [[Use JSON Rules|User-Guide:-Use JSON Rules]]
