@@ -10,15 +10,15 @@ Groovy rules scripting language is available within the (Technical) manager and 
 
 # Java script rules
 
-t.b.d.
+-
 
 # JSON rules
 
-The JSON rules object model is intended for application users, to create workflow rules, using a front-end UI. It works with the or-rules UI component which handles the connection between front-end and the JSOn rules. An example of the JSON rules working with the front-end is part of the [Demo Smart Building](https://github.com/openremote/openremote/wiki/Demo-Smart-Building) and [Demo Smart City](https://github.com/openremote/openremote/wiki/Demo-Smart-City).
+The JSON rules object model is intended for application users, to create event based workflow rules, using a front-end UI. It works with the or-rules UI component which handles the connection between front-end and the JSON rules. An example of the JSON rules working with the front-end is part of the [Demo Smart Building](https://github.com/openremote/openremote/wiki/Demo-Smart-Building) and [Demo Smart City](https://github.com/openremote/openremote/wiki/Demo-Smart-City).
 
 # Flow rules
 
-The Flow rules model is intended for application users which want to link attributes together, using a conversion. Its main purpose is
+The Flow rules model is intended for application users which want to link attributes together, using a conversion. Its main purpose is to allow linking of attributes (eg. a KNX switch with a Velbus light) or processing of attributes to create new 'virtual' attributes (eg. The energy consumption is the sum of three individual sub-meters). The Flow editor front end UI is currently a separate project, which needs to be installed.
 
 # See Also
 
