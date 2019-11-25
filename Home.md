@@ -6,7 +6,7 @@
 
 The core of the OpenRemote system is the [manager](https://github.com/openremote/openremote/tree/master/manager), a headless Java application that forms an IoT context broker which captures the current asset state of the system. You can create a dynamic schema of your assets and their attributes in the manager, modelling the problem domain. For example, you would create Building, Apartment, Room, and Sensor assets to model an IoT system for a smart home or office.
 
-Rules can be written in Groovy or JavaScript and dynamically deployed. Rules execute actions when matching asset state or sequence of events are detected. For example, when a mobile asset enters a geographic fence, or when humidity in a room keeps increasing, you can notify a group of users via email and on their mobile devices.
+Rules can be written in Groovy, JavaScript, a Rules JSON, or Flow model, and dynamically deployed. Rules execute actions when matching asset state or sequence of events are detected. For example, when a mobile asset enters a geographic fence, or when humidity in a room keeps increasing, you can notify a group of users via email and on their mobile devices.
 
 Networked things and devices are connected to the manager via [agents](https://github.com/openremote/openremote/tree/master/agent), they are the interface to 3rd party APIs and service protocols. OpenRemote has many built-in protocols and it's easy to create new adapters. Co-locate your agents with the manager or install agents on gateways, close to devices. You can link a 2.x controller to a manager, see [Connecting to Controller 2.5](https://github.com/openremote/openremote/wiki/User-Guide%3A-Connecting-to-Controller-2.5)
 
