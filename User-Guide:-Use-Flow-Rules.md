@@ -1,6 +1,6 @@
 Flow rules are mainly intended for attribute linking and defining virtual attributes, though they can also function as regular rules. They're useful for users who don't have the time to learn a programming language, but still want to define rules more complex than is possible in the JSON rule editor.
 
-The Flow Editor UI is currently a standalone application that interacts with the Manager. It has its own [repository](../../../floweditor).
+The Flow Editor UI is currently a standalone application that interacts with the Manager. It has its own [repository](https://github.com/openremote/floweditor).
 
 # The Flow rules model
 
@@ -28,7 +28,7 @@ A flow rule is generated backwards. The system goes through every output node an
 
 ## User interface
 
-The user interface is a separate project that isn't tied into the back end and only communicates with it. See [the repository](../../../floweditor/blob/master/README.md) for more information.
+The user interface is a separate project that isn't tied into the back end and only communicates with it. See [the repository](https://github.com/openremote/floweditor/blob/master/README.md) for more information.
 
 # See Also
 
