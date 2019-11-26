@@ -28,7 +28,7 @@ A flow rule is generated backwards. The system goes through every output node an
 
 ## User interface
 
-The user interface is a separate project that isn't tied into the back end and only communicates with it. See [the repository](https://github.com/openremote/floweditor/blob/master/README.md) for more information.
+The user interface is a separate project that isn't tied into the back end and only communicates with it. See [the repository README](https://github.com/openremote/floweditor/blob/master/README.md) for more information.
 
 # See Also
 
