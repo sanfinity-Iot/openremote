@@ -1,6 +1,6 @@
 Flow rules are mainly intended for attribute linking and defining virtual attributes, though they can also function as regular rules. They're useful for users who don't have the time to learn a programming language, but still want to define rules more complex than is possible in the JSON rule editor.
 
-The Flow Editor is currently a standalone application that interacts with the Manager. It has its own [repository](../../../floweditor).
+The Flow Editor UI is currently a standalone application that interacts with the Manager. It has its own [repository](../../../floweditor).
 
 # The Flow rules model
 
@@ -18,15 +18,21 @@ A node is an entity that receives, manipulates, or outputs data via its sockets.
 
 **Output** nodes receive information from other nodes and send it somewhere else. Generally, output nodes send information to the Manager. An example of this is a node that sets an asset attribute to a specific value.
 
-A node collection needs connections for it to do anything. Connections are laid by the user from socket to socket, allowing data to flow through. Connections define the interactions between each individual node, and so define the behaviour of the entire rule.
+Connections are laid by the user from socket to socket, allowing data to flow through. Connections define the interactions between each individual node, and so define the behaviour of the entire rule.
 
-How is this processed?
-Describe the structure of the Flow rules.
-Refer to separate Wiki 'Use Flows' for describing the front-end application.
+## Execution
+
+Node collections are sent to the manager and converted into a rule. All rules have a condition and an action. The action is executed when the condition is met. A flow rule executes only when the value of an asset attribute on the LHS of the rule has been changed. However, not all input nodes are included in the LHS of a flow rule.
+
+A flow rule is generated backwards. The system goes through every output node and traverses down the node tree, marking every asset attribute input node it comes across. For every output node, it constructs a single rule. Input nodes without attached output nodes aren't considered, neither are output nodes that aren't connected to input nodes. Detached processor nodes are ignored as well.
+
+## User interface
+
+The user interface is a separate project that isn't tied into the back end and only communicates with it. See [the repository](../../../floweditor/blob/master/README.md) for more information.
 
 # See Also
 
-- Use the Flow Editor
+- [Use the Flow Editor](../../../floweditor/blob/master/README.md)
 - [[Create Rules|User-Guide:-Create Rules]]
 - [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
