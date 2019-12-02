@@ -1,6 +1,6 @@
 OpenRemote has its own rules engine which can be used for a wide range of functions, from simple linking of attributes, to complex rules based algorithms for eg. predictive models. There are 4 different types of rules scripting languages, all with their own purpose. We'll describe them here and refer to a dedicated Wiki for each type.
 
-Rules can be build within global rulesets, allowing them to use any attribute across the different realms. Alternatively, if you select a specific realm or asset, the ruleset will only be able to use rules with attributes within the asset, or any of it child assets.
+Rules can be built within global rulesets, allowing them to use any attribute across the different realms. Alternatively, if you select a specific realm or asset, the ruleset will only be able to use rules with attributes within the asset, or any of it child assets.
 
 Rules can be enabled or disabled. In addition, there is an option 'Continue on error' which prevents the rules engine stopping in case one of the rules in the rule set is creating an error.
 
