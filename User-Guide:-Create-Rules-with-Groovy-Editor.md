@@ -18,7 +18,7 @@ Groovy rules work using a Groovy scripting engine. Rules are parsed and various 
 
 ```notifications``` provides the ability to send notifications. [Relevant class in source.](https://github.com/openremote/openremote/blob/master/manager/src/main/java/org/openremote/manager/rules/facade/NotificationsFacade.java)
 
-The rules are then registered, ordering rules from top to bottom within a ruleset.
+The rules are then registered, ordered from top to bottom within a ruleset.
 
 # See Also
 
