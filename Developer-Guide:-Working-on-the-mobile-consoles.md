@@ -1,4 +1,4 @@
-The OpenRemote mobile consoles load the web applications using a web view and provide bridging of native device functionality to provide a native app experience. 
+The OpenRemote mobile consoles load the web applications using a web view and provide bridging of native device functionality to provide a native app experience. Make sure you've pulled the latest code of the repository.
 
 ## Android Console
 
@@ -26,15 +26,34 @@ pod init
 
 Open up the Podfile with a text editor. Add the `ORLib` pod to both of the targets
 ```
+workspace '<your_project>'
+platform :ios, '11.2'
+
 use_frameworks!
 
-target 'YourProject' do
-  pod 'ORLib', '~> 1.0.0'
+def shared_pods
+  pod 'Firebase/Core', '~> 4.6.0'
+  pod 'Firebase/Messaging', '~> 4.6.0'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.13.4'
 end
 
-target 'NotificationExtension' do
-  pod 'ORLib', '~> 1.0.0'
+
+target '<your_project>' do
+  project '<your_project>'
+  shared_pods
 end
+
+target 'NotificationService' do
+  project '<your_project>'
+  shared_pods
+end
+
+target 'ORLib' do
+  project 'path_to/openremote/console/iOS/ORLib/ORLib'
+  shared_pods
+end
+
 ```
 Save and close the Podfile.
 In the terminal enter the following command
