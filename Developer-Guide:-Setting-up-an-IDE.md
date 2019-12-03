@@ -30,8 +30,9 @@ IDENTITY_NETWORK_SECURE=true
 
 You can download the [IntelliJ Community Edition](https://www.jetbrains.com/idea/download/) for free.
 
-- Create a `New Project From Existing Sources` and import as a Gradle project
+- Choose the 'Open' option in the startup screen and open the root directory of the OpenRemote codebase.
 - Note that IntelliJ might time out if a background Gradle process (for example, running the GWT compiler server) blocks the Gradle import. Stop and start the background process to unblock.
+- Run `./gradlew clean installDist` in a terminal in IntelliJ to be sure everything compiles.
 
 ##### Recommended Plugins
 - [Grep Console](https://plugins.jetbrains.com/plugin/7125-grep-console)
@@ -43,6 +44,7 @@ The log messages of the running application can be colour-highlighted with the [
 - Locate XML style config for Grep Console in openremote/tools/intellij
 - Choice the default or dark styling config
 - Copy the xml to your IntelliJ IDEA Config folder 
+
 ```
 cp ~/<PATH_TO_PROJECT>/openremote/tools/intellij/Theme-<Default|Darcula>-GrepConsole.xml \
 ~/.IntelliJIdea<VERSION>/config/options/GrepConsole.xml
@@ -62,6 +64,8 @@ The working directory in your IDE however must always be set to the **OpenRemote
 We recommend you set this as the default directory in your IDE for all *Run Configurations*. To improve creation and execution of ad-hoc tests in the IDE you should set the default working directory for JUnit Run Configurations:
 
 [[resources/Intellij - Run configuration default settings.png]]
+
+### Note: In newer versions of IntelliJ you need to change some run options. Go to Preferences -> Build,Execution,Deployment -> Build Tools -> Gradle. Choose for the options 'Build and run using' and 'Run tests using' the option 'IntelliJ' and click on 'Apply'.
 
 ## Running and debugging the Manager
 
