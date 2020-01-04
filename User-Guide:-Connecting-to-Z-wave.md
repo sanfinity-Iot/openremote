@@ -1,6 +1,6 @@
 # Configure Serial Port
 
-In order to connect to a Z-Wave network you need an USB interface, preferably the [Aeotec Z-Stick Gen5](http://aeotec.com/z-wave-usb-stick), that is attached to your PC. Your PC communicates with this device via a serial port. First of all you have to determine which serial port was assigned to the Z-Wave USB Stick on the Docker host. After that your are able to configure a `docker-compose` device mapping so that the serial port is accessible within the docker container (device passthrough). Unfortunately, `Docker for Windows` and `Docker for Mac` do not support device pass through. In this case you have to resort to the legacy Docker Toolbox software.     
+In order to connect to a Z-Wave network you need an USB interface, preferably the [Aeotec Z-Stick Gen5](http://aeotec.com/z-wave-usb-stick), that is connected to your PC. Your PC communicates with this device via a serial port. First of all you have to determine which serial port was assigned to the Z-Wave USB Stick on the Docker host. After that your are able to configure a `docker-compose` device mapping so that the serial port is accessible within the docker container (device passthrough). Unfortunately, `Docker for Windows` and `Docker for Mac` do not support device passthrough. In this case you have to resort to the legacy [Docker Toolbox](http://docs.docker.com/toolbox) software.     
 
 ## Linux Serial Port 
 
@@ -53,7 +53,7 @@ manager:
  Control Panel -> Device Manager -> Ports. The serial port name is something like COM1, COM2, COM3...  
 7. In VirtualBox go to Settings -> Ports -> Serial Ports -> Port 1
    * Activate `Enable Serial Port`
-   * Select `Port Number`: `COM1
+   * Select `Port Number`: `COM1`
    * Select `Port Mode`: `Host Device`
    * Edit `Path/Address` and insert the serial port name from the previous step (e.g. COM3)  
 8. Open the `docker-compose.yml` file in a text editor and add a `devices:` mapping to the `manager:` service:
@@ -121,6 +121,25 @@ manager:
   devices:
     - /dev/ttyS0:/dev/ttyS0
 ```
+
+# Connect a Z-Wave USB Interface
+
+In the following example you link the Z-Wave USB interface that is connected to your PC by using the serial port name, e.g. `/dev/ttyS0`.
+
+1. Login to the manager UI (`https://localhost/master` as `admin/secret`)
+2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left 
+3. Set the following:
+   * Asset name: `ZWave Agent`
+   * Parent asset: `Building -> Smart Building` and select 'OK'
+   * Asset Type: `Agent`
+4. Click `Create asset` at the bottom of the screen
+5. Click `Edit asset` and add a new attribute:
+   * Name: `ZWave_Interface`
+   * Type: `Z-Wave`
+6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) 
+7. Edit the serial port name
+   * `urn:openremote:protocol:zwave:port`: `/dev/ttyS0` 
+7. Click `Save asset` at bottom of the screen
 
 T.B.D.
 
