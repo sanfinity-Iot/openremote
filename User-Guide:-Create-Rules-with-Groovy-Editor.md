@@ -1,4 +1,4 @@
-Groovy is a programming language that can seamlessly work together with Java. Groovy rules are written in Groovy, and so the most freedom compared to other rule types. Groovy rules can interact with a number of objects that are exposed to the scripting engine.
+Groovy is a programming language that can seamlessly work together with Java. Groovy rules are written in Groovy, and so offer the most freedom compared to other rule types. Groovy rules can interact with a number of objects that are exposed to the scripting engine.
 
 These rules are capable of everything OpenRemote allows rules to do and are intended for rules that are too complex to be defined in other editors. Users who have experience in programming may prefer to write rules in Groovy regardless of rule complexity.
 
