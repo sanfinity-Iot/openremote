@@ -141,7 +141,41 @@ In the following example you link the Z-Wave USB interface that is connected to 
    * `urn:openremote:protocol:zwave:port`: `/dev/ttyS0` 
 7. Click `Save asset` at bottom of the screen
 
-T.B.D.
+After the Z-Wave USB interface has been successfully linked a full Z-Wave network scan is automatically executed in the background and you are ready to import devices that have already been included to the Z-Wave network.
+
+# Import Z-Wave Devices
+
+1. Select the `ZWave Agent` in the Asset list on the left side
+2. Click `Edit asset`
+3. Expand the `ZWave_Interface` attribute (using button on the right of the attribute)
+4. Click `Select asset` and select the parent asset (e.g. `Building -> Smart Building -> Apartment 3`)
+5. Click 'OK' in order to confirm the selection
+6. Click `Discover assets`
+
+You can repeat this procedure as often as you want and devices are not imported more than once. You should execute this procedure initially and after you've added a new device to the Z-Wave network.
+
+# Include Z-Wave devices
+
+This procedure describes how to add a new device to the Z-Wave network (Z-Wave device inclusion). 
+
+Note that before you are able to execute this procedure you have to execute the `Import Z-Wave Devices` procedure at least once otherwise the `Z-Wave Controller` asset is missing.
+
+1. Select `Z-Wave Controller` in the asset list on the left side
+2. Make sure that `View asset` and `Show live updates` is activated
+3. Activate the `Device Inclusion` checkbox and click `Write`   
+4. Put the Z-Wave device into inclusion mode (see device manual)
+5. Execute the `Import Z-Wave Devices` procedure in order to add the new device to the asset list on the left side
+
+# Exclude Z-Wave devices
+
+This procedure describes how to remove a device from the Z-Wave network (Z-Wave device exclusion). 
+
+Note that before you are able to execute this procedure you have to execute the `Import Z-Wave Devices` procedure at least once otherwise the `Z-Wave Controller` asset is missing.
+
+1. Select `Z-Wave Controller` in the asset list on the left side
+2. Make sure that `View asset` and `Show live updates` is activated
+3. Activate the `Device Exclusion` checkbox and click `Write`   
+4. Put the Z-Wave device into exclusion mode (see device manual)
 
 # See also
 
