@@ -1,8 +1,27 @@
 # Configure Serial Port
 
-In order to connect to a Z-Wave network you need an USB interface, preferably the [Aeotec Z-Stick Gen5](http://aeotec.com/z-wave-usb-stick), that is connected to your PC. Your PC communicates with this device via a serial port. First of all you have to determine which serial port was assigned to the Z-Wave USB Stick on the Docker host. After that your are able to configure a `docker-compose` device mapping so that the serial port is accessible within the docker container (device passthrough). Unfortunately, `Docker for Windows` and `Docker for Mac` do not support device passthrough. In this case you have to resort to the legacy [Docker Toolbox](http://docs.docker.com/toolbox) software.     
+In order to connect to a Z-Wave network you need an USB interface, preferably the [Aeotec Z-Stick Gen5](http://aeotec.com/z-wave-usb-stick), that is connected to your PC. Your PC communicates with this device via a serial port. This section describes what to do so that the OpenRemote manager software, which is a containerized (Docker) application, has device access to the serial port on the host. Unfortunately, `Docker for Windows` and `Docker for Mac` do not support device pass through. In case of a Windows or Mac computer you have to install Linux as a virtual machine by means of VirtualBox.     
 
-## Linux Serial Port 
+## Install Linux on Windows & Mac
+
+1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)      
+2. Download [Ubuntu Desktop] (https://ubuntu.com/download/desktop)
+3. Start VirtualBox and create a new virtual machine by clicking the `New` button on the top toolbar.    
+4. Make the following changes as VirtualBox guides you through a wizard:   
+   * Type: `Linux`
+   * Version: `Ubuntu (64-bit)`
+   * Memory size: Minimum `4096 MB`
+5. Click the `Start` button in the top toolbar and select the Ubuntu iso image that you've downloaded in step #2 in order to install Ubuntu
+6. After installing Ubuntu it's recommended to install 'guest additions'. Start the Ubuntu virtual machine and in the upper menu bar select the following: Devices -> Insert Guest Additions CD image... 
+7. Install [Docker Engine - Community for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+8. Install [Docker Compose](https://docs.docker.com/compose/install/)
+9. Install Git: `sudo apt install git`
+10. Shutdown the Ubuntu virtual machine and connect the Aeotec Z-Stick to the PC. In the VirtualBox Manager go to Settings -> Ports -> USB -> Port1 and add the following configuration:
+   * Activate `Enable USB Controller`
+   * Select `USB 2.0 (EHCI) Controller`
+   * Press the `Add Filter` button and select the Aeotec Z-Stick USB device (Sigma Designs, Inc.) 
+
+## Configure Docker serial port 
 
 1. Connect the Aeotec Z-Stick to the PC
 2. Run the dmesg command
@@ -32,94 +51,6 @@ manager:
     - zwave-data:/zwave
   devices:
     - /dev/ttyACM0:/dev/ttyS0
-```
- 
-## Windows Serial Port 
-
-1. Install [Docker Toolbox](http://docs.docker.com/toolbox)
-2. Open VirtualBox (start VirtualBox.exe) and select the virtual machine with the name `default` on the left side and go to Settings -> Network -> Adapter 1 -> Advanced -> Port Forwarding
-4. Add the following rules:
- 
- | Name | Protocol | Host IP | Host Port | Guest IP | Guest Port |
- | --- | --- | --- | --- | --- | --- |
- |postgresql|TCP||5432||5432|
- | keycloak | TCP |  | 8081 |  | 8081 |
- | map | TCP |  | 8082 |  | 8082 |
- | proxy http | TCP |  | 80 |  | 80 |
- | proxy https | TCP |  | 443 |  | 443 |
-
-5. Connect the Aeotec Z-Stick to the PC
-6. Start the Windows Device Manager and check which serial port was assigned to the device:
- Control Panel -> Device Manager -> Ports. The serial port name is something like COM1, COM2, COM3...  
-7. In VirtualBox go to Settings -> Ports -> Serial Ports -> Port 1
-   * Activate `Enable Serial Port`
-   * Select `Port Number`: `COM1`
-   * Select `Port Mode`: `Host Device`
-   * Edit `Path/Address` and insert the serial port name from the previous step (e.g. COM3)  
-8. Open the `docker-compose.yml` file in a text editor and add a `devices:` mapping to the `manager:` service:
-```yml
-manager:
-  restart: always
-  extends:
-    file: profile/deploy.yml
-    service: manager
-  depends_on:
-    keycloak:
-      condition: service_healthy
-  volumes:
-    - deployment-data:/deployment
-    - zwave-data:/zwave
-  devices:
-    - /dev/ttyS0:/dev/ttyS0
-```
- 
-## Mac Serial Port 
-
-1. Install [Docker Toolbox](http://docs.docker.com/toolbox)
-2. Open VirtualBox (start VirtualBox.app) and select the virtual machine with the name `default` on the left side and go to Settings -> Network -> Adapter 1 -> Advanced -> Port Forwarding
-4. Add the following rules:
- 
- | Name | Protocol | Host IP | Host Port | Guest IP | Guest Port |
- | --- | --- | --- | --- | --- | --- |
- |postgresql|TCP||5432||5432|
- | keycloak | TCP |  | 8081 |  | 8081 |
- | map | TCP |  | 8082 |  | 8082 |
- | proxy http | TCP |  | 80 |  | 80 |
- | proxy https | TCP |  | 443 |  | 443 |
-
-5. Connect the Aeotec Z-Stick to the Mac 
-6. Open the Terminal app and execute the following command to determine the serial port associated with the device:
-```
-ls -l /dev/cu.*
-```
-Output in case of Aeotec Z-Stick Gen5:
-```
-crw-rw-rw-  1 root  wheel   18,  17 Dec  6 13:45 /dev/cu.usbmodem14201
-```
-Output in case of Aeotec Z-Stick S2:
-```
-crw-rw-rw-  1 root  wheel   18,  19 Dec  6 13:51 /dev/cu.SLAB_USBtoUART 
-```
-7. In VirtualBox go to Settings -> Ports -> Serial Ports -> Port 1
-   * Activate `Enable Serial Port`
-   * Select `Port Number`: `COM1`
-   * Select `Port Mode`: `Host Device`
-   * Edit `Path/Address` and insert the serial port name from the previous step (e.g. /dev/cu.usbmodem14201)  
-8. Open the `docker-compose.yml` file in a text editor and add a `devices:` mapping to the `manager:` service:
-```yml
-manager:
-  restart: always
-  extends:
-    file: profile/deploy.yml
-    service: manager
-  depends_on:
-    keycloak:
-      condition: service_healthy
-  volumes:
-    - deployment-data:/deployment
-    - zwave-data:/zwave
-  devices:
-    - /dev/ttyS0:/dev/ttyS0
 ```
 
 # Connect a Z-Wave USB Interface
