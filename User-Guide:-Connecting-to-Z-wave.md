@@ -5,7 +5,7 @@ In order to connect to a Z-Wave network you need an USB interface, preferably th
 ## Install Linux on Windows & Mac
 
 1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)      
-2. Download [Ubuntu Desktop] (https://ubuntu.com/download/desktop)
+2. Download [Ubuntu Desktop](https://ubuntu.com/download/desktop)
 3. Start VirtualBox and create a new virtual machine by clicking the `New` button on the top toolbar.    
 4. Make the following changes as VirtualBox guides you through a wizard:   
    * Type: `Linux`
