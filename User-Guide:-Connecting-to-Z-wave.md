@@ -4,19 +4,21 @@ In order to connect to a Z-Wave network you need an USB interface, preferably th
 
 ## Install Linux on Windows & Mac
 
-1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)      
-2. Download [Ubuntu Desktop](https://ubuntu.com/download/desktop)
-3. Start VirtualBox and create a new virtual machine by clicking the `New` button on the top toolbar.    
-4. Make the following changes as VirtualBox guides you through a wizard:   
+1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 
+2. Download and install [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)     
+3. Download [Ubuntu Desktop](https://ubuntu.com/download/desktop)
+4. Start VirtualBox and create a new virtual machine by clicking the `New` button on the top toolbar.    
+5. Make the following changes as VirtualBox guides you through a wizard:   
    * Type: `Linux`
    * Version: `Ubuntu (64-bit)`
    * Memory size: Minimum `4096 MB`
-5. Click the `Start` button in the top toolbar and select the Ubuntu iso image that you've downloaded in step #2 in order to install Ubuntu
-6. After installing Ubuntu it's recommended to install 'guest additions'. Start the Ubuntu virtual machine and in the upper menu bar select the following: Devices -> Insert Guest Additions CD image... 
-7. Install [Docker Engine - Community for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-8. Install [Docker Compose](https://docs.docker.com/compose/install/)
-9. Install Git: `sudo apt install git`
-10. Shutdown the Ubuntu virtual machine and connect the Aeotec Z-Stick to the PC. In the VirtualBox Manager go to Settings -> Ports -> USB -> Port1 and add the following configuration:
+   * Virtual hard disk size: Minimum `20 GB`
+6. Click the `Start` button in the top toolbar and select the Ubuntu iso image that you've downloaded in step #2 in order to install Ubuntu
+7. After installing Ubuntu it's recommended to install 'guest additions'. Start the Ubuntu virtual machine and in the upper menu bar select the following: Devices -> Insert Guest Additions CD image... 
+8. Install [Docker Engine](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+9. Install [Docker Compose](https://docs.docker.com/compose/install/)
+10. Install Git: `sudo apt install git`
+11. Shutdown the Ubuntu virtual machine and connect the Aeotec Z-Stick to the PC. In the VirtualBox Manager go to Settings -> Ports -> USB -> Port1 and add the following configuration:
     * Activate `Enable USB Controller`
     * Select `USB 2.0 (EHCI) Controller`
     * Press the `Add Filter` button and select the Aeotec Z-Stick USB device (Sigma Designs, Inc.) 
