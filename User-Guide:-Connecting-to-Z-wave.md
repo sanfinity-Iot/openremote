@@ -13,7 +13,7 @@ In order to connect to a Z-Wave network you need an USB interface, preferably th
    * Version: `Ubuntu (64-bit)`
    * Memory size: Minimum `4096 MB`
    * Virtual hard disk size: Minimum `20 GB`
-6. Click the `Start` button in the top toolbar and select the Ubuntu iso image that you've downloaded in step #2 in order to install Ubuntu
+6. Click the `Start` button in the top toolbar and select the Ubuntu iso image that you've downloaded in step #3 in order to install Ubuntu
 7. After installing Ubuntu it's recommended to install 'guest additions'. Start the Ubuntu virtual machine and in the upper menu bar select the following: Devices -> Insert Guest Additions CD image... 
 8. Install [Docker Engine](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 9. Install [Docker Compose](https://docs.docker.com/compose/install/)
