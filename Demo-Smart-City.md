@@ -15,13 +15,19 @@ The application for the Technical Manager requires you to set up the demo enviro
 
 Application for Technical Manager: https://localhost (Username: admin, Password: secret)
 
-If you open the Application for the Technical Manager, have a look at Smart City - Smart City. It includes a Service Agent (Simulator) and three Area's (1, 2, 3). If you use the 'Assets' view and select one of the Area's, you will notice that you see several devices (Camera, Microphone, Environment, Light). The Service Agent (Simulator) can be used to change the simulated sensor values for Area 1, an additionally trigger some Alerts. 
+If you open the Application for the Technical Manager, have a look at Smart City - Smart City. It includes a Service Agent (Simulator) and three Area's (1, 2, 3). If you use the 'Assets' view and select one of the Area's, you will notice that you see several devices (People Counter, Microphone, Environment, Light). The Service Agent (Simulator) can be used to change the simulated sensor values for Area 1, an additionally trigger some Alerts. 
 
-We'll describe the set-up of all the devices (Assets) and the sensor and control parameters (attributes). We have organised them along a couple of application domains and have given a few examples of how a new application can be build by combining several attributes. In addition rules examples are given which can be used to automate your controls or generate alerts. 
+We'll describe the set-up of all the devices (Assets) and the sensor and control parameters (attributes). We have organised them along a couple of application domains and have given a few examples of how a new application can be build by combining several attributes (Figure 1). In addition rules examples are given which can be used to automate your controls or generate alerts. 
+
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Smart%20City%20Environment%20Asset.png)
+_Figure 1. The Asset view for the Smart City Realm, showing the attributes in for the Environment Asset in Area 1_
 
 ## Service Agent (simulator)
 
-Before you read on, the service agent, can be used to simulate some values to the sensors (as you haven't connected real sensors yet). To do that select the attribute 'citySimulator' and open it up via the arrow on the right. Type in values and don't forget to press the 'Write simulator state' button.
+Before you read on, the service agent, can be used to simulate some values to the sensors (as you haven't connected real sensors yet, see figure 2). To do that select the attribute 'citySimulator' and open it up via the arrow on the right. Type in values and don't forget to press the 'Write simulator state' button.
+
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Simulator.png)
+_Figure 2. The Service Agent (Simulator) for the Smart City Realm, showing the attributes you can write to to simulate some of the sensor values_
 
 ## Crowd management
 
