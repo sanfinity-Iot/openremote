@@ -39,7 +39,7 @@ To view an example application we have added the Demo Smart City https://localho
 
 If you just want to see how it looks before actually installing OpenRemote, see the [online Demo Smart City](https://demo.openremote.io/main/?realm=smartcity) using the credentials (smartCity / smartCity).
 
-If you open the application on desktop you will get three main views: Map, Assets, and Rules. On mobile you will only see Map, and Assets.
+If you open the application on desktop you will get three main views: Map (Figure 3), Assets (Figure 4), and Rules (Figure 5). On mobile you will only see Map, and Assets.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Map.png)
 _Figure 3. The Map view of the Demo Smart City, showing the map with different attributes across the City_
@@ -53,7 +53,7 @@ _Figure 4. The Asset view of the Demo Smart City, showing the environment sensor
 
 ## Rules
 
-The Rules view (only visible in the desktop version) allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute. This rules UI is translated into a Rules Object Model (one of the four rule types) in the Technical Manager. 
+The Rules view (only visible in the desktop version, see figure 5) allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute. This rules UI is translated into a Rules Object Model (one of the four rule types) in the Technical Manager. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Assets.png)
 _Figure 5. The Rules view of the Demo Smart City, showing showing an example which turns on a light and send an e-mail when the Ozone levels are increasing_
