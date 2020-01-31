@@ -20,7 +20,7 @@ In order to connect to a Z-Wave network you need an USB interface, preferably th
 10. Install Git: `sudo apt install git`
 11. Shutdown the Ubuntu virtual machine and connect the Aeotec Z-Stick to the PC. In the VirtualBox Manager go to Settings -> Ports -> USB -> Port1 and add the following configuration:
     * Activate `Enable USB Controller`
-    * Select `USB 2.0 (EHCI) Controller`
+    * Select `USB 3.0 (xHCI) Controller`
     * Press the `Add Filter` button and select the Aeotec Z-Stick USB device (Sigma Designs, Inc.) 
 
 ## Configure Docker serial port 
