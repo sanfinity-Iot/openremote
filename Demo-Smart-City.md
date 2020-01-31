@@ -55,7 +55,7 @@ _Figure 4. The Asset view of the Demo Smart City, showing the environment sensor
 
 The Rules view (only visible in the desktop version, see figure 5) allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute. This rules UI is translated into a Rules Object Model (one of the four rule types) in the Technical Manager. 
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Assets.png)
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Rules.png)
 _Figure 5. The Rules view of the Demo Smart City, showing showing an example which turns on a light and send an e-mail when the Ozone levels are increasing_
 
 ## Health status and maintenance
