@@ -15,88 +15,21 @@ The application for the Technical Manager requires you to set up the demo enviro
 
 Application for Technical Manager: https://localhost (Username: admin, Password: secret)
 
-If you open the Application for the Technical Manager, have a look at Smart City - Smart City. It includes a Service Agent (Simulator) and three Area's (1, 2, 3). If you use the 'Assets' view and select one of the Area's, you will notice that you see several devices (People Counter, Microphone, Environment, Light). The Service Agent (Simulator) can be used to change the simulated sensor values for Area 1, an additionally trigger some Alerts. 
-
-We'll describe the set-up of all the devices (Assets) and the sensor and control parameters (attributes). We have organised them along a couple of application domains and have given a few examples of how a new application can be build by combining several attributes (Figure 1). In addition rules examples are given which can be used to automate your controls or generate alerts. 
+If you open the Application for the Technical Manager, you will see three Realms on the left: Master, Smart Building, and Smart City (Figure 1). The [Demo Smart City](#demo-smart-city) refers to the Realm: Smart City. It includes three area with different assets (lights, environment sensors, microphones and sound alerts, people counter) each with different attributes. If you use the 'Assets' view in the Technical Manager, you will notice that you see exactly the same attributes as visible in the [Demo Smart City](#demo-smart-city). The Service Agent (Simulator) in Smart City can be used to change the simulated sensor values for the different areas. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Smart%20City%20Environment%20Asset.png)
 _Figure 1. The Asset view for the Smart City Realm, showing the attributes in for the Environment Asset in Area 1_
 
+## Areas, assets and attributes
+
+As you navigate through the 'Assets' view (Figure 1) you will notice that each area contains several assets and attributes. There are environmental sensors, microphones, and people counters, and there is lighting control. For those attributes you can control (eg. a light), you can change values and save it by pressing the 'Write' button. For adding sensor values you can use the simulator. If you added the weatherAPI, following the [example for connecting your data](User-Guide%3A-Connecting-to-a-HTTP-API) you also see an attribute 'outsideTemp' with the current outdoor temperature, as part of the Smart City Asset.
+
 ## Service Agent (simulator)
 
-Before you read on, the service agent, can be used to simulate some values to the sensors (as you haven't connected real sensors yet, see figure 2). To do that select the attribute 'citySimulator' and open it up via the arrow on the right. Type in values and don't forget to press the 'Write simulator state' button.
+Before you read on, the service agent, can be used to simulate some values to the sensors (as you haven't connected real sensors yet, see figure 2). To do that select the 'Service Agent (Simulator)' and open it up via the arrow on the right. Type in values and don't forget to press the 'Write simulator state' button.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Simulator.png)
 _Figure 2. The Service Agent (Simulator) for the Smart City Realm, showing the attributes you can write to to simulate some of the sensor values_
-
-## Crowd management
-
-### Integration of camera
-
-* Describe required attributes
-* Rules: Alerts total crowd, and crowd growth
-
-### Integration of sound
-
-* Describe required attributes
-* Rules: Alert sound level, sound type
-
-### A new application
-
-* Alerts based on a combination crowd, crowd changes, or sounds
-* Notifications or light
-
-## Environment
-
-### Integration of air quality sensors
-
-* Describe required attributes
-* Rules: Alerts on Ozon
-
-### A new application
-
-* Alerts on combining crowd, environment and notifications
-
-## Lighting
-
-### Integration of a lighting solution
-
-* Describe required attributes
-* Rules:
-
-### A new application
-
-* Lighting based on pollution, sound, or crowd conditions
-
-## Traffic management
-
-### Integration of traffic
-
-* Describe required attributes
-* Rules:
-
-### Integration of traffic lights
-
-* Describe required attributes
-
-### A new application
-
-* Optimise traffic flows
-
-## Health status and maintenance
-
-## Publishing live data
-
-### Make your City smart
-
-* Integrate UI components in your existing City website
-* Use rules for actions or notifications
-
-### Enabling third party applications 
-
-* Make assets public- or restricted and expose the APIs
-
-## More functionality outside the scope of a simple demo
 
 Next to the described example you will see that the Technical Manager, includes a Map view, Rules view, and Notification view. In addition you see a System view with Logging and the option to create and manage users. We refer to the [Wiki Documentation](https://github.com/openremote/openremote/wiki) if you want to know more about the available functionality (visible and invisible).
 
@@ -108,17 +41,35 @@ If you just want to see how it looks before actually installing OpenRemote, see 
 
 If you open the application on desktop you will get three main views: Map, Assets, and Rules. On mobile you will only see Map, and Assets.
 
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Map.png)
+_Figure 3. The Map view of the Demo Smart City, showing the map with different attributes across the City_
+
 ## Map and Assets
 
 Both the Map and Asset view give you access to the respective Assets and related attributes. You can see and control them, but also have the option to look at the historical data via graphs or event lists.
+
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Assets.png)
+_Figure 4. The Asset view of the Demo Smart City, showing the environment sensor with the different attributes_
 
 ## Rules
 
 The Rules view (only visible in the desktop version) allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute. This rules UI is translated into a Rules Object Model (one of the four rule types) in the Technical Manager. 
 
-The Rules view is not fully functional yet in the demo, we apologise for that. However, it's work in progress we don't want to withhold, and get your feedback.
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Assets.png)
+_Figure 5. The Rules view of the Demo Smart City, showing showing an example which turns on a light and send an e-mail when the Ozone levels are increasing_
+
+## Health status and maintenance
+
+For monitoring of your system a health check is included.
+
+## Publishing live data
+
+To expose information from the platform we have several options: using UI components or bundled webpackages, set alerts and notifications using the rules, or using the public- or restricted APIs.
+
+See the documentation on our wiki for more details.
 
 # See Also
 - [Demo Smart Building](Demo-Smart-Building)
 - [Next 'Get Started' step: Working on the UI](Developer-Guide%3A-Working-on-the-UI)
 - [Get Started](https://openremote.io/get-started-manager/)
+- [OpenRemote Wiki](https://github.com/openremote/openremote/wiki)
