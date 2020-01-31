@@ -12,11 +12,14 @@ Application for Technical Manager: https://localhost (Username: admin, Password:
 
 Application for Demo Smart Building: https://localhost/main/?realm=building/ (Username: building, Password: building)
 
-If you open the Application for the Technical Manager, you will see three Realms on the left: Master, Smart Building, and Smart City. The Demo Smart Building refers to the Realm: Smart Building. It includes three apartments with rooms and different attributes. If you use the 'Assets' view in the Technical Manager, you will notice that you see exactly the same attributes as visible in the Demo Smart Building. The Service Agent (Simulator) in Apartment 1 can be used to change the simulated sensor values for Apartment 1. 
+If you open the Application for the Technical Manager, you will see three Realms on the left: Master, Smart Building, and Smart City. The [Demo Smart Building](#demo-smart-building) refers to the Realm: Smart Building. It includes three apartments with rooms and different attributes. If you use the 'Assets' view in the Technical Manager, you will notice that you see exactly the same attributes as visible in the [Demo Smart Building](#demo-smart-building). The Service Agent (Simulator) in Apartment 1 can be used to change the simulated sensor values for Apartment 1. 
 
 ## Apartments, rooms and attributes
 
-As you navigate through the 'Assets' view you will notice that each apartment and room contains several attributes. There are lights, climate sensors, motion and presence sensors, and a thermostat control. For those attributes you can control (eg. a light), you can type in values and save it by pressing the 'Write' button. For adding sensor values you can use the simulator. If you added the weatherAPI, following the [example for connecting your data](User-Guide%3A-Connecting-to-a-HTTP-API) you also see an attribute 'outsideTemp' with the current outdoor temperature, as part of the Smart Building Asset.
+As you navigate through the 'Assets' view (Figure 1) you will notice that each apartment and room contains several attributes. There are lights, climate sensors, motion and presence sensors, and a thermostat control. For those attributes you can control (eg. a light), you can type in values and save it by pressing the 'Write' button. For adding sensor values you can use the simulator. If you added the weatherAPI, following the [example for connecting your data](User-Guide%3A-Connecting-to-a-HTTP-API) you also see an attribute 'outsideTemp' with the current outdoor temperature, as part of the Smart Building Asset.
+
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Building%20Asset.png)
+_Figure 1. The Asset view for the Smart Building Realm, showing the attributes in for the Living room in apartment 1_
 
 ## Service Agent (simulator)
 
@@ -40,15 +43,24 @@ If you open the application on desktop you will get three main views: Map, Asset
 
 ## Map and Assets
 
-Both the Map and Asset view give you access to the respective Assets and related attributes. You can see and control them, but also have the option to look at the historical data via graphs or event lists.
+Both the Map and Asset view (figure 2 and 3) give you access to the respective Assets and related attributes. You can see and control them, but also have the option to look at the historical data via graphs or event lists.
 
 If you have added the weatherAPI, following the [example for connecting your data](User-Guide%3A-Connecting-to-a-HTTP-API) you also see an attribute 'outsideTemp' with the current outdoor temperature, as part of the Smart Building Asset.
 
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Building%20-%20Map.png)
+_Figure 2. The Map view for the Smart Building, showing the assets for the 3 different apartments_
+
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Building%20-%20Asset.png)
+_Figure 3. The Asset view for the Living room in apartment 1, showing the different attributes_
+
 ## Rules
 
-The Rules view (only visible in the desktop version) allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute. This rules UI is translated into a Rules Object Model (one of the four rule types) in the Technical Manager. 
+The Rules view (only visible in the desktop version, see figure 4) allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute. This rules UI is translated into a Rules Object Model (one of the four rule types) in the Technical Manager. 
 
 The Rules view is not fully functional yet in the demo, we apologise for that. However, it's work in progress we don't want to withhold, and get your feedback.
+
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Building%20-%20Rules.png)
+_Figure 4. The Rules view with an example "Turn the heating in the bathroom to 23 when the lighting is switched on"._
 
 # See Also
 - [Demo Smart City](Demo-Smart-City)
