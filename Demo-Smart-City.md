@@ -35,9 +35,9 @@ Next to the described example you will see that the Technical Manager, includes 
 
 # Demo Smart City
 
-To view an example application we have added the Demo Smart City https://localhost/main/?realm=smartcity/ (Username: smartCity, Password: smartCity), which gives control over all areas. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)).
+To view an example application we have added the Demo Smart City https://localhost/main/?realm=smartcity/ (Username: smartCity, Password: smartCity), which gives control over all areas. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)) and supports 5 languages.
 
-If you just want to see how it looks before actually installing OpenRemote, see the [online Demo Smart City](https://demo.openremote.io/main/?realm=smartcity) using the credentials (smartCity / smartCity).
+If you just want to see how it looks before actually installing OpenRemote, see the [online Demo Smart City](https://demo.openremote.io/main/?realm=smartcity) using the credentials (smartCity / smartCity) and select your preferred language at the top right.
 
 If you open the application on desktop you will get three main views: Map (Figure 3), Assets (Figure 4), and Rules (Figure 5). On mobile you will only see Map, and Assets.
 
