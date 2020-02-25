@@ -247,11 +247,11 @@ task installDist(type: Copy) {
 ```
 6. Create deployment `Dockerfile` with the following content:
 ```
-# Default deployment when deployment-data volume is empty
+# Default deployment when manager-data volume is empty
 FROM debian:stretch
-ADD manager /deployment/manager
-ADD keycloak /deployment/keycloak
-ADD map /deployment/map
+
+RUN mkdir -p /deployment/extensions
+ADD build /deployment
 ```
 7. Create deployment `.dockerignore` file with the following content:
 ```
