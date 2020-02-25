@@ -256,8 +256,8 @@ ADD build /deployment
 7. Create deployment `.dockerignore` file with the following content:
 ```
 # Uncomment below if map is too large and should be deployed with direct file copying
-#map/mapdata.mbtiles
-manager/openremote.log*
+#build/map/mapdata.mbtiles
+build/manager/openremote.log*
 ```
 
 ## Creating custom  UI apps, components and Keycloak themes
