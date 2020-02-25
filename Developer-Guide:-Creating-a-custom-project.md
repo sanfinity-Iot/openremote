@@ -50,6 +50,7 @@ Also prevent committing build/runtime files that may be generated inside your pr
 .classpath
 .project
 .settings
+.vscode
 
 build/
 bin/
