@@ -110,6 +110,13 @@ Note that before you are able to execute this procedure you have to execute the 
 3. Activate the `Device Exclusion` checkbox and click `Write`   
 4. Put the Z-Wave device into exclusion mode (see device manual)
 
+# Configure Z-Wave device parameters
+
+1. Select the Z-Wave device in the asset list on the left side and and expand it so that you see the `Parameters` group 
+2. Expand the `Parameters` group
+3. Select the Z-Wave parameter on the left side 
+4. Edit the selected Z-Wave parameter on the right side. To get information about the selected Z-Wave parameter read the text in the `Description` attribute on the right side. The attribute with the disabled `Write` button shows the current Z-Wave parameter value. All other attributes with an enabled `Write` button are used to modify the Z-Wave parameter value. In case of a battery powered device you have to wakeup the device (see device manual) so that the configured parameter value can be sent to the device.
+
 # See also
 
 - [[Use UI components|User-Guide:-UI components]]
