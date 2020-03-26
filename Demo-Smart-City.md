@@ -11,9 +11,11 @@ For convenience you can have a look at the online version of the [online Demo Sm
 
 # Application for Technical Manager
 
-The application for the Technical Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for Technical Manager via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
+The application for the Technical Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for Technical Manager and the Smart City Demo via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
 
 Application for Technical Manager: https://localhost:8080 (Username: admin, Password: secret)
+
+Application for Demo Smart City: https://localhost:8080/main/?realm=smartcity/ (Username: smartCity, Password: smartCity)
 
 If you open the Application for the Technical Manager, you will see three Realms on the left: Master, Smart Building, and Smart City (Figure 1). The [Demo Smart City](#demo-smart-city) refers to the Realm: Smart City. It includes three area with different assets (lights, environment sensors, microphones and sound alerts, people counter) each with different attributes. If you use the 'Assets' view in the Technical Manager, you will notice that you see exactly the same attributes as visible in the [Demo Smart City](#demo-smart-city). The Service Agent (Simulator) in Smart City can be used to change the simulated sensor values for the different areas. 
 
