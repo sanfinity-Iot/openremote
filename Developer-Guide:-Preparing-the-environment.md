@@ -6,13 +6,20 @@ Ensure you have installed and configured the following tools:
 To run docker images from Docker Hub you need to install the following tooling:
 * Docker see [here](https://github.com/openremote/openremote/wiki/Developer-Guide:-Installing-and-using-Docker#local-engine)
 
+If you want to manager remote docker engines then you will also need to install `docker-machine` separately (since docker 2.2.x):
+
+* [Docker machine](https://docs.docker.com/machine/install-machine/)
+
 Ensure the following commands execute successfully:
 
 ```
 docker ps
 docker-compose version
-docker-machine ls
 ```
+
+If you installed docker machine  then make sure the following command executes successfully:
+
+`docker-machine ls`
 
 # Development tooling
 For development you need the following in addtion to the runtime tooling:
