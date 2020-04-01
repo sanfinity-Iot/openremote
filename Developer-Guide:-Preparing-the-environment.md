@@ -19,7 +19,7 @@ docker-compose version
 
 If you installed docker machine  then make sure the following command executes successfully:
 
-`docker-machine ls`
+`docker-machine version`
 
 # Development tooling
 For development you need the following in addtion to the runtime tooling:
