@@ -31,13 +31,27 @@ This is for demo for running the full stack on a Raspberry Pi; it doesn't use th
 This is for doing development work on the UI (i.e. Front end apps and/or components and/or Keycloak themes).
 
 ### Prerequisites
-Docker images must have been pulled from Docker Hub or the full stack must be built ready to build the docker images locally:
+Docker images must have been pulled from Docker Hub:
+```
+docker-compose -f profile/dev.yml pull
+```
+
+Or the docker images must have been built locally (requires the full stack be built):
+
 ```
 ./gradlew clean installDist
+docker-compose -f profile/dev.yml build
+```
+
+To start the containers:
+
+```
+docker-compose -f profile/dev.yml up -d
 ```
 
 ### Exposed Services
-* Manager: https://localhost
+* Manager: http://localhost:8080
+* Keycloak: http://localhost:8081
 * PostgreSQL DB: jdbc:postgresql://localhost:5432/openremote
 
 ### Volume Maps
