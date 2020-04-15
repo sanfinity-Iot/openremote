@@ -79,4 +79,12 @@ The imported file must suffix with a ".json" file extension.
 The filename doesn't matter to the import and will accept as long as the contents are correctly formatted.
 
 ## Import behaviour
-T.B.D.
+Lights aren't blindly appended to the asset tree upon import.  
+Light assets are actually synced to the import JSON.  
+This means that:
+* New assets are added to the asset tree.
+* Existing assets are updated in the asset tree.
+* Deleted assets are removed from the asset tree.
+
+To elaborate:  
+The structure of the import JSON will directly be translated to the structure of the asset tree within the OpenRemote Manager.
