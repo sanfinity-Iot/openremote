@@ -55,7 +55,13 @@ this example defines two unique lights:
 ```
 
 Light definitions can be added to the JSON file by adding new ones in the "lights" array.
-Importing the above file, will result in the Manager adding two unique ArtNet lights to the asset tree.
+Importing the above file, will result in the Manager adding two unique ArtNet lights to the asset tree. Each of the above mentioned lights have certain properties which are necessary for creating the assets and controlling the lights:
+
+    lightId: A unique identifier for the lights. These lights are controlled in ascending order of id per universe.
+    groupId: A identifier to sort lights under a group to control multiple lights at once. Default = 0.
+    universe: The universe id in which the fixture is configured.
+    amountOfLeds: The amount of leds which need to be controlled per fixture (eventually this is needed to determine how often to send the packet to each light fixture). 
+    requiredValues: Contains all the required values which are needed to control the fixture.
 
 **NOTE: All stated properties are expected while importing. The "lightId" attribute must be unique to each specified light.**
 
