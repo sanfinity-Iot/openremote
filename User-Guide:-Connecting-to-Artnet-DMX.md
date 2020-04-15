@@ -26,7 +26,6 @@ You now have a basic ArtnetClientProtocol ready to be linked to by asset attribu
 **NOTE: The protocol configuration status will show as `CONNECTED` even if the server is not actually reachable. This is due to the fact that `UDP` has no notion of a connection.**
 
 # Adding light assets
-***
 Light assets are conventially added through use of OpenRemote's Import feature.
 This feature is available in the ArtNet Agent asset.
 While importing, a specific file is expected.
@@ -41,15 +40,15 @@ this example defines two unique lights:
 			"lightId": 0,
 			"groupId": 0,
 			"universe": 0,
-			"amountOfLeds": 3,
+			"amountOfLeds": 6,
 			"requiredValues": "r,g,b"
 		},
 		{
 			"lightId": 1,
 			"groupId": 0,
-			"universe": 1,
-			"amountOfLeds": 6,
-			"requiredValues": "g,r,g,b,w"
+			"universe": 0,
+			"amountOfLeds": 3,
+			"requiredValues": "r,g,b,w,a"
 		}
 	]
 }
@@ -60,7 +59,7 @@ Importing the above file, will result in the Manager adding two unique ArtNet li
 
 **NOTE: All stated properties are expected while importing. The "lightId" attribute must be unique to each specified light.**
 
-## How to import light assets
+## Importing light assets
 **NOTE: This step-by-step guide requires the use of the OpenRemote Manager.**
 
 To import light assets, a ArtNet Agent must have been added to the asset tree.  
