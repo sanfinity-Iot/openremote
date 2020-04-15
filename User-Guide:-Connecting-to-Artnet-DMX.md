@@ -61,7 +61,6 @@ Importing the above file, will result in the Manager adding two unique ArtNet li
 **NOTE: All stated properties are expected while importing. The "lightId" attribute must be unique to each specified light.**
 
 ## Importing the light JSON
-***
 **NOTE: This step-by-step guide requires the use of the OpenRemote Manager.**
 
 To import light assets, a ArtNet Agent must have been added to the asset tree.  
@@ -75,5 +74,4 @@ The imported file must suffix with a ".json" file extension.
 The filename doesn't matter to the import and will accept as long as the contents are correctly formatted.
 
 ## Import behaviour
-***
-T.B.D
+T.B.D.
