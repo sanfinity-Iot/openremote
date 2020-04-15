@@ -84,7 +84,7 @@ Light assets are actually synced to the import JSON.
 This means that:
 * New assets are added to the asset tree.
 * Existing assets are updated in the asset tree.
-* Deleted assets are removed from the asset tree.
+* Missing assets are removed from the asset tree.
 
 To elaborate:  
 The structure of the import JSON will directly be translated to the structure of the asset tree within the OpenRemote Manager.
