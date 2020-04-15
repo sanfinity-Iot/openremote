@@ -17,6 +17,13 @@ The following examples assume that the DMX controller is bound to the loopback a
     * `Artnet server hostname/IP`: `127.0.0.1`
     * `Artnet server port`: `6454`
 
+**Make sure you click `Add Item` when creating new attribute configuration items.**
+
+7. Click `Save asset` at the bottom of the screen.
+
+You now have a basic ArtnetClientProtocol ready to be linked to by asset attributes; the defaults assume that the DMX controller receives a ByteBuf (Byte array). 
+
+**NOTE: The protocol configuration status will show as `CONNECTED` even if the server is not actually reachable. This is due to the fact that `UDP` has no notion of a connection.**
+
 # Adding Light assets to the Artnet connection
 ***
-
