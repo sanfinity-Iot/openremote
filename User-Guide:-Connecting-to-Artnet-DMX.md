@@ -1,7 +1,6 @@
 The example below describes interactively linking asset attributes to Artnet Servers using the [ArtnetClientProtocol](https://github.com/openremote/openremote/blob/master/agent/src/main/java/org/openremote/agent/protocol/dmx/artnet/ArtnetClientProtocol.java). The following examples assume that you are running the [Demo docker compose profile](https://github.com/openremote/openremote/wiki/Developer-Guide:-Docker-compose-profiles#demo-docker-composeyml).
 
 # Setup the basic Artnet connection
-***
 The following examples assume that the DMX controller is bound to the loopback address `127.0.0.1` on port `6454`:
 1. Login to the manager UI (`https://localhost/master` `admin/secret`).
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left.
