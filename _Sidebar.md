@@ -19,7 +19,7 @@
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
 * [[Docker swarm mode|https://github.com/openremote/openremote/blob/master/swarm/README.md]]
-* [[MQTT Connections|How to connect with MQTT]]
+* [[MQTT Connections|How to work with MQTT]]
 
 ## Protocol Agents
 
