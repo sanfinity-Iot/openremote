@@ -37,7 +37,7 @@
 * [[Connect Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
 * [[Connect UPnP|User-Guide:-Connecting-to-UPnP]]
 * [[Connect Z-wave|User-Guide:-Connecting-to-Z-wave]]
-* [[How to work with MQTT|How-to-work-with-MQTT]]
+* [[Connect via MQTT|How-to-work-with-MQTT]]
 * [[Generic protocols|User Guide: Generic protocols]]
 
 ## Assets & Attributes
