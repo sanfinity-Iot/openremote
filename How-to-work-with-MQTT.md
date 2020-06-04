@@ -32,19 +32,35 @@ Topic:
 assets/<assetId>
 ```
 
-This will return changes in JSON format:
+or subscribe on one attribute:
+```
+Topic:
+assets/<assetId>/<attributeName>
+```
+This will return `AttributeEvents` in JSON format:
 ```
 {
-    "humidity": 0.75
+  "eventType" : "attribute",
+  "timestamp" : 1591265208179,
+  "attributeState" : {
+    "attributeRef" : {
+      "entityId" : "3SJDo13zQjtqvJGC1sOsEt",
+      "attributeName" : "humidity"
+    },
+    "value" : 0.75,
+    "deleted" : false
+  },
+  "realm" : "building",
+  "parentId" : "2YS9PgtLmfI2ZMk85sryMD"
 }
 ```
 
-### Subscribe on Asset Attribute
+### Subscribe on Asset Attribute Value
 
 When you just want to receive raw values of an certain asset attribute, you subscribe like this:
 ```
 Topic:
-assets/<assetId>/<attributeName>
+assets/<assetId>/<attributeName>/value
 ```
 Which will return values raw values (when subscribed to `humidity`):
 ```
@@ -67,5 +83,13 @@ Or on an asset attribute:
 ```
 Topic:
 assets/<assetId>/<attributeName>
+0.65
+```
+
+or:
+
+```
+Topic:
+assets/<assetId>/<attributeName>/value
 0.65
 ```
