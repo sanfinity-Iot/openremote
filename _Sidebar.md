@@ -54,6 +54,10 @@
 * [[Security OAuth|User-Guide:-Using OAuth]]
 * [[Linking to Active Directory|Connecting-Keycloak-to-AD-with-LDAP-configuration]]
 
+## Edge Gateways
+
+* [[Provisioning and Connecting|User-Guide:-Edge Gateway]]
+
 ## Application Consoles
 
 * [[Demo Smart Building|Demo-Smart-Building]]
