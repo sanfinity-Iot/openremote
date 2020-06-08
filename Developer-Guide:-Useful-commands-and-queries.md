@@ -82,6 +82,12 @@ ORDER BY timestamp DESC
 Drop temp table:
 `DROP TABLE DATATEMP CASCADE;`
 
+## Selfsigned SSL
+To add the OpenRemote selfsigned certificate to the default java keystore `cacerts`:
+
+1. Convert to `p12`: `openssl pkcs12 -export -in proxy/selfsigned/localhost.pem -out or_selfsigned.p12` (use default password `changeit`
+2. Import into default java keystore: `openssl pkcs12 -export -in openremote/proxy/selfsigned/localhost.pem -out or_selfsigned.p12` (Windows will need to execute this in Command Prompt with Admin permissions)
+
 ## Consoles
 
 ### Remove consoles that haven't registered for more than N days
