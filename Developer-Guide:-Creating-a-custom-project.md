@@ -262,7 +262,7 @@ build/manager/openremote.log*
 ```
 
 ## Creating custom  UI apps, components and Keycloak themes
-All frontend related code should be within a `ui` directory, copy the same directory layout as found in the `openremote` submodule and copy the following files:
+All frontend related code should be within a `ui` directory, copy the same directory layout as found in the `openremote` submodule and copy the following files to the same location in the custom project:
 
 ```
 ui/.gitignore
@@ -292,6 +292,46 @@ Then create `tslint.json` in the `ui` dir with the following content:
 {
   "extends": "../openremote/ui/tslint.json"
 }
+```
+
+If custom keycloak themes are required then you need to create `dev-testing.yml` in the `profile` dir with the following content:
+
+```yml
+#
+# Profile for doing IDE development work and running build tests.
+#
+# Run this in the background for full ./gradlew clean build
+#
+version: '2.4'
+
+volumes:
+  postgresql-data:
+
+services:
+
+  keycloak:
+    extends:
+      file: ../openremote/profile/deploy.yml
+      service: keycloak
+    volumes:
+      - ../openremote/ui/keycloak/themes:/deployment/keycloak/themes
+      - ../ui/keycloak/themes:/deployment/keycloak/customthemes
+    # Access directly if needed on localhost
+    ports:
+      - "8081:8080"
+    depends_on:
+      postgresql:
+        condition: service_healthy
+
+  postgresql:
+    extends:
+      file: ../openremote/profile/deploy.yml
+      service: postgresql
+    # Access directly if needed on localhost
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
 ```
 
 Custom apps, components and keycloak themes can then be created as required for the project (see [working on the UI](./Developer-Guide%3A-Working-on-the-UI))
