@@ -12,7 +12,7 @@ In the following example, you link your existing IKEA TRÅDFRI Gateway by using 
 4. Click `Create asset` at bottom of screen and then click `Edit asset` in the top right
 5. Click `Edit asset` and add a new attribute:
    * Name: `Gateway`
-   * Type: `TRÅDFRI`
+   * Type: `IKEA TRÅDFRI`
 6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows: 
    * Gateway host: `192.163.1.2`
    * Gateway security code: Fill in the security code of the IKEA TRÅDFRI Gateway (This can be found on the bottom of the gateway)
