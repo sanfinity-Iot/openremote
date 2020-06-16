@@ -1,6 +1,6 @@
 # Install Docker
 
-In order to connect to a Z-Wave network you need an USB interface, preferably the [Aeotec Z-Stick Gen5](http://aeotec.com/z-wave-usb-stick), that is connected to your PC. Your PC communicates with this device via a serial port. This section describes what to do so that the OpenRemote manager software, which is a containerized (Docker) application, has device access to the serial port on the host. Unfortunately, `Docker for Windows` and `Docker for Mac` do not support device pass through. In case of a Windows or Mac computer you have to install Linux as a virtual machine by means of VirtualBox.     
+In order to connect to a Z-Wave network you need an USB interface, preferably the [Aeotec Z-Stick Gen5](http://aeotec.com/z-wave-usb-stick), that is connected to your PC. Your PC communicates with this device via a serial port. This section describes what to do so that the OpenRemote manager software, which is a containerized (Docker) application, has device access to the serial port on the host. Unfortunately, `Docker for Windows` and `Docker for Mac` do not support device pass through. In case of a Windows or Mac computer you have to install Linux as a virtual machine by means of VirtualBox. There are two options to do this.     
 
 ## Windows - Option 1 (Docker Toolbox) 
 
