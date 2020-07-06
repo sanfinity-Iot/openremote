@@ -25,7 +25,8 @@ _Figure 2. The Asset view of the Demo Smart City, showing the environment sensor
 ## Rules
 
 The Rules view (only visible in the desktop version, see figure 3) allows you to build two types of rules:
-* WHEN-THEN: allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute. * FLOW: allows for processing attributes and converting them into new attributes 
+* WHEN-THEN: allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute.
+* FLOW: allows for processing attributes and converting them into new attributes. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20WHEN-THEN_2.png)
 _Figure 3. The Rules view of the Demo Smart City, showing showing an example which turns on a light and send an e-mail when the Ozone levels are increasing_
