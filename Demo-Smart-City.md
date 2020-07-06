@@ -6,7 +6,7 @@ The demo illustrates how the integration of several vertical solutions in a cent
 
 There are actually two realms which are part of the demo, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-manager/)): the 'smartcity' realm and the 'master' realm for system manager (for configuration the project and remote management of multiple realms). 
 
-# Demo Smart City ('smartcity')
+# Demo Smart City
 
 To view a few example applications we have added the Smart City realm to the project https://localhost/main/?realm=smartcity/ (Username: smartCity, Password: smartCity), which gives control over all areas. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)).
 
@@ -14,14 +14,14 @@ If you just want to see how it looks before actually installing OpenRemote, see 
 
 If you open the application on desktop you will get four main views: Map (Figure 1), Assets (Figure 2), Rules (Figure 3), and Insights. On mobile you will only see Map, and Assets.
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Map.png)
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Map.png)
 _Figure 1. The Map view of the Demo Smart City, showing the map with different attributes across the City_
 
 ## Map and Assets
 
 Both the Map and Asset view give you access to the respective Assets and related attributes. You can see and control them, but also have the option to look at the historical data via graphs or event lists.
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Assets.png)
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Assets.png)
 _Figure 2. The Asset view of the Demo Smart City, showing the environment sensor with the different attributes_
 
 ## Rules
@@ -29,7 +29,7 @@ _Figure 2. The Asset view of the Demo Smart City, showing the environment sensor
 The Rules view (only visible in the desktop version, see figure 3) allows you to build two types of rules:
 * WHEN-THEN: allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute. * FLOW: allows for processing attributes and converting them into new attributes 
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Rules.png)
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20WHEN-THEN_2.png)
 _Figure 3. The Rules view of the Demo Smart City, showing showing an example which turns on a light and send an e-mail when the Ozone levels are increasing_
 
 # Application for System Manager
