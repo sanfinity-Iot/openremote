@@ -1,6 +1,6 @@
 The Smart City demo illustrates a few imaginary applications in a single realm. It is part of the [online demo](https://openremote.io/demo/) as well as the project. It illustrates how the integration of several vertical solutions in a central platform, benefits a City as well as its Citizens:
-* exposing the data as assets and attributes, in a standardised manner, including the right acces rights, either 'restricted' to certain users and roles, or 'public'.
-* creating new applications on requiring the combination of assets, using WHEN-THEN rules or the FLOW editor, as well creating dedicated front-end applications for desktop and mobile.
+* maintaining digital assets by exposing the data as assets and attributes, in a standardised manner, including acces rights.
+* creating applications requiring the combination of assets, using WHEN-THEN rules or the FLOW editor, or creating dedicated front-end applications for desktop and mobile.
 
 There are actually two realms which are part of the demo, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-manager/)): the 'smartcity' realm and the 'master' realm for system manager (for configuration the project and remote management of multiple realms). 
 
