@@ -71,7 +71,6 @@ To expose information from the platform we have several options: using UI compon
 See the documentation on our wiki for more details.
 
 # See Also
-- [Demo Smart Building](Demo-Smart-Building)
 - [Next 'Get Started' step: Working on the UI](Developer-Guide%3A-Working-on-the-UI)
 - [Get Started](https://openremote.io/get-started-manager/)
 - [OpenRemote Wiki](https://github.com/openremote/openremote/wiki)
