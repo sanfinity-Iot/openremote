@@ -29,7 +29,7 @@ The Rules view (only visible in the desktop version, see figure 3) allows you to
 * FLOW: allows for processing attributes and converting them into new attributes. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20WHEN-THEN_2.png)
-_Figure 3. The Rules view of the Demo Smart City, showing showing an example which turns on a light and send an e-mail when the Ozone levels are increasing_
+_Figure 3. The Rules view of the Demo Smart City, showing showing an example which turns on a light and sends a configurable e-mail when the Ozone levels are increasing_
 
 # Application for System Manager
 
