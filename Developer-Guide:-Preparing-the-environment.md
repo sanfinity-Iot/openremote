@@ -22,7 +22,7 @@ If you installed docker machine  then make sure the following command executes s
 `docker-machine version`
 
 # Development tooling
-For development you need the following in addtion to the runtime tooling:
+For development you need the following in addition to the runtime tooling:
 
 * Java 8 JDK ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html), on MacOS use [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk))
 * [GIT](https://git-scm.com/downloads)
@@ -39,6 +39,22 @@ yarn -v
 ```
 
 Ensure that you have the `JAVA_HOME` environment variable set to the path of JDK.
+
+## Docker image with tooling
+
+Alternatively to tooling above there is a docker image with all tools required to build the stack. You don't have to
+install anything other than docker and be sure that tooling version is the same as our CI/CD pipeline. This can be very
+useful when you need to use other machine, e.g. deployment host.
+
+Check current version:
+```
+docker run --rm -v `pwd`:/or registry.gitlab.com/openremote/openremote:master git status
+```
+
+Build the stack:
+```
+docker run --rm -v `pwd`:/or registry.gitlab.com/openremote/openremote:master ./gradlew clean installDist
+```
 
 # See also
 
