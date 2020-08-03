@@ -12,15 +12,15 @@ If you just want to see how it looks before actually installing OpenRemote, see 
 
 If you open the application on desktop you will get four main views: Map (Figure 1), Assets (Figure 2), Rules (Figure 3), and Insights. On mobile you will only see Map, and Assets.
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Map.png)
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)
 _Figure 1. The Map view of the Demo Smart City, showing the map with different attributes across the City_
 
 ## Map and Assets
 
 Both the Map and Asset view give you access to the respective Assets and related attributes. You can see and control them, but also have the option to look at the historical data via graphs or event lists.
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Assets.png)
-_Figure 2. The Asset view of the Demo Smart City, showing the environment sensor with the different attributes_
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Assets.png)
+_Figure 2. The Asset view of the Demo Smart City, showing an EV charger with the different attributes_
 
 ## Rules
 
@@ -29,7 +29,7 @@ The Rules view (only visible in the desktop version, see figure 3) allows you to
 * FLOW: allows for processing attributes and converting them into new attributes. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20WHEN-THEN_2.png)
-_Figure 3. The Rules view of the Demo Smart City, showing showing an example which turns on a light and sends a configurable e-mail when the Ozone levels are increasing._
+_Figure 3. The Rules view of the Demo Smart City, showing showing an imaginary example which sends an e-mail when the Ozone levels are increasing while water levels are too high._
 
 # Application for System Manager
 
