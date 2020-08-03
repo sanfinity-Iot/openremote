@@ -8,7 +8,7 @@ The following example uses a weather API provided by [OpenWeatherMap](https://op
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * Asset name: `HTTP API Agent`
-   * Parent asset: `Smart Building -> Smart Building` and select 'OK'
+   * Parent asset: `Smart City -> Smart City` and select 'OK'
    * Asset Type: `Agent`
 4. Click `Create asset` at bottom of screen
 5. Click `Edit asset` and add a new attribute:
@@ -26,7 +26,7 @@ You now have a basic HTTP API protocol ready to be linked to by asset attributes
 
 **NOTE: The protocol configuration status will show as `UNKNOWN` until an attribute is linked and a request is made; or the HTTP Ping attribute configuration items are configured**.
 
-1. Select the Smart Building -> Smart Building asset in the asset list
+1. Select the Smart City -> Smart City asset in the asset list
 2. Click `Edit asset` in the top right
 3. Add a new attribute:
    * Name: `outsideTemp`
@@ -34,7 +34,7 @@ You now have a basic HTTP API protocol ready to be linked to by asset attributes
 4. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then add the following configuration items:
    * Agent protocol link: `HTTP API Agent -> weatherApi`
    * HTTP path: `weather`
-   * HTTP query parameters: `{"q": "Eindhoven,nl", "units": "metric"}`
+   * HTTP query parameters: `{"q": "Rotterdam,nl", "units": "metric"}`
    * Polling interval (ms): `60000`
 
 **NOTE: At this point you have enough to pull back the entire response of the weather API request but this is a JSON payload so we need to extract the temperature value from this using a filter**
@@ -57,5 +57,5 @@ Try and create additional attributes that link to the OpenWeatherMap API, some i
 
 # See also
 
-- Next 'Get Started' step: [Demo Smart Building](Demo-Smart-Building) or [Demo Smart City](Demo-Smart-City)
+- Next 'Get Started' step: [Create Applications](https://openremote.io/get-started-manager/create-consoles/)
 - [Get Started](https://openremote.io/get-started-manager/)
