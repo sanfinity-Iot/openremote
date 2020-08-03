@@ -31,6 +31,15 @@ The Rules view (only visible in the desktop version, see figure 3) allows you to
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Rules.png)
 _Figure 3. The Rules view of the Demo Smart City, showing showing an imaginary example which sends an e-mail when the Ozone levels are increasing while water levels are too high._
 
+## Insights
+
+The Insights view (only visible in the desktop version, see figure 4) allows you to create a single page report:
+* Chart: allows you to select multiple attributes in the system and compare them (vertical comparison). By adding a second period you can also compare attributes for different time periods
+* Attribute panel: allows for picking individual attributes, eg. KPIs and see there current performance over a period, as well as their relative or absolute change. 
+
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Insights.png)
+_Figure 4. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few random attribute panels._
+
 # Application for System Manager
 
 The application for the System Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for System Manager and the Smart City Demo via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
