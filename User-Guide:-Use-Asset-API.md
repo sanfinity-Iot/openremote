@@ -151,7 +151,13 @@ Which will give us back:
 
 # Retrieve Assets
 
-Before you start make sure you've got an access token from Keycloak by singing in. This access token should be passed which each request as an `Authorization` header prefixed with `Bearer `.
+Before you start make sure you've got an access token from Keycloak by singing in. 
+```bash
+curl -X POST https://demo.openremote.io/auth/realms/master/protocol/openid-connect/token \
+ -H 'Content-Type: application/x-www-form-urlencoded' \
+ -d 'username=admin&password=secret&grant_type=password&client_id=admin-cli'
+```
+This access token should be passed which each request as an `Authorization` header prefixed with `Bearer `.
 
 ## Query Assets
 
