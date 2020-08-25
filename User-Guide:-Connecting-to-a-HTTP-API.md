@@ -4,7 +4,7 @@ The examples below describe interactively linking asset attributes to HTTP APIs 
 
 The following example uses a weather API provided by [OpenWeatherMap](https://openweathermap.org/) you will need to signup for a free API Key to access their service. The API Key is included in the request URL as a query parameter
 
-1. Login to the manager UI (`https://localhost` `admin/secret`)
+1. Login to the manager UI (`https://localhost/manager` `admin/secret`)
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * Asset name: `HTTP API Agent`
