@@ -29,7 +29,7 @@ MAP_TILESERVER_REQUEST_TIMEOUT=10000
 ### Updating Map data
 We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
 
-You can extract smaller tilesets with the following procedure:
+You can extract smaller tilesets with http://maperitive.net/ (Windows OS) or the following procedure:
 
 1. Install tilelive converter: 
     `npm install -g mapnik mbtiles tilelive tilelive-bridge`
