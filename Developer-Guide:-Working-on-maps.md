@@ -27,13 +27,6 @@ MAP_TILESERVER_REQUEST_TIMEOUT=10000
 **NOTE: By default `MAP_TILESERVER_HOST` is `null` which means the reverse proxy is disabled**
 
 ### Updating Map data
-We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
+We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://download.geofabrik.de/.
 
-You can extract smaller tilesets with http://maperitive.net/ (Windows OS) or the following procedure:
-
-1. Install tilelive converter: 
-    `npm install -g mapnik mbtiles tilelive tilelive-bridge`
-1. Select and copy boundary box coordinates of desired region: 
-    http://tools.geofabrik.de/calc/#tab=1 
-1. Extract the region with: 
-    `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
+Follow the guide at https://openmaptiles.org/docs/generate/create-custom-extract/ for conversion of `osm` to `mbtiles`.
