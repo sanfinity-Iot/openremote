@@ -27,13 +27,14 @@ MAP_TILESERVER_REQUEST_TIMEOUT=10000
 **NOTE: By default `MAP_TILESERVER_HOST` is `null` which means the reverse proxy is disabled**
 
 ### Updating Map data
-We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on https://openmaptiles.org/.
+We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on [openmaptiles.org](https://openmaptiles.com/downloads/). Download the vector `mbtiles` file that contains the bounding box of interest.
 
 You can extract smaller tilesets with the following procedure:
 
+1. Rename the source tileset file `input.mbtiles`
+1. Create docker container with `node` and `python` with dir containing `input.mbtiles` volume mapped: `docker run -it --rm -v PATH_TO_INPUT_MBTILES_DIR:/mapdata nikolaik/python-nodejs:python3.8-nodejs12 bash`
 1. Install tilelive converter: 
-    `npm install -g mapnik mbtiles tilelive tilelive-bridge`
-1. Select and copy boundary box coordinates of desired region: 
+    `npm install -g --unsafe mapnik @mapbox/mbtiles @mapbox/tilelive @mapbox/tilelive-bridge`
+1. Select and copy boundary box coordinates of desired region (bounds for next command must be in format [W,S,E,N] e.g. `4.91, 51.27, 5.84, 51.77`): 
     http://tools.geofabrik.de/calc/#tab=1 
-1. Extract the region with: 
-    `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
+1. Extract the region with: `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDS HERE" /mapdata/input.mbtiles /mapdata/output.mbtiles`
