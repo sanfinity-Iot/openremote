@@ -26,6 +26,7 @@
 * [[Connect Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
 * [[Connect Artnet DMX|User Guide: Connecting to Artnet DMX]]
 * [[Connect a HTTP API|User Guide: Connecting to a HTTP API]]
+* [[Connect IKEA Trådfri|User-Guide:-Connecting-to-IKEA-TRÅDFRI]]
 * [[Connect KNX|User-Guide:-Connecting-to-KNX]]
 * [[Create Macro|User-Guide:Creating a Macro]]
 * [[Create Surveys|User-Guide:Creating and Reporting Surveys]]
