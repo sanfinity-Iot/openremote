@@ -190,11 +190,11 @@ manager:
 
 In the following example you link the Z-Wave USB interface that is connected to your PC by using the serial port name, e.g. `/dev/ttyS0`.
 
-1. Login to the manager UI (`https://localhost/master` as `admin/secret`)
+1. Login to the manager UI (`https://localhost/manager` as `admin/secret`)
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left 
 3. Set the following:
    * Asset name: `ZWave Agent`
-   * Parent asset: `Building -> Smart Building` and select 'OK'
+   * Parent asset: `Smart City - Energy Management - De Rotterdam` and select 'OK'
    * Asset Type: `Agent`
 4. Click `Create asset` at the bottom of the screen
 5. Click `Edit asset` and add a new attribute:
@@ -251,5 +251,5 @@ Note that before you are able to execute this procedure you have to execute the 
 # See also
 
 - [[Use UI components|User-Guide:-UI components]]
-- [[Demo Smart Building|Demo-Smart-Building]]
+- [[Demo Smart City|Demo-Smart-City]]
 - [Get Started](https://openremote.io/get-started-manager/)
