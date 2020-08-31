@@ -12,9 +12,9 @@ Groovy rules scripting language is available within the (Technical) manager and 
 
 -
 
-# JSON rules
+# WHEN-THEN rules
 
-The JSON rules object model is intended for application users, to create event based workflow rules, using a front-end UI. It works with the or-rules UI component which handles the connection between front-end and the JSON rules. An example of the JSON rules working with the front-end is part of the [Demo Smart Building](https://github.com/openremote/openremote/wiki/Demo-Smart-Building) and [Demo Smart City](https://github.com/openremote/openremote/wiki/Demo-Smart-City).
+The WHEN-THEN rules object model is intended for application users, to create event based workflow rules, using a front-end UI. It works with the or-rules UI component which handles the connection between front-end and the WHEN-THEN JSON rules. An example of the WHEN-THEN rules working with the front-end is part of the [Demo Smart City](https://github.com/openremote/openremote/wiki/Demo-Smart-City).
 
 # Flow rules
 
@@ -24,8 +24,7 @@ The Flow rules model is intended for application users which want to link attrib
 
 - [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
-- [[Use JSON Rules|User-Guide:-Use JSON Rules]]
+- [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
 - [Demo Smart City](Demo-Smart-City)
-- [Demo Smart Building](Demo-Smart-Building)
 - [Get Started](https://openremote.io/get-started-manager/)
