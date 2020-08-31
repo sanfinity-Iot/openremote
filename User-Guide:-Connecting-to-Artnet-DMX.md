@@ -6,7 +6,7 @@ The following examples assume that the DMX controller is bound to the loopback a
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left.
 3. Set the following:
     * `Asset name`: `Artnet Agent`
-    * `Parent asset`: `Tenant A -> Smart Building` and select 'OK'
+    * `Parent asset`: `Smart City -> Energy Management -> Stadhuis` and select 'OK'
     * `Asset Type`: Agent
 4. Click `Create asset` at the bottom of the screen.
 5. Click `Edit asset` and add a new attribute:
