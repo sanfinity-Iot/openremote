@@ -4,7 +4,7 @@ You can connect a KNX Gateway to the manager. When you import the corresponding 
 
 In the following example, you link your existing KNX Gateway by using the its IP address, eg. `http://192.163.1.2`.
 
-1. Login to the manager UI (`https://localhost/master` as `admin/secret`)
+1. Login to the manager UI (`https://localhost/manager` as `admin/secret`)
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * Asset name: `KNX Agent`
