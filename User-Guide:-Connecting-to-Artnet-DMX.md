@@ -2,7 +2,7 @@ The example below describes interactively linking asset attributes to Artnet Ser
 
 # Setup the basic Artnet connection
 The following examples assume that the DMX controller is bound to the loopback address `127.0.0.1` on port `6454`:
-1. Login to the manager UI (`https://localhost/master` `admin/secret`).
+1. Login to the manager UI (`https://localhost/manager` `admin/secret`).
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left.
 3. Set the following:
     * `Asset name`: `Artnet Agent`
