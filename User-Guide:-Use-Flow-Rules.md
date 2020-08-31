@@ -36,6 +36,6 @@ The user interface is a separate project that interacts with the back end, but i
 - [[Create Rules|User-Guide:-Create Rules]]
 - [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
-- [[Use JSON Rules|User-Guide:-Use JSON Rules]]
+- [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [Demo Smart City](Demo-Smart-City)
 - [Get Started](https://openremote.io/get-started-manager/)
