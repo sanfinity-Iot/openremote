@@ -4,7 +4,7 @@ The examples below describe interactively linking asset attributes to Websocket 
 
 The following example connects to the OpenRemote 3.0 Manager running on `https://localhost` and subscribes to `Attribute Events` for the `Apartment 1` `Living Room` asset.
 
-1. Login to the manager UI (`https://localhost/master` `admin/secret`)
+1. Login to the manager UI (`https://localhost/manager` `admin/secret`)
 2. Select the Assets tab
 3. Select the following asset from the Asset tree `Tenant A -> Smart Building -> Apartment 1 -> Service Agent (Simulator)`
 3. Click `Edit asset` in the top right corner
