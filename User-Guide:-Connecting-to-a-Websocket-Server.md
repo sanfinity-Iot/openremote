@@ -6,7 +6,7 @@ The following example connects to the OpenRemote 3.0 Manager running on `https:/
 
 1. Login to the manager UI (`https://localhost/manager` `admin/secret`)
 2. Select the Assets tab
-3. Select the following asset from the Asset tree `Tenant A -> Smart Building -> Apartment 1 -> Service Agent (Simulator)`
+3. Select the following asset from the Asset tree `Smart City -> Simulator Agent`
 3. Click `Edit asset` in the top right corner
 3. Enter `websocket` in the New attribute input and select type as `Websocket Client` then click `Add attribute`
 3. Expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows:
