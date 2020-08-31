@@ -8,7 +8,7 @@ In the following example, you link your own controller by using the its controll
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * Asset name: `Controller Agent`
-   * Parent asset: `CustomerA -> Smart Home` and select 'OK'
+   * Parent asset: `Smart City -> Energy Management -> Stadhuis` and select 'OK'
    * Asset Type: `Agent`
 4. Click `Create asset` at bottom of screen and then click `Edit asset` in the top right
 5. Click `Edit asset` and add a new attribute:
@@ -35,7 +35,7 @@ Value of a temperature sensor (named 'tempSensor') on a device name 'HomeDevice'
 * Controller 2.5: a single command triggers the read of the value and a sensor uses that command to make the value available.
 
 ### Configuration:
-1. Select the Customer A -> Smart Home asset in the asset list
+1. Select the Smart City -> Energy Management -> Stadhuis asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
    * Name: `homeTemp`
@@ -53,7 +53,7 @@ Send a setpoint command 'tempSetpoint' on device name 'homeDevice'
 * Controller 2.5: a single command that sends the temperature setpoint, it takes no parameter. There is no sensor associated with it.
 
 ### Configuration:
-1. Select the Customer A -> Smart Home asset in the asset list
+1. Select the Smart City -> Energy Management -> Stadhuis asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
    * Name: `setTemp`
@@ -63,7 +63,7 @@ Send a setpoint command 'tempSetpoint' on device name 'homeDevice'
    * Controller Device name: HomeDevice
    * Controller Command name: tempCommand
 
-In your Smart Home asset, you have an attribute where you can click on 'Write' button to execute the command on the linked Controller 2.5.
+In your Stadhuis asset, you have an attribute where you can click on 'Write' button to execute the command on the linked Controller 2.5.
 
 ### More information
 If there is a value into attribute value when you click on 'Write', the attribute value will be added as parameter into the command request to Controller 2.5.
@@ -74,7 +74,7 @@ Send a play command 'playTV' over IR on device name 'homeDevice'
 * Controller 2.5: a single command that sends the IR code, it takes no parameter. There is no sensor associated with it.
 
 ### Configuration:
-1. Select the Customer A -> Smart Home asset in the asset list
+1. Select the Smart City -> Energy Management -> Stadhuis asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
    * Name: `playSignal`
@@ -84,7 +84,7 @@ Send a play command 'playTV' over IR on device name 'homeDevice'
    * Controller Device name: HomeDevice
    * Controller Command name: playTV
 
-In your Smart Home asset, you have an attribute where you can click on 'Write' button to execute the command on the linked Controller 2.5.
+In your Stadhuis asset, you have an attribute where you can click on 'Write' button to execute the command on the linked Controller 2.5.
 
 ### More information
 If there is a value into attribute value when you click on 'Write', the attribute value will be added as parameter into the command request to Controller 2.5.
@@ -95,7 +95,7 @@ Control a fan with 3 speeds: low, mid, high on a device name 'homeDevice'
 * Controller 2.5: a command to read the state of the fan and a sensor 'fanState' associated with it + commands with no parameter to turn fan off 'fanOff', set it to low speed 'fanLow', medium speed 'fanMed' or high speed 'fanHigh'
 
 ### Configuration:
-1. Select the Customer A -> Smart Home asset in the asset list
+1. Select the Smart City -> Energy Management -> Stadhuis asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
    * Name: `fanSpeed`
@@ -106,7 +106,7 @@ Control a fan with 3 speeds: low, mid, high on a device name 'homeDevice'
    * Controller Sensor name: fanState
    * Controller Commands map: `{ "off": "fanOff", "low": "fanLow", "medium": "fanMed", "high": "fanHigh" }`
 
-In your Smart Home asset, you have an attribute where you can click on 'Write' button to execute the command linked to the value of the given attribute ("off", "low", "medium" or "high").
+In your Stadhuis asset, you have an attribute where you can click on 'Write' button to execute the command linked to the value of the given attribute ("off", "low", "medium" or "high").
 And the polling system will keep the attribute value updated with the latest status know of the fan.
 
 ### More information
@@ -118,7 +118,7 @@ Control a light bulb on device name 'HomeDevice'
 * Controller 2.5: a command to read the state of the light, a sensor 'lightState' associated with it, a command 'onCmd' to turn light on and a command 'offCmd' to turn light off (with no parameter)
 
 ### Configuration:
-1. Select the Customer A -> Smart Home asset in the asset list
+1. Select the Smart City -> Energy Management -> Stadhuis asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
    * Name: `lightSwitch`
@@ -129,7 +129,7 @@ Control a light bulb on device name 'HomeDevice'
    * Controller Sensor name: lightState
    * Controller Commands map: `{ "true": "onCmd, "false": "offCmd" }`
 
-In your Smart Home asset, you have a switch/toggle attribute you can check or uncheck and click on 'Write' button to execute the command linked to the value of the switch/toggle.
+In your Stadhuis asset, you have a switch/toggle attribute you can check or uncheck and click on 'Write' button to execute the command linked to the value of the switch/toggle.
 And the polling system will keep the attribute value updated with the latest status know of the fan.
 
 It is the only case where you have to follow a template for commands map item. You must use true/false as attribute name for the two commands map.
@@ -143,7 +143,7 @@ Set the volume of an amplifier defined on two different device name on a Control
 * Controller 2.5:  a command to read the value of the volume and a sensor 'ampVolume' associated with it on device 'SensorDevice' and a command 'setAmpVol' to set the volume taking the level as the argument
 
 ### Configuration:
-1. Select the Customer A -> Smart Home asset in the asset list
+1. Select the Smart City -> Energy Management -> Stadhuis asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
    * Name: `ampLevel`
@@ -155,11 +155,11 @@ Set the volume of an amplifier defined on two different device name on a Control
    * Controller Device name for command: CmdDevice
    * Controller Command name: `setAmpVol`
 
-In your Smart Home asset, you have an attribute where the value is updated by polling request and where you can click on 'Write' button to send the command to set the volume with the value of the attribute in parameter.
+In your Stadhuis asset, you have an attribute where the value is updated by polling request and where you can click on 'Write' button to send the command to set the volume with the value of the attribute in parameter.
 
 'Controller Device name for command' is a way to overwrite in the same attribute the device name for command only.
 
-# Home Example Demo
+# Home Example Demo on OpenRemote 2.0 (Designer)
 
 As you may know, we have a Home Example representing a typical Residential Application: https://github.com/openremote/Documentation/wiki/Example-Home.
 
@@ -170,11 +170,11 @@ A demo controller is available online on : http://demo.openremote.com:8688/contr
 We'll use the demo Controller in a concrete example here.
 
 ## Configure Controller Agent
-1. Login to the manager UI (`https://localhost/master` as `admin/secret`)
+1. Login to the manager UI (`https://localhost/manager` as `admin/secret`)
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * Asset name: `Controller Agent`
-   * Parent asset: `CustomerA -> Smart Home` and select 'OK'
+   * Parent asset: `Smart City -> Energy Management -> Stadhuis` and select 'OK'
    * Asset Type: `Agent`
 4. Click `Create asset` at bottom of screen and then click `Edit asset` in the top right
 5. Click `Edit asset` and add a new attribute:
@@ -193,7 +193,7 @@ We can now add a linked attribute in Manager to the new Agent such that we can g
 ## Temperature attribute
 On the Demo Controller, we have a sensor for the temperature. We'll catch this information in our manager.
 
-1. Select the Customer A -> Smart Home asset in the asset list
+1. Select the Smart City -> Energy Management -> Stadhuis asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
    * Name: `comfortTemp`
@@ -209,7 +209,7 @@ You should now have an attribute with a temperature value set to the last versio
 ## Increase Comfort temperature
 The comfort temperature can be increase or decrease. Let's add the necessary attribute to increase the temperature :
  
-1. Select the Customer A -> Smart Home asset in the asset list
+1. Select the Smart City -> Energy Management -> Stadhuis asset in the asset list
 2. Click `Edit asset` in top right
 3. Add a new attribute:
    * Name: `incComfortTemp`
