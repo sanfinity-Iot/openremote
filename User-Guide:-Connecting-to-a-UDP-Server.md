@@ -4,7 +4,7 @@ The examples below describe interactively linking asset attributes to UDP Server
 
 The following example assumes that the UDP server is binded to the loopback address `127.0.0.1` on port `60123`:
 
-1. Login to the manager UI (`https://localhost/master` `admin/secret`)
+1. Login to the manager UI (`https://localhost/manager` `admin/secret`)
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * `Asset name`: `UDP Agent`
