@@ -24,7 +24,7 @@ The rules are then registered, ordered from top to bottom within a ruleset.
 
 - [[Create Rules|User-Guide:-Create Rules]]
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
-- [[Use JSON Rules|User-Guide:-Use JSON Rules]]
+- [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
 - [Demo Smart City](Demo-Smart-City)
 - [Demo Smart Building](Demo-Smart-Building)
