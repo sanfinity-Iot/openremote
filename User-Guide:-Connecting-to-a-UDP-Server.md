@@ -8,7 +8,7 @@ The following example assumes that the UDP server is binded to the loopback addr
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * `Asset name`: `UDP Agent`
-   * `Parent asset`: `Tenant A -> Smart Building` and select 'OK'
+   * `Parent asset`: `Smart City -> Energy Management` and select 'OK'
    * `Asset Type`: `Agent`
 4. Click `Create asset` at bottom of screen
 5. Click `Edit asset` and add a new attribute:
@@ -72,6 +72,7 @@ This protocol supports response value filtering for more information see [here](
 * `UDP server always responds` - Overrides value set on the protocol
 
 # See also
-- [[Use UI components|User-Guide: UI components]]
-- [[Demo Smart Building|Demo-Smart-Building]]
+
+- [[Use UI components|User-Guide:-UI components]]
+- [[Demo Smart City|Demo-Smart-City]]
 - [Get Started](https://openremote.io/get-started-manager/)
