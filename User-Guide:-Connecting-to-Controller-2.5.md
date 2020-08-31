@@ -4,7 +4,7 @@ We'll explain how you can connect your own controller, or the existing Home Exam
 # Connect an OpenRemote Controller
 In the following example, you link your own controller by using the its controller address `http://my.controller:8688/controller`.
 
-1. Login to the manager UI (`https://localhost/master` as `admin/secret`)
+1. Login to the manager UI (`https://localhost/manager` as `admin/secret`)
 2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
 3. Set the following:
    * Asset name: `Controller Agent`
