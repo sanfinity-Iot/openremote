@@ -27,5 +27,4 @@ The rules are then registered, ordered from top to bottom within a ruleset.
 - [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
 - [Demo Smart City](Demo-Smart-City)
-- [Demo Smart Building](Demo-Smart-Building)
 - [Get Started](https://openremote.io/get-started-manager/)
