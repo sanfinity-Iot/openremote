@@ -1,6 +1,6 @@
-Flow rules are mainly intended for attribute linking and defining virtual attributes, though they can also function as regular rules. They're useful for users who want to create rules in a visual manner but also need to define rules more complex than is possible in the JSON rule editor.
+Flow rules are mainly intended for attribute linking and processing existing attributes, translating them into new virtual attributes. They can also function as regular event rules. They're useful for users who want to create rules in a visual manner but also need to define rules more complex than is possible in the WHEN-THEN (JSON) rules UI editor.
 
-Flow rules can be created in a visual editor or written manually in JSON format. The visual Flow Editor is currently a standalone application that interacts with the Manager. It has its own [repository](https://github.com/openremote/floweditor).
+Flow rules can be created in a visual editor or written manually in their own JSON format.
 
 # The Flow rules model
 
@@ -28,7 +28,7 @@ A flow rule is generated backwards. The system goes through every output node an
 
 ## User interface
 
-The user interface is a separate project that interacts with the back end, but isn't tied into it. See [the repository README](https://github.com/openremote/floweditor/blob/master/README.md) for more information.
+The user interface is a separate project that interacts with the back end, but isn't tied into it. See [the repository README](https://github.com/openremote/floweditor/blob/master/README.md) for more information.  
 
 # See Also
 
@@ -38,5 +38,4 @@ The user interface is a separate project that interacts with the back end, but i
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
 - [[Use JSON Rules|User-Guide:-Use JSON Rules]]
 - [Demo Smart City](Demo-Smart-City)
-- [Demo Smart Building](Demo-Smart-Building)
 - [Get Started](https://openremote.io/get-started-manager/)
