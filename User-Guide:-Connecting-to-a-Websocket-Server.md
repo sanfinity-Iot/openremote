@@ -132,6 +132,7 @@ You can now click `Start` on the `websocketExec` attribute and the `Ceiling ligh
 * `Value filters` - Array of `Value filters` to apply to matched incoming messages to extract the actual value that should be written to the attribute for more information see [here](https://github.com/openremote/openremote/wiki/User-Guide:-Generic-protocols#response-value-filtering).
 
 # See also
-- [[Use UI components|User-Guide: UI components]]
-- [[Demo Smart Building|Demo-Smart-Building]]
+
+- [[Use UI components|User-Guide:-UI components]]
+- [[Demo Smart City|Demo-Smart-City]]
 - [Get Started](https://openremote.io/get-started-manager/)
