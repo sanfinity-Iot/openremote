@@ -32,6 +32,7 @@ You can download the [IntelliJ Community Edition](https://www.jetbrains.com/idea
 
 - Choose the 'Open' option in the startup screen and open the root directory of the OpenRemote codebase.
 - Note that IntelliJ might time out if a background Gradle process (for example, running the GWT compiler server) blocks the Gradle import. Stop and start the background process to unblock.
+- Verify build settings: 'File' > 'Settings' > 'Build, Execution, Deployment' > 'Gradle', on the right under 'Delegate settings', 'Build and run using' and 'Run tests using' is set to 'IntelliJ IDEA' (or 'Default IntelliJ IDEA').
 - Run `./gradlew clean installDist` in a terminal in IntelliJ to be sure everything compiles.
 
 ##### Recommended Plugins
