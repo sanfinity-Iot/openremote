@@ -130,7 +130,7 @@ Then write a `settings.gradle` file:
 rootProject.name = "myproject"
 
 // Include sub-projects dynamically, every directory with a build.gradle (and no .buildignore)
-fileTree(dir: rootDir, include: "**/build.gradle", excludes: ["**/node_modules/**"])
+fileTree(dir: rootDir, include: "**/build.gradle", excludes: ["**/node_modules/**", "**/generic_app/**"])
         .filter { it.parent != rootDir }
         .filter { !file("${it.parent}/.buildignore").exists() }
         .each {
