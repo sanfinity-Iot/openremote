@@ -40,3 +40,7 @@ TODO: Screenshots from new manager UI
 - Processor: AMD64 or ARM64
 - RAM: 4GB (if using Keycloak identity provider) 2GB (if using basic identity provider)
 - Disk: 1.5GB (preferrably SATA or eMMC)
+
+# See also
+
+- [[Developer Guide: Edge Gateways|Developer-Guide:-Edge Gateways]]
