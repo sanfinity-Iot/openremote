@@ -20,6 +20,7 @@
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
 * [[Docker swarm mode|https://github.com/openremote/openremote/blob/master/swarm/README.md]]
 * [[MQTT Connections|How to work with MQTT]]
+* [[Edge gateways|Developer Guide: Edge gateways]]
 
 ## Protocol Agents
 
