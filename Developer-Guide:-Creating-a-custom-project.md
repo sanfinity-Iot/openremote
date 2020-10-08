@@ -18,6 +18,10 @@ Custom projects should have a dependency on the main OpenRemote repository using
 
 * `console` - Project native consoles (Android, iOS) extending the folders of the main OpenRemote repository (TODO: We should support extensions for console native shells and not need this in custom projects)
 
+* `ui` - Project code for frontend
+
+* `agent` - Project code for custom/project specific protocols
+
 
 ## Working with the Git repositories
 
@@ -158,8 +162,8 @@ apply plugin: "java"
 apply plugin: "groovy"
 
 dependencies {
-    // Agent and protocol SPI
-    compile project(":agent")
+    // Agent and protocol SPI - Uncomment if adding custom `agent` code to your custom project
+    // compile project(":agent")
 
     // Setup SPI
     compile project(":openremote:manager:server")
@@ -197,7 +201,7 @@ groovyVersion = 2.4.12
 
 ## Setting up the deployment directory
 
-Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `/myproject/deployment`) and:
+Copy the `deployment` directory of the `openremote` submodule into your project's root (e.g. `./myproject/deployment`) and:
 
 1. Customize logging of the Manager in `manager/logging.properties`
 1. Change the map settings and  data in `map` (see [working on maps](./Developer-Guide%3A-Working-on-maps))
@@ -269,6 +273,8 @@ ui/.gitignore
 ui/build.gradle
 ```
 
+Then copy the `yarn.lock` from the `openremote` repo into the project root.
+
 Then create a `package.json` in the repo root with the following content:
 
 ```json
@@ -336,7 +342,26 @@ services:
 
 Custom apps, components and keycloak themes can then be created as required for the project (see [working on the UI](./Developer-Guide%3A-Working-on-the-UI))
 
-## Building and running your project
+## Adding agent module (optional)
+If you need to write custom protocol(s) then create an `agent` directory in the root of your project (e.g. `./myproject/agent`) and create `build.gradle` in this directory with the following content:
+
+```
+apply plugin: "java"
+apply plugin: "groovy"
+
+dependencies {
+    compile project(":openremote:agent")
+}
+
+task installDist(type: Copy) {
+    from jar.outputs
+    into "${project(':deployment').buildDir}/manager/extensions"
+}
+```
+
+Then update your extension `build.gradle` (e.g. `myextension1/build.gradle`) and uncomment the `compile project(":agent")` line.
+
+# Building and running your project
 
 If you work only on the console frontend apps and files in the `deployment` folder, and want to deploy the full stack in development mode, first execute the Gradle build without tests:
 
