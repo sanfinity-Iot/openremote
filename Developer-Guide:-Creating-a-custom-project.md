@@ -166,10 +166,10 @@ dependencies {
     // compile project(":agent")
 
     // Setup SPI
-    compile project(":openremote:manager:server")
+    compile project(":openremote:manager")
 
     // Your own dependencies
-    compile "org.slf4j:slf4j-api:$slf4jVersion"
+    // compile "org.slf4j:slf4j-api:$slf4jVersion"
 
     // Testing API
     testCompile project(":openremote:test")
