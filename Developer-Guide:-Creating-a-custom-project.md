@@ -183,10 +183,7 @@ test {
 # Automatically copy this extension into the deployment/extensions/ directory
 task installDist(type: Copy) {
     from jar.outputs
-    into "${project(':deployment').projectDir}/manager/extensions"
-}
-clean {
-    delete = "${project(':deployment').projectDir}/manager/extensions/${jar.archiveName}"
+    into "${project(':deployment').buildDir}/manager/extensions"
 }
 ```
 
