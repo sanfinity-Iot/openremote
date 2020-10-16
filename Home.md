@@ -9,14 +9,14 @@ The core of the OpenRemote system is the [manager](https://github.com/openremote
 
 Rules can be written in Groovy, JavaScript, a Rules JSON, or Flow model, and dynamically deployed. Rules execute actions when matching asset state or sequence of events are detected. For example, when a mobile asset enters a geographic fence, or when humidity in a room keeps increasing, you can notify a group of users via email and on their mobile devices.
 
-Networked things and devices are connected to the manager via [agents](https://github.com/openremote/openremote/tree/master/agent), they are the interface to 3rd party APIs and service protocols. OpenRemote has many built-in protocols and it's easy to create new adapters. Co-locate your agents with the manager or install agents on gateways, close to devices. You can link a 2.x controller to a manager, see [Connecting to Controller 2.5](https://github.com/openremote/openremote/wiki/User-Guide%3A-Connecting-to-Controller-2.5)
+Networked things and devices are connected to the manager via [agents](https://github.com/openremote/openremote/tree/master/agent), they are the interface to 3rd party APIs and service protocols. OpenRemote has many built-in protocols and it's easy to create new adapters. Co-locate your agents with the manager or install agents on [Edge gateways](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Edge-gateways), close to devices. You can link a 2.x controller to a manager, see [Connecting to Controller 2.5](https://github.com/openremote/openremote/wiki/User-Guide%3A-Connecting-to-Controller-2.5)
 
 The manager provides communication mechanisms for monitoring and administrating the system:
 
 * JAX-RS based REST API
 * Event API (Websockets with fallback to long polling mechanism)
 
-The OpenRemote console simplifies the creation and deployment of user interfaces such as:
+The OpenRemote Front End simplifies the creation and deployment of user interfaces such as:
 
 * Multi tenancy monitoring dashboard
 * Home automation control panel
