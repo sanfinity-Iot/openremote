@@ -3,21 +3,32 @@ We have a series of UI components available to swiftly create your own front end
 _See the [Developer Guide for the current status](./Developer-Guide:-Working-on-the-UI)_
 
 We have a series of basic UI components, and more advanced project specific components. The current available components can be found in [openremote / ui / components](https://github.com/openremote/openremote/tree/master/ui/component):
+- or-asset-tree
+- or-asset-viewer
+- or-attribute-card
+- or-attribute-history
+- or-attribute-input
 - or-bottom-navigation
-- or-header
+- or-chart
+- or-data-viewer
 - or-icon
 - or-input
+- or-log-viewer
 - or-map
-- or-rules-editor
-- or-select
+- or-mwc-componenents
+- or-panel
+- or-rules
 - or-smart-notify
+- or-survey-results
+- or-survey
+- or-table
 - or-thermostat
 - or-timeline
 - or-translate
 
 ## Header example
 
-This is a more project specific example. It's published on NPM.
+This is a mere example for a non existing component. It's published on NPM.
 
 ### Install
 
