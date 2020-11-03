@@ -2,6 +2,8 @@ Flow rules are mainly intended for attribute linking and processing existing att
 
 Flow rules can be created in a visual editor or written manually in their own JSON format.
 
+![Manager Flow Editor](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Flow%20Editor.png)
+
 # The Flow rules model
 
 ## Node collections
@@ -25,13 +27,6 @@ Connections are laid by the user from socket to socket, allowing data to flow th
 Node collections are sent to the manager and converted into a rule. All rules have a condition and an action. The action is executed when the condition is met. A flow rule executes only when the value of an asset attribute on the left hand side of the rule has been changed. However, not all input nodes are included in the left hand side of a flow rule.
 
 A flow rule is generated backwards. The system goes through every output node and traverses down the node tree, marking every asset attribute input node it comes across. For every output node, it constructs a single rule. Input nodes without attached output nodes aren't considered, neither are output nodes that aren't connected to input nodes. Detached processor nodes are ignored as well.
-
-## User interface
-
-This is an example of a Flow rule, part of the Smart City Demo.
-![Manager Flow Editor](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Flow%20Editor.png)
-
-The user interface is a separate project that interacts with the back end, but isn't tied into it. See [the repository README](https://github.com/openremote/floweditor/blob/master/README.md) for more information.  
 
 # See Also
 
