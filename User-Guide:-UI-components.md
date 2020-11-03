@@ -48,5 +48,5 @@ import '@openremote/or-header';
 
 # See Also
 - [Developer Guide: Working on the UI](./Developer-Guide:-Working-on-the-UI)
-- [Demo Smart Building](Demo-Smart-Building)
+- [Demo Smart City](Demo-Smart-City)
 - [Get Started](https://openremote.io/get-started-manager/)
