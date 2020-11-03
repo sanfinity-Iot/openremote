@@ -2,7 +2,8 @@ OpenRemote has its own rules engine which can be used for a wide range of functi
 
 Rules can be built within global rulesets, allowing them to use any attribute across the different realms. Alternatively, if you select a specific realm or asset, the ruleset will only be able to use rules with attributes within the asset, or any of it child assets.
 
-Rules can be enabled or disabled. In addition, there is an option 'Continue on error' which prevents the rules engine stopping in case one of the rules in the rule set is creating an error.
+Rules include a scheduler option which allows for rules to be planned and occurrences to be repatead. Rules can also be enabled or disabled.
+![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduler.png)
 
 # Groovy rules
 
