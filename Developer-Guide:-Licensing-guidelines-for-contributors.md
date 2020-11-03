@@ -7,7 +7,7 @@ Tip: use `./gradlew dependencies` on projects that use gradle as build tool.
 In all source files (except where not appropriate such as property files or test fixtures), include a copyright header:
 
 ```
-Copyright 2015, OpenRemote Inc.
+Copyright 2020, OpenRemote Inc.
 
 See the CONTRIBUTORS.txt file in the distribution for a
 full listing of individual contributors.
