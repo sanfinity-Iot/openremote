@@ -28,7 +28,7 @@ We have a series of basic UI components, and more advanced project specific comp
 
 ## Header example
 
-This is a mere example for a non existing component. It's published on NPM.
+This is a mere example for a non existing component.
 
 ### Install
 
