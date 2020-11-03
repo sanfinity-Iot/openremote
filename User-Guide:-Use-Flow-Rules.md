@@ -28,11 +28,13 @@ A flow rule is generated backwards. The system goes through every output node an
 
 ## User interface
 
+This is an example of a Flow rule, part of the Smart City Demo.
+![Manager Flow Editor](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Flow%20Editor.png)
+
 The user interface is a separate project that interacts with the back end, but isn't tied into it. See [the repository README](https://github.com/openremote/floweditor/blob/master/README.md) for more information.  
 
 # See Also
 
-- [Use the Flow Editor](../../../floweditor/blob/master/README.md)
 - [[Create Rules|User-Guide:-Create Rules]]
 - [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
