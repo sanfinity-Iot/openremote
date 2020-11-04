@@ -1,36 +1,25 @@
 The Edge gateway stack is currently composed of the standard stack with the exclusion of `keycloak`, the following assumes that `ARM64` hardware is used for running the stack with basic requirements of 4GB RAM and a reasonable powerful processor, the stack can be further optimised as required.
 
-At the time of writing our pipeline doesn't support docker manifests so ARM64 images have been separately tagged and may be out of date (see below info for building more up to date ones - NOTE that the `postgresql` and `proxy` images change infrequently so don't generally need building).
+Our pipeline does support docker manifests so all images (AMD64, arm and ARM65) are tagged with the same label and are build at the same time.
 
 ```
-openremote/manager:latest-arm64
-openremote/postgresql:latest-arm64
-openremote/proxy:latest-arm64
+openremote/manager:latest
+openremote/postgresql:latest
+openremote/proxy:latest
 ```
 
 You will also need a deployment image for map data and automatic provisioning, the OpenRemote demo deployment image can be used or a custom one can be built following the Custom project info in the wiki.
 
 ```
-openremote/deployment:latest-arm64
+openremote/deployment:latest
 ```
 
-To build ARM64 images on any architecture machine use the docker `buildx` tool:
+We use the following [GitHub Actions workflow](https://github.com/openremote/openremote/actions/runs/343881895/workflow) to create Docker images. It uses the official Docker QEMU and buildx actions and targets following platforms:
 
-## Create and select buildx instance (required to build ARM images on non-ARM arch)
-* Create buildx instance (if not already done) - `docker buildx create --name builder`
-* Select buildx instance - `docker buildx use builder`
-
-## Build and export standard OpenRemote docker images
-
-* Compile `./gradlew clean installDist`
-* Build manager image for ARM64 `docker buildx build --load --platform linux/arm64 -t openremote/manager:latest-arm64 openremote/manager/build/install/manager/`
-* Build deploymentimage for ARM64 `docker buildx build --load --platform linux/arm64 -t openremote/deployment:latest-arm64 openremote/deployment/`
-* Build postgresql image for ARM64 `docker buildx build --load --platform linux/arm64 -t openremote/postgresql:latest-arm64 openremote/postgresql/`
-* Build proxy image for ARM64 `docker buildx build --load --platform linux/arm64 -t openremote/proxy:latest-arm64 openremote/proxy/`
-* Push manager image to docker hub `docker push openremote/manager:latest-arm64`
-* Push deployment image to docker hub `docker push openremote/deployment:latest-arm64`
-* Push postgresql image to docker hub `docker push openremote/postgresql:latest-arm64`
-* Push proxy image to docker hub `docker push openremote/proxy:latest-arm64`
+- linux/amd64
+- linux/arm64
+- linux/arm/v7
+- linux/arm/v6
 
 ## Edge gateway OS installation steps (Example is for an `ODROID C2`)
 1. Download Armbian (https://dl.armbian.com/odroidc2/Buster_current_minimal) and flash to SD card using Etcher
