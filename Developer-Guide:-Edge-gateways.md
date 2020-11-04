@@ -1,6 +1,6 @@
 The Edge gateway stack is currently composed of the standard stack with the exclusion of `keycloak`, the following assumes that `ARM64` hardware is used for running the stack with basic requirements of 4GB RAM and a reasonable powerful processor, the stack can be further optimised as required.
 
-Our pipeline does support docker manifests so all images (AMD64, arm and ARM65) are tagged with the same label and are build at the same time.
+Our pipeline does support docker manifests so all images (AMD64, ARM and ARM64) are tagged with the same label and are build at the same time.
 
 ```
 openremote/manager:latest
