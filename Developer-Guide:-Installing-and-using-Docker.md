@@ -246,6 +246,16 @@ docker push openremote/deployment:$DATE_TAG
 ## Exporting and importing images
 The docker images created from the docker-compose files can be exported and sent to another machine to import them.
 
+## Buildx (Cross platform build tool)
+Buildx allows cross platform image compilation (i.e. build ARM64 image on an AMD64 machine):
+
+* Create buildx instance (if not already done) - `docker buildx create --name builder`
+* Select buildx instance - `docker buildx use builder`
+
+To build for example the manager image:
+
+`docker buildx build --load --platform linux/arm64 -t openremote/manager:latest openremote/manager/build/install/manager/`
+
 # See also
 
 - [[Building the Code|Developer-Guide:-Building the code]]
