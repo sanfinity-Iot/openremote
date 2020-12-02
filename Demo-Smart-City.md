@@ -31,10 +31,10 @@ The Rules view (only visible in the desktop version, see figure 3) allows you to
 All rules have the option to use a time scheduler, which allows for have rules activated on a time schedule with a recurrence.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Rules.png)
-_Figure 3a. The Rules view of the Demo Smart City, showing showing an imaginary example which sends an e-mail when the Ozone levels are increasing while water levels are too high._
+_Figure 3a. The Rules view of the Demo Smart City, showing an imaginary example which sends an e-mail when the Ozone levels are increasing while water levels are too high._
 
 ![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduler.png)
-_Figure 3b. The Rules Scheduler allows for activate rules, based on a recurring time schedule_
+_Figure 3b. The Rules Scheduler allows for activating rules, based on a recurring time schedule_
 
 ## Insights
 
