@@ -1,4 +1,4 @@
-The Smart City demo illustrates a few imaginary applications in a single realm. It is part of the [online demo](https://openremote.io/demo/) as well as the project. It illustrates how the integration of several vertical solutions in a central platform, benefits a City as well as its Citizens:
+The Open Source Smart City demo illustrates a few imaginary applications in a single realm. It is part of the [online demo](https://openremote.io/demo/) as well as the project. It illustrates how the integration of several vertical solutions in a central platform, benefits a Smart City as well as its Citizens:
 * maintaining digital assets by exposing the data as assets and attributes, in a standardised manner, including acces rights.
 * creating applications requiring the combination of assets, using WHEN-THEN rules or the FLOW editor, or creating dedicated front-end applications for desktop and mobile.
 
