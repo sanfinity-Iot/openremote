@@ -24,12 +24,17 @@ _Figure 2. The Asset view of the Demo Smart City, showing an EV charger with the
 
 ## Rules
 
-The Rules view (only visible in the desktop version, see figure 3) allows you to build two types of rules:
+The Rules view (only visible in the desktop version, see figure 3) allows you to build three types of rules:
 * WHEN-THEN: allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute.
 * FLOW: allows for processing attributes and converting them into new attributes. 
+* GROOVY: programming any advanced logic, using attributes in the system.
+All rules have the option to use a time scheduler, which allows for have rules activated on a time schedule with a recurrence.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Rules.png)
-_Figure 3. The Rules view of the Demo Smart City, showing showing an imaginary example which sends an e-mail when the Ozone levels are increasing while water levels are too high._
+_Figure 3a. The Rules view of the Demo Smart City, showing showing an imaginary example which sends an e-mail when the Ozone levels are increasing while water levels are too high._
+
+![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduler.png)
+_Figure 3b. The Rules Scheduler allows for activate rules, based on a recurring time schedule_
 
 ## Insights
 
