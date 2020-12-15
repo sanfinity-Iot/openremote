@@ -1,23 +1,22 @@
+## Setup/Provisioning
+
+There are two ways to configure MQTT access:
+
+* Create a `ClientEvent` `agent` in the realm that contains the `asset(s)` you wish to subscribe/publish to. This will automatically provision the keycloak client either with a randomly generated client ID and secret or with the values supplied in the `clientId` and `clientSecret` attributes of the agent; once the Keycloak client is generated the `clientId` and `clientSecret` attributes will be populated with the corresponding values.
+
+* Manually add a client in `Keycloak` to the realm that contains the `asset(s)` you wish to subscribe/publish to, the client have `Client Credentials` grant type enabled (it's called `Service Accounts` in the Keycloak admin UI). It is also possible to provision these Keycloak clients in setup code (see `KeycloakDemoSetup.java` for a demo setup of Keycloak MQTT client)
+
 ## Connecting
 
-### When working locally (e.g. with an IDE)
-To connect with an MQTT client to the MQTT Broker in OpenRemote, you need the following info:
-* Client ID: \<realm\>_\<generatedId\>
-* Username: mqtt-\<keycloakMqttClientId\>
-* Password: \<keycloakMqttClientSecret\>
-* Host: localhost
-* Port: 1883
-* SSL: false
+Connecting to the MQTT broker requires a valid client ID, username and password as supported by the MQTT protocol using the following convention:
 
-### When HAproxy container is up (when deployed)
-* Client ID: \<realm\>_\<generatedId\>
-* Username: mqtt-\<keycloakMqttClientId\>
-* Password: \<keycloakMqttClientSecret\>
-* Host: \<DOMAINNAME\>
-* Port: 8883
-* SSL: true
+* Host: base URL of the manager (e.g. `demo.openremote.io`)
+* Port: 1883 (if running in IDE without SSL), 8883 (if running with SSL i.e. in docker)
+* Encryption/TLS: false (if running in IDE without SSL), true (if running with SSL i.e. in docker)
+* Client ID: \<realm\>_\<KEYCLOAK_CLIENT_ID\> (e.g. `master_ClientEvent-3G9cvEFvGH65dywnvF6urx`)
+* Username: KEYCLOAK_CLIENT_ID (e.g. `ClientEvent-3G9cvEFvGH65dywnvF6urx`)
+* Password: KEYCLOAK_CLIENT_SECRET (e.g. `ce755edc-63a1-4007-81ca-6313e9cd0029`)
 
-### Note: See `KeycloakDemoSetup.java` for a demo setup of Keycloak MQTT client
 
 ## Subscribe
 
