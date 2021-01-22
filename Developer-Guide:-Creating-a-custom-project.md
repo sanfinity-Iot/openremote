@@ -278,6 +278,7 @@ Then create a `package.json` in the repo root with the following content:
 {
   "private": true,
   "workspaces": [
+    "openremote/ui/util",
     "openremote/ui/app/*",
     "openremote/ui/component/*",
     "openremote/ui/demo/*",
