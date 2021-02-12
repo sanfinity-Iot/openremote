@@ -1,6 +1,6 @@
 ### Vector maps (Mapbox GL)
 
-The manager has built in support for `Mapbox GL` and can serve vector tile data for this to work please ensure that you have the following files available in the deployment folder:
+The manager has built in support for `Mapbox GL` and can serve vector tile data. For this to work please ensure that you have the following files available in the deployment folder:
 
 * `map/mapsettings.json` - Contains settings related to the map tiles source data and also UI rendering settings (e.g. center point of map when first loaded)
 * `map/mapdata.mbtiles` - Contains the vector map data (see Creating a custom project](./Developer-Guide:-Creating-a-custom-project) for more details)
