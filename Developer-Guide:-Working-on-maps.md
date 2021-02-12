@@ -11,7 +11,7 @@ MAP_TILES_PATH=../deployment/map/mapdata.mbtiles
 MAP_SETTINGS_PATH=../deployment/map/mapsettings.json
 ```
 
-### Raster Maps (Mapbox JS)
+### Raster maps (Mapbox JS)
 If you are working on raster maps (Mapbox JS) then you will need to have the `map` docker container running, this container serves the raster map tiles from the vector map data. 
 
 The container can be started by using the `dev-map.yml` profile (see [here](/Developer-Guide:-Docker-compose-profiles)) or you can add a `map` service to an existing custom project profile (copy the `dev-map.yml` as a template).
@@ -26,10 +26,10 @@ MAP_TILESERVER_REQUEST_TIMEOUT=10000
 
 **NOTE: By default `MAP_TILESERVER_HOST` is `null` which means the reverse proxy is disabled**
 
-### Updating Map data
-We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on [openmaptiles.org](https://openmaptiles.com/downloads/). Download the vector `mbtiles` file that contains the bounding box of interest.
+### Downloading maps and extracting smaller tilesets
+We currently do not have our own pipeline for extracting/converting OSM data into vector tilesets but depend on the extracts offered on [openmaptiles.org](https://openmaptiles.com/downloads/). You can download the vector `mbtiles` file that contains the bounding box of interest.
 
-You can extract smaller tilesets with the following procedure:
+From that mbtiles file you can extract smaller tilesets with the following procedure:
 
 1. Rename the source tileset file `input.mbtiles`
 1. Create docker container with `node` and `python` with dir containing `input.mbtiles` volume mapped: `docker run -it --rm -v PATH_TO_INPUT_MBTILES_DIR:/mapdata nikolaik/python-nodejs:python3.8-nodejs12 bash`
