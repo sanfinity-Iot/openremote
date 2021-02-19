@@ -1,4 +1,4 @@
-To build OpenRemote projects, you have to first prepare the environment on your developer workstation or build machine.
+To build OpenRemote projects, you have to first prepare the environment on your developer workstation or build machine. Alternatively you can use a [docker image with tooling](#docker-image-with-tooling).
 
 Ensure you have installed and configured the following tools:
 
@@ -45,6 +45,7 @@ Ensure that you have the `JAVA_HOME` environment variable set to the path of JDK
 Alternatively to tooling above there is a docker image with all tools required to build the stack. You don't have to
 install anything other than docker and be sure that tooling version is the same as our CI/CD pipeline. This can be very
 useful when you need to use other machine, e.g. deployment host.
+**Note: only tested on Linux**
 
 Check current version:
 ```
