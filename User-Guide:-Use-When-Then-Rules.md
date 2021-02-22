@@ -37,7 +37,7 @@ This guide assumes you have followed the [Quickstart](https://github.com/openrem
    * For the end date make sure you have the same date selected and set the time to `23:00`. Your first friday evening is planned.
    * At `Repeat occurrence every` click `Friday`
    * Leave the `Repetition ends` at `Never`
-   * Click `OK` and save the rule in the top right.
+   * Click `Apply` and save the rule in the top right.
 
 Your rule is finished! Every Friday evening the rule will check if one of the two conditions is met and if so, turns on the lights of Noordereiland. 
 
