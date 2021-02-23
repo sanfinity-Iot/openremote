@@ -1,3 +1,5 @@
+**NOTE: THIS PROTOCOL IS NOT YET ACCESSIBLE VIA THE NEW MANAGER UI. IT IS HOWEVER ALREADY PART OF THE CODE BASE AND WILL BE ADDED IN NEXT RELEASES.**
+
 Controller Protocol is intended to connect an OpenRemote Controller 2.5 to an OpenRemote Manager 3.0. 
 We'll explain how you can connect your own controller, or the existing Home Example Demo Controller.
 
