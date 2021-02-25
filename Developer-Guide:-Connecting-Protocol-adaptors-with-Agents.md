@@ -1,6 +1,6 @@
 The Agent asset is special: you create it to connect some services or devices to the OpenRemote context, so you can manage them as assets, too. It's the glue in OpenRemote that lets you connect external services to the asset model, you connect sensors and actuators.
 
-An agent may be running locally or remotely on a gateway that is closer to the devices you want to connect (TODO: Unsupported remote connections). The asset details in the OpenRemote context representing your devices and services reflect the latest known state of the things you have deployed in the field.
+An agent may be running locally or remotely on a gateway that is closer to the devices you want to connect. The asset details in the OpenRemote context representing your devices and services reflect the latest known state of the things you have deployed in the field.
 
 Protocols are a main extension point of OpenRemote, they translate the messages from and to external systems into reads and writes of the assets and attribute values used by OpenRemote.
 
@@ -11,5 +11,3 @@ Imagine you want to plug several USB adapters into your IoT gateway and have eac
 You can link any asset attribute in your context to an agent protocol configuration. When an attribute is linked to an agent's protocol configuration, all value change and write operations of the attribute are delegated to the agent and ultimately the protocol implementation.
 
 Whenever a client sends a message to write an attribute value, when that attribute is linked to an agent the message is passed through to the agent and no rules, flows, database and therefore context update is made. The protocol may decide to update the attribute's state in the context, the same way it would perform a regular update from a sensor read. This is how OpenRemote maps attribute value changes to actuator events.
-
-TBC
