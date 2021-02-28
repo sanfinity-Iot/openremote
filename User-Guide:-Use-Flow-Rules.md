@@ -35,4 +35,4 @@ A flow rule is generated backwards. The system goes through every output node an
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
 - [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [Demo Smart City](Demo-Smart-City)
-- [Get Started](https://openremote.io/get-started-manager/)
+- [Get Started](https://openremote.io/get-started-iot-platform/)
