@@ -48,4 +48,4 @@ Your rule is finished! Every Friday evening the rule will check if one of the tw
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
 - [Demo Smart City](Demo-Smart-City)
-- [Get Started](https://openremote.io/get-started-manager/)
+- [Get Started](https://openremote.io/get-started-iot-platform/)
