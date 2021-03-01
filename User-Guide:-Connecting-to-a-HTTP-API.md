@@ -43,7 +43,7 @@ The weather asset will now appear in the list as a child of the `HTTP API Agent`
     ]
   },
   "pollingMillis": 60000,
-  "path": "/weather",
+  "path": "weather",
   "valueFilters": [
       {
         "type": "jsonPath",
@@ -74,7 +74,7 @@ We are looking for the data of the city of Rottermdam, in metric units. We want 
     ]
   },
   "pollingMillis": 60000,
-  "path": "/weather",
+  "path": "weather",
   "valueFilters": [
       {
         "type": "jsonPath",
@@ -117,7 +117,7 @@ Do the same for the temperature asset.
     ]
   },
   "pollingMillis": 60000,
-  "path": "/weather"
+  "path": "weather"
 }
 ```
 4. In the `attribute link` configuration item add the following, using the ID copied from this assets URL (the asset that has the attributes you want to push the data to):
