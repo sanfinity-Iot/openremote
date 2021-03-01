@@ -3,7 +3,6 @@ Working on the UI means working on any of:
 * Web applications that provide functionality to endusers
 * Web components and their demos, shared between applications
 * Keycloak theme(s) used in authentication screens
-* Working on the (legacy GWT) Manager client
 
 ## Quickstart
 You will need the standard tool chain (see [[Preparing the environment|Developer Guide: Preparing the environment]]) to be able to build and run the components and apps. Working on the web applications and/or components will also generally require backend services to interact with, you can either:
@@ -60,12 +59,6 @@ These are apps for development purposes Generally a 1-1 mapping between componen
 ### Keycloak Themes
 Each theme is located in its own directory within the `keycloak/themes` directory. When running any of the `dev` docker compose profiles; each theme can be volume mapped into the keycloak service and changes are reflected in real time allowing for easy development of these themes (see [Docker compose profiles](./Developer-Guide:-Docker-compose-profiles) for more details).
 
-## Working on the legacy Manager GWT web application (`/client`)
-If you are working on the legacy GWT based Manager web application you will need to start the GWT compiler and keep it running in the background; this service listens for compilation requests and transforms Java into JavaScript code:
-```
-./gradlew gwtSuperDev
-```
-
 # See also
 
-- [Get Started](https://openremote.io/get-started-manager/)
+- [Get Started](https://openremote.io/get-started-iot-platform/)
