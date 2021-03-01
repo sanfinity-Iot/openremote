@@ -13,7 +13,6 @@ The following example uses a weather API provided by [OpenWeatherMap](https://op
 4. The agent is now created with preconfigured attributes. We will set some of those to establish the connection:
    * Base URI: `https://api.openweathermap.org/data/2.5/` (Don't forget to send the value by clicking the send button on the right or pressing Enter)
    * Request query parameters: `{"appid": ["YOUR_API_KEY"]}` (Input the API key from you openweathermap account)
-5. Refresh the agent status by checking and unchecking the checkbox `Agent disabled`. The Agent status should now go from `ERROR` to `CONNECTED`
 
 You now have a basic HTTP API protocol ready to be linked to by asset attributes. 
 In the next step we will need the Asset ID of this agent, so copy that from the URL now. e.g. `501p87wK1bhf6Dh2M5ZQZj` if URL is: `https://localhost/main/#!assets/false/501p87wK1bhf6Dh2M5ZQZj`
