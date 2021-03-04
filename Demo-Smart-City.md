@@ -2,11 +2,11 @@ The Open Source Smart City demo illustrates a few imaginary applications in a si
 * maintaining digital assets by exposing the data as assets and attributes, in a standardised manner, including acces rights.
 * creating applications requiring the combination of assets, using WHEN-THEN rules or the FLOW editor, or creating dedicated front-end applications for desktop and mobile.
 
-There are actually two realms which are part of the demo, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-manager/)): the 'smartcity' realm and the 'master' realm for system manager (for configuration the project and remote management of multiple realms). 
+There are actually two realms which are part of the demo, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-iot-platform/)): the 'smartcity' realm and the 'master' realm for system manager (for configuration the project and remote management of multiple realms). 
 
 # Demo Smart City
 
-To view a few example applications we have added the Smart City realm to the project https://localhost/main/?realm=smartcity/ (Username: smartcity, Password: smartcity), which gives control over all areas. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)).
+To view a few example applications we have added the Smart City realm to the project https://localhost/manager/?realm=smartcity/ (Username: smartcity, Password: smartcity), which gives control over all areas. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)).
 
 If you just want to see how it looks before actually installing OpenRemote, see the [online Demo Smart City](https://openremote.io/demo/) and select your preferred language at the top right.
 
@@ -49,9 +49,9 @@ _Figure 4. The Insights view of the Demo Smart City, showing the soil temperatur
 
 The application for the System Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for System Manager and the Smart City Demo via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
 
-Application for System Manager: https://localhost/main/?realm=master/ (Username: admin, Password: secret)
+Application for System Manager: https://localhost/manager/?realm=master/ (Username: admin, Password: secret)
 
-Application for Demo Smart City: https://localhost/main/?realm=smartcity/ (Username: smartcity, Password: smartcity)
+Application for Demo Smart City: https://localhost/manager/?realm=smartcity/ (Username: smartcity, Password: smartcity)
 
 If you open the Application for the System Manager, you will see two Realms in the upper right realm-picker: 'master', and 'smartcity'. The [Demo Smart City](#demo-smart-city) refers to the 'smartcity'. If you select the 'smartcity' realm in the System Manager, you will notice that you see exactly the same attributes as visible in the [Demo Smart City](#demo-smart-city). 
 
@@ -65,5 +65,5 @@ See the documentation on our wiki for more details.
 
 # See Also
 - [Next 'Get Started' step: Working on the UI](Developer-Guide%3A-Working-on-the-UI)
-- [Get Started](https://openremote.io/get-started-manager/)
+- [Get Started](https://openremote.io/get-started-iot-platform/)
 - [OpenRemote Wiki](https://github.com/openremote/openremote/wiki)
