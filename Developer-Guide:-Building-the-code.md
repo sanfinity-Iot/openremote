@@ -15,4 +15,4 @@ If you want to run the tests (requires running background service containers on 
 When background services are not available, the test harness will try to connect for a long time before giving up. TODO: Fix this, fail fast when test harness can't access services.
 
 # See Also
-- [Get Started](https://openremote.io/get-started-manager/)
+- [Get Started](https://openremote.io/get-started-iot-platform/)
