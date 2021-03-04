@@ -259,4 +259,4 @@ To build for example the manager image:
 # See also
 
 - [[Building the Code|Developer-Guide:-Building the code]]
-- [Get Started](https://openremote.io/get-started-manager/)
+- [Get Started](https://openremote.io/get-started-iot-platform/)
