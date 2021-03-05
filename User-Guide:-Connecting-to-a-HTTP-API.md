@@ -78,7 +78,7 @@ We are looking for the data of the city of Rottermdam, in metric units. We want 
   "valueFilters": [
       {
         "type": "jsonPath",
-        "path": "$.main.temperature",
+        "path": "$.main.temp",
         "returnFirst": true,
         "returnLast": false
       }
