@@ -2,7 +2,7 @@ All OpenRemote projects are delivered as Docker images, you'll need a Docker hos
 
 ## Local Engine
 
-For a local engine (developer workstation setup) simply installing [Docker Desktop](https://www.docker.com/) is enough. If you cannot install Docker Community Edition (i.e. you're on Windows Home Edition which doesn't support Hyper-V) then you will need to install the [Docker Toolbox Edition](https://docs.docker.com/toolbox/toolbox_install_windows/) which uses VirtualBox.
+For a local engine (developer workstation setup) simply installing [Docker Desktop](https://www.docker.com/products/docker-desktop) is enough (uses WSL2 backend on Windows).
 
 Ensure the following commands work:
 
