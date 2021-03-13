@@ -2,6 +2,63 @@
 
 * [[Quick Start|https://github.com/openremote/openremote/blob/master/README.md]]
 
+## User Guide
+
+### Protocol Agents
+
+* [[Connect Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
+* [[Connect Artnet DMX|User Guide: Connecting to Artnet DMX]]
+* [[Connect a HTTP API|User Guide: Connecting to a HTTP API]]
+* [[Connect IKEA Trådfri|User-Guide:-Connecting-to-IKEA-TRÅDFRI]]
+* [[Connect KNX|User-Guide:-Connecting-to-KNX]]
+* [[Create Surveys|User-Guide:Creating and Reporting Surveys]]
+* [[Connect a UDP Server|User Guide: Connecting to a UDP Server]]
+* [[Connect a Websocket Server|User Guide: Connecting to a Websocket Server]]
+* [[Connect TCP Server|User-Guide:-Connecting-with-TCP]]
+* [[Connect Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
+* [[Connect Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
+* [[Connect UPnP|User-Guide:-Connecting-to-UPnP]]
+* [[Connect Z-wave|User-Guide:-Connecting-to-Z-wave]]
+* [[Connect via MQTT|How-to-work-with-MQTT]]
+* [[Generic protocols|User Guide: Generic protocols]]
+
+### Assets & Attributes
+
+* [[The Asset model and API|Architecture: The Asset model and API]]
+* [[Create an Asset|User-Guide:-Create an Asset]]
+* [[Use Asset APIs|User-Guide:-Use Asset API]]
+* [[Linking Attributes|User-Guide:-Linking attributes]]
+* [[Use Health Status Provider]]
+
+### Identity & Security
+
+* [[Access rights|User-Guide:-Public, Private, or Restricted access]]
+* [[Security OAuth|User-Guide:-Using OAuth]]
+* [[Linking to Active Directory|Connecting-Keycloak-to-AD-with-LDAP-configuration]]
+
+### Edge Gateways
+
+* [[Provisioning and Connecting|User-Guide:-Edge Gateway]]
+
+### Application Consoles
+
+* [[Demo Smart City|Demo-Smart-City]]
+* [[Use UI components|User-Guide:-UI components]]
+* [[Create iOS Console|User-Guide:-Create the iOS Console]]
+* [[Create Android Console|User-Guide:-Create the Android Console]]
+* [[Use Web Console|User-Guide:-Use the Web Console]]
+* [[Management Console|User-Guide:-Use the Management Console]]
+
+### Rules Engine
+
+* [[Create Rules|User-Guide:-Create Rules]]
+* [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
+* [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
+* [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
+* [[Use Flow Rules|User-Guide:-Use Flow Rules]]
+
+
+
 ## Developer Guide
 
 * [[Preparing the environment|Developer Guide: Preparing the environment]]
@@ -22,60 +79,7 @@
 * [[MQTT Connections|How to work with MQTT]]
 * [[Edge gateways|Developer Guide: Edge gateways]]
 
-## Protocol Agents
-
-* [[Connect Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
-* [[Connect Artnet DMX|User Guide: Connecting to Artnet DMX]]
-* [[Connect a HTTP API|User Guide: Connecting to a HTTP API]]
-* [[Connect IKEA Trådfri|User-Guide:-Connecting-to-IKEA-TRÅDFRI]]
-* [[Connect KNX|User-Guide:-Connecting-to-KNX]]
-* [[Create Surveys|User-Guide:Creating and Reporting Surveys]]
-* [[Connect a UDP Server|User Guide: Connecting to a UDP Server]]
-* [[Connect a Websocket Server|User Guide: Connecting to a Websocket Server]]
-* [[Connect TCP Server|User-Guide:-Connecting-with-TCP]]
-* [[Connect Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
-* [[Connect Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
-* [[Connect UPnP|User-Guide:-Connecting-to-UPnP]]
-* [[Connect Z-wave|User-Guide:-Connecting-to-Z-wave]]
-* [[Connect via MQTT|How-to-work-with-MQTT]]
-* [[Generic protocols|User Guide: Generic protocols]]
-
-## Assets & Attributes
-
-* [[The Asset model and API|Architecture: The Asset model and API]]
-* [[Create an Asset|User-Guide:-Create an Asset]]
-* [[Use Asset APIs|User-Guide:-Use Asset API]]
-* [[Linking Attributes|User-Guide:-Linking attributes]]
-* [[Use Health Status Provider]]
-
-## Identity & Security
-
-* [[Access rights|User-Guide:-Public, Private, or Restricted access]]
-* [[Security OAuth|User-Guide:-Using OAuth]]
-* [[Linking to Active Directory|Connecting-Keycloak-to-AD-with-LDAP-configuration]]
-
-## Edge Gateways
-
-* [[Provisioning and Connecting|User-Guide:-Edge Gateway]]
-
-## Application Consoles
-
-* [[Demo Smart City|Demo-Smart-City]]
-* [[Use UI components|User-Guide:-UI components]]
-* [[Create iOS Console|User-Guide:-Create the iOS Console]]
-* [[Create Android Console|User-Guide:-Create the Android Console]]
-* [[Use Web Console|User-Guide:-Use the Web Console]]
-* [[Management Console|User-Guide:-Use the Management Console]]
-
-## Rules Engine
-
-* [[Create Rules|User-Guide:-Create Rules]]
-* [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
-* [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
-* [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
-* [[Use Flow Rules|User-Guide:-Use Flow Rules]]
-
-## Architecture
+### Architecture
 
 * [[Apps and consoles|Architecture: Apps and consoles]]
 * [[Asset location tracking|Architecture: Asset location tracking]]
