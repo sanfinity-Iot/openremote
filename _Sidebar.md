@@ -4,7 +4,7 @@
 
 ## User Guide
 
-### Application Consoles
+### UI Applications
 
 * [[Demo Smart City|Demo-Smart-City]]
 * [[Use UI components|User-Guide:-UI components]]
