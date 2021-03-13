@@ -4,6 +4,9 @@
 
 ## User Guide
 
+### Deploying
+
+* [[Custom deployment|User-Guide:-Custom-deployment]]
 * [[OpenRemote CLI|User-Guide:-OpenRemote-CLI]]
 
 ### UI Applications
