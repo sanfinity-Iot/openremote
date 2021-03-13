@@ -4,6 +4,8 @@
 
 ## User Guide
 
+* [[OpenRemote CLI|User-Guide:-OpenRemote-CLI]]
+
 ### UI Applications
 
 * [[Demo Smart City|Demo-Smart-City]]
