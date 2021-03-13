@@ -81,10 +81,6 @@ Deploy the stack using docker on Windows:
 docker run --rm -ti -v %userprofile%\.aws:/root/.aws openremote/openremote-cli deploy --provider aws -v --dnsname test-win.mvp.openremote.io
 ```
 
-
-More configuration options of the images are documented [in the deploy.yml profile](https://github.com/openremote/openremote/blob/master/profile/deploy.yml).
-
-
 This procedure was tested on AWS t4g EC2 instance using [CloudFormation template](https://github.com/openremote/openremote/gitlab-ci/aws-cloudformation.template.arm64.yml).
 
 **Tip:** [AWS CloudFormation template](https://github.com/openremote/openremote/gitlab-ci/aws-cloudformation.template.arm64.yml) Resources.EC2Instance.Properties.UserData section contains installation script for AWS Linux ARM device.
