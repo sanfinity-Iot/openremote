@@ -4,6 +4,31 @@
 
 ## User Guide
 
+### Application Consoles
+
+* [[Demo Smart City|Demo-Smart-City]]
+* [[Use UI components|User-Guide:-UI components]]
+* [[Create iOS Console|User-Guide:-Create the iOS Console]]
+* [[Create Android Console|User-Guide:-Create the Android Console]]
+* [[Use Web Console|User-Guide:-Use the Web Console]]
+* [[Management Console|User-Guide:-Use the Management Console]]
+
+### Rules Engine
+
+* [[Create Rules|User-Guide:-Create Rules]]
+* [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
+* [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
+* [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
+* [[Use Flow Rules|User-Guide:-Use Flow Rules]]
+
+### Assets & Attributes
+
+* [[The Asset model and API|Architecture: The Asset model and API]]
+* [[Create an Asset|User-Guide:-Create an Asset]]
+* [[Use Asset APIs|User-Guide:-Use Asset API]]
+* [[Linking Attributes|User-Guide:-Linking attributes]]
+* [[Use Health Status Provider]]
+
 ### Protocol Agents
 
 * [[Connect Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
@@ -22,14 +47,6 @@
 * [[Connect via MQTT|How-to-work-with-MQTT]]
 * [[Generic protocols|User Guide: Generic protocols]]
 
-### Assets & Attributes
-
-* [[The Asset model and API|Architecture: The Asset model and API]]
-* [[Create an Asset|User-Guide:-Create an Asset]]
-* [[Use Asset APIs|User-Guide:-Use Asset API]]
-* [[Linking Attributes|User-Guide:-Linking attributes]]
-* [[Use Health Status Provider]]
-
 ### Identity & Security
 
 * [[Access rights|User-Guide:-Public, Private, or Restricted access]]
@@ -39,24 +56,6 @@
 ### Edge Gateways
 
 * [[Provisioning and Connecting|User-Guide:-Edge Gateway]]
-
-### Application Consoles
-
-* [[Demo Smart City|Demo-Smart-City]]
-* [[Use UI components|User-Guide:-UI components]]
-* [[Create iOS Console|User-Guide:-Create the iOS Console]]
-* [[Create Android Console|User-Guide:-Create the Android Console]]
-* [[Use Web Console|User-Guide:-Use the Web Console]]
-* [[Management Console|User-Guide:-Use the Management Console]]
-
-### Rules Engine
-
-* [[Create Rules|User-Guide:-Create Rules]]
-* [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
-* [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
-* [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
-* [[Use Flow Rules|User-Guide:-Use Flow Rules]]
-
 
 
 ## Developer Guide
