@@ -47,7 +47,7 @@ _Figure 4. The Insights view of the Demo Smart City, showing the soil temperatur
 
 The application for the System Manager requires you to set up OpenRemote locally first. Follow the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md). Next, you can access the Application for System Manager via your browser: https://localhost/manager/?realm=master/ (Username: admin, Password: secret)
 
-If you open the Application for the System Manager, you will see only see the 'Master' realm in the upper right realm-picker. The [Demo Smart City](#demo-smart-city) refers to the 'Smart City' as we have added that realm in the online demo. 
+If you open the Application for the System Manager, you will see only see the 'Master' realm in the upper right realm-picker. The [Demo Smart City](#demo-smart-city) refers to the 'Smart City' as we have added that realm in the online demo for you. 
 
 To see what functionality you have available as System Manager, watch the Introduction Video: [Integrating with OpenRemote](https://youtu.be/mx9amWaItn0). 
 
