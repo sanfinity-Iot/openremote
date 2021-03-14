@@ -1,7 +1,7 @@
 ## Welcome to the OpenRemote wiki!
 
 
-**OpenRemote is a platform that simplifies connecting networked assets to mobile- and web applications.**
+**OpenRemote is a 100% open source IoT platform that simplifies connecting networked assets to mobile- and web applications.**
 
 ![Architecture 3.0](https://github.com/openremote/Documentation/blob/master/manuscript/figures/architecture-3.jpg)
 
