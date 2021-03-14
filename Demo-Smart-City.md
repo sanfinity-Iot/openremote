@@ -1,6 +1,6 @@
 The Manager UI functionality is illustrated in the Smart City demo with a few imaginary applications in a single realm. It is part of the [online demo](https://openremote.io/demo/). It illustrates how the integration of several vertical solutions in a central platform, benefits a Smart City and what you can build yourself, once installed locally.
 
-In an OpenRemote system you can have multiple realms for your projects or customers, with the 'Master' realm for the system manager (for configuration the project and remote management of multiple realms). Online you will only get 'view' access to the 'Smart City' project realm. Locally, you will have an empty installation, including the 'Master' realm and full admin access. 
+In an OpenRemote system you can have multiple realms for your projects or customers, with the 'Master' realm for the system manager (for configuration the project and remote management of multiple realms). Online you will only get 'view' access to the 'Smart City' project realm. If you have installed OpenRemote locally (see [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)), you will have an empty installation, including the 'Master' realm and full admin access. 
 
 # Online Demo Smart City
 
@@ -17,6 +17,8 @@ Both the Map and Asset view give you access to the respective Assets and related
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Assets.png)
 _Figure 2. The Asset view of the Demo Smart City, showing an EV charger with the different attributes_
+
+If you want to add assets and link them to an existing system or dataservice, first install OpenRemote locally (see [Quick Start)](https://github.com/openremote/openremote/blob/master/README.md)) and have a look at the video [Integrating with OpenRemote](https://youtu.be/mx9amWaItn0). 
 
 ## Rules
 
