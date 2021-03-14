@@ -1,16 +1,12 @@
-The Open Source Smart City demo illustrates a few imaginary applications in a single realm. It is part of the [online demo](https://openremote.io/demo/) as well as the project. It illustrates how the integration of several vertical solutions in a central platform, benefits a Smart City as well as its Citizens:
-* maintaining digital assets by exposing the data as assets and attributes, in a standardised manner, including acces rights.
-* creating applications requiring the combination of assets, using WHEN-THEN rules or the FLOW editor, or creating dedicated front-end applications for desktop and mobile.
+The Manager UI functionality is illustrated in the Smart City demo with a few imaginary applications in a single realm. It is part of the [online demo](https://openremote.io/demo/). It illustrates how the integration of several vertical solutions in a central platform, benefits a Smart City and what you can build yourself, once installed locally.
 
-There are actually two realms which are part of the demo, once you have set it up yourself (See [Get Started](https://openremote.io/get-started-iot-platform/)): the 'smartcity' realm and the 'master' realm for system manager (for configuration the project and remote management of multiple realms). 
+In an OpenRemote system you can have multiple realms for your projects or customers, with the 'Master' realm for the system manager (for configuration the project and remote management of multiple realms). Online you will only get 'view' access to the 'Smart City' project realm. Locally, you will have an empty installation, including the 'Master' realm and full admin access. 
 
-# Demo Smart City
+# Online Demo Smart City
 
-To view a few example applications we have added the Smart City realm to the project https://localhost/manager/?realm=smartcity/ (Username: smartcity, Password: smartcity), which gives control over all areas. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)).
+To view a few example applications we have added the 'Smart City' project realm to the [online demo](https://openremote.io/demo/), which gives control over all areas. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)).
 
-If you just want to see how it looks before actually installing OpenRemote, see the [online Demo Smart City](https://openremote.io/demo/) and select your preferred language at the top right.
-
-If you open the application on desktop you will get four main views: Map (Figure 1), Assets (Figure 2), Rules (Figure 3), and Insights. On mobile you will only see Map, and Assets.
+If you open the application you will get four main views: Map (Figure 1), Assets (Figure 2), Rules (Figure 3), and Insights. On mobile you will only see Map, Assets and Insights.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)
 _Figure 1. The Map view of the Demo Smart City, showing the map with different attributes across the City_
@@ -57,7 +53,7 @@ If you open the Application for the System Manager, you will see two Realms in t
 
 ## Groovy rules and Global rules
 
-In addition to the WHEN-THEN and FLOW rules, when logged into the master with the admin privileges, there is a third type 'GROOVY' which allows you to program more complex logic.
+In addition to the WHEN-THEN and FLOW rules, when logged into the master, locally with the admin privileges, there is a third type 'GROOVY' which allows you to program more complex logic.
 
 You will also notice that you can switch between realm rules and global rules. The global rules allow you to define rules which can use attributes across the different realms, as opposed to the realm rules which will only work within the selected realm. 
 
