@@ -2,10 +2,12 @@ The ```openremote-cli``` (or ```or``` for short) is a command line tool that can
 
 Prerequisites: 
 
-- `python`
-- `wget` (available as part of `git BASH` etc. on windows)
 - `docker`
+- `python`
 - `docker-compose`
+- `aws-cli`
+
+In case of using the prebuilt `openremote/openremote-cli` docker image, only `docker` is needed.  
 
 ### Install
 ```bash
@@ -51,4 +53,51 @@ or deploy --provider aws --dnsname test.mvp.openremote.io -v
 Remove the stack and clean resources:
 ```bash
 or deploy -a remove --provider aws --dnsname test.mvp.openremote.io -v
+```
+
+### Check health of running manager
+
+```bash
+or deploy -a health -v
+or deploy -a health --dnsname demo.openremote.io -v
+```
+
+### Configure manager
+
+```
+> or manager --list-realms --login -q -t
+
+Listing realms
+--------------
+master          Master
+smartcity       Smart City
+```
+To check (growing) list of commands:
+```
+> or manager -h
+usage: openremote-cli manager [-h] [-V] [-n] [-v] [-t] [-q] [-u USER] [-p PASSWORD] [--dnsname DNSNAME] [--list-realms] [--list-users]
+                              [--list-public-assets] [--create-user] [--delete-user] [--realm REALM] [--login]
+
+manage online manager
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -V, --version         show program's version number and exit
+  -n, --dry-run         showing effects without actual run and exit (default: False)
+  -v, --verbosity       increase output verbosity (default: 0)
+  -t, --no-telemetry    Don't send usage data to server (default: False)
+  -q, --quiet           suppress info (default: False)
+
+manager arguments:
+  -u USER, --user USER  username (default: admin)
+  -p PASSWORD, --password PASSWORD
+                        user password (default: None)
+  --dnsname DNSNAME     OpenRemote dns (default: demo.openremote.io)
+  --list-realms         list defined realms (default: False)
+  --list-users          list defined users in a realm (default: False)
+  --list-public-assets  list public assets in a realm (default: False)
+  --create-user         create users in a realm (default: False)
+  --delete-user         delete users from a realm (default: False)
+  --realm REALM         realm to work on (default: master)
+  --login               login into manager (default: False)
 ```
