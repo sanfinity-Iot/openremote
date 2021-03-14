@@ -43,13 +43,11 @@ _Figure 4. The Insights view of the Demo Smart City, showing the soil temperatur
 
 # Application for System Manager
 
-The application for the System Manager requires you to set up the demo environment locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access both the Application for System Manager and the Smart City Demo via your browser (if you are using Docker Toolbox replace localhost with 192.168.99.100):
+The application for the System Manager requires you to set up OpenRemote locally first. Follow the [Get Started](https://openremote.io/get-started-manager/). Next, you can access the Application for System Manager via your browser: https://localhost/manager/?realm=master/ (Username: admin, Password: secret)
 
-Application for System Manager: https://localhost/manager/?realm=master/ (Username: admin, Password: secret)
+If you open the Application for the System Manager, you will see only see the 'Master' realm in the upper right realm-picker. The [Demo Smart City](#demo-smart-city) refers to the 'Smart City' as we have added that realm in the online demo. 
 
-Application for Demo Smart City: https://localhost/manager/?realm=smartcity/ (Username: smartcity, Password: smartcity)
-
-If you open the Application for the System Manager, you will see two Realms in the upper right realm-picker: 'master', and 'smartcity'. The [Demo Smart City](#demo-smart-city) refers to the 'smartcity'. If you select the 'smartcity' realm in the System Manager, you will notice that you see exactly the same attributes as visible in the [Demo Smart City](#demo-smart-city). 
+To see what functionality you have available as System Manager, watch the Introduction Video: [Integrating with OpenRemote](https://youtu.be/mx9amWaItn0). 
 
 ## Groovy rules and Global rules
 
