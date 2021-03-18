@@ -19,7 +19,7 @@
 ### Rules Engine
 
 * [[Create Rules|User-Guide:-Create Rules]]
-* [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
+* [[Use When-Then Rules|User-Guide:-Use WHEN-THEN Rules]]
 * [[Use Flow Rules|User-Guide:-Use Flow Rules]]
 * [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
 * [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
