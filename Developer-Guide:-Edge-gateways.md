@@ -34,16 +34,15 @@ We use the following [GitHub Actions workflow](https://github.com/openremote/ope
    1. `chmod +x /usr/local/bin/docker-compose`
 1. Check install was successful with `docker-compose --version`
 1. Download basic demo docker compose profiles and dependencies:
-   1. `curl https://raw.githubusercontent.com/openremote/openremote/master/profile/demo-basic.yml -o demo-basic.yml -L`
+   1. `curl https://raw.githubusercontent.com/openremote/openremote/master/profile/basic-identity.yml -o basic-identity.yml -L`
    1. `curl https://raw.githubusercontent.com/openremote/openremote/master/profile/deploy.yml -o deploy.yml -L`
-1. Modify `demo-basic.yml` and replace service image tag names with `latest-arm64` (only required whilst docker hub images are using manifests)
-1. Pull OpenRemote images: `docker-compose -f demo-basic.yml pull` (if docker compose complains about missing build directories just create them using `mkdir -p`)
-1. Stop existing stack (if previously deployed): `docker-compose -f sfella.yml -f demo-basic.yml down`
+1. Pull OpenRemote images: `docker-compose -f basic-identity.yml pull` (if docker compose complains about missing build directories just create them using `mkdir -p`)
+1. Stop existing stack (if previously deployed): `docker-compose -f sfella.yml -f basic-identity.yml down`
 1. Cleanup any dangling volumes and images:
    1. `docker volume prune`
    1. `docker rmi $(docker images -f "dangling=true" -q)`
 1. Start the stack (can optionally specify `GATEWAY_CLIENT_ID` and `GATEWAY_CLIENT_SECRET` environment variables to automatically set the `Manager interconnect` settings):
-   `docker-compose -f demo-basic.yml up -d --no-build` or with environment variables `GATEWAY_CLIENT_ID=XXXX GATEWAY_CLIENT_SECRET=YYYY docker-compose -f demo-basic.yml up -d --no-build` 
+   `docker-compose -f basic-identity.yml up -d --no-build` or with environment variables `GATEWAY_CLIENT_ID=XXXX GATEWAY_CLIENT_SECRET=YYYY docker-compose -f basic-identity.yml up -d --no-build` 
    
 1. You should now be able to access the OpenRemote manager:
    1. OpenRemote Manager = https://IPADDRESS/
