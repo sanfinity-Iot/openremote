@@ -48,7 +48,7 @@
 * [[Connect UPnP|User-Guide:-Connecting-to-UPnP]]
 * [[Connect Z-wave|User-Guide:-Connecting-to-Z-wave]]
 * [[Connect via MQTT|How-to-work-with-MQTT]]
-* [[Create Client Event Agent|User Guide: Client Event Agent]]
+* [[Setup Websocket/MQTT connections|User Guide: Setup Client Event protocol]]
 * [[Generic protocols|User Guide: Generic protocols]]
 
 ### Identity & Security
