@@ -58,13 +58,15 @@ Base set for assets:
 * Units: Indicates the units associated with the value, there's some special handling for Boolean and Date values but otherwise the value type should be numeric. Units are intended for UI usage and should support internationalisation, custom unit types can be composed e.g. ["kilo", "metre", "per", "hour"] => "km/h" see org.openremote.model.Constants for well known units that UIs should support as a minimum. Currencies get special handling and should be represented using the upper case 3 letter currency code as defined in ISO 4217
 * Format: ValueFormat to be applied when converting the associated Attribute to string representation.
 * Contraints: ValueConstraints to be applied to the Attribute value; these override any constraints defined on any of the descriptors associated with the attribute. (AllowedValues, Future, FutureOrPresent, Max, Min, NotBlank, NotEmpty, NotNull, Past, PastOrPresent, Pattern, Size).
-```{
+```
+{
 "constraints": [
   {
      "type": "max",
      "max": 999999
   }
-]}```
+]}
+```
 
 * Secret: Marks the value as secret and indicates that clients should display this in a concealed manner (e.g. password input with optional show)
 * Multiline: Indicates that any input should support multiline text entry
