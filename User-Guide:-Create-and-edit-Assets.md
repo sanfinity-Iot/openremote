@@ -65,6 +65,7 @@ Base set for assets:
      "max": 999999
   }
 ]}```
+
 * Secret: Marks the value as secret and indicates that clients should display this in a concealed manner (e.g. password input with optional show)
 * Multiline: Indicates that any input should support multiline text entry
 * Show on dashboard: If there is a dashboard, some kind of attribute overview, should this attribute be shown.
