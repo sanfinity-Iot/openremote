@@ -34,22 +34,22 @@
 
 ### Protocol Agents
 
-* [[Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
+* [[Generic protocols|User Guide: Generic protocols]]
 * [[Artnet DMX|User Guide: Connecting to Artnet DMX]]
+* [[Client EvenT Protocol: Websocket/MQTT|User Guide: Setup Client Event protocol]]
+* [[Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
+* [[Create Surveys|User-Guide:Creating and Reporting Surveys]]
 * [[HTTP API|User Guide: Connecting to a HTTP API]]
 * [[IKEA Trådfri|User-Guide:-Connecting-to-IKEA-TRÅDFRI]]
 * [[KNX|User-Guide:-Connecting-to-KNX]]
-* [[Create Surveys|User-Guide:Creating and Reporting Surveys]]
-* [[UDP Server|User Guide: Connecting to a UDP Server]]
-* [[Websocket Server|User Guide: Connecting to a Websocket Server]]
+* [[MQTT|How-to-work-with-MQTT]]
 * [[TCP Server|User-Guide:-Connecting-with-TCP]]
+* [[UDP Server|User Guide: Connecting to a UDP Server]]
+* [[UPnP|User-Guide:-Connecting-to-UPnP]]
 * [[Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
 * [[Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
-* [[UPnP|User-Guide:-Connecting-to-UPnP]]
+* [[Websocket Server|User Guide: Connecting to a Websocket Server]]
 * [[Z-wave|User-Guide:-Connecting-to-Z-wave]]
-* [[MQTT|How-to-work-with-MQTT]]
-* [[Client EvenT Protocol: Websocket/MQTT|User Guide: Setup Client Event protocol]]
-* [[Generic protocols|User Guide: Generic protocols]]
 
 ### Identity & Security
 
