@@ -4,7 +4,7 @@
 
 There are two ways to configure MQTT access:
 
-* Create a `ClientEvent` `agent` in the realm that contains the `asset(s)` you wish to subscribe/publish to. This will automatically provision the keycloak client either with a randomly generated client ID and secret or with the values supplied in the `clientId` and `clientSecret` attributes of the agent; once the Keycloak client is generated the `clientId` and `clientSecret` attributes will be populated with the corresponding values.
+* The guide found here: [[Setup Websocket/MQTT connections|User Guide: Setup Client Event protocol]]
 
 * Manually add a client in `Keycloak` to the realm that contains the `asset(s)` you wish to subscribe/publish to, the client have `Client Credentials` grant type enabled (it's called `Service Accounts` in the Keycloak admin UI). It is also possible to provision these Keycloak clients in setup code (see `KeycloakDemoSetup.java` for a demo setup of Keycloak MQTT client)
 
