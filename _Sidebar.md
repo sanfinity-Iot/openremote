@@ -38,7 +38,6 @@
 * [[Artnet DMX|User Guide: Connecting to Artnet DMX]]
 * [[Client EvenT Protocol: Websocket/MQTT|User Guide: Setup Client Event protocol]]
 * [[Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
-* [[Create Surveys|User-Guide:Creating and Reporting Surveys]]
 * [[HTTP API|User Guide: Connecting to a HTTP API]]
 * [[IKEA Trådfri|User-Guide:-Connecting-to-IKEA-TRÅDFRI]]
 * [[KNX|User-Guide:-Connecting-to-KNX]]
