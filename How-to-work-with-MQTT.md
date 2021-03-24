@@ -94,3 +94,7 @@ Topic:
 assets/<assetId>/<attributeName>/value
 0.65
 ```
+
+# See also
+
+- [[Setup Websocket/MQTT connections|User Guide: Setup Client Event protocol]]
