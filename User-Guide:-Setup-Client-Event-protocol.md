@@ -1,5 +1,3 @@
-**NOTE: CLIENT EVENT AGENT IS NOT YET ACCESSIBLE VIA THE NEW MANAGER UI. IT IS HOWEVER ALREADY PART OF THE CODE BASE AND WILL BE ADDED IN NEXT RELEASES.**
-
 ## Purpose
 
 This protocol is for pub-sub devices to connect to the manager client event broker (MQTT or websocket);
