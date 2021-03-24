@@ -95,6 +95,14 @@ assets/<assetId>/<attributeName>/value
 0.65
 ```
 
+### Custom authorisation and message processing
+
+If you would like to customise the way authorisation is done, then you need to create a class which implements `IAuthorizatorPolicy`.
+The `MqttBrokerService` has the function `addAuthorizerPolicy` which accepts an `IAuthorizatorPolicy`.
+
+In order to customise the processing of messages, you can implement `InterceptHandler` or extend `AbstractInterceptHandler`.
+The `MqttBrokerService` has the function `addInterceptHandler` which accepts an `InterceptHandler`.
+
 # See also
 
 - [[Setup Websocket/MQTT connections|User Guide: Setup Client Event protocol]]
