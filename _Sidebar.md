@@ -19,10 +19,10 @@
 ### Rules Engine
 
 * [[Create Rules|User-Guide:-Create Rules]]
-* [[Use When-Then Rules|User-Guide:-Use WHEN-THEN Rules]]
-* [[Use Flow Rules|User-Guide:-Use Flow Rules]]
-* [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
-* [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
+* [[When-Then Rules|User-Guide:-Use WHEN-THEN Rules]]
+* [[Flow Rules|User-Guide:-Use Flow Rules]]
+* [[Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
+* [[Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
 
 ### Assets & Attributes
 
