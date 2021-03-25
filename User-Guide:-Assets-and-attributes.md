@@ -1,5 +1,3 @@
-# WIP
-
 # What is an Asset?
 ## Assets
 An asset can be anything that is connected to your system in some way. An asset is always attached to a realm, so data is not shared between realms. OpenRemote stores your current asset status in its database, and manages it in rules and flows. This collectively is called the context of your OpenRemote system.
@@ -20,7 +18,7 @@ This bring the following benefits:
 ## Agents
 An agent is a subset of an Asset that is associated with a Protocol. A protocol instance is responsible for connecting devices and services to the OpenRemote context broker, and describes the communication between them. The agent itself holds the configuration parameters of this protocol instance. Each agent will provide an instance of its protocol.
 
-# How to create an asset, attribute and its configuration items
+# Creating assets and attributes
 
 ## Creating an asset
 This is done by setting their configuration items. In the Manager UI you can do this by going to the asset on the Assets page, enabling the 'Edit mode', and selecting the attribute you can to configure.   stored, and each attribute can be configured to be used in a certain way.
