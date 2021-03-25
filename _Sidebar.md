@@ -11,7 +11,7 @@
 
 ### UI Applications
 
-* [[Demo Smart City|Demo-Smart-City]]
+* [[Manager UI: Demo Smart City|Demo-Smart-City]]
 * [[Create iOS Console|User-Guide:-Create the iOS Console]]
 * [[Create Android Console|User-Guide:-Create the Android Console]]
 * [[Use UI components|User-Guide:-UI components]]
@@ -26,8 +26,8 @@
 
 ### Assets & Attributes
 
-* [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Create and edit Assets|User-Guide:-Create-and-edit-Assets]]
+* [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Use Asset APIs|User-Guide:-Use Asset API]]
 * [[Linking Attributes|User-Guide:-Linking attributes]]
 * [[Use Health Status Provider]]
