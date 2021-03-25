@@ -26,7 +26,7 @@
 
 ### Assets & Attributes
 
-* [[Create and edit Assets|User-Guide:-Create-and-edit-Assets]]
+* [[Assets and Attributes|User-Guide:-Assets and Attributes]]
 * [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Use Asset APIs|User-Guide:-Use Asset API]]
 * [[Linking Attributes|User-Guide:-Linking attributes]]
