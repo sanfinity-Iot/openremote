@@ -27,7 +27,7 @@
 ### Assets & Attributes
 
 * [[The Asset model and API|Architecture: The Asset model and API]]
-* [[Create an Asset|User-Guide:-Create an Asset]]
+* [[Create and edit Assets|User-Guide:-Create-and-edit-Assets]]
 * [[Use Asset APIs|User-Guide:-Use Asset API]]
 * [[Linking Attributes|User-Guide:-Linking attributes]]
 * [[Use Health Status Provider]]
