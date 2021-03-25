@@ -21,13 +21,13 @@ An agent is a subset of an Asset that is associated with a Protocol. A protocol 
 # Creating assets and attributes
 
 ## Creating an asset
-This is done by setting their configuration items. In the Manager UI you can do this by going to the asset on the Assets page, enabling the 'Edit mode', and selecting the attribute you can to configure.   stored, and each attribute can be configured to be used in a certain way.
+With the correct permissions, you can create a new asset on the `Assets` page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types. Select one and click `Add`. With the asset added, you can write its attributes (if not read-only). Often you will want to modify the attributes to define how they are used in the system, e.g. get values through agent link, make the attribute available in rules, or format its value.
 
 ## Adding an attribute
-At the bottom of the attribute list you can click `+ Add attribute`, where you can choose attributes already associated with the asset type of the asset, or you can create a `custom attribute`. The custom attributes should have a `camelCase` name, which will automatically be translated to Sentence case with spaces. You can create attributes of prepared attribute types that are known by the system.
+On the Assets page enable 'Edit mode' and click `+ Add attribute` at the bottom of the list of attributes. In the modal you can choose attributes already associated with the asset type of the asset, or you can create a `custom attribute`. The custom attributes should have a `camelCase` name, which will automatically be translated to Sentence case with spaces. You can create attributes of prepared attribute types that are known by the system.
 
 ## Attribute configuration items
-Base set for assets:
+As mentioned, attributes can be configured with configuration items. In the edit mode click an attribute to add, edit or remove items. There is a base set of configuration items available for asset attributes:
 
 ### Protocol/Service
 * **Agent link**: Links the attribute to an agent, connecting it to a sensor and/or actuator with required configuration properties encapsulated in the concrete protocol specific [org.openremote.model.asset.agent.AgentLink](../../blob/master/model/src/main/java/org/openremote/model/asset/agent/AgentLink.java). Example use: [[HTTP API Guide|User Guide: Connecting to a HTTP API]]
