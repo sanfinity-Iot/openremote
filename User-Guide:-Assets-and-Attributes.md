@@ -6,10 +6,10 @@ An asset might be an actual external service or an installed device at some loca
 
 You can use the asset hierarchy to model an organizational structure. E.g. A city has buildings, which has floors, which have presence sensors.
 
-Each asset can have multiple attributes that hold a value. An attribute can be configured to: retreive its value from an agent, store its data points, be used in rules, and much more. You can read how to use them [below](#how-to-create-an-asset-attribute-and-its-configuration-items)
+Each asset can have multiple attributes that hold a value. An attribute can be configured to: retrieve its value from an agent, store its data points, be used in rules, and much more. You can read how to use them [below](#how-to-create-an-asset-attribute-and-its-configuration-items)
 
 ## Asset types
-Assets that are used often in the system can be defined as an Asset Type with has several specified attributes.
+Assets that are used often in the system can be defined as an Asset Type with several specified attributes.
 This bring the following benefits:
 - Consistent use of asset attributes: they will always be of the same name and type;
 - Configure which Asset Types can be added and used in rules through the [manager config](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment);
@@ -54,7 +54,7 @@ As mentioned, attributes can be configured with configuration items. In the edit
 * **Label**: A human-friendly string that can be displayed in UI instead of the raw attribute name.
 * **Units**: Indicates the units associated with the value, there's some special handling for Boolean and Date values but otherwise the value type should be numeric. Units are intended for UI usage and should support internationalisation, custom unit types can be composed e.g. ["kilo", "metre", "per", "hour"] => "km/h" see [org.openremote.model.Constants](../../blob/master/model/src/main/java/org/openremote/model/Constants.java). Constants for well known units that UIs should support as a minimum. Currencies get special handling and should be represented using the upper case 3 letter currency code as defined in ISO 4217
 * **Format**: ValueFormat to be applied when converting the associated Attribute to string representation.
-* **Contraints**: ValueConstraints to be applied to the Attribute value; these override any constraints defined on any of the descriptors associated with the attribute. (AllowedValues, Future, FutureOrPresent, Max, Min, NotBlank, NotEmpty, NotNull, Past, PastOrPresent, Pattern, Size).
+* **Constraints**: ValueConstraints to be applied to the Attribute value; these override any constraints defined on any of the descriptors associated with the attribute. (AllowedValues, Future, FutureOrPresent, Max, Min, NotBlank, NotEmpty, NotNull, Past, PastOrPresent, Pattern, Size).
 ```
 {
 "constraints": [
