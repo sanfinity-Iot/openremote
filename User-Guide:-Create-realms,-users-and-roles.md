@@ -6,7 +6,7 @@ Realms can be added and enabled/disabled on the settings page of the manager.
 ## Roles
 On the settings page, roles can be defined by selecting 'read' and 'write' access rights for multiple parts of the system. It's done per realms. A few important things to keep in mind:
 * If you want to give a role 'write' access, select both the 'read' and 'write' options.
-* Selecting all options gives users full access to the system. If you want users not to be able to change, users, roles, realms, do NOT select both 'admin' options (read and write)
+* Selecting all options gives users full access to the system. If you don't want users to be able to see or change, users, roles, realms, do NOT select both 'admin' options (read and write)
 * Never delete the admin user, change its rights, or change the password for the 'admin' in the UI, as this password is used across the system and changes will easily be irreversible.
 
 ## Users
