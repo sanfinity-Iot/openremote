@@ -59,6 +59,212 @@ docker-compose up
 ```
 Now when you load the Manager UI you will see a customised logo and title (images can be provided as files with paths relative to the `manager_config.json` file.
 
+<details><summary>Click to view a reference manager_config with some more customisation functionality</summary>
+<p>
+
+```json
+{
+  "pages": {
+    "map": {
+      "default": {
+        "exclude": [
+          "notes"
+        ]
+      },
+      "assetTypes": {
+        "WeatherAsset": {
+          "exclude": [
+            "location",
+            "notes",
+            "model",
+            "manufacturer"
+          ]
+        }
+      }
+    },
+    "rules": {
+      "rules": {
+        "controls": {
+          "allowedLanguages": ["JSON", "FLOW", "GROOVY"],
+          "allowedActionTargetTypes": {
+            "actions": {
+              "email": [
+                "CUSTOM", "USER"
+              ],
+              "push": [
+                "ASSET", "USER"
+              ]
+            }
+          }
+        },
+        "descriptors": {
+          "all": {
+            "excludeAssets": [
+              "TradfriLightAsset",
+              "TradfriPlugAsset",
+              "ArtnetLightAsset"
+            ],
+            "assets": {
+              "*": {
+                "excludeAttributes": [
+                  "location"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "insights": {
+      "panels": {
+        "chart": {
+          "type": "chart",
+          "hideOnMobile": true,
+          "panelStyles": {
+            "gridColumn": "1 / -1"
+          }
+        },
+        "kpi1": {
+          "type": "kpi",
+          "hideOnMobile": false
+        },
+        "kpi2": {
+          "type": "kpi",
+          "hideOnMobile": false
+        },
+        "kpi3": {
+          "type": "kpi",
+          "hideOnMobile": false
+        },
+        "kpi4": {
+          "type": "kpi",
+          "hideOnMobile": false
+        },
+        "kpi5": {
+          "type": "kpi",
+          "hideOnMobile": false
+        },
+        "kpi6": {
+          "type": "kpi",
+          "hideOnMobile": false
+        },
+        "kpi7": {
+          "type": "kpi",
+          "hideOnMobile": false
+        },
+        "kpi8": {
+          "type": "kpi",
+          "hideOnMobile": false
+        },
+        "chart2": {
+          "type": "chart",
+          "hideOnMobile": true,
+          "panelStyles": {
+            "gridColumn": "1 / -1"
+          }
+        },
+        "chart3": {
+          "type": "chart",
+          "hideOnMobile": true,
+          "panelStyles": {
+            "gridColumn": "1 / -1"
+          }
+        }
+      }
+    },
+    "assets": {
+      "tree": {
+        "add": {
+          "typesParent": {
+            "default": {
+              "exclude": [
+                "TradfriLightAsset",
+                "TradfriPlugAsset",
+                "ArtnetLightAsset",
+                "ArtnetAgent",
+                "MacroAgent",
+                "ControllerAgent",
+                "KNXAgent",
+                "ZWAgent",
+                "TradfriAgent",
+                "TimerAgent",
+                "VelbusTcpAgent",
+                "VelbusSerialAgent"
+              ]
+            }
+          }
+        }
+      },
+      "viewer": {
+        "default": {
+          "panels": {
+            "attributes": {
+              "type": "info",
+              "attributes": {
+                "exclude": ["location", "notes", "manufacturer", "model"]
+              },
+              "properties": {
+                "include": []
+              }
+            }
+          }
+        },
+        "assetTypes": {
+          "WeatherAsset": {
+            "panels": {
+              "attributes": {
+                "type": "info",
+                "attributes": {
+                  "exclude": ["location", "Radiation", "UVIndex", "currentWeather", "notes", "manufacturer", "model"]
+                },
+                "properties": {
+                  "include": []
+                }
+              }
+            }
+          }
+        },
+        "historyConfig": {
+          "table": {
+            "attributeNames": {
+              "optimiseTarget": {
+                "columns": [
+                  {
+                    "header": "Optimise target",
+                    "type": "prop",
+                    "path": "$."
+                  },
+                  {
+                    "header": "Timestamp",
+                    "type": "timestamp"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "realms": {
+    "default": {
+      "appTitle": "OpenRemote Manager",
+      "headers": [
+        "map", "assets", "rules", "insights", "language", "users", "roles", "account", "logs", "logout"
+      ],
+      "styles": ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #FF6600; --or-app-color5: #CCCCCC;}",
+      "logo": "/images/logo.png",
+      "logoMobile": "/images/logo-mobile.png",
+      "favicon": null,
+      "language": "en"
+    }
+  }
+}
+```
+
+</p>
+</details>
+
 
 ### Custom domain
 If you want to deploy the OpenRemote stack on a custom domain then all that is needed is to ensure that the docker host where the stack is running is reachable using the custom domain name on the following ports:
