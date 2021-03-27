@@ -11,3 +11,16 @@ Imagine you want to plug several USB adapters into your IoT gateway and have eac
 You can link any asset attribute in your context to an agent protocol configuration. When an attribute is linked to an agent's protocol configuration, all value change and write operations of the attribute are delegated to the agent and ultimately the protocol implementation.
 
 Whenever a client sends a message to write an attribute value, when that attribute is linked to an agent the message is passed through to the agent and no rules, flows, database and therefore context update is made. The protocol may decide to update the attribute's state in the context, the same way it would perform a regular update from a sensor read. This is how OpenRemote maps attribute value changes to actuator events.
+
+##Agent model and protocol SPI##
+
+See the KNXProtocol.java as an example as this will give you a good guide of what to do to build protocol:
+
+agent/src/main/java/org/openremote/agent/protocol/knx/KNXProtocol.java
+
+Here’s some helpful info:
+
+- Protocols are one instance per Agent; you’ll see that each Protocol has a corresponding Agent class see here for example.
+- Each Asset type has a concrete class and Agents are a sub type of Asset so they therefore have their own classes also (this gives us better type safety)
+- An Agent's configuration is stored in individual attributes; these attributes are defined in the Agent class.
+- agentLink MetaItem now contains all the configuration needed to connect an attribute to a specific Agent
