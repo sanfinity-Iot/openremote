@@ -12,7 +12,7 @@ You can link any asset attribute in your context to an agent protocol configurat
 
 Whenever a client sends a message to write an attribute value, when that attribute is linked to an agent the message is passed through to the agent and no rules, flows, database and therefore context update is made. The protocol may decide to update the attribute's state in the context, the same way it would perform a regular update from a sensor read. This is how OpenRemote maps attribute value changes to actuator events.
 
-##Agent model and protocol SPI##
+## Agent model and protocol SPI ##
 
 See the KNXProtocol.java as an example as this will give you a good guide of what to do to build protocol:
 
