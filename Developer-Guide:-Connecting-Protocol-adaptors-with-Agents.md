@@ -16,7 +16,7 @@ Whenever a client sends a message to write an attribute value, when that attribu
 
 See the KNXProtocol.java as an example as this will give you a good guide of what to do to build protocol:
 
-agent/src/main/java/org/openremote/agent/protocol/knx/KNXProtocol.java
+> `agent/src/main/java/org/openremote/agent/protocol/knx/KNXProtocol.java`
 
 Here’s some helpful info:
 
