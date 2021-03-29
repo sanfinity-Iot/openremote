@@ -38,3 +38,4 @@ From that mbtiles file you can extract smaller tilesets with the following proce
 1. Select and copy boundary box coordinates of desired region (these are the BOUNDS used in the next command; they must be in format [W,S,E,N] e.g. `4.91, 51.27, 5.84, 51.77`): 
     http://tools.geofabrik.de/calc/#tab=1 (use the coordinates in 'Simple Copy' and add the commas)
 1. Extract the desired region (adjust the zoom levels as required and optionally add `--timeout=Nms` if the task times out): `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="FILL_BOUNDS_HERE" /mapdata/input.mbtiles /mapdata/output.mbtiles`
+1. Rename `output.mbtiles` into `mapdata.mbtiles`
