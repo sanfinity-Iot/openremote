@@ -35,6 +35,6 @@ From that mbtiles file you can extract smaller tilesets with the following proce
 1. Create docker container with `node` and `python` with dir containing `input.mbtiles` volume mapped: `docker run -it --rm -v PATH_TO_INPUT_MBTILES_DIR:/mapdata nikolaik/python-nodejs:python3.8-nodejs12 bash`
 1. Install tilelive converter: 
     `npm install -g --unsafe @mapbox/mbtiles @mapbox/tilelive`
-1. Select and copy boundary box coordinates of desired region (bounds for next command must be in format [W,S,E,N] e.g. `4.91, 51.27, 5.84, 51.77`): 
+1. Select and copy boundary box coordinates of desired region (these are the BOUNDS used in the next command; they must be in format [W,S,E,N] e.g. `4.91, 51.27, 5.84, 51.77`): 
     http://tools.geofabrik.de/calc/#tab=1 (use the coordinates in 'Simple Copy' and add the commas)
-1. Extract the desired region (adjust the zoom levels as required and optionally add `--timeout=Nms` if the task times out): `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDS HERE" /mapdata/input.mbtiles /mapdata/output.mbtiles`
+1. Extract the desired region (adjust the zoom levels as required and optionally add `--timeout=Nms` if the task times out): `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="FILL_BOUNDS_HERE" /mapdata/input.mbtiles /mapdata/output.mbtiles`
