@@ -265,6 +265,8 @@ Now when you load the Manager UI you will see a customised logo and title (image
 </p>
 </details>
 
+### Customising the map
+You can set your own map and its styling by adding them to the deployment directory. Read more about [[Working on maps|Developer Guide: Working on maps]].
 
 ### Custom domain
 If you want to deploy the OpenRemote stack on a custom domain then all that is needed is to ensure that the docker host where the stack is running is reachable using the custom domain name on the following ports:
