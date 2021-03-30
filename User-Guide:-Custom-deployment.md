@@ -3,7 +3,7 @@ Customising your deployment can be done through a combination of environment var
 https://github.com/openremote/openremote/blob/master/profile/deploy.yml
 
 ### Customising the Manager UI
-It is possible to do some basic customisation of the manager UI using a `JSON` file:
+It is also possible to do some basic customisation of the manager UI using a `JSON` file:
 
 - Create a directory called `deployment` in the same parent directory as the OpenRemote `docker-compose.yml`
 - Create a file called `manager_config.json` and add the following content:
@@ -11,10 +11,14 @@ It is possible to do some basic customisation of the manager UI using a `JSON` f
 ```json
 {
   "realms": {
-	"default": {
-		"appTitle": "ACME IoT",
-		"logo": "/images/logo.png"		
-	}
+    "default": {
+      "appTitle": "ACME IoT",
+      "styles": ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #1b5630; --or-app-color5: #CCCCCC;}",
+      "logo": "/images/logo.png",
+      "logoMobile": "/images/logo-mobile.png",
+      "favicon": "/images/favicon.png",
+      "language": "en"
+    }
   }
 }
 ```
@@ -57,7 +61,9 @@ services:
 ```
 docker-compose up
 ```
-Now when you load the Manager UI you will see a customised logo and title (images can be provided as files with paths relative to the `manager_config.json` file). With the `manager_config.json` you can also configure pages, such as excluding Asset Types from the Add asset modal or from the Rules page, changing the layout of the Insights page, and hiding attributes on the Assets page. For some pointers view the reference below.
+Now when you load the Manager UI you will see a customised logo and title (images can be provided as files with paths relative to the `manager_config.json` file). 
+
+With the `manager_config.json` you can also change color styling, configure pages, such as excluding Asset Types from the Add asset modal or from the Rules page, changing the layout of the Insights page, and hiding attributes on the Assets page. For some pointers view the reference below.
 
 <details><summary>Click to view a reference manager_config with some more customisation functionality</summary>
 <p>
@@ -255,7 +261,7 @@ Now when you load the Manager UI you will see a customised logo and title (image
       "styles": ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #1b5630; --or-app-color5: #CCCCCC;}",
       "logo": "/images/logo.png",
       "logoMobile": "/images/logo-mobile.png",
-      "favicon": null,
+      "favicon": "/images/favicon.png",
       "language": "en"
     }
   }
