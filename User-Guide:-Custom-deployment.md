@@ -1,12 +1,12 @@
 Customising your deployment can be done through setting of environment variables and docker volume mappings for the different services, styling the manager UI, configuring the Manager and customising the map.
 
-### Setting environment variables and docker volume mappings for services
+## Setting environment variables and docker volume mappings for services
 
 The following docker compose file details all of the environment variables (e.g. for e-mail or push notifications) and common volume mappings that you may want to use:
 
 https://github.com/openremote/openremote/blob/master/profile/deploy.yml
 
-### Styling of the Manager UI
+## Styling of the Manager UI
 It is also possible to do basic customisation of the manager UI using a `JSON` file:
 
 - Create a directory called `deployment` in the same parent directory as the OpenRemote `docker-compose.yml`
@@ -68,7 +68,7 @@ docker-compose up
 ```
 Now when you load the Manager UI you will see customised colors, logo and title. 
 
-### Configuration of the Manager
+## Configuration of the Manager
 With the `manager_config.json` you can also configure pages, such as excluding Asset Types from the Add asset modal or from the Rules page, changing the layout of the Insights page, and hiding attributes on the Assets page. For some pointers view the reference below.
 
 <details><summary>Click to view a reference manager_config with some more customisation functionality</summary>
@@ -277,10 +277,10 @@ With the `manager_config.json` you can also configure pages, such as excluding A
 </p>
 </details>
 
-### Customising the map
+## Customising the map
 You can set your own map and its styling by adding them to the deployment directory. Read more about [[Working on maps|Developer Guide: Working on maps]].
 
-### Custom domain
+## Custom domain
 If you want to deploy the OpenRemote stack on a custom domain then all that is needed is to ensure that the docker host where the stack is running is reachable using the custom domain name on the following ports:
 
 - `80` HTTP (needed for SSL generation)
@@ -290,7 +290,7 @@ If you want to deploy the OpenRemote stack on a custom domain then all that is n
 The `proxy` service uses `letsencrypt` to auto generate the SSL certificate for the domain and it will also auto renew the certificates; if you already have an SSL certificate for the domain then this can be volume mapped into the `proxy` service.
 
 
-### AWS
+## AWS
 
 Deploy the stack using docker on Mac/Linux:
 ```bash
