@@ -1,4 +1,4 @@
-Customising your deployment can be done through a combination of environment variables and docker volume mappings for the different services, as well as through styling the manager UI
+Customising your deployment can be done through setting of environment variables and docker volume mappings for the different services, styling the manager UI, configuring the Manager and customising the map.
 
 ### Setting environment variables and docker volume mappings for services
 
