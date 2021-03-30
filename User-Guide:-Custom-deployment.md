@@ -1,8 +1,12 @@
-Customising your deployment can be done through a combination of environment variables and docker volume mappings, the following docker compose file details all of the environment variables and common volume mappings that you may want to use:
+Customising your deployment can be done through a combination of environment variables and docker volume mappings for the different services, as well as through styling the manager UI
+
+### Setting environment variables and docker volume mappings for services
+
+The following docker compose file details all of the environment variables (e.g. for e-mail or push notifications) and common volume mappings that you may want to use:
 
 https://github.com/openremote/openremote/blob/master/profile/deploy.yml
 
-### Customising the Manager UI
+### Styling of the Manager UI
 It is also possible to do basic customisation of the manager UI using a `JSON` file:
 
 - Create a directory called `deployment` in the same parent directory as the OpenRemote `docker-compose.yml`
@@ -64,6 +68,7 @@ docker-compose up
 ```
 Now when you load the Manager UI you will see customised colors, logo and title. 
 
+### Configuration of the Manager
 With the `manager_config.json` you can also configure pages, such as excluding Asset Types from the Add asset modal or from the Rules page, changing the layout of the Insights page, and hiding attributes on the Assets page. For some pointers view the reference below.
 
 <details><summary>Click to view a reference manager_config with some more customisation functionality</summary>
