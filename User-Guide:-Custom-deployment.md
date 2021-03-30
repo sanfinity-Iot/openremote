@@ -3,7 +3,7 @@ Customising your deployment can be done through a combination of environment var
 https://github.com/openremote/openremote/blob/master/profile/deploy.yml
 
 ### Customising the Manager UI
-It is also possible to do basic customisation (change name, logo and colors) of the manager UI using a `JSON` file:
+It is also possible to do basic customisation of the manager UI using a `JSON` file:
 
 - Create a directory called `deployment` in the same parent directory as the OpenRemote `docker-compose.yml`
 - Add logo, logo-mobile and favicon images as files in a directory called `images`
