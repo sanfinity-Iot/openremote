@@ -2,25 +2,6 @@ The Edge gateway stack is currently composed of the standard stack with the excl
 
 Our pipeline does support docker manifests so all images (AMD64, ARM and ARM64) are tagged with the same label and are build at the same time.
 
-```
-openremote/manager:latest
-openremote/postgresql:latest
-openremote/proxy:latest
-```
-
-You will also need a deployment image for map data and automatic provisioning, the OpenRemote demo deployment image can be used or a custom one can be built following the Custom project info in the wiki.
-
-```
-openremote/deployment:latest
-```
-
-We use the following [GitHub Actions workflow](https://github.com/openremote/openremote/actions/runs/343881895/workflow) to create Docker images. It uses the official Docker QEMU and buildx actions and targets following platforms:
-
-- linux/amd64
-- linux/arm64
-- linux/arm/v7
-- linux/arm/v6
-
 ## Edge gateway OS installation steps (Example is for an `ODROID C2`)
 1. Download Armbian (https://dl.armbian.com/odroidc2/Buster_current_minimal) and flash to SD card using Etcher
 1. Power on and SSH into ODROID then follow Armbian prompts to change root password and Ctrl-C to skip/abort creating a new user
@@ -37,12 +18,11 @@ We use the following [GitHub Actions workflow](https://github.com/openremote/ope
    1. `curl https://raw.githubusercontent.com/openremote/openremote/master/profile/basic-identity.yml -o basic-identity.yml -L`
    1. `curl https://raw.githubusercontent.com/openremote/openremote/master/profile/deploy.yml -o deploy.yml -L`
 1. Pull OpenRemote images: `docker-compose -f basic-identity.yml pull` (if docker compose complains about missing build directories just create them using `mkdir -p`)
-1. Stop existing stack (if previously deployed): `docker-compose -f sfella.yml -f basic-identity.yml down`
+1. Stop existing stack (if previously deployed): `docker-compose -f basic-identity.yml down`
 1. Cleanup any dangling volumes and images:
    1. `docker volume prune`
    1. `docker rmi $(docker images -f "dangling=true" -q)`
-1. Start the stack (can optionally specify `GATEWAY_CLIENT_ID` and `GATEWAY_CLIENT_SECRET` environment variables to automatically set the `Manager interconnect` settings):
-   `docker-compose -f basic-identity.yml up -d --no-build` or with environment variables `GATEWAY_CLIENT_ID=XXXX GATEWAY_CLIENT_SECRET=YYYY docker-compose -f basic-identity.yml up -d --no-build` 
-   
+1. Start the stack:
+   `docker-compose -f basic-identity.yml up -d --no-build`   
 1. You should now be able to access the OpenRemote manager:
    1. OpenRemote Manager = https://IPADDRESS/
