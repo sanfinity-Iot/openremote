@@ -68,7 +68,7 @@ docker-compose up
 ```
 Now when you load the Manager UI you will see customised colors, logo and title. 
 
-## Configuration of the Manager
+## Configuration of the Manager UI
 With the `manager_config.json` you can also configure pages, such as excluding Asset Types from the Add asset modal or from the Rules page, changing the layout of the Insights page, and hiding attributes on the Assets page. For some pointers view the reference below.
 
 <details><summary>Click to view a reference manager_config with some more customisation functionality</summary>
