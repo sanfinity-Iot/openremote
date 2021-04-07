@@ -25,4 +25,4 @@ Our pipeline does support docker manifests so all images (AMD64, ARM and ARM64) 
 1. Start the stack:
    `docker-compose -f basic-identity.yml up -d --no-build`   
 1. You should now be able to access the OpenRemote manager:
-   1. OpenRemote Manager = https://IPADDRESS/
+   1. OpenRemote Manager = https://IPADDRESS/       (default is `localhost`)
