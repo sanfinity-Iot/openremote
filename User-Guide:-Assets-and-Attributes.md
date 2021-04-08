@@ -30,7 +30,7 @@ On the Assets page enable 'Edit mode' and click `+ Add attribute` at the bottom 
 As mentioned, attributes can be configured with configuration items. In the edit mode click an attribute to add, edit or remove items. There is a base set of configuration items available for asset attributes:
 
 ### Protocol/Service
-* **Agent link**: Links the attribute to an agent, connecting it to a sensor and/or actuator with required configuration properties encapsulated in the concrete protocol specific [org.openremote.model.asset.agent.AgentLink](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/agent/AgentLink.java). Example use: [[HTTP API Guide|User Guide: Connecting to a HTTP API]]
+* **Agent link**: Links the attribute to an agent, connecting it to a sensor and/or actuator with required configuration properties encapsulated in the concrete protocol specific [AgentLink.java](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/agent/AgentLink.java). Example use: [[HTTP API Guide|User Guide: Connecting to a HTTP API]]
 * **Attribute link**: Links the attribute to another attribute, so an attribute event on the attribute triggers the same attribute event on the linked attribute. Example use: [[HTTP API Guide|User Guide: Connecting to a HTTP API]]
 
 ### Access permission
@@ -52,8 +52,8 @@ As mentioned, attributes can be configured with configuration items. In the edit
 
 ### Formatting/Display
 * **Label**: A human-friendly string that can be displayed in UI instead of the raw attribute name.
-* **Units**: Indicates the units associated with the value, there's some special handling for Boolean and Date values but otherwise the value type should be numeric. Units are intended for UI usage and should support internationalisation, custom unit types can be composed e.g. `["kilo", "metre", "per", "hour"]` => "km/h" see [org.openremote.model.Constants](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/Constants.java) . Constants for well known units that UIs should support as a minimum. Currencies get special handling and should be represented using the upper case 3 letter currency code as defined in ISO 4217
-* **Format**: ValueFormat to be applied when converting the associated Attribute to string representation.
+* **Units**: Indicates the units associated with the value, there's some special handling for Boolean and Date values but otherwise the value type should be numeric. Units are intended for UI usage and should support internationalisation, custom unit types can be composed e.g. `["kilo", "metre", "per", "hour"]` => "km/h" see [Constants.java](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/Constants.java) . Constants for well known units that UIs should support as a minimum. Currencies get special handling and should be represented using the upper case 3 letter currency code as defined in ISO 4217
+* **Format**: ValueFormat to be applied when converting the associated Attribute to string representation. For example to limit the number of fractional digits: `{"maximumFractionDigits": 2}`, see [ValueFormat.java](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueFormat.java) for more options.
 * **Constraints**: ValueConstraints to be applied to the Attribute value; these override any constraints defined on any of the descriptors associated with the attribute. (AllowedValues, Future, FutureOrPresent, Max, Min, NotBlank, NotEmpty, NotNull, Past, PastOrPresent, Pattern, Size).
 ```
 {
