@@ -1,10 +1,12 @@
-The Manager UI functionality is described in the next paragraph [Online Demo Smart City](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Edge-gateways) illustrated in the [Smart City online demo](https://openremote.io/demo/) with a few imaginary applications in a single realm, and in 'Read' mode. It illustrates how the integration of several vertical solutions in a central platform, benefits a Smart City or Smart Building, and what you can build yourself, once installed locally. You can also watch this [Introduction Video](https://youtu.be/K28CQMKr-rQ) to get an overview.
+First of all, the Manager UI functionality is described in the next paragraph [Online Demo Smart City](#online-demo-smart-city---read-mode). It illustrates how the integration of several vertical solutions in a central OpenRemote platform, benefits a Smart City or Smart Building. 
 
-Once installed locally (see [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)), you will have an empty installation, including the 'Master' realm and full 'Admin' access with all options. 
+Next, the full OpenRemote Manager with 'Admin' access is explained in the second paragraph [OpenRemote Manager - Admin Mode](#-openremote-manager---admin-mode).
+
+Finally, in the third paragraph, we explain how to [configure and fully style the OpenRemote platform](#-white-labelling-your-own-iot-platform)
 
 # Online Demo Smart City - Read Mode
 
-To view a few example applications we have added the 'Smart City' project realm to the [online demo](https://openremote.io/demo/), which gives control over several application areas in 'read only' mode. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)).
+To view a few example applications we have added the 'Smart City' project realm to the [online demo](https://openremote.io/demo/), which gives control over several application areas in 'read only' mode. Alternatively, you can also watch this [Introduction Video](https://youtu.be/K28CQMKr-rQ).
 
 If you open the application you will get four main views: Map (Figure 1), Assets (Figure 2), Rules (Figure 3), and Insights. On mobile you will only see Map, Assets and Insights.
 
@@ -45,7 +47,7 @@ _Figure 4. The Insights view of the Demo Smart City, showing the soil temperatur
 
 # OpenRemote Manager - Admin Mode
 
-The OpenRemote mManager, with full admin access, requires you to set up OpenRemote locally first. Follow the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md). Next, you can access the Application for System Manager via your browser: https://localhost/manager/?realm=master/ (Username: admin, Password: secret)
+The OpenRemote Manager, with full admin access, requires you to set up OpenRemote locally first. Follow the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md). Next, you can access the Application for System Manager via your browser: https://localhost/manager/?realm=master/ (Username: admin, Password: secret)
 
 If you open the OpenRemote Manager, you will see only see the 'Master' realm in the upper right realm-picker. The [Demo Smart City](#demo-smart-city) refers to the 'Smart City' as we have added that realm in the online demo for your convenience. 
 
