@@ -2,9 +2,9 @@ The Manager UI functionality is illustrated in the Smart City demo with a few im
 
 In an OpenRemote system you can have multiple realms for your projects or customers, with the 'Master' realm for the system manager (for configuration the project and remote management of multiple realms). Online you will only get 'view' access to the 'Smart City' project realm. If you have installed OpenRemote locally (see [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)), you will have an empty installation, including the 'Master' realm and full admin access. 
 
-# Online Demo Smart City
+# Online Demo Smart City - Read Mode
 
-To view a few example applications we have added the 'Smart City' project realm to the [online demo](https://openremote.io/demo/), which gives control over all areas. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)).
+To view a few example applications we have added the 'Smart City' project realm to the [online demo](https://openremote.io/demo/), which gives control over several application areas in 'read only' mode. It's build using the OpenRemote UI components (for Developers see [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI)).
 
 If you open the application you will get four main views: Map (Figure 1), Assets (Figure 2), Rules (Figure 3), and Insights. On mobile you will only see Map, Assets and Insights.
 
@@ -43,19 +43,30 @@ The Insights view (only visible in the desktop version, see figure 4) allows you
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Insights.png)
 _Figure 4. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few random attribute panels._
 
-# Application for System Manager
+# OpenRemote Manager - Admin Mode
 
-The application for the System Manager requires you to set up OpenRemote locally first. Follow the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md). Next, you can access the Application for System Manager via your browser: https://localhost/manager/?realm=master/ (Username: admin, Password: secret)
+The OpenRemote mManager, with full admin access, requires you to set up OpenRemote locally first. Follow the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md). Next, you can access the Application for System Manager via your browser: https://localhost/manager/?realm=master/ (Username: admin, Password: secret)
 
-If you open the Application for the System Manager, you will see only see the 'Master' realm in the upper right realm-picker. The [Demo Smart City](#demo-smart-city) refers to the 'Smart City' as we have added that realm in the online demo for you. 
+If you open the OpenRemote Manager, you will see only see the 'Master' realm in the upper right realm-picker. The [Demo Smart City](#demo-smart-city) refers to the 'Smart City' as we have added that realm in the online demo for your convenience. 
 
-To see what functionality you have available as System Manager, watch the Introduction Video: [Integrating with OpenRemote](https://youtu.be/mx9amWaItn0). 
+In the 'Admin Mode' the following additional functionality is available (or [watch the video](https://youtu.be/mx9amWaItn0)).
+* Add Assets of different types, gateways, or groups
+* Add Agents for protocols to connect to real world sensors, actors or data services
+* Fully configure Assets and Agents to make it fit your required Asset type or Protocol
+* Use Global rules and/or use Groovy rules
+* Connect multiple instances of OpenRemote (e.g. in a building) as EdgeGateways to another (e.g.cloud hosted) instance of OpenRemote.
+* Create and manage new Realms
+* Manage users and roles per Realm
 
 ## Groovy rules and Global rules
 
 In addition to the WHEN-THEN and FLOW rules, when logged into the master, locally with the admin privileges, there is a third type 'GROOVY' which allows you to program more complex logic.
 
 You will also notice that you can switch between realm rules and global rules. The global rules allow you to define rules which can use attributes across the different realms, as opposed to the realm rules which will only work within the selected realm. 
+
+# White labelling your own IoT Platform
+
+You can adjust name, color settings and logo's, change the map and set environment variables e.g. for e-mail. For instructions see [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment).
 
 See the documentation on our wiki for more details.
 
