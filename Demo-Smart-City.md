@@ -1,6 +1,6 @@
-First of all, the Manager UI functionality is described in the next paragraph [Online Demo Smart City - Read Mode](#online-demo-smart-city---read-mode). 
+First of all, the Manager UI functionality is described in the first paragraph [Online Demo Smart City - Read Mode](#online-demo-smart-city---read-mode). 
 
-Next, the full OpenRemote Manager with 'Admin' access is explained in [OpenRemote Manager - Admin Mode](#openremote-manager---admin-mode).
+Secondly, the full OpenRemote Manager with 'Admin' access is explained in [OpenRemote Manager - Admin Mode](#openremote-manager---admin-mode).
 
 Finally, in the third paragraph, we explain [White labelling your own IoT Platform](#white-labelling-your-own-iot-platform).
 
