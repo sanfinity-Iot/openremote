@@ -50,11 +50,11 @@ The OpenRemote mManager, with full admin access, requires you to set up OpenRemo
 If you open the OpenRemote Manager, you will see only see the 'Master' realm in the upper right realm-picker. The [Demo Smart City](#demo-smart-city) refers to the 'Smart City' as we have added that realm in the online demo for your convenience. 
 
 In the 'Admin Mode' the following additional functionality is available (or [watch the video](https://youtu.be/mx9amWaItn0)).
-* Add Assets of different types, gateways, or groups
+* Add Assets of different types, other OpenRemote EdgeGateway instances, or groups
 * Add Agents for protocols to connect to real world sensors, actors or data services
 * Fully configure Assets and Agents to make it fit your required Asset type or Protocol
 * Use Global rules and/or use Groovy rules
-* Connect multiple instances of OpenRemote (e.g. in a building) as EdgeGateways to another (e.g.cloud hosted) instance of OpenRemote.
+* Connect as EdgeGateway to another (e.g.cloud hosted) instance of OpenRemote, using 'Manager Interconnect'.
 * Create and manage new Realms
 * Manage users and roles per Realm
 
