@@ -40,7 +40,9 @@ The thing asset will now appear in the list as a child of the `SNMP Agent`. You 
 We create an agentlink of the type SNMPAgentLink, the id of the agent is the one that you copied from the URL of the agent asset.
 
 To test it send from a command line the following message:
+
 `sudo snmptrap -v 2c -c public <you-machines-ip-address> '' 1.3.6.1.4.1.8072.2.3.0.1 1.3.6.1.4.1.8072.2.3.2.1 i 123456`
+
 The SNMP value attribute should now have the value `123456 `
 
 # See also
