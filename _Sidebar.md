@@ -43,6 +43,7 @@
 * [[KNX|User-Guide:-Connecting-to-KNX]]
 * [[MQTT|How-to-work-with-MQTT]]
 * [[Simulator|User-Guide:-Simulator-Agent]]
+* [[SNMP|User-Guide:-Receive SNMP traps]]
 * [[TCP Server|User-Guide:-Connecting-with-TCP]]
 * [[UDP Server|User Guide: Connecting to a UDP Server]]
 * [[UPnP|User-Guide:-Connecting-to-UPnP]]
