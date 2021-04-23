@@ -29,7 +29,13 @@ It is also possible to do basic customisation of the manager UI using a `JSON` f
 }
 ```
 
+<details><summary>Click to view how the --or-app-colors are used in the demo deployment.</summary>
+
+![Default colors in OpenRemote](https://openremote.io/wp-content/uploads/2021/04/coloruse-04.jpg)
+
+</details>
 - Modify the `docker-compose.yml` to add a volume mapping to the `manager` service:
+
 ```yaml
 version: '2.4'
 
