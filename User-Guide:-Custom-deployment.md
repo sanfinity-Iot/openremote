@@ -1,5 +1,5 @@
 Customising your deployment can be done through setting of environment variables and docker volume mappings for the different services, styling the manager UI, configuring the Manager and customising the map.
-In this guide we assume you have followed the [Quickstart](https://github.com/openremote/openremote/blob/master/README.md)
+In this guide we assume you have followed the [Quickstart](https://github.com/openremote/openremote/blob/master/README.md#quickstart)
 
 ## Setting environment variables and docker volume mappings for services
 
