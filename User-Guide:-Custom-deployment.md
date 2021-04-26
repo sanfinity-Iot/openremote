@@ -22,8 +22,7 @@ It is also possible to do basic customisation of the manager UI using a `JSON` f
       "styles": ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #1b5630; --or-app-color5: #CCCCCC;}",
       "logo": "/images/logo.png",
       "logoMobile": "/images/logo-mobile.png",
-      "favicon": "/images/favicon.png",
-      "language": "en"
+      "favicon": "/images/favicon.png"
     }
   }
 }
@@ -285,7 +284,24 @@ With the `manager_config.json` you can also configure pages, such as excluding A
 </details>
 
 ## Customising the map
-You can set your own map and its styling by adding them to the deployment directory. Read more about [[Working on maps|Developer Guide: Working on maps]].
+You can set your own map and its styling by adding them to the deployment directory. Read more about setting up your map: [[Working on maps|Developer Guide: Working on maps]]. Once you have the map file, you can download and customize [mapsettings.json](https://github.com/openremote/openremote/blob/master/manager/src/map/mapsettings.json) to adjust the centerpoint, boundaries, zoomlevel and styling. If you want to fully customize styling, you can use [Mapbox Studio](https://www.mapbox.com/mapbox-studio) to create your style and copy it into mapsettings.
+- Download the map and mapsettings
+- Adjust the filestructure of `deployment` as follows:
+```
+deployment
+|-- manager
+|    |-- app
+|    |    +-- images
+|    |    |-- manager_config.json
+|-- map
+|    |-- mapdata.mbtiles
+|    |-- mapsettings.json
+```
+- Change the volume mapping of the manager container to:
+```yaml
+    volumes:
+      - ./deployment:/deployment
+```
 
 ## Custom domain
 If you want to deploy the OpenRemote stack on a custom domain then all that is needed is to ensure that the docker host where the stack is running is reachable using the custom domain name on the following ports:
