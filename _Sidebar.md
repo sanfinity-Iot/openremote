@@ -36,7 +36,7 @@
 
 * [[Generic protocols|User Guide: Generic protocols]]
 * [[Artnet DMX|User Guide: Connecting to Artnet DMX]]
-* [[Client EvenT Protocol: Websocket/MQTT|User Guide: Setup Client Event protocol]]
+* [[Client Event Protocol: Websocket/MQTT|User Guide: Setup Client Event protocol]]
 * [[Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
 * [[HTTP API|User Guide: Connecting to a HTTP API]]
 * [[IKEA Trådfri|User-Guide:-Connecting-to-IKEA-TRÅDFRI]]
