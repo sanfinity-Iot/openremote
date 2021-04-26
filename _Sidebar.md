@@ -41,7 +41,6 @@
 * [[HTTP API|User Guide: Connecting to a HTTP API]]
 * [[IKEA Trådfri|User-Guide:-Connecting-to-IKEA-TRÅDFRI]]
 * [[KNX|User-Guide:-Connecting-to-KNX]]
-* [[MQTT|How-to-work-with-MQTT]]
 * [[Simulator|User-Guide:-Simulator-Agent]]
 * [[SNMP|User-Guide:-Receive SNMP traps]]
 * [[TCP Server|User-Guide:-Connecting-with-TCP]]
@@ -49,8 +48,14 @@
 * [[UPnP|User-Guide:-Connecting-to-UPnP]]
 * [[Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
 * [[Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
-* [[Websocket Server|User Guide: Connecting to a Websocket Server]]
 * [[Z-wave|User-Guide:-Connecting-to-Z-wave]]
+
+### Manager API
+
+* [[MQTT Connections|How to work with MQTT]]
+* [[MQTT|How-to-work-with-MQTT]]
+* [[Websocket Server|User Guide: Connecting to a Websocket Server]]
+* [[HTTP REST|User Guide: Connecting to HTTP REST API]]
 
 ### Identity & Security
 
@@ -81,7 +86,6 @@
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
 * [[Docker swarm mode|https://github.com/openremote/openremote/blob/master/swarm/README.md]]
-* [[MQTT Connections|How to work with MQTT]]
 * [[Edge gateways|Developer Guide: Edge gateways]]
 
 ### Architecture
