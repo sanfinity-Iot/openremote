@@ -76,6 +76,7 @@
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
 * [[Maintaining an installation|Developer Guide: Maintaining an installation]]
 * [[Writing Console applications|Developer Guide: Writing Console applications]]
+* [[Writing setup code|Developer Guide: Writing setup code]]
 * [[Connecting Protocol adaptors with Agents|Developer Guide: Connecting Protocol adaptors with Agents]]
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
