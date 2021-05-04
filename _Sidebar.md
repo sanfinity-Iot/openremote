@@ -52,6 +52,7 @@
 
 ### Manager API
 
+* [[API Overview|User Guide: API Overview]]
 * [[MQTT Connections|How to work with MQTT]]
 * [[MQTT|How-to-work-with-MQTT]]
 * [[Websocket Server|User Guide: Connecting to a Websocket Server]]
