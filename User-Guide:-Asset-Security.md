@@ -22,6 +22,6 @@ Restricted users can only access their linked assets and depending on assigned r
 
 Note that third-party metadata items (not in the `org.openremote.model.Constants#NAMESPACE`) are never included by default in restricted read/write asset operations. To make third-party meta items read- or writable by restricted clients, provide meta item descriptors and desired access permissions through the `AssetModelProvider` SPI.
 
-### Public access
+### Public (anonymous) access
 
 An asset can be made accessible by public clients without authentication by setting `Asset#accessPublicRead` to `true`, each attribute that should be publicly accessible must also have `Access public read` and/or `Access public write` configuration items as required.
