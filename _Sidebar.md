@@ -50,12 +50,11 @@
 * [[Z-wave|User-Guide:-Connecting-to-Z-wave]]
 
 ### Manager API
-
-* [[API Overview|User Guide: API Overview]]
+* [[Manager APIs|User Guide: Manager APIs]]
 * [[MQTT Connections|How to work with MQTT]]
 * [[MQTT|How-to-work-with-MQTT]]
 * [[Websocket Server|User Guide: Connecting to a Websocket Server]]
-* [[HTTP REST|User Guide: Connecting to HTTP REST API]]
+
 
 ### Identity & Security
 * [[Asset security|User Guide: Asset Security]]
