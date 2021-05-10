@@ -1,9 +1,3 @@
-An asset can be anything that is connected to your system in some way. An asset is always attached to a tenant, so data is not shared between tenants. OpenRemote stores your current asset status in its database, and manages it in rules and flows. This collectively is called the context of your OpenRemote system.
-
-An asset might be an actual external service or an installed device at some location, or you can use the asset hierarchy to model an organizational structure. An example would be a Customer asset that is the parent of some Device assets which are currently in use for that customer.
-
-OpenRemote understands certain built-in asset types and provides extra functionality, such as Building, Floor, Residence, Room, Flight, and so on. There are also special assets such as an Agent, which links external services and devices with other assets.
-
 ## Asset security
 
 The superuser has full access across all tenants (realms). An OpenRemote installation has only one superuser, and it's always named `admin` and it's always in the `master` realm. It cannot be renamed or deleted, just like the master realm. Any number of new realms and therefore tenants may be created.
@@ -30,10 +24,4 @@ Note that third-party metadata items (not in the `org.openremote.model.Constants
 
 ### Public access
 
-An asset can be made accessible by public clients without authentication by setting `Asset#accessPublicRead` to `true`. The public client must use a query to retrieve such assets, see the public query operations on the `AssetResource` API.
-
-Any attributes of public assets are not public by default, they are private. To make an attribute public you must add `AssetMeta#ACCESS_PUBLIC_READ`. Any meta items of such attributes are only included if they are `MetaItemDescriptor.Access#publicRead`. Third-party meta items can be configured through the `AssetModelProvider` SPI.
-
-## Asset API
-
-You can read more following the docs on the main entry point: [AssetResource.java](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/AssetResource.java)
+An asset can be made accessible by public clients without authentication by setting `Asset#accessPublicRead` to `true`, each attribute that should be publicly accessible must also have `Access public read` and/or `Access public write` configuration items as required.
