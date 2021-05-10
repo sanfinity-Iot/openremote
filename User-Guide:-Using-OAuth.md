@@ -2,7 +2,7 @@ By default our stack includes the [Keycloak](https://www.keycloak.org/) `OpenID 
 
 Generally within in an instance of the `OpenRemote` stack the `Keycloak` server is accessible at: `https://<DOMAIN>/auth`.
 
-For each realm created within the Manager (via UI, provisioning code or REST API) a client called `openremote` is automatically created within `Keycloak` which allows interactive authentication using the [Authorization code](https://oauth.net/2/grant-types/authorization-code/) grant type; this is primarily intended for accessing the `Manager UI` and is not suitable for programmatic access to the `Manager` (i.e. connecting via `MQTT Broker`, `Websockets` and/or `HTTP REST`).
+For each realm created within the Manager (via UI, provisioning code or REST API) a client called `openremote` is automatically created within `Keycloak` which allows interactive authentication using the [Authorization code](https://oauth.net/2/grant-types/authorization-code/) grant type; this is primarily intended for accessing the `Manager UI` and is not suitable for programmatic access to the `Manager APIs` (i.e. `MQTT`, `Websockets` and/or `HTTP`).
 
 If you want to be able to programmatically access the system then you will need a client with 'Client Credentials` grant type enabled (this is called `Service Account` in `Keycloak` terminology, this can be done in one of the following ways:
 
