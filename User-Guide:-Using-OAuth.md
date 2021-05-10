@@ -6,7 +6,7 @@ For each realm created within the Manager (via UI, provisioning code or REST API
 
 If you want to be able to programmatically access the system then you will need a client with 'Client Credentials` grant type enabled (this is called `Service Account` in `Keycloak` terminology, this can be done in one of the following ways:
 
-## Create a `ClientEvent` `Agent`
+## Create a ClientEvent Agent
 Simply add a new `ClientEvent` Agent to the realm you want to access see [here](https://github.com/openremote/openremote/wiki/User-Guide%3A-Setup-Client-Event-protocol).
 
 ## Programmatically provision a client in your custom setup code
