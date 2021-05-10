@@ -22,6 +22,12 @@ _Figure 2. The Asset view of the Demo Smart City, showing an EV charger with the
 
 If you want to add assets and link them to an existing system or dataservice, first install OpenRemote locally (see [Quick Start)](https://github.com/openremote/openremote/blob/master/README.md)) and have a look at the video [Integrating with OpenRemote](https://youtu.be/mx9amWaItn0). 
 
+### Creating an asset
+With the correct permissions, you can create a new asset on the `Assets` page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types. Select one and click `Add`. With the asset added, you can write its attributes (if not read-only). Often you will want to modify the attributes to define how they are used in the system, e.g. get values through agent link, make the attribute available in rules, or format its value.
+
+### Adding an attribute
+On the Assets page enable 'Edit mode' and click `+ Add attribute` at the bottom of the list of attributes. In the modal you can choose attributes already associated with the asset type of the asset, or you can create a `custom attribute`. The custom attributes should have a `camelCase` name, which will automatically be translated to Sentence case with spaces. You can create attributes of prepared attribute types that are known by the system.
+
 ## Rules
 
 The Rules view (only visible in the desktop version, see figure 3) allows you to build three types of rules:
