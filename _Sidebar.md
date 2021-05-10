@@ -27,7 +27,6 @@
 ### Assets & Attributes
 
 * [[Assets and Attributes|User-Guide:-Assets and Attributes]]
-* [[The Asset model and API|Architecture: The Asset model and API]]
 * [[Use Asset APIs|User-Guide:-Use Asset API]]
 * [[Linking Attributes|User-Guide:-Linking attributes]]
 * [[Use Health Status Provider]]
@@ -59,7 +58,7 @@
 * [[HTTP REST|User Guide: Connecting to HTTP REST API]]
 
 ### Identity & Security
-
+* [[Asset security|User Guide: Asset Security]]
 * [[Realms, users and roles|User-Guide:-Create realms, users and roles]]
 * [[Security OAuth|User-Guide:-Using OAuth]]
 * [[Linking to Active Directory|Connecting-Keycloak-to-AD-with-LDAP-configuration]]
