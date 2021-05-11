@@ -29,29 +29,29 @@
 * [[Assets, Agents and Attributes|User-Guide:-Assets,-Agents-and-Attributes]]
 * [[Linking Attributes|User-Guide:-Linking attributes]]
 
-### Protocol Agents
+### Agents/Protocols
 
-* [[Generic protocols|User Guide: Generic protocols]]
-* [[Artnet DMX|User Guide: Connecting to Artnet DMX]]
-* [[Client Event Protocol: Websocket/MQTT|User Guide: Setup Client Event protocol]]
-* [[Controller 2.5|User-Guide:-Connecting-to-Controller-2.5]]
-* [[HTTP API|User Guide: Connecting to a HTTP API]]
-* [[IKEA Trådfri|User-Guide:-Connecting-to-IKEA-TRÅDFRI]]
-* [[KNX|User-Guide:-Connecting-to-KNX]]
-* [[Simulator|User-Guide:-Simulator-Agent]]
-* [[SNMP|User-Guide:-Receive SNMP traps]]
-* [[TCP Server|User-Guide:-Connecting-with-TCP]]
-* [[UDP Server|User Guide: Connecting to a UDP Server]]
-* [[UPnP|User-Guide:-Connecting-to-UPnP]]
-* [[Velbus Serial|User-Guide:-Connecting-to-Velbus-Serial]]
-* [[Velbus Socket|User-Guide:-Connecting-to-Velbus-Socket]]
-* [[Z-wave|User-Guide:-Connecting-to-Z-wave]]
+* [[Overview|User Guide: Agent Overview]]
+* [[Artnet DMX|User Guide: Artnet DMX Agent]]
+* [[OAuth Client|User Guide: OAuth Client Agent]]
+* [[OR Controller 2.5|User-Guide: OR Controller-2.5 Agent]]
+* [[HTTP|User Guide: HTTP Agent]]
+* [[IKEA Trådfri|User-Guide: IKEA TRÅDFRI Agent]]
+* [[KNX|User-Guide: KNX Agent]]
+* [[Simulator|User-Guide: Simulator Agent]]
+* [[SNMP|User-Guide: SNMP Agent]]
+* [[TCP|User-Guide: TCP Agent]]
+* [[UDP|User Guide: UDP Agent]]
+* [[UPnP|User-Guide: UPnP Agent]]
+* [[Velbus Serial|User Guide: Velbus Serial Agent]]
+* [[Velbus TCP/IP|User Guide: Velbus TCP IP Agent]]
+* [[Websocket|User Guide: Websocket Agent]]
+* [[Z-Wave|User Guide: Z Wave Agent]]
 
 ### Manager API
 * [[Manager APIs|User Guide: Manager APIs]]
 * [[MQTT Connections|How to work with MQTT]]
 * [[MQTT|How-to-work-with-MQTT]]
-* [[Websocket Server|User Guide: Connecting to a Websocket Server]]
 
 
 ### Identity & Security
