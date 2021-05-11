@@ -27,9 +27,7 @@
 ### Assets & Attributes
 
 * [[Assets, Agents and Attributes|User-Guide:-Assets,-Agents-and-Attributes]]
-* [[Use Asset APIs|User-Guide:-Use Asset API]]
 * [[Linking Attributes|User-Guide:-Linking attributes]]
-* [[Use Health Status Provider]]
 
 ### Protocol Agents
 
