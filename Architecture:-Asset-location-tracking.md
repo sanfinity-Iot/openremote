@@ -60,14 +60,14 @@ When a geofence is triggered on an asset then the asset should update its own lo
 ## Geofence Asset Adapters
 Refer to the source code for details of the [GeofenceAssetAdapter](https://github.com/openremote/openremote/blob/location/manager/src/main/java/org/openremote/manager/rules/geofence/GeofenceAssetAdapter.java) and how it is used. Currently there is one implementation:
 
-### OpenRemote Console (Android and iOS consoles)
+### ORConsoleGeofenceAssetAdapter (Android and iOS consoles)
 An asset will use this adapter if it matches the following criteria:
-* Asset type: `urn:openremote:asset:console`
-* Has an attribute called `providerGeofence` with a meta item named `urn:openremote:asset:meta:geofence:adapter` whose value is `"ORConsole"`
+* Asset type: `console`
+* Has an attribute called `consoleProviders` whose value contains a console provider with a name of `geofence` and `version` value of `ORConsole`
 
 **This adapter only supports radial geofences (Android and iOS only support this type)**
 
-The geofence definitions returned by this adapter (returned by calling the `rules/geofences/{assetId}`) endpoint are as follows:
+The geofence definitions returned by this adapter (returned by calling the `api/{realm}/rules/geofences/{assetId}`) endpoint are as follows:
 
 ```
 [
@@ -80,6 +80,3 @@ The geofence definitions returned by this adapter (returned by calling the `rule
    }
 ]
 ```
-
-## Discussion/TODOs
-* Should `asset/public/{assetId}/updateLocation` endpoint be public (is the asset ID enough of a 'security' mechanism to prevent spoofing)
