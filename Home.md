@@ -11,10 +11,11 @@ Rules can be written in Groovy, JavaScript, a Rules JSON, or Flow model, and dyn
 
 Networked things and devices are connected to the manager via [Agents](https://github.com/openremote/openremote/tree/master/agent), they are the interface to 3rd party APIs and service protocols. OpenRemote has many built-in protocols and it's easy to create new adapters. Co-locate your agents with the manager or install agents on [Edge gateways](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Edge-gateways), close to devices. 
 
-The manager provides communication mechanisms for monitoring and administrating the system:
+The manager provides APIs for monitoring and administrating the system:
 
-* JAX-RS based REST API
-* Event API (Websockets with fallback to long polling mechanism)
+* JAX-RS based HTTP API
+* Websockets event API
+* MQTT event API
 
 The OpenRemote [Frontend](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI) simplifies the creation and deployment of user interfaces such as:
 
