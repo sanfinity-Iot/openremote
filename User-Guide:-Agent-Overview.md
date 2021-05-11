@@ -1,4 +1,20 @@
-Generic protocols whilst being very flexible require more configuration than targeted protocols due to their nature; below is some general information that relates to generic protocols and support/functionality will depend on individual protocol implementations.
+Agents can be put into the following categories:
+
+* Specialised agents (Velbus, Z-Wave, KNX, etc.)
+* Generic agents (HTTP, TCP, UDP, WS, MQTT, etc.)
+
+## Specialised agents
+Specialised agents are ones that understand the message structure of the underlying devices/service and therefore generally require much less configuration in order to link attributes to them.
+
+## Generic agents
+Generic agents on the other hand understand nothing about the underlying devices/service and therefore generally require more configuration in order to link attributes to them. This gives a lot of flexibility in terms of what devices/services you can communicate with and the `agentLink` configuration options make it possible to easily configure generic inbound/outbound value processing (convert data type, insert value into bigger message payload etc.).
+
+## Agent linked attributes
+Regular assets are connected to agents by adding an `agentLink` configuration item to the attributes that need connecting [Agent link](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/agent/AgentLink.java)
+
+## Generic Agent Link Configuration
+Whilst the following are mostly applicable to the generic protocols, it is possible to use any of these configuration options on any agent linked attribute in order to do basic value processing before the value is passed to the agent for processing (can be useful if you want an attribute with a different value type to what the linked agent expects).
+
 
 ## Dynamic values
 When writing to linked attributes it can be desirable to use insert the written value into a bigger payload before sending to the protocol; the dynamic value placeholder `{$value}` makes this possible and every occurrence within the bigger payload is replaced by the value written to the linked attribute.
