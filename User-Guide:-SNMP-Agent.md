@@ -9,8 +9,8 @@ The examples below describe interactively linking asset attributes to SNMP traps
    * Select the agent from the list: `SNMP Client Agent`
    * Confirm with `Add`
 4. The agent is now created with preconfigured attributes. We will set some of those to establish the connection:
-   * Host: `0.0.0.0` (Don't forget to send the value by clicking the send button on the right or pressing Enter)
-   * Port: `162`
+   * Bindhost: `0.0.0.0` (Don't forget to send the value by clicking the send button on the right or pressing Enter)
+   * Bindport: `162`
 
 You now have SNMP protocol ready to be linked to by asset attributes. 
 In the next step we will need the Asset ID of this agent, so copy that from the URL now. e.g. `501p87wK1bhf6Dh2M5ZQZj` if URL is: `https://localhost/main/#!assets/false/501p87wK1bhf6Dh2M5ZQZj`
