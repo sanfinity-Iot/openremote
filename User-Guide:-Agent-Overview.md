@@ -54,8 +54,8 @@ String value to be used for outbound messages; can be used with any attribute ty
 #### Dynamic value injection
 When writing to linked attributes it can be desirable to insert the written value into a bigger payload before sending to the agent protocol; the dynamic value placeholder `{$value}` makes this possible and every occurrence within the bigger payload is replaced by the value written to the linked attribute.
 
-### `messageMatchPredicate` [ValuePredicate](https://github.com/openremote/openremote/blob/a58951f6780176163bad7f58f79ba2a12eb75eb6/model/src/main/java/org/openremote/model/query/filter/ValuePredicate.java)]
+### `messageMatchPredicate` [[ValuePredicate](https://github.com/openremote/openremote/blob/a58951f6780176163bad7f58f79ba2a12eb75eb6/model/src/main/java/org/openremote/model/query/filter/ValuePredicate.java)]
 Used in combination with the `messageMatchFilters`; the predicate is applied to inbound messages (after the `messageMatchFilters` have been applied) and if the predicate matches then the message is said to match the attribute and the attribute will be updated by passing the original message through the value filter(s) and converter.
 
-### `messageMatchFilters` [ValueFilter](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueFilter.java)[]]
+### `messageMatchFilters` [[ValueFilter](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueFilter.java)[]]
 Used in combination with the `messageMatchPredicate` to allow filtering the inbound message before the match predicate is evaluated.
