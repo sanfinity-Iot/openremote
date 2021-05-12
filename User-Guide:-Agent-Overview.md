@@ -1,4 +1,4 @@
-Agents can be put into the following categories:
+Agents are a special type of asset which link external services/devices with your OpenRemote system via protocols; agents can be put into the following categories:
 
 * Specialised agents (Velbus, Z-Wave, KNX, etc.)
 * Generic agents (HTTP, TCP, UDP, WS, MQTT, etc.)
