@@ -43,8 +43,7 @@
 * [[TCP|User-Guide: TCP Agent]]
 * [[UDP|User Guide: UDP Agent]]
 * [[UPnP|User-Guide: UPnP Agent]]
-* [[Velbus Serial|User Guide: Velbus Serial Agent]]
-* [[Velbus TCP/IP|User Guide: Velbus TCP IP Agent]]
+* [[Velbus|User-Guide:-Velbus-Agent-(TCP-IP-or-Socket)]]
 * [[Websocket|User Guide: Websocket Agent]]
 * [[Z-Wave|User Guide: Z Wave Agent]]
 
