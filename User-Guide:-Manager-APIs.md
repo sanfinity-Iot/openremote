@@ -31,8 +31,9 @@ A subscription is created by sending an [EventSubscription](https://github.com/o
 
 When an event occurs in the manager that matches an existing subscription then a [TriggeredEventSubscription](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/event/TriggeredEventSubscription.java) as `JSON` prefixed with `TRIGGERED:` will be sent to the client.
 
-### Request response emulation
-To emulate the request response nature of the HTTP API it is possible to send an [EventRequestResponseWrapper](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/event/shared/EventRequestResponseWrapper.java) as `JSON` prefixed with `REQUESTRESPONSE:`, the `messageId` is used to allow the client to associate the request message with the response message. This request response emulation is useful for example to read an asset.
+### Publish
+
+It is possible to emulate the request response nature of the HTTP API by sending an [EventRequestResponseWrapper](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/event/shared/EventRequestResponseWrapper.java) as `JSON` prefixed with `REQUESTRESPONSE:`, the `messageId` is used to allow the client to associate the request message with the response message. This request response emulation is useful for example to read an asset.
 
 For more details on the structure of messages please refer to the `javadoc` of each object type for detailed information.
 
@@ -63,3 +64,6 @@ It is possible to subscribe to [AssetEvents](https://github.com/openremote/openr
 * `attribute/{assetId}/+/{attributeName}`- All attribute events with specified name for direct children of the specified asset
 
 `attributevalue` topic prefix can be used in place of `attribute` to only return the value of the [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java) rather then the entire event.
+
+### Publish
+It is possible to publish attribute events to specific assets
