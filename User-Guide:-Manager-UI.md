@@ -1,15 +1,17 @@
 The Manager UI is the dashboard which gives you access to OpenRemote, and allows you to configure, monitor, and control your IoT platform. We'll explain the main features of the Manager UI, sometimes referring to examples from the [online Demo](https://openremote.io/demo/), for which you only have access in 'read' mode. To have full 'admin' access to all functionality you will first need to [install OpenRemote](https://github.com/openremote/openremote/blob/master/README.md). If you prefer watching a video, rather than reading, check out the [Introduction Video](https://youtu.be/K28CQMKr-rQ).
 
-# Access the manager
+# OpenRemote Manager
 
 Login...
 
 If you open the application you will get four main views: Map (Figure 1), Assets (Figure 2), Rules (Figure 3), and Insights. On mobile you will only see Map, Assets and Insights.
 
+## Map
+
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)
 _Figure 1. The Map view of the Demo Smart City, showing the map with different attributes across the City_
 
-## Map and Assets
+## Assets
 
 Both the Map and Asset view give you access to the respective Assets and related attributes. You can see and control them, but also have the option to look at the historical data via graphs or event lists.
 
@@ -63,18 +65,23 @@ The Insights view (only visible in the desktop version, see figure 4) allows you
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Insights.png)
 _Figure 4. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few random attribute panels._
 
-## Realms, roles, and users
+## Settings and accounts
 
-## Connecting multiple OpenRemote instances
+### Interconnect Manager instances
 
-# White labelling your own IoT Platform
+### Languages
 
-You can adjust name, color settings and logo's, change the map and set environment variables e.g. for e-mail. For instructions see [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment).
+### Logs
 
-See the documentation on our wiki for more details.
+### Account, Users, and Roles
+
+### Realms
+
+
+
 
 # See Also
-- [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)
+- [Customising map and styling](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)
 - [Next 'Get Started' step: Working on the UI](Developer-Guide%3A-Working-on-the-UI)
 - [Get Started](https://openremote.io/get-started-iot-platform/)
 - [OpenRemote Wiki](https://github.com/openremote/openremote/wiki)
