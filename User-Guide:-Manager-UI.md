@@ -6,6 +6,9 @@ Login...
 
 If you open the application you will get four main views: Map (Figure 1), Assets (Figure 2), Rules (Figure 3), and Insights. On mobile you will only see Map, Assets and Insights.
 
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Login%20(2).png)
+_Figure 1. Login page (left) with option to reset password by selecting 'Forgot Password'_
+
 ## Map
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)
