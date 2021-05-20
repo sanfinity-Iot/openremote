@@ -49,8 +49,7 @@
 
 ### Manager API
 * [[Manager APIs|User Guide: Manager APIs]]
-* [[MQTT Connections|How to work with MQTT]]
-* [[MQTT|How-to-work-with-MQTT]]
+* [[MQTT|How to work with MQTT]]
 
 
 ### Identity & Security
