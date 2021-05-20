@@ -77,8 +77,11 @@ _Figure 4. The Insights view of the Demo Smart City, showing the soil temperatur
 
 ### Realms
 
+## Manager APIs
 
+### Service users
 
+### MQTT, Websocket and HTTP
 
 # See Also
 - [Customising map and styling](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)
