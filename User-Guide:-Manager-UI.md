@@ -59,9 +59,9 @@ Next you want to link data coming in through your agents with the attributes of 
 ## Rules
 
 The Rules view (see figures 6-8) allows you to build three types of rules:
-* WHEN-THEN: allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute.
-* FLOW: allows for processing attributes and converting them into new attributes. 
-* GROOVY: programming any advanced logic, using attributes in the system.
+* [WHEN-THEN Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules): allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute.
+* [FLOW](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules): allows for processing attributes and converting them into new attributes. 
+* [GROOVY](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor): programming any advanced logic, using attributes in the system.
 All rules have the option to use a time scheduler, which allows for have rules activated on a time schedule with a recurrence.
 
 ### WHEN-THEN Rules
@@ -87,7 +87,7 @@ _Figure 8. Flow rules to process data (left) and Groovy rules for programming mo
 
 ### Groovy Rules
 
-Groovy rules are intended for more advanced processing and automation (see an example in figure 8, right).
+Groovy rules are intended for more advanced processing and automation (see an example in figure 8, right). For more information see [Wiki on Groovy](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
 
 ### Global versus Realm Rules
 
