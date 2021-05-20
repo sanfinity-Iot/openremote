@@ -54,8 +54,8 @@
 
 
 ### Identity & Security
+* [[Realms, users and roles|User-Guide:-Realms, users and roles]]
 * [[Asset security|User Guide: Asset Security]]
-* [[Realms, users and roles|User-Guide:-Create realms, users and roles]]
 * [[Security OAuth|User-Guide:-Using OAuth]]
 * [[Linking to Active Directory|Connecting-Keycloak-to-AD-with-LDAP-configuration]]
 
