@@ -85,7 +85,7 @@
 * [[Edge gateways|Developer Guide: Edge gateways]]
 
 ### Architecture
-
+* [[Security|Architecture:-Security]]
 * [[Apps and consoles|Architecture: Apps and consoles]]
 * [[Asset location tracking|Architecture: Asset location tracking]]
 * [[Manager URL Endpoints|Architecture: Manager endpoints]]
