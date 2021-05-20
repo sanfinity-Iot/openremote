@@ -11,7 +11,7 @@
 
 ### UI Applications
 
-* [[Manager UI: Demo Smart City|Demo-Smart-City]]
+* [[Manager UI|Demo-Smart-City]]
 * [[Create iOS Console|User-Guide:-Create the iOS Console]]
 * [[Create Android Console|User-Guide:-Create the Android Console]]
 * [[Use UI components|User-Guide:-UI components]]
