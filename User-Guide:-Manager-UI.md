@@ -18,8 +18,9 @@ _Figure 2. The Map view, here with the Demo Smart City, showing the map with dif
 
 Both the Map and Asset view give you access to the respective Assets and related attributes. You can see and control them, but also have the option to look at the historical data via graphs or event lists.
 
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Building%20Asset.png)
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Assets%20(2).png)
-_Figure 3. The Asset view of an environment-type asset (right), including the modal used to create the asset (left)_
+_Figure 3. The Asset view of a building-type asset (top), the modal used to create an environment-type asset (bottom left), and the resulting environment-type asset (bottom right)_
 
 If you want to add assets and link them to an existing system or dataservice, first install OpenRemote locally (see [Quick Start)](https://github.com/openremote/openremote/blob/master/README.md)) and have a look at the video [Integrating with OpenRemote](https://youtu.be/mx9amWaItn0). 
 
