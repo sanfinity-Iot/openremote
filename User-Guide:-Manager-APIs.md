@@ -1,10 +1,12 @@
 ## Manager APIs
-The OpenRemote Manager API is composed of the following APIs, each API requires authentication (with the exception of `read`/`write` of public `asset` `attributes` see [Asset security](./User-Guide%3A-Asset-Security)). Refer to the [Security Guide](./User-Guide:-Using-OAuth) for details on setting up OAuth 2.0, the sort of functions 
+The OpenRemote Manager API is composed of the following APIs, each API requires authentication (with the exception of `read`/`write` of public `asset` `attributes` see [Asset security](./User-Guide%3A-Asset-Security)).
+
+To be able to authenticate you'll need to create a service user using the Manager UI (must be logged in as super user to access this functionality), please refer to the Manager UI user guide.
 
 ## HTTP API
 This is the traditional request response API with live documentation available via Swagger UI (see `/swagger/` URL of your manager) or you can look at the [demo environment](https://demo.openremote.io/swagger/). The base URL for the API is:
 ```
-https://{domain}/api/{realm}/
+/api/{realm}/
 ```
 
 ## WS (Websocket) API
