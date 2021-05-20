@@ -50,13 +50,15 @@ Once you create an Agent, the agent page will display the relevant attributes, r
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Add%20Agent%20(2).png)
 _Figure 5. Creating an Agent, using the HTTP Agent (left) creates the Agent asset page (right)_
 
-Note that you can also connect to OpenRemote through the Manager APIs, see further down this wiki.
+Note that you can also connect to OpenRemote through the Manager APIs, see the [paragraph: Manager APIs](#manager-apis).
 
 ### Linking agents and assets
 
+Next you want to link data coming in through your agents with the attributes of your created assets. Some Agents have auto discovery (e.g. Z-wave) or configuration files (e.g. KNX and Velbus) and assets ar automatically generated. For others it's a manual step. See the example for connecting to [OpenWeatherMap via an HTTP Agent](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent).
+
 ## Rules
 
-The Rules view (only visible in the desktop version, see figure 3) allows you to build three types of rules:
+The Rules view (see figures 6-8) allows you to build three types of rules:
 * WHEN-THEN: allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute.
 * FLOW: allows for processing attributes and converting them into new attributes. 
 * GROOVY: programming any advanced logic, using attributes in the system.
@@ -64,20 +66,32 @@ All rules have the option to use a time scheduler, which allows for have rules a
 
 ### WHEN-THEN Rules
 
+WHEN-THEN rules are intended to define lefthand-side conditions for attributes which trigger a righthand-side action for another attribute. The righthand side can also handle e-mails or push notifications (using the OpenRemote consoles). 
+
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20LHS%20%26%20RHS%20(2).png)
 _Figure 6. A WHEN-THEN Rules example, which shows how, on the lefthand-side an asset attribute condition can be selected, while on the righthand-side the action is selected._
+
+The frequency on which rules trigger as well as a timer schedule can be set. See the examples below. 
 
 ![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Schedules%20(2).png)
 _Figure 7. The Rules trigger frequency (left) as well as time scheduler (right) allows for defining when rules are triggered and active_
 
+See the [WHEN-THEN Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules) wiki for more details. 
+
 ### Flow Rules
+
+Flow rules can be used to link and process attributes. In the visual editor you can use `Input` (blue), `Processor` (green), and `Output` nodes, and wire them up. See the wiki [Flow Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules) for more details. The same scheduler as for WHEN-THEN rules is available for flow rules.
 
 ![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Flow%20%26%20Groovy%20(2).png)
 _Figure 8. Flow rules to process data (left) and Groovy rules for programming more advanced logic (right)_
 
 ### Groovy Rules
 
+Groovy rules are intended for more advanced processing and automation (see an example in figure 8, right).
+
 ### Global versus Realm Rules
+
+As an admin user of the system which can access all realms, you have the option to select 'Global' versus 'Realm' rules. Global rules allow you to use WHEN-THEN and Groovy rules, across realms. Realm rules are part of a single realm and can only access attributes within that realm.
 
 ## Insights
 
