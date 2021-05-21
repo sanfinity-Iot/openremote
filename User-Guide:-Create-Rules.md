@@ -24,7 +24,7 @@ The Flow rules model is intended for application users which want to link attrib
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
 - [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)
 - [[Manager UI Guide|User-Guide:-Manager-UI]]
-- [Creating an HTTP Agent|User-Guide](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent)
+- [Creating an HTTP Agent](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent)
 - [[Custom Deployment|User-Guide:-Custom-deployment]]
 - [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
 - [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components)
