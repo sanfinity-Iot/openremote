@@ -26,5 +26,4 @@ The rules are then registered, ordered from top to bottom within a ruleset.
 - [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
 - [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
-- [Demo Smart City](Demo-Smart-City)
-- [Get Started](https://openremote.io/get-started-iot-platform/)
+- [[Manager UI Guide|User-Guide:-Manager-UI]]
