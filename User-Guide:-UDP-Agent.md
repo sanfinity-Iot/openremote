@@ -1,4 +1,4 @@
-**NOTE: THIS DOCUMENTATION HOWEVER STILL NEEDS UPDATING.**
+**NOTE: THIS DOCUMENTATION STILL NEEDS UPDATING.**
 
 The examples below describe interactively linking asset attributes to UDP Servers using the [UdpClientProtocol](https://github.com/openremote/openremote/blob/master/agent/src/main/java/org/openremote/agent/protocol/udp/UdpClientProtocol.java). The following examples assume that you are running the [Demo docker compose profile](https://github.com/openremote/openremote/wiki/Developer-Guide:-Docker-compose-profiles#demo-docker-composeyml).
 
