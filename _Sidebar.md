@@ -46,7 +46,6 @@
 * [[When-Then Rules|User-Guide:-Use WHEN-THEN Rules]]
 * [[Flow Rules|User-Guide:-Use Flow Rules]]
 * [[Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
-* [[Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
 
 
 ### Identity & Security
