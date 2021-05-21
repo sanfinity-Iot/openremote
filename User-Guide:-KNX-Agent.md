@@ -1,4 +1,4 @@
-**NOTE: THIS PROTOCOL IS NOT YET ACCESSIBLE VIA THE NEW MANAGER UI. IT IS HOWEVER ALREADY PART OF THE CODE BASE AND WILL BE ADDED IN NEXT RELEASES.**
+**NOTE: THIS DOCUMENTATION STILL NEEDS UPDATING.**
 
 You can connect a KNX Gateway to the manager. When you import the corresponding ETS file, the manager will import all assets in the manager automatically. Here we describe the steps you need to take.
 
