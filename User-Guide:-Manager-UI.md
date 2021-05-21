@@ -165,14 +165,14 @@ Service users can be created by selecting the `Users` option, and selecting `Add
 ### HTTP, Websocket, and MQTT
 
 The Manager API is compose of three APIs: HTTP, Websocket and MQTT: 
-* HTTP API is the traditional request response API with live documentation available via Swagger UI (see /swagger/ URL of your manager) or you can look at the demo environment.
+* HTTP API is the traditional request response API with live documentation available via Swagger UI (see https://youraddress/swagger/) or you can look at the [demo environment](https://demo.openremote.io/swagger/).
 * Websocket API is a publish subscribe API that is event based.
 * MQTT is another publish subscribe API which allows connecting to our MQTT broker
 
 More information on these APIs regarding formats and authentication can be found in the wiki for [Manager API](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs)
 
 # See Also
-- [Creating an HTTP Agent](https://openremote.io/get-started-iot-platform/)
+- [Creating an HTTP Agent](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent)
 - [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)
 - [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
 - [Working on the UI](Developer-Guide%3A-Working-on-the-UI)
