@@ -1,4 +1,4 @@
-All OpenRemote projects are delivered as Docker images, you'll need a Docker host to run containers and service stacks.
+All OpenRemote projects are delivered as Docker images that support `linux/aarch64` and `linux/amd64`, you'll need a Docker host to run containers and service stacks.
 
 ## Local Engine
 
@@ -8,7 +8,6 @@ Ensure the following commands work:
 
 ```
 docker -v
-docker-machine -v
 docker-compose -v
 ```
 
@@ -40,55 +39,23 @@ Assuming all the above is working and correct then if you are using Docker Toolb
  | proxy https | TCP |  | 443 |  | 443 |
 
 
-### Enabling bash auto-completion
+## ARM SBC (RPi, ODROID, etc.) installation steps
 
-You might want to install bash auto-completion for Docker commands. On OS X, install:
+The following steps are relevant for an `ODROID C2` but should be similar for other SBCs (note that armbian don't support the RPi at the time of writing so use the Raspbian 64bit OS or similar), the important thing is that you have a 64bit OS which is required to use our docker images because the OpenJDK at the time of writing doesn't have a JIT compiler 32bit JDK for ARM - one is in progress though):
 
-```
-brew install bash-completion
-```
+1. Download Armbian (https://dl.armbian.com/odroidc2/Buster_current_minimal) and flash to SD card using Etcher
+1. Power on and SSH into ODROID then follow Armbian prompts to change root password and Ctrl-C to skip/abort creating a new user
+1. Install curl `apt-get install curl`
+1. Install docker using convenience script:
+   1. `curl -fsSL https://get.docker.com -o get-docker.sh`
+   2. `sh get-docker.sh`
+1. Check install was successful with `docker --version`
+1. Install docker-compose (this is starting to be included in docker package directly now as `docker compose` check if that's the case, if not then follow the next steps):
+   1. `curl -L "https://github.com/ubiquiti/docker-compose-aarch64/releases/download/1.22.0/docker-compose-Linux-aarch64" -o /usr/local/bin/docker-compose`
+   1. `chmod +x /usr/local/bin/docker-compose`
+1. Check install was successful with `docker compose -h` or `docker-compose --version`
 
-Then add this to your `$HOME/.profile`:
 
-```
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
-fi
-```
-
-And link the completion-scripts from your local Docker install:
-
-```
-find /Applications/Docker.app \
--type f -name "*.bash-completion" \
--exec ln -s "{}" "$(brew --prefix)/etc/bash_completion.d/" \;
-```
-Start a new shell or source your profile to enable auto-completion.
-
-### Cleaning up images, containers, and volumes
-
-Working with Docker might leave exited containers and untagged images. If you build a new image with the same tag as an existing image, the old image will not be deleted but simply untagged. If you stop a container, it will not be automatically removed. The following bash function can be used to clean up untagged images and stopped containers, add it to your `$HOME/.profile`:
-
-```
-function dcleanup(){
-    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
-    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
-}
-```
-
-To remove data volumes no longer referenced by a container (deleting ALL persistent data!), use:
-
-```
-docker volume prune
-```
-
-### Disconnecting from a remote engine
-
-Once Docker Community edition is installed then you will be connected to your local Docker engine; if you have used docker-machine to connect to a remote engine then you can `disconnect` from that remote engine using the command:
-
-```
-docker-machine env -u
-```
 
 ## Remote Engine
 
@@ -255,8 +222,3 @@ Buildx allows cross platform image compilation (i.e. build ARM64 image on an AMD
 To build for example the manager image:
 
 `docker buildx build --load --platform linux/arm64 -t openremote/manager:latest openremote/manager/build/install/manager/`
-
-# See also
-
-- [[Building the Code|Developer-Guide:-Building the code]]
-- [Get Started](https://openremote.io/get-started-iot-platform/)
