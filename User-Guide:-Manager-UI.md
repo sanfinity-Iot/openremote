@@ -147,19 +147,32 @@ _Figure 14. Roles can be defined which can be linked to individual users_
 
 ### Realms
 
-Only Admin users can create Realms. Realms are separated projects. 
+Only the Master realm Admin user can create `Realms` by accessing the master realm https://youradress/manager. Realms are separated projects which can be used for individual users or customers of your platform. Individual Realms can be reached at https://youradress/manager/?realm=realmname.
+
+You can create a realm by adding a `Realm` name (single word, small letters), and a `Friendly name`. You can (temporarily) disable realms, which blocks access for any user.   
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)
 _Figure 15. Realms can be created to manage multiple independent projects within one OpenRemote instance_
 
 ## Manager APIs
 
+OpenRemote also allows for interacting with the platform without using the UI. This can be used to synchronise attribute data with external clients, but also for a wider range of functionality, e.g. like accessing configurations, or creating new assets. To be able to authenticate you'll need to create a service user. Next you have three types of APIs: HTTP, Websocket and MQTT. 
+
 ### Service users
 
-### MQTT, Websocket and HTTP
+Service users can be created by selecting the `Users` option, and selecting `Add user` in the `Service user` panel (see figure 13). The `Username` (ClientID) can be filled in by yourself using one string of letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s), as these will define the access right for the Manager API.
+
+### HTTP, Websocket, and MQTT
+
+The Manager API is compose of three APIs: HTTP, Websocket and MQTT: 
+* HTTP API is the traditional request response API with live documentation available via Swagger UI (see /swagger/ URL of your manager) or you can look at the demo environment.
+* Websocket API is a publish subscribe API that is event based.
+* MQTT is another publish subscribe API which allows connecting to our MQTT broker
+
+More information on these APIs regarding formats and authentication can be found in the wiki for [Manager API](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs)
 
 # See Also
-- [Customising map and styling](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)
-- [Next 'Get Started' step: Working on the UI](Developer-Guide%3A-Working-on-the-UI)
-- [Get Started](https://openremote.io/get-started-iot-platform/)
-- [OpenRemote Wiki](https://github.com/openremote/openremote/wiki)
+- [Creating an HTTP Agent](https://openremote.io/get-started-iot-platform/)
+- [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)
+- [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
+- [Working on the UI](Developer-Guide%3A-Working-on-the-UI)
