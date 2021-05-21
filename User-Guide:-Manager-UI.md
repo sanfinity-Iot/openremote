@@ -4,27 +4,27 @@ The Manager UI is the dashboard which gives you access to OpenRemote, and allows
 
 To access the Manager you will first need to login with the correct credentials (admin/secret for your local installation). Note that our account management and identity service includes features like a 'forgot password' flow. See Keycloak documentation for more details.  
 
-If you open the application you will get four main views: `Map` (Figure 1), `Assets` (Figure 2), `Rules` (Figure 6-8), and `Insights` (Figure 9). We'll discuss all views as well as the additional settings and account pages.
+If you open the application you will get four main views: `Map` (Figure 1), `Assets` (Figure 2), `Rules` (Figure 6-8), and `Insights` (Figure 9). In addition there are a series of `Settings`. We'll discuss all views as well as the additional settings and account pages.
 
 ## Map
 
-The `Map` page will show your map (see the custom deployment wiki to [change your map](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)). You can move, zoom, tilt, and pan the map. On the map all your assets are shown which have a location as well as the configuration item `show on dashboard` selected. Assets can both have static or dynamic locations (eg. a car, boat or plane). Once you select an asset a panel will appear, summarising the attributes of the asset and their current values. The `Asset details` button in this panel will bring you to the respective Asset page.
+The `Map` page will show your map (see the custom deployment wiki if you like to [change your map](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)). You can move, zoom, tilt, and pan the map. On the map all assets are shown which have a location as well a configuration item `show on dashboard` selected. Assets can both have static or dynamic locations (eg. a car, boat or plane). Once you select an asset a panel will appear, summarising the attributes of that asset and their current values. The `Asset details` button in this panel will bring you to the respective Asset page.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)
 _Figure 1. The Map view, here with the Demo Smart City, showing the map with different attributes across the City_
 
 ## Assets
 
-The Asset view gives you access to the respective Assets and related attributes. You will see the assets and the tree structure on the left. On the right you will see the Asset page, which contains a panel with all Attributes, a Location panel (if any) and a History panel (if any data is stored).
+The `Asset` view gives you access to the respective assets and related attributes. You will see an asset tree structure on the left. On the right you will see the asset page of the selected asset. The asset page contains an Attributes panel, a Location panel (if any) and a History panel (if any data is stored).
 
-The Attribute panel will give an overview of all attributes and their units. For those attributes which can be changed via the UI, and for which you have the 'write' role as a user, you can type a value and press 'enter' or press the `send` arrow on the right (e.g. in below example the Carbon dioxide value is assumed to be a manual input)). Other attribute values could be coming from sensors or are automatically controlled by rules.
+The Attribute panel will give an overview of all attributes and their units. For those attributes which can be changed via the UI, and for which you have the 'write' role as a user, you can type a value and press 'enter' or press the `send` arrow on the right (e.g. in below example the Carbon dioxide value is assumed to be a manual input). Other attribute values could be live readings from sensors or are automatically updated by Rules.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Mnager%20-%20Asset%20Environment.png)
 _Figure 2. An asset of the type 'environment'_
 
 ### Creating an asset
 
-With the correct permissions (not in the Demo environment), you can create a new asset on the Assets page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types. When you select one you will see the attributes and optional attributes. The latter ones can be added by selecting them. Also decide whether it needs a parent, before you click `Add`. With the asset added, you will see the asset (and asset page) appear in the asset tree on the left. 
+With the correct admin permissions (you'll need your own [installation](https://github.com/openremote/openremote/blob/master/README.md)), you can create a new asset on the Assets page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types. When you select one you will see the attributes and optional attributes. The latter ones can be added by selecting them. Also decide whether it needs a parent, before you click `Add`. With the asset added, you will see the asset (and asset page) appear in the asset tree on the left. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Create%20Asset-Parent.png)
 _Figure 3. Creating an asset of the type 'environment'_
