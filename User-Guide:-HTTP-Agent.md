@@ -167,5 +167,8 @@ Try and create additional attributes that link to the OpenWeatherMap API, some i
 # See also
 
 - Next 'Get Started' step: [Create Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules)
-- [[Demo Smart City|Demo-Smart-City]]
+- [Manager UI](https://github.com/openremote/openremote/wiki/User-Guide:-Manager-UI)
+- [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)
+- [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
+- [Working on the UI](Developer-Guide%3A-Working-on-the-UI)
 - [Get Started](https://openremote.io/get-started-iot-platform/)
