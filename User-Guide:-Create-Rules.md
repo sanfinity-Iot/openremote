@@ -22,8 +22,10 @@ The Flow rules model is intended for application users which want to link attrib
 - [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
 - [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
-- [[Manager UI|User-Guide:-Manager-UI]]
+- [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)
+- [[Manager UI Guide|User-Guide:-Manager-UI]]
+- [[Creating an HTTP Agent|User-Guide:-Connecting-to-a-HTTP-API]]
 - [[Custom Deployment|User-Guide:-Custom-deployment]]
 - [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
-- [Working on the UI](Developer-Guide%3A-Working-on-the-UI)
+- [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components)
 - [Get Started](https://openremote.io/get-started-iot-platform/)
