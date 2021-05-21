@@ -17,7 +17,7 @@ Depending on network connection there can be a delay between interacting with an
 ### 1. Provisioning in the central manager
 Just create a new Asset of type Gateway and the manager will provision a Keycloak client for it with Client Credentials grant type, the client ID and client Secret will then be stored in the clientId and clientSecret attributes of the gateway asset.
 
-TODO: Screenshots from new manager UI
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Gateway%20Asset.png)
 
 ### 2. Entering credentials in the edge gateway
    1. On the edge gateway login to the manager UI and select the realm you wish to connect to the central manager (only applicable to super users).
