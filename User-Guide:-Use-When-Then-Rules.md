@@ -45,7 +45,5 @@ Your rule is finished! Every Friday evening the rule will check if one of the tw
 
 - [[Create Rules|User-Guide:-Create Rules]]
 - [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
-- [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
-- [Demo Smart City](Demo-Smart-City)
-- [Get Started](https://openremote.io/get-started-iot-platform/)
+- [[Manager UI Guide|User-Guide:-Manager-UI]]
