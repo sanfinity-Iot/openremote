@@ -65,7 +65,7 @@
 * [[Installing and using Docker|Developer Guide: Installing and using Docker]]
 * [[Building the code|Developer Guide: Building the code]]
 * [[Setting up an IDE|Developer Guide: Setting up an IDE]]
-* [[Working on the UI|Developer Guide: Working on the UI]]
+* [[Working on the UI|Developer-Guide:-UI-apps-and-components]]
 * [[Create iOS Console|User-Guide:-Create the iOS Console]]
 * [[Create Android Console|User-Guide:-Create the Android Console]]
 * [[Working on the mobile consoles|Developer Guide: Working on the mobile consoles]]
