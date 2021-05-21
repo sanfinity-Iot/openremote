@@ -114,3 +114,12 @@ Use case: you are creating an energy management system that makes decisions base
 We make the link to the simulator agent, and for each timestamp set the value we would like to write. The timestamp is based on seconds of the day. 0 is 00:00:00 in the system time of the machine that hosts the manager.
 
 5. Save the asset and verify that values are written correctly. In the example above we write a value every hour, for test purposes you could change a timestamp to your current time so that you not have to wait for a full hour.
+
+# See also
+
+- [Agent overview](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview)
+- [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)
+- [[Manager UI Guide|User-Guide:-Manager-UI]]
+- [[Custom Deployment|User-Guide:-Custom-deployment]]
+- [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
+- [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components)
