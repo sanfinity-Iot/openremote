@@ -1,4 +1,4 @@
-**NOTE: THIS PROTOCOL IS NOT YET ACCESSIBLE VIA THE NEW MANAGER UI. IT IS HOWEVER ALREADY PART OF THE CODE BASE AND WILL BE ADDED IN NEXT RELEASES.**
+**NOTE: THIS DOCUMENTATION STILL NEEDS UPDATING.**
 
 The examples below describe interactively linking asset attributes to Websocket Servers using the [WebsocketClientProtocol](https://github.com/openremote/openremote/blob/master/agent/src/main/java/org/openremote/agent/protocol/websocket/WebsocketClientProtocol.java). The following examples assume that you are running the [Demo docker compose profile](https://github.com/openremote/openremote/wiki/Developer-Guide:-Docker-compose-profiles#demo-docker-composeyml).
 
