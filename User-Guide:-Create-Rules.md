@@ -23,7 +23,7 @@ The Flow rules model is intended for application users which want to link attrib
 - [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
 - [[Manager UI|User-Guide:-Manager-UI]]
-- [[Custom Deployment|User-Guide:A-Custom-deployment]]
+- [[Custom Deployment|User-Guide:-Custom-deployment]]
 - [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
 - [Working on the UI](Developer-Guide%3A-Working-on-the-UI)
 - [Get Started](https://openremote.io/get-started-iot-platform/)
