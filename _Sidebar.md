@@ -47,9 +47,8 @@
 * [[Websocket|User Guide: Websocket Agent]]
 * [[Z-Wave|User Guide: Z Wave Agent]]
 
-### Manager API
+### Manager APIs
 * [[Manager APIs|User Guide: Manager APIs]]
-* [[MQTT|How to work with MQTT]]
 
 
 ### Identity & Security
