@@ -9,12 +9,10 @@
 * [[Custom deployment|User-Guide:-Custom-deployment]]
 * [[OpenRemote CLI|User-Guide:-OpenRemote-CLI]]
 
-### UI Applications
+### Manager UI
 
 * [[Manager UI|Demo-Smart-City]]
-* [[Create iOS Console|User-Guide:-Create the iOS Console]]
-* [[Create Android Console|User-Guide:-Create the Android Console]]
-* [[Use UI components|User-Guide:-UI components]]
+
 
 ### Rules Engine
 
@@ -33,11 +31,11 @@
 
 * [[Overview|User Guide: Agent Overview]]
 * [[Artnet DMX|User Guide: Artnet DMX Agent]]
-* [[OAuth Client|User Guide: OAuth Client Agent]]
-* [[OR Controller 2.5|User-Guide: OR Controller-2.5 Agent]]
 * [[HTTP|User Guide: HTTP Agent]]
 * [[IKEA Trådfri|User-Guide: IKEA TRÅDFRI Agent]]
 * [[KNX|User-Guide: KNX Agent]]
+* [[MQTT|User Guide: MQTT Agent]]
+* [[OR Controller 2.5|User-Guide: OR Controller-2.5 Agent]]
 * [[Simulator|User-Guide: Simulator Agent]]
 * [[SNMP|User-Guide: SNMP Agent]]
 * [[TCP|User-Guide: TCP Agent]]
@@ -68,6 +66,8 @@
 * [[Building the code|Developer Guide: Building the code]]
 * [[Setting up an IDE|Developer Guide: Setting up an IDE]]
 * [[Working on the UI|Developer Guide: Working on the UI]]
+* [[Create iOS Console|User-Guide:-Create the iOS Console]]
+* [[Create Android Console|User-Guide:-Create the Android Console]]
 * [[Working on the mobile consoles|Developer Guide: Working on the mobile consoles]]
 * [[Working on maps|Developer Guide: Working on maps]]
 * [[Docker compose profiles|Developer Guide: Docker compose profiles]]
