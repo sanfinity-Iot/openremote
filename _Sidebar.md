@@ -79,7 +79,6 @@
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
 * [[Docker swarm mode|https://github.com/openremote/openremote/blob/master/swarm/README.md]]
-* [[Edge gateways|Developer Guide: Edge gateways]]
 
 ### Architecture
 * [[Security|Architecture:-Security]]
