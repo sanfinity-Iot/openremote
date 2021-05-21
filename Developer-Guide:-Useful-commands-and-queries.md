@@ -36,6 +36,58 @@ To find out the password:
 
 `docker exec demo_manager_1 env | awk -F= '/ADMIN_PASSWORD/ {print $2}'`
 
+
+## Enabling bash auto-completion
+
+You might want to install bash auto-completion for Docker commands. On OS X, install:
+
+```
+brew install bash-completion
+```
+
+Then add this to your `$HOME/.profile`:
+
+```
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+```
+
+And link the completion-scripts from your local Docker install:
+
+```
+find /Applications/Docker.app \
+-type f -name "*.bash-completion" \
+-exec ln -s "{}" "$(brew --prefix)/etc/bash_completion.d/" \;
+```
+Start a new shell or source your profile to enable auto-completion.
+
+## Cleaning up images, containers, and volumes
+
+Working with Docker might leave exited containers and untagged images. If you build a new image with the same tag as an existing image, the old image will not be deleted but simply untagged. If you stop a container, it will not be automatically removed. The following bash function can be used to clean up untagged images and stopped containers, add it to your `$HOME/.profile`:
+
+```
+function dcleanup(){
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+```
+
+To remove data volumes no longer referenced by a container (deleting ALL persistent data!), use:
+
+```
+docker volume prune
+```
+
+## Disconnecting from a remote engine
+
+Once Docker Community edition is installed then you will be connected to your local Docker engine; if you have used docker-machine to connect to a remote engine then you can `disconnect` from that remote engine using the command:
+
+```
+docker-machine env -u
+```
+
+
 # Queries
 
 ## Data points
