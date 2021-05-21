@@ -170,7 +170,6 @@ The Manager API is compose of three APIs: HTTP, Websocket and MQTT:
 More information on these APIs regarding formats and authentication can be found in the wiki for [Manager API](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs)
 
 # See Also
-- [Creating an HTTP Agent](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent)
 - [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)
 - [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
 - [Working on the UI](Developer-Guide%3A-Working-on-the-UI)
