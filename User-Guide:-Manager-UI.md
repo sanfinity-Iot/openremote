@@ -24,42 +24,44 @@ _Figure 2. An asset of the type 'environment'_
 
 ### Creating an asset
 
-With the correct admin permissions (you'll need your own [installation](https://github.com/openremote/openremote/blob/master/README.md)), you can create a new asset on the Assets page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types. When you select one you will see the attributes and optional attributes. The latter ones can be added by selecting them. Also decide whether it needs a parent, before you click `Add`. With the asset added, you will see the asset (and asset page) appear in the asset tree on the left. 
+With the correct admin permissions (you'll need your own [installation](https://github.com/openremote/openremote/blob/master/README.md)), you can create a new asset on the Assets page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types when scrolling down in the list. When you select one you will see the attributes and optional attributes. Optional attributes can be added by selecting them in this modal. Also decide whether it needs a parent by selecting the upper right pencil and selecting an asset in the asset tree. Click `Add` to create and add the asset. You will see the asset (and asset page) appear in the asset tree on the left. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Create%20Asset-Parent.png)
 _Figure 3. Creating an asset of the type 'environment'_
 
-Often you will want to add or modify the attributes to define how they are used in the system, e.g. get values through agent link, make the attribute available in rules, or format its value. We'll explain that next.
+Often you will want to add or configure the attributes to define how they are used in the system, e.g. get values through agent link, make the attribute available in rules, or format its value. We'll explain how that works next.
 
 ### Adding an attribute
 
-On the Assets page enable `Edit asset` and click `+ Add attribute` at the bottom of the list of attributes. In the modal you can choose attributes already associated with the asset type of the asset, or you can create a `custom attribute`. The custom attributes should have a `camelCase` name, which will automatically be translated to Sentence case with spaces. You can create attributes of prepared attribute types that are known by the system.
+On the Assets page enable `Edit asset` (on the top middle of the page) which changes the view to a complete list of all available attributes. Click `+ Add attribute` at the bottom of the list of attributes. In the modal you can choose optional attributes already associated with the asset type of the asset, or you can create a `custom attribute`. The custom attributes should have a `camelCase` name, which will automatically be translated to Sentence case with spaces. You can create attributes of prepared attribute types that are known by the system.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Edit%20%26%20Add%20attribute%20(2).png)
 _Figure 4. The Asset view in 'Edit mode' (left) and adding an attribute (right)_
 
 ### Configure attributes
 
-For any attribute, while in `Edit asset` mode, you can can expand each attribute which gives you the option to add configuration items or change existing ones. You can use configuration items for example to decide whether you want to store historical data and for how long, allow data to be used in rules, or whether a location should be displayed on the Map. See the page [Assets, Agents and Attributes](https://github.com/openremote/openremote/wiki/User-Guide%3A-Assets%2C-Agents-and-Attributes) for all available configuration options.
+For each attribute, while in `Edit asset` mode, you can expand it, which gives you the option to add configuration items or change existing ones. You can use configuration items for example to decide whether you want to store historical data and for how long, allow data to be used in rules, or whether a location should be displayed on the Map. See the wiki page [explaining all available configuration options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Assets%2C-Agents-and-Attributes).
 
 ### Creating an agent
 
-Agents are a specific type of asset, which are used to connect to external sensors, actuators, gateways or services, using protocols. They are added in the same manner as assets by clicking the `+` in the header of the asset tree. This will open a modal that shows the available agent types. You will see generic ones: HTTP, Websocket, TCP/IP, UDP and SNMP; as well as more specific ones like Z-wave, KNX or Velbus.
+Agents are a specific type of asset, which are used to connect to external sensors, actuators, gateways or services, using protocols. They are added in the same manner as assets by clicking the `+` in the header of the asset tree. This will open a modal that shows the available agent types at the top of the list. You will see the generic ones: [HTTP](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent), Websocket, TCP/IP, [UDP](https://github.com/openremote/openremote/wiki/User-Guide%3A-UDP-Agent) and [SNMP](https://github.com/openremote/openremote/wiki/User-Guide%3A-SNMP-Agent); as well as more specific ones like [Z-wave](https://github.com/openremote/openremote/wiki/User-Guide%3A-Z-Wave-Agent), [KNX](https://github.com/openremote/openremote/wiki/User-Guide%3A-KNX-Agent) or [Velbus](https://github.com/openremote/openremote/wiki/User-Guide:-Velbus-Agent-(TCP-IP-or-Socket)).
 Once you create an Agent, the agent page will display the relevant attributes, required to establish an actual connection to the external world.
+
+Some Agents have auto discovery (e.g. Z-wave) or use configuration files (e.g. KNX and Velbus). The Agent page will show a discovery button or a file selector. Once set correctly the Agent will also create an additional asset/attribute structure for all discovered or configured assets. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Add%20Agent%20(2).png)
 _Figure 5. Creating an Agent, using the HTTP Agent (left) creates the Agent asset page (right)_
 
-Note that you can also connect to OpenRemote through the Manager APIs, see the [paragraph: Manager APIs](#manager-apis).
+Note that you can also connect to OpenRemote through the Manager APIs without using the UI, see the [paragraph: Manager APIs](#manager-apis).
 
 ### Linking agents and assets
 
-Next you want to link data coming in through your agents with the attributes of your created assets. Some Agents have auto discovery (e.g. Z-wave) or configuration files (e.g. KNX and Velbus) and assets ar automatically generated. For others it's a manual step. See the example for connecting to [OpenWeatherMap via an HTTP Agent](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent).
+If the Agent doesn't support discovery or configuration files, you will manually need to link data coming in through your agents with the attributes of your created assets. We use attributes such as `Asset link` and `Agent link` for that. See the example for connecting to [OpenWeatherMap via an HTTP Agent to a Weather asset](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent).
 
 ## Rules
 
 The Rules view (see figures 6-8) allows you to build three types of rules:
-* [WHEN-THEN Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules): allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute.
+* [WHEN-THEN Rules](#when-then-rules): allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute.
 * [FLOW](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules): allows for processing attributes and converting them into new attributes. 
 * [GROOVY](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor): programming any advanced logic, using attributes in the system.
 All rules have the option to use a time scheduler, which allows for have rules activated on a time schedule with a recurrence.
