@@ -23,7 +23,6 @@ The rules are then registered, ordered from top to bottom within a ruleset.
 # See Also
 
 - [[Create Rules|User-Guide:-Create Rules]]
-- [[Create Javascript Rules|User-Guide:-Create Rules with Javascript Editor]]
 - [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
 - [[Manager UI Guide|User-Guide:-Manager-UI]]
