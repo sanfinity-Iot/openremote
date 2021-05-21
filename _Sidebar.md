@@ -11,7 +11,7 @@
 
 ### Manager UI
 
-* [[Manager UI|Demo-Smart-City]]
+* [[Manager UI|User-Guide:-Manager-UI]]
 
 
 ### Rules Engine
