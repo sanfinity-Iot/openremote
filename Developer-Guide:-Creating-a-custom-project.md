@@ -1,29 +1,38 @@
+## Quickstart
+We have a repo which can be used as a template for a custom project; simply clone the [custom-project](https://github.com/openremote/custom-project) repo and start adding your custom code; see the [Endpoints and file paths](./Architecture%3A-Manager-endpoints-and-file-paths) documentation to understand how to override the various parts of the system.
+
+## What is a custom project
+A custom project is a way of extending OpenRemote to provide custom functionality without modifying the main OpenRemote code, thus the custom code can be separately version controlled possibly in a private repo. Possible use cases:
+
+* Custom protocols (to interface with some service/device in a customised way)
+* Custom setup code (to automatically provision realms, users, assets, rules, etc. during a clean install)
+* Custom asset types
+* Custom docker compose profiles
+* Custom UI apps
+* Custom Android/iOS consoles
+
+The guide consists of the following sections and you will need to have a working environment in order to build, test etc. (please refer to the wiki for further details):
+
 * [Project Structure](#project-structure)
+* [OpenRemote Dependencies](#openremote-dependencies)
 * [Setup code](#setup-code)
-
-The setup described here is useful if you want to create a custom project that extends OpenRemote, and keep extensions and other deployment-specific details separate in a possibly private Git repository.
-
-Your project code and configuration files can use the main OpenRemote project directly, but you can manage them independently. You can track and merge changes on the upstream main OpenRemote project, targeting specific tags for your integration. Or you can keep up with the main development branch and pull the latest code.
-
-[[Preparing the environment|Developer Guide: Preparing the environment]] is required before starting a custom project.
 
 ## Project Structure
 
-Custom projects should have a dependency on the main OpenRemote repository using a Git submodule as described below, and the following folder(s) should exist in your `myproject` folder:
+It is recommended to put custom project code in directory/module called `deployment` this can then be built as a docker image and used as a docker volume to map into our `manager` and `keycloak` containers to override/enhance their behaviour; if there is a large amount of code then multiple directories/modules might be desired to logically separate the code, in this case it is advised to follow the same naming convention as the main OpenRemote repo and to ensure the `gradle` build is configured in order to copy the compiled code into the `deployment` `build` directory in preparation for building the `deployment` docker image.
 
-* `openremote` - Submodule of main OpenRemote repository, Git instructions below.
 
-* `deployment` - Project data, console apps JS/HTML resources, map data, and the extensions directory for your projects JAR files. Copy the deployment folder of the main OpenRemote repository and customise. The original OpenRemote folder is included in the OpenRemote images and can be overridden at deployment-time with your folder.
 
-* `profile` - Project configuration, Docker Compose files for different environments (e.g. staging, production) that extend the OpenRemote main profiles
+## OpenRemote Dependencies
+Depending on what parts of the OpenRemote system are being customised will determine the code dependencies on the main OpenRemote code base; as the main OpenRemote code base is a monolith repo it is possible to add a `git submodule` to the main OpenRemote repo and directly reference the `gradle` projects within, this gives a very tight development process which is particularly useful if making code changes within the OpenRemote code base at the same time.
 
-* `myextension1` - Project code extending OpenRemote, includes Java/Groovy source and should produce a tested JAR for the `deployment/extensions/` directory. Extensions will be loaded automatically on startup, you can create as many JARs as required. Your Protocol, Setup, and other implementation can be in separate Gradle sub-projects.
+It is also possible to reference release artefacts of our various modules:
 
-* `console` - Project native consoles (Android, iOS) extending the folders of the main OpenRemote repository (TODO: We should support extensions for console native shells and not need this in custom projects)
+* java modules - see maven repo (TODO)
+* UI components - see npm
 
-* `ui` - Project code for frontend
 
-* `agent` - Project code for custom/project specific protocols
+
 
 
 ## Working with the Git repositories
