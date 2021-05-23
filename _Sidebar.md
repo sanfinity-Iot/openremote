@@ -78,7 +78,7 @@
 * [[Docker swarm mode|https://github.com/openremote/openremote/blob/master/swarm/README.md]]
 
 ### Architecture
+* [[Manager URLs and paths|Architecture:-Manager-endpoints-and-paths]]
 * [[Security|Architecture:-Security]]
 * [[Apps and consoles|Architecture: Apps and consoles]]
 * [[Asset location tracking|Architecture: Asset location tracking]]
-* [[Manager URLs and paths|Architecture: Manager endpoints]]
