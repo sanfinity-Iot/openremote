@@ -1,3 +1,6 @@
+* [Project Structure](#project-structure)
+* [Setup code](#setup-code)
+
 The setup described here is useful if you want to create a custom project that extends OpenRemote, and keep extensions and other deployment-specific details separate in a possibly private Git repository.
 
 Your project code and configuration files can use the main OpenRemote project directly, but you can manage them independently. You can track and merge changes on the upstream main OpenRemote project, targeting specific tags for your integration. Or you can keep up with the main development branch and pull the latest code.
@@ -359,167 +362,20 @@ task installDist(type: Copy) {
 
 Then update your extension `build.gradle` (e.g. `myextension1/build.gradle`) and uncomment the `compile project(":agent")` line.
 
-# Building and running your project
 
-If you work only on the console frontend apps and files in the `deployment` folder, and want to deploy the full stack in development mode, first execute the Gradle build without tests:
 
-```
-./gradlew clean installDist
-```
+## Setup code
+Custom setup code allows for programmatic configuration of a clean installation including the provisioning of `Agents`, `Assets`, `users`, `rules`, etc. This means that the system loads in a pre-configured state that can easily be reproduced in a new instance.
 
-This will build your extensions and the main OpenRemote services and prepare all files for Docker image build in the right places.
-
-Then build Docker images and start the stack:
+Setup code is executed via the `SetupService` and is only executed if the `SETUP_WIPE_CLEAN_INSTALL` environment variable is set to `true` or if the database that the instance uses is empty. `SetupTasks` implementations are discovered using the standard java `ServiceLoader` mechanism and must therefore be registered via `META-INF/services` mechanism, generally implementations should extend the `EmptySetupTasks` which will do basic configuration of `keycloak`:
 
 ```
-DEPLOYMENT_DIRECTORY=$PWD/deployment docker-compose -p myproject -f openremote/profile/dev.yml up --build
-```
+public class TestSetupTasks extends EmptySetupTasks {
 
-This will use the `deployment` folder of your project. You should specify a custom project name, it's the prefix of running containers and data volumes.
+    @Override
+    public List<Setup> createTasks(Container container) {
+        super.createTasks(container);
 
-Each project should have its own space at runtime, but all containers should use the regular OpenRemote images. Customisation is best done in `deployment` extensions, the Docker images are not project-specific.
-
-When you are working on your extension Java/Groovy code, you don't want to wait for a full stack build and deploy. So if you have not changed any files in the `openremote` directory, you can simply restart your project's stack to pick up the new extension JARs in the `deployment` directory after building only your extension(s):
-
-```
-./gradlew myextension1:installDist
-... docker-compose down|up ...
-```
-
-### Working on Manager backend services or UI
-
-Read the [[Setting up an IDE|Developer Guide: Setting up an IDE]], this helps you create Run/Debug Configurations in an IDE.
-
-## Testing
-
-The tests for `myextension1` should be created in the source directory `myextension1/src/test/groovy`.
-
-Your tests can run inside the same environment as OpenRemote tests. Use [Spock](spockframework.org/spock/docs/) and write [Groovy](http://www.groovy-lang.org/) code in `myextension1/src/test/groovy/myextension1/test/MyProjectTest.groovy`:
-
-```
-package myextension1;
-
-import ...
-
-class MyProjectTest extends Specification implements ManagerContainerTrait {
-
-    def "Check something"() {
-
-        given: "expected conditions and environment"
-        def conditions = new PollingConditions(timeout: 30, initialDelay: 3)
-
-        when: "the manager server has been deployed"
-        def serverPort = findEphemeralPort()
-        def container = startContainer(defaultConfig(serverPort), defaultServices())
-
-        then: "we poll and wait for a result"
-        conditions.eventually {
-            assert true // TODO write tests
-        }
-
-        cleanup: "the server should be stopped"
-        stopContainer(container);
+        // Do custom setup here
     }
-}
 ```
-
-### Running tests
-
-Some of our (and hopefully your) tests are end-to-end tests that require running background container services.
-
-You might want to start with clean containers before running tests and you might have to restart containers after (failed) tests with `docker-compose [up|down]`.
-
-You probably want to manage the data volumes with `docker volume`, although the default setup is to wipe and clean install everything over an existing database.
-
-First start required background services for integration tests, execute the following from your project's directory:
-
-`docker-compose -p myproject -f openremote/profile/dev-testing.yml up --build -d`
-
-Then execute the tests:
-
-```
-./gradlew clean build installDist
-```
-
-When you no longer need the background services, stop them:
-
-`docker-compose -p myproject -f openremote/profile/dev-testing.yml down`
-
-When you are [[Setting up an IDE|Developer Guide: Setting up an IDE]], you should also run the `dev-testing.yml` in the background as you execute JUnit tests ad-hoc from within your IDE. The services are also required to start the Manager in your IDE.
-
-## Creating a production deployment
-
-The `dev.yml` and `dev-testing.yml` profiles you have used are bundled with the main OpenRemote project. You should read the whole [deploy.yml](https://github.com/openremote/openremote/blob/master/profile/deploy.yml), it is the basis of all other profiles. A good starting point for your own production setup is [demo.yml](https://github.com/openremote/openremote/blob/master/profile/demo.yml).
-
-First create a `myproject/profile` directory and copy `openremote/profile/demo.yml`. Rename it to match the desired configuration, typical use cases are separate settings for staging and production environments.
-
-Follow the steps in the `demo.yml` example. At a minimum, you want to disable `SETUP_WIPE_CLEAN_INSTALL`!
-
-Have a look at our [[Maintaining an installation|Developer Guide: Maintaining an installation]] guide for finding typical runtime problems and monitoring options.
-
-### Restarting a Manager with new settings
-
-After changing any configuration in the `deployment/manager` directory, for example when you change logging settings, you should restart the service with:
-
-```
-SERVICE=manager && PROJECT=openremote && PROFILE=profile/demo.yml && \
-  docker-compose -p $PROJECT -f $PROFILE stop $SERVICE && \
-  docker-compose -p $PROJECT -f $PROFILE rm -f $SERVICE && \
-  docker-compose -p $PROJECT -f $PROFILE create $SERVICE && \
-  docker-compose -p $PROJECT -f $PROFILE start $SERVICE
-```
-
-Make sure the `SETUP_WIPE_CLEAN_INSTALL` environment variable is not set!
-
-### Configuring security
-
-A regular OpenRemote deployment exposes services only through HTTPS and WSS, the `proxy` service of OpenRemote manages keys via [Let's Encrypt](https://letsencrypt.org/).
-
-Do not forget to set `SETUP_ADMIN_PASSWORD` when going into production and exposing OpenRemote services beyond your development network.
-
-TODO Build/setup should generate a password and print it on console, bit of a problem with wipe clean install option
-
-<!--
-## Configuring security
-
-In an OpenRemote system, servers use certificates to authenticate themselves to clients. Simple default TLS certificates (and the private key only known to the server(s)) have been created with:
-
-```
-#!/bin/bash
-
-rm /tmp/or-*.jks /tmp/or-*.cer
-
-keytool -genkeypair -alias "openremote" \
-    -noprompt -keyalg RSA -validity 9999 -keysize 2048 \
-    -dname "CN=openremote" \
-    -keypass CHANGE_ME_SSL_KEY_STORE_PASSWORD \
-    -keystore /tmp/or-keystore.jks \
-    -storepass CHANGE_ME_SSL_KEY_STORE_PASSWORD
-
-keytool -exportcert \
-    -alias "openremote" \
-    -keystore /tmp/or-keystore.jks \
-    -storepass CHANGE_ME_SSL_KEY_STORE_PASSWORD \
-    -file /tmp/or-certificate.cer
-
-keytool -importcert -noprompt \
-    -alias "openremote" \
-    -file /tmp/or-certificate.cer \
-    -keystore /tmp/or-truststore.jks \
-    -storepass CHANGE_ME_SSL_KEY_STORE_PASSWORD
-
-keytool -list -v \
-    -keystore /tmp/or-keystore.jks \
-    -storepass CHANGE_ME_SSL_KEY_STORE_PASSWORD
-
-cp /tmp/or-keystore.jks controller/conf/keystore.jks
-cp /tmp/or-truststore.jks controller/conf/truststore.jks
-
-cp /tmp/or-keystore.jks beehive/ccs/conf/keystore.jks
-
-```
-
-At a minimum, you should re-create the stores and private key with your own passwords when deploying OpenRemote.
-
-TODO: Unify default CAs in trust stores in all server systems, which (root) CAs should stay and what is the setup we recommend for OpenRemote users, etc.
--->
