@@ -81,4 +81,4 @@
 * [[Security|Architecture:-Security]]
 * [[Apps and consoles|Architecture: Apps and consoles]]
 * [[Asset location tracking|Architecture: Asset location tracking]]
-* [[Manager URL Endpoints|Architecture: Manager endpoints]]
+* [[Manager URLs and paths|Architecture: Manager endpoints]]
