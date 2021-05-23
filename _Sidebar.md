@@ -63,7 +63,7 @@
 * [[Preparing the environment|Developer Guide: Preparing the environment]]
 * [[Installing and using Docker|Developer Guide: Installing and using Docker]]
 * [[Setting up an IDE|Developer Guide: Setting up an IDE]]
-* [[Building the code|Developer Guide: Building and testing]]
+* [[Building and testing|Developer Guide: Building and testing]]
 * [[Working on the UI|Developer-Guide:-UI-apps-and-components]]
 * [[Working on maps|Developer Guide: Working on maps]]
 * [[Docker compose profiles|Developer Guide: Docker compose profiles]]
