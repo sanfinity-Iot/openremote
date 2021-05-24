@@ -117,7 +117,7 @@ On the upper right of the Manager you see a Realm selector which allows switchin
 You can link multiple instances of OpenRemote (as Edge Gateways) to a single Central instance of OpenRemote. To do that you use the `Manager Interconnect` on the Edge Gateway instance and fill in `Hostname`, `Realm` (of the host), `Client ID` and `Client Secret`. On the Central instance you create an `Gateway Asset`, which generates the Client ID and Secret. See the [Edge Gateway documentation](https://github.com/openremote/openremote/wiki/User-Guide%3A-Edge-Gateway) for details.
  
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Interconnect%20(2).png)
-_Figure 11. Several OpenRemote instances can be interconnected, e.g. connecting multiple instances on edge gateways to one central cloud hosted instance. The Manager Interconnect page, used at the edge instances creates the keys (left) which are used on the central instance by adding Edge gateway Assets (right)._
+_Figure 11. Several OpenRemote instances can be interconnected, e.g. connecting multiple instances on edge gateways to one central cloud hosted instance. The Manager Interconnect page, used at the edge instances (left) uses the keys which are created on the central instance by adding Edge gateway Assets (right)._
 
 ## Languages
 
