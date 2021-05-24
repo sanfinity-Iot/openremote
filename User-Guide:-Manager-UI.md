@@ -158,7 +158,7 @@ _Figure 16. Realms can be created to manage multiple independent projects within
 
 # Manager APIs
 
-OpenRemote also allows for interacting with the platform without using the UI. This can be used to synchronise attribute data with external clients, but also for a wider range of functionality, e.g. like accessing configurations, or creating new assets. To be able to authenticate you'll need to create a service user first. Next you have three types of APIs to choose from: HTTP, Websocket and MQTT. 
+OpenRemote also allows for interacting with the platform without using the UI. This can be used to synchronise attribute data with external clients, but also for a wider range of functions, e.g. accessing configurations, or creating new assets. To be able to authenticate you'll need to create a service user first. Next you have three types of APIs to choose from: HTTP, Websocket and MQTT. 
 
 ## Service users
 
