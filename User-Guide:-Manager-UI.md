@@ -13,11 +13,11 @@ _Figure 1. The Map view, here with the Demo Smart City, showing the map with dif
 
 # Assets
 
-The `Asset` view gives you access to the respective assets and related attributes. You will see an asset tree structure on the left. On the right you will see the asset page of the selected asset. The asset page contains an Attributes panel, a Location panel (if any) and a History panel (if any data is stored).
+The `Asset` view gives you access to the respective assets and related attributes. You will see an asset tree structure on the left. On the right you will see the asset page of the selected asset. The asset page contains an Attributes panel, a Location panel (if any) and a History panel.
 
 The Attribute panel will give an overview of all attributes and their units. For those attributes which can be changed via the UI, and for which you have the 'write' role as a user, you can type a value and press 'enter' or press the `send` arrow on the right (e.g. in below example the Carbon dioxide value is assumed to be a manual input). Other attribute values could be live readings from sensors or are automatically updated by Rules.
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Mnager%20-%20Asset%20Environment.png)
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Ozone%20Asset.png)
 _Figure 2. An asset of the type 'environment'_
 
 ## Create an asset
