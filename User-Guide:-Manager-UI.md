@@ -2,7 +2,7 @@ The Manager UI is the dashboard which gives you access to OpenRemote, and allows
 
 To access the Manager you will first need to login with the correct credentials (admin/secret for your local installation). Note that our account management and identity service includes features like a 'forgot password' flow. See Keycloak documentation for more details.  
 
-If you open the application you will get four main views: `Map` (Figure 1), `Assets` (Figure 2), `Rules` (Figure 6-8), and `Insights` (Figure 9). In addition there are a series of `Settings`. We'll discuss all views as well as the additional settings and account pages.
+If you open the application you will get four main views: `Map` (Figure 1), `Assets` (Figure 2), `Rules` (Figure 6-8), and `Insights` (Figure 9). In addition there are a series of `Settings` to interconnect managers, change language, edit your account, and create users, roles, or realms. Also the service users for the `Manager APIs` can be set here. We'll discuss all views as well as the additional settings and account pages.
 
 # Map
 
