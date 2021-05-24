@@ -4,7 +4,7 @@ An asset is a digital representation of a physical or logical `Thing` (this is t
 ## Attributes
 Each asset can have one or more attributes that hold a value; a value can be of any type that can be represented as `JSON`. The name of the attribute is used to cross reference it with an attribute descriptor (see below), which provides schema information for the attribute.
 
-## Meta items (configuration items)
+## Configuration items
 As well as having a value an attribute can have configuration items which control the behaviour of the attribute (link it to an agent for read/write from/to external systems, link to another attribute, configure historical value storage, and much more). Each attribute can have one or more meta items which is essentially a well known named value (meta data) that can be used in various parts of the system to control behaviour of the associated attribute (e.g. an `agentLink` meta item is used to connect an attribute to an agent/protocol).
 
 ## Agents
