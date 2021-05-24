@@ -25,7 +25,7 @@ _Figure 2. An asset of the type 'environment'_
 With the correct admin permissions (you'll need your own [installation](https://github.com/openremote/openremote/blob/master/README.md)), you can create a new asset on the Assets page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types when scrolling down in the list. When you select one you will see the attributes and optional attributes. Optional attributes can be added by selecting them in this modal. Also decide whether it needs a parent by selecting the upper right pencil and selecting an asset in the asset tree. Click `Add` to create and add the asset. You will see the asset (and asset page) appear in the asset tree on the left. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Create%20Asset-Parent.png)
-_Figure 3. Creating an asset of the type 'environment'_
+_Figure 3. Creating an asset of the type 'environment' with the Building selected as parent_
 
 Often you will want to add or configure the attributes to define how they are used in the system, e.g. get values through agent link, make the attribute available in rules, or format its value. We'll explain how that works next.
 
