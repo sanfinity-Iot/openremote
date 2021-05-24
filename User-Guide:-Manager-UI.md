@@ -83,7 +83,7 @@ See the [WHEN-THEN Rules](https://github.com/openremote/openremote/wiki/User-Gui
 
 ## Flow Rules
 
-Flow rules can be used to fill new attributes with processed other attributes. In the visual editor you can use `Input` (blue), `Processor` (green), and `Output` nodes, and wire them up. See the wiki [Flow Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules) for more details. The same scheduler as for WHEN-THEN rules is available for flow rules.
+Flow rules can be used to fill new attributes with processed other attributes. In the visual editor you can use `Input` (blue), `Processor` (green), and `Output` (purple) nodes, and wire them up. See the wiki [Flow Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules) for more details. The same scheduler as for WHEN-THEN rules is available for flow rules.
 
 ![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Flow.png)
 _Figure 8. Flow rules to process data_
