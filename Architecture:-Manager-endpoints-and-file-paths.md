@@ -30,6 +30,7 @@ The following list shows the file paths used by our docker containers; these can
 * `$CUSTOM_APP_DOCROOT` - Location used to load paths that aren't well known which allows custom web content to be served; Default: `/deployment/manager/app`
 * `$FIREBASE_CONFIG_FILE` - Location of Firebase Cloud Messaging configuration file which allows push notification functionality `/deployment/manager/fcm.json`
 * `$KEYCLOAK_GRANT_FILE` - Location of [OAuth Grant](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/auth/OAuthGrant.java) in `json` representation which is used internally by the manager to communicate with Keycloak (in order to provision users, tenants, etc.); Default: `/deployment/manager/keycloak.json`
+* `$LOGGING_CONFIG_FILE` - Path of custom `JUL` logging config file; Default: `/deployment/manager/logging.properties`, falls back to default if not specified or not found which can be found [here](https://github.com/openremote/openremote/blob/master/manager/src/main/resources/logging.properties).
 * `$MAP_TILES_PATH` - Path of `mbtiles` map data file; Default: `/deployment/map/mapdata.mbtiles`
 * `$MAP_SETTINGS_PATH` - Map settings path to `json` configuration for styling the map; Default: `/deployment/map/mapsettings.json`
 * `/deployment/manager/extensions` - Location of custom java code that is added to the classpath of the manager during startup
