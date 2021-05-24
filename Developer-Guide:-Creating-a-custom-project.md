@@ -61,7 +61,7 @@ Create directory with appropriate name and copy `/deployment/build.gradle` into 
 It is recommended to use the same directory layout as found in the `openremote` submodule, and put all UI code in a directory called `ui`; as our UI code uses `yarn workspaces` you will need to copy the `/openremote/package.json` into the root of the custom project and then modify the workspace paths within this new file (adding `openremote/` in front of existing paths and also adding new paths for any components or apps created in the custom project).
 
 ### Custom keycloak themes
-It's possible to provide custom keycloak themes see [custom-project](https://github.com/openremote/custom-project/tree/main/deployment/keycloak/README.md) for details.
+It's possible to provide custom keycloak themes see [custom-project](https://github.com/openremote/custom-project/blob/main/deployment/keycloak/themes/README.md) for details.
 
 
 ## Setup code
