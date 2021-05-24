@@ -43,9 +43,9 @@ The [custom-project](https://github.com/openremote/custom-project) repo acts as 
 * `/openremote` - OpenRemote repo submodule
 * `.gitignore` - Typical `.gitignore` file to exclude common build related files/directories (also excluded `*.mbtiles` as these can be very large binary files not suitable for a git repo)
 * `gradlew`/`gradlew.bat` - Gradle wrapper execution script
-* `build.gradle` - 
-* `gradle.properties` -
-* `settings.gradle` - 
+* `build.gradle` - Gradle root project build config
+* `gradle.properties` - Gradle properties file
+* `settings.gradle` - Gradle multi project config (loads OpenRemote submodule projects)
 * `LICENSE.txt` - Copy of `LICENSE.txt` from main OpenRemote repo
 
 ### Deployment directory/module
