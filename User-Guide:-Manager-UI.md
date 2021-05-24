@@ -74,10 +74,10 @@ _Figure 6. A WHEN-THEN Rules example, which shows how, on the lefthand-side an a
 
 The frequency on which rules trigger as well as a timer schedule can be set. 
 The rule frequency, a dropdown on the upper right of each 'THEN' panel defines how frequent a rule can trigger. For example 'Always' means every time the lefthand side condition is triggered, but only after condition is unmet.
-The Timer schedule (right next to the title field of the rule) allows you to set an occurrence period as well as repeat that occurrence. The below example sets the rule to be active until June 20, only on weekdays from 8am till 11pm.
+The Timer schedule (right next to the title field of the rule) allows you to set an occurrence period as well as repeat that occurrence. The below example sets the rule to be active until June 20, only on weekdays.
 
 ![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduling%20(2-2).png)
-_Figure 7. The Rules trigger frequency (right) as well as time scheduler (left) allows for defining when rules are triggered and active. The scheduled example sets the rule to be active until June 20 2022._
+_Figure 7. The Rules trigger frequency (right) as well as time scheduler (left) allows for defining when rules are triggered and active. The scheduled example sets the rule to be active until June 20 2022, only on weekdays._
 
 See the [WHEN-THEN Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules) wiki for more details. 
 
