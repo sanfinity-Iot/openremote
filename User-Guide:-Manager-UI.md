@@ -33,8 +33,8 @@ Often you will want to add or configure the attributes to define how they are us
 
 On the Assets page enable `Edit asset` (on the top middle of the page) which changes the view to a complete list of all available attributes. Click `+ Add attribute` at the bottom of the list of attributes. In the modal you can choose optional attributes already associated with the asset type of the asset, or you can create a `custom attribute`. The custom attributes should have a `camelCase` name, which will automatically be translated to Sentence case with spaces. You can create attributes of prepared attribute types that are known by the system.
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Edit%20%26%20Add%20attribute%20(2).png)
-_Figure 4. The Asset view in 'Edit mode' (left) and adding an attribute (right)_
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Add%20attribute.png)
+_Figure 4. The Asset view in 'Edit mode' while adding an attribute_
 
 ## Configure attributes
 
