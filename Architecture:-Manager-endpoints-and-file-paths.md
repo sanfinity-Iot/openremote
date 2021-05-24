@@ -31,7 +31,7 @@ The following list shows the file paths used by our docker containers; these can
 * `$FIREBASE_CONFIG_FILE` - Location of Firebase Cloud Messaging configuration file which allows push notification functionality `/deployment/manager/fcm.json`
 * `$KEYCLOAK_GRANT_FILE` - Location of [OAuth Grant](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/auth/OAuthGrant.java) in `json` representation which is used internally by the manager to communicate with Keycloak (in order to provision users, tenants, etc.); Default: `/deployment/manager/keycloak.json`
 * `$MAP_TILES_PATH` - Path of `mbtiles` map data file; Default: `/deployment/map/mapdata.mbtiles`
-* `$MAP_SETTINGS_PATH` - Map settings path to `json` configuration for styling the map
+* `$MAP_SETTINGS_PATH` - Map settings path to `json` configuration for styling the map; Default: `/deployment/map/mapsettings.json`
 * `/deployment/manager/extensions` - Location of custom java code that is added to the classpath of the manager during startup
 * `$PROVISIONING_DOCROOT` - Location of provisioning directory which can contain the following sub-directories of `json` representations to be automatically provisioned into the manager during a clean install setup:
   * `assets` - Sorted alphabetically, each `json` file should contain exactly 1 asset in `json` representation
