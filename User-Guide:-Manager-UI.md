@@ -59,7 +59,7 @@ If the Agent doesn't support discovery or configuration files, you will manually
 
 # Rules
 
-The Rules view (see figures 6-8) allows you to build three types of rules:
+The Rules view (see figures 6-9) allows you to build three types of rules:
 * [WHEN-THEN Rules](#when-then-rules): allows you to set Left Hand Side conditions of available attributes, and trigger a Right Hand Side action for another attribute.
 * [FLOW](#flow-rules): allows for processing attributes and converting them into new attributes. 
 * [GROOVY](#groovy-rules): programming any advanced logic, using attributes in the system.
