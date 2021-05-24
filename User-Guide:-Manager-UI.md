@@ -69,15 +69,15 @@ All rules have the option to use a time scheduler, which allows for have rules a
 
 WHEN-THEN rules are intended to define lefthand-side conditions for attributes which trigger a righthand-side action for another attribute. The righthand side can also handle e-mails or push notifications (using the OpenRemote consoles). 
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20LHS%20%26%20RHS%20(2).png)
-_Figure 6. A WHEN-THEN Rules example, which shows how, on the lefthand-side an asset attribute condition can be selected, while on the righthand-side the action is selected._
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20(2-2).png)
+_Figure 6. A WHEN-THEN Rules example, which shows how, on the lefthand-side an asset type can be selected, while on the righthand-side the action, in this case a push notification, is defined._
 
 The frequency on which rules trigger as well as a timer schedule can be set. 
 The rule frequency, a dropdown on the upper right of each 'THEN' panel defines how frequent a rule can trigger. For example 'Always' means every time the lefthand side condition is triggered, but only after condition is unmet.
 The Timer schedule (right next to the title field of the rule) allows you to set an occurrence period as well as repeat that occurrence. The below example sets the rule to be active until June 20, only on weekdays from 8am till 11pm.
 
-![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Schedules%20(2).png)
-_Figure 7. The Rules trigger frequency (left) as well as time scheduler (right) allows for defining when rules are triggered and active. The scheduled example sets the rule to be active until June 20, only on weekdays from 8am till 11pm._
+![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduling%20(2-2).png)
+_Figure 7. The Rules trigger frequency (right) as well as time scheduler (left) allows for defining when rules are triggered and active. The scheduled example sets the rule to be active until June 20, only on weekdays from 8am till 11pm._
 
 See the [WHEN-THEN Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules) wiki for more details. 
 
@@ -85,12 +85,15 @@ See the [WHEN-THEN Rules](https://github.com/openremote/openremote/wiki/User-Gui
 
 Flow rules can be used to fill new attributes with processed other attributes. In the visual editor you can use `Input` (blue), `Processor` (green), and `Output` nodes, and wire them up. See the wiki [Flow Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules) for more details. The same scheduler as for WHEN-THEN rules is available for flow rules.
 
-![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Flow%20%26%20Groovy%20(2).png)
-_Figure 8. Flow rules to process data (left) and Groovy rules for programming more advanced logic (right)_
+![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Flow.png)
+_Figure 8. Flow rules to process data_
 
 ## Groovy Rules
 
-Groovy rules are intended for more advanced processing and automation (see an example in figure 8, right). For more information see [Groovy Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
+Groovy rules are intended for more advanced processing and automation (see an example in figure 9). For more information see [Groovy Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
+
+![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Groovy.png)
+_Figure 9. Groovy rules for more advanced processing, logic or automation_
 
 ## Global versus Realm Rules
 
@@ -98,12 +101,12 @@ As an admin user of the system which can access all realms, you have the option 
 
 # Insights
 
-The Insights view (only visible in the desktop version, (see figure 9) allows you to create a single page report:
+The Insights view (only visible in the desktop version, (see figure 10) allows you to create a single page report:
 * Chart: allows you to select multiple attributes in the system and compare them (vertical comparison). By adding a second period you can also compare attributes for different time periods
 * Attribute panel: allows for picking individual attributes, eg. KPIs and see there current performance over a period, as well as their relative or absolute change. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Insights.png)
-_Figure 9. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few random attribute panels._
+_Figure 10. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few random attribute panels._
 
 # Settings and access
 
@@ -113,8 +116,8 @@ On the upper right of the Manager you see a Realm selector which allows switchin
 
 You can link multiple instances of OpenRemote (as Edge Gateways) to a single Central instance of OpenRemote. To do that you use the `Manager Interconnect` on the Edge Gateway instance and fill in `Hostname`, `Realm` (of the host), `Client ID` and `Client Secret`. On the Central instance you create an `Gateway Asset`, which generates the Client ID and Secret. See the [Edge Gateway documentation](https://github.com/openremote/openremote/wiki/User-Guide%3A-Edge-Gateway) for details.
  
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Manager%20Interconnect%20(2).png)
-_Figure 10. Several OpenRemote instances can be interconnected, e.g. connecting multiple instances on edge gateways to one central cloud hosted instance. The Manager Interconnect page, used at the edge instances creates the keys (left) which are used on the central instance by adding Edge gateway Assets (right)._
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Interconnect%20(2).png)
+_Figure 11. Several OpenRemote instances can be interconnected, e.g. connecting multiple instances on edge gateways to one central cloud hosted instance. The Manager Interconnect page, used at the edge instances creates the keys (left) which are used on the central instance by adding Edge gateway Assets (right)._
 
 ## Languages
 
@@ -125,24 +128,24 @@ OpenRemote currently supports 5 languages: English, German, Spanish, French and 
 The logs views shares information, warnings and errors of the different activities of OpenRemote. You can use it to understand the behaviour of the whole platform or debug issues, e.g. when you are seeing error with protocols or rules.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Logs.png)
-_Figure 11. The Logs page to evaluate system behaviour._
+_Figure 12. The Logs page to evaluate system behaviour._
 
 ## Account, Users, and Roles
 
 The account page brings you to a few pages where you can (re)set you personal information or password. You can also monitor your past sessions or enable TFA via an Authenticator (currently disabled).
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Account%20(2).png)
-_Figure 12. The account page which allows setting e.g. contact details (left) and reset passwords (right)._
+_Figure 13. The account page which allows setting e.g. contact details (left) and reset passwords (right)._
 
 If you have the correct access rights (role) for it you can also create new Users for the selected realm and decide which roles they will get assigned.
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Users%20(2).png)
-_Figure 13. Creating users for a selected Realm and assigning roles (left). Also service users are created here (right)_
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Users.png)
+_Figure 14. Creating users for a selected Realm and assigning roles_
 
 Same for the Roles. If you have the correct access rights you are allowed to create, adjust and enable roles. These roles define which parts of the system you are allowed to Read or Write to, e.g. system settings, assets, attributes, map, or rules. 
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Roles.png)
-_Figure 14. Roles can be defined which can be linked to individual users_
+_Figure 15. Roles can be defined which can be linked to individual users_
 
 ## Realms
 
@@ -151,7 +154,7 @@ Only the Master realm Admin user can create `Realms` by accessing the master rea
 You can create a realm by adding a `Realm` name (single word, small letters), and a `Friendly name`. You can (temporarily) disable realms, which blocks access for any user.   
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)
-_Figure 15. Realms can be created to manage multiple independent projects within one OpenRemote instance_
+_Figure 16. Realms can be created to manage multiple independent projects within one OpenRemote instance_
 
 # Manager APIs
 
@@ -159,7 +162,10 @@ OpenRemote also allows for interacting with the platform without using the UI. T
 
 ## Service users
 
-Service users can be created by selecting the `Users` option, and selecting `Add user` in the `Service user` panel (see figure 13). The `Username` (ClientID) can be filled in by yourself using one string of letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s), as these will define the access right for the Manager API.
+Service users can be created by selecting the `Users` option, and selecting `Add user` in the `Service user` panel (see figure 17). The `Username` (ClientID) can be filled in by yourself using one string of letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s), as these will define the access right for the Manager API.
+
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Service%20Users.png)
+_Figure 17. Creating service users, with ClientID/Username, Secret and Roles for a selected Realm_
 
 ## HTTP, Websocket, and MQTT
 
