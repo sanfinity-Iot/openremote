@@ -47,8 +47,9 @@ Once you create an Agent, the agent page will display the relevant attributes, r
 
 Some Agents have auto discovery (e.g. Z-wave) or use configuration files (e.g. KNX and Velbus). The Agent page will show a discovery button or a file selector. Once set correctly the Agent will also create an additional asset/attribute structure for all discovered or configured assets. 
 
-![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Add%20Agent%20(2).png)
-_Figure 5. Creating an Agent, using the HTTP Agent (left) creates the Agent asset page (right)_
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Create%20Agent.png)
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Agent%20Page.png)
+_Figure 5. Creating an Agent, using the HTTP Agent (top) creates the Agent asset page (bottom)_
 
 Note that you can also connect to OpenRemote through the Manager APIs without using the UI, see the [paragraph: Manager APIs](#manager-apis).
 
