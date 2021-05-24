@@ -12,6 +12,8 @@ The OpenRemote Manager exposes the following endpoints:
 * `/auth` - Keycloak reverse proxy endpoint
 * `/websocket` - Websocket endpoint
 * `/*` - Any other path is resolved against `$CUSTOM_APP_DOCROOT` (see paths below)
+* `/manager_config.json` - File that is loaded by the Manager UI to apply custom configuration to the Manager UI (white labelling, menu config, etc.)  (loaded from `$CUSTOM_APP_DOCROOT`)
+* `/locales` - Path used by Manager UI to find custom `i18n` locale files, each locale should be in it's own directory with a file named `app.json` (e.g. `/locales/en/app.json`) (loaded from `$CUSTOM_APP_DOCROOT`)
 
 ### App Realm
 Generally applications are linked to a specific realm which cannot be changed but apps can support multiple realms (like the Manager UI), in this instance the app can either present a list of realms for the user to select and/or the app could support setting the realm via a query parameter; which is what the Manager UI currently does:
