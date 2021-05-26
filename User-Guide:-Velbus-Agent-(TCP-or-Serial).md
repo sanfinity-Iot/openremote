@@ -235,12 +235,12 @@ Parameter `X` must be replaced with a channel number (1-5).
 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
-| `CHX` | Channel state | Text (`OFF`,`ON`,`INTERMITTENT`) | Text (`OFF`,`ON`,`INTERMITTENT`) |
+| `CHX` | Channel state | Text (`OFF`, `ON`, `INTERMITTENT`) | Text (`OFF`, `ON`, `INTERMITTENT`) |
 | `CHX_SETTING` | Channel setting | Text (`NORMAL`, `INHIBITED`, `FORCED`, `LOCKED`) | Text (`NORMAL`, `INHIBITED`, `FORCED`, `LOCKED`) |
 | `CHX_LOCKED` | Channel lock (forced off) state | Boolean | Boolean |
 | `CHX_INHIBITED` | Channel inhibit state | Boolean | Boolean |
 | `CHX_FORCED` | Channel forced on state | Boolean | Boolean |
-| `CHX_LED` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |  |
+| `CHX_LED` | Channel LED state | Text (`OFF`, `ON`, `SLOW`, `FAST`, `VERYFAST`) |  |
 | `CHX_ON` | Set channel on for specified duration (s) |  | Integer (0 = Off) |
 | `CHX_INTERMITTENT` | Set channel intermittent for specified duration (s) |  | Integer (0 = Cancel) |
 | `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
@@ -253,8 +253,8 @@ Parameter `X` must be replaced with a channel number (1-32) depending on module 
 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
-| `CHX` | Channel state | Text (`RELEASED`,`PRESSED`,`LONG_PRESSED`) | Text (`RELEASED`,`PRESSED`,`LONG_PRESSED`) |
-| `CHX_LED` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |
+| `CHX` | Channel state | Text (`RELEASED`, `PRESSED`, `LONG_PRESSED`) | Text (`RELEASED`, `PRESSED`, `LONG_PRESSED`) |
+| `CHX_LED` | Channel LED state | Text (`OFF`, `ON`, `SLOW`, `FAST`, `VERYFAST`) | Text (`OFF`, `ON`, `SLOW`, `FAST`, `VERYFAST`) |
 | `CHX_LOCKED` | Channel lock state | Boolean | Boolean |
 | `CHX_ENABLED` | Channel enabled state | Boolean | Boolean |
 | `CHX_INVERTED` | Channel inverted state | Boolean | Boolean |
@@ -275,16 +275,16 @@ Some modules support temperature but don't have thermostat (e.g. `VMBMETEO`)
 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
-| `HEATER` | Heater state | Text (`RELEASED`,`PRESSED`) |  |
-| `COOLER` | Heater state | Text (`RELEASED`,`PRESSED`) |  |
-| `PUMP` | Heater state | Text (`RELEASED`,`PRESSED`) |  |
-| `BOOST` | Heater state | Text (`RELEASED`,`PRESSED`) |  |
-| `TEMP_ALARM1` | Alarm 1 state | Text (`RELEASED`,`PRESSED`) |  |
-| `TEMP_ALARM2` | Alarm 2 state | Text (`RELEASED`,`PRESSED`) |  |
-| `TEMP_ALARM3` | Alarm 3 state | Text (`RELEASED`,`PRESSED`) |  |
-| `TEMP_ALARM4` | Alarm 4 state | Text (`RELEASED`,`PRESSED`) |  |
-| `TEMP_STATE` | Thermostat state | Text (`DISABLED`,`MANUAL`, `TIMER`, `NORMAL`) | Text (`DISABLED`,`MANUAL`, `TIMER`, `NORMAL`) |
-| `TEMP_MODE` | Thermostat mode | Text (`COOL_COMFORT`,`COOL_DAY`, `COOL_NIGHT`, `COOL_SAFE`,`HEAT_COMFORT`,`HEAT_DAY`, `HEAT_NIGHT`, `HEAT_SAFE`) | Text (`COOL_COMFORT`,`COOL_DAY`, `COOL_NIGHT`, `COOL_SAFE`,`HEAT_COMFORT`,`HEAT_DAY`, `HEAT_NIGHT`, `HEAT_SAFE`) |
+| `HEATER` | Heater state | Text (`RELEASED`, `PRESSED`) |  |
+| `COOLER` | Heater state | Text (`RELEASED`, `PRESSED`) |  |
+| `PUMP` | Heater state | Text (`RELEASED`, `PRESSED`) |  |
+| `BOOST` | Heater state | Text (`RELEASED`, `PRESSED`) |  |
+| `TEMP_ALARM1` | Alarm 1 state | Text (`RELEASED`, `PRESSED`) |  |
+| `TEMP_ALARM2` | Alarm 2 state | Text (`RELEASED`, `PRESSED`) |  |
+| `TEMP_ALARM3` | Alarm 3 state | Text (`RELEASED`, `PRESSED`) |  |
+| `TEMP_ALARM4` | Alarm 4 state | Text (`RELEASED`, `PRESSED`) |  |
+| `TEMP_STATE` | Thermostat state | Text (`DISABLED`, `MANUAL`, `TIMER`, `NORMAL`) | Text (`DISABLED`, `MANUAL`, `TIMER`, `NORMAL`) |
+| `TEMP_MODE` | Thermostat mode | Text (`COOL_COMFORT`, `COOL_DAY`, `COOL_NIGHT`, `COOL_SAFE`, `HEAT_COMFORT`, `HEAT_DAY`, `HEAT_NIGHT`, `HEAT_SAFE`) | Text (`COOL_COMFORT`, `COOL_DAY`, `COOL_NIGHT`, `COOL_SAFE`, `HEAT_COMFORT`, `HEAT_DAY`, `HEAT_NIGHT`, `HEAT_SAFE`) |
 | `TEMP_MODE_COOL_COMFORT_MINS` | Set mode to cool comfort for specified duration (mins) |  | Integer |
 | `TEMP_MODE_COOL_DAY_MINS` | Set mode to cool day for specified duration (mins) |  | Integer |
 | `TEMP_MODE_COOL_NIGHT_MINS` | Set mode to cool night for specified duration (mins) |  | Integer |
@@ -309,10 +309,10 @@ Parameter `X` must be replaced with a channel number (1-2) depending on module t
 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
-| `CHX` | Channel state | Text (`UP`,`DOWN`,`HALT`) | Text (`UP`,`DOWN`,`HALT`) |
-| `CHX_SETTING` | Channel setting | Text (`NORMAL`,`INHIBITED`,`INHIBITED_DOWN`,`INHIBITED_UP`,`FORCED_DOWN`,`FORCED_UP`,`LOCKED`) | Text (`NORMAL`,`INHIBITED`,`INHIBITED_DOWN`,`INHIBITED_UP`,`FORCED_DOWN`,`FORCED_UP`,`LOCKED`) |
-| `CHX_LED_UP` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |
-| `CHX_LED_DOWN` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |
+| `CHX` | Channel state | Text (`UP`, `DOWN`, `HALT`) | Text (`UP`, `DOWN`, `HALT`) |
+| `CHX_SETTING` | Channel setting | Text (`NORMAL`, `INHIBITED`, `INHIBITED_DOWN`, `INHIBITED_UP`, `FORCED_DOWN`, `FORCED_UP`, `LOCKED`) | Text (`NORMAL`, `INHIBITED`, `INHIBITED_DOWN`, `INHIBITED_UP`, `FORCED_DOWN`, `FORCED_UP`, `LOCKED`) |
+| `CHX_LED_UP` | Channel LED state | Text (`OFF`, `ON`, `SLOW`, `FAST`, `VERYFAST`) | Text (`OFF`, `ON`, `SLOW`, `FAST`, `VERYFAST`) |
+| `CHX_LED_DOWN` | Channel LED state | Text (`OFF`, `ON`, `SLOW`, `FAST`, `VERYFAST`) | Text (`OFF`, `ON`, `SLOW`, `FAST`, `VERYFAST`) |
 | `CHX_INHIBITED` | Channel inhibited state | Boolean | Boolean |
 | `CHX_INHIBITED_UP` | Channel inhibited up state | Boolean | Boolean |
 | `CHX_INHIBITED_DOWN` | Channel inhibited down state | Boolean | Boolean |
@@ -1296,5 +1296,3 @@ VMBDMI-R
 </tbody>
 
 </table>
-
-
