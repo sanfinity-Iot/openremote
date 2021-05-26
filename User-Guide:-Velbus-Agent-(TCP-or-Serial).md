@@ -230,13 +230,16 @@ Modules are queried for their module type during initialisation, non-compatible 
 The following describes the supported values for the `deviceValueLink` Agent Link field, supported values are grouped by device function, please refer to VelbusLink or Velbus documentation to understand what functions each device type supports.
 
 
-## Relay Channel
+#### Relay Channel
 Parameter `X` must be replaced with a channel number (1-5).
 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
 | `CHX` | Channel state | Text (`OFF`,`ON`,`INTERMITTENT`) | Text (`OFF`,`ON`,`INTERMITTENT`) |
 | `CHX_SETTING` | Channel setting | Text (`NORMAL`, `INHIBITED`, `FORCED`, `LOCKED`) | Text (`NORMAL`, `INHIBITED`, `FORCED`, `LOCKED`) |
+| `CHX_LOCKED` | Channel lock (forced off) state | Boolean | Boolean |
+| `CHX_INHIBITED` | Channel inhibit state | Boolean | Boolean |
+| `CHX_FORCED` | Channel forced on state | Boolean | Boolean |
 | `CHX_LED` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |  |
 | `CHX_ON` | Set channel on for specified duration (s) |  | Integer (0 = Off) |
 | `CHX_INTERMITTENT` | Set channel intermittent for specified duration (s) |  | Integer (0 = Cancel) |
@@ -245,20 +248,20 @@ Parameter `X` must be replaced with a channel number (1-5).
 | `CHX_FORCE_ON` | Set channel forced on for specified duration (s) |  | Integer (0 = Cancel) |
 | `CHX_INHIBIT` | Set channel inhibit for specified duration (s) |  | Integer (0 = Cancel) |
 
-## Input Channel (Push Button)
+#### Input Channel (Push Button)
 Parameter `X` must be replaced with a channel number (1-32) depending on module type and configuration.
 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
 | `CHX` | Channel state | Text (`RELEASED`,`PRESSED`,`LONG_PRESSED`) | Text (`RELEASED`,`PRESSED`,`LONG_PRESSED`) |
 | `CHX_LED` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |
-| `CHX_LOCKED` | Channel lock status | Boolean | Boolean |
-| `CHX_ENABLED` | Channel enabled status | Boolean | |
-| `CHX_INVERTED` | Channel inverted status | Boolean | |
+| `CHX_LOCKED` | Channel lock state | Boolean | Boolean |
+| `CHX_ENABLED` | Channel enabled state | Boolean | Boolean |
+| `CHX_INVERTED` | Channel inverted state | Boolean | Boolean |
 | `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
 
 
-## Temperature Sensor
+#### Temperature Sensor
 Some modules support temperature but don't have thermostat (e.g. `VMBMETEO`)
 
 | Value | Description | Read | Write |
@@ -268,7 +271,7 @@ Some modules support temperature but don't have thermostat (e.g. `VMBMETEO`)
 | `TEMP_MAX` | Maximum temperature (°C) | Decimal |  |
 
 
-## Thermostat
+#### Thermostat
 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
@@ -301,18 +304,41 @@ Some modules support temperature but don't have thermostat (e.g. `VMBMETEO`)
 | `TEMP_TARGET_HEAT_NIGHT` | Set heat night target temperature (°C) |  | Decimal |
 | `TEMP_TARGET_HEAT_SAFE` | Set heat safe target temperature (°C) |  | Decimal |
 
-## Blind Channel
+#### Blind Channel
+Parameter `X` must be replaced with a channel number (1-2) depending on module type.
 
-## Counter
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `CHX` | Channel state | Text (`UP`,`DOWN`,`HALT`) | Text (`UP`,`DOWN`,`HALT`) |
+| `CHX_SETTING` | Channel setting | Text (`NORMAL`,`INHIBITED`,`INHIBITED_DOWN`,`INHIBITED_UP`,`FORCED_DOWN`,`FORCED_UP`,`LOCKED`) | Text (`NORMAL`,`INHIBITED`,`INHIBITED_DOWN`,`INHIBITED_UP`,`FORCED_DOWN`,`FORCED_UP`,`LOCKED`) |
+| `CHX_LED_UP` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |
+| `CHX_LED_DOWN` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |
+| `CHX_INHIBITED` | Channel inhibited state | Boolean | Boolean |
+| `CHX_INHIBITED_UP` | Channel inhibited up state | Boolean | Boolean |
+| `CHX_INHIBITED_DOWN` | Channel inhibited down state | Boolean | Boolean |
+| `CHX_FORCED_UP` | Channel forced up state | Boolean | Boolean |
+| `CHX_FORCED_DOWN` | Channel forced down state | Boolean | Boolean |
+| `CHX_LOCKED` | Channel lock state | Boolean | Boolean |
+| `CHX_POSITION` | Channel position (%) | Integer | Integer |
+| `CHX_UP` | Set channel up for specified duration (s) |  | Integer (0 = Cancel, -1 = Indefinitely) |
+| `CHX_DOWN` | Set channel down for specified duration (s) |  | Integer (0 = Cancel, -1 = Indefinitely) |
+| `CHX_INHIBIT` | Set channel inhibit for specified duration (s) |  | Integer (0 = Cancel, -1 = Indefinitely) |
+| `CHX_INHIBIT_UP` | Set channel inhibit up for specified duration (s) |  | Integer (0 = Cancel, -1 = Indefinitely) |
+| `CHX_INHIBIT_DOWN` | Set channel inhibit down for specified duration (s) |  | Integer (0 = Cancel, -1 = Indefinitely) |
+| `CHX_FORCE_UP` | Set channel force up for specified duration (s) |  | Integer (0 = Cancel, -1 = Indefinitely) |
+| `CHX_FORCE_DOWN` | Set channel force down for specified duration (s) |  | Integer (0 = Cancel, -1 = Indefinitely) |
+| `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
 
-## OLED
+#### Counter
+
+#### OLED
 
 
 
-## Analog Input
+#### Analog Input
 Parameter `X` must be replaced with a channel number (1-4).
 
-## Analog Output
+#### Analog Output
 Parameter `X` must be replaced with a channel number (1-4).
 
 
