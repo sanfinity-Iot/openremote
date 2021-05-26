@@ -1,7 +1,10 @@
-Agents are a special type of asset which link external services/devices with your OpenRemote system via protocols; agents can be put into the following categories:
+[Agents](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/agent/Agent.java) are a special type of asset which link external services/devices with your OpenRemote system via protocols; agents can be put into the following categories:
 
 * Specialised agents (Velbus, Z-Wave, KNX, etc.)
 * Generic agents (HTTP, TCP, UDP, WS, MQTT, etc.)
+
+## Agent <-> Protocol relationship
+Each agent type has a corresponding [Protocol](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/agent/Protocol.java) implementation; the Agent stores the configuration which is then passed to an instance of the Agent's Protocol implementation so there is a one to one relationship.
 
 ## Specialised agents
 Specialised agents are ones that understand the message structure of the underlying devices/service and therefore generally require much less configuration in order to link attributes to them.
