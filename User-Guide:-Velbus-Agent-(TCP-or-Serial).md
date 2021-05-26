@@ -304,6 +304,27 @@ Some modules support temperature but don't have thermostat (e.g. `VMBMETEO`)
 | `TEMP_TARGET_HEAT_NIGHT` | Set heat night target temperature (°C) |  | Decimal |
 | `TEMP_TARGET_HEAT_SAFE` | Set heat safe target temperature (°C) |  | Decimal |
 
+#### Programs
+Parameter `X` must be replaced with a channel number (1-32) depending on module type and configuration.
+
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `CHX_PROGRAM_STEPS_ENABLED` | Channel program steps enabled state | Boolean | Boolean |
+| `CHX_PROGRAM_STEPS_DISABLED_SECONDS` | Disable channel program steps for specified duration (s) |  | Integer |
+| `ALL_PROGRAM_STEPS_ENABLED` | Set all channels program steps enabled state |  | Boolean |
+| `ALL_PROGRAM_STEPS_DISABLED_SECONDS` | Disable all channels program steps for specified duration (s) |  | Integer |
+| `PROGRAM` | Current active program | Text (`NONE`, `SUMMER`, `WINTER`, `HOLIDAY`) | Text (`NONE`, `SUMMER`, `WINTER`, `HOLIDAY`) |
+| `SUNRISE_ENABLED` | Sunrise steps enabled state | Boolean | Boolean |
+| `SUNSET_ENABLED` | Sunset steps enabled state | Boolean | Boolean |
+| `ALARM1_ENABLED` | Alarm 1 enabled state | Boolean | Boolean |
+| `ALARM2_ENABLED` | Alarm 2 enabled state | Boolean | Boolean |
+| `ALARM1_MASTER` | Alarm 1 member of master | Boolean | Boolean |
+| `ALARM2_MASTER` | Alarm 2 member of master | Boolean | Boolean |
+| `ALARM1_WAKE_TIME` | Alarm 1 wake time | Text (HH:MM) | Text (HH:MM) |
+| `ALARM2_WAKE_TIME` | Alarm 2 wake time | Text (HH:MM) | Text (HH:MM) |
+| `ALARM1_BED_TIME` | Alarm 1 bed time | Text (HH:MM) | Text (HH:MM) |
+| `ALARM2_BED_TIME` | Alarm 2 bed time | Text (HH:MM) | Text (HH:MM) |
+
 #### Blind Channel
 Parameter `X` must be replaced with a channel number (1-2) depending on module type.
 
@@ -329,7 +350,7 @@ Parameter `X` must be replaced with a channel number (1-2) depending on module t
 | `CHX_FORCE_DOWN` | Set channel force down for specified duration (s) |  | Integer (0 = Cancel, -1 = Indefinitely) |
 | `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
 
-#### Counter
+#### Counter (`VMB7IN`)
 Parameter `X` must be replaced with a counter number (1-4).
 
 | Value | Description | Read | Write |
@@ -360,9 +381,28 @@ Parameter `X` must be replaced with a sensor number (1-4).
 #### Analog Output
 Parameter `X` must be replaced with a sensor number (1-4).
 
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `CHX` | Channel state | Text (`OFF`, `ON`, `LAST`, `HALT`) | Text (`OFF`, `ON`, `LAST`, `HALT`) |
+| `CHX_SETTING` | Channel setting | Text (`NORMAL`, `INHIBITED`, `FORCED`, `LOCKED`) | Text (`NORMAL`, `INHIBITED`, `FORCED`, `LOCKED`) |
+| `CHX_LOCKED` | Channel lock (forced off) state | Boolean | Boolean |
+| `CHX_INHIBITED` | Channel inhibit state | Boolean | Boolean |
+| `CHX_FORCED` | Channel forced on state | Boolean | Boolean |
+| `CHX_LED` | Channel LED state | Text (`OFF`, `ON`, `SLOW`, `FAST`, `VERYFAST`) |  |
+| `CHX_ON` | Set channel on for specified duration (s) |  | Integer (0 = Off) |
+| `CHX_LEVEL_AND_SPEED` | Set channel level and ramp speed (s) |  | Text (LEVEL:SPEED) (0 = Halt) |
+| `CHX_VALUE_AND_SPEED` | Set channel value and ramp speed (s) |  | Text (LEVEL:SPEED) (0 = Halt) |
+| `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_FORCE_OFF` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_FORCE_ON` | Set channel forced on for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_INHIBIT` | Set channel inhibit for specified duration (s) |  | Integer (0 = Cancel) |
 
 #### Meteo
-
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `RAINFALL` | Rainfall value | Number | |
+| `WIND` | Rainfall value | Number | |
+| `LIGHT` | Rainfall value | Number | |
 
 
 
