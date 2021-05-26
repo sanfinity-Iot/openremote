@@ -251,19 +251,55 @@ Parameter `X` must be replaced with a channel number (1-32) depending on module 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
 | `CHX` | Channel state | Text (`RELEASED`,`PRESSED`,`LONG_PRESSED`) | Text (`RELEASED`,`PRESSED`,`LONG_PRESSED`) |
-| `CHX_LED` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |  |
-| `CHX_LOCKED` | Channel lock status | Boolean | |
+| `CHX_LED` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |
+| `CHX_LOCKED` | Channel lock status | Boolean | Boolean |
 | `CHX_ENABLED` | Channel enabled status | Boolean | |
 | `CHX_INVERTED` | Channel inverted status | Boolean | |
 | `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
-| `CHX_FORCE_OFF` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
-| `CHX_FORCE_ON` | Set channel forced on for specified duration (s) |  | Integer (0 = Cancel) |
-| `CHX_INHIBIT` | Set channel inhibit for specified duration (s) |  | Integer (0 = Cancel) |
 
 
 ## Temperature Sensor
+Some modules support temperature but don't have thermostat (e.g. `VMBMETEO`)
+
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `TEMP_CURRENT` | Current temperature (°C) | Decimal |  |
+| `TEMP_MIN` | Minimum temperature (°C) | Decimal |  |
+| `TEMP_MAX` | Maximum temperature (°C) | Decimal |  |
+
 
 ## Thermostat
+
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `HEATER` | Heater state | Text (`RELEASED`,`PRESSED`) |  |
+| `COOLER` | Heater state | Text (`RELEASED`,`PRESSED`) |  |
+| `PUMP` | Heater state | Text (`RELEASED`,`PRESSED`) |  |
+| `BOOST` | Heater state | Text (`RELEASED`,`PRESSED`) |  |
+| `TEMP_ALARM1` | Alarm 1 state | Text (`RELEASED`,`PRESSED`) |  |
+| `TEMP_ALARM2` | Alarm 2 state | Text (`RELEASED`,`PRESSED`) |  |
+| `TEMP_ALARM3` | Alarm 3 state | Text (`RELEASED`,`PRESSED`) |  |
+| `TEMP_ALARM4` | Alarm 4 state | Text (`RELEASED`,`PRESSED`) |  |
+| `TEMP_STATE` | Thermostat state | Text (`DISABLED`,`MANUAL`, `TIMER`, `NORMAL`) | Text (`DISABLED`,`MANUAL`, `TIMER`, `NORMAL`) |
+| `TEMP_MODE` | Thermostat mode | Text (`COOL_COMFORT`,`COOL_DAY`, `COOL_NIGHT`, `COOL_SAFE`,`HEAT_COMFORT`,`HEAT_DAY`, `HEAT_NIGHT`, `HEAT_SAFE`) | Text (`COOL_COMFORT`,`COOL_DAY`, `COOL_NIGHT`, `COOL_SAFE`,`HEAT_COMFORT`,`HEAT_DAY`, `HEAT_NIGHT`, `HEAT_SAFE`) |
+| `TEMP_MODE_COOL_COMFORT_MINS` | Set mode to cool comfort for specified duration (mins) |  | Integer |
+| `TEMP_MODE_COOL_DAY_MINS` | Set mode to cool day for specified duration (mins) |  | Integer |
+| `TEMP_MODE_COOL_NIGHT_MINS` | Set mode to cool night for specified duration (mins) |  | Integer |
+| `TEMP_MODE_COOL_SAFE_MINS` | Set mode to cool safe for specified duration (mins) |  | Integer |
+| `TEMP_MODE_HEAT_COMFORT_MINS` | Set mode to heat comfort for specified duration (mins) |  | Integer |
+| `TEMP_MODE_HEAT_DAY_MINS` | Set mode to heat day for specified duration (mins) |  | Integer |
+| `TEMP_MODE_HEAT_NIGHT_MINS` | Set mode to heat night for specified duration (mins) |  | Integer |
+| `TEMP_MODE_COOL_SAFE_MINS` | Set mode to heat safe for specified duration (mins) |  | Integer |
+| `TEMP_TARGET_CURRENT` | Set current target temperature (°C) |  | Decimal |
+| `TEMP_TARGET_COOL_COMFORT` | Set cool comfort target temperature (°C) |  | Decimal |
+| `TEMP_TARGET_COOL_DAY` | Set cool day target temperature (°C) |  | Decimal |
+| `TEMP_TARGET_COOL_NIGHT` | Set cool night target temperature (°C) |  | Decimal |
+| `TEMP_TARGET_COOL_SAFE` | Set cool safe target temperature (°C) |  | Decimal |
+| `TEMP_TARGET_CURRENT` | Set current target temperature (°C) |  | Decimal |
+| `TEMP_TARGET_HEAT_COMFORT` | Set heat comfort target temperature (°C) |  | Decimal |
+| `TEMP_TARGET_HEAT_DAY` | Set heat day target temperature (°C) |  | Decimal |
+| `TEMP_TARGET_HEAT_NIGHT` | Set heat night target temperature (°C) |  | Decimal |
+| `TEMP_TARGET_HEAT_SAFE` | Set heat safe target temperature (°C) |  | Decimal |
 
 ## Blind Channel
 
