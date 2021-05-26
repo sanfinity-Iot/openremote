@@ -330,16 +330,38 @@ Parameter `X` must be replaced with a channel number (1-2) depending on module t
 | `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
 
 #### Counter
+Parameter `X` must be replaced with a counter number (1-4).
+
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `COUNTERX` | Counter cumulative value | Number | |
+| `COUNTERX_RESET` | Counter cumulative reset | | `AttributeExecuteStatus.REQUEST_START` |
+| `COUNTERX_INSTANT` | Counter instantaneous value | Number |  |
+| `COUNTERX_UNITS` | Counter units value | Text |  |
+| `COUNTERX_ENABLED` | Counter enabled state | Boolean | Boolean |
 
 #### OLED
 
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `MEMO_TEXT` | Set the memo text with optional timeout (s); timeout value supplied at end of text as `:N` | | Text (Empty string = Cancel) |
 
 
 #### Analog Input
-Parameter `X` must be replaced with a channel number (1-4).
+Parameter `X` must be replaced with a sensor number (1-4).
+
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `SENSORX` | Sensor value | Number | |
+| `SENSORX_TEXT` | Text representation of value with units | Text | |
+| `SENSORX_TYPE` | Sensor type | Text (`VOLTAGE`, `CURRENT`, `RESISTANCE`, `PERIOD`) | |
+| `SENSORX_MODE` | Sensor mode | Text (`SAFE`, `NIGHT`, `DAY`, `COMFORT`) | Text (`SAFE`, `NIGHT`, `DAY`, `COMFORT`) |
 
 #### Analog Output
-Parameter `X` must be replaced with a channel number (1-4).
+Parameter `X` must be replaced with a sensor number (1-4).
+
+
+#### Meteo
 
 
 
