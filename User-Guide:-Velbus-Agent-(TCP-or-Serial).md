@@ -227,9 +227,63 @@ Modules are queried for their module type during initialisation, non-compatible 
 </table>
 
 ### Device value link
-The following describes the supported values for the `deviceValueLink` Agent Link field.
+The following describes the supported values for the `deviceValueLink` Agent Link field, supported values are grouped by device function, please refer to VelbusLink or Velbus documentation to understand what functions each device type supports.
 
-## Relays
+
+## Relay Channel
+Parameter `X` must be replaced with a channel number (1-5).
+
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `CHX` | Channel state | Text (`OFF`,`ON`,`INTERMITTENT`) | Text (`OFF`,`ON`,`INTERMITTENT`) |
+| `CHX_SETTING` | Channel setting | Text (`NORMAL`, `INHIBITED`, `FORCED`, `LOCKED`) | Text (`NORMAL`, `INHIBITED`, `FORCED`, `LOCKED`) |
+| `CHX_LED` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |  |
+| `CHX_ON` | Set channel on for specified duration (s) |  | Integer (0 = Off) |
+| `CHX_INTERMITTENT` | Set channel intermittent for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_FORCE_OFF` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_FORCE_ON` | Set channel forced on for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_INHIBIT` | Set channel inhibit for specified duration (s) |  | Integer (0 = Cancel) |
+
+## Input Channel (Push Button)
+Parameter `X` must be replaced with a channel number (1-32) depending on module type and configuration.
+
+| Value | Description | Read | Write |
+| ------------- | ------------- | ------------- | ------------- |
+| `CHX` | Channel state | Text (`RELEASED`,`PRESSED`,`LONG_PRESSED`) | Text (`RELEASED`,`PRESSED`,`LONG_PRESSED`) |
+| `CHX_LED` | Channel LED state | Text (`OFF`,`ON`,`SLOW`,`FAST`,`VERYFAST`) |  |
+| `CHX_LOCKED` | Channel lock status | Boolean | |
+| `CHX_ENABLED` | Channel enabled status | Boolean | |
+| `CHX_INVERTED` | Channel inverted status | Boolean | |
+| `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_FORCE_OFF` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_FORCE_ON` | Set channel forced on for specified duration (s) |  | Integer (0 = Cancel) |
+| `CHX_INHIBIT` | Set channel inhibit for specified duration (s) |  | Integer (0 = Cancel) |
+
+
+## Temperature Sensor
+
+## Thermostat
+
+## Blind Channel
+
+## Counter
+
+## OLED
+
+
+
+## Analog Input
+Parameter `X` must be replaced with a channel number (1-4).
+
+## Analog Output
+Parameter `X` must be replaced with a channel number (1-4).
+
+
+
+
+
+
 
 ### Relay Read Commands (x4) 
 
