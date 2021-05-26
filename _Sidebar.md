@@ -32,7 +32,7 @@
 * [[TCP|User-Guide: TCP Agent]]
 * [[UDP|User Guide: UDP Agent]]
 * [[UPnP|User-Guide: UPnP Agent]]
-* [[Velbus|User-Guide:-Velbus-Agent-(TCP-IP-or-Socket)]]
+* [[Velbus|User-Guide:-Velbus-Agent-(TCP-or-Serial)]]
 * [[Websocket Client|User-Guide:-Websocket-Agent]]
 * [[Z-Wave|User Guide: Z Wave Agent]]
 
