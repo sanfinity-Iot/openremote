@@ -45,6 +45,29 @@ To test it send from a command line the following message:
 
 The SNMP value attribute should now have the value `123456 `
 
+## Wildcard
+
+To get the whole SNMP message into an attribute, create an attribute of the type `JSON object` and use an asterisk as wildcard notation:
+
+```
+{
+  "type": "SNMPAgentLink",
+  "id": "501p87wK1bhf6Dh2M5ZQZj",
+  "oid": "*"
+}
+```
+ 
+This will result in example:
+
+```
+{
+  "1.3.6.1.2.1.1.3.0": "6 days, 2:58:40.00",
+  "1.3.6.1.6.3.1.1.4.1.0": "1.3.6.1.4.1.31977.4.3.1.4.10",
+  "1.3.6.1.4.1.31977.9.3": "Trap Test!",
+  "1.3.6.1.6.3.1.1.4.3.0": "1.3.6.1.4.1.31977"
+}
+```
+
 # See also
 
 - [Agent overview](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview)
