@@ -21,12 +21,9 @@
 ### Agents/Protocols
 
 * [[Overview|User Guide: Agent Overview]]
-* [[Artnet DMX|User Guide: Artnet DMX Agent]]
 * [[HTTP|User Guide: HTTP Agent]]
-* [[IKEA Trådfri|User-Guide: IKEA TRÅDFRI Agent]]
 * [[KNX|User-Guide: KNX Agent]]
 * [[MQTT|User Guide: MQTT Agent]]
-* [[OR Controller 2.5|User-Guide: OR Controller-2.5 Agent]]
 * [[Simulator|User-Guide: Simulator Agent]]
 * [[SNMP|User-Guide: SNMP Agent]]
 * [[TCP|User-Guide: TCP Agent]]
@@ -35,6 +32,11 @@
 * [[Velbus|User-Guide:-Velbus-Agent-(TCP-or-Serial)]]
 * [[Websocket Client|User-Guide:-Websocket-Agent]]
 * [[Z-Wave|User Guide: Z Wave Agent]]
+
+#### Disabled Protocols
+* [[Artnet DMX|User Guide: Artnet DMX Agent]]
+* [[IKEA Trådfri|User-Guide: IKEA TRÅDFRI Agent]]
+* [[OR Controller 2.5|User-Guide: OR Controller-2.5 Agent]]
 
 ### Manager APIs
 * [[Manager APIs, MQTT, WS, HTTP|User Guide: Manager APIs]]
