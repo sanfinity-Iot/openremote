@@ -1,4 +1,4 @@
-**NOTE: THIS PROTOCOL IS NOT YET ACCESSIBLE VIA THE NEW MANAGER UI. IT IS HOWEVER ALREADY PART OF THE CODE BASE AND WILL BE ADDED IN NEXT RELEASES.**
+**NOTE: THIS PROTOCOL IS DISABLED BY DEFAULT AS IT IS NOT MAINTAINED, IF YOU ARE INTERESTED IN THIS PROTOCOL THEN PLEASE GET IN TOUCH `developers[at]openremote.io`.**
 
 You can connect an IKEA TRÅDFRI Gateway to the manager. The manager will import all assets automatically. Here we describe the steps you need to take.
 
