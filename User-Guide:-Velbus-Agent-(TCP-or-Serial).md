@@ -30,7 +30,7 @@ For attributes linked to a Velbus agent, the following describes the supported a
 | Field | Description | Value type | Required |
 | ------------- | ------------- | ------------- | ------------- |
 | `deviceAddress` | The Velbus module address to link to | Integer (1-254) | Y |
-| `deviceValueLink` | The Velbus module value to link to | Text (see below) | Y |
+| `deviceValueLink` | The Velbus module value to link to | Text (see [below](#device-value-link)) | Y |
 
 ***
 
