@@ -34,7 +34,7 @@ For attributes linked to a Velbus agent, the following describes the supported a
 
 ***
 
-### Hardware compatibility table
+## Hardware compatibility table
 
 'x' indicates a colour option that does not affect the capability of the module.
 
@@ -226,11 +226,11 @@ Modules are queried for their module type during initialisation, non-compatible 
 
 </table>
 
-### Device value link
+## Device value link
 The following describes the supported values for the `deviceValueLink` Agent Link field, supported values are grouped by device function, please refer to VelbusLink or Velbus documentation to understand what functions each device type supports.
 
 
-#### Relay Channel
+### Relay Channel
 Parameter `X` must be replaced with a channel number (1-5).
 
 | Value | Description | Read | Write |
@@ -248,7 +248,7 @@ Parameter `X` must be replaced with a channel number (1-5).
 | `CHX_FORCE_ON` | Set channel forced on for specified duration (s) |  | Integer (0 = Cancel) |
 | `CHX_INHIBIT` | Set channel inhibit for specified duration (s) |  | Integer (0 = Cancel) |
 
-#### Input Channel (Push Button)
+### Input Channel (Push Button)
 Parameter `X` must be replaced with a channel number (1-32) depending on module type and configuration.
 
 | Value | Description | Read | Write |
@@ -261,7 +261,7 @@ Parameter `X` must be replaced with a channel number (1-32) depending on module 
 | `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
 
 
-#### Temperature Sensor
+### Temperature Sensor
 Some modules support temperature but don't have thermostat (e.g. `VMBMETEO`)
 
 | Value | Description | Read | Write |
@@ -271,7 +271,7 @@ Some modules support temperature but don't have thermostat (e.g. `VMBMETEO`)
 | `TEMP_MAX` | Maximum temperature (°C) | Decimal |  |
 
 
-#### Thermostat
+### Thermostat
 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
@@ -304,7 +304,7 @@ Some modules support temperature but don't have thermostat (e.g. `VMBMETEO`)
 | `TEMP_TARGET_HEAT_NIGHT` | Set heat night target temperature (°C) |  | Decimal |
 | `TEMP_TARGET_HEAT_SAFE` | Set heat safe target temperature (°C) |  | Decimal |
 
-#### Programs
+### Programs
 Parameter `X` must be replaced with a channel number (1-32) depending on module type and configuration.
 
 | Value | Description | Read | Write |
@@ -325,7 +325,7 @@ Parameter `X` must be replaced with a channel number (1-32) depending on module 
 | `ALARM1_BED_TIME` | Alarm 1 bed time | Text (HH:MM) | Text (HH:MM) |
 | `ALARM2_BED_TIME` | Alarm 2 bed time | Text (HH:MM) | Text (HH:MM) |
 
-#### Blind Channel
+### Blind Channel
 Parameter `X` must be replaced with a channel number (1-2) depending on module type.
 
 | Value | Description | Read | Write |
@@ -350,7 +350,7 @@ Parameter `X` must be replaced with a channel number (1-2) depending on module t
 | `CHX_FORCE_DOWN` | Set channel force down for specified duration (s) |  | Integer (0 = Cancel, -1 = Indefinitely) |
 | `CHX_LOCK` | Set channel locked for specified duration (s) |  | Integer (0 = Cancel) |
 
-#### Counter (`VMB7IN`)
+### Counter (`VMB7IN`)
 Parameter `X` must be replaced with a counter number (1-4).
 
 | Value | Description | Read | Write |
@@ -361,14 +361,14 @@ Parameter `X` must be replaced with a counter number (1-4).
 | `COUNTERX_UNITS` | Counter units value | Text |  |
 | `COUNTERX_ENABLED` | Counter enabled state | Boolean | Boolean |
 
-#### OLED
+### OLED
 
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
 | `MEMO_TEXT` | Set the memo text with optional timeout (s); timeout value supplied at end of text as `:N` | | Text (Empty string = Cancel) |
 
 
-#### Analog Input
+### Analog Input
 Parameter `X` must be replaced with a sensor number (1-4).
 
 | Value | Description | Read | Write |
@@ -378,7 +378,7 @@ Parameter `X` must be replaced with a sensor number (1-4).
 | `SENSORX_TYPE` | Sensor type | Text (`VOLTAGE`, `CURRENT`, `RESISTANCE`, `PERIOD`) | |
 | `SENSORX_MODE` | Sensor mode | Text (`SAFE`, `NIGHT`, `DAY`, `COMFORT`) | Text (`SAFE`, `NIGHT`, `DAY`, `COMFORT`) |
 
-#### Analog Output
+### Analog Output
 Parameter `X` must be replaced with a sensor number (1-4).
 
 | Value | Description | Read | Write |
@@ -397,7 +397,7 @@ Parameter `X` must be replaced with a sensor number (1-4).
 | `CHX_FORCE_ON` | Set channel forced on for specified duration (s) |  | Integer (0 = Cancel) |
 | `CHX_INHIBIT` | Set channel inhibit for specified duration (s) |  | Integer (0 = Cancel) |
 
-#### Meteo
+### Meteo
 | Value | Description | Read | Write |
 | ------------- | ------------- | ------------- | ------------- |
 | `RAINFALL` | Rainfall value | Number | |
