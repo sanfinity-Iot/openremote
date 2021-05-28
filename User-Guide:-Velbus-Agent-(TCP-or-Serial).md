@@ -32,6 +32,12 @@ For attributes linked to a Velbus agent, the following describes the supported a
 | `deviceAddress` | The Velbus module address to link to | Integer (1-254) | Y |
 | `deviceValueLink` | The Velbus module value to link to | Text (see [below](#device-value-link)) | Y |
 
+## Discovery and Import
+To understand discovery and import refer to [Agent and Asset Discovery/Import](https://github.com/openremote/openremote/wiki/User-Guide:-Agent-Overview#agent-and-asset-discoveryimport). This protocol supports the following:
+
+* Protocol Asset Import (`*.vlp`)
+
+
 ***
 
 ## Hardware compatibility table
