@@ -30,7 +30,7 @@
 * [[UDP|User Guide: UDP Agent]]
 * [[UPnP|User-Guide: UPnP Agent]]
 * [[Velbus|User-Guide:-Velbus-Agent-(TCP-or-Serial)]]
-* [[Websocket Client|User-Guide:-Websocket-Agent]]
+* [[Websocket|User-Guide:-Websocket-Agent]]
 * [[Z-Wave|User Guide: Z Wave Agent]]
 
 #### Disabled Protocols
