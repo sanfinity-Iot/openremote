@@ -1,16 +1,18 @@
-This tutorial explains how to connect to the Open Weather API using the [Http Agent](./User-Guide%3A-HTTP-Agent) and is based on the basic environment described in the quick start. 
+This tutorial explains how to connect to the [Open Weather Map](https://openweathermap.org/) API using the [Http Agent](./User-Guide%3A-HTTP-Agent) and is based on the basic environment described in the quick start. 
 
-# Basic HTTP API
+## Prerequisites
 
-The following example uses a weather API provided by [OpenWeatherMap](https://openweathermap.org/) you will need to signup for a free API Key to access their service. The API Key is required in the request URL as a query parameter.
+* A running Open Remote instance (this tutorial assumes `https://localhost`)
+* A free API key for the [Open Weather Map](https://openweathermap.org/) API
+
 
 1. Login to the manager UI (`https://localhost/` `admin/secret`)
-2. Navigate to the Assets page and click the + at the top of the Asset list on the left to add an Agent or Asset.
+2. Navigate to the Assets page and click the `+` at the top of the Asset list on the left to add an Agent or Asset.
 3. In the dialog do the following:
    * Name: `HTTP API Agent`
-   * Select the agent from the list: `Http Client Agent`
+   * Select the agent from the list: `HTTP Agent`
    * Confirm with `Add`
-4. The agent is now created with preconfigured attributes. We will set some of those to establish the connection:
+4. The agent is now created with pre-configured attributes. We will set some of those to establish the connection:
    * Base URI: `https://api.openweathermap.org/data/2.5/` (Don't forget to send the value by clicking the send button on the right or pressing Enter)
    * Request query parameters: `{"appid": ["YOUR_API_KEY"]}` (Input the API key from you openweathermap account)
 
