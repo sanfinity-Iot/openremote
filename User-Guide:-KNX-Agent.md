@@ -17,6 +17,7 @@ For attributes linked to this agent, the following describes the supported agent
 
 | Field | Description | Value type | Required |
 | ------------- | ------------- | ------------- | ------------- |
+| `type` | Agent type | Text (Must be `KNXAgentLink`) | Y |
 | `dpt` | The DPT (data point type) of the group address | Text (DPT e.g. `1.001`) | Y |
 | `actionGroupAddress` | Group address for attribute write | Text (KNX Group Address e.g. `1.1.1`) | N (Default = `0.0.0`) |
 | `statusGroupAddress` | Group address for attribute read | Text (KNX Group Address e.g. `1.1.1`) | N (Default = `0.0.0`) |
