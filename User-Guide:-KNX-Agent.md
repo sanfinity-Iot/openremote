@@ -1,64 +1,36 @@
 Connect to a KNX network via a KNX IP Interface/Router.
 
 
-You can connect a KNX Gateway to the manager. When you import the corresponding ETS file, the manager will import all assets in the manager automatically. Here we describe the steps you need to take.
+## Agent configuration
+The following describes the supported agent configuration attributes:
 
-# Connect a KNX Gateway
+| Attribute | Description | Value type | Required |
+| ------------- | ------------- | ------------- | ------------- |
+| `host` | TCP server hostname or IP address | [Hostname or IP address](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L153) | Y |
+| `port` | TCP server port | [Port number](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L148) | N |
+| `NATMode` | Enable NAT mode | Boolean | N (Default = `false`) |
+| `routingMode` | Enable Routing mode | Boolean | N (Default = `false`) |
+| `messageSourceAddress` | Source group address | Text (KNX Group Address e.g. `1.1.1`) | N (Default = `0.0.0`) |
 
-In the following example, you link your existing KNX Gateway by using the its IP address, eg. `http://192.163.1.2`.
+## Agent link
+For attributes linked to this agent, the following describes the supported agent link fields which are in addition to the standard [Agent Link](./User-Guide:-Agent-Overview#agent-links) fields:
 
-1. Login to the manager UI (`https://localhost/manager` as `admin/secret`)
-2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left
-3. Set the following:
-   * Asset name: `KNX Agent`
-   * Parent asset: `CustomerA -> Smart Home` and select 'OK'
-   * Asset Type: `Agent`
-4. Click `Create asset` at bottom of screen and then click `Edit asset` in the top right
-5. Click `Edit asset` and add a new attribute:
-   * Name: `Gateway`
-   * Type: `KNX`
-6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) then configure the Attribute configuration by setting/adding configuration items as follows: 
-   * KNX gateway host: `http://192.163.1.2`
-   * You can configure the gateway by adding a new configuration item, by selecting it from the list: `KNX gateway host`, `KNX gateway port`, `KNX local bus address`, `KNX local host`, or `KNX use NAT` **(do not forget to click on 'Add item' for custom items)**.
-7. Click `Save asset` at bottom of the screen
+| Field | Description | Value type | Required |
+| ------------- | ------------- | ------------- | ------------- |
+| `dpt` | The DPT (data point type) of the group address | Text (DPT e.g. `1.001`) | Y |
+| `actionGroupAddress` | Group address for attribute write | Text (KNX Group Address e.g. `1.1.1`) | N (Default = `0.0.0`) |
+| `statusGroupAddress` | Group address for attribute read | Text (KNX Group Address e.g. `1.1.1`) | N (Default = `0.0.0`) |
 
-You now have a KNX protocol Agent to communicate with your own KNX Gateway.
 
-The protocol connection status is `DISCONNECTED` until a KNX Gateway is really available on the provided base URL, with the correct configuration.
+## Discovery and Import
+To understand discovery and import refer to [Agent and Asset Discovery/Import](https://github.com/openremote/openremote/wiki/User-Guide:-Agent-Overview#agent-and-asset-discoveryimport). This protocol supports the following:
 
-## Configuring your KNX Gateway ##
+* Protocol Asset Import (`*.etsproj`)
 
-By adding a configuration item you can configure your KNX Gateway. The following commands are available:
-- KNX gateway host, to...
-- KNX gateway port, to...
-- KNX local bus address, to...
-- KNX local host, to...
-- KNX use NAT, to...
-
-# Import Devices via ETS file
-
-You can now connect KNX devices, via the new Agent, by importing an ETS project file, this will automatically create assets and attributes ased on the group addresses defined in the ETS project file, each group address will create a new asset with a single attribute also with the same name (no spaces in attribute name), the attribute type is determined by the following naming convention:
+Each group address in the project file will create a new asset with a single attribute also with the same name (no spaces in attribute name), the attribute type is determined by the following naming convention:
 
 * Group Address ends with #A - Actuator (executable attribute)
 * Group Address ends with #S - Sensor (read only)
 * Group Address ends with #SA or #AS - Actuator and sensor
 
-** Only group addresses using this convention will be imported**
-
-To perform an import:
-
-1. Go back to the 'Gateway' attribute, click 'Edit Asset', and expand the 'Gateway' attribute.
-2. Select the Parent of imported assets first, eg. 'Smart Home' and press 'OK'
-3. Click 'Upload & import links from file', and select the ETS file from a folder.
-4. After you click 'Open' you will see that all available commands and sensors are added as assets and attributes
-
-You can now read sensor data as well as send commands to you your KNX devices.
-
-# See also
-
-- [Agent overview](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview)
-- [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)
-- [[Manager UI Guide|User-Guide:-Manager-UI]]
-- [[Custom Deployment|User-Guide:-Custom-deployment]]
-- [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
-- [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components)
+**Only group addresses using this convention will be imported**
