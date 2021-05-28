@@ -1,4 +1,5 @@
-**NOTE: THIS DOCUMENTATION STILL NEEDS UPDATING.**
+Connect to a KNX network via a KNX IP Interface/Router.
+
 
 You can connect a KNX Gateway to the manager. When you import the corresponding ETS file, the manager will import all assets in the manager automatically. Here we describe the steps you need to take.
 
