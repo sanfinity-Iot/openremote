@@ -1,6 +1,65 @@
-# Install Docker
+Connect to a Z Wave network via a USB stick (tested with [Aeotec Z-Stick Gen5](http://aeotec.com/z-wave-usb-stick)), this protocol requires a `device` mapping for the `manager` docker container to provide access to the USB stick.
 
-In order to connect to a Z-Wave network you need an USB interface, preferably the [Aeotec Z-Stick Gen5](http://aeotec.com/z-wave-usb-stick), that is connected to your PC. Your PC communicates with this device via a serial port. This section describes what to do so that the OpenRemote manager software, which is a containerized (Docker) application, has device access to the serial port on the host. Unfortunately, `Docker for Windows` and `Docker for Mac` do not support device pass through. In case of a Windows or Mac computer you have to install Linux as a virtual machine by means of VirtualBox. There are two options to do this.     
+## Agent configuration
+The following describes the supported agent configuration attributes:
+
+| Attribute | Description | Value type | Required |
+| ------------- | ------------- | ------------- | ------------- |
+| `serialPort` | Serial port address | Text (`/dev/ttyS0`) | Y |
+
+## Agent link
+For attributes linked to this agent, the following describes the supported agent link fields which are in addition to the standard [Agent Link](./User-Guide:-Agent-Overview#agent-links) fields:
+
+| Field | Description | Value type | Required |
+| ------------- | ------------- | ------------- | ------------- |
+| `type` | Agent type | Text (Must be `ZWaveAgentLink`) | Y |
+| `deviceNodeId` | Device node ID | Integer | Y |
+| `deviceEndpoint` | Device Endpoint | Integer | Y |
+| `deviceValue` | The device value to link to this attribute | Text | Y |
+
+## Discovery and Import
+To understand discovery and import refer to [Agent and Asset Discovery/Import](https://github.com/openremote/openremote/wiki/User-Guide:-Agent-Overview#agent-and-asset-discoveryimport). This protocol supports the following:
+
+* Protocol Asset Discovery
+
+You can repeat this procedure as often as you want and devices are not imported more than once. You should execute this procedure initially and after you've added a new device to the Z-Wave network.
+
+
+**TODO: Clean up the following**
+
+## Include Z-Wave devices
+
+This procedure describes how to add a new device to the Z-Wave network (Z-Wave device inclusion). 
+
+Note that before you are able to execute this procedure you have to execute the `Import Z-Wave Devices` procedure at least once otherwise the `Z-Wave Controller` asset is missing.
+
+1. Select `Z-Wave Controller` in the asset list on the left side
+2. Make sure that `View asset` and `Show live updates` is activated
+3. Activate the `Device Inclusion` checkbox and click `Write`   
+4. Put the Z-Wave device into inclusion mode (see device manual)
+5. Execute the `Import Z-Wave Devices` procedure in order to add the new device to the asset list on the left side
+
+## Exclude Z-Wave devices
+
+This procedure describes how to remove a device from the Z-Wave network (Z-Wave device exclusion). 
+
+Note that before you are able to execute this procedure you have to execute the `Import Z-Wave Devices` procedure at least once otherwise the `Z-Wave Controller` asset is missing.
+
+1. Select `Z-Wave Controller` in the asset list on the left side
+2. Make sure that `View asset` and `Show live updates` is activated
+3. Activate the `Device Exclusion` checkbox and click `Write`   
+4. Put the Z-Wave device into exclusion mode (see device manual)
+
+## Configure Z-Wave device parameters
+
+1. Select the Z-Wave device in the asset list on the left side and and expand it so that you see the `Parameters` group 
+2. Expand the `Parameters` group
+3. Select the Z-Wave parameter on the left side 
+4. Edit the selected Z-Wave parameter on the right side. To get information about the selected Z-Wave parameter read the text in the `Description` attribute on the right side. The attribute with the disabled `Write` button shows the current Z-Wave parameter value. All other attributes with an enabled `Write` button are used to modify the Z-Wave parameter value. In case of a battery powered device you have to wakeup the device (see device manual) so that the configured parameter value can be sent to the device.
+
+
+## Additional info
+Unfortunately, `Docker for Windows` and `Docker for Mac` do not support device pass through. In case of a Windows or Mac computer you have to install Linux as a virtual machine by means of VirtualBox. There are two options to do this.     
 
 ## Windows - Option 1 (Docker Toolbox) 
 
@@ -37,22 +96,6 @@ docker-machine rm default
 ls -al /dev/tty* | more
 ```
 In case of a Aeotec Z-Stick Gen5 the USB device name is usually `/dev/ttyACM0`. The older Aeotec Z-Stick S2 has usually the name `/dev/ttyUSB0`.        
-11. Open the `docker-compose.yml` file in a text editor and add a `devices:` mapping to the `manager:` service:
-```yml
-manager:
-  restart: always
-  extends:
-    file: profile/deploy.yml
-    service: manager
-  depends_on:
-    keycloak:
-      condition: service_healthy
-  volumes:
-    - deployment-data:/deployment
-    - zwave-data:/zwave
-  devices:
-    - /dev/ttyACM0:/dev/ttyS0
-```
 
 ## Mac - Option 1 (Docker Toolbox) 
 
@@ -88,22 +131,6 @@ docker-machine rm default
 ls -al /dev/tty* | more
 ```
 In case of a Aeotec Z-Stick Gen5 the USB device name is usually `/dev/ttyACM0`. The older Aeotec Z-Stick S2 has usually the name `/dev/ttyUSB0`.        
-10. Open the `docker-compose.yml` file in a text editor and add a `devices:` mapping to the `manager:` service:
-```yml
-manager:
-  restart: always
-  extends:
-    file: profile/deploy.yml
-    service: manager
-  depends_on:
-    keycloak:
-      condition: service_healthy
-  volumes:
-    - deployment-data:/deployment
-    - zwave-data:/zwave
-  devices:
-    - /dev/ttyACM0:/dev/ttyS0
-```
 
 ## Windows & Mac - Option 2 (Ubuntu VM)
 
@@ -136,23 +163,6 @@ In this example the resulting serial port name would be:
 ```
 /dev/ttyACM0
 ``` 
-12. Open the `docker-compose.yml` file in a text editor and add a `devices:` mapping to the `manager:` service:
-```yml
-manager:
-  restart: always
-  extends:
-    file: profile/deploy.yml
-    service: manager
-  depends_on:
-    keycloak:
-      condition: service_healthy
-  volumes:
-    - deployment-data:/deployment
-    - zwave-data:/zwave
-  devices:
-    - /dev/ttyACM0:/dev/ttyS0
-```
-
 ## Linux
 
 1. Install [Docker Engine](https://docs.docker.com/engine/install/)
@@ -168,91 +178,4 @@ You should see something like the following:
 In this example the resulting serial port name would be:
 ```
 /dev/ttyACM0
-``` 
-4. Open the `docker-compose.yml` file in a text editor and add a `devices:` mapping to the `manager:` service:
-```yml
-manager:
-  restart: always
-  extends:
-    file: profile/deploy.yml
-    service: manager
-  depends_on:
-    keycloak:
-      condition: service_healthy
-  volumes:
-    - deployment-data:/deployment
-    - zwave-data:/zwave
-  devices:
-    - /dev/ttyACM0:/dev/ttyS0
 ```
-
-# Connect a Z-Wave USB Interface
-
-In the following example you link the Z-Wave USB interface that is connected to your PC by using the serial port name, e.g. `/dev/ttyS0`.
-
-1. Login to the manager UI (`https://localhost/manager` as `admin/secret`)
-2. Select the Assets tab and click `Create asset` at the top of the Asset list on the left 
-3. Set the following:
-   * Asset name: `ZWave Agent`
-   * Parent asset: `Smart City - Energy Management - De Rotterdam` and select 'OK'
-   * Asset Type: `Agent`
-4. Click `Create asset` at the bottom of the screen
-5. Click `Edit asset` and add a new attribute:
-   * Name: `ZWave_Interface`
-   * Type: `Z-Wave`
-6. Click `Add attribute` and then expand the new attribute (using button on the right of the attribute) 
-7. Edit the serial port name
-   * `urn:openremote:protocol:zwave:port`: `/dev/ttyS0` 
-7. Click `Save asset` at bottom of the screen
-
-After the Z-Wave USB interface has been successfully linked a full Z-Wave network scan is automatically executed in the background and you are ready to import devices that have already been included to the Z-Wave network.
-
-# Import Z-Wave Devices
-
-1. Select the `ZWave Agent` in the Asset list on the left side
-2. Click `Edit asset`
-3. Expand the `ZWave_Interface` attribute (using button on the right of the attribute)
-4. Click `Select asset` and select the parent asset (e.g. `Building -> Smart Building -> Apartment 3`)
-5. Click 'OK' in order to confirm the selection
-6. Click `Discover assets`
-
-You can repeat this procedure as often as you want and devices are not imported more than once. You should execute this procedure initially and after you've added a new device to the Z-Wave network.
-
-# Include Z-Wave devices
-
-This procedure describes how to add a new device to the Z-Wave network (Z-Wave device inclusion). 
-
-Note that before you are able to execute this procedure you have to execute the `Import Z-Wave Devices` procedure at least once otherwise the `Z-Wave Controller` asset is missing.
-
-1. Select `Z-Wave Controller` in the asset list on the left side
-2. Make sure that `View asset` and `Show live updates` is activated
-3. Activate the `Device Inclusion` checkbox and click `Write`   
-4. Put the Z-Wave device into inclusion mode (see device manual)
-5. Execute the `Import Z-Wave Devices` procedure in order to add the new device to the asset list on the left side
-
-# Exclude Z-Wave devices
-
-This procedure describes how to remove a device from the Z-Wave network (Z-Wave device exclusion). 
-
-Note that before you are able to execute this procedure you have to execute the `Import Z-Wave Devices` procedure at least once otherwise the `Z-Wave Controller` asset is missing.
-
-1. Select `Z-Wave Controller` in the asset list on the left side
-2. Make sure that `View asset` and `Show live updates` is activated
-3. Activate the `Device Exclusion` checkbox and click `Write`   
-4. Put the Z-Wave device into exclusion mode (see device manual)
-
-# Configure Z-Wave device parameters
-
-1. Select the Z-Wave device in the asset list on the left side and and expand it so that you see the `Parameters` group 
-2. Expand the `Parameters` group
-3. Select the Z-Wave parameter on the left side 
-4. Edit the selected Z-Wave parameter on the right side. To get information about the selected Z-Wave parameter read the text in the `Description` attribute on the right side. The attribute with the disabled `Write` button shows the current Z-Wave parameter value. All other attributes with an enabled `Write` button are used to modify the Z-Wave parameter value. In case of a battery powered device you have to wakeup the device (see device manual) so that the configured parameter value can be sent to the device.
-
-# See also
-
-- [Agent overview](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview)
-- [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)
-- [[Manager UI Guide|User-Guide:-Manager-UI]]
-- [[Custom Deployment|User-Guide:-Custom-deployment]]
-- [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
-- [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components)
