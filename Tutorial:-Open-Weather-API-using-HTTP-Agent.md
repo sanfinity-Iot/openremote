@@ -7,12 +7,12 @@ This tutorial explains how to connect to the [Open Weather Map](https://openweat
 
 ## Create the Agent
 1. Login to the manager UI (`https://localhost/` `admin/secret`)
-1. Navigate to the Assets page and click the `+` at the top of the Asset list on the left to add an Agent or Asset.
-1. In the dialog do the following:
+2. Navigate to the Assets page and click the `+` at the top of the Asset list on the left to add an Agent or Asset.
+3. In the dialog do the following:
    * Name: `HTTP API Agent`
    * Select the agent from the list: `HTTP Agent`
    * Confirm with `Add`
-1. The agent is now created with pre-configured attributes. We will set some of those to establish the connection:
+4. The agent is now created with pre-configured attributes. We will set some of those to establish the connection:
    * Base URI: `https://api.openweathermap.org/data/2.5/` (Don't forget to send the value by clicking the send button on the right or pressing Enter)
    * Request query parameters: `{"appid": ["YOUR_API_KEY"]}` (Input the API key from you openweathermap account)
 
@@ -30,7 +30,7 @@ The weather asset will now appear in the list as a child of the `HTTP API Agent`
 
 ## Add the Agent Links
 1. Go to the edit mode by clicking the toggle at the top of the asset page. In the edit mode you can modify the attributes of an asset and set configuration items.
-1. First we will set up the humidity value:
+2. First we will set up the humidity value:
    * Expand the `humidity` attribute
    * Click `Add configuration item` and select and add `Agent link`. 
    * Paste the following in the text area and replace the `id` with the agent `id` from above:
@@ -89,7 +89,7 @@ What this means is that, we are looking for the data of the city of Rotterdam, i
     ]
 }
 ```
-1. Save the asset (top right)
+2. Save the asset (top right)
 
 Switch to view mode (by clicking the edit mode toggle at the top again) to view the live values. You now have the live weather data of Rotterdam linked.
 
@@ -101,13 +101,12 @@ As you may have noticed we do two calls in the above example, one to get the hum
    * Go to the edit mode in the `Weather` asset
    * Expand `humidity`
    * Click the 'X' on the right of the `Agent link` configuration item
-1. Do the same for the temperature asset.
-
-1. Now we create a custom attribute that will hold the weather data we collect so that we can push the values from there. You could also do this from the `HTTP API Agent` asset or any other asset if that makes more sense to you.
+2. Do the same for the temperature asset.
+3. Now we create a custom attribute that will hold the weather data we collect so that we can push the values from there. You could also do this from the `HTTP API Agent` asset or any other asset if that makes more sense to you.
    * Click `Add attribute` at the bottom of the list of attributes.
    * Select custom, select the attribute type `JSON object` and give it a name: `weatherData`. Click `Add`
    * Add the configuration item `Agent link`, `Attribute link` and `Read only` by selecting them in the add configuration item dialog and clicking `Add`.
-3. In the `Agent link` configuration item add the following, again using the ID from your weather agent:
+4. In the `Agent link` configuration item add the following, again using the ID from your weather agent:
 ```
 {
   "type": "HttpAgentLink",
@@ -124,7 +123,7 @@ As you may have noticed we do two calls in the above example, one to get the hum
   "path": "weather"
 }
 ```
-4. In the `attribute link` configuration item add the following, using the ID copied from this assets URL (the asset that has the attributes you want to push the data to):
+5. In the `attribute link` configuration item add the following, using the ID copied from this assets URL (the asset that has the attributes you want to push the data to):
 ```
 [
   {
@@ -157,8 +156,8 @@ As you may have noticed we do two calls in the above example, one to get the hum
   }
 ]
 ```
-5. Click read only to set it to true.
-6. Save the asset (top right)
+6. Click read only to set it to true.
+7. Save the asset (top right)
 
 With the attribute link configuration item you filter the values collected with the agent link and push them to the attributes in your specified asset. When you go to view mode you will see the weather data, temperature, and humidity value in their respective attributes.
 
