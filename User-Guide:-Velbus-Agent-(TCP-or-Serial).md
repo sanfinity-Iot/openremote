@@ -5,7 +5,7 @@ Connect to a [Velbus](https://www.velbus.eu/) network using either of the follow
 
 
 ## Agent configuration
-The following describes the Velbus agent supported configuration attributes:
+The following describes the supported agent configuration attributes:
 
 ### TCP
 | Attribute | Description | Value type | Required |
@@ -25,7 +25,7 @@ The following describes the Velbus agent supported configuration attributes:
 | `timeInjectionInterval` | Time injection interval (s) - as Velbus doesn't have RTC or support daylight saving time so this should be set to about 1hr | [Positive Integer](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L83) | Y |
 
 ## Agent link
-For attributes linked to a Velbus agent, the following describes the supported agent link fields which are in addition to the standard [Agent Link](./User-Guide:-Agent-Overview#agent-links) fields:
+For attributes linked to this agent, the following describes the supported agent link fields which are in addition to the standard [Agent Link](./User-Guide:-Agent-Overview#agent-links) fields:
 
 | Field | Description | Value type | Required |
 | ------------- | ------------- | ------------- | ------------- |
