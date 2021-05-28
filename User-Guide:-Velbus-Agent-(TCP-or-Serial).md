@@ -29,6 +29,7 @@ For attributes linked to this agent, the following describes the supported agent
 
 | Field | Description | Value type | Required |
 | ------------- | ------------- | ------------- | ------------- |
+| `type` | Agent type | Text (Must be `VelbusAgentLink`) | Y |
 | `deviceAddress` | The Velbus module address to link to | Integer (1-254) | Y |
 | `deviceValueLink` | The Velbus module value to link to | Text (see [below](#device-value-link)) | Y |
 
