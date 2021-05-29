@@ -61,7 +61,7 @@ Note that before you are able to execute this procedure you have to execute the 
 ## Additional info
 Unfortunately, `Docker for Windows` and `Docker for Mac` do not support device pass through. In case of a Windows or Mac computer you have to install Linux as a virtual machine by means of VirtualBox. There are two options to do this.     
 
-## Windows - Option 1 (Docker Toolbox) 
+### Windows - Option 1 (Docker Toolbox) 
 
 1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 2. Download and install [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
@@ -97,7 +97,7 @@ ls -al /dev/tty* | more
 ```
 In case of a Aeotec Z-Stick Gen5 the USB device name is usually `/dev/ttyACM0`. The older Aeotec Z-Stick S2 has usually the name `/dev/ttyUSB0`.        
 
-## Mac - Option 1 (Docker Toolbox) 
+### Mac - Option 1 (Docker Toolbox) 
 
 1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 2. Download and install [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
@@ -132,7 +132,7 @@ ls -al /dev/tty* | more
 ```
 In case of a Aeotec Z-Stick Gen5 the USB device name is usually `/dev/ttyACM0`. The older Aeotec Z-Stick S2 has usually the name `/dev/ttyUSB0`.        
 
-## Windows & Mac - Option 2 (Ubuntu VM)
+### Windows & Mac - Option 2 (Ubuntu VM)
 
 1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 
 2. Download and install [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)     
@@ -163,7 +163,7 @@ In this example the resulting serial port name would be:
 ```
 /dev/ttyACM0
 ``` 
-## Linux
+### Linux
 
 1. Install [Docker Engine](https://docs.docker.com/engine/install/)
 2. Install [Docker Compose](https://docs.docker.com/compose/install/) 
