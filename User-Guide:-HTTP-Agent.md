@@ -1,4 +1,4 @@
-Connect to a HTTP Server.
+Connect to a HTTP(S) Server.
 
 
 ## Agent configuration
