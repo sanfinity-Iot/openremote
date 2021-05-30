@@ -1,10 +1,13 @@
-**OPENREMOTE INCLUDES A TCP/IP AGENT. CURRENTLY WE DON'T HAVE DOCUMENTATION FOR TCP/IP**
+Connect to a TCP Server.
 
-# See also
+## Agent configuration
+The following describes the supported agent configuration attributes:
 
-- [Agent overview](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview)
-- [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)
-- [[Manager UI Guide|User-Guide:-Manager-UI]]
-- [[Custom Deployment|User-Guide:-Custom-deployment]]
-- [Setting up an IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE)
-- [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components)
+| Attribute | Description | Value type | Required |
+| ------------- | ------------- | ------------- | ------------- |
+| `host` | TCP server hostname or IP address | [Hostname or IP address](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L153) | Y |
+| `port` | TCP server port | [Port number](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L148) | Y |
+
+
+## Agent link
+For attributes linked to this agent, the `Default` [Agent Link](./User-Guide:-Agent-Overview#agent-links) should be used with a `type` value of `Default`.
