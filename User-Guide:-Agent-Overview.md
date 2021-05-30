@@ -4,20 +4,36 @@
 * Generic agents (HTTP, TCP, UDP, WS, MQTT, etc.)
 
 ## Agent <-> Protocol relationship
-Each agent type has a corresponding [Protocol](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/agent/Protocol.java) implementation; the Agent stores the configuration which is then passed to an instance of the Agent's Protocol implementation so there is a one to one relationship.
+Each agent type has a corresponding [Protocol](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/agent/Protocol.java) implementation; the Agent stores the configuration which is then passed to an instance of the Agent's Protocol implementation so there is a one to one relationship. The following attributes are required for all agent types:
+
+| Attribute | Description | Value type |
+| ------------- | ------------- | ------------- |
+| `agentDisabled` | Disable the agent | Boolean |
+| `agentStatus` | The current status of the agent | [Connection Status](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L174) |
+
 
 ## Specialised agents
 Specialised agents are ones that understand the message structure of the underlying devices/service and therefore generally require much less configuration in order to link attributes to them.
 
-## Generic agents
-Generic agents on the other hand understand nothing about the underlying devices/service and therefore generally require more configuration in order to link attributes to them. This gives a lot of flexibility in terms of what devices/services you can communicate with and the `Agent Link` configuration options make it possible to easily configure generic inbound/outbound value processing (convert data type, insert value into bigger message payload etc.), see below for details on these `Agent Link` configuration options.
+## Generic agents (IO Agents)
+Generic agents on the other hand understand nothing about the underlying devices/service and therefore generally require more configuration in order to use them. This gives a lot of flexibility in terms of what devices/services you can communicate with and the `Agent` attributes and `Agent Link` configuration options make it possible to easily configure generic inbound/outbound value processing (convert data type, insert value into bigger message payload etc.), the following attributes can be used on generic IO agents:
+
+| Attribute | Description | Value type |
+| ------------- | ------------- | ------------- |
+| `messageConvertHex` | Can be used by protocols that support it to indicate that string values should be converted to/from bytes from/to HEX string representation (e.g. 34FD87) |
+| `messageConvertBinary` | Can be used by protocols that support it to indicate that string values should be converted to/from bytes from/to binary string representation (e.g. 1001010111) | Boolean |
+| `messageCharset` | Charset to use when converting byte[] to a string (should default to UTF8 if not specified); values must be string that matches a charset type | Text |
+| `messageMaxLength` | Max length of messages received by a Protocol; what this actually means will be protocol specific i.e. for String protocols it could be the number of characters but for Byte protocols it could be the number of bytes. This is typically used for I/O based Protocols | Positive Integer |
+| `messageDelimiters` | Defines a set of delimiters for messages received by a Protocol; the first matched delimiter should be used to generate the shortest possible match(This is typically used for I/O based Protocols). | Text[] |
+| `messageStripDelimiter` | For protocols that use `messageDelimiters`, this indicates whether or not the matched delimiter should be stripped from the message. | Boolean |
 
 ## Agent links
-Regular assets are connected to agents by adding an `Agent Link` configuration item to attributes that need connecting, each agent has its' own `Agent Link` configuration options but below are the options that are common to all and can be found in the [Agent link](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/agent/AgentLink.java) class.
+Regular assets are connected to agents by adding an `Agent Link` configuration item to attributes that need connecting, agents can have their own `Agent Link` configuration options but below are the options that are common to all and can be found in the [Agent link](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/agent/AgentLink.java) class; agents that don't have custom options use the `Default` Agent link type. 
 
 | Field | Description | Value type | Required |
 | ------------- | ------------- | ------------- | ------------- |
 | `id` | The agent ID that is the target for this agent link | [Asset ID](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L134) | Y |
+| `type` | Agent link type; must be the correct type for the agent/protocol being linked. Agent's that don't have a custom agent link type use the `type` value `Default` | Text | Y |
 | `valueFilters` | When an agent protocol updates the value of a linked attribute it can be desirable to filter that value to extract a specific piece of information that should actually be written to the linked attribute; this option defines a series of value filters that incoming messages should pass through before being passed to the agent protocol, the incoming message is passed to each filter in array order and the result of one is the input to the next (i.e. they are composite). The available value filters can be found from the known types in the javadoc but availabe types at the time of writing can be found below | [ValueFilter](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueFilter.java) | N |
 | `valueConverter` | Defines a value converter map to allow for basic value type conversion; the incoming value will be converted to JSON and if this string matches a key in the converter then the value of that key will be pushed through to the attribute. An example use case is an API that returns `ACTIVE/DISABLED` text but you want to connect this to a Boolean attribute `true/false` | JSON Object | N |
 | `writeValueConverter` | Similar to `valueConverter` but for outbound (Attribute -> Agent protocol) messages | JSON Object | N |
