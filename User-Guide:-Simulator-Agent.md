@@ -16,5 +16,5 @@ For attributes linked to this agent, the following describes the supported agent
 ## Additional info
 Attributes linked to this agent that are written to will follow a route through the system as if it came from a remote service.
 
-### SimulatorReplayDatapoints
+### Simulator Replay Datapoints
 Attributes linked to this agent that have a `replayData` field in their Agent Link will cause the values within to be replayed over a 24h period in a continuous loop. Each SimulatorReplayDatapoint value must have a `timestamp` (seconds offset from midnight `00:00` in the system time of the machine that hosts the manager) and a `value`, this value will then be written to the attribute at the specified seconds offset from midnight each day.
