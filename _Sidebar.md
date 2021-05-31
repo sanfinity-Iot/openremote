@@ -26,6 +26,7 @@
 * [[MQTT|User Guide: MQTT Agent]]
 * [[Simulator|User-Guide: Simulator Agent]]
 * [[SNMP|User-Guide: SNMP Agent]]
+* [[Serial|User-Guide: Serial Agent]]
 * [[TCP|User-Guide: TCP Agent]]
 * [[UDP|User Guide: UDP Agent]]
 * [[Velbus|User-Guide:-Velbus-Agent-(TCP-or-Serial)]]
