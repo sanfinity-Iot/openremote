@@ -71,6 +71,9 @@ When writing to linked attributes it can be desirable to insert the written valu
 ]
 ```
 
+## Executable Linked Attributes
+Attributes that have a type of [Attribute Execute Status](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeExecuteStatus.java), if a value of `REQUEST_START` is written to the attribute then the system will look for a `writeValue` field in the Agent Link and if it is found then this value will be written through to the protocol (note that dynamic value injection doesn't work in this scenario as there is no dynamic value).
+
 ## Agent and Asset Discovery/Import
 Discovery refers to searching for agents/assets in a protocol specific way i.e. discovering what devices are connected.
 
