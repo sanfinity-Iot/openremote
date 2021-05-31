@@ -28,7 +28,6 @@
 * [[SNMP|User-Guide: SNMP Agent]]
 * [[TCP|User-Guide: TCP Agent]]
 * [[UDP|User Guide: UDP Agent]]
-* [[UPnP|User-Guide: UPnP Agent]]
 * [[Velbus|User-Guide:-Velbus-Agent-(TCP-or-Serial)]]
 * [[Websocket|User-Guide:-Websocket-Agent]]
 * [[Z-Wave|User Guide: Z Wave Agent]]
