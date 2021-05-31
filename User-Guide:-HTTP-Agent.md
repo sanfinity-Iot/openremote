@@ -8,8 +8,8 @@ The following describes the supported agent configuration attributes:
 | ------------- | ------------- | ------------- | ------------- |
 | `baseURL` | Server base HTTP(S) URL; this is used as the base URL for all requests that go through this agent | [HTTP URL](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L192) | Y |
 | `followRedirects` | Should the agent follow any redirect responses (e.g. HTTP status code 3xx) | Boolean | N |
-| `requestHeaders` | Headers to be added to all requests that go through this agent | [Multivalued Text Map](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L192) | N |
-| `requestQueryParameters` | Query parameters to be added to all requests that go through this agent | [Multivalued Text Map](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L192) | N |
+| `requestHeaders` | Headers to be added to all requests that go through this agent | [Multivalued Text Map](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L80) | N |
+| `requestQueryParameters` | Query parameters to be added to all requests that go through this agent | [Multivalued Text Map](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L80) | N |
 | `requestTimeoutMillis` | Request timeout for all requests that go through this agent (ms) | Integer | N (Default = `10000` |
 
 ### Example multivalued Text Map
