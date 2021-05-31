@@ -42,7 +42,7 @@ While in `Edit asset` mode you can expand each attribute, which gives you the op
 
 ## Create an agent
 
-Agents are a specific type of asset, which are used to connect to external sensors, actuators, gateways or services, using protocols. They are added in the same manner as assets by clicking the `+` in the header of the asset tree. This will open a modal that shows the available agent types at the top of the list. You will see the generic ones: [HTTP](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent), [Websocket](https://github.com/openremote/openremote/wiki/User-Guide%3A-Websocket-Agent), TCP/IP, [UDP](https://github.com/openremote/openremote/wiki/User-Guide%3A-UDP-Agent) and [SNMP](https://github.com/openremote/openremote/wiki/User-Guide%3A-SNMP-Agent); as well as more specific ones like [Z-wave](https://github.com/openremote/openremote/wiki/User-Guide%3A-Z-Wave-Agent), [KNX](https://github.com/openremote/openremote/wiki/User-Guide%3A-KNX-Agent) or [Velbus](https://github.com/openremote/openremote/wiki/User-Guide:-Velbus-Agent-(TCP-IP-or-Socket)).
+Agents are a specific type of asset used to connect to external sensors, actuators, gateways, or services using protocols. They are added in the same manner as assets by clicking the `+` in the header of the asset tree. This will open a modal that shows the available agent types at the top of the list. You will see the generic ones: [HTTP](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent), [Websocket](https://github.com/openremote/openremote/wiki/User-Guide%3A-Websocket-Agent), [TCP](https://github.com/openremote/openremote/wiki/User-Guide%3A-TCP-Agent), [UDP](https://github.com/openremote/openremote/wiki/User-Guide%3A-UDP-Agent) and [SNMP](https://github.com/openremote/openremote/wiki/User-Guide%3A-SNMP-Agent); as well as more specific ones like [Z-wave](https://github.com/openremote/openremote/wiki/User-Guide%3A-Z-Wave-Agent), [KNX](https://github.com/openremote/openremote/wiki/User-Guide%3A-KNX-Agent) or [Velbus](https://github.com/openremote/openremote/wiki/User-Guide:-Velbus-Agent-(TCP-IP-or-Socket)).
 Once you create an Agent, the agent page will display the relevant attributes, required to establish an actual connection to the external world.
 
 Some Agents have auto discovery (e.g. Z-wave) or use configuration files (e.g. KNX and Velbus). The Agent page will show a discovery button or a file selector. Once set correctly the Agent will also create an additional asset/attribute structure for all discovered or configured assets. 
@@ -55,7 +55,7 @@ Note that you can also connect to OpenRemote through the Manager APIs without us
 
 ## Link agents and assets
 
-If the Agent doesn't support discovery or configuration files, you will manually need to link data coming in through your agents with the attributes of your created assets. We use attributes such as `Asset link` and `Agent link` for that. See the example for connecting to [OpenWeatherMap via an HTTP Agent to a Weather asset](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent).
+If the Agent doesn't support discovery or configuration files, you will manually need to link data coming in through your agents to the attributes of your assets. We use configuration items on attributes such as `Agent link` and `Attribute link` for that. See the example for connecting to [OpenWeatherMap via an HTTP Agent to a Weather asset](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent).
 
 # Rules
 
