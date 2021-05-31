@@ -16,11 +16,11 @@ Each agent type has a corresponding [Protocol](https://github.com/openremote/ope
 Specialised agents are ones that understand the message structure of the underlying devices/service and therefore generally require much less configuration in order to link attributes to them.
 
 ## Generic agents (IO Agents)
-Generic agents on the other hand understand nothing about the underlying devices/service and therefore generally require more configuration in order to use them. This gives a lot of flexibility in terms of what devices/services you can communicate with and the `Agent` attributes and `Agent Link` configuration options make it possible to easily configure generic inbound/outbound value processing (convert data type, insert value into bigger message payload etc.), the following attributes can be used on generic IO agents:
+Generic agents  understand nothing about the underlying devices/service and therefore generally require more configuration in order to use them. This gives a lot of flexibility in terms of what devices/services you can communicate with and the `Agent` attributes and `Agent Link` configuration options make it possible to easily configure generic inbound/outbound value processing (convert data type, insert value into bigger message payload etc.), the following attributes can be used on generic IO agents:
 
 | Attribute | Description | Value type |
 | ------------- | ------------- | ------------- |
-| `messageConvertHex` | Can be used by protocols that support it to indicate that string values should be converted to/from bytes from/to HEX string representation (e.g. 34FD87) |
+| `messageConvertHex` | Can be used by protocols that support it to indicate that string values should be converted to/from bytes from/to HEX string representation (e.g. 34FD87) | Boolean |
 | `messageConvertBinary` | Can be used by protocols that support it to indicate that string values should be converted to/from bytes from/to binary string representation (e.g. 1001010111) | Boolean |
 | `messageCharset` | Charset to use when converting byte[] to a string (should default to UTF8 if not specified); values must be string that matches a charset type | Text |
 | `messageMaxLength` | Max length of messages received by a Protocol; what this actually means will be protocol specific i.e. for String protocols it could be the number of characters but for Byte protocols it could be the number of bytes. This is typically used for I/O based Protocols | Positive Integer |
