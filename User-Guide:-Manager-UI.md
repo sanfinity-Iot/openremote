@@ -6,39 +6,39 @@ If you open the application you will get four main pages: [Map](#map), [Assets](
 
 # Map
 
-The `Map` page will show your map (see the custom deployment wiki if you like to [change your map](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)). You can move, zoom, tilt, and pan the map. On the map all assets are shown which have a location as well a configuration item `show on dashboard` selected. Assets can both have static or dynamic locations (eg. a car, boat or plane). Once you select an asset a panel will appear, summarising the attributes of that asset and their current values. The `Asset details` button in this panel will bring you to the respective Asset page.
+The `Map` page will show your map (see the custom deployment wiki if you like to [change your map](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)). You can pan, zoom, and tilt the map. On the map all assets are shown which have a location as well the configuration item `show on dashboard` set. Assets can both have static or dynamic locations (eg. a car, boat or plane). When selecting an asset, a panel will show its attributes and values. The `Asset details` button in this panel will bring you to the respective Asset page.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)
-_Figure 1. The Map view, here with the Demo Smart City, showing the map with different assets across the City_
+_Figure 1. The Map view, here with the Demo Smart City, showing the map with different assets across the city_
 
 # Assets
 
-The `Asset` view gives you access to the respective assets and related attributes. You will see an asset tree structure on the left. On the right you will see the asset page of the selected asset. The asset page contains a Notes panel, an Attributes panel, a Location panel (if any) and a History panel.
+The `Assets` page lets you view and modify assets and their attributes. You will see the asset tree structure on the left, and the details of the selected asset on the right. The asset page contains an Info panel, an Attributes panel, a Location panel (if any) and a History panel.
 
-The Notes and Attribute panels will give an overview of all attributes and their units. These can be meta-, sensor-, or control-data. For those attributes which can be changed via the UI, and for which you have the 'write' role as a user, you can type a value and press 'enter' or press the `send` arrow on the right (e.g. in below example the 'Manufacturer', 'Model' and 'Notes' attributes are manual inputs). Other attribute values could be live readings from sensors or are automatically updated by Rules.
+The Info and Attribute panels will give an overview of all attributes and their value. These can hold meta-, sensor-, or control-data. For attributes of which the value can be changed via the UI, and for which you have the 'write' role as a user, you can type a value and press 'enter' or press the `send` arrow on the right (e.g. in below example the 'Manufacturer', 'Model' and 'Notes' attributes are manual inputs). Other attribute values could be live readings from sensors or are automatically updated by Rules.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Ozone%20Asset.png)
 _Figure 2. An asset of the type 'environment'_
 
 ## Create an asset
 
-With the correct admin permissions (you'll need your own [installation](https://github.com/openremote/openremote/blob/master/README.md)), you can create a new asset on the Assets page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types when scrolling down in the list. When you select one you will see the attributes and optional attributes. Optional attributes can be added by selecting them in this modal. Also decide whether it needs a parent by selecting the upper right pencil and selecting an asset in the asset tree. Click `Add` to create and add the asset. You will see the asset (and asset page) appear in the asset tree on the left. 
+With the correct permissions (not available in the demo, you'll need your own [installation](https://github.com/openremote/openremote/blob/master/README.md)), you can create a new asset on the Assets page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types. When you select one you will see the attributes and optional attributes. Optional attributes can be added by selecting them in this modal. You can set or change its parent by selecting the upper right pencil and selecting an asset in the asset tree. Click `Add` to create the asset.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Create%20Asset-Parent.png)
 _Figure 3. Creating an asset of the type 'environment' with the Building selected as parent_
 
-Often you will want to add or configure the attributes to define how they are used in the system, e.g. get values through agent link, make the attribute available in rules, or format its value. We'll explain how that works next.
+Often you will want to add or configure attributes to define how they are used in the system, e.g. get values through agent link, make the attribute available in rules, or format its value. We'll explain how that works next.
 
 ## Add an attribute
 
-On the Assets page enable `Edit asset` (on the top middle of the page) which changes the view to a complete list of all available attributes. Click `+ Add attribute` at the bottom of the list of attributes. In the modal you can choose optional attributes already associated with the asset type of the asset, or you can create a `custom attribute`. The custom attributes should have a `camelCase` name, which will automatically be translated to Sentence case with spaces. You can create attributes of prepared value types that are known by the system.
+On the Assets page enable `Edit asset` (on the top middle of the page) which changes the view to a list of all the assets attributes. Click `+ Add attribute` at the bottom of the list of attributes. In the modal you can choose optional attributes already associated with the asset type of the asset, or you can create a `custom attribute`. The custom attributes should be given a `camelCase` name, which will automatically be translated to Sentence case with spaces. You can create attributes of prepared value types that are known by the system.
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Add%20attribute.png)
 _Figure 4. The Asset view in 'Edit mode' while adding an attribute_
 
 ## Configure attributes
 
-For each attribute, while in `Edit asset` mode, you can expand it, which gives you the option to add configuration items or change existing ones. You can use configuration items for example to decide whether you want to store historical data and for how long, allow data to be used in rules, or whether a location should be displayed on the Map. See the wiki page [explaining all available configuration item options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Assets%2C-Agents-and-Attributes).
+While in `Edit asset` mode you can expand each attribute, which gives you the option to add configuration items or change existing ones. You can use configuration items for example to decide whether you want to store historical data and for how long, allow data to be used in rules, or whether a location should be displayed on the Map. See the wiki page [explaining all available configuration item options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Assets%2C-Agents-and-Attributes). Don't forget to save the asset after making changes.
 
 ## Create an agent
 
