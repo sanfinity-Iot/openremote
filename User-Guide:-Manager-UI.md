@@ -8,7 +8,7 @@ If you open the application you will get four main pages: [Map](#map), [Assets](
 
 The `Map` page will show your map (see the custom deployment wiki if you like to [change your map](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)). You can pan, zoom, and tilt the map. On the map all assets are shown which have a location as well the configuration item `show on dashboard` set. Assets can both have static or dynamic locations (eg. a car, boat or plane). When selecting an asset, a panel will show its attributes and values. The `Asset details` button in this panel will bring you to the respective Asset page.
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)</kbd>
 _Figure 1. The Map view, here with the Demo Smart City, showing the map with different assets across the city_
 
 # Assets
@@ -17,14 +17,14 @@ The `Assets` page lets you view and modify assets and their attributes. You will
 
 The Info and Attribute panels will give an overview of all attributes and their value. These can hold meta-, sensor-, or control-data. For attributes of which the value can be changed via the UI, and for which you have the 'write' role as a user, you can type a value and press 'enter' or press the `send` arrow on the right (e.g. in below example the 'Manufacturer', 'Model' and 'Notes' attributes are manual inputs). Other attribute values could be live readings from sensors or are automatically updated by Rules.
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Ozone%20Asset.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Ozone%20Asset.png)</kbd>
 _Figure 2. An asset of the type 'environment'_
 
 ## Create an asset
 
 With the correct permissions (not available in the demo, you'll need your own [installation](https://github.com/openremote/openremote/blob/master/README.md)), you can create a new asset on the Assets page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types. When you select one you will see the attributes and optional attributes. Optional attributes can be added by selecting them in this modal. You can set or change its parent by selecting the upper right pencil and selecting an asset in the asset tree. Click `Add` to create the asset.
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Create%20Asset-Parent.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Create%20Asset-Parent.png)</kbd>
 _Figure 3. Creating an asset of the type 'environment' with the Building selected as parent_
 
 Often you will want to add or configure attributes to define how they are used in the system, e.g. get values through agent link, make the attribute available in rules, or format its value. We'll explain how that works next.
@@ -33,7 +33,7 @@ Often you will want to add or configure attributes to define how they are used i
 
 On the Assets page enable `Edit asset` (on the top middle of the page) which changes the view to a list of all the assets attributes. Click `+ Add attribute` at the bottom of the list of attributes. In the modal you can choose optional attributes already associated with the asset type of the asset, or you can create a `custom attribute`. The custom attributes should be given a `camelCase` name, which will automatically be translated to Sentence case with spaces. You can create attributes of prepared value types that are known by the system.
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Add%20attribute.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Add%20attribute.png)</kbd>
 _Figure 4. The Asset view in 'Edit mode' while adding an attribute_
 
 ## Configure attributes
@@ -47,8 +47,8 @@ Once you create an Agent, the agent page will display the relevant attributes, r
 
 Some Agents have auto discovery (e.g. Z-wave) or use configuration files (e.g. KNX and Velbus). The Agent page will show a discovery button or a file selector. Once set correctly the Agent will also create an additional asset/attribute structure for all discovered or configured assets. 
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Create%20Agent.png)
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Agent%20Page.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Create%20Agent.png)</kbd>
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Agent%20Page.png)</kbd>
 _Figure 5. Creating an Agent, using the HTTP Agent (top) creates the Agent asset page (bottom)_
 
 Note that you can also connect to OpenRemote through the Manager APIs without using the UI, see the [paragraph: Manager APIs](#manager-apis).
@@ -69,14 +69,14 @@ All rules can be set to only be active during a (recurring) event set with the s
 
 When-Then rules use conditions set for attributes to trigger an action for another attribute. The actions do not only include controlling assets, but can also be used to send e-mails or push notifications to mobile apps (using the OpenRemote consoles). 
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20(2-2).png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20(2-2).png)</kbd>
 _Figure 6. A When-Then example, which shows how, on the When-side an asset type can be selected, while on the Then-side the action, in this case a push notification, is defined._
 
 The frequency on which rules trigger as well as a timer schedule can be set. 
 The rule frequency, a dropdown on the upper right of each 'Then' panel defines how frequent a rule can trigger. For example 'Always' means every time the  condition is triggered, but only after the condition has been false (so not continuously on being true).
 The scheduler (right next to the name field of the rule) lets you set an occurrence period as well as repeat that occurrence.
 
-<kbd>![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduling%20(2-2).png)
+<kbd>![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduling%20(2-2).png)</kbd>
 _Figure 7. The Rules trigger frequency (right) as well as time scheduler (left) defines when rules are triggered and active. The scheduled example sets the rule to be active until June 20 2022, only on weekdays._
 
 See the [When-Then rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules) wiki for more details. 
@@ -85,14 +85,14 @@ See the [When-Then rules](https://github.com/openremote/openremote/wiki/User-Gui
 
 Flow rules can be used to fill (new) attributes with processed other attributes. In the visual editor you can use `Input` (blue), `Processor` (green), and `Output` (purple) nodes, and wire them up. See the wiki [Flow Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules) for more details. The same scheduler as for WHEN-THEN rules is available for flow rules.
 
-<kbd>![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Flow.png)
+<kbd>![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Flow.png)</kbd>
 _Figure 8. Flow rules to process data_
 
 ## Groovy Rules
 
 Groovy rules are intended for more advanced processing and automation (see an example in figure 9). For more information see [Groovy Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
 
-<kbd>![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Groovy.png)
+<kbd>![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Groovy.png)</kbd>
 _Figure 9. Groovy rules for more advanced processing, logic or automation_
 
 ## Global versus Realm Rules
@@ -105,7 +105,7 @@ The Insights view (only visible in the desktop version, (see figure 10) allows y
 * Chart: allows you to select multiple attributes in the system and compare them (vertical comparison). By adding a second period you can also compare attributes for different time periods
 * Attribute panel: allows for picking individual attributes, eg. KPIs and see there current performance over a period, as well as their relative or absolute change. 
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Insights.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Insights.png)</kbd>
 _Figure 10. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few random attribute panels._
 
 # Settings and access
@@ -116,7 +116,7 @@ On the upper right of the Manager you see a Realm selector which allows switchin
 
 You can link multiple instances of OpenRemote (as Edge Gateways) to a single Central instance of OpenRemote. To do that you first create a `Gateway Asset` on the Central instance of OpenRemote, which generates a Client ID and Secret. Next, use the `Manager Interconnect` on the Edge Gateway instance and fill in `Hostname`, `Realm` (of the Central instance), and the generated `Client ID` and `Client Secret`. See the [Edge Gateway documentation](https://github.com/openremote/openremote/wiki/User-Guide%3A-Edge-Gateway) for more details.
  
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Interconnect%20(2).png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Interconnect%20(2).png)</kbd>
 _Figure 11. Several OpenRemote instances can be interconnected, e.g. connecting multiple instances on edge gateways to one central cloud hosted instance. The Manager Interconnect page, used at the edge instances (left) uses the keys which are created on the central instance by adding Edge gateway Assets (right)._
 
 ## Languages
@@ -127,24 +127,24 @@ OpenRemote currently supports 5 languages: English, German, Spanish, French and 
 
 The logs views shares information, warnings and errors of the different activities of OpenRemote. You can use it to understand the behaviour of the whole platform or debug issues, e.g. when you are seeing error with protocols or rules.
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Logs.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Logs.png)</kbd>
 _Figure 12. The Logs page to evaluate system behaviour._
 
 ## Account, Users, and Roles
 
 The account page brings you to a few pages where you can (re)set you personal information or password. You can also monitor your past sessions or enable TFA via an Authenticator (currently disabled).
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Account%20(2).png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Account%20(2).png)</kbd>
 _Figure 13. The account page which allows setting e.g. contact details (left) and reset passwords (right)._
 
 If you have the correct access rights (role) for it you can also create new Users for the selected realm and decide which roles they will get assigned.
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Users.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Users.png)</kbd>
 _Figure 14. Creating users for a selected Realm and assigning roles_
 
 Same for the Roles. If you have the correct access rights you are allowed to create, adjust and enable roles. These roles define which parts of the system you are allowed to Read or Write to, e.g. system settings, assets, attributes, map, or rules. 
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Roles.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Roles.png)</kbd>
 _Figure 15. Roles can be defined which can be linked to individual users_
 
 ## Realms
@@ -153,7 +153,7 @@ Only the Master realm Admin user can create `Realms` by accessing the master rea
 
 You can create a realm by adding a `Realm` name (single word, small letters), and a `Friendly name`. You can (temporarily) disable realms, which blocks access for any user.   
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)</kbd>
 _Figure 16. Realms can be created to manage multiple independent projects within one OpenRemote instance_
 
 # Manager APIs
@@ -164,7 +164,7 @@ OpenRemote also allows for interacting with the platform without using the UI. T
 
 Service users can be created by selecting the `Users` option, and selecting `Add user` in the `Service user` panel (see figure 17). The `Username` (ClientID) can be filled in by yourself using one string of letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s), as these will define the access right for the Manager API.
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Service%20Users.png)
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Service%20Users.png)</kbd>
 _Figure 17. Creating service users, with ClientID/Username, Secret and Roles for a selected Realm_
 
 ## HTTP, Websocket, and MQTT
