@@ -26,7 +26,7 @@ For attributes linked to this agent, the following describes the supported agent
 ## Discovery and Import
 To understand discovery and import refer to [Agent and Asset Discovery/Import](https://github.com/openremote/openremote/wiki/User-Guide:-Agent-Overview#agent-and-asset-discoveryimport). This protocol supports the following:
 
-* Protocol Asset Import (`*.etsproj`)
+* Protocol Asset Import (`*.knxproj`)
 
 Each group address in the project file will create a new asset with a single attribute also with the same name (no spaces in attribute name), the attribute type is determined by the following naming convention:
 
