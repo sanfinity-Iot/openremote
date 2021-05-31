@@ -59,7 +59,7 @@
 * [[Provisioning and Connecting|User-Guide:-Edge Gateway]]
 
 ## Tutorials
-* [[Tutorial: Open Weather API|Tutorial: Open Weather API using HTTP Agent]]
+* [[Open Weather HTTP API|Tutorial: Open Weather API using HTTP Agent]]
 
 ## Developer Guide
 
