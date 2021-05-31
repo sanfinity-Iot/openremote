@@ -59,7 +59,7 @@ If the Agent doesn't support discovery or configuration files, you will manually
 
 # Rules
 
-The Rules page allows you to build three types of rules:
+The Rules page (only available on desktop screen sizes) allows you to build three types of rules:
 * [WHEN-THEN Rules](#when-then-rules): When certain conditions created with asset attributes are met, then trigger an action for another attribute.
 * [FLOW](#flow-rules): Process attributes and convert them into new attributes with a simple drag-and-drop interface. 
 * [GROOVY](#groovy-rules): programming any advanced logic, using attributes in the system.
@@ -76,45 +76,48 @@ The frequency on which rules trigger as well as a timer schedule can be set.
 The rule frequency, a dropdown on the upper right of each 'Then' panel defines how frequent a rule can trigger. For example 'Always' means every time the  condition is triggered, but only after the condition has been false (so not continuously on being true).
 The scheduler (right next to the name field of the rule) lets you set an occurrence period as well as repeat that occurrence.
 
-<kbd>![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduling%20(2-2).png)</kbd>
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduling%20(2-2).png)</kbd>
 _Figure 7. The Rules trigger frequency (right) as well as time scheduler (left) defines when rules are triggered and active. The scheduled example sets the rule to be active until June 20 2022, only on weekdays._
 
 See the [When-Then rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules) wiki for more details. 
 
 ## Flow Rules
 
-Flow rules can be used to fill (new) attributes with processed other attributes. In the visual editor you can use `Input` (blue), `Processor` (green), and `Output` (purple) nodes, and wire them up. See the wiki [Flow Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules) for more details. The same scheduler as for WHEN-THEN rules is available for flow rules.
+Flow rules can be used to fill (new) attributes with processed other attributes. In the visual editor you can use `Input` (blue), `Processor` (green), and `Output` (purple) nodes, and wire them up. See the wiki [Flow Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules) for more details.
 
-<kbd>![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Flow.png)</kbd>
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Flow.png)</kbd>
 _Figure 8. Flow rules to process data_
 
 ## Groovy Rules
 
 Groovy rules are intended for more advanced processing and automation (see an example in figure 9). For more information see [Groovy Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
 
-<kbd>![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Groovy.png)</kbd>
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Groovy.png)</kbd>
 _Figure 9. Groovy rules for more advanced processing, logic or automation_
 
 ## Global versus Realm Rules
 
-As an admin user of the system which can access all realms, you have the option to select 'Global' versus 'Realm' rules. Global rules allow you to use WHEN-THEN and Groovy rules, across realms. Realm users can only use Realm rules which are are part of their realm and can only access attributes within that realm.
+As an admin user of the system who can access all realms, you have the option to select 'Global' versus 'Realm' rules. Global rules allow you to use When-Then and Groovy rules that can access assets across realms. Realm users can only use Realm rules which are a part of their realm and can only access attributes within that realm.
 
 # Insights
 
-The Insights view (only visible in the desktop version, (see figure 10) allows you to create a single page report:
-* Chart: allows you to select multiple attributes in the system and compare them (vertical comparison). By adding a second period you can also compare attributes for different time periods
+The Insights page (see figure 10) allows you to create a single page report:
+* Chart: allows you to select multiple attributes in the system and compare them (vertical comparison). By adding a second period you can also compare attributes for different time periods. The chart is not available on mobile screen sizes.
 * Attribute panel: allows for picking individual attributes, eg. KPIs and see there current performance over a period, as well as their relative or absolute change. 
 
+You can configure the layout of the Insights page with the [manager config file](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment#configuration-of-the-manager-ui) in your own instance of OpenRemote.
+
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Insights.png)</kbd>
-_Figure 10. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few random attribute panels._
+_Figure 10. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few other attribute panels._
 
 # Settings and access
 
-On the upper right of the Manager you see a Realm selector which allows switching between Realms (if you are an Admin user). Next to that the `:` dots give you access to a series of general settings as well as account access related settings. We will explain these here.
+Admin users of the 'Master' realm see the Realm selector on the top right to switch between Realms. Next to that the dots give you access to a series of general settings as well as account access related settings. We will explain these here:
 
 ## Manager interconnect
 
-You can link multiple instances of OpenRemote (as Edge Gateways) to a single Central instance of OpenRemote. To do that you first create a `Gateway Asset` on the Central instance of OpenRemote, which generates a Client ID and Secret. Next, use the `Manager Interconnect` on the Edge Gateway instance and fill in `Hostname`, `Realm` (of the Central instance), and the generated `Client ID` and `Client Secret`. See the [Edge Gateway documentation](https://github.com/openremote/openremote/wiki/User-Guide%3A-Edge-Gateway) for more details.
+You can link multiple instances of OpenRemote (as Edge Gateways) to a single Central instance of OpenRemote. The Gateways will be visible in the Central manager to create a single point of remote access and data collection. The Edge Gateways function each connect to their local assets and run independently with their own rules.
+See the [Edge Gateway documentation](https://github.com/openremote/openremote/wiki/User-Guide%3A-Edge-Gateway) for more details.
  
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Interconnect%20(2).png)</kbd>
 _Figure 11. Several OpenRemote instances can be interconnected, e.g. connecting multiple instances on edge gateways to one central cloud hosted instance. The Manager Interconnect page, used at the edge instances (left) uses the keys which are created on the central instance by adding Edge gateway Assets (right)._
@@ -125,7 +128,7 @@ OpenRemote currently supports 5 languages: English, German, Spanish, French and 
 
 ## Logs
 
-The logs views shares information, warnings and errors of the different activities of OpenRemote. You can use it to understand the behaviour of the whole platform or debug issues, e.g. when you are seeing error with protocols or rules.
+The logs page shows information, warnings and errors of the different activities of OpenRemote. You can use it to understand the behaviour of the whole platform or debug issues, e.g. errors connecting agent with device.
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Logs.png)</kbd>
 _Figure 12. The Logs page to evaluate system behaviour._
