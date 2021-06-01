@@ -135,33 +135,33 @@ _Figure 12. The Logs page to evaluate system behaviour._
 
 ## Account, Users, and Roles
 
-The account page brings you to a few pages where you can (re)set you personal information or password. You can also monitor your past sessions or enable TFA via an Authenticator (currently disabled).
+On the account page you can (re)set you personal information or password. You can also monitor your past sessions or enable 2FA via an Authenticator (currently disabled).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Account%20(2).png)</kbd>
-_Figure 13. The account page which allows setting e.g. contact details (left) and reset passwords (right)._
+_Figure 13. The account page with contact details (left) and reset passwords (right)._
 
-If you have the correct access rights (role) for it you can also create new Users for the selected realm and decide which roles they will get assigned.
+If you have the correct access rights (role or permissions) for it you can also create new users for the selected realm.
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Users.png)</kbd>
-_Figure 14. Creating users for a selected Realm and assigning roles_
+_Figure 14. Creating users for a selected realm and assigning roles_
 
-Same for the Roles. If you have the correct access rights you are allowed to create, adjust and enable roles. These roles define which parts of the system you are allowed to Read or Write to, e.g. system settings, assets, attributes, map, or rules. 
+Same for the Roles, with required permissions you can create and edit roles. These roles define which parts of the system a user is allowed to Read or Write, e.g. system settings, assets, attributes, map, or rules. 
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Roles.png)</kbd>
-_Figure 15. Roles can be defined which can be linked to individual users_
+_Figure 15. Roles are made of a set of permissions_
 
 ## Realms
 
-Only the Master realm Admin user can create `Realms` by accessing the master realm https://youradress/manager. Realms are separated projects which can be used for individual users or customers of your platform. Individual Realms can be reached at https://youradress/manager/?realm=realmname.
+Only the Master realm Admin user can create `Realms` by accessing the master realm `https://youradress/manager`. Realms are separated projects which can be used for individual users or customers of your platform. Individual Realms can be reached at `https://youradress/manager/?realm=realmname`.
 
-You can create a realm by adding a `Realm` name (single word, small letters), and a `Friendly name`. You can (temporarily) disable realms, which blocks access for any user.   
+You can create a realm by adding a `Realm` name (single word, lower case letters), and a `Friendly name`. You can (temporarily) disable realms, which blocks access for any user.   
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)</kbd>
 _Figure 16. Realms can be created to manage multiple independent projects within one OpenRemote instance_
 
 # Manager APIs
 
-OpenRemote also allows for interacting with the platform without using the UI. This can be used to synchronise attribute data with external clients, but also for a wider range of functions, e.g. accessing configurations, or creating new assets. To be able to authenticate you'll need to create a service user first. Next you have three types of APIs to choose from: HTTP, Websocket and MQTT. 
+The Manager APIs let you interact with OpenRemote without using the UI. This can be used to e.g synchronize attribute data with external clients, accessing configurations, or creating new assets. To authenticate you'll need to create a service user first on the Users page. Next you have three types of APIs to choose from: HTTP, Websocket and MQTT. 
 
 ## Service users
 
