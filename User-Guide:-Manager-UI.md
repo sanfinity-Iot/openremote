@@ -173,7 +173,7 @@ _Figure 17. Creating service users, with Username, Secret and Roles for a select
 ## HTTP, MQTT, and Websocket
 
 The Manager API is compose of three APIs: HTTP, MQTT, and Websocket: 
-* HTTP API is the traditional request response API with live documentation available via Swagger UI (see https://youraddress/swagger/) or you can look at the [demo environment swagger](https://demo.openremote.io/swagger/).
+* HTTP API is the traditional request response API with live documentation available via Swagger UI (see `https://youraddress/swagger/`) or you can look at the [demo environment swagger](https://demo.openremote.io/swagger/).
 * MQTT is a publish-subscribe API which allows connecting to our MQTT broker
 * Websocket API is a publish-subscribe API that is event based.
 
