@@ -161,23 +161,23 @@ _Figure 16. Realms can be created to manage multiple independent projects within
 
 # Manager APIs
 
-The Manager APIs let you interact with OpenRemote without using the UI. This can be used to e.g synchronize attribute data with external clients, accessing configurations, or creating new assets. To authenticate you'll need to create a service user first on the Users page. Next you have three types of APIs to choose from: HTTP, Websocket and MQTT. 
+The Manager APIs let you interact with OpenRemote without using the UI. This can be used to e.g synchronize attribute data with external clients, accessing configurations, or creating new assets. To authenticate you'll need to create a service user first on the Users page. We have three types of APIs to choose from: HTTP, MQTT, and Websocket. 
 
 ## Service users
 
-Service users can be created by selecting the `Users` option, and selecting `Add user` in the `Service user` panel (see figure 17). The `Username` (ClientID) can be filled in by yourself using one string of letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s), as these will define the access right for the Manager API.
+Service users can be created on the `Users` page, and selecting `Add user` in the `Service user` panel (see figure 17). The `Username` (ClientID) can be set using letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Service%20Users.png)</kbd>
-_Figure 17. Creating service users, with ClientID/Username, Secret and Roles for a selected Realm_
+_Figure 17. Creating service users, with Username, Secret and Roles for a selected Realm_
 
-## HTTP, Websocket, and MQTT
+## HTTP, MQTT, and Websocket
 
-The Manager API is compose of three APIs: HTTP, Websocket and MQTT: 
-* HTTP API is the traditional request response API with live documentation available via Swagger UI (see https://youraddress/swagger/) or you can look at the [demo environment](https://demo.openremote.io/swagger/).
-* Websocket API is a publish subscribe API that is event based.
-* MQTT is another publish subscribe API which allows connecting to our MQTT broker
+The Manager API is compose of three APIs: HTTP, MQTT, and Websocket: 
+* HTTP API is the traditional request response API with live documentation available via Swagger UI (see https://youraddress/swagger/) or you can look at the [demo environment swagger](https://demo.openremote.io/swagger/).
+* MQTT is a publish-subscribe API which allows connecting to our MQTT broker
+* Websocket API is a publish-subscribe API that is event based.
 
-More information on these APIs regarding formats and authentication can be found in the wiki for [Manager API](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs)
+More information on these APIs regarding formats and authentication can be found in the wiki for [Manager APIs](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs)
 
 # See Also
 - [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment)
