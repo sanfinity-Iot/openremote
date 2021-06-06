@@ -13,7 +13,7 @@ Make sure that the device mapping for the `manager` docker container in the file
 ...
 ...      
 ```
-In this example the serial port `/dev/ttyACM0` of the host is mapped to the serial port `/dev/ttyS0' of the 'manager' docker container.
+In this example the serial port `/dev/ttyACM0` of the host is mapped to the serial port `/dev/ttyS0` of the `manager` docker container.
 
 ## Agent configuration
 The following describes the supported agent configuration attributes:
@@ -49,10 +49,9 @@ This procedure describes how to add a new device to the Z-Wave network (Z-Wave d
 Note that before you are able to execute this procedure you have to execute the `Import Z-Wave Devices` procedure at least once otherwise the `Z-Wave Controller` asset is missing.
 
 1. Select `Z-Wave Controller` in the asset list on the left side
-2. Make sure that `View asset` and `Show live updates` is activated
-3. Activate the `Device Inclusion` checkbox and click `Write`   
-4. Put the Z-Wave device into inclusion mode (see device manual)
-5. Execute the `Import Z-Wave Devices` procedure in order to add the new device to the asset list on the left side
+2. Activate the `Device Inclusion` checkbox  
+3. Put the Z-Wave device into inclusion mode (see device manual)
+4. Execute the `Import Z-Wave Devices` procedure in order to add the new device to the asset list on the left side
 
 ## Exclude Z-Wave devices
 
@@ -61,9 +60,8 @@ This procedure describes how to remove a device from the Z-Wave network (Z-Wave 
 Note that before you are able to execute this procedure you have to execute the `Import Z-Wave Devices` procedure at least once otherwise the `Z-Wave Controller` asset is missing.
 
 1. Select `Z-Wave Controller` in the asset list on the left side
-2. Make sure that `View asset` and `Show live updates` is activated
-3. Activate the `Device Exclusion` checkbox and click `Write`   
-4. Put the Z-Wave device into exclusion mode (see device manual)
+2. Activate the `Device Exclusion` checkbox   
+3. Put the Z-Wave device into exclusion mode (see device manual)
 
 ## Configure Z-Wave device parameters
 
