@@ -1,4 +1,6 @@
 Connect to a Z Wave network via a USB stick (tested with [Aeotec Z-Stick Gen5](http://aeotec.com/z-wave-usb-stick)), this protocol requires a `device` mapping for the `manager` docker container to provide access to the USB stick.
+
+Make sure that the device mapping for the `manager` docker container in the file `docker-compose.yml` looks like the following:
 ```
 ...
 ...
