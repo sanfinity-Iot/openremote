@@ -5,8 +5,8 @@ The following describes the supported agent configuration attributes:
 
 | Attribute | Description | Value type | Required |
 | ------------- | ------------- | ------------- | ------------- |
-| `host` | TCP server hostname or IP address | [Hostname or IP address](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L153) | Y |
-| `port` | TCP server port | [Port number](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L148) | Y |
+| `serialPort` | Serial port device address (e.g. `COM1` or `/dev/ttyACM0`) | Text | Y |
+| `serialBaudrate` | Serial port baudrate | Integer (Default = `38400`) | Y |
 
 As this is a generic IO Agent the optional attributes described in the [Generic Agent Overview](https://github.com/openremote/openremote/wiki/User-Guide:-Agent-Overview#generic-agents-io-agents) can also be used.
 
