@@ -47,7 +47,7 @@ While in `Edit asset` mode you can expand each attribute, which gives you the op
 | `Read only` | Data can not be filled via UI, only by agents or rules. |
 | `Rule state` | Adds attribute as option to select in rules, on lefthand side |
 | `Rule reset immediate` | Allows rule to retrigger immediately. Can be useful for event based data |
-| `Show on dashboard` | Currently used in combination with 'location' attribute to display asset on the Map view |
+| `Show on dashboard` | Used in combination with 'location' will display asset on the Map view |
 | `Store data points` | Stores data points in the database, default for one month |
 | `Units` | Adds a unit to the attribute value, see [composition and options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Assets%2C-Agents-and-Attributes#attribute-descriptor) |
 
