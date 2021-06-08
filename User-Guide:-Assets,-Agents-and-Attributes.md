@@ -8,7 +8,7 @@ Each asset can have one or more attributes that hold a value; a value can be of 
 As well as having a value an attribute can have configuration items (called 'meta items' in the code) which control the behaviour of the attribute (link it to an agent for read/write from/to external systems, link to another attribute, configure historical value storage, and much more). Each attribute can have one or more meta items which is essentially a well known named value (meta data) that can be used in various parts of the system to control behaviour of the associated attribute (e.g. an `agentLink` meta item is used to connect an attribute to an agent/protocol).
 
 ## Agents
-Agents are a special type of asset which link external services/devices with your `OpenRemote` system via protocols (HTTP/TCP/IP/...). The agent itself holds the configuration parameters as attributes and this configuration is passed to an instance of the corresponding protocol; there is a one to one relationship between an agent and a protocol instance.
+Agents are a special type of asset which link external services/devices with your `OpenRemote` system via protocols (HTTP/TCP/IP/...). The agent itself holds the configuration parameters as attributes and this configuration is passed to an instance of the corresponding protocol; there is a one to one relationship between an agent and a protocol instance. [Read more about agents](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview)
 
 ## Asset tree
 Assets can be structured in a hierarchical tree to define some logical hierarchy for a particular use case (e.g. A city has buildings, which has floors, which have presence sensors).
