@@ -16,7 +16,6 @@
 ### Assets & Attributes
 
 * [[Assets, Agents and Attributes|User-Guide:-Assets,-Agents-and-Attributes]]
-* [[Linking Attributes|User-Guide:-Linking attributes]]
 
 ### Agents/Protocols
 
