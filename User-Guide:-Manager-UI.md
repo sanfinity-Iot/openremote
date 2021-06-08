@@ -38,7 +38,7 @@ _Figure 4. The Asset view in 'Edit mode' while adding an attribute_
 
 ## Configure attributes
 
-While in `Edit asset` mode you can expand each attribute, which gives you the option to add configuration items or change existing ones. You can use configuration items for example to decide whether you want to store historical data and for how long, allow data to be used in rules, or whether a location should be displayed on the Map. See the wiki page [explaining all available configuration item options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Assets%2C-Agents-and-Attributes). Don't forget to save the asset after making changes.
+While in `Edit asset` mode you can expand each attribute, which gives you the option to add configuration items or change existing ones. You can use configuration items for example to decide whether you want to store historical data and for how long, allow data to be used in rules, or whether a location should be displayed on the Map. See the wiki page [explaining all available configuration item options of the asset model](https://github.com/openremote/openremote/wiki/User-Guide%3A-Assets%2C-Agents-and-Attributes#asset-model). Don't forget to save the asset after making changes.
 
 ## Create an agent
 
