@@ -5,7 +5,7 @@ An asset is a digital representation of a physical or logical `Thing` (this is t
 Each asset can have one or more attributes that hold a value; a value can be of any type that can be represented as `JSON`. The name of the attribute is used to cross reference it with an attribute descriptor (see below), which provides schema information for the attribute.
 
 ## Configuration items
-As well as having a value an attribute can have configuration items which control the behaviour of the attribute (link it to an agent for read/write from/to external systems, link to another attribute, configure historical value storage, and much more). Each attribute can have one or more meta items which is essentially a well known named value (meta data) that can be used in various parts of the system to control behaviour of the associated attribute (e.g. an `agentLink` meta item is used to connect an attribute to an agent/protocol).
+As well as having a value an attribute can have configuration items (called 'meta items' in the code) which control the behaviour of the attribute (link it to an agent for read/write from/to external systems, link to another attribute, configure historical value storage, and much more). Each attribute can have one or more meta items which is essentially a well known named value (meta data) that can be used in various parts of the system to control behaviour of the associated attribute (e.g. an `agentLink` meta item is used to connect an attribute to an agent/protocol).
 
 ## Agents
 Agents are a special type of asset which link external services/devices with your `OpenRemote` system via protocols (HTTP/TCP/IP/...). The agent itself holds the configuration parameters as attributes and this configuration is passed to an instance of the corresponding protocol; there is a one to one relationship between an agent and a protocol instance.
@@ -28,6 +28,7 @@ The asset model has the following types and structure:
 
 ### Asset type info
 Asset type info contains all the descriptors applicable for a given asset type and can be considered the schema definition which is then used for validation and UI generation purposes; the basic asset type is `Thing` which has no attribute constraints but can be used as a generic asset.
+The options depend on the asset types loaded into your deployment. You can call the swagger asset model endpoint of a running system to get all asset type info (see `https://YOUR_DEPLOYMENT/swagger/`).
 
 ### Asset descriptor
 An asset descriptor defines the following information for a specific asset type:
