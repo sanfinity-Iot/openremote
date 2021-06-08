@@ -28,7 +28,7 @@ The asset model has the following types and structure:
 
 ### Asset type info
 Asset type info contains all the descriptors applicable for a given asset type and can be considered the schema definition which is then used for validation and UI generation purposes; the basic asset type is `Thing` which has no attribute constraints but can be used as a generic asset.
-The options depend on the asset types loaded into your deployment. You can call the swagger asset model endpoint of a running system to get all asset type info (see `https://YOUR_DEPLOYMENT/swagger/`).
+The options depend on the asset types loaded into your deployment. You can call the swagger asset model endpoint of a running system to get all asset type info (see `https://YOUR_DEPLOYMENT/swagger/#/Asset%20Model`).
 
 ### Asset descriptor
 An asset descriptor defines the following information for a specific asset type:
