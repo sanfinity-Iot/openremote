@@ -36,7 +36,7 @@ The weather asset will now appear in the list as a child of the `HTTP API Agent`
    * Paste the following in the text area and replace the `id` with the agent `id` from above:
 ```
 {
-  "type": "HTTPAgentLink",
+  "type": "HTTPAgent.HTTPAgentLink",
   "id": "501p87wK1bhf6Dh2M5ZQZj",
   "queryParameters": {
     "q": [
@@ -67,7 +67,7 @@ What this means is that, we are looking for the data of the city of Rotterdam, i
    * Paste the following in the text area and replace the `id` with the agent `id` from above
 ```
 {
-  "type": "HTTPAgentLink",
+  "type": "HTTPAgent.HTTPAgentLink",
   "id": "501p87wK1bhf6Dh2M5ZQZj",
   "queryParameters": {
     "q": [
@@ -109,7 +109,7 @@ As you may have noticed we do two calls in the above example, one to get the hum
 4. In the `Agent link` configuration item add the following, again using the ID from your weather agent:
 ```
 {
-  "type": "HTTPAgentLink",
+  "type": "HTTPAgent.HTTPAgentLink",
   "id": "501p87wK1bhf6Dh2M5ZQZj",
   "queryParameters": {
     "q": [
