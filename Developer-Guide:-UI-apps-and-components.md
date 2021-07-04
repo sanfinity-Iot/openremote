@@ -1,6 +1,13 @@
 ## Overview
 Front end applications are [webcomponent](https://www.webcomponents.org/) based using the [lit](https://lit.dev/) library and [Material Design](https://material.io/components?platform=web) for styling. Our  We use a combination of Polymer LIT, Material Design and our own OpenRemote elements. The UI components are [published on NPM](https://www.npmjs.com/~openremote). The applications themselves are composed of our re-usable modular UI components which can be found in the code base in the [ui/component](https://github.com/openremote/openremote/tree/master/ui/component) folder, these are also published to [NPM](https://www.npmjs.com/~openremotedeveloper).
 
+To work on an app for example the `Manager UI` then `cd` into the `app/manager` app and run the following `npm` scripts at the same time:
+
+- `npm run modelWatch` - Starts a gradle task to watch the model `java` code for changes and auto generates the `model` and `restclient` typescript files and compiles them
+- `npm run watch` - Watches typescript files (including referenced typescript projects) for changes and auto transpiles to javascript
+- `npm run serve` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000/demo-rest/`
+
+
 
 ## Consuming UI components
 
@@ -48,12 +55,6 @@ You will need the standard tool chain (see [[Preparing the environment|Developer
 
 * Run a Manager instance in an IDE (refer to [[Setting up an IDE|Developer Guide: Setting up an IDE]])
 * Deploy the Manager using a Docker container (refer to [UI Development profile](./Developer-Guide%3A-Docker-compose-profiles#ui-development-devyml))
-
-As an example if working on the `rest` component then `cd` into the `demo/demo-rest` app and run the following `npm` scripts at the same time:
-
-- `npm run modelWatch` - Starts a gradle task to watch the model `java` code for changes and auto generates the `model` and `restclient` typescript files and compiles them
-- `npm run watch` - Watches typescript files (including referenced typescript projects) for changes and auto transpiles to javascript
-- `npm run serve` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000/demo-rest/`
 
 If you want to create a new `component` or `app` then simply copy an existing one as a template (when creating a `component` then you may need to create a corresponding `demo` which acts as a development harness that can be served by webpack dev server - one demo may act as harness for multiple components).
 
