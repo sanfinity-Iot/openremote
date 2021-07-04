@@ -5,7 +5,7 @@ To work on an app for example the `Manager UI` then `cd` into the `app/manager` 
 
 - `npm run modelWatch` - Starts a gradle task to watch the model `java` code for changes and auto generates the `model` and `restclient` typescript files and compiles them
 - `npm run watch` - Watches typescript files (including referenced typescript projects) for changes and auto transpiles to javascript
-- `npm run serve` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000/demo-rest/`
+- `npm run serve` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000/manager/` (**NOTE: trailing `/` is required**)
 
 
 
