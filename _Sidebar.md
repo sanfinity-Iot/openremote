@@ -60,6 +60,7 @@
 
 ## Tutorials
 * [[Open Weather HTTP API|Tutorial: Open Weather API using HTTP Agent]]
+* [[Connect Your MQTT Client|Tutorial: Connect your MQTT client]]
 
 ## Developer Guide
 
