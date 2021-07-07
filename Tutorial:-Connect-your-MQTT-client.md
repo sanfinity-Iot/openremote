@@ -1,4 +1,4 @@
-In this tutorial we will use the MQTT API to subscribe to changes of asset attributes values and write to them from a MQTT Client. The OpenRemote Manager functions as the MQTT Broker. We will use the app MQTT X as our desktop client in this tutorial, but you can use your preferred tool or better yet the device you want to connect.
+In this tutorial we will use the [MQTT API](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker) to subscribe to changes of asset attributes values and write to them from a MQTT Client. The OpenRemote Manager functions as the MQTT Broker. We will use the app [MQTT X](https://mqttx.app/) as our desktop client in this tutorial, but you can use your preferred tool or better yet the device you want to connect.
 
 ## Create an asset with attributes
 We will create a Thing asset, but feel free to use an AssetType that matches your physical device
@@ -29,7 +29,7 @@ In your MQTT client set up a new connection:
 - username: `master:mqttuser` ({realm}:{user})
 
 ## Subscribe to attributes using the MQTT API
-In this tutorial we will be looking at specific attributes of a specific asset. There are many more options of subscribing to (all) updates of assets and attributes. The asset attributes that you will be subscribing to can be written by the user, by rules, or can be a live value gathered through an Agent link with another device in the field. You can imagine this boolean value could toggle a function of the device subscribed to the attribute
+In this tutorial we will be looking at specific attributes of a specific asset. There are [many more options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker) of subscribing to (all) updates of assets and attributes. The asset attributes that you will be subscribing to can be written by the user, by rules, or can be a live value gathered through an Agent link with another device in the field. You can imagine this boolean value could toggle a function of the device subscribed to the attribute
 1. Get the ID of the Thing asset by navigating to its asset page and copying the ID in the URL (e.g. `http://localhost:9000/manager/#!assets/false/6xIa9MkpZuR7slaUGB6OTZ` => `6xIa9MkpZuR7slaUGB6OTZ`)
 2. Create a subscription for the subscribeAttribute in your MQTT client with the topic: `attribute/6xIa9MkpZuR7slaUGB6OTZ/subscribeAttribute` 
 3. In the view mode of the Thing asset in the OpenRemote Manager, write a new value to the 'Subscribe attribute' by clicking the checkbox.
