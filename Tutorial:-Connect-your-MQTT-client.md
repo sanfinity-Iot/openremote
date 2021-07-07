@@ -33,7 +33,7 @@ In this tutorial we will be looking at specific attributes of a specific asset. 
 1. Get the ID of the Thing asset by navigating to its asset page and copying the ID in the URL (e.g. http://localhost:9000/manager/#!assets/false/6xIa9MkpZuR7slaUGB6OTZ, >> 6xIa9MkpZuR7slaUGB6OTZ)
 2. Create a subscription for the subscribeAttribute in your MQTT client with the topic: `attribute/6xIa9MkpZuR7slaUGB6OTZ/subscribeAttribute` 
 3. In the view mode of the Thing asset in the OpenRemote Manager, write a new value to the 'Subscribe attribute' by clicking the checkbox.
-4. Verify that you see the value coming in on your MQTT client!
+4. Verify that you see the value (true/false) coming in on your MQTT client!
 
 ## Write attribute values from the MQTT client
 By writing att
