@@ -3,16 +3,16 @@ In this tutorial we will use the MQTT API to subscribe to changes of asset attri
 ## Create an asset with attributes
 We will create a Thing asset, but feel free to use an AssetType that matches your physical device
 1. On the assets page, click the '+' in the asset tree on the left
-2. Select the Thing asset type, give it a friendly name and click 'Add'
-3. Add two new attributes in the Edit asset mode: 
-3.1 subscribeAttribute
-- type: Custom Attribute
-- name: subscribeAttribute
-- Valuetype: Boolean
-3.2 writeAttribute
-- type: Custom Attribute
-- name: writeAttribute
-- Valuetype: Number
+1. Select the Thing asset type, give it a friendly name and click 'Add'
+1. Add two new attributes in the Edit asset mode: 
+   1. subscribeAttribute
+      - type: Custom Attribute
+      - name: subscribeAttribute
+      - Valuetype: Boolean
+   2. writeAttribute
+      - type: Custom Attribute
+      - name: writeAttribute
+      - Valuetype: Number
 
 ## Create a service user
 The service user will give programmatic access to the MQTT client.
