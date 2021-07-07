@@ -2,24 +2,24 @@ In this tutorial we will use the MQTT API to subscribe to changes of asset attri
 
 ## Create an asset with attributes
 We will create a Thing asset, but feel free to use an AssetType that matches your physical device
-1. On the assets page, click the '+' in the asset tree on the left
+1. On the assets page, click the `+` in the asset tree on the left
 1. Select the Thing asset type, give it a friendly name and click 'Add'
 1. Add two new attributes in the Edit asset mode: 
    1. subscribeAttribute
-      - type: Custom Attribute
-      - name: subscribeAttribute
-      - Valuetype: Boolean
+      - type: `Custom Attribute`
+      - name: `subscribeAttribute`
+      - Valuetype: `Boolean`
    2. writeAttribute
-      - type: Custom Attribute
-      - name: writeAttribute
-      - Valuetype: Number
+      - type: `Custom Attribute`
+      - name: `writeAttribute`
+      - Valuetype: `Number`
 
 ## Create a service user
 The service user will give programmatic access to the MQTT client.
 1. Go to the users page and create a new service user (second panel on the page)
 2. Name the service user `mqttuser` and give the user the read and write role for the sake of convenience. It is advised to configure a more restricted role for your service users.
-3. Click `create`, a secret will be generated automatically.
-4. Open the `mqttuser` user to see and copy the secret
+3. Click 'Create', a secret will be generated automatically.
+4. Open the 'mqttuser' user to see and copy the secret
 
 ## Establish a connection from client to broker
 In your MQTT client set up a new connection:
@@ -30,10 +30,10 @@ In your MQTT client set up a new connection:
 
 ## Subscribe to attributes using the MQTT API
 In this tutorial we will be looking at specific attributes of a specific asset. There are many more options of subscribing to (all) updates of assets and attributes. The asset attributes that you will be subscribing to can be written by the user, by rules, or can be a live value gathered through an Agent link with another device in the field. You can imagine this boolean value could toggle a function of the device subscribed to the attribute
-1. Get the ID of the Thing asset by navigating to its asset page and copying the ID in the URL (e.g. http://localhost:9000/manager/#!assets/false/6xIa9MkpZuR7slaUGB6OTZ, >> 6xIa9MkpZuR7slaUGB6OTZ)
+1. Get the ID of the Thing asset by navigating to its asset page and copying the ID in the URL (e.g. `http://localhost:9000/manager/#!assets/false/6xIa9MkpZuR7slaUGB6OTZ` => `6xIa9MkpZuR7slaUGB6OTZ`)
 2. Create a subscription for the subscribeAttribute in your MQTT client with the topic: `attribute/6xIa9MkpZuR7slaUGB6OTZ/subscribeAttribute` 
 3. In the view mode of the Thing asset in the OpenRemote Manager, write a new value to the 'Subscribe attribute' by clicking the checkbox.
-4. Verify that you see the value (true/false) coming in on your MQTT client!
+4. Verify that you see the value (`true`/`false`) coming in on your MQTT client!
 
 ## Write attribute values from the MQTT client
 By writing att
