@@ -42,5 +42,3 @@ You can write data from your MQTT client (device) to the OpenRemote manager so t
 3. Send and check whether the value updated in the Manager!
 
 **Note: currently there is an unresolved bug related writing to attributes with the Read Only config item. Make sure it is not on the attribute you want to write to, even if its unchecked. You need to delete the item from the attribute.**
-
-## Additional exercises
