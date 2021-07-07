@@ -1,4 +1,4 @@
-In this tutorial we will use the [MQTT API](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker) to subscribe to changes of asset attributes values and write to them from a MQTT Client. The OpenRemote Manager functions as the MQTT Broker. We will use the app [MQTT X](https://mqttx.app/) as our desktop client in this tutorial, but you can use your preferred tool or better yet the device you want to connect.
+In this tutorial we will use the [MQTT API](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker) to subscribe to changes of asset attributes values and publish data to them from a MQTT Client. The OpenRemote Manager functions as the MQTT Broker. We will use the app [MQTT X](https://mqttx.app/) as our desktop client in this tutorial, but you can use your preferred tool or better yet the device you want to connect.
 
 ## Create an asset with attributes
 We will create a Thing asset, but feel free to use an AssetType that matches your physical device
@@ -35,8 +35,8 @@ In this tutorial we will be looking at specific attributes of a specific asset. 
 3. In the view mode of the Thing asset in the OpenRemote Manager, write a new value to the 'Subscribe attribute' by clicking the checkbox.
 4. Verify that you see the value (`true`/`false`) coming in on your MQTT client!
 
-## Write attribute values from the MQTT client
-You can write data from your MQTT client (device) to the OpenRemote manager so that you can monitor the device and create rules.
+## Publish attribute values from the MQTT client
+You can publish data from your MQTT client (device) to the OpenRemote manager so that you can monitor the device and create rules.
 1. Define the correct topic. For directly writing an attribute value: attributevalue/{assetID}/{attributeName}. So in our case this will be `attributevalue/6xIa9MkpZuR7slaUGB6OTZ/writeAttribute`
 2. Send the JSON over this topic. For a Number, this is really simple: `{23}`
 3. Send and check whether the value updated in the Manager!
