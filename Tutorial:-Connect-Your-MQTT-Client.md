@@ -41,4 +41,4 @@ You can publish data from your MQTT client (device) to the OpenRemote manager so
 2. Send the JSON over this topic. For a Number, this is really simple: `{23}`
 3. Send and check whether the value updated in the Manager!
 
-**Note: currently there is a bug related writing to attributes that have the Read Only config item. Make sure it is not on the attribute you want to write to, even if its unchecked. You need to delete the item from the attribute.**
+**Note: currently there is a bug when writing to attributes that have the Read Only configation item. Make sure the configuration item is not on the attribute you want to write to, even if its set to false.**
