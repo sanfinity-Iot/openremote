@@ -39,6 +39,6 @@ In this tutorial we will be looking at specific attributes of a specific asset. 
 You can publish data from your MQTT client (device) to the OpenRemote manager so that you can monitor the device and create rules.
 1. Define the correct topic. For directly writing an attribute value: attributevalue/{assetID}/{attributeName}. So in our case this will be `attributevalue/6xIa9MkpZuR7slaUGB6OTZ/writeAttribute`
 2. Send the JSON over this topic. For a Number, this is really simple: `{23}`
-3. Send and check whether the value updated in the Manager!
+3. Go to the Manager and check if the value updated!
 
 **Note: currently there is a bug when writing to attributes that have the Read Only configation item. Make sure the configuration item is not on the attribute you want to write to, even if its set to false.**
