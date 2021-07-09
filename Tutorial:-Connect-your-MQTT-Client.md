@@ -1,4 +1,4 @@
-In this tutorial we will use the [MQTT API](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker) to subscribe to changes of asset attributes values and publish data to them from a MQTT Client. The OpenRemote Manager functions as the MQTT Broker. We will use the app [MQTT X](https://mqttx.app/) as our desktop client in this tutorial, but you can use your preferred tool or better yet the device you want to connect.
+In this tutorial we will use the [MQTT API](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker) to subscribe to changes of asset attributes values and publish data to them from a MQTT Client. The OpenRemote Manager functions as the MQTT Broker. You can use a desktop MQTT client (e.g. [MQTT Explorer](http://mqtt-explorer.com/) or [MQTT X](https://mqttx.app/)) for this tutorial, or better yet the device you want to connect.
 
 ## Create an asset with attributes
 We will create a Thing asset, but feel free to use an AssetType that matches your physical device
