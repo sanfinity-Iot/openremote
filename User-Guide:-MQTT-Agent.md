@@ -1,4 +1,4 @@
-**WE CURRENTLY ONLY SUPPORT A MQTT BROKER. A MQTT CLIENT WILL COME SHORTLY**
+**WE CURRENTLY ONLY SUPPORT AN [MQTT BROKER](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs). A MQTT CLIENT WILL COME SHORTLY**
 
 # See also
 
