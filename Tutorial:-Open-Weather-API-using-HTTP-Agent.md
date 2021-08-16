@@ -12,13 +12,18 @@ This tutorial explains how to connect to the [Open Weather Map](https://openweat
    * Name: `HTTP API Agent`
    * Select the agent from the list: `HTTP Agent`
    * Confirm with `Add`
-4. The agent is now created with pre-configured attributes. We will set some of those to establish the connection:
+4. The agent is now created with pre-configured attributes. We will set some of those to establish the connection and set our location of interest to Rotterdam:
    * Base URI: `https://api.openweathermap.org/data/2.5/` (Don't forget to send the value by clicking the send button on the right or pressing Enter)
-   * Request query parameters: `{"appid": ["YOUR_API_KEY"]}` (Input the API key from you openweathermap account)
+   * Request query parameters (Input the API key from you openweathermap account): 
+   ```
+   {
+	  appid": ["YOUR_API_KEY"],
+	  "q": ["Rotterdam,nl"],
+	  "units": ["metric"]
+	}
+   ```
 
-You now have a basic HTTP API protocol ready to be linked to by asset attributes. 
-
-In the next step we will need the Asset ID of this agent, so copy that from the URL now. e.g. `501p87wK1bhf6Dh2M5ZQZj` if URL is: `https://localhost/main/#!assets/false/501p87wK1bhf6Dh2M5ZQZj`
+You now have a basic HTTP API protocol ready to be linked to by asset attributes.
 
 ## Create the weather asset
 Now we will create a weather asset where we show the temperature and humidity in Rotterdam that we collect using the OpenWeatherMap API.
@@ -29,73 +34,36 @@ Now we will create a weather asset where we show the temperature and humidity in
 The weather asset will now appear in the list as a child of the `HTTP API Agent`. You can change its parent if you wish.
 
 ## Add the Agent Links
-1. Go to the edit mode by clicking the toggle at the top of the asset page. In the edit mode you can modify the attributes of an asset and set configuration items.
+1. Go to the modify mode by clicking the toggle at the top of the asset page. In the modify mode you can alter the attributes of an asset and set configuration items.
 2. First we will set up the humidity value:
    * Expand the `humidity` attribute
    * Click `Add configuration item` and select and add `Agent link`. 
-   * Paste the following in the text area and replace the `id` with the agent `id` from above:
-```
-{
-  "type": "HTTPAgentLink",
-  "id": "501p87wK1bhf6Dh2M5ZQZj",
-  "queryParameters": {
-    "q": [
-      "Rotterdam,nl"
-    ],
-    "units": [
-      "metric"
-    ]
-  },
-  "pollingMillis": 60000,
-  "path": "weather",
-  "valueFilters": [
-      {
-        "type": "jsonPath",
-        "path": "$.main.humidity",
-        "returnFirst": true,
-        "returnLast": false
-      }
-    ]
-}
-```
+   * Select the `HTTP API Agent`
+   * Add parameters to specify what the agent should do and give them the following values:
+      * Polling millis: `60000`
+	  * Path: `weather`
+	  * Value filters: `JsonPathFilter-2`, and add the item:
+	     * Path: `$.main.humidity`
 
-What this means is that, we are looking for the data of the city of Rotterdam, in metric units. We want this information every minute. The information can be found at the base URI + `/weather`. Then the returned data (JSON payload) is filtered to find the humidity value.
+What this means is that the information can be found at the base URI + `weather`, and we want it every minute. Then the returned data (JSON payload) is filtered to find the humidity value.
 
 1. We do the same for the temperature value:
    * Expand the `temperature` attribute
    * Click `Add configuration item` and select and add `Agent link`. 
-   * Paste the following in the text area and replace the `id` with the agent `id` from above
-```
-{
-  "type": "HTTPAgentLink",
-  "id": "501p87wK1bhf6Dh2M5ZQZj",
-  "queryParameters": {
-    "q": [
-      "Rotterdam,nl"
-    ],
-    "units": [
-      "metric"
-    ]
-  },
-  "pollingMillis": 60000,
-  "path": "weather",
-  "valueFilters": [
-      {
-        "type": "jsonPath",
-        "path": "$.main.temp",
-        "returnFirst": true,
-        "returnLast": false
-      }
-    ]
-}
-```
+   * Select the `HTTP API Agent`
+   * Add parameters to specify what the agent should do and give them the following values:
+      * Polling millis: `60000`
+	  * Path: `weather`
+	  * Value filters: `JsonPathFilter-2`, and add the item:
+	     * Path: `$.main.temp`
+		 
 2. Save the asset (top right)
 
-Switch to view mode (by clicking the edit mode toggle at the top again) to view the live values. You now have the live weather data of Rotterdam linked.
+Switch to view mode (top right) to view the live values. You now have the live weather data of Rotterdam linked.
 
 ## Setting multiple attributes with one agent link
 
-As you may have noticed we do two calls in the above example, one to get the humidity and one to get the temperature. You can imagine that when collecting all the attributes this way, and for several assets, will greatly increase the number of calls you make. This can be optimized by doing one call and extracting all the values you need and pushing them to the attributes of your assets. We will recreate the example above using this method.
+As you may have noticed we do two calls in the above example, one to get the humidity and one to get the temperature. You can imagine that when collecting all the attributes this way, and for several assets, will greatly increase the number of calls you make. This can be optimized by doing one call and extracting all the values you need and pushing them to the attributes of your assets. At the moment `Attribute links` does not have an auto-generated UI, so we'll have to add JSON code. We will recreate the example above using this method.
 
 1. First lets remove the agent links from the `Weather` asset attributes `temperature` and `humidity`.
    * Go to the edit mode in the `Weather` asset
@@ -105,25 +73,12 @@ As you may have noticed we do two calls in the above example, one to get the hum
 3. Now we create a custom attribute that will hold the weather data we collect so that we can push the values from there. You could also do this from the `HTTP API Agent` asset or any other asset if that makes more sense to you.
    * Click `Add attribute` at the bottom of the list of attributes.
    * Select custom, select the attribute type `JSON object` and give it a name: `weatherData`. Click `Add`
-   * Add the configuration item `Agent link`, `Attribute link` and `Read only` by selecting them in the add configuration item dialog and clicking `Add`.
-4. In the `Agent link` configuration item add the following, again using the ID from your weather agent:
-```
-{
-  "type": "HTTPAgentLink",
-  "id": "501p87wK1bhf6Dh2M5ZQZj",
-  "queryParameters": {
-    "q": [
-      "Rotterdam,nl"
-    ],
-    "units": [
-      "metric"
-    ]
-  },
-  "pollingMillis": 60000,
-  "path": "weather"
-}
-```
-5. In the `attribute link` configuration item add the following, using the ID copied from this assets URL (the asset that has the attributes you want to push the data to):
+   * Add the configuration item `Agent link`, `Attribute links` and `Read only` by selecting them in the add configuration item dialog and clicking `Add`.
+4. In the **Agent link** configuration item add the following, again first selecting your weather agent:
+   * Add parameters to specify what the agent should do and give them the following values:
+      * Polling millis: `60000`
+	  * Path: `weather`
+5. In the **Attribute link** configuration item add the following, using the ID copied from this assets URL (the asset that has the attributes you want to push the data to. E.g. `501p87wK1bhf6Dh2M5ZQZj` if URL is: `https://localhost/main/#!assets/false/501p87wK1bhf6Dh2M5ZQZj`):
 ```
 [
   {
