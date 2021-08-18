@@ -22,7 +22,7 @@
 * [[Overview|User Guide: Agent Overview]]
 * [[HTTP|User Guide: HTTP Agent]]
 * [[KNX|User-Guide: KNX Agent]]
-* [[LoRA|User Guide: LoRa Agent]]
+* [[LoRa|User Guide: LoRa Agent]]
 * [[MQTT|User Guide: MQTT Agent]]
 * [[Simulator|User-Guide: Simulator Agent]]
 * [[SNMP|User-Guide: SNMP Agent]]
