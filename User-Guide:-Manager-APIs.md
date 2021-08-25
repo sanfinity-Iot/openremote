@@ -53,11 +53,9 @@ It is possible to subscribe to [AssetEvents](https://github.com/openremote/openr
 * `attribute/#` - All attribute events in the realm
 * `attribute/+` - All attribute events for direct children of the realm
 * `attribute/{assetId}`- All attribute events for the specified asset
-* `attribute/#/{attributeName}` - All attribute events with specified name in the realm
 * `attribute/+/{attributeName}` - All attribute events for direct children of the realm with specified name
 * `attribute/{assetId}/{attributeName}`- All attribute events with specified name for the specified asset
 * `attribute/{assetId}/#`- All attribute events for descendants of the specified asset
-* `attribute/{assetId}/#/{attributeName}`- All attribute events with specified name for descendants of the specified asset
 * `attribute/{assetId}/+`- All attribute events for direct children of the specified asset
 * `attribute/{assetId}/+/{attributeName}`- All attribute events with specified name for direct children of the specified asset
 
