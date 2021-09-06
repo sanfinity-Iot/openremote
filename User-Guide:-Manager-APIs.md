@@ -42,30 +42,29 @@ Another publish subscribe API, authentication requires a service user client ID 
 * Password: `{secret}`
 
 ### Subscriptions
-It is possible to subscribe to [AssetEvents](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/AssetEvent.java) (topics starting with `asset/`) and/or [AttributeEvents](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java) (topics starting with `attribute/`). The topic structures are as follows:
+It is possible to subscribe to [AssetEvents](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/AssetEvent.java) (topics starting with `{realm}/asset/`) and/or [AttributeEvents](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java) (topics starting with `{realm}/attribute/`). The topic structures are as follows:
 
-* `asset/#` - All asset events in the realm
-* `asset/+`- All asset events for direct children of the realm
-* `asset/{assetId}`- All asset events for the specified asset
-* `asset/{assetId}/#`- All asset events for descendants of the specified asset
-* `asset/{assetId}/+`- All asset events for direct children of the specified asset
-
-* `attribute/#` - All attribute events in the realm
-* `attribute/+` - All attribute events for direct children of the realm
-* `attribute/{assetId}`- All attribute events for the specified asset
-* `attribute/+/{attributeName}` - All attribute events for direct children of the realm with specified name
-* `attribute/{assetId}/{attributeName}`- All attribute events with specified name for the specified asset
-* `attribute/{assetId}/#`- All attribute events for descendants of the specified asset
-* `attribute/{assetId}/+`- All attribute events for direct children of the specified asset
-* `attribute/{assetId}/+/{attributeName}`- All attribute events with specified name for direct children of the specified asset
+* `{realm}/asset/#` - All asset events in the realm
+* `{realm}/asset/+`- All asset events for direct children of the realm
+* `{realm}/asset/{assetId}`- All asset events for the specified asset
+* `{realm}/asset/{assetId}/#`- All asset events for descendants of the specified asset
+* `{realm}/asset/{assetId}/+`- All asset events for direct children of the specified asset
+* `{realm}/attribute/#` - All attribute events in the realm
+* `{realm}/attribute/+` - All attribute events for direct children of the realm
+* `{realm}/attribute/{assetId}`- All attribute events for the specified asset
+* `{realm}/attribute/+/{attributeName}` - All attribute events for direct children of the realm with specified name
+* `{realm}/attribute/{assetId}/{attributeName}`- All attribute events with specified name for the specified asset
+* `{realm}/attribute/{assetId}/#`- All attribute events for descendants of the specified asset
+* `{realm}/attribute/{assetId}/+`- All attribute events for direct children of the specified asset
+* `{realm}/attribute/{assetId}/+/{attributeName}`- All attribute events with specified name for direct children of the specified asset
 
 `attributevalue` topic prefix can be used in place of `attribute` to only return the value of the [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java) rather then the entire event.
 
 ### Publish
 It is possible to publish attribute events to specific assets using the following topics and payloads:
 
-* `attribute`- Payload: [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java)
-* `attributevalue/{assetId}/{attributeName}` - Payload: `JSON` of attribute value
+* `{realm}/attribute`- Payload: [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java)
+* `{realm}/attributevalue/{assetId}/{attributeName}` - Payload: `JSON` of attribute value
 
 ### MQTT custom handlers
 It is possible to inject custom handlers for MQTT messages by implementing the [MQTTCustomHandler](https://github.com/openremote/openremote/blob/master/manager/src/main/java/org/openremote/manager/mqtt/MQTTCustomHandler.java) interface and adding it to the [MQTTBrokerService](https://github.com/openremote/openremote/blob/master/manager/src/main/java/org/openremote/manager/mqtt/MqttBrokerService.java) during startup. The custom handler can choose to intercept messages based on topic, user and/or whether it is a pub or sub request, see javadoc of `MQTTCustomHandler` for more details.
