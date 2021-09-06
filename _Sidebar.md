@@ -60,7 +60,7 @@
 * [[Provisioning and Connecting|User-Guide:-Edge Gateway]]
 
 ## Tutorials
-* [[Open Weather HTTP API|Tutorial: Open Weather API using HTTP Agent]]
+* [[Weather data using HTTP Agent|Tutorial: Open Weather API using HTTP Agent]]
 * [[Connect Your MQTT Client|Tutorial: Connect your MQTT client]]
 
 ## Developer Guide
