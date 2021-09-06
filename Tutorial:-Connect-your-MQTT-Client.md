@@ -31,12 +31,12 @@ In your MQTT client set up a new connection:
 ## Subscribe to attributes using the MQTT API
 In this tutorial we will be looking at specific attributes of a specific asset. There are [many more options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker) of subscribing to (all) updates of assets and attributes. The asset attributes that you will be subscribing to can be written by the user, by rules, or can be a live value gathered through an Agent link with another device in the field. You can imagine this boolean value could toggle a function of the device subscribed to the attribute
 1. Get the ID of the Thing asset by navigating to its asset page and copying the ID in the URL (e.g. `http://localhost:9000/manager/#!assets/false/6xIa9MkpZuR7slaUGB6OTZ` => `6xIa9MkpZuR7slaUGB6OTZ`)
-2. Create a subscription for the subscribeAttribute in your MQTT client with the topic: `attribute/6xIa9MkpZuR7slaUGB6OTZ/subscribeAttribute` 
+2. Create a subscription for the subscribeAttribute in your MQTT client with the topic: `{realm}/attribute/6xIa9MkpZuR7slaUGB6OTZ/subscribeAttribute` 
 3. In the view mode of the Thing asset in the OpenRemote Manager, write a new value to the 'Subscribe attribute' by clicking the checkbox.
 4. Verify that you see the value (`true`/`false`) coming in on your MQTT client!
 
 ## Publish attribute values from the MQTT client
 You can publish data from your MQTT client (device) to the OpenRemote manager so that you can monitor the device and create rules.
-1. Define the correct topic. For directly writing an attribute value: attributevalue/{assetID}/{attributeName}. So in our case this will be `attributevalue/6xIa9MkpZuR7slaUGB6OTZ/writeAttribute`
+1. Define the correct topic. For directly writing an attribute value: {realm}/attributevalue/{assetID}/{attributeName}. So in our case this will be `{realm}/attributevalue/6xIa9MkpZuR7slaUGB6OTZ/writeAttribute`
 2. Send the JSON over this topic. For a Number, this is really simple: `{23}`
 3. Go to the Manager and check if the value updated!
