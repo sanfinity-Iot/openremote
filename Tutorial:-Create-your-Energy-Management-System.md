@@ -13,7 +13,7 @@ main attributes: power and power forecast
 ### PV Solar
 specific attributes
 
-agents: eg. Solar Edge, 
+#### agents: eg. Solar Edge, 
 
 forecast: Forecast.Solar
 
