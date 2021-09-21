@@ -33,13 +33,17 @@ It is also possible to emulate the request response nature of the HTTP API in or
 For more details on the structure of messages please refer to the `javadoc` of each object type for detailed information.
 
 ## MQTT API (MQTT Broker)
-Another publish subscribe API, authentication requires a service user client ID and secret and is done using standard `MQTT` username and password mechanism, to connect to the broker:
+Another publish subscribe API, authentication requires a service user username and secret and is done using standard `MQTT` username and password mechanism, to connect to the broker:
 
 * Host: Host of the manager (e.g. `demo.openremote.io`)
 * Port: 8883 (if running with SSL i.e. the standard stack with reverse SSL proxy) 1883 (if running without SSL proxy)
 * Encryption/TLS: true (port 8883) false (port 1883)
 * Username: `{realm}:{username}`
 * Password: `{secret}`
+* ClientId: any thing you like
+
+#### Note
+It's important that the `ClientId` in the topic matches the one in the MQTT credentials.
 
 ### Subscriptions
 It is possible to subscribe to [AssetEvents](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/AssetEvent.java) (topics starting with `{realm}/{clientId}/asset/`) and/or [AttributeEvents](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java) (topics starting with `{realm}/{clientId}/attribute/`). The topic structures are as follows:
@@ -60,9 +64,6 @@ It is possible to subscribe to [AssetEvents](https://github.com/openremote/openr
 * `{realm}/{clientId}/attribute/{attributeName}`- All attribute events for the specific attribute of all assets
 
 `attributevalue` topic prefix can be used in place of `attribute` to only return the value of the [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java) rather then the entire event.
-
-#### Note
-It's important that the clientId in the topic matches the one in the MQTT credentials.
 
 ### Publish
 It is possible to publish attribute events to specific assets using the following topics and payloads:
