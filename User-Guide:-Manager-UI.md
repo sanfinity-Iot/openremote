@@ -137,7 +137,7 @@ _Figure 11. Several OpenRemote instances can be interconnected, e.g. connecting 
 
 ## Languages
 
-OpenRemote currently supports 5 languages: English, German, Spanish, French and Dutch.
+OpenRemote currently supports 8 languages: English, German, French, Spanish, Portuguese, Italian, Chinese, and Dutch.
 
 ## Logs
 
