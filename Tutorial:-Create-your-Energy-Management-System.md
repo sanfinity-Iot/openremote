@@ -5,34 +5,34 @@
 Purpose of optimisation: overall financial savings or carbon savings
 Describe asset structure within the optimisation group
 
-#Electricity assets and attributes
+# Electricity assets and attributes
 
-##Electricity Producer
+## Electricity Producer
 main attributes: power and power forecast
 
-###PV Solar
+### PV Solar
 specific attributes
 forecasting
 
-###Wind Turbine
+### Wind Turbine
 specific attributes
 forecasting
 
-##Electricity Consumer
+## Electricity Consumer
 main attributes: power and power forecast
 
-##Electricity Battery
+## Electricity Battery
 main attributes 
 simulator
 
-##Electricity Charger
+## Electricity Charger
 
-##Electric Vehicle
+## Electric Vehicle
 
-##Energy supplier
+## Energy supplier
 Using agile tariffs
 
-#Optimisation
+# Optimisation
 enabling
 financial weighting and interval size
 carbon and financial saving
