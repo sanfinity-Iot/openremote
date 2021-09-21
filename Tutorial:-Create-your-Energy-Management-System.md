@@ -12,25 +12,35 @@ main attributes: power and power forecast
 
 ### PV Solar
 specific attributes
-forecasting
+agents: eg. Solar Edge, 
+forecast: Forecast.Solar
 
 ### Wind Turbine
 specific attributes
-forecasting
+agents: eg. 
+forecast: OpenWeather
 
 ## Electricity Consumer
 main attributes: power and power forecast
+agents: eg.
+forecast: weighted historical moving average
 
 ## Electricity Battery
 main attributes 
-simulator
+agents: eg. simulator
+forecast: simulator
 
 ## Electricity Charger
+main attributes: powerMax, energyImportTotal
+agents: eg. OCPP, Unicorn
 
 ## Electric Vehicle
+main attributes: power and setpoint power
+agents: brands or aggregators (eg. Masternaut)
 
 ## Energy supplier
 Using agile tariffs
+agents: EPEX tariffs
 
 # Optimisation
 enabling
