@@ -1,6 +1,6 @@
 **THIS PAGE IS WORK IN PROGRESS**
 
-#Introduction
+# Introduction
 
 Purpose of optimisation: overall financial savings or carbon savings
 Describe asset structure within the optimisation group
