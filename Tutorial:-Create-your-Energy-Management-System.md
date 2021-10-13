@@ -34,6 +34,7 @@ set location
 #### Forecast service
 
 **NOW:** API credentials for Forecast.Solar need to be set in provisioning code before deploying OpenRemote. Add a config item 'Include in forecast solar service' in 'power' attribute.
+
 **WISH:** Set up a connection to Forecast.Solar using the Forecast.solar Agent. Next, when the config item 'Include in forecast solar service' is added to the 'power' attribute of a PV Solar asset, the predicted data points will be added to this attribute, using the location of the PV solar asset.
 
 ### Wind Turbine
@@ -43,6 +44,7 @@ set location
 #### Forecast service
 
 **NOW:** OpenWeather Agent to be set up, with rule for windpower forecast.
+
 **WISH:** Set up a connection to OpenWeather using the OpenWeather Agent. Next, when the config item 'Include in forecast wind service' is added to the 'power' attribute of a Wind turbine asset, the predicted data points will be added to this attribute, using the location of the Wind turbine asset.
 
 ## Electricity Consumer
