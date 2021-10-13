@@ -6,18 +6,11 @@ It describes how you can build your own energy management system. Some features 
 
 **WISH:** the way we foresee it to work. See this as user requirements. And feel to comment on it and share your wishes.
 
-
 # Introduction
 
 OpenRemote can be used as an Energy Management System (EMS), which can schedule energy consuming devices and storage devices, taking into account your renewable energy producers, agile tariffs from your energy provider and required charge schedules for your electric vehicles. 
 
-In this electricity example, an optimisation service will control the setpoint power of the connected batteries and electric vehicles, considering all connected 'consumers' and 'producers', their forecasted values, as well as
-In this tutorial we explain how to set it up.
-
-An optimisation service will control
-Purpose of optimisation: overall financial savings or carbon savings
-
-Describe asset structure within the optimisation group
+In this electricity example, we are connecting a series of consumers: an energy meter, chargers, a series of vehicles; a series of producers: solar panels and a windturbine; and a static battery. Secondly, we are adding the forecasting services for both consumption and production and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles. The optimisation will either target the highest financial savings or carbon savings, based on your preference.
 
 # Electricity assets and attributes
 
