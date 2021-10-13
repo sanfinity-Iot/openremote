@@ -1,4 +1,4 @@
-**THIS PAGE IS WORK IN PROGRESS**
+**THIS PAGE IS WORK IN PROGRESS AND WE WELCOME YOUR FEEDBACK**
 
 It describes how you can build your own energy management system. Some features are described with two versions:
 
