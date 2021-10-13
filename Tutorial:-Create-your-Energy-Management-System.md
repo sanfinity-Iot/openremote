@@ -14,6 +14,20 @@ In this electricity example, we are connecting a series of consumers: an energy 
 
 # Electricity assets and attributes
 
+We assume you have set up the latest version of OpenRemote. If not, check out the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md) first.
+
+If you navigate to 'Assets' and add an asset, using the '+' button. You will see a list of asset types. A subset of these asset types are intended to set up your own EMS. They include the relevant attributes and configuration setting such that the optimisation service can recognise and manage them.
+
+We'll be setting up a series of these assets, step-by-step.
+
+## Optimisation
+
+The Optimisation asset is actually representing the optimisation service. It will take into account all assets which are added as children of this asset. So first add an Optimisation asset at the root of your asset tree on the left. We'll explain later how the optimisation actually works, after adding all the other assets.
+
+financial weighting and interval size
+
+carbon and financial saving
+
 ## Electricity Producer
 main attributes: power and power forecast
 
