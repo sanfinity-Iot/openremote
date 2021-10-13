@@ -12,11 +12,11 @@ OpenRemote can be used as an Energy Management System (EMS), which can schedule 
 
 In this electricity example, we are connecting a series of consumers: an energy meter, chargers, a series of vehicles; a series of producers: solar panels and a windturbine; and a static battery. Secondly, we are adding the forecasting services for both consumption and production and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles. The optimisation will either target the highest financial savings or carbon savings, based on your preference.
 
-# Electricity assets and attributes
+# Electricity assets and required agents
 
 We assume you have set up the latest version of OpenRemote. If not, check out the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md) first.
 
-If you navigate to 'Assets' and add an asset, using the '+' button. You will see a list of asset types. A subset of these asset types are intended to set up your own EMS. They include the relevant attributes and configuration setting such that the optimisation service can recognise and manage them.
+If you navigate to 'Assets' and add an asset, using the '+' button. You will see a list of asset and agent types. A subset of these asset types are intended to set up your own EMS. They include the relevant attributes and configuration setting such that the optimisation service can recognise and manage them.
 
 We'll be setting up a series of these assets, step-by-step.
 
@@ -25,25 +25,25 @@ We'll be setting up a series of these assets, step-by-step.
 The Optimisation asset is actually representing the optimisation service. It will take into account all assets which are added as children of this asset. So first add an Optimisation asset at the root of your asset tree on the left and give it a name. We'll [explain later](#optimisation-1) how the optimisation actually works, after adding all the other assets.
 
 ## Electricity Producer
-main attributes: power and power forecast
+structure with main attributes: power and power forecast
 
 ### PV Solar
 specific attributes
+set location
 
-#### Agents 
-eg. Solar Edge, 
+#### Forecast service
 
-#### Forecast
-Forecast.Solar
+**NOW:** API credentials for Forecast.Solar need to be set in provisioning code before deploying OpenRemote. Add a config item 'Include in forecast solar service' in 'power' attribute.
+**WISH:** Set up a connection to Forecast.Solar using the Forecast.solar Agent. Next, when the config item 'Include in forecast solar service' is added to the 'power' attribute of a PV Solar asset, the predicted data points will be added to this attribute, using the location of the PV solar asset.
 
 ### Wind Turbine
 specific attributes
+set location
 
-#### Agents
-eg. 
+#### Forecast service
 
-#### Forecast
-OpenWeather
+**NOW:** OpenWeather Agent to be set up, with rule for windpower forecast.
+**WISH:** Set up a connection to OpenWeather using the OpenWeather Agent. Next, when the config item 'Include in forecast wind service' is added to the 'power' attribute of a Wind turbine asset, the predicted data points will be added to this attribute, using the location of the Wind turbine asset.
 
 ## Electricity Consumer
 main attributes: power and power forecast
