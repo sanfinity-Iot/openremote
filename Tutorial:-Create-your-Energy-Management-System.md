@@ -1,7 +1,9 @@
 **THIS PAGE IS WORK IN PROGRESS**
 
 It describes how you can build your own energy management system. Some features are described with two versions:
+
 **NOW** which describes the current implementation and the way it works now.
+
 **WISH** the way we foresee it to work. See this as user requirements. And feel to comment on it and share your wishes.
 
 
