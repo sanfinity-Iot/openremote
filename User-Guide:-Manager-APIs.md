@@ -68,8 +68,8 @@ It is possible to subscribe to [AssetEvents](https://github.com/openremote/openr
 ### Publish
 It is possible to publish attribute events to specific assets using the following topics and payloads:
 
-* `{realm}/{clientId}/attribute`- Payload: [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java)
-* `{realm}/{clientId}/attributevalue/{assetId}/{attributeName}` - Payload: `JSON` of attribute value
+* `{realm}/{clientId}/attribute/write`- Payload: [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java)
+* `{realm}/{clientId}/attributevalue/write/{assetId}/{attributeName}` - Payload: `JSON` of attribute value
 
 ### MQTT custom handlers
 It is possible to inject custom handlers for MQTT messages by implementing the [MQTTCustomHandler](https://github.com/openremote/openremote/blob/master/manager/src/main/java/org/openremote/manager/mqtt/MQTTCustomHandler.java) interface and adding it to the [MQTTBrokerService](https://github.com/openremote/openremote/blob/master/manager/src/main/java/org/openremote/manager/mqtt/MqttBrokerService.java) during startup. The custom handler can choose to intercept messages based on topic, user and/or whether it is a pub or sub request, see javadoc of `MQTTCustomHandler` for more details.
