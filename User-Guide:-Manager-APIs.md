@@ -68,9 +68,9 @@ Examples:
 
 * `{realm}/{clientId}/attribute/+/#` - All attribute events in the realm
 * `{realm}/{clientId}/attribute/+/+` - All attribute events for direct children of the realm
+* `{realm}/{clientId}/attribute/+/{assetId}`- All attribute events for specified asset
 * `{realm}/{clientId}/attribute/{attributeName}/#` - All attribute events for specified attribute name
 * `{realm}/{clientId}/attribute/{attributeName}/+` - All attribute events for direct child assets of the realm with specified attribute name
-* `{realm}/{clientId}/attribute/+/{assetId}`- All attribute events for specified asset
 * `{realm}/{clientId}/attribute/{attributeName}/{assetId}`- All attribute events for specified asset with specified attribute name
 * `{realm}/{clientId}/attribute/{attributeName}/{assetId}/#`- All attribute events for descendants of the specified asset with specified attribute name
 * `{realm}/{clientId}/attribute/{attributeName}/{assetId}/+`- All attribute events for direct children of the specified asset with specified attribute name
