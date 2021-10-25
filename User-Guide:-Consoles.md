@@ -2,7 +2,10 @@ The OpenRemote Manager is responsive and can be used on mobile devices. To make 
 
 # OpenRemote iOS and Android Apps
 
-OpenRemote includes consoles for iOS and Android. The current apps we are hosting on the Appstore and Google Play Store, direct to OpenRemote Managers we are hosting on the OpenRemote domain, for example demo.openremote.io. When you open the app the first time the app asks for the 'Project' and 'Realm' names. To access the Demo environment, the 'Project' is 'demo' and 'Realm' is 'smartcity'. It will direct the app to https://demo.openremote.io/manager/?realm=smartcity.
+OpenRemote includes consoles for iOS and Android. The current apps we are hosting on the [Appstore](https://apps.apple.com/nl/app/openremote-app/id1526315885?mt=8) and [Google Play Store](https://play.google.com/store/apps/details?id=io.openremote.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1), direct to OpenRemote Managers we are hosting on the OpenRemote domain, for example demo.openremote.io. When you open the app the first time the app asks for the 'Project' and 'Realm' names. To access the Demo environment, the 'Project' is 'demo' and 'Realm' is 'smartcity'. It will direct the app to https://demo.openremote.io/manager/?realm=smartcity.
+
+![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Mobile%20app%20for%20OpenRemote%20Demo.png)
+_Use the OpenRemote app on the Appstore and Google Play Store to access the demo and use location and push notification_
 
 The first time it will ask for permission to use your location and send notifications. If enabled, you can use Rules in the Manager to define a Left-Hand-Side condition, based on a console location, or a Right-Hand-Side action to send a notification to this Console Asset (anonymous) or the Mobile User of this mobile device.
 
