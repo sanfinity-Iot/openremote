@@ -27,17 +27,17 @@ In your MQTT client set up a new connection:
 - Port: `1883` for localhost (no SSL), `8883` for hosted environment (SSL)
 - password: the secret generated for the mqtt service user (you can find it on the mqttuser users page)
 - username: `master:mqttuser` ({realm}:{user})
-- clientID: `client123` (this can be anything you like)
+- clientID: `client123` (this can be anything you like but must be unique - Any existing connection with the same client ID will be replaced)
 
 ## Subscribe to attributes using the MQTT API
 In this tutorial we will be looking at specific attributes of a specific asset. There are [many more options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker) of subscribing to (all) updates of assets and attributes. The asset attributes that you will be subscribing to can be written by the user, by rules, or can be a live value gathered through an Agent link with another device in the field. You can imagine this boolean value could toggle a function of the device subscribed to the attribute
 1. Get the ID of the Thing asset by navigating to its asset page and copying the ID in the URL (e.g. `http://localhost:9000/manager/#!assets/false/6xIa9MkpZuR7slaUGB6OTZ` => `6xIa9MkpZuR7slaUGB6OTZ`)
-2. Create a subscription for the subscribeAttribute in your MQTT client with the topic: `{realm}/{clientId}/attribute/{assetId}/{attributeName}`. So in our case this will be `master/client123/attribute/6xIa9MkpZuR7slaUGB6OTZ/subscribeAttribute`
+2. Create a subscription for the subscribeAttribute in your MQTT client with the topic: `{realm}/{clientId}/attribute/{attributeName}/{assetId}`. So in our case this will be `master/client123/attribute/subscribeAttribute/6xIa9MkpZuR7slaUGB6OTZ`
 3. In the view mode of the Thing asset in the OpenRemote Manager, write a new value to the 'Subscribe attribute' by clicking the checkbox.
 4. Verify that you see the value (`true`/`false`) coming in on your MQTT client!
 
 ## Publish attribute values from the MQTT client
 You can publish data from your MQTT client (device) to the OpenRemote manager so that you can monitor the device and create rules.
-1. Define the correct topic. For directly writing an attribute value: {realm}/{clientID}/attributevalue/{assetID}/{attributeName}. So in our case this will be `master/client123/attributevalue/6xIa9MkpZuR7slaUGB6OTZ/writeAttribute`
-2. Send the JSON over this topic. For a Number, this is really simple: `{23}`
+1. Define the correct topic. For directly writing an attribute value: {realm}/{clientID}/writeattributevalue/{attributeName}/{assetID}. So in our case this will be `master/client123/writeattributevalue/writeAttribute/6xIa9MkpZuR7slaUGB6OTZ`
+2. Send the JSON over this topic. For a Number, this is really simple: `23`
 3. Go to the Manager and check if the value updated!
