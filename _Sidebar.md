@@ -12,6 +12,7 @@
 ### Manager UI
 
 * [[Manager UI|User-Guide:-Manager-UI]]
+* [[On mobile|User-Guide:-Consoles]]
 
 ### Assets & Attributes
 
