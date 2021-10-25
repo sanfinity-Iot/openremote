@@ -1,0 +1,1 @@
+The OpenRemote Manager is responsive and can be used on mobile devices. To make use of the services of mobile devices (e.g. location service and push notifications), there are Android and iOS consoles. 
