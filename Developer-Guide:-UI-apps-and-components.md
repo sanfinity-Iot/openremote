@@ -54,7 +54,7 @@ Doing development on the UI means working on any of:
 You will need the standard tool chain (see [[Preparing the environment|Developer Guide: Preparing the environment]]) to be able to build and run the components and apps. Working on the web applications and/or components will also generally require backend services to interact with, you can either:
 
 * Run a Manager instance in an IDE (refer to [[Setting up an IDE|Developer Guide: Setting up an IDE]])
-* Deploy the Manager using a Docker container (refer to [UI Development profile](./Developer-Guide%3A-Docker-compose-profiles#ui-development-devyml))
+* Deploy the Manager using a Docker container (refer to [UI Development profile](./Developer-Guide%3A-Docker-compose-profiles#ui-development-dev-uiyml))
 
 If you want to create a new `component` or `app` then simply copy an existing one as a template (when creating a `component` then you may need to create a corresponding `demo` which acts as a development harness that can be served by webpack dev server - one demo may act as harness for multiple components).
 
