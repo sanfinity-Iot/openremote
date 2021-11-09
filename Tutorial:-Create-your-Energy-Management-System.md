@@ -55,7 +55,7 @@ Once the Forecast.solar Agent is connected, you have to fill in the following at
 * Panel orientation ('SOUTH' means all panels are oriented in the same South direction; 'EAST WEST' means an East-West configuration)
 * Panel pitch (horizontal is 0 degrees)
 * Power export max (the installed peak capacity in kW)
-* Location of the solar asset. You can do this in the 'MODIFY' model by opening the map modal next to the location attribute and setting the location by double clicking on the map.
+* Location of the solar asset. You can do this in the 'MODIFY' mode by opening the map modal next to the location attribute and setting the location by double clicking on the map.
 
 Now add an additional configuration item 'Include forecast solar service' to the 'power' attribute of your solar asset (see Figure 5). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the power attribute in a chart. The dotted line will represent the forecasted data. 
 
