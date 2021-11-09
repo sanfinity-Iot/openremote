@@ -1,4 +1,4 @@
-**THIS PAGE IS WORK IN PROGRESS AND MERELY A REQUIREMENTS DOCUMENT**
+**THIS PAGE IS WORK IN PROGRESS AND A REQUIREMENTS DOCUMENT AT THIS STAGE**
 
 It describes how you can build your own energy management system. Some features are described with as **WISH**, meaning they are not implemented yet.
 
@@ -21,14 +21,17 @@ We'll be setting up a series of these assets, step-by-step.
 
 ## Optimisation
 
-First add an Optimisation asset is actually representing the optimisation service. It will take into account all assets which are added as children of this asset. So first add an Optimisation asset at the root of your asset tree on the left and give it a name. We'll [explain later](#optimisation-1) how the optimisation actually works, after adding all the other assets.
+An optimisation asset represents the optimisation service. It will take into account all assets which are added as children of this asset. So first add an Optimisation asset at the root of your asset tree on the left and give it a name. We'll [explain later](#optimisation-1) how the optimisation actually works, after adding all the other assets.
 
 ## Electricity Producer
-structure with main attributes: power and power forecast
 
-### PV Solar
-specific attributes
-set location
+We are first adding the (renewable) energy production, by adding either a PV solar Asset (Your solar) and a Wind turbine Asset (Your wind). These assets include a series of standard attributes as sown in figure 2.
+
+![Solar and Wind Asset](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20Solar%20and%20Wind%20Asset.png)
+_Figure 2. The PV Solar asset (left) and the Wind Turbine Asset (right) with their respective attributes._
+
+### PV Solar Asset
+To configure and connect your PV Solar asset to your own solar system you can use the Agents. Most importantly you need to connect the actual power (the attribute called power) and the energy meter value (the attribute called energy export total). In this example we connect a solar system from Solar Edge, using the HTTP Agent (see figure 3. left) and connect the power attribute of the PV Solar Asset to this  
 
 #### Forecast service
 
