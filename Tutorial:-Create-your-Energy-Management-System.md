@@ -51,7 +51,7 @@ Once the Forecast.solar Agent is connected, you have to fill in the following at
 * Location of the solar asset. You can do this in the 'MODIFY' model by opening the map modal next to the location attribute and setting the location by double clicking on the map.
 Now add an additional configuration item 'Include forecast solar service' to the 'power' attribute of your solar asset (see Figure 3). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the power attribute in a chart. The dotted line will represent the forecasted data. 
 
-Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can add another attribute from the optional list, called 'Power forecast'. Add the configuration item 'Include forecast solar service', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', and 'Store data points'.
+Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast solar service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', and 'Store data points'.
 
 ### Wind Turbine
 
@@ -68,16 +68,15 @@ Once the OpenWeather Agent is connected, you have to fill in the following attri
 * Location of the wind turbine asset doesn't need to be set in the wind turbine asset. It's set in the 'OpenWeather' Agent.
 Now add an additional configuration item 'Include forecast wind service' to the 'power' attribute of your wind turbine asset (similar as for your solar asset, see Figure 3). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the power attribute in a chart. The dotted line will represent the forecasted data. 
 
-Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can add another attribute from the optional list, called 'Power forecast'. Add the configuration item 'Include forecast wind service', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', and 'Store data points'.
+Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast wind service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', and 'Store data points'.
 
 ## Electricity Consumer
-main attributes: power and power forecast
 
-#### Agents
-eg.
+To connect electricity consuming devices. You can connect several energy meters by using the 'Electricity Consumer Asset'. Similar as before you should connect the 'Power' and 'Energy Total Import' to your meters by using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview).
 
 #### Forecast
-weighted historical moving average
+
+For the electricity consuming devices you also need the forecasted power. You can enable this by adding the configuration item 'Include time series forecast'. This service will take a weighted moving average, based on your preferences: the 'Repeat period': day -or- week, as well as the 'Time window (number of periods)': the number of periods of the selected 'Repeat period'. When you select 'Repeat period = day' and 'Time window (number of periods) = 21', the forecast service will take into account the historical attribute values at the same time for all days of the previous three weeks.
 
 ## Electricity Battery
 main attributes 
