@@ -26,6 +26,6 @@ Use a value of `*` for `oid` to retrieve the entire trap message.
 ## Additional info
 To test the agent link you can send the following message from a terminal:
 
-`sudo snmptrap -v 2c -c public <you-machines-ip-address> '' 1.3.6.1.4.1.8072.2.3.0.1 1.3.6.1.4.1.8072.2.3.2.1 i 123456`
+`sudo snmptrap -v 2c -c public <your-machines-ip-address> '' 1.3.6.1.4.1.8072.2.3.0.1 1.3.6.1.4.1.8072.2.3.2.1 i 123456`
 
 The SNMP value attribute should now have the value `123456`.
