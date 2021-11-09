@@ -1,20 +1,16 @@
-**THIS PAGE IS WORK IN PROGRESS AND WE WELCOME YOUR FEEDBACK**
+**THIS PAGE IS WORK IN PROGRESS AND MERELY A REQUIREMENTS DOCUMENT**
 
-It describes how you can build your own energy management system. Some features are described with two versions:
-
-**NOW:** which describes the current implementation and the way it works now.
-
-**WISH:** the way we foresee it to work. See this as user requirements. And feel to comment on it and share your wishes.
+It describes how you can build your own energy management system. Some features are described with as **WISH**, meaning they are not implemented yet.
 
 # Introduction
 
-OpenRemote can be used as an Energy Management System (EMS), which can schedule energy consuming devices and storage devices, taking into account your renewable energy producers, agile tariffs from your energy provider and required charge schedules for your electric vehicles. 
+OpenRemote can be used as an Energy Management System (EMS) of your own microgrid. The EMS can schedule the power setpoints of energy consuming devices and storage devices, taking into account your renewable energy producers, agile tariffs from your energy provider and required charge schedules for your electric vehicles. Using an optimisation routine, the scheduling is targeting lowest costs or lowest carbon exhaust.
 
-In this electricity example, we are connecting a series of consumers: an energy meter, chargers, a series of vehicles; a series of producers: solar panels and a windturbine; and a static battery. Secondly, we are adding the forecasting services for both consumption and production and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles. The optimisation will either target the highest financial savings or carbon savings, based on your preference.
+In this electricity example, we will connect a series of consumers: an energy meter, chargers, a series of vehicles; a series of producers: solar panels and a windturbine; and a static battery. Secondly, we are adding the forecasting services for both consumption and production and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles. 
 
 # Electricity assets and required agents
 
-We assume you have set up the latest version of OpenRemote. If not, check out the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md) first.
+We assume you have set up the latest version of OpenRemote. If not, check out the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md) first. Also have a look at how to [use the Manager UI](User-Guide%3A-Manager-UI).
 
 If you navigate to 'Assets' and add an asset, using the '+' button. You will see a list of asset and agent types. A subset of these asset types are intended to set up your own EMS. They include the relevant attributes and configuration setting such that the optimisation service can recognise and manage them.
 
@@ -22,7 +18,7 @@ We'll be setting up a series of these assets, step-by-step.
 
 ## Optimisation
 
-The Optimisation asset is actually representing the optimisation service. It will take into account all assets which are added as children of this asset. So first add an Optimisation asset at the root of your asset tree on the left and give it a name. We'll [explain later](#optimisation-1) how the optimisation actually works, after adding all the other assets.
+First add an Optimisation asset is actually representing the optimisation service. It will take into account all assets which are added as children of this asset. So first add an Optimisation asset at the root of your asset tree on the left and give it a name. We'll [explain later](#optimisation-1) how the optimisation actually works, after adding all the other assets.
 
 ## Electricity Producer
 structure with main attributes: power and power forecast
