@@ -31,7 +31,12 @@ We are first adding the (renewable) energy production, by adding either a PV sol
 _Figure 2. The PV Solar asset (Your solar, on the left) and the Wind Turbine Asset (Your wind, on the right) with their respective attributes._
 
 ### PV Solar Asset
-To configure and connect your PV Solar asset to your own solar system you can use the Agents. Most importantly you need to connect the actual power (the attribute called power) and the energy meter value (the attribute called energy export total). In this example we connect a solar system from Solar Edge, using the HTTP Agent (see figure 3. left) and connect the power attribute of the PV Solar Asset to this  
+To configure and connect your PV Solar asset to your own solar system you can use the Agents. Most importantly you need to connect the actual power (the attribute called power) and the energy meter value (the attribute called energy export total). In this example we connect a solar system from Solar Edge. 
+First add an HTTP Agent and configure the Base URI and the Request Headers to connect to your Solar Edge system (see figure 3, left). 
+Secondly, select your solar asset, select 'Modify' (on the upper right of the asset page) and connect the power attribute of the PV Solar Asset to this Agent. To do this uncollapse the power attribute, add the configuration item 'agent link', and add the required parameters (see figure 3. right for the Solar Edge example). In a similar manner you can connect the other attributes.   
+
+[SolarEdge HTTP Agent and Solar Agent link](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20Solar%20Edge%20Agent%20and%20link.png)
+_Figure 3. The HTTP Agent, configured to connect to Solar Edge (left) and the connection of the power attribute in your solar asset, usig 'Agent link' (right)._
 
 #### Forecast service
 
