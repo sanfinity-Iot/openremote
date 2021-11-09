@@ -8,6 +8,9 @@ OpenRemote can be used as an Energy Management System (EMS) of your own microgri
 
 In this electricity example, we will connect a series of consumers: an energy meter, chargers, a series of vehicles; a series of producers: solar panels and a windturbine; and a static battery. Secondly, we are adding the forecasting services for both consumption and production and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles. 
 
+![Overview EMS](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20overview.png)
+_Figure 1. Overview of Energy Management System and all elements._
+
 # Electricity assets and required agents
 
 We assume you have set up the latest version of OpenRemote. If not, check out the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md) first. Also have a look at how to [use the Manager UI](User-Guide%3A-Manager-UI).
