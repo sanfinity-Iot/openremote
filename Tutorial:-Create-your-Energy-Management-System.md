@@ -4,9 +4,9 @@ It describes how you can build your own energy management system. Some features 
 
 # Introduction
 
-OpenRemote can be used as an Energy Management System (EMS) for your own microgrid. The EMS can schedule the power setpoints of energy consuming devices and storage devices, taking into account your renewable energy producers, agile tariffs from your energy provider and required charge schedules for your electric vehicles. Using an optimisation routine, the scheduling is targeting lowest costs or lowest carbon exhaust.
+OpenRemote can be used as an Energy Management System (EMS) for your own microgrid. The EMS can schedule the power setpoints of energy consuming devices and storage devices, taking into account your renewable energy producers, agile tariffs from your energy provider and required charge schedules for your electric vehicles. Using an optimisation routine, the scheduling is targeting lowest costs or lowest carbon exhaust. Figure 1 gives an overview of all the pieces of an EMS.
 
-In this electricity example, we will connect a series of consumers: an energy meter, a charger with an electric vehicle; a series of producers: solar panels and a wind turbine; and a static battery. Secondly, we are adding the forecasting services for both consumption and production and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles. 
+In this electricity example, we will connect a series of electricity producers: solar panels and a wind turbine, an electricity consumer: an energy meter, a static battery, and a charger with an electric vehicle. Secondly, we are adding the forecasting services for both production and consumption and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles and calculate your savings. 
 
 <kbd>![Overview EMS](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20overview.jpg)</kbd>
 _Figure 1. Overview of Energy Management System and all elements._
@@ -23,7 +23,7 @@ We'll be setting up a series of these assets, step-by-step.
 
 An optimisation asset represents the optimisation service. It will take into account all assets which are added as children of this asset. So first add an Optimisation asset at the root of your asset tree on the left and give it a name. We'll [explain later](#optimisation-1) how the optimisation actually works, after adding all the other assets.
 
-## Electricity Producer
+## Electricity Producers
 
 We are first adding the (renewable) energy production, by adding a PV solar Asset (Your solar) and a Wind turbine Asset (Your wind). These assets include a series of standard attributes as shown in figure 2 and 3.
 
@@ -85,7 +85,7 @@ To connect electricity consuming devices. You can connect several energy meters 
 
 #### Forecast
 
-For the electricity consuming devices you also need the forecasted power. You can enable this by adding the configuration item 'Include time series forecast'. This service will take a weighted moving average, based on your preferences: the 'Repeat period': day -or- week, as well as the 'Time window (number of periods)': the number of periods of the selected 'Repeat period'. When you select 'Repeat period = day' and 'Time window (number of periods) = 21', the forecast service will take into account the historical attribute values at the same time for all days of the previous three weeks.
+For the electricity consuming devices you also need the forecasted power. You can enable this by adding the configuration item 'Include time series forecast'. This service will take a weighted moving average, based on your preferences: the 'Repeat period': day -or- week, the 'Period range (1-7)': the number of historical periods of the selected 'Repeat period', and 'Weight': equal, or exponential. When you select 'Repeat period = day' and 'Period range (number of periods) = 7', and 'Weight = exponential', the forecast service will take into account the historical attribute values at the same time for the previous 7 days and weigh them exponentially. (see [specification] (https://github.com/openremote/openremote/issues/526)
 
 ## Electricity Battery
 main attributes 
@@ -108,7 +108,7 @@ main attributes: power and setpoint power
 #### Agents
 brands or aggregators (eg. Masternaut)
 
-## Energy supplier
+## Electricity supplier
 Using agile tariffs
 
 #### Agents
