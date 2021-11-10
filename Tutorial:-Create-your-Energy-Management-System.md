@@ -85,7 +85,7 @@ To connect electricity consuming devices. You can connect several energy meters 
 
 #### Forecast
 
-For the electricity consuming devices you also need the forecasted power. You can enable this by adding the configuration item 'Include time series forecast'. This service will take a weighted moving average, based on your preferences: the 'Repeat period': day -or- week, the 'Period range (1-7)': the number of historical periods of the selected 'Repeat period', and 'Weight': equal, or exponential. When you select 'Repeat period = day' and 'Period range (number of periods) = 7', and 'Weight = exponential', the forecast service will take into account the historical attribute values at the same time for the previous 7 days and weigh them exponentially. (see [specification] (https://github.com/openremote/openremote/issues/526)
+For the electricity consuming devices you also need the forecasted power. You can enable this by adding the configuration item 'Include time series forecast'. This service will take a weighted moving average, based on your preferences: the 'Repeat period': day -or- week, the 'Period range (1-7)': the number of historical periods of the selected 'Repeat period', and 'Weight': equal, or exponential. When you select 'Repeat period = day' and 'Period range (number of periods) = 7', and 'Weight = exponential', the forecast service will take into account the historical attribute values at the same time for the previous 7 days and weigh them exponentially. (see [specification](https://github.com/openremote/openremote/issues/526))
 
 ## Electricity Battery
 main attributes 
