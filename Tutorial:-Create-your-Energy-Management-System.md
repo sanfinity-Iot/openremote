@@ -6,7 +6,7 @@ It describes how you can build your own energy management system. Some features 
 
 OpenRemote can be used as an Energy Management System (EMS) for your own microgrid. The EMS can schedule the power setpoints of energy consuming devices and storage devices, taking into account your renewable energy producers, agile tariffs from your energy provider and required charge schedules for your electric vehicles. Using an optimisation routine, the scheduling is targeting lowest costs or lowest carbon exhaust.
 
-In this electricity example, we will connect a series of consumers: an energy meter, chargers, a series of vehicles; a series of producers: solar panels and a windturbine; and a static battery. Secondly, we are adding the forecasting services for both consumption and production and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles. 
+In this electricity example, we will connect a series of consumers: an energy meter, a charger with an electric vehicle; a series of producers: solar panels and a wind turbine; and a static battery. Secondly, we are adding the forecasting services for both consumption and production and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles. 
 
 <kbd>![Overview EMS](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20overview.jpg)</kbd>
 _Figure 1. Overview of Energy Management System and all elements._
