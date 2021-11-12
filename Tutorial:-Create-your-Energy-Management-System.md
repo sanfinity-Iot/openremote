@@ -89,12 +89,11 @@ For the electricity consuming devices you also need the forecasted power. You ca
 
 One of the devices the optimisation can actively control is a static battery. You can add an 'Electricity Battery Asset' as child of the Optimisation Asset, and again link it up with an API of your battery system using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview). To make the optimisation work, you will need to link at least the following attributes:
 * Energy level
-* Power
 * Power setpoint
 
 Turn on the attributes 'Supports import' and 'Supports' export. This is an indication for the optimisation that it's allowed to control the power setpoint, both for charging and discharging.
 
-### Battery simulator
+### Battery Simulator
 
 If you don't have a battery but want to simulate it and see what you can achieve in terms of financial or carbon savings, you can use the 'Storage Simulator Agent'. In this tutorial we use that option. 
 
@@ -113,19 +112,32 @@ Also set the specifications of the battery by filling in values for the followin
 * Energy level percentage max
 * Energy level percentage min
 
-## Electricity Charger
-main attributes: powerMax, energyImportTotal
+## Electric Vehicle and a Charger
+The charging of vehicles requires at least an 'Electric vehicle asset', as child of the Optimisation Asset. Optionally you will also add a 'Electric charger asset'. 
 
-#### Agents
-eg. OCPP, Unicorn
+First let us explain how the optimisation with treat a vehicle. The optimisation will see the battery of the vehicle as a regular storage device which it can charge, and in some cases discharge. In addition you can set an 'Energy level schedule' on the vehicle (this is an optional attribute) to safeguard that your vehicle battery has enough energy at the time you need it.
 
-## Electric Vehicle
-main attributes: power and setpoint power
+So to make the optimisation work the following attributes need to be connected for the Electric vehicle asset:
+* Energy level
+* Power setpoint
 
-#### Agents
-brands or aggregators (eg. Masternaut)
+There is a series of attributes on the vehicle you need or can use the make the optimisation work. We'll discuss them one-by-one:
+* Supports import, required for the optimisation to actively control the setpoint power for charging
+* Supports export, required for the optimisation to actively control the setpoint power for discharging. Only to be set when the vehicle and charger support discharging of course.
+* Power import max, required to set the maximum charge power the vehicle can handle
+* Power export max, required to set the maximum discharge power the vehicle can handle
+* Energy level schedule. This sets the hour of the day, for each day of the week, at which the battery needs to be charged at the indicated percentage (see figure 6). It is not required but prevents an empty battery while you need your car to drive somewhere!
+* Energy level percentage max. The optimisation will never charge beyond. Without setting it it will assume 100%
+* Energy level percentage min. If a vehicle get's connected with a lower level, it will immediately start charging until it reaches the minimum level. If not set it will assume 0%.
 
-## Electricity supplier
+In some cases you also want to connect to your charger, and make the vehicle a child of the charger, e.g.:
+* In case you can't control the power setpoint on your vehicle. You will need to link the 'Power setpoint' of your charger to your charging system, using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview). In addition you can use the 'Flow editor' to link the 'Power setpoint' of your vehicle to the 'Power setpoint' of your charger. The optimisation will now set the 'Power setpoint' of your vehicle, which will then be forwarded to the 'Power setpoint' of your charger.
+* In case you want the optimisation to consider both the 'Power import max' of your charger as well of the vehicle, to take the lowest of the two for the 'Power setpoint'. 
+
+<kbd>![Solar Agent link](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Solar%20Power%20Agent%20Link.png)</kbd>
+_Figure 6. The Energy schedule is in a JSON format as shown. Each day of the week (seven days) specifies the required energy level percentage for each hour of the day, starting at midnight. So in the above example the vehicle battery needs to be charged to 90% at 8am on each day_
+
+## Electricity Supplier
 Using agile tariffs
 
 #### Agents
