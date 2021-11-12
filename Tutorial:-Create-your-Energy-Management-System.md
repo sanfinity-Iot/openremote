@@ -139,7 +139,7 @@ In some cases you also want to connect to your charger, and make the vehicle a c
 _Figure 6. The Energy schedule is in a JSON format as shown. Each day of the week (seven days) specifies the required energy level percentage for each hour of the day, starting at midnight. So in the above example the vehicle battery needs to be charged to 90% at 8am on each day_
 
 ## Electricity Supplier
-The optimisation will als. take into account the 'Tariff import' and 'Tariff export' for your electricity. To enable this, first add an 'Electricity supplier asset' as a child of the Optimisation asset. Note that the tariffs are defined as costs. So the 'Tariff import' is normally positive as you pay, while the 'Tariff export' is negative as you earn. You can either set a fixed value for both tariffs, or connect to and API of your supplier, using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview). 
+The optimisation will also take into account the 'Tariff import' and 'Tariff export' for your electricity. To enable this, first add an 'Electricity supplier asset' as a child of the Optimisation asset. Note that the tariffs are defined as costs. So the 'Tariff import' is normally positive as you pay, while the 'Tariff export' is negative as you earn. You can either set a fixed value for both tariffs, or connect to and API of your supplier, using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview). 
 
 In this tutorial we just simulate values by adding a simulator profile. To do that, take the following steps:
 * Add a 'Simulator Agent' at the root of your asset tree. 
