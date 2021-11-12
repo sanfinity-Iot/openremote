@@ -117,7 +117,7 @@ The charging of vehicles requires at least an 'Electric vehicle asset', as child
 
 First let us explain how the optimisation with treat a vehicle. The optimisation will see the battery of the vehicle as a regular storage device which it can charge, and in some cases discharge. In addition you can set an 'Energy level schedule' on the vehicle (this is an optional attribute) to safeguard that your vehicle battery has enough energy at the time you need it.
 
-So to make the optimisation work the following attributes need to be connected for the Electric vehicle asset:
+So to make the optimisation work the following attributes need to be connected for the Electric vehicle asset, using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview):
 * Energy level
 * Power setpoint
 
