@@ -2,9 +2,9 @@
 
 # Introduction
 
-OpenRemote can be used as an Energy Management System (EMS) for your own microgrid. The EMS can schedule the power setpoints of energy consuming devices and storage devices, taking into account your renewable energy producers, agile tariffs from your energy provider and required charge schedules for your electric vehicles. Using an optimisation routine, the scheduling is targeting lowest costs or lowest carbon exhaust. Figure 1 gives an overview of all the pieces of an EMS.
+OpenRemote can be used as an Energy Management System (EMS) for your own microgrid. The EMS schedules the power setpoints of energy consuming devices and storage devices, taking into account renewable energy production (including forecasts), energy consumption (including forecasts), agile tariffs from your energy provider and required charge schedules for your electric vehicles. The optimisation routine targets lowest costs or lowest carbon exhaust. Figure 1 gives an overview of all the pieces of an EMS.
 
-In this electricity example, we will connect a series of electricity producers: solar panels and a wind turbine, an electricity consumer: an energy meter, a static battery, and a charger with an electric vehicle. Secondly, we are adding the forecasting services for both production and consumption and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicles and calculate your savings. 
+In this electricity example, we will connect a series of electricity producers: solar panels and a wind turbine, an electricity consumer: an energy meter, a static battery, and a charger with an electric vehicle. We are adding the forecasting services for both production and consumption and connecting the agile supplier tariffs. Finally, the optimisation service will control the setpoint power of the battery, as well as the vehicle and calculate your savings. 
 
 <kbd>![Overview EMS](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20overview.jpg)</kbd>
 _Figure 1. Overview of Energy Management System and all elements._
@@ -53,11 +53,11 @@ Once the Forecast.solar Agent is connected, you have to fill in the following at
 * Panel orientation ('SOUTH' means all panels are oriented in the same South direction; 'EAST WEST' means an East-West configuration)
 * Panel pitch (horizontal is 0 degrees)
 * Power export max (the installed peak capacity in kW)
-* Location of the solar asset. You can do this in the 'MODIFY' mode by opening the map modal next to the location attribute and setting the location by double clicking on the map.
+* Location. You can do this in the 'MODIFY' mode by opening the map modal next to the location attribute and setting the location by double clicking on the map.
 
 Now add an additional configuration item 'Include forecast solar service' to the 'power' attribute of your solar asset (see Figure 5). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the power attribute in a chart. The dotted line will represent the forecasted data. 
 
-Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast solar service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', and 'Store data points'.
+Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast solar service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', 'Set actual value with forecast', and 'Store data points'.
 
 ### Wind Turbine
 
@@ -71,11 +71,11 @@ Once the OpenWeather Agent is connected, you have to fill in the following attri
 * Wind speed max (also called cut-off speed, the maximum speed at which a turbine is normally operating; above it will be turned down; in m/s)
 * Wind speed min (also called cut-in speed, the minimum speed required to operate the wind turbine; in m/s)
 * Wind speed reference (also called nominal or rated speed; in m/s)
-* Location of the wind turbine asset doesn't need to be set in the wind turbine asset. It's set in the 'OpenWeather' Agent.
+* Location. You can do this in the 'MODIFY' mode by opening the map modal next to the location attribute and setting the location by double clicking on the map.
 
 Now add an additional configuration item 'Include forecast wind service' to the 'power' attribute of your wind turbine asset (similar as for your solar asset, see Figure 5). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the power attribute in a chart. The dotted line will represent the forecasted data. 
 
-Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast wind service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', and 'Store data points'.
+Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast wind service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', 'Set actual value with forecast', and 'Store data points'.
 
 ## Electricity Consumer
 
@@ -83,16 +83,25 @@ To connect electricity consuming devices. You can connect several energy meters 
 
 #### Forecast
 
-For the electricity consuming devices you also need the forecasted power. You can enable this by adding the configuration item 'Include time series forecast'. This service will take a weighted moving average, based on your preferences: the 'Repeat period': day -or- week, the 'Period range (1-7)': the number of historical periods of the selected 'Repeat period', and 'Weight': equal, or exponential. When you select 'Repeat period = day' and 'Period range (number of periods) = 7', and 'Weight = exponential', the forecast service will take into account the historical attribute values at the same time for the previous 7 days and weigh them exponentially. (see [specification](https://github.com/openremote/openremote/issues/526))
+For the electricity consuming devices you also need the forecasted power. You can enable this by adding the configuration item 'Include time series forecast'. This service will take an exponential weighted moving average, based on your preferences: the 'Repeat period': day -or- week, the 'Period range (1-7)': and the number of historical periods of the selected 'Repeat period'. When you select 'Repeat period = day' and 'Period range (number of periods) = 7', the forecast service will take into account the historical attribute values at the same time for the previous 7 days and weigh them exponentially. (see [specification](https://github.com/openremote/openremote/issues/526))
 
 ## Electricity Battery
-main attributes 
 
-#### Agents
-eg. simulator
+One of the devices the optimisation can actively control is a static battery. You can add an 'Electricity Battery Asset', and agin link it up with an API of your battery system using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview). To make the optimisation work, you will need to link at least the following attributes:
+* Energy level
+* Power
+* Power setpoint
 
-#### Forecast
-simulator
+If you don't have a battery but want to simulate it and see what you can achieve in terms of financial or carbon savings, you can use the 'Storage Simulator Agent'. In this tutorial we use that option. So add the 'Storage Simulator Agent' first. Than add the configuration item 'Agent link' and link to the 'Storage Simulator Agent', for six attributes:
+
+* Energy level
+* Energy level percentage
+* Power
+* Power setpoint
+* Energy import total
+* Energy export total
+
+In both cases turn on the attributes 'Supports import' and 'Supports' export. This is an indication for the optimisation that it's allowed to control the power setpoint, both for charging and discharging.
 
 ## Electricity Charger
 main attributes: powerMax, energyImportTotal
