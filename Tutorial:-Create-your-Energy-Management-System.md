@@ -175,6 +175,8 @@ You have now set everything to run your optimisation. Once optimisation is enabl
 
 _Figure 9. The asset tree of your EMS on the left, with the Optimisation asset selected_
 
+##What are you saving with optimisation?##
+
 So now you have your EMS running. The last item to explain are the two attributes 'Financial saving' and 'Carbon saving'. These two values are reflecting the EXTRA savings you are achieving due to the optimisation using the static battery in a smart way and schedule the charging of your vehicle at the best time. To know your electricity bill you should of course count up the total imported energy times the import tariff, and the total exported energy times the export tariff... 
 
 
