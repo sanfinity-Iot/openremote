@@ -94,7 +94,7 @@ One of the devices the optimisation can actively control is a static battery. Yo
 
 Turn on the attributes 'Supports import' and 'Supports' export. This is an indication for the optimisation that it's allowed to control the power setpoint, both for charging and discharging.
 
-#### Using the battery simulator
+### Battery simulator
 
 If you don't have a battery but want to simulate it and see what you can achieve in terms of financial or carbon savings, you can use the 'Storage Simulator Agent'. In this tutorial we use that option. 
 
