@@ -135,6 +135,7 @@ In some cases you also want to connect to your charger, and make the vehicle a c
 * In case you want the optimisation to consider both the 'Power import max' of your charger as well of the vehicle, to take the lowest of the two for the 'Power setpoint'. 
 
 <kbd>![Energy schedule JSON format](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Energylevel%20schedule%20format.png)</kbd>
+
 _Figure 6. The Energy schedule is in a JSON format as shown. Each day of the week (seven days) specifies the required energy level percentage for each hour of the day, starting at midnight. So in the above example the vehicle battery needs to be charged to 90% at 8am on each day_
 
 ## Electricity Supplier
