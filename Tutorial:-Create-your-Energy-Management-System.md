@@ -156,13 +156,25 @@ _Figure 7. Selecting the parameter 'Replay data' within the 'Agent link' configu
 
 _Figure 8. An example for the 'Replay data' for the Export tariff you want to use, indicating a tariff per timestamp (seconds). The negative value indicates you are earning money_
 
-
 # Optimisation
-enabling
 
-financial weighting and interval size
+The asset tree of the EMS you have build should now look like the one in figure 8. The optimisation routine can be configured in the optimisation asset:
+* Financial weighting (between 0 and 100%). This indicates whether you are optimising on costs and or carbon. We have only explained the agile financial cost tariffs for the supplier, so set this value at 100%. In a similar manner, using carbon tariffs (an optional attribute of the Supplier asset) you can optimise on carbon by setting the 'Financial weighting at 0'.
+* Interval size (the interval at which the optimisation runs again, in hours)
+* Optimisation disabled (an on/off). This attribute can only be changed in the 'MODIFY' mode, to (temporarily) disable optimisation.
 
-carbon and financial saving
+You have now set everything to run your optimisation. Once optimisation is enabled the optimisation will control and schedule all 'Power setpoints' of assets which have the 'Support import' and/or 'Support export' enabled. It will make the following considerations:
+* Take into account the net resulting power towards the grid (export) or from the grid (import) as the difference between export and import tariffs influence the resulting costs
+* Take into account the worst export tariffs, as this is the preferred time to charge batteries or vehicles. You would be earning the least by selling.
+* Take into account the highest import tariffs, as this is the preferred time to discharge batteries or vehicles. You would pay the highest tariffs if you buy electricity.
+* Take the Energy level schedule of your vehicle into considerations as well as their Energy level percentage min, and always take care that the energy levels are met in time.
+* Prioritise the different batteries, in this case your static battery and your vehicle, based on the so called Levelised cost of Storage (LCOS). LCOS is the additional costs of charging or discharging a battery. It reflects the costs of your battery divided by the capacity times the maximum number of charging cycles, so representing an amortisation. This can be implemented by adding the optional attributes 'Tariff import' and 'Tariff export' to your Electric vehicle asset and your Battery. Note that you should keep the 'Tariff import' value for your vehicle at '0' as charging your vehicle is anyhow required to be able to drive, and the optimisation will not introduce extra charge cycles. We haven't included this in our tutorial and recommend to read-up expert articles before applying. 
+
+<kbd>![EMS asset tree](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Asset%20tree%20and%20optimisation%20asset.png)</kbd>
+
+_Figure 9. The asset tree of your EMS on the left, with the Optimisation asset selected_
+
+So now you have your EMS running. The last item to explain are the two attributes 'Financial saving' and 'Carbon saving'. These two values are reflecting the EXTRA savings you are achieving due to the optimisation using the static battery in a smart way and schedule the charging of your vehicle at the best time. To know your electricity bill you should of course count up the total imported energy times the import tariff, and the total exported energy times the export tariff... 
 
 
 
