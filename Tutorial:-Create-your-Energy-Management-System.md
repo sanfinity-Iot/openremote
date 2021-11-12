@@ -158,7 +158,7 @@ _Figure 8. An example for the 'Replay data' for the Export tariff you want to us
 
 # Optimisation
 
-The asset tree of the EMS you have build should now look like the one in figure 8. The optimisation routine can be configured in the optimisation asset:
+The asset tree of the EMS you have build should now look like the one in figure 9. The optimisation routine can be configured in the optimisation asset:
 * Financial weighting (between 0 and 100%). This indicates whether you are optimising on costs and or carbon. We have only explained the agile financial cost tariffs for the supplier, so set this value at 100%. In a similar manner, using carbon tariffs (an optional attribute of the Supplier asset) you can optimise on carbon by setting the 'Financial weighting at 0'.
 * Interval size (the interval at which the optimisation runs again, in hours)
 * Optimisation disabled (an on/off). This attribute can only be changed in the 'MODIFY' mode, to (temporarily) disable optimisation.
