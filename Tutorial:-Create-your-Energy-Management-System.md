@@ -164,9 +164,10 @@ The asset tree of the EMS you have build should now look like the one in figure 
 * Optimisation disabled (an on/off). This attribute can only be changed in the 'MODIFY' mode, to (temporarily) disable optimisation.
 
 You have now set everything to run your optimisation. Once optimisation is enabled the optimisation will control and schedule all 'Power setpoints' of assets which have the 'Support import' and/or 'Support export' enabled. It will make the following considerations:
-* Take into account the net resulting power towards the grid (export) or from the grid (import) as the difference between export and import tariffs influence the resulting costs
-* Take into account the worst export tariffs, as this is the preferred time to charge batteries or vehicles. You would be earning the least by selling.
-* Take into account the highest import tariffs, as this is the preferred time to discharge batteries or vehicles. You would pay the highest tariffs if you buy electricity.
+* Take into account the net resulting power towards the grid (export) or from the grid (import) as the difference between export and import tariffs influence the resulting costs.
+* Take into account the forecasted power, both for electricity consumers and producers, to forecast when there is a net surplus towards the grid or a net shortage of electricity.
+* Take into account the future export tariffs, as it is preferred to charge batteries or vehicles at the time of lowest export tariffs. At that time you would be earning the least by selling, so better store energy.
+* Take into account the future import tariffs, as it is preferred to discharge batteries or vehicles at the time of highest import tariffs. You would pay the highest tariffs if you buy electricity, so better use your stored energy.
 * Take the Energy level schedule of your vehicle into considerations as well as their Energy level percentage min, and always take care that the energy levels are met in time.
 * Prioritise the different batteries, in this case your static battery and your vehicle, based on the so called Levelised cost of Storage (LCOS). LCOS is the additional costs of charging or discharging a battery. It reflects the costs of your battery divided by the capacity times the maximum number of charging cycles, so representing an amortisation. This can be implemented by adding the optional attributes 'Tariff import' and 'Tariff export' to your Electric vehicle asset and your Battery. Note that you should keep the 'Tariff import' value for your vehicle at '0' as charging your vehicle is anyhow required to be able to drive, and the optimisation will not introduce extra charge cycles. We haven't included this in our tutorial and recommend to read-up expert articles before applying. 
 
