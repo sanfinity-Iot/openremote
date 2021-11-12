@@ -23,7 +23,7 @@ An optimisation asset represents the optimisation service. It will take into acc
 
 ## Electricity Producers
 
-We are first adding the (renewable) energy production, by adding a PV solar Asset (Your solar) and a Wind turbine Asset (Your wind). These assets include a series of standard attributes as shown in figure 2 and 3.
+We are first adding the (renewable) energy production, by adding a PV solar Asset (Your solar) and a Wind turbine Asset (Your wind). Both need to be added as children of the Optimisation Asset. These assets include a series of standard attributes as shown in figure 2 and 3.
 
 <kbd>![Solar Asset](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Solar%20Asset.png)</kbd>
 _Figure 2. The PV Solar asset (Your solar) with the respective attributes._
@@ -79,7 +79,7 @@ Optionally, if you also want to store the forecasted power for comparing it with
 
 ## Electricity Consumer
 
-To connect electricity consuming devices. You can connect several energy meters by using the 'Electricity Consumer Asset'. Similar as before you should connect the 'Power' and 'Energy Total Import' to your meters by using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview).
+To connect electricity consuming devices. You can connect several energy meters by an 'Electricity Consumer Asset', as child of the Optimisation Asset. Similar as before you should connect the 'Power' and 'Energy Total Import' to your meters by using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview).
 
 #### Forecast
 
@@ -87,19 +87,24 @@ For the electricity consuming devices you also need the forecasted power. You ca
 
 ## Electricity Battery
 
-One of the devices the optimisation can actively control is a static battery. You can add an 'Electricity Battery Asset', and agin link it up with an API of your battery system using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview). To make the optimisation work, you will need to link at least the following attributes:
+One of the devices the optimisation can actively control is a static battery. You can add an 'Electricity Battery Asset' as child of the Optimisation Asset, and agin link it up with an API of your battery system using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview). To make the optimisation work, you will need to link at least the following attributes:
 * Energy level
 * Power
 * Power setpoint
 
 If you don't have a battery but want to simulate it and see what you can achieve in terms of financial or carbon savings, you can use the 'Storage Simulator Agent'. In this tutorial we use that option. So add the 'Storage Simulator Agent' first. Than add the configuration item 'Agent link' and link to the 'Storage Simulator Agent', for six attributes:
-
 * Energy level
 * Energy level percentage
 * Power
 * Power setpoint
 * Energy import total
 * Energy export total
+In the case of using the simulator, you should define the specifications of the battery by filling in values for the following attributes:
+* Energy capacity
+* Power export max
+* Power export min
+* Energy level percentage max
+* Energy level percentage min
 
 In both cases turn on the attributes 'Supports import' and 'Supports' export. This is an indication for the optimisation that it's allowed to control the power setpoint, both for charging and discharging.
 
