@@ -99,6 +99,7 @@ If you don't have a battery but want to simulate it and see what you can achieve
 * Power setpoint
 * Energy import total
 * Energy export total
+
 In the case of using the simulator, you should define the specifications of the battery by filling in values for the following attributes:
 * Energy capacity
 * Power export max
