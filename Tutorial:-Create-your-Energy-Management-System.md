@@ -148,13 +148,13 @@ In this tutorial we just simulate values by adding a simulator profile. To do th
 * Add the Parameter 'Replay Data' to 'Agent link' (see figure 7) 
 * Fill in the prices you want to use per time stamp. Note these are costs, so usually positive for import tariffs and negative for export tariffs (see figure 8 for an example).
 
-<kbd>![Energy schedule JSON format](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Energylevel%20schedule%20format.png)</kbd>
+<kbd>![Replay data within Agent link](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Supplier%20Agen%20link%20Replay%20Data.png)</kbd>
 
 _Figure 7. Selecting the parameter 'Replay data' within the 'Agent link' configuration item_
 
-<kbd>![Energy schedule JSON format](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Energylevel%20schedule%20format.png)</kbd>
+<kbd>![Supplier tariff export](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Supplier%20Tariff%20Export.png)</kbd>
 
-_Figure 8. Fill in the 'Replay data' for the tariff you want to use, indicating a tariff per timestamp (seconds)_
+_Figure 8. An example for the 'Replay data' for the Export tariff you want to use, indicating a tariff per timestamp (seconds). The negative value indicates you are earning money_
 
 
 # Optimisation
