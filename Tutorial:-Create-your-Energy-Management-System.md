@@ -139,10 +139,23 @@ In some cases you also want to connect to your charger, and make the vehicle a c
 _Figure 6. The Energy schedule is in a JSON format as shown. Each day of the week (seven days) specifies the required energy level percentage for each hour of the day, starting at midnight. So in the above example the vehicle battery needs to be charged to 90% at 8am on each day_
 
 ## Electricity Supplier
-Using agile tariffs
+The optimisation will als. take into account the 'Tariff import' and 'Tariff export' for your electricity. To enable this, first add an 'Electricity supplier asset' as a child of the Optimisation asset. Note that the tariffs are defined as costs. So the 'Tariff import' is normally positive as you pay, while the 'Tariff export' is negative as you earn. You can either set a fixed value for both tariffs, or connect to and API of your supplier, using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview). 
 
-#### Agents
-EPEX tariffs
+In this tutorial we just simulate values by adding a simulator profile. To do that, take the following steps:
+* Add a 'Simulator Agent' at the root of your asset tree. 
+* For both the 'Tariff export' and 'Tariff import', add the configuration parameter 'Agent link'. 
+* In the 'Agent link' select the 'Simulator Agent' 
+* Add the Parameter 'Replay Data' to 'Agent link' (see figure 7) 
+* Fill in the prices you want to use per time stamp. Note these are costs, so usually positive for import tariffs and negative for export tariffs (see figure 8 for an example).
+
+<kbd>![Energy schedule JSON format](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Energylevel%20schedule%20format.png)</kbd>
+
+_Figure 7. Selecting the parameter 'Replay data' within the 'Agent link' configuration item_
+
+<kbd>![Energy schedule JSON format](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Energylevel%20schedule%20format.png)</kbd>
+
+_Figure 8. Fill in the 'Replay data' for the tariff you want to use, indicating a tariff per timestamp (seconds)_
+
 
 # Optimisation
 enabling
