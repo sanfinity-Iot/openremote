@@ -171,7 +171,7 @@ You have now set everything to run your optimisation. Once optimisation is enabl
 * Take the Energy level schedule of your vehicle into considerations as well as their Energy level percentage min, and always take care that the energy levels are met in time.
 * Prioritise the different batteries, in this case your static battery and your vehicle, based on the so called Levelised cost of Storage (LCOS). LCOS is the additional costs of charging or discharging a battery. It reflects the costs of your battery divided by the capacity times the maximum number of charging cycles, so representing an amortisation. This can be implemented by adding the optional attributes 'Tariff import' and 'Tariff export' to your Electric vehicle asset and your Battery. Note that you should keep the 'Tariff import' value for your vehicle at '0' as charging your vehicle is anyhow required to be able to drive, and the optimisation will not introduce extra charge cycles. We haven't included this in our tutorial and recommend to read-up expert articles before applying. 
 
-<kbd>![EMS asset tree](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Asset%20tree%20and%20optimisation%20asset.png)</kbd>
+<kbd>![EMS asset tree](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Asset%20tree%20and%20optimisation.png)</kbd>
 
 _Figure 9. The asset tree of your EMS on the left, with the Optimisation asset selected_
 
