@@ -134,7 +134,7 @@ In some cases you also want to connect to your charger, and make the vehicle a c
 * In case you can't control the power setpoint on your vehicle. You will need to link the 'Power setpoint' of your charger to your charging system, using any of the existing [Agent Protocol options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Agent-Overview). In addition you can use the 'Flow editor' to link the 'Power setpoint' of your vehicle to the 'Power setpoint' of your charger. The optimisation will now set the 'Power setpoint' of your vehicle, which will then be forwarded to the 'Power setpoint' of your charger.
 * In case you want the optimisation to consider both the 'Power import max' of your charger as well of the vehicle, to take the lowest of the two for the 'Power setpoint'. 
 
-<kbd>![Solar Agent link](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Solar%20Power%20Agent%20Link.png)</kbd>
+<kbd>![https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Energylevel%20schedule%20format.png)</kbd>
 _Figure 6. The Energy schedule is in a JSON format as shown. Each day of the week (seven days) specifies the required energy level percentage for each hour of the day, starting at midnight. So in the above example the vehicle battery needs to be charged to 90% at 8am on each day_
 
 ## Electricity Supplier
