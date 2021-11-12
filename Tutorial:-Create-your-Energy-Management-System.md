@@ -15,7 +15,7 @@ We assume you have set up the latest version of OpenRemote. If not, check out th
 
 If you navigate to 'Assets' and add an asset, using the '+' button. You will see a list of asset and agent types. A subset of these asset types are intended to set up your own EMS. They include the relevant attributes and configuration setting such that the optimisation service can recognise and manage them.
 
-We'll be setting up a series of these assets, step-by-step.
+We'll be setting up a series of these assets, step-by-step, which will give you a structure of you EMS as shown in figure 9.
 
 ## Optimisation
 
