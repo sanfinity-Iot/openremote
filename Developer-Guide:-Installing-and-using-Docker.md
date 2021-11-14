@@ -43,7 +43,7 @@ Assuming all the above is working and correct then if you are using Docker Toolb
 
 The following steps are relevant for an `ODROID C2` but should be similar for other SBCs (note that armbian don't support the RPi at the time of writing so use the Raspbian 64bit OS or similar), the important thing is that you have a 64bit OS which is required to use our docker images because the OpenJDK at the time of writing doesn't have a JIT compiler 32bit JDK for ARM - one is in progress though):
 
-1. Download Armbian (https://dl.armbian.com/odroidc2/Buster_current_minimal) and flash to SD card using Etcher
+1. Download Armbian (https://www.armbian.com/odroid-c2/) and flash to SD card using Etcher
 1. Power on and SSH into ODROID then follow Armbian prompts to change root password and Ctrl-C to skip/abort creating a new user
 1. Install curl `apt-get install curl`
 1. Install docker using convenience script:
