@@ -51,10 +51,10 @@ The following illustrates the connect process which clients can use to auto prov
 ## X.509 Provisioning Request Message
 The provisioning message format for X.509 is as follows:
 
-{
-  “type”: “x509”,
-  “cert”: “...”
-}
+    {
+      “type”: “x509”,
+      “cert”: “...”
+    }
 
 
 The cert field should be in PEM format and must contain the certificate chain up to and including the CA certificate registered within OpenRemote.
