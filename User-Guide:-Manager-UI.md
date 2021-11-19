@@ -172,7 +172,7 @@ You can create a realm by adding a `Realm` name (single word, lower case letters
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)</kbd>
 _Figure 16. Realms can be created to manage multiple independent projects within one OpenRemote instance_
 
-##Auto provisioning of devices
+## Auto provisioning of devices
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Auto%20provisioning%20.png)</kbd>
 _Figure 17. Auto provisioning of devices_
