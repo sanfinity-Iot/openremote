@@ -2,9 +2,9 @@ OpenRemote offers functionality for automatic client and asset provisioning. If 
 
 # Terminology
 
-Client: Refers to the initiator in communication with OpenRemote; the same meaning as in authentication terminology
-Asset: Any asset within the OpenRemote system
-Provisioning: Creation within the OpenRemote system
+* Client: Refers to the initiator in communication with OpenRemote; the same meaning as in authentication terminology
+* Asset: Any asset within the OpenRemote system
+* Provisioning: Creation within the OpenRemote system
 
 # Provisioning Type
 
