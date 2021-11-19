@@ -112,4 +112,4 @@ When the client publishes its’ certificate to OpenRemote it must be the certif
 # See Also
 
 * [Git GitHub, Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
-* [Whitepaper Device Manufacturing Provisioning](https://d1.awsstatic.com/whitepapers/device-manufacturing-provisioning.pdf)
+* [Whitepaper Device Manufacturing and Provisioning with X.509](https://d1.awsstatic.com/whitepapers/device-manufacturing-provisioning.pdf)
