@@ -111,6 +111,71 @@ When the client publishes its’ certificate to OpenRemote it must be the certif
 
 **NOTE: The security of the CA private key(s) is essential, if compromised then the certificate can be marked as revoked within OpenRemote and this will require all client certificates signed by this compromised CA certificate to be replaced at considerable effort.**
 
+# Asset Template
+
+The 'Asset template' defines the asset with attributes, which will be generated. If you define an asset type which exists it will create an asset of that type, otherwise it will create a generic 'Thing Asset' with only the attributes you have defined.
+
+<details><summary>Click to view an example for the 'Asset Template' JSON format.</summary>
+
+```json
+{
+  "version": 0,
+  "name": "Environment Sensor",
+  "accessPublicRead": false,
+  "type": "EnvironmentSensorAsset",
+  "attributes": {
+    "notes": {
+      "type": "text",
+      "value": null,
+      "name": "notes",
+      "meta": {
+        "accessRestrictedRead": true,
+        "accessRestrictedWrite": true
+      }
+    },
+    "relativeHumidity": {
+      "type": "positiveNumber",
+      "value": null,
+      "name": "relativeHumidity",
+      "meta": {
+        "accessRestrictedRead": true,
+        "accessRestrictedWrite": true
+      }
+    },
+    "ozoneLevel": {
+      "type": "positiveInteger",
+      "value": null,
+      "name": "ozoneLevel",
+      "meta": {
+        "accessRestrictedRead": true,
+        "accessRestrictedWrite": true
+      }
+    },
+    "temperature": {
+      "type": "number",
+      "value": null,
+      "name": "temperature",
+      "meta": {
+        "accessRestrictedRead": true,
+        "accessRestrictedWrite": true,
+        "readOnly": true
+      }
+    },
+    "location": {
+      "type": "GEO_JSONPoint",
+      "value": null,
+      "name": "location",
+      "meta": {
+        "accessRestrictedRead": true,
+        "accessRestrictedWrite": true
+      }
+    }
+  }
+}
+```
+
+</details> 
+
 # See Also
 
 * [Git GitHub, Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
