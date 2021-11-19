@@ -56,9 +56,10 @@
 * [[Asset security|User Guide: Asset Security]]
 * [[Linking to Active Directory|Connecting-Keycloak-to-AD-with-LDAP-configuration]]
 
-### Edge Gateways
+### Edge Gateways and Devices
 
-* [[Provisioning and Connecting|User-Guide:-Edge Gateway]]
+* [[OpenRemote as Edge Gateway|User-Guide:-Edge Gateway]]
+* [[Auto provisioning devices|User-Guide:-Auto Provisioning]]
 
 ## Tutorials
 * [[Weather data using HTTP Agent|Tutorial: Open Weather API using HTTP Agent]]
