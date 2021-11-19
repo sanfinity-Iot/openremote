@@ -59,7 +59,7 @@
 ### Edge Gateways and Devices
 
 * [[OpenRemote as Edge Gateway|User-Guide:-Edge Gateway]]
-* [[Auto provisioning devices|User-Guide:-Auto Provisioning]]
+* [[Auto provisioning devices and users|User-Guide:-Auto Provisioning]]
 
 ## Tutorials
 * [[Weather data using HTTP Agent|Tutorial: Open Weather API using HTTP Agent]]
