@@ -1,5 +1,7 @@
 OpenRemote offers functionality for automatic client and asset provisioning. If you build and distribute your own hardware devices, you can use this mechanism to have your devices automatically register and connect to OpenRemote.
 
+When the auto provisioning is configured, an authorised device will first create a service user in OpenRemote, if it not already exists. Secondly it will create an asset in the specified OpenRemote Realm, with the attributes, using the 'Asset template'. Based on the 'Roles' the device can now communicate with this asset.
+
 # Terminology
 
 * Client: Refers to the initiator in communication with OpenRemote; the same meaning as in authentication terminology
@@ -111,9 +113,9 @@ When the client publishes its’ certificate to OpenRemote it must be the certif
 
 **NOTE: The security of the CA private key(s) is essential, if compromised then the certificate can be marked as revoked within OpenRemote and this will require all client certificates signed by this compromised CA certificate to be replaced at considerable effort.**
 
-# Asset Template
+# Asset template
 
-The 'Asset template' defines the asset with attributes, which will be generated. If you define an asset type which exists it will create an asset of that type, otherwise it will create a generic 'Thing Asset' with only the attributes you have defined.
+The 'Asset template' (see the example below) defines the asset with attributes, which will be generated. If you define a type for the Asset which is an existing type, it will create an asset of that type. Otherwise it will create a generic 'Thing Asset' with only the attributes you have defined. Note that you have to explicitly mention all the attributes which you want the device to be able to write and/or read to. 
 
 <details><summary>Click to view an example for the 'Asset Template' JSON format.</summary>
 
