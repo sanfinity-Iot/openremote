@@ -174,6 +174,8 @@ _Figure 16. Realms can be created to manage multiple independent projects within
 
 ## Auto provisioning of devices
 
+If you are an OEM, developing and producing your own hardware, you can provision your devices and OpenRemote to automatically have your devices connecting, once they get online. Using certificates (we currently support X.509) your devices will register and automatically generate and connect to an asset of a defined type in the OpenRemote Manager (see figure 17). For details about using 'Auto provisioning', check out the wiki.
+
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Auto%20provisioning%20.png)</kbd>
 _Figure 17. Auto provisioning of devices_
 
