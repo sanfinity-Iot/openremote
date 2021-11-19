@@ -1,9 +1,10 @@
 OpenRemote offers functionality for automatic client and asset provisioning. If you build and distribute your own hardware devices, you can use this mechanism to have your devices automatically register and connect to OpenRemote.
 
 # Terminology
-Client - Refers to the initiator in communication with OpenRemote; the same meaning as in authentication terminology
-Asset - Any asset within the OpenRemote system
-Provisioning - Creation within the OpenRemote system
+
+Client: Refers to the initiator in communication with OpenRemote; the same meaning as in authentication terminology
+Asset: Any asset within the OpenRemote system
+Provisioning: Creation within the OpenRemote system
 
 # Provisioning Type
 
@@ -27,32 +28,31 @@ This mechanism is less secure especially if the shared secret is stored in an ac
 
 The following illustrates the connect process which clients can use to auto provision a service user and optionally an asset whose ID is generated using a UNIQUE_ID provided by the client; the client is then authenticated and the asset is then returned to the client.
 
-
-
+<kbd>![Auto provisioning Connect flow](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Auto%20provisioning%20Connect%20flow.png)</kbd>
 
 ## X.509 Client Certificate Validation
 
-Find X.509 realm config whose CA cert subject matches the client cert issuer
-Check client certificate has been signed by the CA
-Extract client certificate subject ‘CN’ value
-Check it matches UNIQUE_ID
+1. Find X.509 realm config whose CA cert subject matches the client cert issuer
+2. Check client certificate has been signed by the CA
+3. Extract client certificate subject ‘CN’ value
+4. Check it matches UNIQUE_ID
 
 ## Symmetric Key Validation
 
 **NOT YET IMPLEMENTED**
 
-Regenerate HMAC using shared secret and UNIQUE_ID and check it matches
-Find realm config match where HMAC generated using secret matches
+1. Regenerate HMAC using shared secret and UNIQUE_ID and check it matches
+2. Find realm config match where HMAC generated using secret matches
 
 # Message Schema
 
 ## X.509 Provisioning Request Message
 The provisioning message format for X.509 is as follows:
 
-{
-  “type”: “x509”,
-  “cert”: “...”
-}
+`{`
+  `“type”: “x509”,`
+  `“cert”: “...”`
+`}`
 
 The cert field should be in PEM format and must contain the certificate chain up to and including the CA certificate registered within OpenRemote.
 
