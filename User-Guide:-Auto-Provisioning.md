@@ -49,13 +49,11 @@ The following illustrates the connect process which clients can use to auto prov
 ## X.509 Provisioning Request Message
 The provisioning message format for X.509 is as follows:
 
-     {
+{
+  “type”: “x509”,
+  “cert”: “...”
+}
 
-      “type”: “x509”,
-
-      “cert”: “...”
-
-     }
 
 The cert field should be in PEM format and must contain the certificate chain up to and including the CA certificate registered within OpenRemote.
 
@@ -65,26 +63,27 @@ The cert field should be in PEM format and must contain the certificate chain up
 
 The provisioning message format for HMAC is as follows:
 
-{
-  “type”: “hmac-sha256”,
-  “code”: “...”
-}
+    {
+      “type”: “hmac-sha256”,
+      “code”: “...”
+    }
+
 The code field should be the base64 encoded HMAC specific to this client.
 
 ## Success Response Message
 
-{
-  “type”: “success”,
-  “realm”: “REALM_NAME”,
-  “asset”: {...}
-}
+    {
+      “type”: “success”,
+      “realm”: “REALM_NAME”,
+      “asset”: {...}
+    }
 
 ## Error Response Message
 
-{
-  “type”: “error”,
-  “error”: “ERROR_TYPE”
-}
+    {
+      “type”: “error”,
+      “error”: “ERROR_TYPE”
+    }
 
 ### Error Type
 
