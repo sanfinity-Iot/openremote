@@ -28,7 +28,9 @@ This mechanism is less secure especially if the shared secret is stored in an ac
 
 The following illustrates the connect process which clients can use to auto provision a service user and optionally an asset whose ID is generated using a UNIQUE_ID provided by the client; the client is then authenticated and the asset is then returned to the client.
 
-<kbd>![Auto provisioning Connect flow](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Auto%20provisioning%20Connect%20flow.png)</kbd>
+<kbd>![Auto provisioning Connect flow](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Auto%20Provisioning%20Connect%20flow.png)</kbd>
+
+**NOTE THAT THE WHITELISTING AND BLACKLISTING, IS NOT YET IMPLEMENTED. THIS FUNCTION ENHANCES SECURITY AS ONLY DEVICES FROM WITHIN SPECIFIC IP ADDRESSES ARE ALLOWED TO CONNECT, OR DEVICES FROM SPECIFIC IP ADDRESSES ARE NEVER ALLOWED TO CONNECT**
 
 ## X.509 Client Certificate Validation
 
