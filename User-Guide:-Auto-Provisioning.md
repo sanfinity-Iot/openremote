@@ -107,7 +107,7 @@ Client certificate generation is done using standard tooling e.g. openssl:
 
 When the client publishes its’ certificate to OpenRemote it must be the certificate chain including the intermediate CA certificate that was uploaded to OpenRemote and this must be in the PEM format. Client certificates can take place within the manufacturing environment without any external dependencies. 
 
-NOTE: The security of the CA private key(s) is essential, if compromised then the certificate can be marked as revoked within OpenRemote and this will require all client certificates signed by this compromised CA certificate to be replaced at considerable effort.
+**NOTE: The security of the CA private key(s) is essential, if compromised then the certificate can be marked as revoked within OpenRemote and this will require all client certificates signed by this compromised CA certificate to be replaced at considerable effort.**
 
 # See Also
 
