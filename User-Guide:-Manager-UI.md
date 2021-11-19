@@ -153,9 +153,9 @@ On the account page you can (re)set you personal information or password. You ca
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Account%20(2).png)</kbd>
 _Figure 13. The account page with contact details (left) and reset passwords (right)._
 
-If you have the correct access rights (role or permissions) for it you can also create new users for the selected realm.
+If you have the correct access rights (role or permissions) for it you can also create new users for the selected realm. You can set the roles of a user. You can also give a user restricted access to one or more assets, or part of an asset tree. An example use case is when you are connecting up an apartment complex where each tenant gets access to only the assets of his or her apartment.
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Users.png)</kbd>
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20restricted%20user.png)</kbd>
 _Figure 14. Creating users for a selected realm and assigning roles_
 
 Same for the Roles, with required permissions you can create and edit roles. These roles define which parts of the system a user is allowed to Read or Write, e.g. system settings, assets, attributes, map, or rules. 
@@ -172,16 +172,21 @@ You can create a realm by adding a `Realm` name (single word, lower case letters
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)</kbd>
 _Figure 16. Realms can be created to manage multiple independent projects within one OpenRemote instance_
 
+##Auto provisioning of devices
+
+<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Auto%20provisioning%20.png)</kbd>
+_Figure 17. Auto provisioning of devices_
+
 # Manager APIs
 
 The Manager APIs let you interact with OpenRemote without using the UI. This can be used to e.g synchronize attribute data with external clients, accessing configurations, or creating new assets. To authenticate you'll need to create a service user first on the Users page. We have three types of APIs to choose from: HTTP, MQTT, and Websocket. 
 
 ## Service users
 
-Service users can be created on the `Users` page, and selecting `Add user` in the `Service user` panel (see figure 17). The `Username` (ClientID) can be set using letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s).
+Service users can be created on the `Users` page, and selecting `Add user` in the `Service user` panel (see figure 18). The `Username` (ClientID) can be set using letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Service%20Users.png)</kbd>
-_Figure 17. Creating service users, with Username, Secret and Roles for a selected Realm_
+_Figure 18. Creating service users, with Username, Secret and Roles for a selected Realm_
 
 ## HTTP, MQTT, and Websocket
 
