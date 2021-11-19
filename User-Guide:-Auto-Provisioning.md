@@ -50,8 +50,11 @@ The following illustrates the connect process which clients can use to auto prov
 The provisioning message format for X.509 is as follows:
 
 `    {
+
       “type”: “x509”,
+
       “cert”: “...”
+
      }
 `
 
