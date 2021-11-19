@@ -117,8 +117,6 @@ When the client publishes its’ certificate to OpenRemote it must be the certif
 
 The 'Asset template' (see the example below) defines the asset with attributes, which will be generated. If you define a type for the Asset which is an existing type, it will create an asset of that type. Otherwise it will create a generic 'Thing Asset' with only the attributes you have defined. Note that you have to explicitly mention all the attributes which you want the device to be able to write and/or read to. 
 
-<details><summary>Click to view an example for the 'Asset Template' JSON format.</summary>
-
 ```json
 {
   "version": 0,
@@ -176,7 +174,6 @@ The 'Asset template' (see the example below) defines the asset with attributes, 
 }
 ```
 
-</details> 
 
 # See Also
 
