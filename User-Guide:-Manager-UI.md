@@ -150,17 +150,20 @@ _Figure 12. The Logs page to evaluate system behaviour._
 
 ## Account, Users, and Roles
 
-On the account page you can (re)set you personal information or password. You can also monitor your past sessions or enable 2FA via an Authenticator (currently disabled).
+On the Account page you can (re)set you personal information or password. You can also monitor your past sessions or enable 2FA via an Authenticator (currently disabled).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Account%20(2).png)</kbd>
 _Figure 13. The account page with contact details (left) and reset passwords (right)._
 
-If you have the correct access rights (role or permissions) for it you can also create new users for the selected realm. You can set the roles of a user. You can also give a user restricted access to one or more assets, or part of an asset tree. An example use case is when you are connecting up an apartment complex where each tenant gets access to only the assets of his or her apartment.
+If you have the correct access rights (role or permissions) for it you can also create new Users for the selected realm and set the roles of a user. 
+
+You can also give a user restricted access to one or more assets and specific attributes. Note that you have to set a configuration item 'Access restricted user read/write' on each attribute you want to give the user access to ([see 'Configure attributes'](https://github.com/openremote/openremote/wiki/User-Guide:-Manager-UI#configure-attributes)). 
+An example of using 'restricted access' is when you are connecting up an apartment complex and you want each tenant only to have access to the assets of his or her apartment. By leaving out the configuration item 'Access restricted user read/write' for some advanced configuration attributes, you can hide these from the tenant
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20restricted%20user.png)</kbd>
 _Figure 14. Creating users for a selected realm and assigning roles_
 
-Same for the Roles, with required permissions you can create and edit roles. These roles define which parts of the system a user is allowed to Read or Write, e.g. system settings, assets, attributes, map, or rules. 
+Same for Roles, with the correct permissions, you can create and edit roles. These roles define which parts of the system a user is allowed to Read or Write, e.g. system settings, assets, attributes, map, or rules. 
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Roles.png)</kbd>
 _Figure 15. Roles are made of a set of permissions_
