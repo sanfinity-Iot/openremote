@@ -42,6 +42,8 @@ While in `Edit asset` mode you can expand each attribute, which gives you the op
 
 | Configuration items | Description |
 | :--- | :--- |
+| `Access restricted read` | Restricted users can read if they have read attribute access to the asset |
+| `Access restricted write` | Restricted users can write if they have write attribute access to the asset |
 | `Data points max age days` | Time period for data to be stored |
 | `Label` | Adds a friendly name, replacing the default name |
 | `Read only` | Data can not be filled via UI, only by agents or rules. |
