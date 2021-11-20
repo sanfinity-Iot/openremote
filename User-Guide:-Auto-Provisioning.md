@@ -2,8 +2,7 @@ OpenRemote offers functionality for automatic client and asset provisioning. If 
 
 When the auto provisioning is configured, an authorised device will first create a service user in OpenRemote, if it not already exists. Secondly it will create an asset in the specified OpenRemote Realm, with the attributes, using the 'Asset template'. Based on the 'Roles' the device can now communicate with this asset.
 
-# Terminology
-
+Terminology
 * Client: Refers to the initiator in communication with OpenRemote; the same meaning as in authentication terminology
 * Asset: Any asset within the OpenRemote system
 * Provisioning: Creation within the OpenRemote system
