@@ -27,7 +27,7 @@ This mechanism is less secure especially if the shared secret is stored in an ac
 
 # Connect flow
 
-The following illustrates the connect process which clients can use to auto provision a service user and optionally an asset whose ID is generated using a UNIQUE_ID provided by the client; the client is then authenticated and the asset is then returned to the client.
+The following illustrates the connect process (through [MQTT topics](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker)) which clients can use to auto provision a service user and optionally an asset whose ID is generated using a UNIQUE_ID provided by the client; the client is then authenticated and the asset is then returned to the client.
 
 <kbd>![Auto provisioning Connect flow](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Auto%20Provisioning%20Connect%20flow.png)</kbd>
 
