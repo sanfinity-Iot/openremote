@@ -340,6 +340,12 @@ Start the camera and scan a QR code.
    action: "SCAN_QR"
 }
 ```
+### Scan QR Code (Console -> App)
+```
+{
+   result: <qr_content>
+}
+```
 
 ## TODO Modal Provider (provider: "modal")
 Show a modal dialog to the user immediately using the native platform mechanism.
