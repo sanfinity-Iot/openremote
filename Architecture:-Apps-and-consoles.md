@@ -324,6 +324,23 @@ The client can listen for notification click events by listening for the followi
 }
 ```
 
+## QR Scanner Provider (provider: "qr")
+Open up a native view which enables the camera of the device to scan a QR code and send the content back to the app.
+
+### Enabled message request data (App -> Console)
+No data
+
+### Enabled message response data (Console -> App)
+No data
+
+### Scan QR Code (App -> Console)
+Start the camera and scan a QR code.
+```
+{
+   action: "SCAN_QR"
+}
+```
+
 ## TODO Modal Provider (provider: "modal")
 Show a modal dialog to the user immediately using the native platform mechanism.
 
