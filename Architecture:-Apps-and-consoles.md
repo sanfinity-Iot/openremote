@@ -337,13 +337,17 @@ No data
 Start the camera and scan a QR code.
 ```
 {
-   action: "SCAN_QR"
+    action: "SCAN_QR"
 }
 ```
 ### Scan QR Code (Console -> App)
 ```
 {
-   result: <qr_content>
+    action: "SCAN_QR",
+    provider: "qr",
+    data: {
+        result: <qr_content>
+   }
 }
 ```
 
