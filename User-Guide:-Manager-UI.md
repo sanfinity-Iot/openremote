@@ -1,6 +1,6 @@
 The Manager UI is the dashboard which gives you access to OpenRemote, and allows you to configure, monitor, and control your IoT platform. We'll explain the main features of the Manager UI, sometimes referring to examples from the [online Demo](https://openremote.io/demo/), for which you only have access in 'read' mode. To have full 'admin' access to all functionality you will first need to [install OpenRemote](https://github.com/openremote/openremote/blob/master/README.md). If you prefer watching a video, rather than reading, check out the [Introduction Videos](https://youtu.be/K28CQMKr-rQ).
 
-To access the Manager you will first need to login with the correct credentials (admin/secret for your local installation). Note that our account management and identity service includes features like a 'forgot password' flow. See [Realms, Users and Roles](https://github.com/openremote/openremote/wiki/User-Guide%3A-Realms%2C-users-and-roles) for more details.  
+To access the Manager you will first need to login with the correct credentials (admin/secret for your local installation). Note that our account management and identity service includes features like a 'forgot password' flow. See [Realms](#realms), [Users and Roles](#users-and-roles) for more details.  
 
 If you open the application you will get four main pages: [Map](#map), [Assets](#assets), [Rules](#rules), and [Insights](#insights). In addition there are a series of [Settings](#settings-and-access) to interconnect managers, change language, edit your account, and create users, roles, or realms. Also the service users for the [Manager APIs](#manager-apis) can be set here.
 
@@ -148,12 +148,14 @@ The logs page shows information, warnings and errors of the different activities
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Logs.png)</kbd>
 _Figure 12. The Logs page to evaluate system behaviour._
 
-## Account, Users, and Roles
+## Account
 
 On the Account page you can (re)set you personal information or password. You can also monitor your past sessions or enable 2FA via an Authenticator (currently disabled).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Account%20(2).png)</kbd>
 _Figure 13. The account page with contact details (left) and reset passwords (right)._
+
+## Users and Roles
 
 If you have the correct access rights (role or permissions) for it you can also create new Users for the selected realm and set the roles of a user. 
 
@@ -164,7 +166,7 @@ An example of using 'restricted access' is when you are connecting up an apartme
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20restricted%20user.png)</kbd>
 _Figure 14. Creating users for a selected realm and assigning roles_
 
-Same for Roles, with the correct permissions, you can create and edit roles. These roles define which parts of the system a user is allowed to Read or Write, e.g. system settings, assets, attributes, map, or rules. 
+Same for Roles, with the correct permissions, you can create and edit roles. These roles define which parts of the system a user is allowed to Read or Write, e.g. system settings, assets, attributes, map, or rules. Also see the userguide: [Realms, users and roles](https://github.com/openremote/openremote/wiki/User-Guide%3A-Realms%2C-users-and-roles).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Roles.png)</kbd>
 _Figure 15. Roles are made of a set of permissions_
@@ -177,6 +179,8 @@ You can create a realm by adding a `Realm` name (single word, lower case letters
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)</kbd>
 _Figure 16. Realms can be created to manage multiple independent projects within one OpenRemote instance_
+
+Also see the userguide: [Realms, users and roles](https://github.com/openremote/openremote/wiki/User-Guide%3A-Realms%2C-users-and-roles).
 
 ## Auto provisioning of devices
 
