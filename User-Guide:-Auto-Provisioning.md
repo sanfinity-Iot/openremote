@@ -210,7 +210,9 @@ qQ==
 1. Navigate to swagger UI (https://your_installation/swagger e.g. https://staging.demo.openremote.io/swagger)
 1. Click authorize then again on the popup dialog then login with a user from the master realm
 1. Once authenticated go to `Assets -> Get /asset/{assetId}` and paste the asset ID into the asset ID input then execute the query, you will then get the asset returned in `json` format: ![image](https://user-images.githubusercontent.com/7072278/145991791-e0a5cfd9-f989-4fe3-9d72-cc2178812202.png)
-1. You can copy the returned `json` and paste that into the `Asset template` input field, remember to insert the `%UNIQUE_ID%` placeholder wherever you would like that to be used (in an attribute value, in the asset name, etc.)
+1. You can copy the returned `json` and paste that into the `Asset template` input field:
+   1. Remove or set the the `parentId` to determine where in the asset tree the asset will be created
+   1. remember to insert the `%UNIQUE_ID%` placeholder wherever you would like that to be used (in an attribute value, in the asset name, etc.)
 
 
 # See Also
