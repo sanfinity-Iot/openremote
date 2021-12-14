@@ -150,7 +150,7 @@ A provisioning configuration contains the following data:
 * Disabled - Is this provisioning config disabled (no clients will be able to authenticate through it whilst disabled) (default: `false`) [OPTIONAL]
 * Asset template - If specified an instance of this asset will be auto provisioned upon successful authentication; only provisioned if an asset matching the client's `UNIQUE_ID` does not already exist (default: `none`) [OPTIONAL]
 <details>
-<summary>Example Asset template</summary>
+<summary>Example Asset template (see below for more information about obtaining an asset template)</summary>
 
 ```json
 {}
@@ -203,6 +203,14 @@ qQ==
 -----END CERTIFICATE-----
 ```
 </details>
+
+# Obtaining an asset template
+1. Log into the `Manager UI` and navigate to the asset viewer
+1. Create then select an asset of the same type that you want to use in the template then select the asset ID from the address bar (e.g. `https://staging.demo.openremote.io/manager/?realm=smartcity#/assets/false/2K3nSg148fnzlSlaem0kkh` -> `2K3nSg148fnzlSlaem0kkh`)
+1. Navigate to swagger UI (https://your_installation/swagger e.g. https://staging.demo.openremote.io/swagger)
+1. Click authorize then again on the popup dialog then login with a user from the master realm
+1. Once authenticated go to `Assets -> Get /asset/{assetId}` and paste the asset ID into the asset ID input then execute the query, you will then get the asset returned in `json` format: ![image](https://user-images.githubusercontent.com/7072278/145991791-e0a5cfd9-f989-4fe3-9d72-cc2178812202.png)
+1. You can copy the returned `json` and paste that into the `Asset template` input field, remember to insert the `%UNIQUE_ID%` placeholder wherever you would like that to be used (in an attribute value, in the asset name, etc.)
 
 
 # See Also
