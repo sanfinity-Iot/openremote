@@ -9,7 +9,7 @@ The core of the OpenRemote system is the [Manager](https://github.com/openremote
 
 Rules can be written in Groovy, JavaScript, a Rules JSON, or Flow model, and dynamically deployed. Rules execute actions when matching asset state or sequence of events are detected. For example, when a mobile asset enters a geographic fence, or when humidity in a room keeps increasing, you can notify a group of users via email and on their mobile devices.
 
-Networked things and devices are connected to the manager via [Agents](https://github.com/openremote/openremote/tree/master/agent), they are the interface to 3rd party APIs and service protocols. OpenRemote has many built-in protocols and it's easy to create new adapters. Co-locate your agents with the manager or install agents on [Edge gateways](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Edge-gateways), close to devices. 
+Networked things and devices are connected to the manager via [Agents](https://github.com/openremote/openremote/tree/master/agent), they are the interface to 3rd party APIs and service protocols. OpenRemote has many built-in protocols and it's easy to create new adapters. Co-locate your agents with the manager or install agents on [Edge gateways](https://github.com/openremote/openremote/wiki/User-Guide%3A-Edge-Gateway), close to devices. 
 
 The manager provides APIs for monitoring and administrating the system:
 
