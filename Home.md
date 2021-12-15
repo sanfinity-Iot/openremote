@@ -17,7 +17,7 @@ The manager provides APIs for monitoring and administrating the system:
 * Websockets event API
 * MQTT event API
 
-The OpenRemote [Frontend](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Working-on-the-UI) simplifies the creation and deployment of user interfaces such as:
+The OpenRemote [Frontend](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components) simplifies the creation and deployment of user interfaces such as:
 
 * Multi tenancy monitoring dashboard
 * Home automation control panel
