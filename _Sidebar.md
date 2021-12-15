@@ -21,6 +21,7 @@
 ### Agents/Protocols
 
 * [[Overview|User Guide: Agent Overview]]
+* [[Bluetooth Mesh|User Guide: Bluetooth Mesh]]
 * [[HTTP|User Guide: HTTP Agent]]
 * [[KNX|User-Guide: KNX Agent]]
 * [[LoRa|User Guide: LoRa Agent]]
