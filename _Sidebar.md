@@ -80,6 +80,7 @@
 * [[Maintaining an installation|Developer Guide: Maintaining an installation]]
 * [[Working on the mobile consoles|Developer Guide: Working on the mobile consoles]]
 * [[Connecting Protocol adaptors with Agents|Developer Guide: Connecting Protocol adaptors with Agents]]
+* [[Edge device firmware updating|Developer Guide: Firmware updating with Hawkbit]]
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
 * [[Docker swarm mode|https://github.com/openremote/openremote/blob/master/swarm/README.md]]
