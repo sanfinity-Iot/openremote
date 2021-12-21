@@ -1,4 +1,4 @@
-**WE CURRENTLY ONLY SUPPORT AN [MQTT BROKER](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs). A MQTT CLIENT WILL COME SHORTLY**
+There is an MQTT Agent (Client) in OpenRemote (next to the MQTT broker). We have no documentation yet, and recommend to [check our wiki](https://forum.openremote.io/t/mqtt-agents-publish-subscription/985). 
 
 # See also
 
