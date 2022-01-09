@@ -26,8 +26,8 @@ For development you need the following in addition to the runtime tooling:
 
 * Java 8 JDK ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html), on MacOS use [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk))
 * [GIT](https://git-scm.com/downloads)
-* [NodeJS](https://nodejs.org/en/download/current/) (>= 10.13.0, on MacOS you can use [Homebrew](https://brew.sh/) and `brew install node@10`)
-* [yarn](https://yarnpkg.com/lang/en/) `npm install --global yarn` (>=1.12.1)
+* [NodeJS](https://nodejs.org/en/download/current/) (>= 16.13.1, on MacOS you can use [Homebrew](https://brew.sh/) and `brew install node@10`)
+* [yarn](https://yarnpkg.com/lang/en/) `npm install --global yarn` (>=1.22.4)
 
 Ensure the following commands execute successfully:
 
