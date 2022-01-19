@@ -31,9 +31,10 @@ The following describes the supported agent configuration attributes:
 | ------------- | ------------- | ------------- | ------------- |
 | `networkKey` | Bluetooth Mesh network key | Text, format: &lt;key index&gt;:&lt;key&gt; (e.g. 0:5EBBC0FE3CCEF029C049B00F27DC8A5C) | Y |
 | `applicationKey` | Bluetooth Mesh application key | Text, format: &lt;key index&gt;:&lt;key&gt; (e.g. 0:2AD08F7660AA535FA7DE4C918241F04F) | Y |
+| `proxyAddress` | Bluetooth Mesh proxy address - if omitted proxy with best RSSI is selected | Text (e.g. B0:CE:18:A3:0B:09) | N |
 | `sourceAddress` | Bluetooth Mesh source unicast address | Text, format: 4 hexadecimal digits (e.g. 199A), range: 0001-7FFF | Y |
-| `mtu` | Maximum transmission unit size for Bluetooth Mesh proxy commmunication - if ommitted default value is 20 | [Positive Integer](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L83) | N |
-| `sequenceNumber` | Bluetooth Mesh sequence number - if ommitted default value is 1 | [Positive Integer](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L83) | N |
+| `mtu` | Maximum transmission unit size for Bluetooth Mesh proxy communication - if omitted default value is 20 | [Positive Integer](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L83) | N |
+| `sequenceNumber` | Bluetooth Mesh sequence number - if omitted default value is 1 | [Positive Integer](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/value/ValueType.java#L83) | N |
 
 ## Agent link
 For attributes linked to this agent, the following describes the supported agent link fields which are in addition to the standard [Agent Link](./User-Guide:-Agent-Overview#agent-links) fields:
