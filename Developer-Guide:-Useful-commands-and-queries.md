@@ -93,27 +93,27 @@ docker-machine env -u
 ## Data points
 ### Export all asset data points
 ```
-copy asset_datapoint to '/deployment/datapoints.csv' delimiter ',' CSV;
+copy asset_datapoint to '/var/lib/postgresql/datapoints.csv' delimiter ',' CSV;
 ```
 
 or with asset names instead of IDs and a header row in the export:
 ```
-copy (select ad.timestamp, a.name, ad.attribute_name, ad.value from asset_datapoint ad, asset a where ad.entity_id = a.id) to '/deployment/datapoints.csv' delimiter ',' CSV HEADER;
+copy (select ad.timestamp, a.name, ad.attribute_name, ad.value from asset_datapoint ad, asset a where ad.entity_id = a.id) to '/var/lib/postgresql/datapoints.csv' delimiter ',' CSV HEADER;
 ```
 
 ### Export a subset of asset data points (asset and direct child assets)
 ```
-copy (select ad.timestamp, a.name, ad.attribute_name, value from asset_datapoint ad, asset a where ad.entity_id = a.id and (ad.entity_id = 'ID1' or a.parent_id = 'ID1')) to '/deployment/datapoints.csv' delimiter ',' CSV HEADER;
+copy (select ad.timestamp, a.name, ad.attribute_name, value from asset_datapoint ad, asset a where ad.entity_id = a.id and (ad.entity_id = 'ID1' or a.parent_id = 'ID1')) to '/var/lib/postgresql/datapoints.csv' delimiter ',' CSV HEADER;
 ```
 
 ### Delete all asset datapoints older than N days
 `delete from asset_datapoint where timestamp < extract('epoch' from (current_timestamp - interval '5 days'))::bigint*1000;`
 
 ### Importing asset data points
-To import data points stored in multiple exports then first create a temp table without any key constraints:
+To import data points stored in multiple exports (with potential duplicates) then first create a temp table without any key constraints:
 ```
 create table DATATEMP (
-  TIMESTAMP      int8         not null,
+  TIMESTAMP      timestamp    not null,
   ENTITY_ID      varchar(36)  not null,
   ATTRIBUTE_NAME varchar(255) not null,
   VALUE          jsonb        not null
@@ -121,7 +121,7 @@ create table DATATEMP (
 ```
 
 Import the CSV files into this temp table:
-`COPY DATATEMP FROM '/deployment/datapoints.csv' DELIMITER ',' CSV;`
+`COPY DATATEMP FROM '/var/lib/postgresql/datapoints.csv' DELIMITER ',' CSV;`
 
 Select distinct rows and insert into `ASSET_DATAPOINT` table:
 ```
