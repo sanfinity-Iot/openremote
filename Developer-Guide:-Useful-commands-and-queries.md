@@ -112,7 +112,7 @@ copy (select ad.timestamp, a.name, ad.attribute_name, value from asset_datapoint
 ### Importing asset data points
 To import data points stored in multiple exports then first create a temp table without any key constraints:
 ```
-create table ASSET_DATATEMP (
+create table DATATEMP (
   TIMESTAMP      int8         not null,
   ENTITY_ID      varchar(36)  not null,
   ATTRIBUTE_NAME varchar(255) not null,
