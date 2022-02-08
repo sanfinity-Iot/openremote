@@ -7,9 +7,13 @@ To work on an app for example the `Manager UI` then `cd` into the `app/manager` 
 - `npm run modelWatch` - Starts a gradle task to watch the model `java` code for changes and auto generates the `model` and `restclient` typescript files and compiles them
 - `npm run serve` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000/manager/` (**NOTE: trailing `/` is required**)
 
-To apply a custom `manager_config.json` you can set the `config` environment variable on the `npm run serve` command using a path relative to the `app/manager` directory:
+### Webpack dev server environment variables
+The following environment variables can be set when running `npm run serve` using the syntax `npm run serve -- --env ENV_NAME=ENV_VALUE`:
 
-```npm run serve -- --env config=..\..\..\..\deployment\manager\app```
+* config - To apply a custom `manager_config.json` you can set the `config` environment variable on the `npm run serve` command using a path relative to the `app/manager` directory (e.g. `npm run serve -- --env config=..\..\..\..\deployment\manager\app`)
+* managerUrl - By default webpack dev server expects the manager to be available at `http://localhost:8080` but this can be configured for example when running the manager docker image (e.g. `npm run serve -- --env managerUrl=https://localhost`)
+* keycloakUrl - By default keycloak expects to be available at `managerUrl/auth` but this can be configured for example when running the manager docker image (e.g. `npm run serve -- --env keycloakUrl=https://keycloak/auth`)
+
 
 ## Consuming UI components
 
