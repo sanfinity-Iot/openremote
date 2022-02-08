@@ -5,7 +5,6 @@ Front end applications are [webcomponent](https://www.webcomponents.org/) based 
 To work on an app for example the `Manager UI` then `cd` into the `app/manager` app and run the following `npm` scripts at the same time:
 
 - `npm run modelWatch` - Starts a gradle task to watch the model `java` code for changes and auto generates the `model` and `restclient` typescript files and compiles them
-- `npm run watch` - Watches typescript files (including referenced typescript projects) for changes and auto transpiles to javascript
 - `npm run serve` - Starts webpack dev server and serves the web app which can then be accessed at `http://localhost:9000/manager/` (**NOTE: trailing `/` is required**)
 
 To apply a custom `manager_config.json` you can set the `config` environment variable on the `npm run serve` command using a path relative to the `app/manager` directory:
@@ -15,35 +14,6 @@ To apply a custom `manager_config.json` you can set the `config` environment var
 ## Consuming UI components
 
 Components are published as ES6 modules (for use in bundlers like webpack) and are also pre-bundled for direct consumption.
-
-This is a quick example of consuming the `or-header` component.
-
-### Install
-
-```bash
-npm i -S @openremote/or-header
-```
-
-### Usage
-```
-import '@openremote/or-header';
-
-<or-header logo="${logoImage}">
-    <div slot="desktop-left">
-        <a href="/map">Map</a>
-        <a href="/overview">Overview</a>
-    </div>
-    <div slot="desktop-right">
-        <a>Logout</a>
-    </div>
-    <div slot="mobile-top">
-        <a href="/map">Map</a>
-        <a>Logout</a>
-    </div>
-    <div slot="mobile-bottom">
-    </div>
-</or-header>
-```
 
 
 ## UI development
@@ -81,7 +51,6 @@ The following standard NPM scripts are used throughout the components and apps f
 * `modelWatch` - Starts a `gradle` task to watch the `java` model code and to run the `typescript` generator when changes are detected, the generated `model` and `restclient` typescript code is then transpiled to `javascript`
 * `modelBuild` - Similar to `modelWatch` but just does a onetime build rather than watching for changes
 * `serve` - Starts `webpack dev server` typically on `http://localhost:9000/[app|demo]/`
-* `watch` - Runs the typescript compiler in watch mode with project references (e.g. `npx tsc -b -w`) to compile `typescript` code on changes
 
 The above script names should be used in `package.json` files and then appropriate `build.gradle` files should be added, see existing components, apps, demos for examples. Typically only the `apps` need to be built by `gradle` tasks as typescript should follow project references and compile any dependent components.
 
