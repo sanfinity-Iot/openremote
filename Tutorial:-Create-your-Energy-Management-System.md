@@ -9,9 +9,13 @@ In this electricity example, we will connect a series of electricity producers: 
 <kbd>![Overview EMS](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20overview.jpg)</kbd>
 _Figure 1. Overview of Energy Management System and all elements._
 
-# Electricity assets and required agents
+# Deploying OpenRemote
 
-We assume you have set up the latest version of OpenRemote. If not, check out the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md) first. Also have a look at how to [use the Manager UI](User-Guide%3A-Manager-UI).
+We assume you have set up the latest version of OpenRemote. If not, check out the [Quick Start](https://github.com/openremote/openremote/blob/master/README.md) first. Also have a look at how to [use the Manager UI](User-Guide%3A-Manager-UI) to first familiarise yourself with OpenRemote.
+
+To run a full Energy Management System you will need to set up a [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment). There are many items you can configure with the custom deployment but critical is to add the access keys for two external services: OpenWeather and Forecast.Solar, as these are used to forecast the generated power of your solar panels and wind turbine. You can do this by setting the environment variables for OPEN_WEATHER_API_APP_ID and FORECAST_SOLAR_API_KEY. Check out [Custom Deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment) on how to do this. For getting these access keys see the [Solar forecast service](#forecast-service) and the [Wind forecast service](#forecast-service-1).
+
+# Electricity assets and required agents
 
 If you navigate to 'Assets' and add an asset, using the '+' button. You will see a list of asset and agent types. A subset of these asset types are intended to set up your own EMS. They include the relevant attributes and configuration setting such that the optimisation service can recognise and manage them.
 
