@@ -43,7 +43,7 @@ First add an HTTP Agent and configure the Base URI and the Request Headers to co
 <kbd>![SolarEdge HTTP Agent](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Solar%20Edge%20Agent.png)</kbd>
 _Figure 4. The HTTP Agent, configured to connect to Solar Edge._
 
-Secondly, select your solar asset, select 'Modify' (on the upper right of the asset page) and connect the power attribute of the PV Solar Asset to this Agent. To do this uncollapse the power attribute, add the configuration item 'agent link', and add the required parameters (see figure 5). Also add the configuration items 'Rule state' (so you can use the attribute in rules) and 'Read only' (so you can't accidentally write a value in the 'VIEW' mode). Note the +/- sign convention: we use + for consumption and - for production. So in this case, as we are looking at power production, the power values should be negative. 
+Secondly, select your solar asset, select 'Modify' (on the upper right of the asset page) and connect the power attribute of the PV Solar Asset to this Agent. To do this uncollapse the power attribute, add the configuration item 'agent link', and add the required parameters (see figure 5). Also add the configuration items 'Rule state' (so you can use the attribute in rules) and 'Read only' (so you can't accidentally write a value in the 'VIEW' mode). Note the +/- sign convention, relevant for the optimisation to work: we use + for consumption and - for production. So in this case, as we are looking at power production, the power values should be negative. 
 In a similar manner you can connect the 'Energy export total' attribute to the energy meter value.   
 
 <kbd>![Solar Agent link](https://github.com/openremote/Documentation/blob/master/manuscript/figures/EMS%20-%20Solar%20Power%20Agent%20Link.png)</kbd>
@@ -51,17 +51,19 @@ _Figure 5. The connection of the power attribute in your solar asset, using 'Age
 
 #### Forecast service
 
-You also need the forecasted power for your solar system. Therefore you first ad another Agent 'Forecast.solar', which connects to the [Forecast.solar](https://forecast.solar/) service. In this agent you have to add the 'apikey' of this service. You can register for a [public free account](https://forecast.solar/#accounts) to get this key.  
-Once the Forecast.solar Agent is connected, you have to fill in the following attributes in your solar asset (see also Figure 2):
+You also need the forecasted power for your solar system. Therefore, remember you need to have added the access key for the external 'forecast.solar' service earlier when [setting up OpenRemote and customising it](#set-up-openremote-and-customisation). You can register for a [public free account](https://forecast.solar/#accounts) to get the API key first.  
+To be able to forecast the solar power, you have to fill in the following attributes in your solar asset (see also Figure 2):
 * Panel azimuth (South orientation or a perfect East-West orientation for an East-West panel orientation equals 0 degrees)
 * Panel orientation ('SOUTH' means all panels are oriented in the same South direction; 'EAST WEST' means an East-West configuration)
 * Panel pitch (horizontal is 0 degrees)
 * Power export max (the installed peak capacity in kW)
-* Location. You can do this in the 'MODIFY' mode by opening the map modal next to the location attribute and setting the location by double clicking on the map.
+* Location. You can do this in the 'MODIFY' mode by opening the map modal next to the location attribute and setting the location by long-pressing on the map.
 
-Now add an additional configuration item 'Include forecast solar service' to the 'power' attribute of your solar asset (see Figure 5). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the power attribute in a chart. The dotted line will represent the forecasted data. 
+Now can turn on the attribute 'Include forecast solar service' on your solar asset (see Figure 2). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the 'Power' attribute in a chart. The dotted line will represent the forecasted data. 
 
 Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast solar service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', 'Set actual value with forecast', and 'Store data points'.
+
+A second option is to turn on the attribute 'Set actual solar value with forecast'. This is convenient if you can't get live power data for your solar panels. The actual 'Power' will now also bet set by the forecast.
 
 ### Wind Turbine
 
@@ -69,17 +71,20 @@ Your wind turbine asset is configured in a similar manner. First connect the 'Po
 
 #### Forecast service
 
-Similar as for the Solar asset, you need a forecast for the wind power as well. For the wind power forecast to work we require the Agent 'OpenWeather' to be connected, it connects to the [OpenWeather](https://openweathermap.org/api) service. In this agent you have to add the 'appid' of this service as well as set the location attribute. You can register for a [public free account](https://openweathermap.org/appid) to get this key.  
-Once the OpenWeather Agent is connected, you have to fill in the following attributes in your wind turbine asset (see also Figure 3):
+Similar as for the Solar asset, you need a forecast for the wind power as well. For the wind power forecast to work you need to have added the access key for the external 'OpenWeather' service earlier when [setting up OpenRemote and customising it](#set-up-openremote-and-customisation). You can register for a [public free account](https://openweathermap.org/appid) to get the AppID key.  
+
+To be able to forecast the wind power, you have to fill in the following attributes in your wind turbine asset (see also Figure 3):
 * Power export max (also called nominal or rated power in kW at the nominal or rated speed)
 * Wind speed max (also called cut-off speed, the maximum speed at which a turbine is normally operating; above it will be turned down; in m/s)
 * Wind speed min (also called cut-in speed, the minimum speed required to operate the wind turbine; in m/s)
 * Wind speed reference (also called nominal or rated speed; in m/s)
 * Location. You can do this in the 'MODIFY' mode by opening the map modal next to the location attribute and setting the location by double clicking on the map.
 
-Now add an additional configuration item 'Include forecast wind service' to the 'power' attribute of your wind turbine asset (similar as for your solar asset, see Figure 5). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the power attribute in a chart. The dotted line will represent the forecasted data. 
+Now can turn on the attribute 'Include forecast wind service' on your wind turbine asset (see Figure 3). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the power attribute in a chart. The dotted line will represent the forecasted data. 
 
 Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast wind service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', 'Set actual value with forecast', and 'Store data points'.
+
+A second option is to turn on the attribute 'Set wind actual value with forecast'. This is convenient if you can't get live power data for your wind turbine. The actual 'Power' will now also bet set by the forecast.
 
 ## Electricity Consumer
 
