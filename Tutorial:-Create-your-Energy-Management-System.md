@@ -59,11 +59,11 @@ To be able to forecast the solar power, you have to fill in the following attrib
 * Power export max (the installed peak capacity in kW)
 * Location. You can do this in the 'MODIFY' mode by opening the map modal next to the location attribute and setting the location by long-pressing on the map.
 
-Now can turn on the attribute 'Include forecast solar service' on your solar asset (see Figure 2). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the 'Power' attribute in a chart. The dotted line will represent the forecasted data. 
+Now can turn on the attribute 'Include forecast solar service' on your solar asset. Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the 'Power' attribute in a chart. The dotted line will represent the forecasted data. 
 
-Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast solar service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', 'Set actual value with forecast', and 'Store data points'.
+If you also want to store the data for forecasted power to compare it with the actual values, take care you add the configuration items 'Has predicted data points', 'Read only', 'Rule state', and 'Store data points' for the attribute 'Power forecast'.
 
-A second option is to turn on the attribute 'Set actual solar value with forecast'. This is convenient if you can't get live power data for your solar panels. The actual 'Power' will now also bet set by the forecast.
+Another option is to turn on the attribute 'Set actual solar value with forecast'. This is convenient if you can't get live power data for your solar panels. The actual 'Power' will now also bet set by the forecast.
 
 ### Wind Turbine
 
@@ -82,9 +82,9 @@ To be able to forecast the wind power, you have to fill in the following attribu
 
 Now can turn on the attribute 'Include forecast wind service' on your wind turbine asset (see Figure 3). Once saved the forecast service is running. To see it in action you can go to the 'Insights' page and select the power attribute in a chart. The dotted line will represent the forecasted data. 
 
-Optionally, if you also want to store the forecasted power for comparing it with the actual values, you can also add the configuration item 'Include forecast wind service' to the attribute 'Power Forecast', as well as the configuration items 'Has predicted data points', 'Read only', 'Rule state', 'Set actual value with forecast', and 'Store data points'.
+If you also want to store the data for forecasted power to compare it with the actual values, take care you add the configuration items 'Has predicted data points', 'Read only', 'Rule state', and 'Store data points' for the attribute 'Power forecast'.
 
-A second option is to turn on the attribute 'Set wind actual value with forecast'. This is convenient if you can't get live power data for your wind turbine. The actual 'Power' will now also bet set by the forecast.
+Another option is to turn on the attribute 'Set wind actual value with forecast'. This is convenient if you can't get live power data for your wind turbine. The actual 'Power' will now also bet set by the forecast.
 
 ## Electricity Consumer
 
@@ -92,7 +92,9 @@ To connect electricity consuming devices. You can connect several energy meters 
 
 #### Forecast
 
-For the electricity consuming devices you also need the forecasted power. You can enable this by adding the configuration item 'Include time series forecast'. This service will take an exponential weighted moving average, based on your preferences: the 'Repeat period': day -or- week, the 'Period range (1-7)': and the number of historical periods of the selected 'Repeat period'. When you select 'Repeat period = day' and 'Period range (number of periods) = 7', the forecast service will take into account the historical attribute values at the same time for the previous 7 days and weigh them exponentially. (see [specification](https://github.com/openremote/openremote/issues/526))
+**NOT YET IMPLEMENTED**
+
+For the electricity consuming devices you also need the forecasted power. You can enable this by adding the configuration item 'Include time series forecast'. This service will take an exponential weighted moving average, based on your preferences: the 'Repeat period': day -or- week, the 'Period range (1-7)': and the number of historical periods of the selected 'Repeat period'. When you select 'Repeat period = day' and 'Period range (number of periods) = 7', the forecast service will take into account the historical attribute values at the same time for the previous 7 days and weigh them exponentially. (see [planned specification](https://github.com/openremote/openremote/issues/526))
 
 ## Electricity Battery
 
