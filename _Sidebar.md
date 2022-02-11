@@ -7,6 +7,7 @@
 ### Deploying
 
 * [[Custom deployment|User-Guide:-Custom-deployment]]
+* [[Configuring the Manager UI|User-Guide:-Configuring-the-Manager-UI]]
 * [[OpenRemote CLI|User-Guide:-OpenRemote-CLI]]
 
 ### Manager UI
