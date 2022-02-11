@@ -207,7 +207,7 @@ On this page we will use an example config and give a short description of each 
 </p>
 </details>
 
-**Map:**
+**Map - Card:**
 You can set the attributes to exclude (or include) on the top right card of the map when an asset is selected. This can be done for all asset types (by using default), or per asset type (as shown for WeatherAsset).
 ```JSON
 {
@@ -229,6 +229,35 @@ You can set the attributes to exclude (or include) on the top right card of the 
         }
       }
     },
+```
+**Map - Marker config:**
+This configures how the markers behave. They can either change their colour based on an attribute, show a label with or without units, and/or show the direction an asset is facing. Note that this part of the config is not in the manager_config used in the manager demo yet.
+```JSON
+"markers": {
+  "ShipAsset": {
+    "attributeName": "speed",
+    "showDirection": true,
+    "showLabel": true,
+    "showUnits": true,
+    "speed": {
+      "type": "range",
+      "ranges": [
+        {
+          "max": 10,
+          "colour": "39B54A"
+        },         
+        {
+          "max": 20,
+          "colour": "F7931E"
+        },
+        {
+          "max": 30,
+          "colour": "C1272D"
+        }
+      ]
+    }
+  }
+},
 ```
 **Rules - Controls:** 
 Set which types of rules are available (for users with the correct permissions), and which actions a rule can perform. 
