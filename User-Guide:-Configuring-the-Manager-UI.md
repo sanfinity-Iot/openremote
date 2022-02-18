@@ -234,30 +234,30 @@ You can set the attributes to exclude (or include) on the top right card of the 
 This configures how the markers behave. They can either change their colour based on an attribute, show a label with or without units, and/or show the direction an asset is facing. Note that this part of the config is not in the manager_config used in the manager demo yet.
 ```JSON
 "markers": {
-  "ElectricityProducerSolarAsset": [
-    {
-      "attributeName": "energyExportTotal",
-      "showLabel": true,
-      "showUnits": true,
-      "showDirection": true,
+  "ElectricityProducerSolarAsset": {
+    "attributeName": "energyExportTotal",
+    "showLabel": true,
+    "showUnits": true,
+    "colours": {
       "type": "range",
       "ranges": [
         {
-          "max": 10,
+          "max": 50,
           "colour": "39B54A"
         },
         {
-          "max": 20,
+          "max": 80,
           "colour": "F7931E"
         },
         {
-          "max": 30,
+          "max": 100,
           "colour": "C1272D"
         }
       ]
     }
-  ]
+  }
 }
+
 ```
 **Rules - Controls:** 
 Set which types of rules are available (for users with the correct permissions), and which actions a rule can perform. 
