@@ -4,8 +4,8 @@ The OpenRemote Manager is responsive and can be used on mobile devices. To make 
 
 OpenRemote includes consoles for iOS and Android. The current apps we are hosting on the [Appstore](https://apps.apple.com/nl/app/openremote-app/id1526315885?mt=8) and [Google Play Store](https://play.google.com/store/apps/details?id=io.openremote.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1), can connect to your OpenRemote Manager instance. To use these apps for your own OpenRemote installation follow these two steps
 
-1. Before deploying OpenRemote, adjust the [consoleappconfig](https://github.com/openremote/openremote/blob/master/manager/src/consoleappconfig/) by adding a 'realmname.json' for each realm you want the app to work with. This is where you configure the initial landing page for the app. In the example it directs to the login page of the manager for this realm. 
-2. Once OpenRemote is deployed and you open the app the first time the app asks for the 'Project Domain' and 'Realm' names. If you are e.g. hosting an OpenRemote instance and Realm at https://yourhost.com/manager/?realm=yourrealm use the following: 'Project Domain' is 'yourhost.com/manager' and 'Realm' is 'smartcity'.
+1. Before deploying OpenRemote, adjust the [consoleappconfig](https://github.com/openremote/openremote/blob/master/manager/src/consoleappconfig/) by adding a 'yourrealm.json' for each realm you want the app to work with. This is where you configure the initial landing page for the app. In the example it directs to the login page of the manager for this realm. 
+2. Once OpenRemote is deployed and you open the app the first time the app asks for the 'Project Domain' and 'Realm' names. If you are e.g. hosting an OpenRemote instance and Realm at https://yourhost.com/manager/?realm=yourrealm use the following: 'Project Domain' is 'yourhost.com/manager' and 'Realm' is 'yourrealm'.
 
 You can try out the app, using the demo environment
 
