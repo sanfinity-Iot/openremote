@@ -4,7 +4,7 @@ The OpenRemote Manager is responsive and can be used on mobile devices. To make 
 
 OpenRemote includes consoles for iOS and Android. The current apps we are hosting on the [Appstore](https://apps.apple.com/nl/app/openremote-app/id1526315885?mt=8) and [Google Play Store](https://play.google.com/store/apps/details?id=io.openremote.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1), can connect to your OpenRemote Manager instance. 
 
-When you open the app the first time the app asks for the 'Project Domain' and 'Realm' names. If you are e.g. hosting an OpenRemote instance at https://yourhost.com/ and want to access the 'smartcity' realm use the following: 'Project Domain' is 'yourhost' and 'Realm' is 'smartcity' Note that you also need to add a configuration file for each realm in [consoleappconfig](https://github.com/openremote/openremote/blob/master/manager/src/consoleappconfig/).
+When you open the app the first time the app asks for the 'Project Domain' and 'Realm' names. If you are e.g. hosting an OpenRemote instance at https://yourhost.com/ and want to access the 'smartcity' realm use the following: 'Project Domain' is 'yourhost.com' and 'Realm' is 'smartcity' Note that you also need to add a configuration file for each realm in [consoleappconfig](https://github.com/openremote/openremote/blob/master/manager/src/consoleappconfig/).
 
 ![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Mobile%20app%20for%20OpenRemote%20Demo.png)
 _Use the OpenRemote app on the Appstore and Google Play Store to access the demo and use location and push notification_
