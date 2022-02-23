@@ -8,19 +8,21 @@ On this page we will use an example config and give a short description of each 
 {
   "pages": {
     "map": {
-      "default": {
-        "exclude": [
-          "notes"
-        ]
-      },
-      "assetTypes": {
-        "WeatherAsset": {
+      "card": {
+        "default": {
           "exclude": [
-            "location",
-            "notes",
-            "model",
-            "manufacturer"
+            "notes"
           ]
+        },
+        "assetTypes": {
+          "WeatherAsset": {
+            "exclude": [
+              "location",
+              "notes",
+              "model",
+              "manufacturer"
+            ]
+          }
         }
       }
     },
@@ -213,19 +215,21 @@ You can set the attributes to exclude (or include) on the top right card of the 
 {
   "pages": {
     "map": {
-      "default": {
-        "exclude": [
-          "notes"
-        ]
-      },
-      "assetTypes": {
-        "WeatherAsset": {
+      "card": {
+        "default": {
           "exclude": [
-            "location",
-            "notes",
-            "model",
-            "manufacturer"
+            "notes"
           ]
+        },
+        "assetTypes": {
+          "WeatherAsset": {
+            "exclude": [
+              "location",
+              "notes",
+              "model",
+              "manufacturer"
+            ]
+          }
         }
       }
     },
