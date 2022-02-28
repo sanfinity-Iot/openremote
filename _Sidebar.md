@@ -8,6 +8,7 @@
 
 * [[Custom deployment|User-Guide:-Custom-deployment]]
 * [[Configuring the Manager UI|User-Guide:-Configuring-the-Manager-UI]]
+* [[AWS|User-Guide:-Deploying-on-AWS]]
 * [[OpenRemote CLI|User-Guide:-OpenRemote-CLI]]
 
 ### Manager UI
