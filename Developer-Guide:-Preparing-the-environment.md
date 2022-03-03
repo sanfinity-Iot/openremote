@@ -27,7 +27,7 @@ For development you need the following in addition to the runtime tooling:
 * Java 17 JDK ([OpenJDK](http://openjdk.java.net/), [Oracle Java SE JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
 * [GIT](https://git-scm.com/downloads)
 * [NodeJS](https://nodejs.org/en/download/current/) (>= 16.13.1, on MacOS you can use [Homebrew](https://brew.sh/) and `brew install node@10`)
-* [yarn](https://yarnpkg.com/getting-started/install) `corepack enable; yarn init -2; yarn plugin import typescript` (>=3.2.0)
+* [yarn](https://yarnpkg.com/getting-started/install) `corepack enable; yarn init -2` (>=3.2.0)
 
 Ensure the following commands execute successfully:
 
