@@ -235,7 +235,7 @@ You can set the attributes to exclude (or include) on the top right card of the 
     },
 ```
 **Map - Marker config:**
-This configures how the markers behave. They can either change their colour based on an attribute, show a label with or without units, and/or show the direction an asset is facing. Note that this part of the config is not in the manager_config used in the manager demo yet.
+This configures how the markers behave. They can either change their colour based on an attribute value (number, boolean, or string), show a label with or without units, and/or show the direction an asset is facing. Note that this part of the config is not in the manager_config used in the manager demo yet.
 ```JSON
 "markers": {
   "ElectricityProducerSolarAsset": {
