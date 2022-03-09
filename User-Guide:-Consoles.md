@@ -20,7 +20,7 @@ Switching between projects and realms can be done by long-pressing the app icon 
 
 # Building your own mobile apps
 
-You can redirect the consoles to your own URL and build the apps yourself. Check out the links below and the code itself. 
+As part of building your own app, using our library of web components, you can use the OpenRemote consoles to leverage functionality of mobile devices, e.g. enable push notifications, use the build in QR reader, or use geofences. Check out the links below and the code itself if you want to know more. 
 
 # See Also
 - [Working on the mobile consoles](Developer-Guide%3A-Working-on-the-mobile-consoles)
