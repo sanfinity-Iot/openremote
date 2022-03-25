@@ -69,6 +69,7 @@
 * [[Connect Your MQTT Client|Tutorial: Connect your MQTT client]]
 * [[Celcius to Fahrenheit with Flow|Tutorial: Change Celcius to Fahrenheit with Flow]]
 * [[Create an Energy Management System|Tutorial: Create your Energy Management System]]
+* [[ChirpStack LoRaWAN Integration|Tutorial: Receive LoRaWAN sensor data from ChirpStack]]
 
 ## Developer Guide
 
