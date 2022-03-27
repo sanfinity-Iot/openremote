@@ -49,7 +49,7 @@ docker-compose up
 ## Create the OpenRemote MQTT agent
 1. Login to the OpenRemote manager UI (`https://localhost/` `admin/secret`)
 2. Navigate to the `Assets` page, click `+` in the asset tree on the left.
-3. In the `Add asset' dialog do the following:
+3. In the `Add asset` dialog do the following:
    * Select the `MQTT Agent` asset type in the list
    * Name: `ChirpStack MQTT Agent`
    * Confirm with `ADD`    
@@ -59,7 +59,7 @@ docker-compose up
    * Confirm with `SAVE`
 ## Create the OpenRemote LoRaWAN device asset   
 1. Navigate to the `Assets` page, click `+` in the asset tree on the left.
-2. In the `Add asset' dialog do the following:
+2. In the `Add asset` dialog do the following:
    * Select the `Thing Asset` type
    * Name: `Dragino LHT65`
    * Confirm with `ADD`
@@ -80,16 +80,18 @@ docker-compose up
    * Select `Subscription Topic`
    * Confirm with `ADD`
 10. Edit the `Subscription Topic`.
- 
-The ChirpStack MQTT topic for sensor values has the following format:
-```
-application/{application id}/device/{deviceEUI}/event/up
 
-application id: see Applications list in the Chirpstack UI
-deviceEUI: 8 byte hexadecimal LoRaWAN device identifier
+    The ChirpStack MQTT topic for sensor values has the following format:
+    ```
+    application/{application id}/device/{deviceEUI}/event/up
 
-Example: application/1/device/a841452101b04161/event/up
-```
+    application id: see Applications list in the Chirpstack UI
+    deviceEUI: 8 byte hexadecimal LoRaWAN device identifier
+    ```
+    Example for the `Subscription Topic` value:
+    ```
+    application/1/device/a841452101b04161/event/up
+    ```
 11. Click `ADD PARAMETER` in order to add a json path configuration.
 12. In the `Add parameter` dialog do the following:
    * Select `Value Filters`
