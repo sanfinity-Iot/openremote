@@ -28,8 +28,8 @@ If the containers are exited then they can be restarted using the `docker` comma
 ```
 eval $(docker-machine env or-host1)
 
-SETUP_ADMIN_PASSWORD=******** SETUP_WIPE_CLEAN_INSTALL=true DOMAINNAME=demo.openremote.io \
-LE_EMAIL=support@openremote.io IDENTITY_NETWORK_HOST=demo.openremote.io docker-compose -p demo up --build -d
+OR_ADMIN_PASSWORD=******** OR_SETUP_RUN_ON_RESTART=true OR_HOST=demo.openremote.io \
+OR_EMAIL_ADMIN=support@openremote.io docker-compose -p demo up --build -d
 ```
 
 To find out the password:
