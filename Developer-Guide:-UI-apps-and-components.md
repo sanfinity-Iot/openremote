@@ -78,5 +78,7 @@ Publishing is done using lockstep versioning; we use yarn version plugin to mana
 `yarn workspaces foreach --no-private --topological version --deferred <patch | minor | major>`
 1. The new versions are applied:
 `yarn version apply --all`
+1. The components are prepared:
+`yarn workspaces foreach --no-private --topological npm prepublishOnly`
 1. The public packages are packed and published:
 `yarn workspaces foreach --no-private --topological npm publish`
