@@ -70,3 +70,13 @@ compatible with web components (see [here](https://custom-elements-everywhere.co
 
 ### Demos
 These are apps for development purposes Generally a 1-1 mapping between components and demos; they provide a simple harness for the components that can be used during development and optionally can be deployed to offer component demos. 
+
+## Publishing to NPM
+Publishing is done using lockstep versioning; we use yarn version plugin to manage workspace package version incrementing as follows:
+
+1. The public packages are marked for version bump:
+`yarn workspaces foreach --no-private --topological version --deferred <patch | minor | major>`
+1. The new versions are applied:
+`yarn version apply --all`
+1. The public packages are packed and published:
+`yarn workspaces foreach --no-private --topological npm publish`
