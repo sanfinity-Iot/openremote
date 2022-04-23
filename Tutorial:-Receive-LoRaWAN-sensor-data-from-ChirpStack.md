@@ -54,7 +54,7 @@ docker-compose up
    * Name: `ChirpStack MQTT Agent`
    * Confirm with `ADD`    
 4. Click `Modify` and configure the following asset attributes:
-   * Host: `localhost`
+   * Host: IP address of the ChirpStack server (e.g. 192.168.170.83)
    * Port: `1883`
    * Confirm with `SAVE`
 ## Create the OpenRemote LoRaWAN device asset   
