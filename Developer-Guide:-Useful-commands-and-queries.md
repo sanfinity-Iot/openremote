@@ -15,7 +15,9 @@ Replace `<PROJECT_NAME>` with value used when creating the container with `docke
 * Copy to the docker host: `docker cp <PROJECT_NAME>_postgresql_1:/or_postgresql-data.bak ~/`
 * Stop the manager and keycloak containers then copy backup into the postgresql container: `docker cp or_postgresql-data.bak <PROJECT_NAME>-postgresql-1:/`
 * Drop existing DB: `docker exec <PROJECT_NAME>-postgresql-1 ash -c "dropdb openremote"`
-* Restore the backup: `docker exec <PROJECT_NAME>-postgresql-1 ash -c "pg_restore --verbose --clean -d openremote /or_postgresql-data.bak"`
+* Create new DB: `docker exec <PROJECT_NAME>-postgresql-1 ash -c "createdb openremote"`
+* Add POSTGIS extension: `docker exec <PROJECT_NAME>-postgresql-1 psql -U postgres -d openremote -c "CREATE EXTENSION postgis;"`
+* Restore the backup: `docker exec <PROJECT_NAME>-postgresql-1 ash -c "pg_restore --verbose -U postgres -d postgres /or_postgresql-data.bak"`
 
 ## Restart exited containers (without using `docker-compose up`)
 If the containers are exited then they can be restarted using the `docker` command, the startup order is important:
