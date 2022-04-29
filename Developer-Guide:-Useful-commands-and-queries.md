@@ -10,6 +10,13 @@ Replace `<PROJECT_NAME>` with value used when creating the container with `docke
 ## Copy exported data point file to local machine (exported using query below)
 `docker cp <PROJECT_NAME>_postgresql_1:/deployment/datapoints.csv ./`
 
+## Backup/Restore OpenRemote DB
+* Create backup: `docker exec <PROJECT_NAME>_postgresql_1 ash -c "pg_dump -Fc openremote > /or_postgresql-data.bak"`
+* Copy to the docker host: `docker cp <PROJECT_NAME>_postgresql_1:/or_postgresql-data.bak ~/`
+* Stop the manager and keycloak containers then copy backup into the postgresql container: `docker cp or_postgresql-data.bak <PROJECT_NAME>-postgresql-1:/`
+* Drop existing DB: `docker exec <PROJECT_NAME>-postgresql-1 ash -c "dropdb openremote"`
+* Restore the backup: `docker exec <PROJECT_NAME>-postgresql-1 ash -c "pg_restore --verbose --clean -d openremote /or_postgresql-data.bak"`
+
 ## Restart exited containers (without using `docker-compose up`)
 If the containers are exited then they can be restarted using the `docker` command, the startup order is important:
 
@@ -28,7 +35,7 @@ If the containers are exited then they can be restarted using the `docker` comma
 ```
 eval $(docker-machine env or-host1)
 
-OR_ADMIN_PASSWORD=******** OR_SETUP_RUN_ON_RESTART=true OR_HOST=demo.openremote.io \
+OR_ADMIN_PASSWORD=******** OR_SETUP_RUN_ON_RESTART=true OR_HOSTNAME=demo.openremote.io \
 OR_EMAIL_ADMIN=support@openremote.io docker-compose -p demo up --build -d
 ```
 
