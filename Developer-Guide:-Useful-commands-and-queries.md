@@ -132,6 +132,11 @@ create table DATATEMP (
 Import the CSV files into this temp table:
 `COPY DATATEMP FROM '/var/lib/postgresql/datapoints.csv' DELIMITER ',' CSV;`
 
+Remove values for assets that don't exist in the running system:
+```
+DELETE FROM DATATEMP D WHERE NOT (D.entity_id IN (SELECT DISTINCT ID from ASSET));
+```
+
 Select distinct rows and insert into `ASSET_DATAPOINT` table:
 ```
 INSERT INTO ASSET_DATAPOINT
