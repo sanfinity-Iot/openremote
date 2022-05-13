@@ -40,23 +40,6 @@ yarn -v
 
 Ensure that you have the `JAVA_HOME` environment variable set to the path of JDK.
 
-## Docker image with tooling
-
-Alternatively to tooling above there is a docker image with all tools required to build the stack. You don't have to
-install anything other than docker and be sure that tooling version is the same as our CI/CD pipeline. This can be very
-useful when you need to use other machine, e.g. deployment host.
-**Note: only tested on Linux**
-
-Check current version:
-```
-docker run --rm -v `pwd`:/or registry.gitlab.com/openremote/openremote:master git status
-```
-
-Build the stack:
-```
-docker run --rm -v `pwd`:/or registry.gitlab.com/openremote/openremote:master ./gradlew clean installDist
-```
-
 # See also
 
 - [[Installing and using Docker|Developer-Guide:-Installing and using Docker]]
