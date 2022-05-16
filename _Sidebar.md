@@ -67,9 +67,10 @@
 ## Tutorials
 * [[Weather data using HTTP Agent|Tutorial: Open Weather API using HTTP Agent]]
 * [[Connect Your MQTT Client|Tutorial: Connect your MQTT client]]
-* [[Celcius to Fahrenheit with Flow|Tutorial: Change Celcius to Fahrenheit with Flow]]
-* [[Create an Energy Management System|Tutorial: Create your Energy Management System]]
 * [[ChirpStack LoRaWAN Integration|Tutorial: Receive LoRaWAN sensor data from ChirpStack]]
+* [[Celcius to Fahrenheit with Flow|Tutorial: Change Celcius to Fahrenheit with Flow]]
+* [[Simulating data in attribute|Tutorial: Simulating data with a simulator Agent]]
+* [[Create an Energy Management System|Tutorial: Create your Energy Management System]]
 
 ## Developer Guide
 
