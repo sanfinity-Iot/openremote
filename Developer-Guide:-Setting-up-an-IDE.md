@@ -1,6 +1,6 @@
 This guide helps you set up an environment with an IDE when you are done [[Preparing the environment|Developer Guide: Preparing the environment]], so you can work comfortably on the Manager backend services.
 
-This is not necessary if you prefer [[Working on the UI|Developer Guide: Working on the UI]] only, any file manager and text editor will suffice.
+This is not necessary if you prefer [[Working on the UI|Developer Guide: UI apps and components]] only, any file manager and text editor will suffice.
 
 ## Run required services
 
@@ -84,6 +84,9 @@ Set up a *Run Configuration*:
 You can now open [http://localhost:8080/](http://localhost:8080/) or [https://localhost/](https://localhost/) (depending on docker compose profile chosen) in your browser. The default login is username `admin` with password `secret`.
 
 *NOTE: The web server binds to only localhost interface (i.e. `127.0.0.1`). You can override this with `WEBSERVER_LISTEN_HOST=0.0.0.0` to bind to all interfaces and make it accessible on your LAN.*
+
+## Accessing the Manager UI
+The manager UI web application isn't compiled until build time so to use the Manager UI in development refer to the [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components#working-on-an-app-eg-manager-ui).
 
 ## VisualVM
 To inspect the threads, analyzing CPU and memory allocation you should running a VisualVM.
