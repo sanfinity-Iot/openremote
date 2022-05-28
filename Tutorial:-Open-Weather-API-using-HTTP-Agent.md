@@ -113,6 +113,7 @@ As you may have noticed we do two calls in the above example, one to get the hum
 ```
 6. Click read only to set it to true.
 7. Save the asset (top right)
+8. Don't forget to add the add the 'Store data points' configuration item to each of the attributes you are pushing data to, if you want to see the data in the history chart. Attributes that have an agent link are implicitly storing data points.
 
 With the attribute link configuration item you filter the values collected with the agent link and push them to the attributes in your specified asset. When you go to view mode you will see the weather data, temperature, and humidity value in their respective attributes.
 
