@@ -6,7 +6,7 @@ In this guide we will go through the first time setting up your [custom project]
 
 # Follow these steps to run your custom project
 1. Prepare your [environment](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Preparing-the-environment)
-2. Create a repository from the [custom-project template](https://github.com/openremote/custom-project). Don't forget to `git submodule init` and `git submodule update` after cloning the repo.
+2. Clone a repository from the [custom-project template](https://github.com/openremote/custom-project). Don't forget to `git submodule init` and `git submodule update` from your custom project directory after cloning the repo.
 3. [Set up your IDE](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-Setting-up-an-IDE). Note that Application run configurations are already prepared when using this template. Use dev-testing.yml and run the 'Custom Deployment' configuration. You should have two containers running in Docker, and the manager through your IDE.
 4. Next we serve the Manager UI from the `/openremote/ui/app/manager` directory with `npm run serve -- --env config=..\..\..\..\deployment\manager\app`.
 
