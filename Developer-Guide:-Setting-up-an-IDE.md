@@ -32,7 +32,7 @@ You can download the [IntelliJ Community Edition](https://www.jetbrains.com/idea
 
 - Choose the 'Open' option in the startup screen and open the root directory of the OpenRemote codebase.
 - Note that IntelliJ might time out if a background Gradle process (for example, running the GWT compiler server) blocks the Gradle import. Stop and start the background process to unblock.
-- Verify build settings: 'File' > 'Settings' > 'Build, Execution, Deployment' > 'Gradle', on the right under 'Delegate settings', 'Build and run using' and 'Run tests using' is set to 'IntelliJ IDEA' (or 'Default IntelliJ IDEA').
+- Verify build settings: Settings/Preferences -> Build,Execution,Deployment -> Build Tools -> Gradle. Choose for the options 'Build and run using' and 'Run tests using' the option 'IntelliJ IDEA' and click on 'Apply'.
 - Run `./gradlew clean installDist` in a terminal in IntelliJ to be sure everything compiles.
 
 ##### Recommended Plugins
@@ -72,21 +72,24 @@ We recommend you set this as the default directory in your IDE for all *Run Conf
 
 The main entry point of the backend services is a Java class for the OpenRemote Manager, this process provides the frontend API and is the core of OpenRemote.
 
-Make sure required testing services are running as described above.
+Make sure required testing services (dev-testing.yml) are running as described above.
 
-Set up a *Run Configuration*:
+If you are using the custom project repository as starting point the run configurations will already be set up. If not, set up a *Run Configuration*:
 
 - Module/Classpath: `manager` or `myproject:myextension1` for custom projects
 - Working directory: *Must be set to OpenRemote main project directory!*
 - Main class: `org.openremote.manager.Main`
 - Any environment variables that customise deployment (usually custom projects have some)
 
-You can now open [http://localhost:8080/](http://localhost:8080/) or [https://localhost/](https://localhost/) (depending on docker compose profile chosen) in your browser. The default login is username `admin` with password `secret`.
+## Accessing the Manager UI
+The manager UI web application isn't compiled until build time. \
+To run the manager app run `npm run serve` from the `/openremote/ui/app/manager` directory.\
+You can then access the manager UI at: http://localhost:9000/manager/ (NOTE: the trailing slash is required here) \
+The default login is username `admin` with password `secret`.
 
 *NOTE: The web server binds to only localhost interface (i.e. `127.0.0.1`). You can override this with `WEBSERVER_LISTEN_HOST=0.0.0.0` to bind to all interfaces and make it accessible on your LAN.*
 
-## Accessing the Manager UI
-The manager UI web application isn't compiled until build time so to use the Manager UI in development refer to the [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components#working-on-an-app-eg-manager-ui).
+Go to [Working on the UI](https://github.com/openremote/openremote/wiki/Developer-Guide%3A-UI-apps-and-components#working-on-an-app-eg-manager-ui) for more information.
 
 ## VisualVM
 To inspect the threads, analyzing CPU and memory allocation you should running a VisualVM.
