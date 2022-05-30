@@ -462,3 +462,8 @@ The insights page layout and its panel types can be modified.
   }
 }
 ```
+<details><summary>Click to view how the --or-app-colors are used in the demo deployment.</summary>
+
+![Default colors in OpenRemote](https://openremote.io/wp-content/uploads/2021/04/coloruse-04.jpg)
+
+</details>
