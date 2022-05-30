@@ -76,7 +76,7 @@ Make sure required testing services (dev-testing.yml) are running as described a
 
 If you are using the custom project repository as starting point the run configurations will already be set up. If not, set up a *Run Configuration*:
 
-- Module/Classpath: `manager` or `myproject:myextension1` for custom projects
+- Module/Classpath: `custom-project.setup.main` for custom projects
 - Working directory: *Must be set to OpenRemote main project directory!*
 - Main class: `org.openremote.manager.Main`
 - Any environment variables that customise deployment (usually custom projects have some)
