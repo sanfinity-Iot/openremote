@@ -78,7 +78,7 @@
 * [[Installing and using Docker|Developer Guide: Installing and using Docker]]
 * [[Setting up an IDE|Developer Guide: Setting up an IDE]]
 * [[Building and testing|Developer Guide: Building and testing]]
-* [[Working on the UI|Developer-Guide:-UI-apps-and-components]]
+* [[Working on UI and apps|Developer-Guide:-UI-apps-and-components]]
 * [[Working on maps|Developer Guide: Working on maps]]
 * [[Docker compose profiles|Developer Guide: Docker compose profiles]]
 * [[Creating a custom project|Developer Guide: Creating a custom project]]
