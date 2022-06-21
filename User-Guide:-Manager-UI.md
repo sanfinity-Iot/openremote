@@ -22,13 +22,6 @@ The Info and Attribute panels will give an overview of all attributes and their 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Ozone%20Asset.png)</kbd>
 _Figure 2. An asset of the type 'environment'_
 
-## Filtering assets
-
-In the asset tree on the left, you can filter assets by typing their name. The advanced filter also allows selecting an asset type, typing the attribute name (without spaces) and filter on a value.
-
-<kbd>![Filtering assets](https://user-images.githubusercontent.com/11444149/174821811-4cb80c13-0416-4681-a1af-3ef9d622a73f.png)</kbd>
-_Figure 2. Asset filtering by typing the asset name (left) or by using the advanced filter, selecting an asset type, typing the attribute name (without spaces) and filter on a value'_
-
 ## Create an asset
 
 With the correct permissions (not available in the demo, you'll need your own [installation](https://github.com/openremote/openremote/blob/master/README.md)), you can create a new asset on the Assets page by clicking the `+` in the header of the asset tree. This will open a modal that shows the available asset types. When you select one you will see the attributes and optional attributes. Optional attributes can be added by selecting them in this modal. You can set or change its parent by selecting the upper right pencil and selecting an asset in the asset tree. Click `Add` to create the asset.
@@ -81,6 +74,13 @@ Note that you can also connect to OpenRemote through the Manager APIs without us
 
 If the Agent doesn't support discovery or configuration files, you will manually need to link data coming in through your agents to the attributes of your assets. We use [configuration items](https://github.com/openremote/openremote/wiki/User-Guide%3A-Assets%2C-Agents-and-Attributes) on attributes such as `Agent link` and `Attribute link` for that. See the tutorial for connecting to [OpenWeatherMap via an HTTP Agent to a Weather asset](https://github.com/openremote/openremote/wiki/Tutorial%3A-Open-Weather-API-using-HTTP-Agent).
 
+## Filtering assets and agents
+
+In the asset tree on the left, you can filter assets by typing their name. The advanced filter also allows selecting an asset type, typing the attribute name (without spaces) and filter on a value.
+
+<kbd>![Filtering assets](https://user-images.githubusercontent.com/11444149/174821811-4cb80c13-0416-4681-a1af-3ef9d622a73f.png)</kbd>
+_Figure 6. Asset filtering by typing the asset name (left) or by using the advanced filter, selecting an asset type, typing the attribute name (without spaces) and filter on a value'_
+
 # Rules
 
 The Rules page (only available on desktop screen sizes) allows you to build three types of rules:
@@ -94,14 +94,14 @@ All rules can be set to only be active during a (recurring) event set with the s
 When-Then rules use conditions set for attributes to trigger an action for another attribute. The actions do not only include controlling assets, but can also be used to send e-mails or push notifications to mobile apps (using the OpenRemote consoles). 
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20(2-2).png)</kbd>
-_Figure 6. A When-Then example, which shows how, on the When-side an asset type can be selected, while on the Then-side the action, in this case a push notification, is defined._
+_Figure 7. A When-Then example, which shows how, on the When-side an asset type can be selected, while on the Then-side the action, in this case a push notification, is defined._
 
 The frequency on which rules trigger as well as a timer schedule can be set. 
 The rule frequency, a dropdown on the upper right of each 'Then' panel defines how frequent a rule can trigger. For example 'Always' means every time the  condition is triggered, but only after the condition has been false (so not continuously on being true).
 The scheduler (right next to the name field of the rule) lets you set an occurrence period as well as repeat that occurrence.
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduling%20(2-2).png)</kbd>
-_Figure 7. The Rules trigger frequency (right) as well as time scheduler (left) defines when rules are triggered and active. The scheduled example sets the rule to be active until June 20 2022, only on weekdays._
+_Figure 8. The Rules trigger frequency (right) as well as time scheduler (left) defines when rules are triggered and active. The scheduled example sets the rule to be active until June 20 2022, only on weekdays._
 
 See the [When-Then rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules) wiki for more details. 
 
@@ -110,14 +110,14 @@ See the [When-Then rules](https://github.com/openremote/openremote/wiki/User-Gui
 Flow rules can be used to fill (new) attributes with processed other attributes. In the visual editor you can use `Input` (blue), `Processor` (green), and `Output` (purple) nodes, and wire them up. See the wiki [Flow Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules) for more details.
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Flow.png)</kbd>
-_Figure 8. Flow rules to process data_
+_Figure 9. Flow rules to process data_
 
 ## Groovy Rules
 
-Groovy rules are intended for more advanced processing and automation (see an example in figure 9). For more information see [Groovy Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
+Groovy rules are intended for more advanced processing and automation (see an example in figure 10). For more information see [Groovy Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20Groovy.png)</kbd>
-_Figure 9. Groovy rules for more advanced processing, logic or automation_
+_Figure 10. Groovy rules for more advanced processing, logic or automation_
 
 ## Global versus Realm Rules
 
@@ -132,7 +132,7 @@ The Insights page (see figure 10) allows you to create a single page report:
 You can configure the layout of the Insights page with the [manager config file](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment#configuration-of-the-manager-ui) in your own instance of OpenRemote.
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Insights.png)</kbd>
-_Figure 10. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few other attribute panels._
+_Figure 11. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few other attribute panels._
 
 # Settings and access
 
@@ -144,7 +144,7 @@ You can link multiple instances of OpenRemote (as Edge Gateways) to a single Cen
 See the [Edge Gateway documentation](https://github.com/openremote/openremote/wiki/User-Guide%3A-Edge-Gateway) for more details.
  
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Interconnect%20(2).png)</kbd>
-_Figure 11. Several OpenRemote instances can be interconnected, e.g. connecting multiple instances on edge gateways to one central cloud hosted instance. The Manager Interconnect page, used at the edge instances (left) uses the keys which are created on the central instance by adding Edge gateway Assets (right)._
+_Figure 12. Several OpenRemote instances can be interconnected, e.g. connecting multiple instances on edge gateways to one central cloud hosted instance. The Manager Interconnect page, used at the edge instances (left) uses the keys which are created on the central instance by adding Edge gateway Assets (right)._
 
 ## Languages
 
@@ -155,14 +155,14 @@ OpenRemote currently supports 8 languages: English, German, French, Spanish, Por
 The logs page shows information, warnings and errors of the different activities of OpenRemote. You can use it to understand the behaviour of the whole platform or debug issues, e.g. errors connecting agent with device.
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Logs.png)</kbd>
-_Figure 12. The Logs page to evaluate system behaviour._
+_Figure 13. The Logs page to evaluate system behaviour._
 
 ## Account
 
 On the Account page you can (re)set you personal information or password. You can also monitor your past sessions or enable 2FA via an Authenticator (currently disabled).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Account%20(2).png)</kbd>
-_Figure 13. The account page with contact details (left) and reset passwords (right)._
+_Figure 14. The account page with contact details (left) and reset passwords (right)._
 
 ## Users and Roles
 
@@ -173,12 +173,12 @@ You can also give a user restricted access to one or more assets. Note that you 
 An example of using 'restricted access' is when you are connecting up an apartment complex and you want each tenant only to have access to the assets of his or her apartment. By leaving out the configuration item 'Access restricted user read/write' for some attributes, you can hide these from the tenant.
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20restricted%20user.png)</kbd>
-_Figure 14. Creating users for a selected realm and assigning roles_
+_Figure 15. Creating users for a selected realm and assigning roles_
 
 Same for Roles, with the correct permissions, you can create and edit roles. These roles define which parts of the system a user is allowed to Read or Write, e.g. system settings, assets, attributes, map, or rules. Also see the userguide: [Realms, users and roles](https://github.com/openremote/openremote/wiki/User-Guide%3A-Realms%2C-users-and-roles).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Roles.png)</kbd>
-_Figure 15. Roles are made of a set of permissions_
+_Figure 16. Roles are made of a set of permissions_
 
 ## Realms
 
@@ -187,16 +187,16 @@ Only the Master realm Admin user can create `Realms` by accessing the master rea
 You can create a realm by adding a `Realm` name (single word, lower case letters), and a `Friendly name`. You can (temporarily) disable realms, which blocks access for any user.   
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)</kbd>
-_Figure 16. Realms can be created to manage multiple independent projects within one OpenRemote instance_
+_Figure 17. Realms can be created to manage multiple independent projects within one OpenRemote instance_
 
 Also see the userguide: [Realms, users and roles](https://github.com/openremote/openremote/wiki/User-Guide%3A-Realms%2C-users-and-roles).
 
 ## Auto provisioning of devices
 
-If you are an OEM, developing and producing your own hardware, you can provision your devices and OpenRemote to automatically have your devices connecting, once they get online. Using certificates (we currently support X.509) your devices will register and automatically generate and connect to an asset of a defined type in the OpenRemote Manager (see figure 17). For details, check out the wiki about ['Auto provisioning'](https://github.com/openremote/openremote/wiki/User-Guide%3A-Auto-Provisioning).
+If you are an OEM, developing and producing your own hardware, you can provision your devices and OpenRemote to automatically have your devices connecting, once they get online. Using certificates (we currently support X.509) your devices will register and automatically generate and connect to an asset of a defined type in the OpenRemote Manager (see figure 18). For details, check out the wiki about ['Auto provisioning'](https://github.com/openremote/openremote/wiki/User-Guide%3A-Auto-Provisioning).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Auto%20provisioning%20.png)</kbd>
-_Figure 17. Auto provisioning of devices_
+_Figure 18. Auto provisioning of devices_
 
 # Manager APIs
 
