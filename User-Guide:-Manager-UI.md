@@ -8,7 +8,7 @@ If you open the application you will get four main pages: [Map](#map), [Assets](
 
 The `Map` page will show your map (see the [custom deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment) wiki if you like to change your map). You can pan, zoom, and tilt the map. On the map all assets are shown which have a location as well the configuration item `show on dashboard` set. Assets can both have static or dynamic locations (eg. a car, boat or plane). You will see the direction an asset is facing or moving if the asset includes an attribute called 'direction'. When selecting an asset, a panel will show its attributes and values. The `Asset details` button in this panel will bring you to the respective Asset page.
 
-As part of the [custom deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment) you can also configure assets to change their colour based on an attribute value (number, boolean, or string), show a label with or without units, and/or
+As part of the [custom deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment) you can also configure assets to change their colour based on an attribute value (number, boolean, or string) and show a label with or without units. 
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)</kbd>
 _Figure 1. The Map view, here with the Demo Smart City, showing the map with different assets across the city_
