@@ -13,9 +13,6 @@ As part of the [custom deployment](https://github.com/openremote/openremote/wiki
 <kbd>![OpenRemote Map](https://user-images.githubusercontent.com/11444149/174818710-a9799894-d4fe-4828-9f5d-3763f8d48f06.png)</kbd>
 _Figure 1. The Map view, here with the Demo Smart City, showing the map with different assets across the city_
 
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Demo%20Map.png)</kbd>
-_Figure 1. The Map view, here with the Demo Smart City, showing the map with different assets across the city_
-
 # Assets
 
 The `Assets` page lets you view and modify assets and their attributes. You will see the asset tree structure on the left, and the details of the selected asset on the right. The asset page contains an Info panel, an Attributes panel, a Location panel (if any) and a History panel.
@@ -24,6 +21,13 @@ The Info and Attribute panels will give an overview of all attributes and their 
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Ozone%20Asset.png)</kbd>
 _Figure 2. An asset of the type 'environment'_
+
+## Filtering assets
+
+In the asset tree on the left, you can filter assets by typing their name. The advanced filter also allows selecting an asset type, typing the attribute name (without spaces) and filter on a value.
+
+<kbd>![](![Filtering assets](https://user-images.githubusercontent.com/11444149/174821811-4cb80c13-0416-4681-a1af-3ef9d622a73f.png))</kbd>
+_Figure 2. Asset filtering by typing the asset name (left) or by using the advanced filter, selecting an asset type, typing the attribute name (without spaces) and filter on a value'_
 
 ## Create an asset
 
