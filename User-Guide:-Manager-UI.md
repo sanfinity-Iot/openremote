@@ -11,7 +11,7 @@ The `Map` page will show your map (see the [custom deployment](https://github.co
 As part of the [custom deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment) you can also configure assets to change their colour based on an attribute value (number, boolean, or string) and show a label with or without units. 
 
 <kbd>![OpenRemote Map](https://user-images.githubusercontent.com/11444149/174818710-a9799894-d4fe-4828-9f5d-3763f8d48f06.png)</kbd>
-_Figure 1. The Map view, here with the Demo Smart City, showing the map with different assets across the city_
+_Figure 1. The Map view, here with the Demo Smart City, showing the map with different assets across the city. The ship is also showing its direction_
 
 # Assets
 
