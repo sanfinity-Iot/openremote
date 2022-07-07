@@ -182,9 +182,9 @@ _Figure 16. Roles are made of a set of permissions_
 
 ## Realms
 
-Only the Master realm Admin user can create `Realms` by accessing the master realm `https://youradress/manager`. Realms are separated projects which can be used for individual users or customers of your platform. Individual Realms can be reached at `https://youradress/manager/?realm=realmname`.
+Only the Master realm Admin user can create `Realms` by accessing the master realm `https://youradress/manager`. Realms are separated projects which can be used for individual users or customers of your platform. Individual Realms can be reached at `https://youradress/manager/?realm=realmname`. Note that the Master realm Admin user should have created a new user in this realm first, before the individual Realm can be accessed.
 
-You can create a realm by adding a `Realm` name (single word, lower case letters), and a `Friendly name`. You can (temporarily) disable realms, which blocks access for any user.   
+You can create a realm by adding a `realmname` name (single word, lower case letters), and a `Friendly name`. You can (temporarily) disable realms, which blocks access for any user.    
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Realms.png)</kbd>
 _Figure 17. Realms can be created to manage multiple independent projects within one OpenRemote instance_
