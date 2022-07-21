@@ -81,6 +81,10 @@ In the asset tree on the left, you can filter assets by typing their name. The a
 <kbd>![Filtering assets](https://user-images.githubusercontent.com/11444149/174821811-4cb80c13-0416-4681-a1af-3ef9d622a73f.png)</kbd>
 _Figure 6. Asset filtering by typing the asset name (left) or by using the advanced filter, selecting an asset type, typing the attribute name (without spaces) and filter on an attribute value_
 
+## Grouping assets and group control
+
+In the asset tree you can multi-select assets and collectively add them as children to a group, just by dragging them onto another asset. You can use it for example to add a series of lights as children to a room or building. Additionally, by adding [this Control Groovy rule](https://github.com/openremote/openremote/blob/master/test/src/test/resources/org/openremote/test/rules/ChildAssetControl.groovy) for each group asset, you can control an attribute of all these child assets at the same time, just by creating a corresponding attribute in the parent asset. So in case of the light example: by creating an on/off toggle attribute in the room or building asset you can control all lights at the same time. Note that you make the [Control Groovy rule](https://github.com/openremote/openremote/blob/master/test/src/test/resources/org/openremote/test/rules/ChildAssetControl.groovy) for each parent asset and adjust the parentAssetID to the one corresponding with your parent asset.
+
 # Rules
 
 The Rules page (only available on desktop screen sizes) allows you to build three types of rules:
