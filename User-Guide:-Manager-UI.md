@@ -93,6 +93,8 @@ The Rules page (only available on desktop screen sizes) allows you to build thre
 * [GROOVY](#groovy-rules): programming any advanced logic, using attributes in the system.
 All rules can be set to only be active during a (recurring) event set with the scheduler.
 
+Note that you need to add the configuration item 'Rule state' to both the attributes used on the left-hand-side and right-hand-side of the rule, to make the rule actually fire an action.
+
 ## When-Then Rules
 
 When-Then rules use conditions set for attributes to trigger an action for another attribute. The actions do not only include controlling assets, but can also be used to send e-mails or push notifications to mobile apps (using the OpenRemote consoles). 
