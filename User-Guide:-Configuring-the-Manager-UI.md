@@ -60,58 +60,60 @@ On this page we will use an example config and give a short description of each 
       }
     },
     "insights": {
-      "panels": {
-        "chart": {
-          "type": "chart",
-          "hideOnMobile": true,
-          "panelStyles": {
-            "gridColumn": "1 / -1"
-          }
-        },
-        "kpi1": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi2": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi3": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi4": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi5": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi6": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi7": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi8": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "chart2": {
-          "type": "chart",
-          "hideOnMobile": true,
-          "panelStyles": {
-            "gridColumn": "1 / -1"
-          }
-        },
-        "chart3": {
-          "type": "chart",
-          "hideOnMobile": true,
-          "panelStyles": {
-            "gridColumn": "1 / -1"
+      "dataViewer" {
+        "panels": {
+          "chart": {
+            "type": "chart",
+            "hideOnMobile": true,
+            "panelStyles": {
+              "gridColumn": "1 / -1"
+            }
+          },
+          "kpi1": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi2": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi3": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi4": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi5": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi6": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi7": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi8": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "chart2": {
+            "type": "chart",
+            "hideOnMobile": true,
+            "panelStyles": {
+              "gridColumn": "1 / -1"
+            }
+          },
+          "chart3": {
+            "type": "chart",
+            "hideOnMobile": true,
+            "panelStyles": {
+              "gridColumn": "1 / -1"
+            }
           }
         }
       }
@@ -308,58 +310,60 @@ Set which assettypes are excluded from the list of asset types that can be selec
 The insights page layout and its panel types can be modified.
 ```JSON
     "insights": {
-      "panels": {
-        "chart": {
-          "type": "chart",
-          "hideOnMobile": true,
-          "panelStyles": {
-            "gridColumn": "1 / -1"
-          }
-        },
-        "kpi1": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi2": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi3": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi4": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi5": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi6": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi7": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "kpi8": {
-          "type": "kpi",
-          "hideOnMobile": false
-        },
-        "chart2": {
-          "type": "chart",
-          "hideOnMobile": true,
-          "panelStyles": {
-            "gridColumn": "1 / -1"
-          }
-        },
-        "chart3": {
-          "type": "chart",
-          "hideOnMobile": true,
-          "panelStyles": {
-            "gridColumn": "1 / -1"
+      "dataViewer": {
+        "panels": {
+          "chart": {
+            "type": "chart",
+            "hideOnMobile": true,
+            "panelStyles": {
+              "gridColumn": "1 / -1"
+            }
+          },
+          "kpi1": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi2": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi3": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi4": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi5": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi6": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi7": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "kpi8": {
+            "type": "kpi",
+            "hideOnMobile": false
+          },
+          "chart2": {
+            "type": "chart",
+            "hideOnMobile": true,
+            "panelStyles": {
+              "gridColumn": "1 / -1"
+            }
+          },
+          "chart3": {
+            "type": "chart",
+            "hideOnMobile": true,
+            "panelStyles": {
+              "gridColumn": "1 / -1"
+            }
           }
         }
       }
