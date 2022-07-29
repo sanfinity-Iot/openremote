@@ -60,7 +60,7 @@ On this page we will use an example config and give a short description of each 
       }
     },
     "insights": {
-      "dataViewer" {
+      "dataViewer": {
         "panels": {
           "chart": {
             "type": "chart",
