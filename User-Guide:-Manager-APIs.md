@@ -43,7 +43,7 @@ Another publish subscribe API, authentication requires a service user username a
 * ClientId: any thing you like
 
 #### Note
-It's important that the `ClientId` in the topic matches the one in the MQTT credentials.
+It's important that the `clientId` in the following topics matches the one in the MQTT credentials.
 
 ### Subscriptions
 #### [AssetEvents](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/asset/AssetEvent.java)
@@ -78,12 +78,25 @@ Examples:
 
 **NOTE: `attributevalue` topic prefix can be used in place of `attribute` to only return the value of the [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java) rather then the entire event.**
 
+#### Last will
+It is possible to subscribe to last will messages (provided the service user has the role `read:lastwill`) using the topic format:
+
+```{realm}/last_will/{IDENTIFIER}```
+
+The `IDENTIFIER` can be any string including the wildcard `#`.
 
 ### Publish
 It is possible to publish attribute events to specific assets using the following topics and payloads:
 
 * `{realm}/{clientId}/writeattribute`- Payload: [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java)
 * `{realm}/{clientId}/writeattributevalue/{attributeName}/{assetId}` - Payload: `JSON` of attribute value
+
+#### Last will publishing
+Clients can configure a last will topic and payload as defined in the MQTT specification; the topic must be in following format otherwise the connection will be terminated:
+
+```{realm}/last_will/{IDENTIFIER}```
+
+The `IDENTIFIER` can be any string that should uniquely identify the client for subscribers.
 
 ### MQTT custom handlers
 It is possible to inject custom handlers for MQTT messages by implementing the [MQTTCustomHandler](https://github.com/openremote/openremote/blob/master/manager/src/main/java/org/openremote/manager/mqtt/MQTTCustomHandler.java) interface and adding it to the [MQTTBrokerService](https://github.com/openremote/openremote/blob/master/manager/src/main/java/org/openremote/manager/mqtt/MqttBrokerService.java) during startup. The custom handler can choose to intercept messages based on topic, user and/or whether it is a pub or sub request, see javadoc of `MQTTCustomHandler` for more details.
