@@ -78,12 +78,6 @@ Examples:
 
 **NOTE: `attributevalue` topic prefix can be used in place of `attribute` to only return the value of the [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java) rather then the entire event.**
 
-#### Last will
-It is possible to subscribe to last will messages (provided the service user has the role `read:lastwill`) using the topic format:
-
-```{realm}/last_will/{IDENTIFIER}```
-
-The `IDENTIFIER` can be any string including the wildcard `#`.
 
 ### Publish
 It is possible to publish attribute events to specific assets using the following topics and payloads:
@@ -92,11 +86,7 @@ It is possible to publish attribute events to specific assets using the followin
 * `{realm}/{clientId}/writeattributevalue/{attributeName}/{assetId}` - Payload: `JSON` of attribute value
 
 #### Last will publishing
-Clients can configure a last will topic and payload as defined in the MQTT specification; the topic must be in following format otherwise the connection will be terminated:
-
-```{realm}/last_will/{IDENTIFIER}```
-
-The `IDENTIFIER` can be any string that should uniquely identify the client for subscribers.
+Clients can configure a last will topic and payload as defined in the MQTT specification; the topic and payload can use the standard attribute publish topic/payload so it is possible to update an attribute when the client connection is closed un-expectedly; the client must have permission to access to the specified attribute.
 
 ### MQTT custom handlers
 It is possible to inject custom handlers for MQTT messages by implementing the [MQTTCustomHandler](https://github.com/openremote/openremote/blob/master/manager/src/main/java/org/openremote/manager/mqtt/MQTTCustomHandler.java) interface and adding it to the [MQTTBrokerService](https://github.com/openremote/openremote/blob/master/manager/src/main/java/org/openremote/manager/mqtt/MqttBrokerService.java) during startup. The custom handler can choose to intercept messages based on topic, user and/or whether it is a pub or sub request, see javadoc of `MQTTCustomHandler` for more details.
