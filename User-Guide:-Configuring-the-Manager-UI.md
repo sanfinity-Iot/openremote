@@ -142,32 +142,87 @@ On this page we will use an example config and give a short description of each 
         }
       },
       "viewer": {
-        "default": {
-          "panels": {
-            "attributes": {
-              "type": "info",
-              "attributes": {
-                "exclude": ["location", "notes", "manufacturer", "model"]
-              },
-              "properties": {
-                "include": []
-              }
-            }
-          }
-        },
         "assetTypes": {
           "WeatherAsset": {
-            "panels": {
-              "attributes": {
+            "viewerStyles": {},
+            "panels": [
+              {
+                "type": "group",
+                "title": "underlyingAssets"
+              },
+              {
                 "type": "info",
+                "title": "location",
+                "properties": {
+                  "include": []
+                },
                 "attributes": {
-                  "exclude": ["location", "Radiation", "UVIndex", "currentWeather", "notes", "manufacturer", "model"]
+                  "include": [
+                    "location"
+                  ],
+                  "itemConfig": {
+                    "location": {
+                      "label": ""
+                    }
+                  }
+                }
+              },
+              {
+                "type": "info",
+                "hideOnMobile": true,
+                "properties": {
+                  "include": []
+                },
+                "attributes": {
+                  "include": [
+                    "notes",
+                    "manufacturer",
+                    "model"
+                  ]
+                }
+              },
+              {
+                "type": "info",
+                "title": "Weather data",
+                "attributes": {
+                  "exclude": [
+                    "location",
+                    "radiation",
+                    "rainfall",
+                    "uVIndex",
+                    "currentWeather",
+                    "notes",
+                    "manufacturer",
+                    "model"
+                  ]
                 },
                 "properties": {
                   "include": []
                 }
+              },
+              {
+                "type": "info",
+                "title": "Extra details",
+                "column": 1,
+                "properties": {
+                  "include": []
+                },
+                "attributes": {
+                  "include": [
+                    "rainfall",
+                    "uVIndex"
+                  ]
+                }
+              },
+              {
+                "type": "history",
+                "column": 1
+              },
+              {
+                "type": "linkedUsers",
+                "column": 1
               }
-            }
+            ]
           }
         },
         "historyConfig": {
@@ -395,35 +450,90 @@ The insights page layout and its panel types can be modified.
         }
       },
 ```
-**Assets - viewer:** Configure which panels are shown on the assets page. You can include or exclude attributes to shown per panel. These panels can be set for all asset types, or specified per type. This is an extension or overwrite of the default config of the [asset-viewer](https://github.com/openremote/openremote/blob/master/ui/component/or-asset-viewer/src/index.ts). In `historyConfig` an example is given on how to specify the columns shown in a table for an attribute that is not a number or boolean; if no config is given, it will automatically create columns.
+**Assets - viewer:** Configure which panels are shown on the assets page. You can include or exclude attributes to shown per panel. These panels can be set for all asset types, or specified per type. This is an overwrite of the default config of the [asset-viewer](https://github.com/openremote/openremote/blob/master/ui/component/or-asset-viewer/src/index.ts). In `historyConfig` an example is given on how to specify the columns shown in a table for an attribute that is not a number or boolean; if no config is given, it will automatically create columns.
 ```JSON
       "viewer": {
-        "default": {
-          "panels": {
-            "attributes": {
-              "type": "info",
-              "attributes": {
-                "exclude": ["location", "notes", "manufacturer", "model"]
-              },
-              "properties": {
-                "include": []
-              }
-            }
-          }
-        },
         "assetTypes": {
           "WeatherAsset": {
-            "panels": {
-              "attributes": {
+            "viewerStyles": {},
+            "panels": [
+              {
+                "type": "group",
+                "title": "underlyingAssets"
+              },
+              {
                 "type": "info",
+                "title": "location",
+                "properties": {
+                  "include": []
+                },
                 "attributes": {
-                  "exclude": ["location", "Radiation", "UVIndex", "currentWeather", "notes", "manufacturer", "model"]
+                  "include": [
+                    "location"
+                  ],
+                  "itemConfig": {
+                    "location": {
+                      "label": ""
+                    }
+                  }
+                }
+              },
+              {
+                "type": "info",
+                "hideOnMobile": true,
+                "properties": {
+                  "include": []
+                },
+                "attributes": {
+                  "include": [
+                    "notes",
+                    "manufacturer",
+                    "model"
+                  ]
+                }
+              },
+              {
+                "type": "info",
+                "title": "Weather data",
+                "attributes": {
+                  "exclude": [
+                    "location",
+                    "radiation",
+                    "rainfall",
+                    "uVIndex",
+                    "currentWeather",
+                    "notes",
+                    "manufacturer",
+                    "model"
+                  ]
                 },
                 "properties": {
                   "include": []
                 }
+              },
+              {
+                "type": "info",
+                "title": "Extra details",
+                "column": 1,
+                "properties": {
+                  "include": []
+                },
+                "attributes": {
+                  "include": [
+                    "rainfall",
+                    "uVIndex"
+                  ]
+                }
+              },
+              {
+                "type": "history",
+                "column": 1
+              },
+              {
+                "type": "linkedUsers",
+                "column": 1
               }
-            }
+            ]
           }
         },
         "historyConfig": {
@@ -446,8 +556,6 @@ The insights page layout and its panel types can be modified.
           }
         }
       }
-    }
-  },
 ```
 **Realm configuration:** As explained on the custom deployment wiki page you can set the branding per realm. In the example below you can see how the page title, headers, colors, and logo's are set.
 ```JSON
