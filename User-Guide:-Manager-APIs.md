@@ -40,7 +40,7 @@ Another publish subscribe API, authentication requires a service user username a
 * Encryption/TLS: true (port 8883) false (port 1883)
 * Username: `{realm}:{username}`
 * Password: `{secret}`
-* ClientId: any thing you like
+* ClientId: anything you like (but don't use the same ClientId more than once)
 
 #### Note
 It's important that the `clientId` in the following topics matches the one in the MQTT credentials.
