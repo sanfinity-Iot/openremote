@@ -20,6 +20,12 @@ Groovy rules work using a Groovy scripting engine. Rules are parsed and various 
 
 The rules are then registered, ordered from top to bottom within a ruleset.
 
+# Example Groovy rules
+
+Here are a few examples for your reference:
+## Control a Group
+By adding this [Group Control Groovy Rule ](https://github.com/openremote/openremote/blob/master/test/src/test/resources/org/openremote/test/rules/ChildAssetControl.groovy) for each group asset, you can control all these child assets at the same time, just by creating the corresponding attributes of the children (same name and type) in the parent asset.
+
 # See Also
 
 - [[Create Rules|User-Guide:-Create Rules]]
