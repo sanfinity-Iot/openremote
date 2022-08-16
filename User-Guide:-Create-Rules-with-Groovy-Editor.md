@@ -24,7 +24,7 @@ The rules are then registered, ordered from top to bottom within a ruleset.
 
 Here are a few examples for your reference:
 ## Control a Group
-By adding this [Group Control Groovy Rule ](https://github.com/openremote/openremote/blob/master/test/src/test/resources/org/openremote/test/rules/ChildAssetControl.groovy) for each group asset, you can control all these child assets at the same time, just by creating the corresponding attributes of the children (same name and type) in the parent asset.
+By adding this [Group Control Groovy Rule ](https://github.com/openremote/openremote/blob/master/test/src/test/resources/org/openremote/test/rules/ChildAssetControl.groovy) for each group asset, you can control all these child assets at the same time, just by creating the corresponding attributes of the children (same name and type) in the parent asset. Take an example of controlling all lights in a building: by creating an 'onOff' (boolean) attribute in the building asset you can control all lights, which are children of that building asset, at the same time. Note that you create a [Control Groovy rule](https://github.com/openremote/openremote/blob/master/test/src/test/resources/org/openremote/test/rules/ChildAssetControl.groovy) for each parent asset and adjust the parentAssetID to the ID of the parent asset. You can find the ID in the URL of the asset page. Additionally, don't forget to add the configuration item 'Rule state' to the attribute of both the parent and child assets.
 
 # See Also
 
