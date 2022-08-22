@@ -14,7 +14,7 @@ MAP_SETTINGS_PATH=../deployment/map/mapsettings.json
 ### Raster maps (Mapbox JS)
 If you are working on raster maps (Mapbox JS) then you will need to have the `map` docker container running, this container serves the raster map tiles from the vector map data. 
 
-The container can be started by using the `dev-map.yml` profile (see [here](/Developer-Guide:-Docker-compose-profiles)) or you can add a `map` service to an existing custom project profile (copy the `dev-map.yml` as a template).
+The container can be started by using the `dev-map.yml` profile (see [here](./Developer-Guide:-Docker-compose-profiles)) or you can add a `map` service to an existing custom project profile (copy the `dev-map.yml` as a template).
 
 The manager acts as a reverse proxy for the `map` service and in order to configure the manager to serve raster tiles you need to set the following environment variables:
 
