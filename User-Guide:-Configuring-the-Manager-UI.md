@@ -557,7 +557,7 @@ The insights page layout and its panel types can be modified.
         }
       }
 ```
-**Realm configuration:** As explained on the custom deployment wiki page you can set the branding per realm. In the example below you can see how the page title, headers, colors, and logo's are set.
+**Realm configuration:** You can set the branding per realm. In the example below you can see how the page title, headers, colors, and logo's are set as default (for any new realm created through the UI), as well as for the 'master' and 'clienta' realms.
 ```JSON
   "realms": {
     "default": {
@@ -570,6 +570,22 @@ The insights page layout and its panel types can be modified.
       "logoMobile": "/images/logo-mobile.png",
       "favicon": "/images/favicon.png",
       "language": "en"
+    },
+    "master": {
+      "appTitle": "ACME Master",
+      "styles": ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #275582; --or-app-color5: #CCCCCC;}",
+      "logo": "/images/logo.png",
+      "logoMobile": "/images/logo-mobile.png",
+      "favicon": "/images/logo-favicon.png",
+      "language": "en"
+    },
+    "clienta": {
+      "appTitle": "Client A",
+      "styles": ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #275582; --or-app-color5: #CCCCCC;}",
+      "logo": "/images/clienta-logo.png",
+      "logoMobile": "/images/clienta-logoMobile.png",
+      "favicon": "/images/clienta-favicon.png",
+      "language": "de"
     }
   }
 }
