@@ -3,7 +3,7 @@
 The manager has built in support for `Mapbox GL` and can serve vector tile data. For this to work please ensure that you have the following files available in the deployment folder:
 
 * `map/mapsettings.json` - Contains settings related to the map tiles source data and also UI rendering settings (e.g. center point of map when first loaded)
-* `map/mapdata.mbtiles` - Contains the vector map data (adding it here will override the demo map for Rotterdam, located in `manager/src/map`) for more details)
+* `map/mapdata.mbtiles` - Contains the vector map data (adding it here will override the demo map for Rotterdam, located in `manager/src/map`) 
 
 If you have the map data and/or settings in a different location then please ensure that the manager environment variables are set also:
 ```
