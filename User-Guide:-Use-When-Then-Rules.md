@@ -1,4 +1,4 @@
-When-Then rules are used in combination with the or-rules UI component. They are meant to be used to allow application users to define 'When this, then this' statements. For example "turn on a light when it's clouded" or "send push notification to anybody who reaches the stadium".
+When-Then rules are used in combination with the or-rules UI component. They are meant to be used to allow application users to define 'When this, then this' statements. For example "turn on a light 5 minutes before sunset" or "send push notification to anybody who reaches the stadium".
 ![Manager Rules Editor](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20When-Then%20Editor.png)
 
 # Guide to setting up your first When-Then rule
