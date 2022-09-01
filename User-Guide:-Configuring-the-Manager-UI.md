@@ -4,6 +4,8 @@ On this page we will use an example config and give a short description of each 
 **Note:** if you are logged in as the default 'admin' user (a super user) most of these styling changes will _not_ be shown. This is to make sure the 'admin' user has all functionality available to them.  
 **Make sure to log in as a different user to see all effects of the manager_config.** 
 
+***
+
 <details><summary>View the example manager_config used in the sections on this page.</summary>
 <p>
 
@@ -593,8 +595,5 @@ The insights page layout and its panel types can be modified.
   }
 }
 ```
-<details><summary>Click to view how the --or-app-colors are used in the demo deployment.</summary>
-
+This is what the --or-app-colors look like in the demo deployment:
 ![Default colors in OpenRemote](https://openremote.io/wp-content/uploads/2021/04/coloruse-04.jpg)
-
-</details>
