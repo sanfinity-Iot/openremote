@@ -88,7 +88,6 @@
 * [[Edge device firmware updating|Developer Guide: Firmware updating with Hawkbit]]
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
-* [[Docker swarm mode|https://github.com/openremote/openremote/blob/master/swarm/README.md]]
 
 ### Architecture
 * [[Manager URLs and paths|Architecture:-Manager-endpoints-and-file-paths]]
