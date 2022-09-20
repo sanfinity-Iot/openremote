@@ -1,5 +1,5 @@
 When-Then rules are used in combination with the or-rules UI component. They are meant to be used to allow application users to define 'When this, then this' statements. For example "turn on a light 5 minutes before sunset" or "send push notification to anybody who reaches the stadium".
-![Manager Rules Editor](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20When-Then%20Editor.png)
+![Manager Rules Editor](https://user-images.githubusercontent.com/11444149/191290260-f64c619b-e595-4bf0-8235-e9ef21923544.png)
 
 # Guide to setting up your first When-Then rule
 To get familiar with the When-Then interface we will be creating a rule that turns on lights when the temperature drops below a certain threshold or when the humidity is higher than 75 (makes sense right?). We only want this rule to be active on Friday evening.
