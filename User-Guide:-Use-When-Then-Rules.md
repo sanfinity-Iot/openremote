@@ -3,7 +3,7 @@ When-Then rules are used in combination with the or-rules UI component. They are
 ![Manager Rules Editor](https://user-images.githubusercontent.com/11444149/191290260-f64c619b-e595-4bf0-8235-e9ef21923544.png)
 
 # Guide to setting up your first When-Then rule
-To get familiar with the When-Then interface we will be creating a rule that turns on lights when the temperature drops below a certain threshold or when the humidity is higher than 75 (makes sense right?). We only want this rule to be active on Friday evening.
+To get familiar with the When-Then interface we will be creating a rule that turns on lights when the temperature drops below a certain threshold and just before sunset (makes sense right?). We only want this rule to be active on weekdays.
 This guide assumes you are using the [Demo](https://openremote.io/demo/). Otherwise you need to create some assets first.
 
 1. Switch from the `master` realm to the `Smart city` realm in the top. You will see the assets we use a demo setup. 
