@@ -23,7 +23,7 @@ This guide assumes you are using the [Demo](https://openremote.io/demo/). Otherw
    * Click the `+` in the section below where it says `ADD CONDITION` and select `Time`.
    * Select Trigger Type `Sunset`.
    * Set the value `-5` for the `Offset in minutes`.
-   * Select: `location`. You have finished the AND condition. If both conditions are met, the `Then` actions will trigger.
+   * Select: `location`. You have finished the `AND` condition. If both conditions are met, the `Then` actions will trigger.
 6. Create an action on the `Then` side of the rule:
    * Click the `+` on the right in the `Then` section.
    * Select the `Light Asset` asset type.
@@ -32,7 +32,7 @@ This guide assumes you are using the [Demo](https://openremote.io/demo/). Otherw
    * Toggle the switch on. The Actions are done.
 7. Set the schedule for this rule:
    * Open up the scheduler by clicking `Always active` next to the rules name.
-   * Select 'Plan a repeating occurrence' as we want the rule to work only on weekdays.
+   * Select `Plan a repeating occurrence` as we want the rule to work only on weekdays.
    * At `Repeat occurrence every` click the five `weekdays`
    * Leave the `Repetition ends` at `Never`
    * Click `Apply` and save the rule in the top right.
