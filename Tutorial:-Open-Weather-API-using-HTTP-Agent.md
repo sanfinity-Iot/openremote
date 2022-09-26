@@ -17,10 +17,10 @@ This tutorial explains how to connect to the [Open Weather Map](https://openweat
    * Request query parameters (Input the API key from you openweathermap account): 
    ```
    {
-	  appid": ["YOUR_API_KEY"],
+	  "appid": ["YOUR_API_KEY"],
 	  "q": ["Rotterdam,nl"],
 	  "units": ["metric"]
-	}
+   }
    ```
 
 You now have a basic HTTP API protocol ready to be linked to by asset attributes.
