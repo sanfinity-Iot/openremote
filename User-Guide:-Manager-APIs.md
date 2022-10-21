@@ -80,9 +80,8 @@ Examples:
 
 
 ### Publish
-It is possible to publish attribute events to specific assets using the following topics and payloads:
+It is possible to publish attribute events to specific assets using the following topic and payload:
 
-* `{realm}/{clientId}/writeattribute`- Payload: [AttributeEvent](https://github.com/openremote/openremote/blob/master/model/src/main/java/org/openremote/model/attribute/AttributeEvent.java)
 * `{realm}/{clientId}/writeattributevalue/{attributeName}/{assetId}` - Payload: `JSON` of attribute value
 
 #### Last will publishing
