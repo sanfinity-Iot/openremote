@@ -151,3 +151,29 @@ $>open 1
 $>beans
 ...
 ```
+
+## Performing a heap dump (`jmap`)
+
+The `jmap` tool within the JDK can be used to create a heap dump of a running jvm; first you need to execute the following commands on the manager container:
+
+### Install the JDK
+```
+docker exec or-manager-1 /bin/bash -c 'microdnf --setopt=install_weak_deps=0 --setopt=tsflags=nodocs install -y java-17-openjdk-devel && microdnf clean all && rpm -q java-17-openjdk-devel'
+```
+
+### Create heap dump
+```
+docker exec or-manager-1 /bin/bash -c 'jmap -dump:live,format=b,file=/dump.hprof 1'
+```
+
+### Copy to docker host
+```
+docker cp or-manager-1:/dump.hprof ~
+```
+
+### Use scp to copy from docker host to local machine
+```
+scp {HOST}:~/dump.hprof ~
+```
+
+You can then explore the heap dump with an IDE or other tool.
