@@ -113,12 +113,27 @@ The code field should be the base64 encoded HMAC specific to this client.
 Client certificate generation is done using standard tooling e.g. openssl:
 
 1. A unique client private key and X.509 certificate should be generated with the client’s unique ID stored in the CN attribute of the certificate.
-1. The certificate should then be signed by an intermediate CA.
+1. The certificate should then be signed by an intermediate CA (can be self signed or signed by a CA)
 1. The intermediate CA certificate is then uploaded into OpenRemote within a Realm config instance
 
-When the client publishes its’ certificate to OpenRemote it must be the certificate chain including the intermediate CA certificate that was uploaded to OpenRemote and this must be in the PEM format. Client certificates can take place within the manufacturing environment without any external dependencies. 
+When the client publishes its’ certificate to OpenRemote it must be in the PEM format. Client certificate generation can take place within the manufacturing environment without any external dependencies. 
 
 **NOTE: The security of the CA private key(s) is essential, if compromised then the certificate can be marked as revoked within OpenRemote and this will require all client certificates signed by this compromised CA certificate to be replaced at considerable effort.**
+
+#### Some useful commands:
+
+Generate self signed CA cert (inc. key):
+```
+openssl req -x509 -sha256 -nodes -newkey rsa:4096 -keyout ca.key -days 730 -out ca.pem
+```
+Generate CSR for device (inc. key):
+```
+openssl req -nodes --newkey rsa:4096 -keyout deviceN.key -subj "/C=NL/ST=North Brabant/O=OpenRemote/CN=deviceN" -out deviceN.csr
+```
+Generate signed cert for device:
+```
+openssl x509 -req -in deviceN.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out deviceN.pem -days 500 -sha256
+```
 
 ## Asset provisioning
 When a client (device) successfully authenticates it is possible to auto provision an asset that can represent the client within OpenRemote; this is done by providing an asset template (an asset in `JSON` representation) that will be hydrated, stored and returned to the client within the success message payload. The ID of the created asset is derived from the `UNIQUE_ID` so on future authentications the previously created asset can be found and just returned rather than re-created. The following placeholder can be used in the asset template to allow for automatic substitution of the authenticated client's `UNIQUE_ID`:
