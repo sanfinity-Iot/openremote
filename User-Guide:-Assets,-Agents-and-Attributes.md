@@ -14,7 +14,7 @@ Agents are a special type of asset which link external services/devices with you
 Assets can be structured in a hierarchical tree to define some logical hierarchy for a particular use case (e.g. A city has buildings, which has floors, which have presence sensors).
 
 ## Asset Type Model
-Our asset type model is configurable which allows it to be modelled on the domain objects relevant for the specific use case (energy domain, smart city, etc.). At present it is only possible to configure the asset model in `java` code with the long term aim of allowing configuration via the `Manager UI`. You can find the [default asset type models here](https://github.com/openremote/openremote/tree/master/model/src/main/java/org/openremote/model/asset/impl) and use them as examples to create your own.
+Our asset type model is configurable which allows it to be modelled on the domain objects relevant for the specific use case (energy domain, smart city, etc.). At present it is only possible to configure the asset model in `java` code with the long term aim of allowing configuration via the `Manager UI`. You can [find the default asset type models here](https://github.com/openremote/openremote/tree/master/model/src/main/java/org/openremote/model/asset/impl) and use them as examples to create your own.
 
 The asset model available for a given `OpenRemote` instance can be interrogated using the [Asset Model HTTP API](https://demo.openremote.io/swagger/#/Asset%20Model).
 
