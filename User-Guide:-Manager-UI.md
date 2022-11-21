@@ -131,13 +131,11 @@ As an admin user of the system who can access all realms, you have the option to
 
 # Insights
 
-The Insights page (see figure 10) allows you to create a single page report:
-* Chart: allows you to select multiple attributes in the system and compare them (vertical comparison). By adding a second period you can also compare attributes for different time periods. The chart is not available on mobile screen sizes.
-* Attribute panel: allows for picking individual attributes, eg. KPIs and see there current performance over a period, as well as their relative or absolute change. 
+The Insights page (see figure 11) allows you to create multiple dashboards:
+* Share with other users or keep your dashboard private. 
+* Define behaviour for different screen sizes and optimise the design for a specific screen.
 
-You can configure the layout of the Insights page with the [manager config file](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment#configuration-of-the-manager-ui) in your own instance of OpenRemote.
-
-<kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Smart%20City%20-%20Insights.png)</kbd>
+<kbd>![](https://user-images.githubusercontent.com/11444149/203108105-563f030c-3def-46f2-be1f-41c440e83bb7.png)</kbd>
 _Figure 11. The Insights view of the Demo Smart City, showing the soil temperature at Leuven Haven and a few other attribute panels._
 
 # Settings and access
