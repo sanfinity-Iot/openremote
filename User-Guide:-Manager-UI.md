@@ -131,12 +131,12 @@ As an admin user of the system who can access all realms, you have the option to
 
 # Insights
 
-The Insights page (see figure 11) allows you to create multiple dashboards:
-* Share with other users or keep your dashboard private. 
-* Define behaviour for different screen sizes and optimise the design for a specific screen.
+The Insights page (see figure 11) allows you to create multiple dashboards. You can:
+* Share dashboards with other users or keep your dashboard private. 
+* Define the dashboard behaviour for different screen sizes and optimise the design for a specific screen.
 
 <kbd>![](https://user-images.githubusercontent.com/11444149/203108105-563f030c-3def-46f2-be1f-41c440e83bb7.png)</kbd>
-_Figure 11. The Insights view of the Demo Smart City, showing a dashboard with three different widgets._
+_Figure 11. The Insights view of the Demo Smart City, showing a dashboard with the three different types of widgets._
 
 # Settings and access
 
