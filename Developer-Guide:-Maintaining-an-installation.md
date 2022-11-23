@@ -138,28 +138,17 @@ Force garbage collection with:
 docker exec -it openremote_manager_1 /usr/bin/jcmd 1 GC.run
 ```
 
-## Working on the JVM with a JMX command-line
-
-Run [jmxterm](http://wiki.cyclopsgroup.org/jmxterm/manual.html):
-
-```
-docker exec -it openremote_manager_1 java -cp /opt/app/lib/* org.cyclopsgroup.jmxterm.boot.CliMain
-
-Welcome to JMX terminal. Type "help" for available commands.
-$>open 1
-#Connection to 1 is opened
-$>beans
-...
-```
-
-## Performing a heap dump (`jmap`)
-
-The `jmap` tool within the JDK can be used to create a heap dump of a running jvm; first you need to execute the following commands on the manager container:
-
-### Install the JDK
+## Install the JDK
+By default the manager docker image only contains a JRE; many java profiling tools are available in the JDK so to install within a running manager container:
 ```
 docker exec or-manager-1 /bin/bash -c 'microdnf --setopt=install_weak_deps=0 --setopt=tsflags=nodocs install -y java-17-openjdk-devel && microdnf clean all && rpm -q java-17-openjdk-devel'
 ```
+
+
+
+## Performing a heap dump (`jmap`)
+
+The `jmap` tool within the JDK can be used to create a heap dump of a running jvm.
 
 ### Create heap dump
 ```
@@ -177,3 +166,23 @@ scp {HOST}:~/dump.hprof ~
 ```
 
 You can then explore the heap dump with an IDE or other tool.
+
+## Performing a thread dump (`jstack`)
+The `jmap` tool within the JDK can be used to create a heap dump of a running jvm.
+
+### Create thread dump
+```
+docker exec or-manager-1 /bin/bash -c 'jstat -F -l 1 > /threads.txt'
+```
+
+### Copy to docker host
+```
+docker cp or-manager-1:/threads.txt ~
+```
+
+### Use scp to copy from docker host to local machine
+```
+scp {HOST}:~/thread.txt ~
+```
+
+You can then explore the thread dump with an IDE or other tool.
