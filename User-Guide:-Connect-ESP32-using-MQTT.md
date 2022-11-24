@@ -4,7 +4,7 @@ Here are some practical tips and code samples to get you going.
 
 # Publishing and subscribing to topics over MQTT
 
-This a basic MQTT example for connecting to OpenRemote. It consists of two files `OpenRemoteESP32.ino` and `secret.h`. Take care you adjust `yourrealm`, `ClientID`, `AssetName`, and `AssetID` for each topic to match your setup. Also add a valid certificate.
+This a basic MQTT example for connecting to the OpenRemote MQTT Broker. It consists of two files `OpenRemoteESP32.ino` and `secret.h`. Take care you adjust `yourrealm`, `ClientID`, `AttributeName`, and `AssetID` for each topic to match your setup. Also add a valid certificate.
 
 <details><summary>OpenRemoteESP32.ino</summary>
 <p>
@@ -85,7 +85,7 @@ This Code is for an ESP32 In case you use an ESP8266, change the WiFi Library. #
 
 For ESP8266 SSL Connection, you need a fingerprint of your Server Certificate Example: "static const char *fingerprint PROGMEM = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";" and in the setup: askClient.setFingerprint(fingerprint);
 
-This sketch demonstrates the basic capabilities of the library. It connects to an OpenRemote MQTT server then:
+This sketch demonstrates the basic capabilities of the library. It connects to the OpenRemote MQTT Broker then:
 
 - publishes boolean "1" to your topic
 - publishes "Hello" to another topic
@@ -105,7 +105,7 @@ const char* password = "xxxxxxxxxx"; // Wifi Password
 //MQTT Broker
 const char* mqtt_server = "xxxxxxxxxx";
 unsigned int mqtt_port = 1883; //SSL 8883 NoneSSL 1883
-const char* username = "master:xxxxxxxxxx"; // Service User Realm:Serviceuser
+const char* username = "yourrealm:xxxxxxxxxx"; // Service User Realm:Serviceuser
 const char* mqttpass = "xxxxxxxxxx"; // Service User Secret
 const char* ClientID = "xxxxxxxxxx";
 //LastWill
