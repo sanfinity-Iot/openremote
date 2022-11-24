@@ -6,7 +6,7 @@ Here are some practical tips and code samples to get you going.
 
 This a basic MQTT example for connecting to OpenRemote. It consists of two files `OpenRemoteESP32.ino` and `secret.h`. Take care you adjust `yourrealm`, `ClientID`, `AssetName`, and `AssetID` for each topic to match your setup. Also add a valid certificate.
 
-***
+**
 
 
 <details><summary>OpenRemoteESP32.ino</summary>
