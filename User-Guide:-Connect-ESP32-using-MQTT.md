@@ -4,7 +4,7 @@ Here are some practical tips and code samples to get you going.
 
 # Publishing and subscribing to topics over MQTT
 
-This a basic MQTT example for OpenRemote [www.openremote.io](http://www.openremote.io/)
+This a basic MQTT example for connecting to OpenRemote.
 
 <details><summary>OpenRemoteESP32.ino</summary>
 <p>
