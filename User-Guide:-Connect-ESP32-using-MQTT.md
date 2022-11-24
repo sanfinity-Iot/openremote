@@ -164,5 +164,5 @@ Note you need to add a CA certificate and add the code to locate the appropriate
 
 # See Also
 - [Tutorial: Connect your MQTT Client](https://github.com/openremote/openremote/wiki/Tutorial%3A-Connect-your-MQTT-Client)
-- [User Guide Manager APIs](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs)
+- [User Guide: Manager APIs](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs)
 - [User Guide: Auto Provisioning](https://github.com/openremote/openremote/wiki/User-Guide%3A-Auto-Provisioning)
