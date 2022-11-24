@@ -81,6 +81,19 @@ void reconnect() {
 </p>
 </details>
 
+This Code is for an ESP32 In case you use an ESP8266, change the WiFi Library. #include <ESP8266WiFi.h>
+
+For ESP8266 SSL Connection, you need a fingerprint of your Server Certificate Example: "static const char *fingerprint PROGMEM = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";" and in the setup: askClient.setFingerprint(fingerprint);
+
+This sketch demonstrates the basic capabilities of the library. It connects to an OpenRemote MQTT server then:
+
+- publishes boolean "1" to your topic
+- publishes "Hello" to another topic
+- subscribes to your topic printing out any messages
+
+It will reconnect to the server if the connection is lost using a blocking reconnect function.
+
+
 <details><summary>secret.h</summary>
 <p>
 
@@ -132,18 +145,6 @@ const char* local_root_ca = \
 ```
 </p>
 </details>
-
-This Code is for an ESP32 In case you use an ESP8266, change the WiFi Library. #include <ESP8266WiFi.h>
-
-For ESP8266 SSL Connection, you need a fingerprint of your Server Certificate Example: "static const char *fingerprint PROGMEM = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";" and in the setup: askClient.setFingerprint(fingerprint);
-
-This sketch demonstrates the basic capabilities of the library. It connects to an OpenRemote MQTT server then:
-
-- publishes boolean "1" to your topic
-- publishes "Hello" to another topic
-- subscribes to your topic printing out any messages
-
-It will reconnect to the server if the connection is lost using a blocking reconnect function.
 
 Edit secret.h for your credentials.
 
