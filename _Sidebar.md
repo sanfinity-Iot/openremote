@@ -63,7 +63,7 @@
 
 * [[OpenRemote as Edge Gateway|User-Guide:-Edge Gateway]]
 * [[Auto provisioning devices and users|User-Guide:-Auto Provisioning]]
-* [[Connect ESP32 using MQTT|User-Guide:-Connect ESP32 ESP8266 using MQTT]]
+* [[Connect ESP32 using MQTT|User-Guide:-Connect-ESP32---ESP8266-using-MQTT]]
 
 ## Tutorials
 * [[Weather data using HTTP Agent|Tutorial: Open Weather API using HTTP Agent]]
