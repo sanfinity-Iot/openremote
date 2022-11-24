@@ -4,7 +4,10 @@ Here are some practical tips and code samples to get you going.
 
 # Publishing and subscribing to topics over MQTT
 
-This a basic MQTT example for connecting to OpenRemote.
+This a basic MQTT example for connecting to OpenRemote. It consists of two files `OpenRemoteESP32.ino` and `secret.h`. Take care you adjust `yourrealm`, `ClientID`, `AssetName`, and `AssetID` for each topic to match your setup. Also add a valid certificate.
+
+***
+
 
 <details><summary>OpenRemoteESP32.ino</summary>
 <p>
@@ -38,9 +41,9 @@ void setup() {
 
 void loop() {
   //Publish Boolean format:
-  client.publish("master/xxxxxxxxxx/writeattributevalue/AttributeName/AsssetID", "1");
+  client.publish("yourrealm/ClientID/writeattributevalue/AttributeName/AsssetID", "1");
   //To publish Strings:
-  client.publish("master/xxxxxxxxxx/writeattributevalue/AttributeName/AssetID", String("Hello").c_str());
+  client.publish("yourrealm/ClientID/writeattributevalue/AttributeName/AssetID", String("Hello").c_str());
   delay(10000);
 
 }
@@ -109,12 +112,12 @@ const char* username = "master:xxxxxxxxxx"; // Service User Realm:Serviceuser
 const char* mqttpass = "xxxxxxxxxx"; // Service User Secret
 const char* ClientID = "xxxxxxxxxx";
 //LastWill
-const char* lastwill = "master/xxxxxxxxxx/writeattributevalue/AttributeName/AssetID";
+const char* lastwill = "yourrealm/ClientID/writeattributevalue/AttributeName/AssetID";
 const char* lastwillmsg = "0";
 
 
 //subscribing Topic
-const char *topic = "master/xxxxxxxxxx/attributevalue/AttributeName/#"; //see Subscribing Topics in Documentation https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker
+const char *topic = "yourrealm/ClientID/attributevalue/AttributeName/#"; //see Subscribing Topics in Documentation https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker
 
 
 //Local CA
