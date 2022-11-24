@@ -11,11 +11,14 @@ This a basic MQTT example for connecting to the OpenRemote MQTT Broker. It consi
 
 ```
 #include "secret.h"
-#include <WiFi.h>
+//#include <ESP8266WiFi.h> // remove comment for ESP8266, and add comment at #include <WiFi.h> 
+#include <WiFi.h>          
 #include <PubSubClient.h>
 
 //Objects
-WiFiClientSecure askClient; //If you use non SSL then WiFiClient askClient;
+WiFiClientSecure askClient; //SSL Client
+//WiFiClient askClient; //Non-SSL Client, also remove the comments for askClient.setCACert(local_root_ca);
+
 PubSubClient client(askClient);
 
 void setup() {
@@ -81,9 +84,12 @@ void reconnect() {
 </p>
 </details>
 
-This Code is for an ESP32 In case you use an ESP8266, change the WiFi Library. #include <ESP8266WiFi.h>
+This Code is for an ESP32. In case you use an ESP8266, change the WiFi Library. #include <ESP8266WiFi.h> (see code)
 
-For ESP8266 SSL Connection, you need a fingerprint of your Server Certificate Example: "static const char *fingerprint PROGMEM = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";" and in the setup: askClient.setFingerprint(fingerprint);
+For ESP8266 SSL Connection, you need a fingerprint of your Server Certificate Example: 
+`"static const char *fingerprint PROGMEM = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";"` 
+and in the setup: 
+`askClient.setFingerprint(fingerprint);`
 
 This sketch demonstrates the basic capabilities of the library. It connects to the OpenRemote MQTT Broker then:
 
