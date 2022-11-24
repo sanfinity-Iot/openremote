@@ -153,7 +153,13 @@ Important: Don't forget to add the PubSubClient to your Library https://github.c
 
 # Auto provisioning ESP32 based devices
 
-# Security
+WORK IN PROGRESS, SAMPLE TO BE ADDED.
+
+# Secure connection
+
+WORK IN PROGRESS, MORE DETAILS TO BE ADDED.
+
+Note you need to add a CA certificate and add the code to locate the appropriate CA certificate for the server, making a secure connection possible.
 
 # See Also
 - [Tutorial: Connect your MQTT Client](https://github.com/openremote/openremote/wiki/Tutorial%3A-Connect-your-MQTT-Client)
