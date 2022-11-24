@@ -27,7 +27,7 @@ In your MQTT client set up a new connection:
 - Port: `1883` for localhost (no SSL), `8883` for hosted environment (SSL)
 - password: the secret generated for the mqtt service user (you can find it on the mqttuser users page)
 - username: `master:mqttuser` ({realm}:{user})
-- clientID: `client123` (this can be anything you like but must be unique - Any existing connection with the same client ID will be replaced)
+- clientID: `client123` (this can be anything you like but must be unique - Any existing connection with the same client ID will be replaced. Make sure this clientID remains identical.)
 
 ## Subscribe to attributes using the MQTT API
 In this tutorial we will be looking at specific attributes of a specific asset. There are [many more options](https://github.com/openremote/openremote/wiki/User-Guide%3A-Manager-APIs#mqtt-api-mqtt-broker) of subscribing to (all) updates of assets and attributes. The asset attributes that you will be subscribing to can be written by the user, by rules, or can be a live value gathered through an Agent link with another device in the field. You can imagine this boolean value could toggle a function of the device subscribed to the attribute
