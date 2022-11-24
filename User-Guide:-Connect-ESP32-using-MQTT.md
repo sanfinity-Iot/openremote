@@ -9,6 +9,8 @@ This a basic MQTT example for OpenRemote [www.openremote.io](http://www.openremo
 <details><summary>OpenRemoteESP32.ino</summary>
 <p>
 
+```
+
 /*
   Basic MQTT example for OpenRemote www.openremote.io
   This Code is for an ESP32
@@ -98,6 +100,7 @@ void reconnect() {
   }
 }
 
+```
 
 </p>
 </details>
