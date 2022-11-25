@@ -1,4 +1,4 @@
-ESP32 is one of the most popular and well established boards for devices. ESP32 can be easily linked to an OpenRemote instance using our MQTT Broker. If you have larger numbers of devices connecting you might want to use the auto provisioning flow. This allows you to provision your devices in such a way that they automatically connect your devices to OpenRemote, create an asset of the type you have defined, and link the attributes over the right topics. ESP32 is perfectly suitable to make use of it.
+ESP32 and ESP8266 are some of the most popular and well established boards for devices. ESP32 and ESP8266 can be easily linked to an OpenRemote instance using our MQTT Broker. If you have larger numbers of devices connecting you might want to use the auto provisioning flow. This allows you to provision your devices in such a way that they automatically connect your devices to OpenRemote, create an asset of the type you have defined, and link the attributes over the right topics. ESP32 and and ESP8266 are perfectly suitable to make use of it.
 
 Here are some practical tips and code samples to get you going.
 
