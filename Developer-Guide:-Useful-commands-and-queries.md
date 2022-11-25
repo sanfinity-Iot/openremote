@@ -14,7 +14,7 @@ Replace `<PROJECT_NAME>` with value used when creating the container with `docke
 * Create backup: `docker exec or-postgresql-1 ash -c "pg_dump -Fc openremote > /db.bak"`
 * Copy to the docker host: `docker cp or-postgresql-1:/db.bak ~/`
 * SCP the backup off the source server onto the destination server
-* On the restore system stop the manager and keycloak containers then copy backup into the postgresql container: `docker cp db.bak or-postgresql-1:/`
+* On the destination server stop the manager and keycloak containers then copy backup into the postgresql container: `docker cp db.bak or-postgresql-1:/`
 * Drop existing DB: `docker exec or-postgresql-1 ash -c "dropdb openremote"`
 * Create new DB: `docker exec or-postgresql-1 ash -c "createdb openremote"`
 * Add POSTGIS extension: `docker exec or-postgresql-1 psql -U postgres -d openremote -c "CREATE EXTENSION postgis;"`
