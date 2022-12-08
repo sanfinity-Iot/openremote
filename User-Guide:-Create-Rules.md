@@ -7,7 +7,7 @@ Rules include a scheduler option which allows for rules to be planned and occurr
 
 # WHEN-THEN rules
 
-The WHEN-THEN rules object model is intended for application users, to create event based workflow rules, using a front-end UI. It works with the or-rules UI component which handles the connection between front-end and the WHEN-THEN JSON rules. For more details and an example see [User Guide: Use When Then Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules).
+The WHEN-THEN rules object model is intended for application users, to create event based workflow rules, using a front-end UI. It allows you to select any attribute for the left hand side condition and right hand side action. You can additionally send notifications, use timers and use webhooks for actions. For more details and an example see [User Guide: Use When Then Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules).
 
 # Flow rules
 
@@ -15,7 +15,7 @@ The Flow rules model is intended for application users which want to link attrib
 
 # Groovy rules
 
-Groovy rules scripting language is available within the (Technical) manager and can be used for complex rules. They have the most flexibility but also need clear understanding of the Groovy language especially to prevent errors. For more details and an example see [User Guide: Creat Rules with Groovy](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
+Groovy rules scripting language is available within the (Technical) manager and can be used for complex rules. They have the most flexibility but also need clear understanding of the Groovy language especially to prevent errors. For more details and an example see [User Guide: Create Rules with Groovy](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
 
 # See Also
 
