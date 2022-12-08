@@ -5,23 +5,23 @@ Rules can be built within global rulesets, allowing them to use any attribute ac
 Rules include a scheduler option which allows for rules to be planned and occurrences to be repeated. Rules can also be enabled or disabled.
 ![Manager Rules Scheduler](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Rules%20scheduler.png)
 
-# Groovy rules
-
-Groovy rules scripting language is available within the (Technical) manager and can be used for complex rules. They have the most flexibility but also need clear understanding of the Groovy language especially to prevent errors.
-
 # WHEN-THEN rules
 
-The WHEN-THEN rules object model is intended for application users, to create event based workflow rules, using a front-end UI. It works with the or-rules UI component which handles the connection between front-end and the WHEN-THEN JSON rules. An example of the WHEN-THEN rules working with the front-end is part of the [Demo Smart City](https://github.com/openremote/openremote/wiki/Demo-Smart-City).
+The WHEN-THEN rules object model is intended for application users, to create event based workflow rules, using a front-end UI. It works with the or-rules UI component which handles the connection between front-end and the WHEN-THEN JSON rules. For more details and an example see [User Guide: Use When Then Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-When-Then-Rules).
 
 # Flow rules
 
-The Flow rules model is intended for application users which want to link attributes together, using a conversion. Its main purpose is to allow linking of attributes (eg. a KNX switch with a Velbus light) or processing of attributes to create new 'virtual' attributes (eg. The energy consumption is the sum of three individual sub-meters). The Flow editor front end UI is currently a separate project, which needs to be installed.
+The Flow rules model is intended for application users which want to link attributes together, using a conversion. Its main purpose is to allow linking of attributes (eg. a KNX switch with a Velbus light) or processing of attributes to create new 'virtual' attributes (eg. The energy consumption is the sum of three individual sub-meters). For more details and an example see [User Guide: Use Flow Rules](https://github.com/openremote/openremote/wiki/User-Guide%3A-Use-Flow-Rules).
+
+# Groovy rules
+
+Groovy rules scripting language is available within the (Technical) manager and can be used for complex rules. They have the most flexibility but also need clear understanding of the Groovy language especially to prevent errors. For more details and an example see [User Guide: Creat Rules with Groovy](https://github.com/openremote/openremote/wiki/User-Guide%3A-Create-Rules-with-Groovy-Editor).
 
 # See Also
 
-- [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
 - [[Use WHEN-THEN Rules|User-Guide:-Use WHEN-THEN Rules]]
 - [[Use Flow Rules|User-Guide:-Use Flow Rules]]
+- [[Create Groovy Rules|User-Guide:-Create Rules with Groovy Editor]]
 - [Quick Start](https://github.com/openremote/openremote/blob/master/README.md)
 - [[Manager UI Guide|User-Guide:-Manager-UI]]
 - [Creating an HTTP Agent](https://github.com/openremote/openremote/wiki/User-Guide%3A-HTTP-Agent)
