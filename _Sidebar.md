@@ -89,6 +89,7 @@
 * [[Edge device firmware updating|Developer Guide: Firmware updating with Hawkbit]]
 * [[Licensing guidelines for contributors|Developer Guide: Licensing guidelines for contributors]]
 * [[Useful commands and queries|Developer Guide: Useful commands and queries]]
+* [[Data migration|Developer Guide: Data migration]]
 
 ### Architecture
 * [[Manager URLs and paths|Architecture:-Manager-endpoints-and-file-paths]]
