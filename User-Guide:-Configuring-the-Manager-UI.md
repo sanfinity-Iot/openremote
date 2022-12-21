@@ -64,65 +64,6 @@ On this page we will use an example config and give a short description of each 
         }
       }
     },
-    "insights": {
-      "dataViewer": {
-        "panels": {
-          "chart": {
-            "type": "chart",
-            "hideOnMobile": true,
-            "panelStyles": {
-              "gridColumn": "1 / -1"
-            }
-          },
-          "kpi1": {
-            "type": "kpi",
-            "hideOnMobile": false
-          },
-          "kpi2": {
-            "type": "kpi",
-            "hideOnMobile": false
-          },
-          "kpi3": {
-            "type": "kpi",
-            "hideOnMobile": false
-          },
-          "kpi4": {
-            "type": "kpi",
-            "hideOnMobile": false
-          },
-          "kpi5": {
-            "type": "kpi",
-            "hideOnMobile": false
-          },
-          "kpi6": {
-            "type": "kpi",
-            "hideOnMobile": false
-          },
-          "kpi7": {
-            "type": "kpi",
-            "hideOnMobile": false
-          },
-          "kpi8": {
-            "type": "kpi",
-            "hideOnMobile": false
-          },
-          "chart2": {
-            "type": "chart",
-            "hideOnMobile": true,
-            "panelStyles": {
-              "gridColumn": "1 / -1"
-            }
-          },
-          "chart3": {
-            "type": "chart",
-            "hideOnMobile": true,
-            "panelStyles": {
-              "gridColumn": "1 / -1"
-            }
-          }
-        }
-      }
-    },
     "assets": {
       "tree": {
         "add": {
