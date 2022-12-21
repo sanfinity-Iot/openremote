@@ -1,5 +1,6 @@
-The manager_config.json can be used in a [custom deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment) to style your deployment and configure how the pages of the Manager displays the assets and attributes in your system.
-On this page we will use an example config and give a short description of each section you could include. Note that some pages have a default config that you can overwrite using the manager_config.
+The settings option 'Appearance' can be used in a [custom deployment](https://github.com/openremote/openremote/wiki/User-Guide%3A-Custom-deployment). You can use it to style your deployment and configure how the pages of the Manager display the assets and attributes in your system. Some of these settings can be done directly in the user interface, others can be set in the JSON editor. The configuration get's stored in the manager_config file.
+
+In this user guide we will use an example JSON manager_config and give a short description of each section you could include. Note that some pages have a default config that you can overwrite using the manager_config.
 
 **Note:** if you are logged in as the default 'admin' user (a super user) most of these styling changes will _not_ be shown. This is to make sure the 'admin' user has all functionality available to them.  
 **Make sure to log in as a different user to see all effects of the manager_config.** 
