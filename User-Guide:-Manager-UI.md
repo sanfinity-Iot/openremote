@@ -204,7 +204,7 @@ _Figure 18. Auto provisioning of devices_
 
 ## Appearance
 
-You can restyle any realm in OpenRemote. You can change the logo's, use different colours, change the title and default language, or set and change the menu items. More advanced settings like visible asset and agent types on the asset and rules page, can be configured directly in a JSON file. For the options available in the JSON file and an example, check out [Configuring the Manager UI](https://github.com/openremote/openremote/wiki/User-Guide%3A-Configuring-the-Manager-UI).
+You can restyle any realm in OpenRemote (go to settings/appearance). You can change the logo's, use different colours, change the title and default language, or set and change the menu items. More advanced settings like visible asset and agent types on the asset and rules page, can be configured directly in a JSON file. For the options available in the JSON file and an example, check out [Configuring the Manager UI](https://github.com/openremote/openremote/wiki/User-Guide%3A-Configuring-the-Manager-UI).
 
 <kbd>![](https://user-images.githubusercontent.com/11444149/208919454-f3b2c100-04a4-4148-9779-f55f06c136c0.png)</kbd>
 _Figure 19. Appearance settings allow white labeling of your OpenRemote manager_
