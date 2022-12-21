@@ -202,16 +202,23 @@ If you are an OEM, developing and producing your own hardware, you can provision
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Auto%20provisioning%20.png)</kbd>
 _Figure 18. Auto provisioning of devices_
 
+## Appearance
+
+You can restyle any realm in OpenRemote. You can change the logo's, use different colours, change the title and default language, or set and change the menu items. More advanced setting like visible asset and agent types on the asset and rules page, can be configured directly in a JSON file.
+
+<kbd>![](https://user-images.githubusercontent.com/11444149/208919454-f3b2c100-04a4-4148-9779-f55f06c136c0.png)</kbd>
+_Figure 19. Appearance settings allow white labeling of your OpenRemote manager_
+
 # Manager APIs
 
 The Manager APIs let you interact with OpenRemote without using the UI. This can be used to e.g synchronize attribute data with external clients, accessing configurations, or creating new assets. To authenticate you'll need to create a service user first on the Users page. We have three types of APIs to choose from: HTTP, MQTT, and Websocket. 
 
 ## Service users
 
-Service users can be created on the `Users` page, and selecting `Add user` in the `Service user` panel (see figure 18). The `Username` (ClientID) can be set using letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s).
+Service users can be created on the `Users` page, and selecting `Add user` in the `Service user` panel (see figure 20). The `Username` (ClientID) can be set using letters, dashes, and numbers, while the `Secret` will be generated automatically once saved. Note that you also select the role(s).
 
 <kbd>![](https://github.com/openremote/Documentation/blob/master/manuscript/figures/Manager%20-%20Service%20Users.png)</kbd>
-_Figure 18. Creating service users, with Username, Secret and Roles for a selected Realm_
+_Figure 20. Creating service users, with Username, Secret and Roles for a selected Realm_
 
 ## HTTP, MQTT, and Websocket
 
