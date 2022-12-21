@@ -1,4 +1,4 @@
-Sometimes it is desriable to bulk edit existing assets (add/remove attributes and/or configuration items) rather than wiping the DB and starting again.
+Sometimes it is desirable to bulk edit existing assets (add/remove attributes and/or configuration items) rather than wiping the DB and starting again.
 
 DB migration scripts can be used to perform these migrations but also raw SQL can be used to make such alterations.
 
