@@ -65,6 +65,6 @@ It's possible to provide custom keycloak themes see [custom-project](https://git
 
 
 ## Setup code
-Custom setup code allows for programmatic configuration of a clean installation including the provisioning of `Agents`, `Assets`, `users`, `rules`, etc. This means that the system loads in a pre-configured state that can easily be reproduced after a clean install. Setup code is executed via the `SetupService` and is only executed if the `SETUP_WIPE_CLEAN_INSTALL` environment variable is set to `true` or if the database that the instance uses is empty.
+Custom setup code allows for programmatic configuration of a clean installation including the provisioning of `Agents`, `Assets`, `users`, `rules`, etc. This means that the system loads in a pre-configured state that can easily be reproduced after a clean install. Setup code is executed via the `SetupService` and is only executed if the `OR_SETUP_RUN_ON_RESTART` environment variable is set to `true` or if the database that the instance uses is empty.
 
 To write custom setup code then you need to create implementations of `SetupTasks` these are then discovered using the standard java `ServiceLoader` mechanism and must therefore be registered via `META-INF/services` mechanism, generally implementations should extend the `EmptySetupTasks` which will do basic configuration of `keycloak` which is essential, see [custom-project](https://github.com/openremote/custom-project/blob/main/setup/src/main/java/org/openremote/manager/setup/custom/CustomSetupTasks.java) for details.
